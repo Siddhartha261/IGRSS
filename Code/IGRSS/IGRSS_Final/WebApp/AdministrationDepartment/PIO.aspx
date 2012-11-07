@@ -120,6 +120,7 @@
                           <asp:BoundField DataField="FileClosureDateSecondAppeal" 
                               HeaderText="FileClosureDateSecondAppeal" 
                               SortExpression="FileClosureDateSecondAppeal" />
+                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

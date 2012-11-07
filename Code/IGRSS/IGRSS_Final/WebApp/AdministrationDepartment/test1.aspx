@@ -9,11 +9,10 @@
                             meta:resourcekey="lblllsResource1"></asp:Label></td>
                     <td align="left" >
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1" 
-                            ontextchanged="txtFileNo_TextChanged" ></asp:TextBox></td>
+                            meta:resourcekey="txtFileNoResource1" ></asp:TextBox></td>
                         <td align="right">
                         <asp:Button ID="btnSearchAppNo" runat="server"  Text="Search"
-                            meta:resourcekey="btnSearchAppNoResource1" onclick="btnSearchAppNo_Click" />
+                            meta:resourcekey="btnSearchAppNoResource1" />
                     </td>
           </tr>
              <tr>
@@ -25,6 +24,7 @@
                                  ReadOnly="True" SortExpression="id" Visible="False" />
                              <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
                              <asp:BoundField DataField="dob" HeaderText="dob" SortExpression="dob" />
+                             <asp:ButtonField ButtonType="Button" CommandName="Update" Text="Update" />
                          </Columns>
                      </asp:GridView>
                  </td>
@@ -44,49 +44,34 @@
         <asp:View ID="formtable1" runat ="server">
         <asp:FormView ID="formt1" runat="server" DataKeyNames="id" 
                 DataSourceID="ods_table1" DefaultMode="Insert" 
-                EnableModelValidation="True" onpageindexchanging="formt1_PageIndexChanging">
+                EnableModelValidation="True">
             <EditItemTemplate>
-                                <table>
-				<tr><td>Name:</td>
-				    <td><asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' 
-                            Width="160px" /></td>
-				</tr>				
-                
-                <tr><td>date of birth:</td>
-				    <td> <asp:TextBox ID="dobTextBox" runat="server" Text='<%# Bind("dob") %>' 
-                            Width="160px" /></td>
-				</tr>	
-                
-               
-                <tr><td><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
-                    CommandName="Update" Text="Update" />
-				&nbsp;<asp:Button ID="ResetButton" runat="server" 
-                    CausesValidation="False" CommandName="Reset" Text="Reset" />	
-                &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                    CausesValidation="False" CommandName="Cancel" Text="Cancel" /></td></tr>	
-					</table>
+                                id:
+                                <asp:Label ID="idLabel1" runat="server" Text='<%# Eval("id") %>' />
+                                <br />
+                                name:
+                                <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                                <br />
+                                dob:
+                                <asp:TextBox ID="dobTextBox" runat="server" Text='<%# Bind("dob") %>' />
+                                <br />
+                                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                                    CommandName="Update" Text="Update" />
+                                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                                    CausesValidation="False" CommandName="Back" Text="Back" />
                 
             </EditItemTemplate>
             <InsertItemTemplate>
-                              <table>
-				<tr><td>Name:</td>
-				    <td><asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' 
-                            Width="160px" /></td>
-				</tr>				
-                
-                <tr><td>date of birth:</td>
-				    <td> <asp:TextBox ID="dobTextBox" runat="server" Text='<%# Bind("dob") %>' 
-                            Width="160px" /></td>
-				</tr>	
-                
-               
-                <tr><td><asp:Button ID="InsertButton" runat="server" CausesValidation="True" 
-                    CommandName="Insert" Text="Insert" />
-				&nbsp;<asp:Button ID="ResetButton" runat="server" 
-                    CausesValidation="False" CommandName="Reset" Text="Reset" />	
-                &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                    CausesValidation="False" CommandName="Cancel" Text="Cancel" /></td></tr>	
-					</table>
+                              name:
+                              <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                              <br />
+                              dob:
+                              <asp:TextBox ID="dobTextBox" runat="server" Text='<%# Bind("dob") %>' />
+                              <br />
+                              <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                                  CommandName="Insert" Text="Insert" />
+                              &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                                  CausesValidation="False" CommandName="Back" Text="Back" />
                 
             </InsertItemTemplate>
             <ItemTemplate>

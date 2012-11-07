@@ -10,6 +10,7 @@
 
 #pragma warning disable 1591
 
+using System;
 namespace IGRSS.DataAccessLayer {
     
     
@@ -1638,6 +1639,9 @@ SELECT @@IDENTITY;";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(global::System.Nullable<int> Daysduringmonth, global::System.Nullable<int> TakenLeave, global::System.Nullable<int> workingDays, System.DateTime InspectionFromDate, System.DateTime InspectionToDate, global::System.Nullable<int> NoOfOfficeinspected, global::System.Nullable<int> Timetakenduringinspection, global::System.Nullable<int> NoOfDocuments, string Remarks) {
+
+            object returnData =  Insertdiary(Daysduringmonth, TakenLeave, workingDays, InspectionFromDate, InspectionToDate, NoOfOfficeinspected, Timetakenduringinspection, NoOfDocuments, Remarks);
+            return Convert.ToInt32(returnData);
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((Daysduringmonth.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(Daysduringmonth.Value));

@@ -82,6 +82,7 @@
                         SortExpression="Letter_Details" Visible="False" />
                     <asp:BoundField DataField="Work_Disposal_Date" HeaderText="Work Disposal Date" 
                         SortExpression="Work_Disposal_Date" />
+                    <asp:ButtonField CommandName="Update" Text="Update" />
                 </Columns>
             </asp:GridView>
         </td>

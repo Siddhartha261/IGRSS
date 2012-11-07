@@ -63,6 +63,7 @@
                               SortExpression="NoOfDocuments" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" />
+                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>
@@ -152,15 +153,16 @@
                                DataValueField="OfficeId"></asp:ListBox>
                            <br />
                            Timetakenduringinspection:
+                           <asp:TextBox ID="NoOfOfficeinspectedTextBox" runat="server" 
+                               Text='<%# Bind("NoOfOfficeinspected") %>' />
+                           <br />
+                           NoOfDocuments:
                            <asp:TextBox ID="TimetakenduringinspectionTextBox" runat="server" 
                                Text='<%# Bind("Timetakenduringinspection") %>' />
                            <br />
-                           NoOfDocuments:
+                           Remarks:
                            <asp:TextBox ID="NoOfDocumentsTextBox" runat="server" 
                                Text='<%# Bind("NoOfDocuments") %>' />
-                           <br />
-                           Remarks:
-                           <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
                            <br />
                            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                                CommandName="Insert" Text="Insert" />

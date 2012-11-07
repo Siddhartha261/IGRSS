@@ -97,6 +97,7 @@
                               SortExpression="Date" />
                           <asp:BoundField DataField="AGYear" HeaderText="AG Year" 
                               SortExpression="AGYear" />
+                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

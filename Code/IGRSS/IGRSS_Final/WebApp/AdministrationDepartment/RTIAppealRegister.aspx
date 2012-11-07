@@ -83,6 +83,7 @@
                               SortExpression="Last_Date" />
                           <asp:BoundField DataField="Decision_Taken" HeaderText="Decision_Taken" 
                               SortExpression="Decision_Taken" />
+                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

@@ -102,6 +102,9 @@
                                     SortExpression="Name"/>
 
 
+                                                            <asp:ButtonField CommandName="Update" Text="Update" />
+
+
                             </Columns>
                             <EmptyDataTemplate>
                                 No Record Found.

@@ -361,6 +361,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RTI.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\Sealing.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sealing.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Service.cs">
       <DependentUpon>Service.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -1076,6 +1081,17 @@
     </None>
     <None Include="DataAccessLayer\RTI.xss">
       <DependentUpon>RTI.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Sealing.xsc">
+      <DependentUpon>Sealing.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Sealing.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sealing.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Sealing.xss">
+      <DependentUpon>Sealing.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Service.xsc">
       <DependentUpon>Service.xsd</DependentUpon>

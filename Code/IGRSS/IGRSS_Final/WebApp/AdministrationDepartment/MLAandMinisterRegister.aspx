@@ -92,6 +92,7 @@
                               SortExpression="DetailsOfRecord" Visible="False" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
+                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

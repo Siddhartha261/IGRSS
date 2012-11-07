@@ -55,6 +55,7 @@
                               SortExpression="Date_Of_Complaint" />
                           <asp:BoundField DataField="Details_To_Vigilance_Commissioner" HeaderText="Details_To_Vigilance_Commissioner" 
                               SortExpression="Details_To_Vigilance_Commissioner" Visible="False" />
+                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>
