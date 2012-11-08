@@ -63,7 +63,6 @@
                               SortExpression="NoOfDocuments" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

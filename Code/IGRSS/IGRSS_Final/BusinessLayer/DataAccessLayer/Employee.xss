@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:DesignationMaster" ZOrder="1" X="17" Y="30" Height="309" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="194" />
     <Shape ID="DesignTable:DepartmentMaster" ZOrder="2" X="63" Y="389" Height="309" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="194" />
     <Shape ID="DesignTable:QualificationMaster" ZOrder="9" X="713" Y="446" Height="309" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="194" />
-    <Shape ID="DesignTable:EmployeeMaster" ZOrder="3" X="472" Y="93" Height="381" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:EmployeeMaster" ZOrder="3" X="472" Y="93" Height="343" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="228" />
     <Shape ID="DesignTable:EmployeeQualifications" ZOrder="6" X="831" Y="80" Height="275" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="160" />
   </Shapes>
   <Connectors>

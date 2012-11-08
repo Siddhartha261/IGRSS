@@ -67,8 +67,7 @@
                       EnableModelValidation="True">
                       <Columns>
                           <asp:BoundField DataField="Sr_No" HeaderText="Sr_No" 
-                              ReadOnly="True" SortExpression="Sr_No" Visible="False" 
-                              InsertVisible="False" />
+                              ReadOnly="True" SortExpression="Sr_No" />
                           <asp:BoundField DataField="Appl_name" HeaderText="Appl_name" 
                               SortExpression="Appl_name" />
                           <asp:BoundField DataField="Appl_surname" HeaderText="Appl_surname" 
@@ -83,7 +82,6 @@
                               SortExpression="Last_Date" />
                           <asp:BoundField DataField="Decision_Taken" HeaderText="Decision_Taken" 
                               SortExpression="Decision_Taken" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>
@@ -283,6 +281,7 @@
             <asp:Parameter Name="Original_Decision_Taken" Type="String" />
         </DeleteParameters>
         <InsertParameters>
+            <asp:Parameter Name="Sr_No" Type="Int32" />
             <asp:Parameter Name="Appl_name" Type="String" />
             <asp:Parameter Name="Appl_surname" Type="String" />
             <asp:Parameter Name="Appl_Date" Type="DateTime" />
@@ -296,6 +295,7 @@
                 PropertyName="Text" Type="String" />
         </SelectParameters>
         <UpdateParameters>
+            <asp:Parameter Name="Sr_No" Type="Int32" />
             <asp:Parameter Name="Appl_name" Type="String" />
             <asp:Parameter Name="Appl_surname" Type="String" />
             <asp:Parameter Name="Appl_Date" Type="DateTime" />
@@ -311,7 +311,6 @@
             <asp:Parameter Name="Original_PIO_date" Type="DateTime" />
             <asp:Parameter Name="Original_Last_Date" Type="DateTime" />
             <asp:Parameter Name="Original_Decision_Taken" Type="String" />
-            <asp:Parameter Name="Sr_No" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

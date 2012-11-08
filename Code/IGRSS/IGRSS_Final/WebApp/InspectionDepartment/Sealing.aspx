@@ -26,13 +26,13 @@
 <h1>Sealing</h1>
 <table>
           <tr>
-                    <td align="right" style="width:641px;" >
+                    <td align="right" style="width:641px; height: 30px;" >
                         <asp:Label ID="lbllls" runat="server" Text="Enter File Number :" 
                             meta:resourcekey="lblllsResource1"></asp:Label></td>
-                    <td align="left" >
+                    <td align="left" style="height: 30px" >
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
                             meta:resourcekey="txtFileNoResource1"></asp:TextBox></td>
-                        <td align="right">
+                        <td align="right" style="height: 30px">
                         <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
                             meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
@@ -61,7 +61,6 @@
                               SortExpression="RemainingVolumes" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

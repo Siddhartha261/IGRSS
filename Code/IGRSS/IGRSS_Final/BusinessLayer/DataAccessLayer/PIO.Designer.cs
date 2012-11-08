@@ -26,8 +26,6 @@ namespace IGRSS.DataAccessLayer {
         
         private PIODataTable tablePIO;
         
-        private PIO1DataTable tablePIO1;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -59,9 +57,6 @@ namespace IGRSS.DataAccessLayer {
                 if ((ds.Tables["PIO"] != null)) {
                     base.Tables.Add(new PIODataTable(ds.Tables["PIO"]));
                 }
-                if ((ds.Tables["PIO1"] != null)) {
-                    base.Tables.Add(new PIO1DataTable(ds.Tables["PIO1"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -87,16 +82,6 @@ namespace IGRSS.DataAccessLayer {
         public PIODataTable _PIO {
             get {
                 return this.tablePIO;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PIO1DataTable PIO1 {
-            get {
-                return this.tablePIO1;
             }
         }
         
@@ -170,9 +155,6 @@ namespace IGRSS.DataAccessLayer {
                 if ((ds.Tables["PIO"] != null)) {
                     base.Tables.Add(new PIODataTable(ds.Tables["PIO"]));
                 }
-                if ((ds.Tables["PIO1"] != null)) {
-                    base.Tables.Add(new PIO1DataTable(ds.Tables["PIO1"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -212,12 +194,6 @@ namespace IGRSS.DataAccessLayer {
                     this.tablePIO.InitVars();
                 }
             }
-            this.tablePIO1 = ((PIO1DataTable)(base.Tables["PIO1"]));
-            if ((initTable == true)) {
-                if ((this.tablePIO1 != null)) {
-                    this.tablePIO1.InitVars();
-                }
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -230,19 +206,11 @@ namespace IGRSS.DataAccessLayer {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablePIO = new PIODataTable();
             base.Tables.Add(this.tablePIO);
-            this.tablePIO1 = new PIO1DataTable();
-            base.Tables.Add(this.tablePIO1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerialize_PIO() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializePIO1() {
             return false;
         }
         
@@ -303,9 +271,6 @@ namespace IGRSS.DataAccessLayer {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PIORowChangeEventHandler(object sender, PIORowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void PIO1RowChangeEventHandler(object sender, PIO1RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -383,14 +348,6 @@ namespace IGRSS.DataAccessLayer {
             private global::System.Data.DataColumn columnRemarks_Send_Date;
             
             private global::System.Data.DataColumn columnFileClosureDateSecondAppeal;
-            
-            private global::System.Data.DataColumn columnRecvd_Fees1;
-            
-            private global::System.Data.DataColumn columnPage_Amt1;
-            
-            private global::System.Data.DataColumn columnTotal_Amt1;
-            
-            private global::System.Data.DataColumn columnOrder_Authority1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -707,38 +664,6 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Recvd_Fees1Column {
-                get {
-                    return this.columnRecvd_Fees1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Page_Amt1Column {
-                get {
-                    return this.columnPage_Amt1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Total_Amt1Column {
-                get {
-                    return this.columnTotal_Amt1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Order_Authority1Column {
-                get {
-                    return this.columnOrder_Authority1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -808,11 +733,7 @@ namespace IGRSS.DataAccessLayer {
                         System.DateTime AppealDateSecondAppeal, 
                         string Remarks_SentTo_Commission, 
                         System.DateTime Remarks_Send_Date, 
-                        System.DateTime FileClosureDateSecondAppeal, 
-                        decimal Recvd_Fees1, 
-                        decimal Page_Amt1, 
-                        decimal Total_Amt1, 
-                        int Order_Authority1) {
+                        System.DateTime FileClosureDateSecondAppeal) {
                 PIORow rowPIORow = ((PIORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -849,11 +770,7 @@ namespace IGRSS.DataAccessLayer {
                         AppealDateSecondAppeal,
                         Remarks_SentTo_Commission,
                         Remarks_Send_Date,
-                        FileClosureDateSecondAppeal,
-                        Recvd_Fees1,
-                        Page_Amt1,
-                        Total_Amt1,
-                        Order_Authority1};
+                        FileClosureDateSecondAppeal};
                 rowPIORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPIORow);
                 return rowPIORow;
@@ -924,10 +841,6 @@ namespace IGRSS.DataAccessLayer {
                 this.columnRemarks_SentTo_Commission = base.Columns["Remarks_SentTo_Commission"];
                 this.columnRemarks_Send_Date = base.Columns["Remarks_Send_Date"];
                 this.columnFileClosureDateSecondAppeal = base.Columns["FileClosureDateSecondAppeal"];
-                this.columnRecvd_Fees1 = base.Columns["Recvd_Fees1"];
-                this.columnPage_Amt1 = base.Columns["Page_Amt1"];
-                this.columnTotal_Amt1 = base.Columns["Total_Amt1"];
-                this.columnOrder_Authority1 = base.Columns["Order_Authority1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1005,14 +918,6 @@ namespace IGRSS.DataAccessLayer {
                 base.Columns.Add(this.columnRemarks_Send_Date);
                 this.columnFileClosureDateSecondAppeal = new global::System.Data.DataColumn("FileClosureDateSecondAppeal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFileClosureDateSecondAppeal);
-                this.columnRecvd_Fees1 = new global::System.Data.DataColumn("Recvd_Fees1", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecvd_Fees1);
-                this.columnPage_Amt1 = new global::System.Data.DataColumn("Page_Amt1", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPage_Amt1);
-                this.columnTotal_Amt1 = new global::System.Data.DataColumn("Total_Amt1", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Amt1);
-                this.columnOrder_Authority1 = new global::System.Data.DataColumn("Order_Authority1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrder_Authority1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSrNo}, true));
                 this.columnSrNo.AutoIncrement = true;
@@ -1051,14 +956,6 @@ namespace IGRSS.DataAccessLayer {
                 this.columnAddressSecondAppeal.MaxLength = 2147483647;
                 this.columnRemarks_SentTo_Commission.AllowDBNull = false;
                 this.columnRemarks_SentTo_Commission.MaxLength = 500;
-                this.columnRecvd_Fees1.AllowDBNull = false;
-                this.columnRecvd_Fees1.Caption = "Recvd_Fees";
-                this.columnPage_Amt1.AllowDBNull = false;
-                this.columnPage_Amt1.Caption = "Page_Amt";
-                this.columnTotal_Amt1.AllowDBNull = false;
-                this.columnTotal_Amt1.Caption = "Total_Amt";
-                this.columnOrder_Authority1.AllowDBNull = false;
-                this.columnOrder_Authority1.Caption = "Order_Authority";
                 this.ExtendedProperties.Add("Generator_TablePropName", "_PIO");
                 this.ExtendedProperties.Add("Generator_UserTableName", "PIO");
             }
@@ -1147,813 +1044,6 @@ namespace IGRSS.DataAccessLayer {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "PIODataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PIO1DataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
-            
-            private global::System.Data.DataColumn columnSrNo;
-            
-            private global::System.Data.DataColumn columnFileNo;
-            
-            private global::System.Data.DataColumn columnApplicantName;
-            
-            private global::System.Data.DataColumn columnApplicationDate;
-            
-            private global::System.Data.DataColumn columnApplicantAddress;
-            
-            private global::System.Data.DataColumn columnApplication_Received_Actual_Date;
-            
-            private global::System.Data.DataColumn columnAppl_BPL;
-            
-            private global::System.Data.DataColumn columnSub_Info_Asked;
-            
-            private global::System.Data.DataColumn columnRecvd_Sata_Mandal;
-            
-            private global::System.Data.DataColumn columnRecvd_Date;
-            
-            private global::System.Data.DataColumn columnInformation;
-            
-            private global::System.Data.DataColumn columnRecvd_Fees;
-            
-            private global::System.Data.DataColumn columnRecvd_Fees_Mode;
-            
-            private global::System.Data.DataColumn columnLast_Date_Reply;
-            
-            private global::System.Data.DataColumn columnInfo_Send;
-            
-            private global::System.Data.DataColumn columnInfo_Pages;
-            
-            private global::System.Data.DataColumn columnPage_Amt;
-            
-            private global::System.Data.DataColumn columnTotal_Amt;
-            
-            private global::System.Data.DataColumn columnReject_Date;
-            
-            private global::System.Data.DataColumn columnSection;
-            
-            private global::System.Data.DataColumn columnReasons;
-            
-            private global::System.Data.DataColumn columnFileClosureDate;
-            
-            private global::System.Data.DataColumn columnAuthority;
-            
-            private global::System.Data.DataColumn columnAppealNoFirstAppeal;
-            
-            private global::System.Data.DataColumn columnAppealDateFirstAppeal;
-            
-            private global::System.Data.DataColumn columnOrder_Authority;
-            
-            private global::System.Data.DataColumn columnFileClosureDateFirstAppeal;
-            
-            private global::System.Data.DataColumn columnLetteer_Recvd_Date_commissioner;
-            
-            private global::System.Data.DataColumn columnAppealNoSecondAppeal;
-            
-            private global::System.Data.DataColumn columnApplicationNameSecondAppeal;
-            
-            private global::System.Data.DataColumn columnAddressSecondAppeal;
-            
-            private global::System.Data.DataColumn columnAppealDateSecondAppeal;
-            
-            private global::System.Data.DataColumn columnRemarks_SentTo_Commission;
-            
-            private global::System.Data.DataColumn columnRemarks_Send_Date;
-            
-            private global::System.Data.DataColumn columnFileClosureDateSecondAppeal;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PIO1DataTable() {
-                this.TableName = "PIO1";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal PIO1DataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected PIO1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SrNoColumn {
-                get {
-                    return this.columnSrNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FileNoColumn {
-                get {
-                    return this.columnFileNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ApplicantNameColumn {
-                get {
-                    return this.columnApplicantName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ApplicationDateColumn {
-                get {
-                    return this.columnApplicationDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ApplicantAddressColumn {
-                get {
-                    return this.columnApplicantAddress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Application_Received_Actual_DateColumn {
-                get {
-                    return this.columnApplication_Received_Actual_Date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Appl_BPLColumn {
-                get {
-                    return this.columnAppl_BPL;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Sub_Info_AskedColumn {
-                get {
-                    return this.columnSub_Info_Asked;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Recvd_Sata_MandalColumn {
-                get {
-                    return this.columnRecvd_Sata_Mandal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Recvd_DateColumn {
-                get {
-                    return this.columnRecvd_Date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn InformationColumn {
-                get {
-                    return this.columnInformation;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Recvd_FeesColumn {
-                get {
-                    return this.columnRecvd_Fees;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Recvd_Fees_ModeColumn {
-                get {
-                    return this.columnRecvd_Fees_Mode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Last_Date_ReplyColumn {
-                get {
-                    return this.columnLast_Date_Reply;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Info_SendColumn {
-                get {
-                    return this.columnInfo_Send;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Info_PagesColumn {
-                get {
-                    return this.columnInfo_Pages;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Page_AmtColumn {
-                get {
-                    return this.columnPage_Amt;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Total_AmtColumn {
-                get {
-                    return this.columnTotal_Amt;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Reject_DateColumn {
-                get {
-                    return this.columnReject_Date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SectionColumn {
-                get {
-                    return this.columnSection;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReasonsColumn {
-                get {
-                    return this.columnReasons;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FileClosureDateColumn {
-                get {
-                    return this.columnFileClosureDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AuthorityColumn {
-                get {
-                    return this.columnAuthority;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AppealNoFirstAppealColumn {
-                get {
-                    return this.columnAppealNoFirstAppeal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AppealDateFirstAppealColumn {
-                get {
-                    return this.columnAppealDateFirstAppeal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Order_AuthorityColumn {
-                get {
-                    return this.columnOrder_Authority;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FileClosureDateFirstAppealColumn {
-                get {
-                    return this.columnFileClosureDateFirstAppeal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Letteer_Recvd_Date_commissionerColumn {
-                get {
-                    return this.columnLetteer_Recvd_Date_commissioner;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AppealNoSecondAppealColumn {
-                get {
-                    return this.columnAppealNoSecondAppeal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ApplicationNameSecondAppealColumn {
-                get {
-                    return this.columnApplicationNameSecondAppeal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AddressSecondAppealColumn {
-                get {
-                    return this.columnAddressSecondAppeal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AppealDateSecondAppealColumn {
-                get {
-                    return this.columnAppealDateSecondAppeal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Remarks_SentTo_CommissionColumn {
-                get {
-                    return this.columnRemarks_SentTo_Commission;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Remarks_Send_DateColumn {
-                get {
-                    return this.columnRemarks_Send_Date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FileClosureDateSecondAppealColumn {
-                get {
-                    return this.columnFileClosureDateSecondAppeal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PIO1Row this[int index] {
-                get {
-                    return ((PIO1Row)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PIO1RowChangeEventHandler PIO1RowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PIO1RowChangeEventHandler PIO1RowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PIO1RowChangeEventHandler PIO1RowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PIO1RowChangeEventHandler PIO1RowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddPIO1Row(PIO1Row row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PIO1Row AddPIO1Row(
-                        int FileNo, 
-                        string ApplicantName, 
-                        System.DateTime ApplicationDate, 
-                        string ApplicantAddress, 
-                        System.DateTime Application_Received_Actual_Date, 
-                        bool Appl_BPL, 
-                        string Sub_Info_Asked, 
-                        string Recvd_Sata_Mandal, 
-                        System.DateTime Recvd_Date, 
-                        string Information, 
-                        decimal Recvd_Fees, 
-                        string Recvd_Fees_Mode, 
-                        System.DateTime Last_Date_Reply, 
-                        bool Info_Send, 
-                        int Info_Pages, 
-                        decimal Page_Amt, 
-                        decimal Total_Amt, 
-                        System.DateTime Reject_Date, 
-                        string Section, 
-                        string Reasons, 
-                        System.DateTime FileClosureDate, 
-                        string Authority, 
-                        int AppealNoFirstAppeal, 
-                        System.DateTime AppealDateFirstAppeal, 
-                        int Order_Authority, 
-                        System.DateTime FileClosureDateFirstAppeal, 
-                        System.DateTime Letteer_Recvd_Date_commissioner, 
-                        int AppealNoSecondAppeal, 
-                        string ApplicationNameSecondAppeal, 
-                        string AddressSecondAppeal, 
-                        System.DateTime AppealDateSecondAppeal, 
-                        string Remarks_SentTo_Commission, 
-                        System.DateTime Remarks_Send_Date, 
-                        System.DateTime FileClosureDateSecondAppeal) {
-                PIO1Row rowPIO1Row = ((PIO1Row)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        FileNo,
-                        ApplicantName,
-                        ApplicationDate,
-                        ApplicantAddress,
-                        Application_Received_Actual_Date,
-                        Appl_BPL,
-                        Sub_Info_Asked,
-                        Recvd_Sata_Mandal,
-                        Recvd_Date,
-                        Information,
-                        Recvd_Fees,
-                        Recvd_Fees_Mode,
-                        Last_Date_Reply,
-                        Info_Send,
-                        Info_Pages,
-                        Page_Amt,
-                        Total_Amt,
-                        Reject_Date,
-                        Section,
-                        Reasons,
-                        FileClosureDate,
-                        Authority,
-                        AppealNoFirstAppeal,
-                        AppealDateFirstAppeal,
-                        Order_Authority,
-                        FileClosureDateFirstAppeal,
-                        Letteer_Recvd_Date_commissioner,
-                        AppealNoSecondAppeal,
-                        ApplicationNameSecondAppeal,
-                        AddressSecondAppeal,
-                        AppealDateSecondAppeal,
-                        Remarks_SentTo_Commission,
-                        Remarks_Send_Date,
-                        FileClosureDateSecondAppeal};
-                rowPIO1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPIO1Row);
-                return rowPIO1Row;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PIO1Row FindBySrNo(int SrNo) {
-                return ((PIO1Row)(this.Rows.Find(new object[] {
-                            SrNo})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                PIO1DataTable cln = ((PIO1DataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new PIO1DataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnSrNo = base.Columns["SrNo"];
-                this.columnFileNo = base.Columns["FileNo"];
-                this.columnApplicantName = base.Columns["ApplicantName"];
-                this.columnApplicationDate = base.Columns["ApplicationDate"];
-                this.columnApplicantAddress = base.Columns["ApplicantAddress"];
-                this.columnApplication_Received_Actual_Date = base.Columns["Application_Received_Actual_Date"];
-                this.columnAppl_BPL = base.Columns["Appl_BPL"];
-                this.columnSub_Info_Asked = base.Columns["Sub_Info_Asked"];
-                this.columnRecvd_Sata_Mandal = base.Columns["Recvd_Sata_Mandal"];
-                this.columnRecvd_Date = base.Columns["Recvd_Date"];
-                this.columnInformation = base.Columns["Information"];
-                this.columnRecvd_Fees = base.Columns["Recvd_Fees"];
-                this.columnRecvd_Fees_Mode = base.Columns["Recvd_Fees_Mode"];
-                this.columnLast_Date_Reply = base.Columns["Last_Date_Reply"];
-                this.columnInfo_Send = base.Columns["Info_Send"];
-                this.columnInfo_Pages = base.Columns["Info_Pages"];
-                this.columnPage_Amt = base.Columns["Page_Amt"];
-                this.columnTotal_Amt = base.Columns["Total_Amt"];
-                this.columnReject_Date = base.Columns["Reject_Date"];
-                this.columnSection = base.Columns["Section"];
-                this.columnReasons = base.Columns["Reasons"];
-                this.columnFileClosureDate = base.Columns["FileClosureDate"];
-                this.columnAuthority = base.Columns["Authority"];
-                this.columnAppealNoFirstAppeal = base.Columns["AppealNoFirstAppeal"];
-                this.columnAppealDateFirstAppeal = base.Columns["AppealDateFirstAppeal"];
-                this.columnOrder_Authority = base.Columns["Order_Authority"];
-                this.columnFileClosureDateFirstAppeal = base.Columns["FileClosureDateFirstAppeal"];
-                this.columnLetteer_Recvd_Date_commissioner = base.Columns["Letteer_Recvd_Date_commissioner"];
-                this.columnAppealNoSecondAppeal = base.Columns["AppealNoSecondAppeal"];
-                this.columnApplicationNameSecondAppeal = base.Columns["ApplicationNameSecondAppeal"];
-                this.columnAddressSecondAppeal = base.Columns["AddressSecondAppeal"];
-                this.columnAppealDateSecondAppeal = base.Columns["AppealDateSecondAppeal"];
-                this.columnRemarks_SentTo_Commission = base.Columns["Remarks_SentTo_Commission"];
-                this.columnRemarks_Send_Date = base.Columns["Remarks_Send_Date"];
-                this.columnFileClosureDateSecondAppeal = base.Columns["FileClosureDateSecondAppeal"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnSrNo = new global::System.Data.DataColumn("SrNo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSrNo);
-                this.columnFileNo = new global::System.Data.DataColumn("FileNo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFileNo);
-                this.columnApplicantName = new global::System.Data.DataColumn("ApplicantName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApplicantName);
-                this.columnApplicationDate = new global::System.Data.DataColumn("ApplicationDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApplicationDate);
-                this.columnApplicantAddress = new global::System.Data.DataColumn("ApplicantAddress", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApplicantAddress);
-                this.columnApplication_Received_Actual_Date = new global::System.Data.DataColumn("Application_Received_Actual_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApplication_Received_Actual_Date);
-                this.columnAppl_BPL = new global::System.Data.DataColumn("Appl_BPL", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAppl_BPL);
-                this.columnSub_Info_Asked = new global::System.Data.DataColumn("Sub_Info_Asked", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSub_Info_Asked);
-                this.columnRecvd_Sata_Mandal = new global::System.Data.DataColumn("Recvd_Sata_Mandal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecvd_Sata_Mandal);
-                this.columnRecvd_Date = new global::System.Data.DataColumn("Recvd_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecvd_Date);
-                this.columnInformation = new global::System.Data.DataColumn("Information", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInformation);
-                this.columnRecvd_Fees = new global::System.Data.DataColumn("Recvd_Fees", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecvd_Fees);
-                this.columnRecvd_Fees_Mode = new global::System.Data.DataColumn("Recvd_Fees_Mode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecvd_Fees_Mode);
-                this.columnLast_Date_Reply = new global::System.Data.DataColumn("Last_Date_Reply", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLast_Date_Reply);
-                this.columnInfo_Send = new global::System.Data.DataColumn("Info_Send", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInfo_Send);
-                this.columnInfo_Pages = new global::System.Data.DataColumn("Info_Pages", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInfo_Pages);
-                this.columnPage_Amt = new global::System.Data.DataColumn("Page_Amt", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPage_Amt);
-                this.columnTotal_Amt = new global::System.Data.DataColumn("Total_Amt", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Amt);
-                this.columnReject_Date = new global::System.Data.DataColumn("Reject_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReject_Date);
-                this.columnSection = new global::System.Data.DataColumn("Section", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSection);
-                this.columnReasons = new global::System.Data.DataColumn("Reasons", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReasons);
-                this.columnFileClosureDate = new global::System.Data.DataColumn("FileClosureDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFileClosureDate);
-                this.columnAuthority = new global::System.Data.DataColumn("Authority", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAuthority);
-                this.columnAppealNoFirstAppeal = new global::System.Data.DataColumn("AppealNoFirstAppeal", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAppealNoFirstAppeal);
-                this.columnAppealDateFirstAppeal = new global::System.Data.DataColumn("AppealDateFirstAppeal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAppealDateFirstAppeal);
-                this.columnOrder_Authority = new global::System.Data.DataColumn("Order_Authority", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrder_Authority);
-                this.columnFileClosureDateFirstAppeal = new global::System.Data.DataColumn("FileClosureDateFirstAppeal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFileClosureDateFirstAppeal);
-                this.columnLetteer_Recvd_Date_commissioner = new global::System.Data.DataColumn("Letteer_Recvd_Date_commissioner", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLetteer_Recvd_Date_commissioner);
-                this.columnAppealNoSecondAppeal = new global::System.Data.DataColumn("AppealNoSecondAppeal", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAppealNoSecondAppeal);
-                this.columnApplicationNameSecondAppeal = new global::System.Data.DataColumn("ApplicationNameSecondAppeal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApplicationNameSecondAppeal);
-                this.columnAddressSecondAppeal = new global::System.Data.DataColumn("AddressSecondAppeal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddressSecondAppeal);
-                this.columnAppealDateSecondAppeal = new global::System.Data.DataColumn("AppealDateSecondAppeal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAppealDateSecondAppeal);
-                this.columnRemarks_SentTo_Commission = new global::System.Data.DataColumn("Remarks_SentTo_Commission", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRemarks_SentTo_Commission);
-                this.columnRemarks_Send_Date = new global::System.Data.DataColumn("Remarks_Send_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRemarks_Send_Date);
-                this.columnFileClosureDateSecondAppeal = new global::System.Data.DataColumn("FileClosureDateSecondAppeal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFileClosureDateSecondAppeal);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnSrNo}, true));
-                this.columnSrNo.AutoIncrement = true;
-                this.columnSrNo.AutoIncrementSeed = -1;
-                this.columnSrNo.AutoIncrementStep = -1;
-                this.columnSrNo.AllowDBNull = false;
-                this.columnSrNo.ReadOnly = true;
-                this.columnSrNo.Unique = true;
-                this.columnApplicantName.MaxLength = 200;
-                this.columnApplicationDate.AllowDBNull = false;
-                this.columnApplicantAddress.MaxLength = 2147483647;
-                this.columnSub_Info_Asked.AllowDBNull = false;
-                this.columnSub_Info_Asked.MaxLength = 100;
-                this.columnRecvd_Sata_Mandal.MaxLength = 100;
-                this.columnInformation.MaxLength = 300;
-                this.columnRecvd_Fees.AllowDBNull = false;
-                this.columnRecvd_Fees_Mode.AllowDBNull = false;
-                this.columnRecvd_Fees_Mode.MaxLength = 50;
-                this.columnLast_Date_Reply.AllowDBNull = false;
-                this.columnInfo_Send.AllowDBNull = false;
-                this.columnInfo_Pages.AllowDBNull = false;
-                this.columnPage_Amt.AllowDBNull = false;
-                this.columnTotal_Amt.AllowDBNull = false;
-                this.columnReject_Date.AllowDBNull = false;
-                this.columnSection.AllowDBNull = false;
-                this.columnSection.MaxLength = 50;
-                this.columnReasons.AllowDBNull = false;
-                this.columnReasons.MaxLength = 2147483647;
-                this.columnAuthority.AllowDBNull = false;
-                this.columnAuthority.MaxLength = 200;
-                this.columnOrder_Authority.AllowDBNull = false;
-                this.columnApplicationNameSecondAppeal.AllowDBNull = false;
-                this.columnApplicationNameSecondAppeal.MaxLength = 200;
-                this.columnAddressSecondAppeal.AllowDBNull = false;
-                this.columnAddressSecondAppeal.MaxLength = 2147483647;
-                this.columnRemarks_SentTo_Commission.AllowDBNull = false;
-                this.columnRemarks_SentTo_Commission.MaxLength = 500;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PIO1Row NewPIO1Row() {
-                return ((PIO1Row)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PIO1Row(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(PIO1Row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.PIO1RowChanged != null)) {
-                    this.PIO1RowChanged(this, new PIO1RowChangeEvent(((PIO1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.PIO1RowChanging != null)) {
-                    this.PIO1RowChanging(this, new PIO1RowChangeEvent(((PIO1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.PIO1RowDeleted != null)) {
-                    this.PIO1RowDeleted(this, new PIO1RowChangeEvent(((PIO1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.PIO1RowDeleting != null)) {
-                    this.PIO1RowDeleting(this, new PIO1RowChangeEvent(((PIO1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovePIO1Row(PIO1Row row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PIO ds = new PIO();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PIO1DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2481,50 +1571,6 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Recvd_Fees1 {
-                get {
-                    return ((decimal)(this[this.tablePIO.Recvd_Fees1Column]));
-                }
-                set {
-                    this[this.tablePIO.Recvd_Fees1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Page_Amt1 {
-                get {
-                    return ((decimal)(this[this.tablePIO.Page_Amt1Column]));
-                }
-                set {
-                    this[this.tablePIO.Page_Amt1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Total_Amt1 {
-                get {
-                    return ((decimal)(this[this.tablePIO.Total_Amt1Column]));
-                }
-                set {
-                    this[this.tablePIO.Total_Amt1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Order_Authority1 {
-                get {
-                    return ((int)(this[this.tablePIO.Order_Authority1Column]));
-                }
-                set {
-                    this[this.tablePIO.Order_Authority1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFileNoNull() {
                 return this.IsNull(this.tablePIO.FileNoColumn);
             }
@@ -2729,697 +1775,6 @@ namespace IGRSS.DataAccessLayer {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class PIO1Row : global::System.Data.DataRow {
-            
-            private PIO1DataTable tablePIO1;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal PIO1Row(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablePIO1 = ((PIO1DataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SrNo {
-                get {
-                    return ((int)(this[this.tablePIO1.SrNoColumn]));
-                }
-                set {
-                    this[this.tablePIO1.SrNoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int FileNo {
-                get {
-                    try {
-                        return ((int)(this[this.tablePIO1.FileNoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FileNo\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.FileNoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ApplicantName {
-                get {
-                    try {
-                        return ((string)(this[this.tablePIO1.ApplicantNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ApplicantName\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.ApplicantNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ApplicationDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tablePIO1.ApplicationDateColumn]));
-                }
-                set {
-                    this[this.tablePIO1.ApplicationDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ApplicantAddress {
-                get {
-                    try {
-                        return ((string)(this[this.tablePIO1.ApplicantAddressColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ApplicantAddress\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.ApplicantAddressColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Application_Received_Actual_Date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.Application_Received_Actual_DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Application_Received_Actual_Date\' in table \'PIO1\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.Application_Received_Actual_DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Appl_BPL {
-                get {
-                    try {
-                        return ((bool)(this[this.tablePIO1.Appl_BPLColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Appl_BPL\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.Appl_BPLColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Sub_Info_Asked {
-                get {
-                    return ((string)(this[this.tablePIO1.Sub_Info_AskedColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Sub_Info_AskedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Recvd_Sata_Mandal {
-                get {
-                    try {
-                        return ((string)(this[this.tablePIO1.Recvd_Sata_MandalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Recvd_Sata_Mandal\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.Recvd_Sata_MandalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Recvd_Date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.Recvd_DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Recvd_Date\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.Recvd_DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Information {
-                get {
-                    try {
-                        return ((string)(this[this.tablePIO1.InformationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Information\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.InformationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Recvd_Fees {
-                get {
-                    return ((decimal)(this[this.tablePIO1.Recvd_FeesColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Recvd_FeesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Recvd_Fees_Mode {
-                get {
-                    return ((string)(this[this.tablePIO1.Recvd_Fees_ModeColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Recvd_Fees_ModeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Last_Date_Reply {
-                get {
-                    return ((global::System.DateTime)(this[this.tablePIO1.Last_Date_ReplyColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Last_Date_ReplyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Info_Send {
-                get {
-                    return ((bool)(this[this.tablePIO1.Info_SendColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Info_SendColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Info_Pages {
-                get {
-                    return ((int)(this[this.tablePIO1.Info_PagesColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Info_PagesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Page_Amt {
-                get {
-                    return ((decimal)(this[this.tablePIO1.Page_AmtColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Page_AmtColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Total_Amt {
-                get {
-                    return ((decimal)(this[this.tablePIO1.Total_AmtColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Total_AmtColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Reject_Date {
-                get {
-                    return ((global::System.DateTime)(this[this.tablePIO1.Reject_DateColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Reject_DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Section {
-                get {
-                    return ((string)(this[this.tablePIO1.SectionColumn]));
-                }
-                set {
-                    this[this.tablePIO1.SectionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Reasons {
-                get {
-                    return ((string)(this[this.tablePIO1.ReasonsColumn]));
-                }
-                set {
-                    this[this.tablePIO1.ReasonsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime FileClosureDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.FileClosureDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FileClosureDate\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.FileClosureDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Authority {
-                get {
-                    return ((string)(this[this.tablePIO1.AuthorityColumn]));
-                }
-                set {
-                    this[this.tablePIO1.AuthorityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int AppealNoFirstAppeal {
-                get {
-                    try {
-                        return ((int)(this[this.tablePIO1.AppealNoFirstAppealColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AppealNoFirstAppeal\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.AppealNoFirstAppealColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime AppealDateFirstAppeal {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.AppealDateFirstAppealColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AppealDateFirstAppeal\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.AppealDateFirstAppealColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Order_Authority {
-                get {
-                    return ((int)(this[this.tablePIO1.Order_AuthorityColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Order_AuthorityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime FileClosureDateFirstAppeal {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.FileClosureDateFirstAppealColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FileClosureDateFirstAppeal\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.FileClosureDateFirstAppealColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Letteer_Recvd_Date_commissioner {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.Letteer_Recvd_Date_commissionerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Letteer_Recvd_Date_commissioner\' in table \'PIO1\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.Letteer_Recvd_Date_commissionerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int AppealNoSecondAppeal {
-                get {
-                    try {
-                        return ((int)(this[this.tablePIO1.AppealNoSecondAppealColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AppealNoSecondAppeal\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.AppealNoSecondAppealColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ApplicationNameSecondAppeal {
-                get {
-                    return ((string)(this[this.tablePIO1.ApplicationNameSecondAppealColumn]));
-                }
-                set {
-                    this[this.tablePIO1.ApplicationNameSecondAppealColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AddressSecondAppeal {
-                get {
-                    return ((string)(this[this.tablePIO1.AddressSecondAppealColumn]));
-                }
-                set {
-                    this[this.tablePIO1.AddressSecondAppealColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime AppealDateSecondAppeal {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.AppealDateSecondAppealColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AppealDateSecondAppeal\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.AppealDateSecondAppealColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Remarks_SentTo_Commission {
-                get {
-                    return ((string)(this[this.tablePIO1.Remarks_SentTo_CommissionColumn]));
-                }
-                set {
-                    this[this.tablePIO1.Remarks_SentTo_CommissionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Remarks_Send_Date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.Remarks_Send_DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Remarks_Send_Date\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.Remarks_Send_DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime FileClosureDateSecondAppeal {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePIO1.FileClosureDateSecondAppealColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FileClosureDateSecondAppeal\' in table \'PIO1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePIO1.FileClosureDateSecondAppealColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFileNoNull() {
-                return this.IsNull(this.tablePIO1.FileNoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFileNoNull() {
-                this[this.tablePIO1.FileNoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsApplicantNameNull() {
-                return this.IsNull(this.tablePIO1.ApplicantNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetApplicantNameNull() {
-                this[this.tablePIO1.ApplicantNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsApplicantAddressNull() {
-                return this.IsNull(this.tablePIO1.ApplicantAddressColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetApplicantAddressNull() {
-                this[this.tablePIO1.ApplicantAddressColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsApplication_Received_Actual_DateNull() {
-                return this.IsNull(this.tablePIO1.Application_Received_Actual_DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetApplication_Received_Actual_DateNull() {
-                this[this.tablePIO1.Application_Received_Actual_DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAppl_BPLNull() {
-                return this.IsNull(this.tablePIO1.Appl_BPLColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAppl_BPLNull() {
-                this[this.tablePIO1.Appl_BPLColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRecvd_Sata_MandalNull() {
-                return this.IsNull(this.tablePIO1.Recvd_Sata_MandalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRecvd_Sata_MandalNull() {
-                this[this.tablePIO1.Recvd_Sata_MandalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRecvd_DateNull() {
-                return this.IsNull(this.tablePIO1.Recvd_DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRecvd_DateNull() {
-                this[this.tablePIO1.Recvd_DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsInformationNull() {
-                return this.IsNull(this.tablePIO1.InformationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetInformationNull() {
-                this[this.tablePIO1.InformationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFileClosureDateNull() {
-                return this.IsNull(this.tablePIO1.FileClosureDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFileClosureDateNull() {
-                this[this.tablePIO1.FileClosureDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAppealNoFirstAppealNull() {
-                return this.IsNull(this.tablePIO1.AppealNoFirstAppealColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAppealNoFirstAppealNull() {
-                this[this.tablePIO1.AppealNoFirstAppealColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAppealDateFirstAppealNull() {
-                return this.IsNull(this.tablePIO1.AppealDateFirstAppealColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAppealDateFirstAppealNull() {
-                this[this.tablePIO1.AppealDateFirstAppealColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFileClosureDateFirstAppealNull() {
-                return this.IsNull(this.tablePIO1.FileClosureDateFirstAppealColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFileClosureDateFirstAppealNull() {
-                this[this.tablePIO1.FileClosureDateFirstAppealColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLetteer_Recvd_Date_commissionerNull() {
-                return this.IsNull(this.tablePIO1.Letteer_Recvd_Date_commissionerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLetteer_Recvd_Date_commissionerNull() {
-                this[this.tablePIO1.Letteer_Recvd_Date_commissionerColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAppealNoSecondAppealNull() {
-                return this.IsNull(this.tablePIO1.AppealNoSecondAppealColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAppealNoSecondAppealNull() {
-                this[this.tablePIO1.AppealNoSecondAppealColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAppealDateSecondAppealNull() {
-                return this.IsNull(this.tablePIO1.AppealDateSecondAppealColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAppealDateSecondAppealNull() {
-                this[this.tablePIO1.AppealDateSecondAppealColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRemarks_Send_DateNull() {
-                return this.IsNull(this.tablePIO1.Remarks_Send_DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRemarks_Send_DateNull() {
-                this[this.tablePIO1.Remarks_Send_DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFileClosureDateSecondAppealNull() {
-                return this.IsNull(this.tablePIO1.FileClosureDateSecondAppealColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFileClosureDateSecondAppealNull() {
-                this[this.tablePIO1.FileClosureDateSecondAppealColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3439,40 +1794,6 @@ namespace IGRSS.DataAccessLayer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PIORow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class PIO1RowChangeEvent : global::System.EventArgs {
-            
-            private PIO1Row eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PIO1RowChangeEvent(PIO1Row row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PIO1Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -3623,10 +1944,13 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             tableMapping.ColumnMappings.Add("Recvd_Sata-Mandal", "Recvd_Sata-Mandal");
             tableMapping.ColumnMappings.Add("Recvd_Date", "Recvd_Date");
             tableMapping.ColumnMappings.Add("Information", "Information");
+            tableMapping.ColumnMappings.Add("Recvd_Fees", "Recvd_Fees");
             tableMapping.ColumnMappings.Add("Recvd_Fees_Mode", "Recvd_Fees_Mode");
             tableMapping.ColumnMappings.Add("Last_Date_Reply", "Last_Date_Reply");
             tableMapping.ColumnMappings.Add("Info_Send", "Info_Send");
             tableMapping.ColumnMappings.Add("Info_Pages", "Info_Pages");
+            tableMapping.ColumnMappings.Add("Page_Amt", "Page_Amt");
+            tableMapping.ColumnMappings.Add("Total_Amt", "Total_Amt");
             tableMapping.ColumnMappings.Add("Reject_Date", "Reject_Date");
             tableMapping.ColumnMappings.Add("Section", "Section");
             tableMapping.ColumnMappings.Add("Reasons", "Reasons");
@@ -3634,6 +1958,7 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             tableMapping.ColumnMappings.Add("Authority", "Authority");
             tableMapping.ColumnMappings.Add("AppealNoFirstAppeal", "AppealNoFirstAppeal");
             tableMapping.ColumnMappings.Add("AppealDateFirstAppeal", "AppealDateFirstAppeal");
+            tableMapping.ColumnMappings.Add("Order_Authority", "Order_Authority");
             tableMapping.ColumnMappings.Add("FileClosureDateFirstAppeal", "FileClosureDateFirstAppeal");
             tableMapping.ColumnMappings.Add("Letteer_Recvd_Date_commissioner", "Letteer_Recvd_Date_commissioner");
             tableMapping.ColumnMappings.Add("AppealNoSecondAppeal", "AppealNoSecondAppeal");
@@ -3643,10 +1968,6 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             tableMapping.ColumnMappings.Add("Remarks_SentTo_Commission", "Remarks_SentTo_Commission");
             tableMapping.ColumnMappings.Add("Remarks_Send_Date", "Remarks_Send_Date");
             tableMapping.ColumnMappings.Add("FileClosureDateSecondAppeal", "FileClosureDateSecondAppeal");
-            tableMapping.ColumnMappings.Add("Recvd_Fees", "Recvd_Fees1");
-            tableMapping.ColumnMappings.Add("Page_Amt", "Page_Amt1");
-            tableMapping.ColumnMappings.Add("Total_Amt", "Total_Amt1");
-            tableMapping.ColumnMappings.Add("Order_Authority", "Order_Authority1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -3704,13 +2025,13 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Information", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Information", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees_Mode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees_Mode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Date_Reply", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date_Reply", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Info_Send", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Send", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Info_Pages", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Pages", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Page_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Page_Amt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_Amt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reject_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reject_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Section", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Section", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3720,7 +2041,7 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealDateFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_Authority", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3773,13 +2094,13 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Sata-Mandal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Information", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees_Mode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees_Mode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Date_Reply", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date_Reply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Info_Send", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Send", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Info_Pages", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Pages", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Page_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Page_Amt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Amt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reject_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reject_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Section", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Section", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reasons", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reasons", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3787,7 +2108,7 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Authority", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNoSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3871,13 +2192,13 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Sata-Mandal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Information", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees_Mode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees_Mode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Date_Reply", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date_Reply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Info_Send", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Send", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Info_Pages", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Pages", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Page_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Page_Amt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Amt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reject_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reject_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Section", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Section", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reasons", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reasons", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3885,7 +2206,7 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Authority", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNoSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3912,13 +2233,13 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Information", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Information", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees_Mode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees_Mode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Date_Reply", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date_Reply", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Info_Send", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Send", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Info_Pages", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Pages", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Page_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Page_Amt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_Amt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reject_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reject_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Section", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Section", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3928,7 +2249,7 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealDateFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_Authority", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3956,7 +2277,7 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        SrNo, FileNo, ApplicantName, ApplicationDate, ApplicantAddress, Application_Received_Actual_Date, Appl_BPL, Sub_Info_Asked, [Recvd_Sata-Mandal], Recvd_Date, 
@@ -3966,47 +2287,6 @@ namespace IGRSS.DataAccessLayer.PIOTableAdapters {
                          FileClosureDateSecondAppeal
 FROM            dbo.PIO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT AddressSecondAppeal, AppealDateFirstAppeal, AppealDateSecondAppeal, Appeal" +
-                "NoFirstAppeal, AppealNoSecondAppeal, Appl_BPL, ApplicantAddress, ApplicantName, " +
-                "ApplicationDate, ApplicationNameSecondAppeal, Application_Received_Actual_Date, " +
-                "Authority, FileClosureDate, FileClosureDateFirstAppeal, FileClosureDateSecondApp" +
-                "eal, FileNo, Info_Pages, Info_Send, Information, Last_Date_Reply, Letteer_Recvd_" +
-                "Date_commissioner, Order_Authority, Page_Amt, Reasons, Recvd_Date, Recvd_Fees, R" +
-                "ecvd_Fees_Mode, [Recvd_Sata-Mandal], Reject_Date, Remarks_Send_Date, Remarks_Sen" +
-                "tTo_Commission, Section, SrNo, Sub_Info_Asked, Total_Amt FROM dbo.PIO WHERE (CAS" +
-                "T(SrNo AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(FileNo AS varchar) " +
-                "LIKE \'%\' + @searchKeyWord + \'%\') OR (ApplicantName LIKE \'%\' + @searchKeyWord + \'" +
-                "%\') OR (CAST(ApplicationDate AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CA" +
-                "ST(ApplicantAddress AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(Applic" +
-                "ation_Received_Actual_Date AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST" +
-                "(Appl_BPL AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (Sub_Info_Asked LIKE \'" +
-                "%\' + @searchKeyWord + \'%\') OR ([Recvd_Sata-Mandal] LIKE \'%\' + @searchKeyWord + \'" +
-                "%\') OR (CAST(Recvd_Date AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(In" +
-                "formation AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(Recvd_Fees AS va" +
-                "rchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (Recvd_Fees_Mode LIKE \'%\' + @searchKe" +
-                "yWord + \'%\') OR (CAST(Last_Date_Reply AS varchar) LIKE \'%\' + @searchKeyWord + \'%" +
-                "\') OR (CAST(Info_Send AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(Info" +
-                "_Pages AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(Page_Amt AS varchar" +
-                ") LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(Total_Amt AS varchar) LIKE \'%\' + @se" +
-                "archKeyWord + \'%\') OR (CAST(Reject_Date AS varchar) LIKE \'%\' + @searchKeyWord + " +
-                "\'%\') OR (Section LIKE \'%\' + @searchKeyWord + \'%\') OR (Reasons LIKE \'%\' + @search" +
-                "KeyWord + \'%\') OR (CAST(FileClosureDate AS varchar) LIKE \'%\' + @searchKeyWord + " +
-                "\'%\') OR (Authority LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(AppealNoFirstAppeal" +
-                " AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(AppealDateFirstAppeal AS " +
-                "varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (Order_Authority LIKE \'%\' + @search" +
-                "KeyWord + \'%\') OR (CAST(FileClosureDateFirstAppeal AS varchar) LIKE \'%\' + @searc" +
-                "hKeyWord + \'%\') OR (CAST(Letteer_Recvd_Date_commissioner AS varchar) LIKE \'%\' + " +
-                "@searchKeyWord + \'%\') OR (CAST(AppealNoSecondAppeal AS varchar) LIKE \'%\' + @sear" +
-                "chKeyWord + \'%\') OR (ApplicationNameSecondAppeal LIKE \'%\' + @searchKeyWord + \'%\'" +
-                ") OR (AddressSecondAppeal LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(AppealDateSe" +
-                "condAppeal AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR (Remarks_SentTo_Commi" +
-                "ssion LIKE \'%\' + @searchKeyWord + \'%\') OR (CAST(Remarks_Send_Date AS varchar) LI" +
-                "KE \'%\' + @searchKeyWord + \'%\') OR (CAST(FileClosureDateSecondAppeal AS varchar) " +
-                "LIKE \'%\' + @searchKeyWord + \'%\')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4028,42 +2308,6 @@ FROM            dbo.PIO";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual PIO.PIODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PIO.PIODataTable dataTable = new PIO.PIODataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(PIO.PIODataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((searchKeyWord == null)) {
-                throw new global::System.ArgumentNullException("searchKeyWord");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PIO.PIODataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((searchKeyWord == null)) {
-                throw new global::System.ArgumentNullException("searchKeyWord");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
-            }
             PIO.PIODataTable dataTable = new PIO.PIODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4113,20 +2357,20 @@ FROM            dbo.PIO";
                     string p2, 
                     global::System.Nullable<global::System.DateTime> Original_Recvd_Date, 
                     string Original_Information, 
-                    decimal Original_Recvd_Fees, 
+                    int Original_Recvd_Fees, 
                     string Original_Recvd_Fees_Mode, 
                     System.DateTime Original_Last_Date_Reply, 
                     bool Original_Info_Send, 
                     int Original_Info_Pages, 
-                    decimal Original_Page_Amt, 
-                    decimal Original_Total_Amt, 
+                    int Original_Page_Amt, 
+                    int Original_Total_Amt, 
                     System.DateTime Original_Reject_Date, 
                     string Original_Section, 
                     global::System.Nullable<global::System.DateTime> Original_FileClosureDate, 
                     string Original_Authority, 
                     global::System.Nullable<int> Original_AppealNoFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Original_AppealDateFirstAppeal, 
-                    int Original_Order_Authority, 
+                    string Original_Order_Authority, 
                     global::System.Nullable<global::System.DateTime> Original_FileClosureDateFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Original_Letteer_Recvd_Date_commissioner, 
                     global::System.Nullable<int> Original_AppealNoSecondAppeal, 
@@ -4199,7 +2443,7 @@ FROM            dbo.PIO";
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Information));
             }
-            this.Adapter.DeleteCommand.Parameters[17].Value = ((decimal)(Original_Recvd_Fees));
+            this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(Original_Recvd_Fees));
             if ((Original_Recvd_Fees_Mode == null)) {
                 throw new global::System.ArgumentNullException("Original_Recvd_Fees_Mode");
             }
@@ -4209,8 +2453,8 @@ FROM            dbo.PIO";
             this.Adapter.DeleteCommand.Parameters[19].Value = ((System.DateTime)(Original_Last_Date_Reply));
             this.Adapter.DeleteCommand.Parameters[20].Value = ((bool)(Original_Info_Send));
             this.Adapter.DeleteCommand.Parameters[21].Value = ((int)(Original_Info_Pages));
-            this.Adapter.DeleteCommand.Parameters[22].Value = ((decimal)(Original_Page_Amt));
-            this.Adapter.DeleteCommand.Parameters[23].Value = ((decimal)(Original_Total_Amt));
+            this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_Page_Amt));
+            this.Adapter.DeleteCommand.Parameters[23].Value = ((int)(Original_Total_Amt));
             this.Adapter.DeleteCommand.Parameters[24].Value = ((System.DateTime)(Original_Reject_Date));
             if ((Original_Section == null)) {
                 throw new global::System.ArgumentNullException("Original_Section");
@@ -4248,7 +2492,12 @@ FROM            dbo.PIO";
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[33].Value = ((int)(Original_Order_Authority));
+            if ((Original_Order_Authority == null)) {
+                throw new global::System.ArgumentNullException("Original_Order_Authority");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((string)(Original_Order_Authority));
+            }
             if ((Original_FileClosureDateFirstAppeal.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((System.DateTime)(Original_FileClosureDateFirstAppeal.Value));
@@ -4340,13 +2589,13 @@ FROM            dbo.PIO";
                     string p1, 
                     global::System.Nullable<global::System.DateTime> Recvd_Date, 
                     string Information, 
-                    decimal Recvd_Fees, 
+                    int Recvd_Fees, 
                     string Recvd_Fees_Mode, 
                     System.DateTime Last_Date_Reply, 
                     bool Info_Send, 
                     int Info_Pages, 
-                    decimal Page_Amt, 
-                    decimal Total_Amt, 
+                    int Page_Amt, 
+                    int Total_Amt, 
                     System.DateTime Reject_Date, 
                     string Section, 
                     string Reasons, 
@@ -4354,7 +2603,7 @@ FROM            dbo.PIO";
                     string Authority, 
                     global::System.Nullable<int> AppealNoFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> AppealDateFirstAppeal, 
-                    int Order_Authority, 
+                    string Order_Authority, 
                     global::System.Nullable<global::System.DateTime> FileClosureDateFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Letteer_Recvd_Date_commissioner, 
                     global::System.Nullable<int> AppealNoSecondAppeal, 
@@ -4419,7 +2668,7 @@ FROM            dbo.PIO";
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Information));
             }
-            this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(Recvd_Fees));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(Recvd_Fees));
             if ((Recvd_Fees_Mode == null)) {
                 throw new global::System.ArgumentNullException("Recvd_Fees_Mode");
             }
@@ -4429,8 +2678,8 @@ FROM            dbo.PIO";
             this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(Last_Date_Reply));
             this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(Info_Send));
             this.Adapter.InsertCommand.Parameters[14].Value = ((int)(Info_Pages));
-            this.Adapter.InsertCommand.Parameters[15].Value = ((decimal)(Page_Amt));
-            this.Adapter.InsertCommand.Parameters[16].Value = ((decimal)(Total_Amt));
+            this.Adapter.InsertCommand.Parameters[15].Value = ((int)(Page_Amt));
+            this.Adapter.InsertCommand.Parameters[16].Value = ((int)(Total_Amt));
             this.Adapter.InsertCommand.Parameters[17].Value = ((System.DateTime)(Reject_Date));
             if ((Section == null)) {
                 throw new global::System.ArgumentNullException("Section");
@@ -4468,7 +2717,12 @@ FROM            dbo.PIO";
             else {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[24].Value = ((int)(Order_Authority));
+            if ((Order_Authority == null)) {
+                throw new global::System.ArgumentNullException("Order_Authority");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(Order_Authority));
+            }
             if ((FileClosureDateFirstAppeal.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[25].Value = ((System.DateTime)(FileClosureDateFirstAppeal.Value));
             }
@@ -4554,13 +2808,13 @@ FROM            dbo.PIO";
                     string p1, 
                     global::System.Nullable<global::System.DateTime> Recvd_Date, 
                     string Information, 
-                    decimal Recvd_Fees, 
+                    int Recvd_Fees, 
                     string Recvd_Fees_Mode, 
                     System.DateTime Last_Date_Reply, 
                     bool Info_Send, 
                     int Info_Pages, 
-                    decimal Page_Amt, 
-                    decimal Total_Amt, 
+                    int Page_Amt, 
+                    int Total_Amt, 
                     System.DateTime Reject_Date, 
                     string Section, 
                     string Reasons, 
@@ -4568,7 +2822,7 @@ FROM            dbo.PIO";
                     string Authority, 
                     global::System.Nullable<int> AppealNoFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> AppealDateFirstAppeal, 
-                    int Order_Authority, 
+                    string Order_Authority, 
                     global::System.Nullable<global::System.DateTime> FileClosureDateFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Letteer_Recvd_Date_commissioner, 
                     global::System.Nullable<int> AppealNoSecondAppeal, 
@@ -4588,20 +2842,20 @@ FROM            dbo.PIO";
                     string p2, 
                     global::System.Nullable<global::System.DateTime> Original_Recvd_Date, 
                     string Original_Information, 
-                    decimal Original_Recvd_Fees, 
+                    int Original_Recvd_Fees, 
                     string Original_Recvd_Fees_Mode, 
                     System.DateTime Original_Last_Date_Reply, 
                     bool Original_Info_Send, 
                     int Original_Info_Pages, 
-                    decimal Original_Page_Amt, 
-                    decimal Original_Total_Amt, 
+                    int Original_Page_Amt, 
+                    int Original_Total_Amt, 
                     System.DateTime Original_Reject_Date, 
                     string Original_Section, 
                     global::System.Nullable<global::System.DateTime> Original_FileClosureDate, 
                     string Original_Authority, 
                     global::System.Nullable<int> Original_AppealNoFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Original_AppealDateFirstAppeal, 
-                    int Original_Order_Authority, 
+                    string Original_Order_Authority, 
                     global::System.Nullable<global::System.DateTime> Original_FileClosureDateFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Original_Letteer_Recvd_Date_commissioner, 
                     global::System.Nullable<int> Original_AppealNoSecondAppeal, 
@@ -4666,7 +2920,7 @@ FROM            dbo.PIO";
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Information));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Recvd_Fees));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Recvd_Fees));
             if ((Recvd_Fees_Mode == null)) {
                 throw new global::System.ArgumentNullException("Recvd_Fees_Mode");
             }
@@ -4676,8 +2930,8 @@ FROM            dbo.PIO";
             this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Last_Date_Reply));
             this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Info_Send));
             this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Info_Pages));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Page_Amt));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Total_Amt));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Page_Amt));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Total_Amt));
             this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Reject_Date));
             if ((Section == null)) {
                 throw new global::System.ArgumentNullException("Section");
@@ -4715,7 +2969,12 @@ FROM            dbo.PIO";
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Order_Authority));
+            if ((Order_Authority == null)) {
+                throw new global::System.ArgumentNullException("Order_Authority");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Order_Authority));
+            }
             if ((FileClosureDateFirstAppeal.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(FileClosureDateFirstAppeal.Value));
             }
@@ -4834,7 +3093,7 @@ FROM            dbo.PIO";
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_Information));
             }
-            this.Adapter.UpdateCommand.Parameters[51].Value = ((decimal)(Original_Recvd_Fees));
+            this.Adapter.UpdateCommand.Parameters[51].Value = ((int)(Original_Recvd_Fees));
             if ((Original_Recvd_Fees_Mode == null)) {
                 throw new global::System.ArgumentNullException("Original_Recvd_Fees_Mode");
             }
@@ -4844,8 +3103,8 @@ FROM            dbo.PIO";
             this.Adapter.UpdateCommand.Parameters[53].Value = ((System.DateTime)(Original_Last_Date_Reply));
             this.Adapter.UpdateCommand.Parameters[54].Value = ((bool)(Original_Info_Send));
             this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(Original_Info_Pages));
-            this.Adapter.UpdateCommand.Parameters[56].Value = ((decimal)(Original_Page_Amt));
-            this.Adapter.UpdateCommand.Parameters[57].Value = ((decimal)(Original_Total_Amt));
+            this.Adapter.UpdateCommand.Parameters[56].Value = ((int)(Original_Page_Amt));
+            this.Adapter.UpdateCommand.Parameters[57].Value = ((int)(Original_Total_Amt));
             this.Adapter.UpdateCommand.Parameters[58].Value = ((System.DateTime)(Original_Reject_Date));
             if ((Original_Section == null)) {
                 throw new global::System.ArgumentNullException("Original_Section");
@@ -4883,7 +3142,12 @@ FROM            dbo.PIO";
                 this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[67].Value = ((int)(Original_Order_Authority));
+            if ((Original_Order_Authority == null)) {
+                throw new global::System.ArgumentNullException("Original_Order_Authority");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_Order_Authority));
+            }
             if ((Original_FileClosureDateFirstAppeal.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[69].Value = ((System.DateTime)(Original_FileClosureDateFirstAppeal.Value));
@@ -4976,13 +3240,13 @@ FROM            dbo.PIO";
                     string p1, 
                     global::System.Nullable<global::System.DateTime> Recvd_Date, 
                     string Information, 
-                    decimal Recvd_Fees, 
+                    int Recvd_Fees, 
                     string Recvd_Fees_Mode, 
                     System.DateTime Last_Date_Reply, 
                     bool Info_Send, 
                     int Info_Pages, 
-                    decimal Page_Amt, 
-                    decimal Total_Amt, 
+                    int Page_Amt, 
+                    int Total_Amt, 
                     System.DateTime Reject_Date, 
                     string Section, 
                     string Reasons, 
@@ -4990,7 +3254,7 @@ FROM            dbo.PIO";
                     string Authority, 
                     global::System.Nullable<int> AppealNoFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> AppealDateFirstAppeal, 
-                    int Order_Authority, 
+                    string Order_Authority, 
                     global::System.Nullable<global::System.DateTime> FileClosureDateFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Letteer_Recvd_Date_commissioner, 
                     global::System.Nullable<int> AppealNoSecondAppeal, 
@@ -5010,20 +3274,20 @@ FROM            dbo.PIO";
                     string p2, 
                     global::System.Nullable<global::System.DateTime> Original_Recvd_Date, 
                     string Original_Information, 
-                    decimal Original_Recvd_Fees, 
+                    int Original_Recvd_Fees, 
                     string Original_Recvd_Fees_Mode, 
                     System.DateTime Original_Last_Date_Reply, 
                     bool Original_Info_Send, 
                     int Original_Info_Pages, 
-                    decimal Original_Page_Amt, 
-                    decimal Original_Total_Amt, 
+                    int Original_Page_Amt, 
+                    int Original_Total_Amt, 
                     System.DateTime Original_Reject_Date, 
                     string Original_Section, 
                     global::System.Nullable<global::System.DateTime> Original_FileClosureDate, 
                     string Original_Authority, 
                     global::System.Nullable<int> Original_AppealNoFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Original_AppealDateFirstAppeal, 
-                    int Original_Order_Authority, 
+                    string Original_Order_Authority, 
                     global::System.Nullable<global::System.DateTime> Original_FileClosureDateFirstAppeal, 
                     global::System.Nullable<global::System.DateTime> Original_Letteer_Recvd_Date_commissioner, 
                     global::System.Nullable<int> Original_AppealNoSecondAppeal, 
@@ -5033,1565 +3297,6 @@ FROM            dbo.PIO";
                     global::System.Nullable<global::System.DateTime> Original_Remarks_Send_Date, 
                     global::System.Nullable<global::System.DateTime> Original_FileClosureDateSecondAppeal) {
             return this.Update(FileNo, ApplicantName, ApplicationDate, ApplicantAddress, Application_Received_Actual_Date, Appl_BPL, Sub_Info_Asked, p1, Recvd_Date, Information, Recvd_Fees, Recvd_Fees_Mode, Last_Date_Reply, Info_Send, Info_Pages, Page_Amt, Total_Amt, Reject_Date, Section, Reasons, FileClosureDate, Authority, AppealNoFirstAppeal, AppealDateFirstAppeal, Order_Authority, FileClosureDateFirstAppeal, Letteer_Recvd_Date_commissioner, AppealNoSecondAppeal, ApplicationNameSecondAppeal, AddressSecondAppeal, AppealDateSecondAppeal, Remarks_SentTo_Commission, Remarks_Send_Date, FileClosureDateSecondAppeal, Original_SrNo, Original_FileNo, Original_ApplicantName, Original_ApplicationDate, Original_Application_Received_Actual_Date, Original_Appl_BPL, Original_Sub_Info_Asked, p2, Original_Recvd_Date, Original_Information, Original_Recvd_Fees, Original_Recvd_Fees_Mode, Original_Last_Date_Reply, Original_Info_Send, Original_Info_Pages, Original_Page_Amt, Original_Total_Amt, Original_Reject_Date, Original_Section, Original_FileClosureDate, Original_Authority, Original_AppealNoFirstAppeal, Original_AppealDateFirstAppeal, Original_Order_Authority, Original_FileClosureDateFirstAppeal, Original_Letteer_Recvd_Date_commissioner, Original_AppealNoSecondAppeal, Original_ApplicationNameSecondAppeal, Original_AppealDateSecondAppeal, Original_Remarks_SentTo_Commission, Original_Remarks_Send_Date, Original_FileClosureDateSecondAppeal, Original_SrNo);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PIO1TableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public PIO1TableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PIO1";
-            tableMapping.ColumnMappings.Add("SrNo", "SrNo");
-            tableMapping.ColumnMappings.Add("FileNo", "FileNo");
-            tableMapping.ColumnMappings.Add("ApplicantName", "ApplicantName");
-            tableMapping.ColumnMappings.Add("ApplicationDate", "ApplicationDate");
-            tableMapping.ColumnMappings.Add("ApplicantAddress", "ApplicantAddress");
-            tableMapping.ColumnMappings.Add("Application_Received_Actual_Date", "Application_Received_Actual_Date");
-            tableMapping.ColumnMappings.Add("Appl_BPL", "Appl_BPL");
-            tableMapping.ColumnMappings.Add("Sub_Info_Asked", "Sub_Info_Asked");
-            tableMapping.ColumnMappings.Add("Recvd_Sata_Mandal", "Recvd_Sata_Mandal");
-            tableMapping.ColumnMappings.Add("Recvd_Date", "Recvd_Date");
-            tableMapping.ColumnMappings.Add("Information", "Information");
-            tableMapping.ColumnMappings.Add("Recvd_Fees", "Recvd_Fees");
-            tableMapping.ColumnMappings.Add("Recvd_Fees_Mode", "Recvd_Fees_Mode");
-            tableMapping.ColumnMappings.Add("Last_Date_Reply", "Last_Date_Reply");
-            tableMapping.ColumnMappings.Add("Info_Send", "Info_Send");
-            tableMapping.ColumnMappings.Add("Info_Pages", "Info_Pages");
-            tableMapping.ColumnMappings.Add("Page_Amt", "Page_Amt");
-            tableMapping.ColumnMappings.Add("Total_Amt", "Total_Amt");
-            tableMapping.ColumnMappings.Add("Reject_Date", "Reject_Date");
-            tableMapping.ColumnMappings.Add("Section", "Section");
-            tableMapping.ColumnMappings.Add("Reasons", "Reasons");
-            tableMapping.ColumnMappings.Add("FileClosureDate", "FileClosureDate");
-            tableMapping.ColumnMappings.Add("Authority", "Authority");
-            tableMapping.ColumnMappings.Add("AppealNoFirstAppeal", "AppealNoFirstAppeal");
-            tableMapping.ColumnMappings.Add("AppealDateFirstAppeal", "AppealDateFirstAppeal");
-            tableMapping.ColumnMappings.Add("Order_Authority", "Order_Authority");
-            tableMapping.ColumnMappings.Add("FileClosureDateFirstAppeal", "FileClosureDateFirstAppeal");
-            tableMapping.ColumnMappings.Add("Letteer_Recvd_Date_commissioner", "Letteer_Recvd_Date_commissioner");
-            tableMapping.ColumnMappings.Add("AppealNoSecondAppeal", "AppealNoSecondAppeal");
-            tableMapping.ColumnMappings.Add("ApplicationNameSecondAppeal", "ApplicationNameSecondAppeal");
-            tableMapping.ColumnMappings.Add("AddressSecondAppeal", "AddressSecondAppeal");
-            tableMapping.ColumnMappings.Add("AppealDateSecondAppeal", "AppealDateSecondAppeal");
-            tableMapping.ColumnMappings.Add("Remarks_SentTo_Commission", "Remarks_SentTo_Commission");
-            tableMapping.ColumnMappings.Add("Remarks_Send_Date", "Remarks_Send_Date");
-            tableMapping.ColumnMappings.Add("FileClosureDateSecondAppeal", "FileClosureDateSecondAppeal");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PIO] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_FileNo = 1" +
-                " AND [FileNo] IS NULL) OR ([FileNo] = @Original_FileNo)) AND ((@IsNull_Applicant" +
-                "Name = 1 AND [ApplicantName] IS NULL) OR ([ApplicantName] = @Original_ApplicantN" +
-                "ame)) AND ([ApplicationDate] = @Original_ApplicationDate) AND ((@IsNull_Applicat" +
-                "ion_Received_Actual_Date = 1 AND [Application_Received_Actual_Date] IS NULL) OR " +
-                "([Application_Received_Actual_Date] = @Original_Application_Received_Actual_Date" +
-                ")) AND ((@IsNull_Appl_BPL = 1 AND [Appl_BPL] IS NULL) OR ([Appl_BPL] = @Original" +
-                "_Appl_BPL)) AND ([Sub_Info_Asked] = @Original_Sub_Info_Asked) AND ((@IsNull_Recv" +
-                "d_Sata_Mandal = 1 AND [Recvd_Sata_Mandal] IS NULL) OR ([Recvd_Sata_Mandal] = @Or" +
-                "iginal_Recvd_Sata_Mandal)) AND ((@IsNull_Recvd_Date = 1 AND [Recvd_Date] IS NULL" +
-                ") OR ([Recvd_Date] = @Original_Recvd_Date)) AND ((@IsNull_Information = 1 AND [I" +
-                "nformation] IS NULL) OR ([Information] = @Original_Information)) AND ([Recvd_Fee" +
-                "s] = @Original_Recvd_Fees) AND ([Recvd_Fees_Mode] = @Original_Recvd_Fees_Mode) A" +
-                "ND ([Last_Date_Reply] = @Original_Last_Date_Reply) AND ([Info_Send] = @Original_" +
-                "Info_Send) AND ([Info_Pages] = @Original_Info_Pages) AND ([Page_Amt] = @Original" +
-                "_Page_Amt) AND ([Total_Amt] = @Original_Total_Amt) AND ([Reject_Date] = @Origina" +
-                "l_Reject_Date) AND ([Section] = @Original_Section) AND ((@IsNull_FileClosureDate" +
-                " = 1 AND [FileClosureDate] IS NULL) OR ([FileClosureDate] = @Original_FileClosur" +
-                "eDate)) AND ([Authority] = @Original_Authority) AND ((@IsNull_AppealNoFirstAppea" +
-                "l = 1 AND [AppealNoFirstAppeal] IS NULL) OR ([AppealNoFirstAppeal] = @Original_A" +
-                "ppealNoFirstAppeal)) AND ((@IsNull_AppealDateFirstAppeal = 1 AND [AppealDateFirs" +
-                "tAppeal] IS NULL) OR ([AppealDateFirstAppeal] = @Original_AppealDateFirstAppeal)" +
-                ") AND ([Order_Authority] = @Original_Order_Authority) AND ((@IsNull_FileClosureD" +
-                "ateFirstAppeal = 1 AND [FileClosureDateFirstAppeal] IS NULL) OR ([FileClosureDat" +
-                "eFirstAppeal] = @Original_FileClosureDateFirstAppeal)) AND ((@IsNull_Letteer_Rec" +
-                "vd_Date_commissioner = 1 AND [Letteer_Recvd_Date_commissioner] IS NULL) OR ([Let" +
-                "teer_Recvd_Date_commissioner] = @Original_Letteer_Recvd_Date_commissioner)) AND " +
-                "((@IsNull_AppealNoSecondAppeal = 1 AND [AppealNoSecondAppeal] IS NULL) OR ([Appe" +
-                "alNoSecondAppeal] = @Original_AppealNoSecondAppeal)) AND ([ApplicationNameSecond" +
-                "Appeal] = @Original_ApplicationNameSecondAppeal) AND ((@IsNull_AppealDateSecondA" +
-                "ppeal = 1 AND [AppealDateSecondAppeal] IS NULL) OR ([AppealDateSecondAppeal] = @" +
-                "Original_AppealDateSecondAppeal)) AND ([Remarks_SentTo_Commission] = @Original_R" +
-                "emarks_SentTo_Commission) AND ((@IsNull_Remarks_Send_Date = 1 AND [Remarks_Send_" +
-                "Date] IS NULL) OR ([Remarks_Send_Date] = @Original_Remarks_Send_Date)) AND ((@Is" +
-                "Null_FileClosureDateSecondAppeal = 1 AND [FileClosureDateSecondAppeal] IS NULL) " +
-                "OR ([FileClosureDateSecondAppeal] = @Original_FileClosureDateSecondAppeal)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ApplicantName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicantName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ApplicantName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicantName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ApplicationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Application_Received_Actual_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Application_Received_Actual_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Application_Received_Actual_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Application_Received_Actual_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Appl_BPL", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_BPL", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Appl_BPL", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_BPL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sub_Info_Asked", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Info_Asked", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Recvd_Sata_Mandal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Sata_Mandal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Sata_Mandal", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Sata_Mandal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Recvd_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Information", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Information", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees_Mode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees_Mode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Date_Reply", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date_Reply", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Info_Send", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Send", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Info_Pages", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Pages", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Page_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reject_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reject_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Section", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Section", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileClosureDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Authority", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealDateFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_Authority", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealNoSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoSecondAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealNoSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoSecondAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ApplicationNameSecondAppeal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNameSecondAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealDateSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateSecondAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealDateSecondAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateSecondAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Remarks_SentTo_Commission", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_SentTo_Commission", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Remarks_Send_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_Send_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Remarks_Send_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_Send_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDateSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateSecondAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileClosureDateSecondAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateSecondAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PIO] ([FileNo], [ApplicantName], [ApplicationDate], [Applicant" +
-                "Address], [Application_Received_Actual_Date], [Appl_BPL], [Sub_Info_Asked], [Rec" +
-                "vd_Sata_Mandal], [Recvd_Date], [Information], [Recvd_Fees], [Recvd_Fees_Mode], [" +
-                "Last_Date_Reply], [Info_Send], [Info_Pages], [Page_Amt], [Total_Amt], [Reject_Da" +
-                "te], [Section], [Reasons], [FileClosureDate], [Authority], [AppealNoFirstAppeal]" +
-                ", [AppealDateFirstAppeal], [Order_Authority], [FileClosureDateFirstAppeal], [Let" +
-                "teer_Recvd_Date_commissioner], [AppealNoSecondAppeal], [ApplicationNameSecondApp" +
-                "eal], [AddressSecondAppeal], [AppealDateSecondAppeal], [Remarks_SentTo_Commissio" +
-                "n], [Remarks_Send_Date], [FileClosureDateSecondAppeal]) VALUES (@FileNo, @Applic" +
-                "antName, @ApplicationDate, @ApplicantAddress, @Application_Received_Actual_Date," +
-                " @Appl_BPL, @Sub_Info_Asked, @Recvd_Sata_Mandal, @Recvd_Date, @Information, @Rec" +
-                "vd_Fees, @Recvd_Fees_Mode, @Last_Date_Reply, @Info_Send, @Info_Pages, @Page_Amt," +
-                " @Total_Amt, @Reject_Date, @Section, @Reasons, @FileClosureDate, @Authority, @Ap" +
-                "pealNoFirstAppeal, @AppealDateFirstAppeal, @Order_Authority, @FileClosureDateFir" +
-                "stAppeal, @Letteer_Recvd_Date_commissioner, @AppealNoSecondAppeal, @ApplicationN" +
-                "ameSecondAppeal, @AddressSecondAppeal, @AppealDateSecondAppeal, @Remarks_SentTo_" +
-                "Commission, @Remarks_Send_Date, @FileClosureDateSecondAppeal);\r\nSELECT SrNo, Fil" +
-                "eNo, ApplicantName, ApplicationDate, ApplicantAddress, Application_Received_Actu" +
-                "al_Date, Appl_BPL, Sub_Info_Asked, Recvd_Sata_Mandal, Recvd_Date, Information, R" +
-                "ecvd_Fees, Recvd_Fees_Mode, Last_Date_Reply, Info_Send, Info_Pages, Page_Amt, To" +
-                "tal_Amt, Reject_Date, Section, Reasons, FileClosureDate, Authority, AppealNoFirs" +
-                "tAppeal, AppealDateFirstAppeal, Order_Authority, FileClosureDateFirstAppeal, Let" +
-                "teer_Recvd_Date_commissioner, AppealNoSecondAppeal, ApplicationNameSecondAppeal," +
-                " AddressSecondAppeal, AppealDateSecondAppeal, Remarks_SentTo_Commission, Remarks" +
-                "_Send_Date, FileClosureDateSecondAppeal FROM dbo.PIO WHERE (SrNo = SCOPE_IDENTIT" +
-                "Y())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicantName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicantName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicantAddress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicantAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Application_Received_Actual_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Application_Received_Actual_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_BPL", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_BPL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sub_Info_Asked", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Info_Asked", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Sata_Mandal", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Sata_Mandal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Information", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees_Mode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees_Mode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Date_Reply", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date_Reply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Info_Send", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Send", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Info_Pages", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Pages", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Page_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reject_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reject_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Section", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Section", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reasons", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reasons", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileClosureDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Authority", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNoSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationNameSecondAppeal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNameSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressSecondAppeal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealDateSecondAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarks_SentTo_Commission", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_SentTo_Commission", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarks_Send_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_Send_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileClosureDateSecondAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PIO] SET [FileNo] = @FileNo, [ApplicantName] = @ApplicantName, [App" +
-                "licationDate] = @ApplicationDate, [ApplicantAddress] = @ApplicantAddress, [Appli" +
-                "cation_Received_Actual_Date] = @Application_Received_Actual_Date, [Appl_BPL] = @" +
-                "Appl_BPL, [Sub_Info_Asked] = @Sub_Info_Asked, [Recvd_Sata_Mandal] = @Recvd_Sata_" +
-                "Mandal, [Recvd_Date] = @Recvd_Date, [Information] = @Information, [Recvd_Fees] =" +
-                " @Recvd_Fees, [Recvd_Fees_Mode] = @Recvd_Fees_Mode, [Last_Date_Reply] = @Last_Da" +
-                "te_Reply, [Info_Send] = @Info_Send, [Info_Pages] = @Info_Pages, [Page_Amt] = @Pa" +
-                "ge_Amt, [Total_Amt] = @Total_Amt, [Reject_Date] = @Reject_Date, [Section] = @Sec" +
-                "tion, [Reasons] = @Reasons, [FileClosureDate] = @FileClosureDate, [Authority] = " +
-                "@Authority, [AppealNoFirstAppeal] = @AppealNoFirstAppeal, [AppealDateFirstAppeal" +
-                "] = @AppealDateFirstAppeal, [Order_Authority] = @Order_Authority, [FileClosureDa" +
-                "teFirstAppeal] = @FileClosureDateFirstAppeal, [Letteer_Recvd_Date_commissioner] " +
-                "= @Letteer_Recvd_Date_commissioner, [AppealNoSecondAppeal] = @AppealNoSecondAppe" +
-                "al, [ApplicationNameSecondAppeal] = @ApplicationNameSecondAppeal, [AddressSecond" +
-                "Appeal] = @AddressSecondAppeal, [AppealDateSecondAppeal] = @AppealDateSecondAppe" +
-                "al, [Remarks_SentTo_Commission] = @Remarks_SentTo_Commission, [Remarks_Send_Date" +
-                "] = @Remarks_Send_Date, [FileClosureDateSecondAppeal] = @FileClosureDateSecondAp" +
-                "peal WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_FileNo = 1 AND [FileNo] IS N" +
-                "ULL) OR ([FileNo] = @Original_FileNo)) AND ((@IsNull_ApplicantName = 1 AND [Appl" +
-                "icantName] IS NULL) OR ([ApplicantName] = @Original_ApplicantName)) AND ([Applic" +
-                "ationDate] = @Original_ApplicationDate) AND ((@IsNull_Application_Received_Actua" +
-                "l_Date = 1 AND [Application_Received_Actual_Date] IS NULL) OR ([Application_Rece" +
-                "ived_Actual_Date] = @Original_Application_Received_Actual_Date)) AND ((@IsNull_A" +
-                "ppl_BPL = 1 AND [Appl_BPL] IS NULL) OR ([Appl_BPL] = @Original_Appl_BPL)) AND ([" +
-                "Sub_Info_Asked] = @Original_Sub_Info_Asked) AND ((@IsNull_Recvd_Sata_Mandal = 1 " +
-                "AND [Recvd_Sata_Mandal] IS NULL) OR ([Recvd_Sata_Mandal] = @Original_Recvd_Sata_" +
-                "Mandal)) AND ((@IsNull_Recvd_Date = 1 AND [Recvd_Date] IS NULL) OR ([Recvd_Date]" +
-                " = @Original_Recvd_Date)) AND ((@IsNull_Information = 1 AND [Information] IS NUL" +
-                "L) OR ([Information] = @Original_Information)) AND ([Recvd_Fees] = @Original_Rec" +
-                "vd_Fees) AND ([Recvd_Fees_Mode] = @Original_Recvd_Fees_Mode) AND ([Last_Date_Rep" +
-                "ly] = @Original_Last_Date_Reply) AND ([Info_Send] = @Original_Info_Send) AND ([I" +
-                "nfo_Pages] = @Original_Info_Pages) AND ([Page_Amt] = @Original_Page_Amt) AND ([T" +
-                "otal_Amt] = @Original_Total_Amt) AND ([Reject_Date] = @Original_Reject_Date) AND" +
-                " ([Section] = @Original_Section) AND ((@IsNull_FileClosureDate = 1 AND [FileClos" +
-                "ureDate] IS NULL) OR ([FileClosureDate] = @Original_FileClosureDate)) AND ([Auth" +
-                "ority] = @Original_Authority) AND ((@IsNull_AppealNoFirstAppeal = 1 AND [AppealN" +
-                "oFirstAppeal] IS NULL) OR ([AppealNoFirstAppeal] = @Original_AppealNoFirstAppeal" +
-                ")) AND ((@IsNull_AppealDateFirstAppeal = 1 AND [AppealDateFirstAppeal] IS NULL) " +
-                "OR ([AppealDateFirstAppeal] = @Original_AppealDateFirstAppeal)) AND ([Order_Auth" +
-                "ority] = @Original_Order_Authority) AND ((@IsNull_FileClosureDateFirstAppeal = 1" +
-                " AND [FileClosureDateFirstAppeal] IS NULL) OR ([FileClosureDateFirstAppeal] = @O" +
-                "riginal_FileClosureDateFirstAppeal)) AND ((@IsNull_Letteer_Recvd_Date_commission" +
-                "er = 1 AND [Letteer_Recvd_Date_commissioner] IS NULL) OR ([Letteer_Recvd_Date_co" +
-                "mmissioner] = @Original_Letteer_Recvd_Date_commissioner)) AND ((@IsNull_AppealNo" +
-                "SecondAppeal = 1 AND [AppealNoSecondAppeal] IS NULL) OR ([AppealNoSecondAppeal] " +
-                "= @Original_AppealNoSecondAppeal)) AND ([ApplicationNameSecondAppeal] = @Origina" +
-                "l_ApplicationNameSecondAppeal) AND ((@IsNull_AppealDateSecondAppeal = 1 AND [App" +
-                "ealDateSecondAppeal] IS NULL) OR ([AppealDateSecondAppeal] = @Original_AppealDat" +
-                "eSecondAppeal)) AND ([Remarks_SentTo_Commission] = @Original_Remarks_SentTo_Comm" +
-                "ission) AND ((@IsNull_Remarks_Send_Date = 1 AND [Remarks_Send_Date] IS NULL) OR " +
-                "([Remarks_Send_Date] = @Original_Remarks_Send_Date)) AND ((@IsNull_FileClosureDa" +
-                "teSecondAppeal = 1 AND [FileClosureDateSecondAppeal] IS NULL) OR ([FileClosureDa" +
-                "teSecondAppeal] = @Original_FileClosureDateSecondAppeal)));\r\nSELECT SrNo, FileNo" +
-                ", ApplicantName, ApplicationDate, ApplicantAddress, Application_Received_Actual_" +
-                "Date, Appl_BPL, Sub_Info_Asked, Recvd_Sata_Mandal, Recvd_Date, Information, Recv" +
-                "d_Fees, Recvd_Fees_Mode, Last_Date_Reply, Info_Send, Info_Pages, Page_Amt, Total" +
-                "_Amt, Reject_Date, Section, Reasons, FileClosureDate, Authority, AppealNoFirstAp" +
-                "peal, AppealDateFirstAppeal, Order_Authority, FileClosureDateFirstAppeal, Lettee" +
-                "r_Recvd_Date_commissioner, AppealNoSecondAppeal, ApplicationNameSecondAppeal, Ad" +
-                "dressSecondAppeal, AppealDateSecondAppeal, Remarks_SentTo_Commission, Remarks_Se" +
-                "nd_Date, FileClosureDateSecondAppeal FROM dbo.PIO WHERE (SrNo = @SrNo)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicantName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicantName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicantAddress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicantAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Application_Received_Actual_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Application_Received_Actual_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_BPL", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_BPL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sub_Info_Asked", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Info_Asked", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Sata_Mandal", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Sata_Mandal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Information", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Recvd_Fees_Mode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees_Mode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Date_Reply", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date_Reply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Info_Send", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Send", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Info_Pages", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Pages", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Page_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reject_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reject_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Section", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Section", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reasons", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reasons", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileClosureDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Authority", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNoSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationNameSecondAppeal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNameSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressSecondAppeal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealDateSecondAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarks_SentTo_Commission", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_SentTo_Commission", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarks_Send_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_Send_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileClosureDateSecondAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateSecondAppeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ApplicantName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicantName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ApplicantName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicantName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ApplicationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Application_Received_Actual_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Application_Received_Actual_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Application_Received_Actual_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Application_Received_Actual_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Appl_BPL", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_BPL", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Appl_BPL", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_BPL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sub_Info_Asked", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Info_Asked", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Recvd_Sata_Mandal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Sata_Mandal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Sata_Mandal", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Sata_Mandal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Recvd_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Information", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Information", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Information", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Recvd_Fees_Mode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Recvd_Fees_Mode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Date_Reply", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date_Reply", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Info_Send", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Send", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Info_Pages", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Info_Pages", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Page_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Page_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_Amt", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Amt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reject_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reject_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Section", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Section", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileClosureDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Authority", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Authority", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealNoFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealDateFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_Authority", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Authority", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileClosureDateFirstAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateFirstAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Letteer_Recvd_Date_commissioner", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Letteer_Recvd_Date_commissioner", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealNoSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoSecondAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealNoSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNoSecondAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ApplicationNameSecondAppeal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNameSecondAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AppealDateSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateSecondAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppealDateSecondAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppealDateSecondAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Remarks_SentTo_Commission", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_SentTo_Commission", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Remarks_Send_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_Send_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Remarks_Send_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks_Send_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileClosureDateSecondAppeal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateSecondAppeal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileClosureDateSecondAppeal", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileClosureDateSecondAppeal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IGRSS.Properties.Settings.Default.IGRSS_FINALConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        SrNo, FileNo, ApplicantName, ApplicationDate, ApplicantAddress, Application_Received_Actual_Date, Appl_BPL, Sub_Info_Asked, Recvd_Sata_Mandal, Recvd_Date, 
-                         Information, Recvd_Fees, Recvd_Fees_Mode, Last_Date_Reply, Info_Send, Info_Pages, Page_Amt, Total_Amt, Reject_Date, Section, Reasons, FileClosureDate, 
-                         Authority, AppealNoFirstAppeal, AppealDateFirstAppeal, Order_Authority, FileClosureDateFirstAppeal, Letteer_Recvd_Date_commissioner, AppealNoSecondAppeal, 
-                         ApplicationNameSecondAppeal, AddressSecondAppeal, AppealDateSecondAppeal, Remarks_SentTo_Commission, Remarks_Send_Date, 
-                         FileClosureDateSecondAppeal
-FROM            dbo.PIO";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        SrNo, FileNo, ApplicantName, ApplicationDate, ApplicantAddress, App" +
-                "lication_Received_Actual_Date, Appl_BPL, Sub_Info_Asked, Recvd_Sata_Mandal, Recv" +
-                "d_Date, \r\n                         Information, Recvd_Fees, Recvd_Fees_Mode, Las" +
-                "t_Date_Reply, Info_Send, Info_Pages, Page_Amt, Total_Amt, Reject_Date, Section, " +
-                "Reasons, FileClosureDate, \r\n                         Authority, AppealNoFirstApp" +
-                "eal, AppealDateFirstAppeal, Order_Authority, FileClosureDateFirstAppeal, Letteer" +
-                "_Recvd_Date_commissioner, AppealNoSecondAppeal, \r\n                         Appli" +
-                "cationNameSecondAppeal, AddressSecondAppeal, AppealDateSecondAppeal, Remarks_Sen" +
-                "tTo_Commission, Remarks_Send_Date, \r\n                         FileClosureDateSec" +
-                "ondAppeal\r\nFROM            dbo.PIO\r\nWHERE        (CAST(SrNo AS varchar) LIKE \'%\'" +
-                " + @searchKeyWord + \'%\') OR\r\n                         (CAST(FileNo AS varchar) L" +
-                "IKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (ApplicantName LIKE" +
-                " \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(ApplicationDate " +
-                "AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(" +
-                "ApplicantAddress AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n              " +
-                "           (CAST(Application_Received_Actual_Date AS varchar) LIKE \'%\' + @search" +
-                "KeyWord + \'%\') OR\r\n                         (CAST(Appl_BPL AS varchar) LIKE \'%\' " +
-                "+ @searchKeyWord + \'%\') OR\r\n                         (Sub_Info_Asked LIKE \'%\' + " +
-                "@searchKeyWord + \'%\') OR\r\n                         (Recvd_Sata_Mandal LIKE \'%\' +" +
-                " @searchKeyWord + \'%\') OR\r\n                         (CAST(Recvd_Date AS varchar)" +
-                " LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Information" +
-                " AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST" +
-                "(Recvd_Fees AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                   " +
-                "      (Recvd_Fees_Mode LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                    " +
-                "     (CAST(Last_Date_Reply AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n    " +
-                "                     (CAST(Info_Send AS varchar) LIKE \'%\' + @searchKeyWord + \'%\'" +
-                ") OR\r\n                         (CAST(Info_Pages AS varchar) LIKE \'%\' + @searchKe" +
-                "yWord + \'%\') OR\r\n                         (CAST(Page_Amt AS varchar) LIKE \'%\' + " +
-                "@searchKeyWord + \'%\') OR\r\n                         (CAST(Total_Amt AS varchar) L" +
-                "IKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Reject_Date A" +
-                "S varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (Sectio" +
-                "n LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (Reasons LIKE \'%" +
-                "\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(FileClosureDate AS " +
-                "varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (Authorit" +
-                "y LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(AppealNoFi" +
-                "rstAppeal AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                     " +
-                "    (CAST(AppealDateFirstAppeal AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r" +
-                "\n                         (Order_Authority LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n" +
-                "                         (CAST(FileClosureDateFirstAppeal AS varchar) LIKE \'%\' +" +
-                " @searchKeyWord + \'%\') OR\r\n                         (CAST(Letteer_Recvd_Date_com" +
-                "missioner AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                     " +
-                "    (CAST(AppealNoSecondAppeal AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n" +
-                "                         (ApplicationNameSecondAppeal LIKE \'%\' + @searchKeyWord " +
-                "+ \'%\') OR\r\n                         (AddressSecondAppeal LIKE \'%\' + @searchKeyWo" +
-                "rd + \'%\') OR\r\n                         (CAST(AppealDateSecondAppeal AS varchar) " +
-                "LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (Remarks_SentTo_Co" +
-                "mmission LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Rem" +
-                "arks_Send_Date AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                " +
-                "         (CAST(FileClosureDateSecondAppeal AS varchar) LIKE \'%\' + @searchKeyWord" +
-                " + \'%\')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PIO.PIO1DataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PIO.PIO1DataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            PIO.PIO1DataTable dataTable = new PIO.PIO1DataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(PIO.PIO1DataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((searchKeyWord == null)) {
-                throw new global::System.ArgumentNullException("searchKeyWord");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PIO.PIO1DataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((searchKeyWord == null)) {
-                throw new global::System.ArgumentNullException("searchKeyWord");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
-            }
-            PIO.PIO1DataTable dataTable = new PIO.PIO1DataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PIO.PIO1DataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PIO dataSet) {
-            return this.Adapter.Update(dataSet, "PIO1");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    int Original_SrNo, 
-                    global::System.Nullable<int> Original_FileNo, 
-                    string Original_ApplicantName, 
-                    System.DateTime Original_ApplicationDate, 
-                    global::System.Nullable<global::System.DateTime> Original_Application_Received_Actual_Date, 
-                    global::System.Nullable<bool> Original_Appl_BPL, 
-                    string Original_Sub_Info_Asked, 
-                    string Original_Recvd_Sata_Mandal, 
-                    global::System.Nullable<global::System.DateTime> Original_Recvd_Date, 
-                    string Original_Information, 
-                    decimal Original_Recvd_Fees, 
-                    string Original_Recvd_Fees_Mode, 
-                    System.DateTime Original_Last_Date_Reply, 
-                    bool Original_Info_Send, 
-                    int Original_Info_Pages, 
-                    decimal Original_Page_Amt, 
-                    decimal Original_Total_Amt, 
-                    System.DateTime Original_Reject_Date, 
-                    string Original_Section, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDate, 
-                    string Original_Authority, 
-                    global::System.Nullable<int> Original_AppealNoFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_AppealDateFirstAppeal, 
-                    int Original_Order_Authority, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDateFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_Letteer_Recvd_Date_commissioner, 
-                    global::System.Nullable<int> Original_AppealNoSecondAppeal, 
-                    string Original_ApplicationNameSecondAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_AppealDateSecondAppeal, 
-                    string Original_Remarks_SentTo_Commission, 
-                    global::System.Nullable<global::System.DateTime> Original_Remarks_Send_Date, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDateSecondAppeal) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SrNo));
-            if ((Original_FileNo.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_FileNo.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ApplicantName == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_ApplicantName));
-            }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_ApplicationDate));
-            if ((Original_Application_Received_Actual_Date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_Application_Received_Actual_Date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Appl_BPL.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((bool)(Original_Appl_BPL.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Sub_Info_Asked == null)) {
-                throw new global::System.ArgumentNullException("Original_Sub_Info_Asked");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Sub_Info_Asked));
-            }
-            if ((Original_Recvd_Sata_Mandal == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Recvd_Sata_Mandal));
-            }
-            if ((Original_Recvd_Date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_Recvd_Date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Information == null)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Information));
-            }
-            this.Adapter.DeleteCommand.Parameters[17].Value = ((decimal)(Original_Recvd_Fees));
-            if ((Original_Recvd_Fees_Mode == null)) {
-                throw new global::System.ArgumentNullException("Original_Recvd_Fees_Mode");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Recvd_Fees_Mode));
-            }
-            this.Adapter.DeleteCommand.Parameters[19].Value = ((System.DateTime)(Original_Last_Date_Reply));
-            this.Adapter.DeleteCommand.Parameters[20].Value = ((bool)(Original_Info_Send));
-            this.Adapter.DeleteCommand.Parameters[21].Value = ((int)(Original_Info_Pages));
-            this.Adapter.DeleteCommand.Parameters[22].Value = ((decimal)(Original_Page_Amt));
-            this.Adapter.DeleteCommand.Parameters[23].Value = ((decimal)(Original_Total_Amt));
-            this.Adapter.DeleteCommand.Parameters[24].Value = ((System.DateTime)(Original_Reject_Date));
-            if ((Original_Section == null)) {
-                throw new global::System.ArgumentNullException("Original_Section");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((string)(Original_Section));
-            }
-            if ((Original_FileClosureDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((System.DateTime)(Original_FileClosureDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Authority == null)) {
-                throw new global::System.ArgumentNullException("Original_Authority");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_Authority));
-            }
-            if ((Original_AppealNoFirstAppeal.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((int)(Original_AppealNoFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            if ((Original_AppealDateFirstAppeal.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((System.DateTime)(Original_AppealDateFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[33].Value = ((int)(Original_Order_Authority));
-            if ((Original_FileClosureDateFirstAppeal.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((System.DateTime)(Original_FileClosureDateFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Letteer_Recvd_Date_commissioner.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((System.DateTime)(Original_Letteer_Recvd_Date_commissioner.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            if ((Original_AppealNoSecondAppeal.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((int)(Original_AppealNoSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ApplicationNameSecondAppeal == null)) {
-                throw new global::System.ArgumentNullException("Original_ApplicationNameSecondAppeal");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_ApplicationNameSecondAppeal));
-            }
-            if ((Original_AppealDateSecondAppeal.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((System.DateTime)(Original_AppealDateSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Remarks_SentTo_Commission == null)) {
-                throw new global::System.ArgumentNullException("Original_Remarks_SentTo_Commission");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((string)(Original_Remarks_SentTo_Commission));
-            }
-            if ((Original_Remarks_Send_Date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((System.DateTime)(Original_Remarks_Send_Date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[45].Value = global::System.DBNull.Value;
-            }
-            if ((Original_FileClosureDateSecondAppeal.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[47].Value = ((System.DateTime)(Original_FileClosureDateSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[47].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    global::System.Nullable<int> FileNo, 
-                    string ApplicantName, 
-                    System.DateTime ApplicationDate, 
-                    string ApplicantAddress, 
-                    global::System.Nullable<global::System.DateTime> Application_Received_Actual_Date, 
-                    global::System.Nullable<bool> Appl_BPL, 
-                    string Sub_Info_Asked, 
-                    string Recvd_Sata_Mandal, 
-                    global::System.Nullable<global::System.DateTime> Recvd_Date, 
-                    string Information, 
-                    decimal Recvd_Fees, 
-                    string Recvd_Fees_Mode, 
-                    System.DateTime Last_Date_Reply, 
-                    bool Info_Send, 
-                    int Info_Pages, 
-                    decimal Page_Amt, 
-                    decimal Total_Amt, 
-                    System.DateTime Reject_Date, 
-                    string Section, 
-                    string Reasons, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDate, 
-                    string Authority, 
-                    global::System.Nullable<int> AppealNoFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> AppealDateFirstAppeal, 
-                    int Order_Authority, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDateFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Letteer_Recvd_Date_commissioner, 
-                    global::System.Nullable<int> AppealNoSecondAppeal, 
-                    string ApplicationNameSecondAppeal, 
-                    string AddressSecondAppeal, 
-                    global::System.Nullable<global::System.DateTime> AppealDateSecondAppeal, 
-                    string Remarks_SentTo_Commission, 
-                    global::System.Nullable<global::System.DateTime> Remarks_Send_Date, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDateSecondAppeal) {
-            if ((FileNo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(FileNo.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((ApplicantName == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ApplicantName));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(ApplicationDate));
-            if ((ApplicantAddress == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ApplicantAddress));
-            }
-            if ((Application_Received_Actual_Date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Application_Received_Actual_Date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Appl_BPL.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(Appl_BPL.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Sub_Info_Asked == null)) {
-                throw new global::System.ArgumentNullException("Sub_Info_Asked");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Sub_Info_Asked));
-            }
-            if ((Recvd_Sata_Mandal == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Recvd_Sata_Mandal));
-            }
-            if ((Recvd_Date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(Recvd_Date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Information == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Information));
-            }
-            this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(Recvd_Fees));
-            if ((Recvd_Fees_Mode == null)) {
-                throw new global::System.ArgumentNullException("Recvd_Fees_Mode");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Recvd_Fees_Mode));
-            }
-            this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(Last_Date_Reply));
-            this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(Info_Send));
-            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(Info_Pages));
-            this.Adapter.InsertCommand.Parameters[15].Value = ((decimal)(Page_Amt));
-            this.Adapter.InsertCommand.Parameters[16].Value = ((decimal)(Total_Amt));
-            this.Adapter.InsertCommand.Parameters[17].Value = ((System.DateTime)(Reject_Date));
-            if ((Section == null)) {
-                throw new global::System.ArgumentNullException("Section");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Section));
-            }
-            if ((Reasons == null)) {
-                throw new global::System.ArgumentNullException("Reasons");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Reasons));
-            }
-            if ((FileClosureDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((System.DateTime)(FileClosureDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((Authority == null)) {
-                throw new global::System.ArgumentNullException("Authority");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(Authority));
-            }
-            if ((AppealNoFirstAppeal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((int)(AppealNoFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            if ((AppealDateFirstAppeal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((System.DateTime)(AppealDateFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[24].Value = ((int)(Order_Authority));
-            if ((FileClosureDateFirstAppeal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((System.DateTime)(FileClosureDateFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            if ((Letteer_Recvd_Date_commissioner.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((System.DateTime)(Letteer_Recvd_Date_commissioner.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            if ((AppealNoSecondAppeal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((int)(AppealNoSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            if ((ApplicationNameSecondAppeal == null)) {
-                throw new global::System.ArgumentNullException("ApplicationNameSecondAppeal");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(ApplicationNameSecondAppeal));
-            }
-            if ((AddressSecondAppeal == null)) {
-                throw new global::System.ArgumentNullException("AddressSecondAppeal");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(AddressSecondAppeal));
-            }
-            if ((AppealDateSecondAppeal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((System.DateTime)(AppealDateSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            if ((Remarks_SentTo_Commission == null)) {
-                throw new global::System.ArgumentNullException("Remarks_SentTo_Commission");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(Remarks_SentTo_Commission));
-            }
-            if ((Remarks_Send_Date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[32].Value = ((System.DateTime)(Remarks_Send_Date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            if ((FileClosureDateSecondAppeal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[33].Value = ((System.DateTime)(FileClosureDateSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    global::System.Nullable<int> FileNo, 
-                    string ApplicantName, 
-                    System.DateTime ApplicationDate, 
-                    string ApplicantAddress, 
-                    global::System.Nullable<global::System.DateTime> Application_Received_Actual_Date, 
-                    global::System.Nullable<bool> Appl_BPL, 
-                    string Sub_Info_Asked, 
-                    string Recvd_Sata_Mandal, 
-                    global::System.Nullable<global::System.DateTime> Recvd_Date, 
-                    string Information, 
-                    decimal Recvd_Fees, 
-                    string Recvd_Fees_Mode, 
-                    System.DateTime Last_Date_Reply, 
-                    bool Info_Send, 
-                    int Info_Pages, 
-                    decimal Page_Amt, 
-                    decimal Total_Amt, 
-                    System.DateTime Reject_Date, 
-                    string Section, 
-                    string Reasons, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDate, 
-                    string Authority, 
-                    global::System.Nullable<int> AppealNoFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> AppealDateFirstAppeal, 
-                    int Order_Authority, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDateFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Letteer_Recvd_Date_commissioner, 
-                    global::System.Nullable<int> AppealNoSecondAppeal, 
-                    string ApplicationNameSecondAppeal, 
-                    string AddressSecondAppeal, 
-                    global::System.Nullable<global::System.DateTime> AppealDateSecondAppeal, 
-                    string Remarks_SentTo_Commission, 
-                    global::System.Nullable<global::System.DateTime> Remarks_Send_Date, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDateSecondAppeal, 
-                    int Original_SrNo, 
-                    global::System.Nullable<int> Original_FileNo, 
-                    string Original_ApplicantName, 
-                    System.DateTime Original_ApplicationDate, 
-                    global::System.Nullable<global::System.DateTime> Original_Application_Received_Actual_Date, 
-                    global::System.Nullable<bool> Original_Appl_BPL, 
-                    string Original_Sub_Info_Asked, 
-                    string Original_Recvd_Sata_Mandal, 
-                    global::System.Nullable<global::System.DateTime> Original_Recvd_Date, 
-                    string Original_Information, 
-                    decimal Original_Recvd_Fees, 
-                    string Original_Recvd_Fees_Mode, 
-                    System.DateTime Original_Last_Date_Reply, 
-                    bool Original_Info_Send, 
-                    int Original_Info_Pages, 
-                    decimal Original_Page_Amt, 
-                    decimal Original_Total_Amt, 
-                    System.DateTime Original_Reject_Date, 
-                    string Original_Section, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDate, 
-                    string Original_Authority, 
-                    global::System.Nullable<int> Original_AppealNoFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_AppealDateFirstAppeal, 
-                    int Original_Order_Authority, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDateFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_Letteer_Recvd_Date_commissioner, 
-                    global::System.Nullable<int> Original_AppealNoSecondAppeal, 
-                    string Original_ApplicationNameSecondAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_AppealDateSecondAppeal, 
-                    string Original_Remarks_SentTo_Commission, 
-                    global::System.Nullable<global::System.DateTime> Original_Remarks_Send_Date, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDateSecondAppeal, 
-                    int SrNo) {
-            if ((FileNo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(FileNo.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((ApplicantName == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ApplicantName));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(ApplicationDate));
-            if ((ApplicantAddress == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ApplicantAddress));
-            }
-            if ((Application_Received_Actual_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Application_Received_Actual_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Appl_BPL.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(Appl_BPL.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Sub_Info_Asked == null)) {
-                throw new global::System.ArgumentNullException("Sub_Info_Asked");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Sub_Info_Asked));
-            }
-            if ((Recvd_Sata_Mandal == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Recvd_Sata_Mandal));
-            }
-            if ((Recvd_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Recvd_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Information == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Information));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Recvd_Fees));
-            if ((Recvd_Fees_Mode == null)) {
-                throw new global::System.ArgumentNullException("Recvd_Fees_Mode");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Recvd_Fees_Mode));
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Last_Date_Reply));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Info_Send));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Info_Pages));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Page_Amt));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Total_Amt));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Reject_Date));
-            if ((Section == null)) {
-                throw new global::System.ArgumentNullException("Section");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Section));
-            }
-            if ((Reasons == null)) {
-                throw new global::System.ArgumentNullException("Reasons");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Reasons));
-            }
-            if ((FileClosureDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(FileClosureDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((Authority == null)) {
-                throw new global::System.ArgumentNullException("Authority");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Authority));
-            }
-            if ((AppealNoFirstAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(AppealNoFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            if ((AppealDateFirstAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(AppealDateFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Order_Authority));
-            if ((FileClosureDateFirstAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(FileClosureDateFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            if ((Letteer_Recvd_Date_commissioner.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Letteer_Recvd_Date_commissioner.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            if ((AppealNoSecondAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(AppealNoSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            if ((ApplicationNameSecondAppeal == null)) {
-                throw new global::System.ArgumentNullException("ApplicationNameSecondAppeal");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(ApplicationNameSecondAppeal));
-            }
-            if ((AddressSecondAppeal == null)) {
-                throw new global::System.ArgumentNullException("AddressSecondAppeal");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(AddressSecondAppeal));
-            }
-            if ((AppealDateSecondAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(AppealDateSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            if ((Remarks_SentTo_Commission == null)) {
-                throw new global::System.ArgumentNullException("Remarks_SentTo_Commission");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Remarks_SentTo_Commission));
-            }
-            if ((Remarks_Send_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Remarks_Send_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            if ((FileClosureDateSecondAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((System.DateTime)(FileClosureDateSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_SrNo));
-            if ((Original_FileNo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_FileNo.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ApplicantName == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_ApplicantName));
-            }
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(Original_ApplicationDate));
-            if ((Original_Application_Received_Actual_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((System.DateTime)(Original_Application_Received_Actual_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Appl_BPL.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((bool)(Original_Appl_BPL.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Sub_Info_Asked == null)) {
-                throw new global::System.ArgumentNullException("Original_Sub_Info_Asked");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_Sub_Info_Asked));
-            }
-            if ((Original_Recvd_Sata_Mandal == null)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_Recvd_Sata_Mandal));
-            }
-            if ((Original_Recvd_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((System.DateTime)(Original_Recvd_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Information == null)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_Information));
-            }
-            this.Adapter.UpdateCommand.Parameters[51].Value = ((decimal)(Original_Recvd_Fees));
-            if ((Original_Recvd_Fees_Mode == null)) {
-                throw new global::System.ArgumentNullException("Original_Recvd_Fees_Mode");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_Recvd_Fees_Mode));
-            }
-            this.Adapter.UpdateCommand.Parameters[53].Value = ((System.DateTime)(Original_Last_Date_Reply));
-            this.Adapter.UpdateCommand.Parameters[54].Value = ((bool)(Original_Info_Send));
-            this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(Original_Info_Pages));
-            this.Adapter.UpdateCommand.Parameters[56].Value = ((decimal)(Original_Page_Amt));
-            this.Adapter.UpdateCommand.Parameters[57].Value = ((decimal)(Original_Total_Amt));
-            this.Adapter.UpdateCommand.Parameters[58].Value = ((System.DateTime)(Original_Reject_Date));
-            if ((Original_Section == null)) {
-                throw new global::System.ArgumentNullException("Original_Section");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_Section));
-            }
-            if ((Original_FileClosureDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((System.DateTime)(Original_FileClosureDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Authority == null)) {
-                throw new global::System.ArgumentNullException("Original_Authority");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_Authority));
-            }
-            if ((Original_AppealNoFirstAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((int)(Original_AppealNoFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
-            }
-            if ((Original_AppealDateFirstAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((System.DateTime)(Original_AppealDateFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[67].Value = ((int)(Original_Order_Authority));
-            if ((Original_FileClosureDateFirstAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((System.DateTime)(Original_FileClosureDateFirstAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Letteer_Recvd_Date_commissioner.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((System.DateTime)(Original_Letteer_Recvd_Date_commissioner.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
-            }
-            if ((Original_AppealNoSecondAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((int)(Original_AppealNoSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ApplicationNameSecondAppeal == null)) {
-                throw new global::System.ArgumentNullException("Original_ApplicationNameSecondAppeal");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(Original_ApplicationNameSecondAppeal));
-            }
-            if ((Original_AppealDateSecondAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((System.DateTime)(Original_AppealDateSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Remarks_SentTo_Commission == null)) {
-                throw new global::System.ArgumentNullException("Original_Remarks_SentTo_Commission");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((string)(Original_Remarks_SentTo_Commission));
-            }
-            if ((Original_Remarks_Send_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((System.DateTime)(Original_Remarks_Send_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
-            }
-            if ((Original_FileClosureDateSecondAppeal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((System.DateTime)(Original_FileClosureDateSecondAppeal.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[82].Value = ((int)(SrNo));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    global::System.Nullable<int> FileNo, 
-                    string ApplicantName, 
-                    System.DateTime ApplicationDate, 
-                    string ApplicantAddress, 
-                    global::System.Nullable<global::System.DateTime> Application_Received_Actual_Date, 
-                    global::System.Nullable<bool> Appl_BPL, 
-                    string Sub_Info_Asked, 
-                    string Recvd_Sata_Mandal, 
-                    global::System.Nullable<global::System.DateTime> Recvd_Date, 
-                    string Information, 
-                    decimal Recvd_Fees, 
-                    string Recvd_Fees_Mode, 
-                    System.DateTime Last_Date_Reply, 
-                    bool Info_Send, 
-                    int Info_Pages, 
-                    decimal Page_Amt, 
-                    decimal Total_Amt, 
-                    System.DateTime Reject_Date, 
-                    string Section, 
-                    string Reasons, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDate, 
-                    string Authority, 
-                    global::System.Nullable<int> AppealNoFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> AppealDateFirstAppeal, 
-                    int Order_Authority, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDateFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Letteer_Recvd_Date_commissioner, 
-                    global::System.Nullable<int> AppealNoSecondAppeal, 
-                    string ApplicationNameSecondAppeal, 
-                    string AddressSecondAppeal, 
-                    global::System.Nullable<global::System.DateTime> AppealDateSecondAppeal, 
-                    string Remarks_SentTo_Commission, 
-                    global::System.Nullable<global::System.DateTime> Remarks_Send_Date, 
-                    global::System.Nullable<global::System.DateTime> FileClosureDateSecondAppeal, 
-                    int Original_SrNo, 
-                    global::System.Nullable<int> Original_FileNo, 
-                    string Original_ApplicantName, 
-                    System.DateTime Original_ApplicationDate, 
-                    global::System.Nullable<global::System.DateTime> Original_Application_Received_Actual_Date, 
-                    global::System.Nullable<bool> Original_Appl_BPL, 
-                    string Original_Sub_Info_Asked, 
-                    string Original_Recvd_Sata_Mandal, 
-                    global::System.Nullable<global::System.DateTime> Original_Recvd_Date, 
-                    string Original_Information, 
-                    decimal Original_Recvd_Fees, 
-                    string Original_Recvd_Fees_Mode, 
-                    System.DateTime Original_Last_Date_Reply, 
-                    bool Original_Info_Send, 
-                    int Original_Info_Pages, 
-                    decimal Original_Page_Amt, 
-                    decimal Original_Total_Amt, 
-                    System.DateTime Original_Reject_Date, 
-                    string Original_Section, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDate, 
-                    string Original_Authority, 
-                    global::System.Nullable<int> Original_AppealNoFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_AppealDateFirstAppeal, 
-                    int Original_Order_Authority, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDateFirstAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_Letteer_Recvd_Date_commissioner, 
-                    global::System.Nullable<int> Original_AppealNoSecondAppeal, 
-                    string Original_ApplicationNameSecondAppeal, 
-                    global::System.Nullable<global::System.DateTime> Original_AppealDateSecondAppeal, 
-                    string Original_Remarks_SentTo_Commission, 
-                    global::System.Nullable<global::System.DateTime> Original_Remarks_Send_Date, 
-                    global::System.Nullable<global::System.DateTime> Original_FileClosureDateSecondAppeal) {
-            return this.Update(FileNo, ApplicantName, ApplicationDate, ApplicantAddress, Application_Received_Actual_Date, Appl_BPL, Sub_Info_Asked, Recvd_Sata_Mandal, Recvd_Date, Information, Recvd_Fees, Recvd_Fees_Mode, Last_Date_Reply, Info_Send, Info_Pages, Page_Amt, Total_Amt, Reject_Date, Section, Reasons, FileClosureDate, Authority, AppealNoFirstAppeal, AppealDateFirstAppeal, Order_Authority, FileClosureDateFirstAppeal, Letteer_Recvd_Date_commissioner, AppealNoSecondAppeal, ApplicationNameSecondAppeal, AddressSecondAppeal, AppealDateSecondAppeal, Remarks_SentTo_Commission, Remarks_Send_Date, FileClosureDateSecondAppeal, Original_SrNo, Original_FileNo, Original_ApplicantName, Original_ApplicationDate, Original_Application_Received_Actual_Date, Original_Appl_BPL, Original_Sub_Info_Asked, Original_Recvd_Sata_Mandal, Original_Recvd_Date, Original_Information, Original_Recvd_Fees, Original_Recvd_Fees_Mode, Original_Last_Date_Reply, Original_Info_Send, Original_Info_Pages, Original_Page_Amt, Original_Total_Amt, Original_Reject_Date, Original_Section, Original_FileClosureDate, Original_Authority, Original_AppealNoFirstAppeal, Original_AppealDateFirstAppeal, Original_Order_Authority, Original_FileClosureDateFirstAppeal, Original_Letteer_Recvd_Date_commissioner, Original_AppealNoSecondAppeal, Original_ApplicationNameSecondAppeal, Original_AppealDateSecondAppeal, Original_Remarks_SentTo_Commission, Original_Remarks_Send_Date, Original_FileClosureDateSecondAppeal, Original_SrNo);
         }
     }
     
@@ -6608,8 +3313,6 @@ FROM            dbo.PIO";
         private UpdateOrderOption _updateOrder;
         
         private PIOTableAdapter _pIOTableAdapter;
-        
-        private PIO1TableAdapter _pIO1TableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -6642,20 +3345,6 @@ FROM            dbo.PIO";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public PIO1TableAdapter PIO1TableAdapter {
-            get {
-                return this._pIO1TableAdapter;
-            }
-            set {
-                this._pIO1TableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -6677,10 +3366,6 @@ FROM            dbo.PIO";
                             && (this._pIOTableAdapter.Connection != null))) {
                     return this._pIOTableAdapter.Connection;
                 }
-                if (((this._pIO1TableAdapter != null) 
-                            && (this._pIO1TableAdapter.Connection != null))) {
-                    return this._pIO1TableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -6697,9 +3382,6 @@ FROM            dbo.PIO";
                 if ((this._pIOTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pIO1TableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -6711,15 +3393,6 @@ FROM            dbo.PIO";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(PIO dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pIO1TableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PIO1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pIO1TableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._pIOTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet._PIO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -6739,14 +3412,6 @@ FROM            dbo.PIO";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(PIO dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pIO1TableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PIO1.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pIO1TableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._pIOTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet._PIO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -6770,14 +3435,6 @@ FROM            dbo.PIO";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._pIOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._pIO1TableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PIO1.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._pIO1TableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -6825,11 +3482,6 @@ FROM            dbo.PIO";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._pIO1TableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pIO1TableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -6869,15 +3521,6 @@ FROM            dbo.PIO";
                     if (this._pIOTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._pIOTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._pIOTableAdapter.Adapter);
-                    }
-                }
-                if ((this._pIO1TableAdapter != null)) {
-                    revertConnections.Add(this._pIO1TableAdapter, this._pIO1TableAdapter.Connection);
-                    this._pIO1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pIO1TableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pIO1TableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pIO1TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pIO1TableAdapter.Adapter);
                     }
                 }
                 // 
@@ -6941,10 +3584,6 @@ FROM            dbo.PIO";
                 if ((this._pIOTableAdapter != null)) {
                     this._pIOTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pIOTableAdapter]));
                     this._pIOTableAdapter.Transaction = null;
-                }
-                if ((this._pIO1TableAdapter != null)) {
-                    this._pIO1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pIO1TableAdapter]));
-                    this._pIO1TableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -24,7 +24,7 @@
                                  ReadOnly="True" SortExpression="id" Visible="False" />
                              <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
                              <asp:BoundField DataField="dob" HeaderText="dob" SortExpression="dob" />
-                             <asp:ButtonField ButtonType="Button" CommandName="Update" Text="Update" />
+                             <asp:ButtonField CommandName="Update" Text="Update" />
                          </Columns>
                      </asp:GridView>
                  </td>

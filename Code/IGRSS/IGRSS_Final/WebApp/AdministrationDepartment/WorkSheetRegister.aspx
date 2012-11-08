@@ -59,8 +59,7 @@
                         ontextchanged="txtFileNo_TextChanged"></asp:TextBox> 
                 </td>
                 <td>
-                    <asp:LinkButton ID="btnSearchAppNo" runat="server" 
-                        OnClick="btnSearchAppNo_Click" Text="Search" 
+                    <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search" 
                         meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />           
                 </td>
             </tr>
@@ -82,7 +81,6 @@
                         SortExpression="Letter_Details" Visible="False" />
                     <asp:BoundField DataField="Work_Disposal_Date" HeaderText="Work Disposal Date" 
                         SortExpression="Work_Disposal_Date" />
-                    <asp:ButtonField CommandName="Update" Text="Update" />
                 </Columns>
             </asp:GridView>
         </td>

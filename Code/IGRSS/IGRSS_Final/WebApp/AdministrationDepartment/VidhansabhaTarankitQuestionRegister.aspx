@@ -44,29 +44,28 @@
                       EnableModelValidation="True">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="Tarankit_Atarnkit" HeaderText="Tarankit/Atarnkit" 
+                              ReadOnly="True" SortExpression="SrNo" />
+                          <asp:BoundField DataField="Tarankit_Atarnkit" HeaderText="Tarankit_Atarnkit" 
                               SortExpression="Tarankit_Atarnkit" />
-                          <asp:BoundField DataField="quesno" HeaderText="Question Number" 
+                          <asp:BoundField DataField="quesno" HeaderText="quesno" 
                               SortExpression="quesno" />
-                          <asp:BoundField DataField="mlaName" HeaderText="Name Of MLA/MP" 
+                          <asp:BoundField DataField="mlaName" HeaderText="mlaName" 
                               SortExpression="mlaName" />
-                          <asp:BoundField DataField="mlaPlace" HeaderText="Place Of MLA/MP" 
+                          <asp:BoundField DataField="mlaPlace" HeaderText="mlaPlace" 
                               SortExpression="mlaPlace" />
                           <asp:BoundField DataField="Subject" HeaderText="Subject" 
                               SortExpression="Subject" />
-                          <asp:BoundField DataField="Number" HeaderText="Number given By Government" 
-                              SortExpression="Number" Visible="False" />
-                          <asp:BoundField DataField="Reply_Sent" HeaderText="Reply Sent" 
-                              SortExpression="Reply_Sent" Visible="False" />
-                          <asp:BoundField DataField="Date" HeaderText="Date On Which Information Is Sent" 
+                          <asp:BoundField DataField="Number" HeaderText="Number" 
+                              SortExpression="Number" />
+                          <asp:BoundField DataField="Reply_Sent" HeaderText="Reply_Sent" 
+                              SortExpression="Reply_Sent" />
+                          <asp:BoundField DataField="Date" HeaderText="Date" 
                               SortExpression="Date" />
-                          <asp:BoundField DataField="Fileno" HeaderText="File Number" 
+                          <asp:BoundField DataField="Fileno" HeaderText="Fileno" 
                               SortExpression="Fileno" />
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
                               SortExpression="Remarks" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

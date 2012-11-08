@@ -43,4 +43,6 @@ public partial class CCRALegal_AppealRegister : System.Web.UI.Page
         e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
         ods_AppealRegister.SelectMethod = "GetDataBy";
     }
+
+  
 }

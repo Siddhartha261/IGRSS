@@ -2,17 +2,19 @@
 <xs:schema id="SOFile" targetNamespace="http://tempuri.org/SOFile.xsd" xmlns:mstns="http://tempuri.org/SOFile.xsd" xmlns="http://tempuri.org/SOFile.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IGRSS_FINALConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IGRSS_FINALConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IGRSS.Properties.Settings.GlobalReference.Default.IGRSS_FINALConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IGRSS.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IGRSS_FINALConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IGRSS_FINALConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IGRSS.Properties.Settings.GlobalReference.Default.IGRSS_FINALConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SOFileTableAdapter" GeneratorDataComponentClassName="SOFileTableAdapter" Name="SOFile" UserDataComponentName="SOFileTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SOFILETableAdapter" GeneratorDataComponentClassName="SOFILETableAdapter" Name="SOFILE" UserDataComponentName="SOFILETableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IGRSS_FINALConnectionString (Settings)" DbObjectName="IGRSS_FINAL.dbo.SOFile" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IGRSS_FINALConnectionString1 (Settings)" DbObjectName="IGRSS_FINAL.dbo.SOFILE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[SOFile] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Circulars = 1 AND [Circulars] IS NULL) OR ([Circulars] = @Original_Circulars)) AND ((@IsNull_DateOfCirculars = 1 AND [DateOfCirculars] IS NULL) OR ([DateOfCirculars] = @Original_DateOfCirculars)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_PageNo = 1 AND [PageNo] IS NULL) OR ([PageNo] = @Original_PageNo)))</CommandText>
+                    <CommandText>DELETE FROM [SOFILE] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Circulars = 1 AND [Circulars] IS NULL) OR ([Circulars] = @Original_Circulars)) AND ((@IsNull_DateOfCirculars = 1 AND [DateOfCirculars] IS NULL) OR ([DateOfCirculars] = @Original_DateOfCirculars)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_PageNo = 1 AND [PageNo] IS NULL) OR ([PageNo] = @Original_PageNo)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SrNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SrNo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Circulars" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Circulars" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -20,7 +22,7 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DateOfCirculars" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DateOfCirculars" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_DateOfCirculars" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateOfCirculars" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Department" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_Department" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Department" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Subject" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Subject" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Subject" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Subject" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PageNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PageNo" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -30,13 +32,12 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[SOFile] ([SrNo], [Circulars], [DateOfCirculars], [Department], [Subject], [PageNo]) VALUES (@SrNo, @Circulars, @DateOfCirculars, @Department, @Subject, @PageNo);
-SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SOFile WHERE (SrNo = @SrNo)</CommandText>
+                    <CommandText>INSERT INTO [SOFILE] ([Circulars], [DateOfCirculars], [Department], [Subject], [PageNo]) VALUES (@Circulars, @DateOfCirculars, @Department, @Subject, @PageNo);
+SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM SOFILE WHERE (SrNo = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SrNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SrNo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Circulars" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Circulars" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@DateOfCirculars" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateOfCirculars" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Department" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Department" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Subject" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Subject" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PageNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PageNo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -45,19 +46,18 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo
-FROM            dbo.SOFile</CommandText>
+FROM            SOFILE</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[SOFile] SET [SrNo] = @SrNo, [Circulars] = @Circulars, [DateOfCirculars] = @DateOfCirculars, [Department] = @Department, [Subject] = @Subject, [PageNo] = @PageNo WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Circulars = 1 AND [Circulars] IS NULL) OR ([Circulars] = @Original_Circulars)) AND ((@IsNull_DateOfCirculars = 1 AND [DateOfCirculars] IS NULL) OR ([DateOfCirculars] = @Original_DateOfCirculars)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_PageNo = 1 AND [PageNo] IS NULL) OR ([PageNo] = @Original_PageNo)));
-SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SOFile WHERE (SrNo = @SrNo)</CommandText>
+                    <CommandText>UPDATE [SOFILE] SET [Circulars] = @Circulars, [DateOfCirculars] = @DateOfCirculars, [Department] = @Department, [Subject] = @Subject, [PageNo] = @PageNo WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Circulars = 1 AND [Circulars] IS NULL) OR ([Circulars] = @Original_Circulars)) AND ((@IsNull_DateOfCirculars = 1 AND [DateOfCirculars] IS NULL) OR ([DateOfCirculars] = @Original_DateOfCirculars)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_PageNo = 1 AND [PageNo] IS NULL) OR ([PageNo] = @Original_PageNo)));
+SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM SOFILE WHERE (SrNo = @SrNo)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SrNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SrNo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Circulars" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Circulars" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@DateOfCirculars" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateOfCirculars" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Department" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Department" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Subject" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Subject" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PageNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PageNo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SrNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SrNo" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -66,11 +66,12 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DateOfCirculars" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DateOfCirculars" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_DateOfCirculars" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DateOfCirculars" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Department" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_Department" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Department" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Department" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Subject" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Subject" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Subject" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Subject" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PageNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PageNo" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_PageNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PageNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SrNo" ColumnName="SrNo" DataSourceName="IGRSS_FINAL.dbo.SOFILE" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SrNo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SrNo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -84,7 +85,25 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
               <Mapping SourceColumn="Subject" DataSetColumn="Subject" />
               <Mapping SourceColumn="PageNo" DataSetColumn="PageNo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="IGRSS_FINALConnectionString1 (Settings)" DbObjectName="IGRSS_FINAL.dbo.SOFILE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo
+FROM            SOFILE
+WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Circulars AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(DateOfCirculars AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Department AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Subject AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(PageNo AS varchar) LIKE '%' + @searchKeyWord + '%')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="searchKeyWord" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@searchKeyWord" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -94,16 +113,16 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
   <xs:element name="SOFile" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SOFile" msprop:Generator_UserDSName="SOFile">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SOFile" msprop:Generator_TableClassName="SOFileDataTable" msprop:Generator_TableVarName="tableSOFile" msprop:Generator_TablePropName="_SOFile" msprop:Generator_RowDeletingName="SOFileRowDeleting" msprop:Generator_UserTableName="SOFile" msprop:Generator_RowChangingName="SOFileRowChanging" msprop:Generator_RowEvHandlerName="SOFileRowChangeEventHandler" msprop:Generator_RowDeletedName="SOFileRowDeleted" msprop:Generator_RowEvArgName="SOFileRowChangeEvent" msprop:Generator_RowChangedName="SOFileRowChanged" msprop:Generator_RowClassName="SOFileRow">
+        <xs:element name="SOFILE" msprop:Generator_TableClassName="SOFILEDataTable" msprop:Generator_TableVarName="tableSOFILE" msprop:Generator_TablePropName="SOFILE" msprop:Generator_RowDeletingName="SOFILERowDeleting" msprop:Generator_UserTableName="SOFILE" msprop:Generator_RowChangingName="SOFILERowChanging" msprop:Generator_RowEvHandlerName="SOFILERowChangeEventHandler" msprop:Generator_RowDeletedName="SOFILERowDeleted" msprop:Generator_RowEvArgName="SOFILERowChangeEvent" msprop:Generator_RowChangedName="SOFILERowChanged" msprop:Generator_RowClassName="SOFILERow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="SrNo" msprop:Generator_ColumnVarNameInTable="columnSrNo" msprop:Generator_ColumnPropNameInRow="SrNo" msprop:Generator_ColumnPropNameInTable="SrNoColumn" msprop:Generator_UserColumnName="SrNo" type="xs:int" />
+              <xs:element name="SrNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSrNo" msprop:Generator_ColumnPropNameInRow="SrNo" msprop:Generator_ColumnPropNameInTable="SrNoColumn" msprop:Generator_UserColumnName="SrNo" type="xs:int" />
               <xs:element name="Circulars" msprop:Generator_ColumnVarNameInTable="columnCirculars" msprop:Generator_ColumnPropNameInRow="Circulars" msprop:Generator_ColumnPropNameInTable="CircularsColumn" msprop:Generator_UserColumnName="Circulars" type="xs:int" minOccurs="0" />
               <xs:element name="DateOfCirculars" msprop:Generator_ColumnVarNameInTable="columnDateOfCirculars" msprop:Generator_ColumnPropNameInRow="DateOfCirculars" msprop:Generator_ColumnPropNameInTable="DateOfCircularsColumn" msprop:Generator_UserColumnName="DateOfCirculars" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
+                    <xs:maxLength value="25" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -121,7 +140,7 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:SOFile" />
+      <xs:selector xpath=".//mstns:SOFILE" />
       <xs:field xpath="mstns:SrNo" />
     </xs:unique>
   </xs:element>

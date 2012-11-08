@@ -1682,8 +1682,6 @@ namespace IGRSS.DataAccessLayer {
             
             private global::System.Data.DataColumn columnDeletedAt;
             
-            private global::System.Data.DataColumn columnNameOfEmployee;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EmployeeMasterDataTable() {
@@ -1919,14 +1917,6 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameOfEmployeeColumn {
-                get {
-                    return this.columnNameOfEmployee;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1987,8 +1977,7 @@ namespace IGRSS.DataAccessLayer {
                         System.DateTime ModifiedAt, 
                         bool IsDeleted, 
                         string DeletedBy, 
-                        System.DateTime DeletedAt, 
-                        string NameOfEmployee) {
+                        System.DateTime DeletedAt) {
                 EmployeeMasterRow rowEmployeeMasterRow = ((EmployeeMasterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EmployeeID,
@@ -2015,8 +2004,7 @@ namespace IGRSS.DataAccessLayer {
                         ModifiedAt,
                         IsDeleted,
                         DeletedBy,
-                        DeletedAt,
-                        NameOfEmployee};
+                        DeletedAt};
                 if ((parentDepartmentMasterRowByFK_EmployeeMaster_DepartmentMaster1 != null)) {
                     columnValuesArray[12] = parentDepartmentMasterRowByFK_EmployeeMaster_DepartmentMaster1[0];
                 }
@@ -2083,7 +2071,6 @@ namespace IGRSS.DataAccessLayer {
                 this.columnIsDeleted = base.Columns["IsDeleted"];
                 this.columnDeletedBy = base.Columns["DeletedBy"];
                 this.columnDeletedAt = base.Columns["DeletedAt"];
-                this.columnNameOfEmployee = base.Columns["NameOfEmployee"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2139,8 +2126,6 @@ namespace IGRSS.DataAccessLayer {
                 base.Columns.Add(this.columnDeletedBy);
                 this.columnDeletedAt = new global::System.Data.DataColumn("DeletedAt", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeletedAt);
-                this.columnNameOfEmployee = new global::System.Data.DataColumn("NameOfEmployee", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNameOfEmployee);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEmployeeID}, true));
                 this.columnEmployeeID.AllowDBNull = false;
@@ -2156,8 +2141,6 @@ namespace IGRSS.DataAccessLayer {
                 this.columnCreatedBy.MaxLength = 25;
                 this.columnModifiedBy.MaxLength = 25;
                 this.columnDeletedBy.MaxLength = 25;
-                this.columnNameOfEmployee.ReadOnly = true;
-                this.columnNameOfEmployee.MaxLength = 1502;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3933,22 +3916,6 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NameOfEmployee {
-                get {
-                    try {
-                        return ((string)(this[this.tableEmployeeMaster.NameOfEmployeeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NameOfEmployee\' in table \'EmployeeMaster\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEmployeeMaster.NameOfEmployeeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DepartmentMasterRow DepartmentMasterRow {
                 get {
                     return ((DepartmentMasterRow)(this.GetParentRow(this.Table.ParentRelations["FK_EmployeeMaster_DepartmentMaster1"])));
@@ -4255,18 +4222,6 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDeletedAtNull() {
                 this[this.tableEmployeeMaster.DeletedAtColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNameOfEmployeeNull() {
-                return this.IsNull(this.tableEmployeeMaster.NameOfEmployeeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNameOfEmployeeNull() {
-                this[this.tableEmployeeMaster.NameOfEmployeeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6908,40 +6863,39 @@ SELECT QualificationID, Name, Description, CreatedBy, CreatedAt, ModifiedBy, Mod
             tableMapping.ColumnMappings.Add("IsDeleted", "IsDeleted");
             tableMapping.ColumnMappings.Add("DeletedBy", "DeletedBy");
             tableMapping.ColumnMappings.Add("DeletedAt", "DeletedAt");
-            tableMapping.ColumnMappings.Add("NameOfEmployee", "NameOfEmployee");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[EmployeeMaster] WHERE (([EmployeeID] = @Original_EmployeeID) A" +
-                "ND ((@IsNull_EmployeeNo = 1 AND [EmployeeNo] IS NULL) OR ([EmployeeNo] = @Origin" +
-                "al_EmployeeNo)) AND ((@IsNull_FirstName = 1 AND [FirstName] IS NULL) OR ([FirstN" +
-                "ame] = @Original_FirstName)) AND ((@IsNull_MiddleName = 1 AND [MiddleName] IS NU" +
-                "LL) OR ([MiddleName] = @Original_MiddleName)) AND ((@IsNull_LastName = 1 AND [La" +
-                "stName] IS NULL) OR ([LastName] = @Original_LastName)) AND ((@IsNull_PostalAddre" +
-                "ss = 1 AND [PostalAddress] IS NULL) OR ([PostalAddress] = @Original_PostalAddres" +
-                "s)) AND ((@IsNull_PermanentAddress = 1 AND [PermanentAddress] IS NULL) OR ([Perm" +
-                "anentAddress] = @Original_PermanentAddress)) AND ((@IsNull_DateOfBirth = 1 AND [" +
-                "DateOfBirth] IS NULL) OR ([DateOfBirth] = @Original_DateOfBirth)) AND ((@IsNull_" +
-                "FatherName = 1 AND [FatherName] IS NULL) OR ([FatherName] = @Original_FatherName" +
-                ")) AND ((@IsNull_Height = 1 AND [Height] IS NULL) OR ([Height] = @Original_Heigh" +
-                "t)) AND ((@IsNull_VisibleMarks = 1 AND [VisibleMarks] IS NULL) OR ([VisibleMarks" +
-                "] = @Original_VisibleMarks)) AND ((@IsNull_OfficeID = 1 AND [OfficeID] IS NULL) " +
-                "OR ([OfficeID] = @Original_OfficeID)) AND ((@IsNull_DepartmentID = 1 AND [Depart" +
-                "mentID] IS NULL) OR ([DepartmentID] = @Original_DepartmentID)) AND ((@IsNull_Des" +
-                "ignationID = 1 AND [DesignationID] IS NULL) OR ([DesignationID] = @Original_Desi" +
-                "gnationID)) AND ((@IsNull_Salary = 1 AND [Salary] IS NULL) OR ([Salary] = @Origi" +
-                "nal_Salary)) AND ((@IsNull_Allowances = 1 AND [Allowances] IS NULL) OR ([Allowan" +
-                "ces] = @Original_Allowances)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NUL" +
-                "L) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDat" +
-                "e] IS NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_CreatedBy = 1 AND " +
-                "[CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_Creat" +
-                "edAt = 1 AND [CreatedAt] IS NULL) OR ([CreatedAt] = @Original_CreatedAt)) AND ((" +
-                "@IsNull_ModifiedBy = 1 AND [ModifiedBy] IS NULL) OR ([ModifiedBy] = @Original_Mo" +
-                "difiedBy)) AND ((@IsNull_ModifiedAt = 1 AND [ModifiedAt] IS NULL) OR ([ModifiedA" +
-                "t] = @Original_ModifiedAt)) AND ((@IsNull_IsDeleted = 1 AND [IsDeleted] IS NULL)" +
-                " OR ([IsDeleted] = @Original_IsDeleted)) AND ((@IsNull_DeletedBy = 1 AND [Delete" +
-                "dBy] IS NULL) OR ([DeletedBy] = @Original_DeletedBy)) AND ((@IsNull_DeletedAt = " +
-                "1 AND [DeletedAt] IS NULL) OR ([DeletedAt] = @Original_DeletedAt)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [EmployeeMaster] WHERE (([EmployeeID] = @Original_EmployeeID) AND ((@" +
+                "IsNull_EmployeeNo = 1 AND [EmployeeNo] IS NULL) OR ([EmployeeNo] = @Original_Emp" +
+                "loyeeNo)) AND ((@IsNull_FirstName = 1 AND [FirstName] IS NULL) OR ([FirstName] =" +
+                " @Original_FirstName)) AND ((@IsNull_MiddleName = 1 AND [MiddleName] IS NULL) OR" +
+                " ([MiddleName] = @Original_MiddleName)) AND ((@IsNull_LastName = 1 AND [LastName" +
+                "] IS NULL) OR ([LastName] = @Original_LastName)) AND ((@IsNull_PostalAddress = 1" +
+                " AND [PostalAddress] IS NULL) OR ([PostalAddress] = @Original_PostalAddress)) AN" +
+                "D ((@IsNull_PermanentAddress = 1 AND [PermanentAddress] IS NULL) OR ([PermanentA" +
+                "ddress] = @Original_PermanentAddress)) AND ((@IsNull_DateOfBirth = 1 AND [DateOf" +
+                "Birth] IS NULL) OR ([DateOfBirth] = @Original_DateOfBirth)) AND ((@IsNull_Father" +
+                "Name = 1 AND [FatherName] IS NULL) OR ([FatherName] = @Original_FatherName)) AND" +
+                " ((@IsNull_Height = 1 AND [Height] IS NULL) OR ([Height] = @Original_Height)) AN" +
+                "D ((@IsNull_VisibleMarks = 1 AND [VisibleMarks] IS NULL) OR ([VisibleMarks] = @O" +
+                "riginal_VisibleMarks)) AND ((@IsNull_OfficeID = 1 AND [OfficeID] IS NULL) OR ([O" +
+                "fficeID] = @Original_OfficeID)) AND ((@IsNull_DepartmentID = 1 AND [DepartmentID" +
+                "] IS NULL) OR ([DepartmentID] = @Original_DepartmentID)) AND ((@IsNull_Designati" +
+                "onID = 1 AND [DesignationID] IS NULL) OR ([DesignationID] = @Original_Designatio" +
+                "nID)) AND ((@IsNull_Salary = 1 AND [Salary] IS NULL) OR ([Salary] = @Original_Sa" +
+                "lary)) AND ((@IsNull_Allowances = 1 AND [Allowances] IS NULL) OR ([Allowances] =" +
+                " @Original_Allowances)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR " +
+                "([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS " +
+                "NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_CreatedBy = 1 AND [Creat" +
+                "edBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_CreatedAt =" +
+                " 1 AND [CreatedAt] IS NULL) OR ([CreatedAt] = @Original_CreatedAt)) AND ((@IsNul" +
+                "l_ModifiedBy = 1 AND [ModifiedBy] IS NULL) OR ([ModifiedBy] = @Original_Modified" +
+                "By)) AND ((@IsNull_ModifiedAt = 1 AND [ModifiedAt] IS NULL) OR ([ModifiedAt] = @" +
+                "Original_ModifiedAt)) AND ((@IsNull_IsDeleted = 1 AND [IsDeleted] IS NULL) OR ([" +
+                "IsDeleted] = @Original_IsDeleted)) AND ((@IsNull_DeletedBy = 1 AND [DeletedBy] I" +
+                "S NULL) OR ([DeletedBy] = @Original_DeletedBy)) AND ((@IsNull_DeletedAt = 1 AND " +
+                "[DeletedAt] IS NULL) OR ([DeletedAt] = @Original_DeletedAt)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EmployeeNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -6994,8 +6948,8 @@ SELECT QualificationID, Name, Description, CreatedBy, CreatedAt, ModifiedBy, Mod
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DeletedAt", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeletedAt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EmployeeMaster] ([EmployeeID], [EmployeeNo], [FirstName], [MiddleName], [LastName], [PostalAddress], [PermanentAddress], [DateOfBirth], [FatherName], [Height], [VisibleMarks], [OfficeID], [DepartmentID], [DesignationID], [Salary], [Allowances], [StartDate], [EndDate], [CreatedBy], [CreatedAt], [ModifiedBy], [ModifiedAt], [IsDeleted], [DeletedBy], [DeletedAt]) VALUES (@EmployeeID, @EmployeeNo, @FirstName, @MiddleName, @LastName, @PostalAddress, @PermanentAddress, @DateOfBirth, @FatherName, @Height, @VisibleMarks, @OfficeID, @DepartmentID, @DesignationID, @Salary, @Allowances, @StartDate, @EndDate, @CreatedBy, @CreatedAt, @ModifiedBy, @ModifiedAt, @IsDeleted, @DeletedBy, @DeletedAt);
-SELECT EmployeeID, EmployeeNo, CAST(FirstName AS nvarchar(500)) + ' ' + CAST(MiddleName AS nvarchar(500)) + ' ' + CAST(LastName AS nvarchar(500)) COLLATE DATABASE_DEFAULT AS NameOfEmployee, FirstName, MiddleName, LastName, PostalAddress, PermanentAddress, DateOfBirth, FatherName, Height, VisibleMarks, OfficeID, DepartmentID, DesignationID, Salary, Allowances, StartDate, EndDate, CreatedBy, CreatedAt, ModifiedBy, ModifiedAt, IsDeleted, DeletedBy, DeletedAt FROM dbo.EmployeeMaster WHERE (EmployeeID = @EmployeeID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [EmployeeMaster] ([EmployeeID], [EmployeeNo], [FirstName], [MiddleName], [LastName], [PostalAddress], [PermanentAddress], [DateOfBirth], [FatherName], [Height], [VisibleMarks], [OfficeID], [DepartmentID], [DesignationID], [Salary], [Allowances], [StartDate], [EndDate], [CreatedBy], [CreatedAt], [ModifiedBy], [ModifiedAt], [IsDeleted], [DeletedBy], [DeletedAt]) VALUES (@EmployeeID, @EmployeeNo, @FirstName, @MiddleName, @LastName, @PostalAddress, @PermanentAddress, @DateOfBirth, @FatherName, @Height, @VisibleMarks, @OfficeID, @DepartmentID, @DesignationID, @Salary, @Allowances, @StartDate, @EndDate, @CreatedBy, @CreatedAt, @ModifiedBy, @ModifiedAt, @IsDeleted, @DeletedBy, @DeletedAt);
+SELECT EmployeeID, EmployeeNo, FirstName, MiddleName, LastName, PostalAddress, PermanentAddress, DateOfBirth, FatherName, Height, VisibleMarks, OfficeID, DepartmentID, DesignationID, Salary, Allowances, StartDate, EndDate, CreatedBy, CreatedAt, ModifiedBy, ModifiedAt, IsDeleted, DeletedBy, DeletedAt FROM EmployeeMaster WHERE (EmployeeID = @EmployeeID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7024,51 +6978,49 @@ SELECT EmployeeID, EmployeeNo, CAST(FirstName AS nvarchar(500)) + ' ' + CAST(Mid
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DeletedAt", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeletedAt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[EmployeeMaster] SET [EmployeeID] = @EmployeeID, [EmployeeNo] = @Emp" +
-                "loyeeNo, [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @Las" +
-                "tName, [PostalAddress] = @PostalAddress, [PermanentAddress] = @PermanentAddress," +
-                " [DateOfBirth] = @DateOfBirth, [FatherName] = @FatherName, [Height] = @Height, [" +
-                "VisibleMarks] = @VisibleMarks, [OfficeID] = @OfficeID, [DepartmentID] = @Departm" +
-                "entID, [DesignationID] = @DesignationID, [Salary] = @Salary, [Allowances] = @All" +
-                "owances, [StartDate] = @StartDate, [EndDate] = @EndDate, [CreatedBy] = @CreatedB" +
-                "y, [CreatedAt] = @CreatedAt, [ModifiedBy] = @ModifiedBy, [ModifiedAt] = @Modifie" +
-                "dAt, [IsDeleted] = @IsDeleted, [DeletedBy] = @DeletedBy, [DeletedAt] = @DeletedA" +
-                "t WHERE (([EmployeeID] = @Original_EmployeeID) AND ((@IsNull_EmployeeNo = 1 AND " +
-                "[EmployeeNo] IS NULL) OR ([EmployeeNo] = @Original_EmployeeNo)) AND ((@IsNull_Fi" +
-                "rstName = 1 AND [FirstName] IS NULL) OR ([FirstName] = @Original_FirstName)) AND" +
-                " ((@IsNull_MiddleName = 1 AND [MiddleName] IS NULL) OR ([MiddleName] = @Original" +
-                "_MiddleName)) AND ((@IsNull_LastName = 1 AND [LastName] IS NULL) OR ([LastName] " +
-                "= @Original_LastName)) AND ((@IsNull_PostalAddress = 1 AND [PostalAddress] IS NU" +
-                "LL) OR ([PostalAddress] = @Original_PostalAddress)) AND ((@IsNull_PermanentAddre" +
-                "ss = 1 AND [PermanentAddress] IS NULL) OR ([PermanentAddress] = @Original_Perman" +
-                "entAddress)) AND ((@IsNull_DateOfBirth = 1 AND [DateOfBirth] IS NULL) OR ([DateO" +
-                "fBirth] = @Original_DateOfBirth)) AND ((@IsNull_FatherName = 1 AND [FatherName] " +
-                "IS NULL) OR ([FatherName] = @Original_FatherName)) AND ((@IsNull_Height = 1 AND " +
-                "[Height] IS NULL) OR ([Height] = @Original_Height)) AND ((@IsNull_VisibleMarks =" +
-                " 1 AND [VisibleMarks] IS NULL) OR ([VisibleMarks] = @Original_VisibleMarks)) AND" +
-                " ((@IsNull_OfficeID = 1 AND [OfficeID] IS NULL) OR ([OfficeID] = @Original_Offic" +
-                "eID)) AND ((@IsNull_DepartmentID = 1 AND [DepartmentID] IS NULL) OR ([Department" +
-                "ID] = @Original_DepartmentID)) AND ((@IsNull_DesignationID = 1 AND [DesignationI" +
-                "D] IS NULL) OR ([DesignationID] = @Original_DesignationID)) AND ((@IsNull_Salary" +
-                " = 1 AND [Salary] IS NULL) OR ([Salary] = @Original_Salary)) AND ((@IsNull_Allow" +
-                "ances = 1 AND [Allowances] IS NULL) OR ([Allowances] = @Original_Allowances)) AN" +
-                "D ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_S" +
-                "tartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Ori" +
-                "ginal_EndDate)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([Create" +
-                "dBy] = @Original_CreatedBy)) AND ((@IsNull_CreatedAt = 1 AND [CreatedAt] IS NULL" +
-                ") OR ([CreatedAt] = @Original_CreatedAt)) AND ((@IsNull_ModifiedBy = 1 AND [Modi" +
-                "fiedBy] IS NULL) OR ([ModifiedBy] = @Original_ModifiedBy)) AND ((@IsNull_Modifie" +
-                "dAt = 1 AND [ModifiedAt] IS NULL) OR ([ModifiedAt] = @Original_ModifiedAt)) AND " +
-                "((@IsNull_IsDeleted = 1 AND [IsDeleted] IS NULL) OR ([IsDeleted] = @Original_IsD" +
-                "eleted)) AND ((@IsNull_DeletedBy = 1 AND [DeletedBy] IS NULL) OR ([DeletedBy] = " +
-                "@Original_DeletedBy)) AND ((@IsNull_DeletedAt = 1 AND [DeletedAt] IS NULL) OR ([" +
-                "DeletedAt] = @Original_DeletedAt)));\r\nSELECT EmployeeID, EmployeeNo, CAST(FirstN" +
-                "ame AS nvarchar(500)) + \' \' + CAST(MiddleName AS nvarchar(500)) + \' \' + CAST(Las" +
-                "tName AS nvarchar(500)) COLLATE DATABASE_DEFAULT AS NameOfEmployee, FirstName, M" +
-                "iddleName, LastName, PostalAddress, PermanentAddress, DateOfBirth, FatherName, H" +
-                "eight, VisibleMarks, OfficeID, DepartmentID, DesignationID, Salary, Allowances, " +
-                "StartDate, EndDate, CreatedBy, CreatedAt, ModifiedBy, ModifiedAt, IsDeleted, Del" +
-                "etedBy, DeletedAt FROM dbo.EmployeeMaster WHERE (EmployeeID = @EmployeeID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [EmployeeMaster] SET [EmployeeID] = @EmployeeID, [EmployeeNo] = @EmployeeN" +
+                "o, [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @LastName," +
+                " [PostalAddress] = @PostalAddress, [PermanentAddress] = @PermanentAddress, [Date" +
+                "OfBirth] = @DateOfBirth, [FatherName] = @FatherName, [Height] = @Height, [Visibl" +
+                "eMarks] = @VisibleMarks, [OfficeID] = @OfficeID, [DepartmentID] = @DepartmentID," +
+                " [DesignationID] = @DesignationID, [Salary] = @Salary, [Allowances] = @Allowance" +
+                "s, [StartDate] = @StartDate, [EndDate] = @EndDate, [CreatedBy] = @CreatedBy, [Cr" +
+                "eatedAt] = @CreatedAt, [ModifiedBy] = @ModifiedBy, [ModifiedAt] = @ModifiedAt, [" +
+                "IsDeleted] = @IsDeleted, [DeletedBy] = @DeletedBy, [DeletedAt] = @DeletedAt WHER" +
+                "E (([EmployeeID] = @Original_EmployeeID) AND ((@IsNull_EmployeeNo = 1 AND [Emplo" +
+                "yeeNo] IS NULL) OR ([EmployeeNo] = @Original_EmployeeNo)) AND ((@IsNull_FirstNam" +
+                "e = 1 AND [FirstName] IS NULL) OR ([FirstName] = @Original_FirstName)) AND ((@Is" +
+                "Null_MiddleName = 1 AND [MiddleName] IS NULL) OR ([MiddleName] = @Original_Middl" +
+                "eName)) AND ((@IsNull_LastName = 1 AND [LastName] IS NULL) OR ([LastName] = @Ori" +
+                "ginal_LastName)) AND ((@IsNull_PostalAddress = 1 AND [PostalAddress] IS NULL) OR" +
+                " ([PostalAddress] = @Original_PostalAddress)) AND ((@IsNull_PermanentAddress = 1" +
+                " AND [PermanentAddress] IS NULL) OR ([PermanentAddress] = @Original_PermanentAdd" +
+                "ress)) AND ((@IsNull_DateOfBirth = 1 AND [DateOfBirth] IS NULL) OR ([DateOfBirth" +
+                "] = @Original_DateOfBirth)) AND ((@IsNull_FatherName = 1 AND [FatherName] IS NUL" +
+                "L) OR ([FatherName] = @Original_FatherName)) AND ((@IsNull_Height = 1 AND [Heigh" +
+                "t] IS NULL) OR ([Height] = @Original_Height)) AND ((@IsNull_VisibleMarks = 1 AND" +
+                " [VisibleMarks] IS NULL) OR ([VisibleMarks] = @Original_VisibleMarks)) AND ((@Is" +
+                "Null_OfficeID = 1 AND [OfficeID] IS NULL) OR ([OfficeID] = @Original_OfficeID)) " +
+                "AND ((@IsNull_DepartmentID = 1 AND [DepartmentID] IS NULL) OR ([DepartmentID] = " +
+                "@Original_DepartmentID)) AND ((@IsNull_DesignationID = 1 AND [DesignationID] IS " +
+                "NULL) OR ([DesignationID] = @Original_DesignationID)) AND ((@IsNull_Salary = 1 A" +
+                "ND [Salary] IS NULL) OR ([Salary] = @Original_Salary)) AND ((@IsNull_Allowances " +
+                "= 1 AND [Allowances] IS NULL) OR ([Allowances] = @Original_Allowances)) AND ((@I" +
+                "sNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDa" +
+                "te)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_" +
+                "EndDate)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] =" +
+                " @Original_CreatedBy)) AND ((@IsNull_CreatedAt = 1 AND [CreatedAt] IS NULL) OR (" +
+                "[CreatedAt] = @Original_CreatedAt)) AND ((@IsNull_ModifiedBy = 1 AND [ModifiedBy" +
+                "] IS NULL) OR ([ModifiedBy] = @Original_ModifiedBy)) AND ((@IsNull_ModifiedAt = " +
+                "1 AND [ModifiedAt] IS NULL) OR ([ModifiedAt] = @Original_ModifiedAt)) AND ((@IsN" +
+                "ull_IsDeleted = 1 AND [IsDeleted] IS NULL) OR ([IsDeleted] = @Original_IsDeleted" +
+                ")) AND ((@IsNull_DeletedBy = 1 AND [DeletedBy] IS NULL) OR ([DeletedBy] = @Origi" +
+                "nal_DeletedBy)) AND ((@IsNull_DeletedAt = 1 AND [DeletedAt] IS NULL) OR ([Delete" +
+                "dAt] = @Original_DeletedAt)));\r\nSELECT EmployeeID, EmployeeNo, FirstName, Middle" +
+                "Name, LastName, PostalAddress, PermanentAddress, DateOfBirth, FatherName, Height" +
+                ", VisibleMarks, OfficeID, DepartmentID, DesignationID, Salary, Allowances, Start" +
+                "Date, EndDate, CreatedBy, CreatedAt, ModifiedBy, ModifiedAt, IsDeleted, DeletedB" +
+                "y, DeletedAt FROM EmployeeMaster WHERE (EmployeeID = @EmployeeID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7159,30 +7111,7 @@ SELECT EmployeeID, EmployeeNo, CAST(FirstName AS nvarchar(500)) + ' ' + CAST(Mid
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        
-EmployeeID, 
-EmployeeNo, 
-CAST(FirstName AS nvarchar(500)) + ' ' + CAST(MiddleName AS nvarchar(500))+ ' '+CAST(LastName as nvarchar(500)) COLLATE DATABASE_DEFAULT as [NameOfEmployee], 
-FirstName, 
-MiddleName, 
-LastName, 
-PostalAddress, 
-PermanentAddress, 
-DateOfBirth, 
-FatherName, 
-Height, 
-VisibleMarks, 
-OfficeID, 
-DepartmentID, 
-DesignationID, 
-Salary, 
-Allowances, 
-StartDate, 
-EndDate, 
-CreatedBy, 
-CreatedAt, ModifiedBy, ModifiedAt, IsDeleted, DeletedBy, DeletedAt
-FROM            dbo.EmployeeMaster
-";
+            this._commandCollection[0].CommandText = "SELECT     EmployeeMaster.*\r\nFROM         EmployeeMaster";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;

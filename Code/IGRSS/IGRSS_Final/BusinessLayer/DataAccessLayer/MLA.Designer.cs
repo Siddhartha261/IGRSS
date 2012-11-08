@@ -1350,20 +1350,19 @@ SELECT SrNo, InwardNo, FileNo, MLAname, Subject, LetterNo, LetterDate, Departmen
             this._commandCollection[1].CommandText = @"SELECT        SrNo, InwardNo, FileNo, MLAname, Subject, LetterNo, LetterDate, DepartmentName, FileNumber, DetailsofOutput, DetailsofFilePreservation, DetailsOfRecord, 
                          Remarks
 FROM            dbo.MLA
-
-WHERE   (CAST(dbo.MLA.SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
-                         (dbo.MLA.InwardNo LIKE '%' + @searchKeyWord + '%') OR
-                         (CAST(dbo.MLA.FileNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
-                         (dbo.MLA.MLAname LIKE '%' + @searchKeyWord + '%') OR
-                         (CAST(dbo.MLA.Subject AS varchar) LIKE '%' + @searchKeyWord + '%') OR
-                         (CAST(dbo.MLA.Letterno AS varchar) LIKE '%' + @searchKeyWord + '%') OR
-                         (CAST(dbo.MLA.LetterDate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
-                         (dbo.MLA.DepartmentName LIKE '%' + @searchKeyWord + '%') OR
-                         (CAST(dbo.MLA.FileNumber AS varchar) LIKE '%' + @searchKeyWord + '%') OR
-						 (dbo.MLA.DetailsOfOutput LIKE '%' + @searchKeyWord + '%') OR
-						 (dbo.MLA.DetailsOfFilePreservation LIKE '%' + @searchKeyWord + '%') OR
-						 (dbo.MLA.DetailsOfRecord LIKE '%' + @searchKeyWord + '%') OR
-						 (dbo.MLA.Remarks LIKE '%' + @searchKeyWord + '%')";
+WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (InwardNo LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(FileNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (MLAname LIKE '%' + @searchKeyWord + '%') OR
+                         (Subject LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(LetterNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(LetterDate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (DepartmentName LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(FileNumber AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (DetailsofOutput LIKE '%' + @searchKeyWord + '%') OR
+                         (DetailsofFilePreservation LIKE '%' + @searchKeyWord + '%') OR
+                         (DetailsOfRecord LIKE '%' + @searchKeyWord + '%') OR
+                         (Remarks LIKE '%' + @searchKeyWord + '%')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

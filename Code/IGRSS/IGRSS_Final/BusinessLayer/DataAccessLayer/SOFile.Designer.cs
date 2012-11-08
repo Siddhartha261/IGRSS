@@ -24,7 +24,7 @@ namespace IGRSS.DataAccessLayer {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class SOFile : global::System.Data.DataSet {
         
-        private SOFileDataTable tableSOFile;
+        private SOFILEDataTable tableSOFILE;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace IGRSS.DataAccessLayer {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["SOFile"] != null)) {
-                    base.Tables.Add(new SOFileDataTable(ds.Tables["SOFile"]));
+                if ((ds.Tables["SOFILE"] != null)) {
+                    base.Tables.Add(new SOFILEDataTable(ds.Tables["SOFILE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace IGRSS.DataAccessLayer {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SOFileDataTable _SOFile {
+        public SOFILEDataTable SOFILE {
             get {
-                return this.tableSOFile;
+                return this.tableSOFILE;
             }
         }
         
@@ -152,8 +152,8 @@ namespace IGRSS.DataAccessLayer {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["SOFile"] != null)) {
-                    base.Tables.Add(new SOFileDataTable(ds.Tables["SOFile"]));
+                if ((ds.Tables["SOFILE"] != null)) {
+                    base.Tables.Add(new SOFILEDataTable(ds.Tables["SOFILE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace IGRSS.DataAccessLayer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableSOFile = ((SOFileDataTable)(base.Tables["SOFile"]));
+            this.tableSOFILE = ((SOFILEDataTable)(base.Tables["SOFILE"]));
             if ((initTable == true)) {
-                if ((this.tableSOFile != null)) {
-                    this.tableSOFile.InitVars();
+                if ((this.tableSOFILE != null)) {
+                    this.tableSOFILE.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace IGRSS.DataAccessLayer {
             this.Namespace = "http://tempuri.org/SOFile.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSOFile = new SOFileDataTable();
-            base.Tables.Add(this.tableSOFile);
+            this.tableSOFILE = new SOFILEDataTable();
+            base.Tables.Add(this.tableSOFILE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerialize_SOFile() {
+        private bool ShouldSerializeSOFILE() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace IGRSS.DataAccessLayer {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void SOFileRowChangeEventHandler(object sender, SOFileRowChangeEvent e);
+        public delegate void SOFILERowChangeEventHandler(object sender, SOFILERowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SOFileDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class SOFILEDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columnSrNo;
             
@@ -293,8 +293,8 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SOFileDataTable() {
-                this.TableName = "SOFile";
+            public SOFILEDataTable() {
+                this.TableName = "SOFILE";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +302,7 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal SOFileDataTable(global::System.Data.DataTable table) {
+            internal SOFILEDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,7 +319,7 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected SOFileDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SOFILEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -383,50 +383,50 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SOFileRow this[int index] {
+            public SOFILERow this[int index] {
                 get {
-                    return ((SOFileRow)(this.Rows[index]));
+                    return ((SOFILERow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SOFileRowChangeEventHandler SOFileRowChanging;
+            public event SOFILERowChangeEventHandler SOFILERowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SOFileRowChangeEventHandler SOFileRowChanged;
+            public event SOFILERowChangeEventHandler SOFILERowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SOFileRowChangeEventHandler SOFileRowDeleting;
+            public event SOFILERowChangeEventHandler SOFILERowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SOFileRowChangeEventHandler SOFileRowDeleted;
+            public event SOFILERowChangeEventHandler SOFILERowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddSOFileRow(SOFileRow row) {
+            public void AddSOFILERow(SOFILERow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SOFileRow AddSOFileRow(int SrNo, int Circulars, System.DateTime DateOfCirculars, string Department, string Subject, int PageNo) {
-                SOFileRow rowSOFileRow = ((SOFileRow)(this.NewRow()));
+            public SOFILERow AddSOFILERow(int Circulars, System.DateTime DateOfCirculars, string Department, string Subject, int PageNo) {
+                SOFILERow rowSOFILERow = ((SOFILERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        SrNo,
+                        null,
                         Circulars,
                         DateOfCirculars,
                         Department,
                         Subject,
                         PageNo};
-                rowSOFileRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSOFileRow);
-                return rowSOFileRow;
+                rowSOFILERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSOFILERow);
+                return rowSOFILERow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SOFileRow FindBySrNo(int SrNo) {
-                return ((SOFileRow)(this.Rows.Find(new object[] {
+            public SOFILERow FindBySrNo(int SrNo) {
+                return ((SOFILERow)(this.Rows.Find(new object[] {
                             SrNo})));
             }
             
@@ -439,7 +439,7 @@ namespace IGRSS.DataAccessLayer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SOFileDataTable cln = ((SOFileDataTable)(base.Clone()));
+                SOFILEDataTable cln = ((SOFILEDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -447,7 +447,7 @@ namespace IGRSS.DataAccessLayer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SOFileDataTable();
+                return new SOFILEDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -478,38 +478,40 @@ namespace IGRSS.DataAccessLayer {
                 base.Columns.Add(this.columnPageNo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSrNo}, true));
+                this.columnSrNo.AutoIncrement = true;
+                this.columnSrNo.AutoIncrementSeed = -1;
+                this.columnSrNo.AutoIncrementStep = -1;
                 this.columnSrNo.AllowDBNull = false;
+                this.columnSrNo.ReadOnly = true;
                 this.columnSrNo.Unique = true;
-                this.columnDepartment.MaxLength = 10;
+                this.columnDepartment.MaxLength = 25;
                 this.columnSubject.MaxLength = 50;
-                this.ExtendedProperties.Add("Generator_TablePropName", "_SOFile");
-                this.ExtendedProperties.Add("Generator_UserTableName", "SOFile");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SOFileRow NewSOFileRow() {
-                return ((SOFileRow)(this.NewRow()));
+            public SOFILERow NewSOFILERow() {
+                return ((SOFILERow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SOFileRow(builder);
+                return new SOFILERow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SOFileRow);
+                return typeof(SOFILERow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SOFileRowChanged != null)) {
-                    this.SOFileRowChanged(this, new SOFileRowChangeEvent(((SOFileRow)(e.Row)), e.Action));
+                if ((this.SOFILERowChanged != null)) {
+                    this.SOFILERowChanged(this, new SOFILERowChangeEvent(((SOFILERow)(e.Row)), e.Action));
                 }
             }
             
@@ -517,8 +519,8 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SOFileRowChanging != null)) {
-                    this.SOFileRowChanging(this, new SOFileRowChangeEvent(((SOFileRow)(e.Row)), e.Action));
+                if ((this.SOFILERowChanging != null)) {
+                    this.SOFILERowChanging(this, new SOFILERowChangeEvent(((SOFILERow)(e.Row)), e.Action));
                 }
             }
             
@@ -526,8 +528,8 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SOFileRowDeleted != null)) {
-                    this.SOFileRowDeleted(this, new SOFileRowChangeEvent(((SOFileRow)(e.Row)), e.Action));
+                if ((this.SOFILERowDeleted != null)) {
+                    this.SOFILERowDeleted(this, new SOFILERowChangeEvent(((SOFILERow)(e.Row)), e.Action));
                 }
             }
             
@@ -535,14 +537,14 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SOFileRowDeleting != null)) {
-                    this.SOFileRowDeleting(this, new SOFileRowChangeEvent(((SOFileRow)(e.Row)), e.Action));
+                if ((this.SOFILERowDeleting != null)) {
+                    this.SOFILERowDeleting(this, new SOFILERowChangeEvent(((SOFILERow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveSOFileRow(SOFileRow row) {
+            public void RemoveSOFILERow(SOFILERow row) {
                 this.Rows.Remove(row);
             }
             
@@ -569,7 +571,7 @@ namespace IGRSS.DataAccessLayer {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SOFileDataTable";
+                attribute2.FixedValue = "SOFILEDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -613,25 +615,25 @@ namespace IGRSS.DataAccessLayer {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SOFileRow : global::System.Data.DataRow {
+        public partial class SOFILERow : global::System.Data.DataRow {
             
-            private SOFileDataTable tableSOFile;
+            private SOFILEDataTable tableSOFILE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal SOFileRow(global::System.Data.DataRowBuilder rb) : 
+            internal SOFILERow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSOFile = ((SOFileDataTable)(this.Table));
+                this.tableSOFILE = ((SOFILEDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int SrNo {
                 get {
-                    return ((int)(this[this.tableSOFile.SrNoColumn]));
+                    return ((int)(this[this.tableSOFILE.SrNoColumn]));
                 }
                 set {
-                    this[this.tableSOFile.SrNoColumn] = value;
+                    this[this.tableSOFILE.SrNoColumn] = value;
                 }
             }
             
@@ -640,14 +642,14 @@ namespace IGRSS.DataAccessLayer {
             public int Circulars {
                 get {
                     try {
-                        return ((int)(this[this.tableSOFile.CircularsColumn]));
+                        return ((int)(this[this.tableSOFILE.CircularsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Circulars\' in table \'SOFile\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Circulars\' in table \'SOFILE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSOFile.CircularsColumn] = value;
+                    this[this.tableSOFILE.CircularsColumn] = value;
                 }
             }
             
@@ -656,14 +658,14 @@ namespace IGRSS.DataAccessLayer {
             public System.DateTime DateOfCirculars {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableSOFile.DateOfCircularsColumn]));
+                        return ((global::System.DateTime)(this[this.tableSOFILE.DateOfCircularsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DateOfCirculars\' in table \'SOFile\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateOfCirculars\' in table \'SOFILE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSOFile.DateOfCircularsColumn] = value;
+                    this[this.tableSOFILE.DateOfCircularsColumn] = value;
                 }
             }
             
@@ -672,14 +674,14 @@ namespace IGRSS.DataAccessLayer {
             public string Department {
                 get {
                     try {
-                        return ((string)(this[this.tableSOFile.DepartmentColumn]));
+                        return ((string)(this[this.tableSOFILE.DepartmentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Department\' in table \'SOFile\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Department\' in table \'SOFILE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSOFile.DepartmentColumn] = value;
+                    this[this.tableSOFILE.DepartmentColumn] = value;
                 }
             }
             
@@ -688,14 +690,14 @@ namespace IGRSS.DataAccessLayer {
             public string Subject {
                 get {
                     try {
-                        return ((string)(this[this.tableSOFile.SubjectColumn]));
+                        return ((string)(this[this.tableSOFILE.SubjectColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Subject\' in table \'SOFile\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Subject\' in table \'SOFILE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSOFile.SubjectColumn] = value;
+                    this[this.tableSOFILE.SubjectColumn] = value;
                 }
             }
             
@@ -704,75 +706,75 @@ namespace IGRSS.DataAccessLayer {
             public int PageNo {
                 get {
                     try {
-                        return ((int)(this[this.tableSOFile.PageNoColumn]));
+                        return ((int)(this[this.tableSOFILE.PageNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PageNo\' in table \'SOFile\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PageNo\' in table \'SOFILE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSOFile.PageNoColumn] = value;
+                    this[this.tableSOFILE.PageNoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCircularsNull() {
-                return this.IsNull(this.tableSOFile.CircularsColumn);
+                return this.IsNull(this.tableSOFILE.CircularsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCircularsNull() {
-                this[this.tableSOFile.CircularsColumn] = global::System.Convert.DBNull;
+                this[this.tableSOFILE.CircularsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDateOfCircularsNull() {
-                return this.IsNull(this.tableSOFile.DateOfCircularsColumn);
+                return this.IsNull(this.tableSOFILE.DateOfCircularsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDateOfCircularsNull() {
-                this[this.tableSOFile.DateOfCircularsColumn] = global::System.Convert.DBNull;
+                this[this.tableSOFILE.DateOfCircularsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDepartmentNull() {
-                return this.IsNull(this.tableSOFile.DepartmentColumn);
+                return this.IsNull(this.tableSOFILE.DepartmentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDepartmentNull() {
-                this[this.tableSOFile.DepartmentColumn] = global::System.Convert.DBNull;
+                this[this.tableSOFILE.DepartmentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSubjectNull() {
-                return this.IsNull(this.tableSOFile.SubjectColumn);
+                return this.IsNull(this.tableSOFILE.SubjectColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSubjectNull() {
-                this[this.tableSOFile.SubjectColumn] = global::System.Convert.DBNull;
+                this[this.tableSOFILE.SubjectColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPageNoNull() {
-                return this.IsNull(this.tableSOFile.PageNoColumn);
+                return this.IsNull(this.tableSOFILE.PageNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPageNoNull() {
-                this[this.tableSOFile.PageNoColumn] = global::System.Convert.DBNull;
+                this[this.tableSOFILE.PageNoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -780,22 +782,22 @@ namespace IGRSS.DataAccessLayer {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class SOFileRowChangeEvent : global::System.EventArgs {
+        public class SOFILERowChangeEvent : global::System.EventArgs {
             
-            private SOFileRow eventRow;
+            private SOFILERow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SOFileRowChangeEvent(SOFileRow row, global::System.Data.DataRowAction action) {
+            public SOFILERowChangeEvent(SOFILERow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SOFileRow Row {
+            public SOFILERow Row {
                 get {
                     return this.eventRow;
                 }
@@ -823,7 +825,7 @@ namespace IGRSS.DataAccessLayer.SOFileTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SOFileTableAdapter : global::System.ComponentModel.Component {
+    public partial class SOFILETableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -837,7 +839,7 @@ namespace IGRSS.DataAccessLayer.SOFileTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public SOFileTableAdapter() {
+        public SOFILETableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -934,7 +936,7 @@ namespace IGRSS.DataAccessLayer.SOFileTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SOFile";
+            tableMapping.DataSetTable = "SOFILE";
             tableMapping.ColumnMappings.Add("SrNo", "SrNo");
             tableMapping.ColumnMappings.Add("Circulars", "Circulars");
             tableMapping.ColumnMappings.Add("DateOfCirculars", "DateOfCirculars");
@@ -944,7 +946,7 @@ namespace IGRSS.DataAccessLayer.SOFileTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[SOFile] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Circulars = 1 AND [Circulars] IS NULL) OR ([Circulars] = @Original_Circulars)) AND ((@IsNull_DateOfCirculars = 1 AND [DateOfCirculars] IS NULL) OR ([DateOfCirculars] = @Original_DateOfCirculars)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_PageNo = 1 AND [PageNo] IS NULL) OR ([PageNo] = @Original_PageNo)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [SOFILE] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Circulars = 1 AND [Circulars] IS NULL) OR ([Circulars] = @Original_Circulars)) AND ((@IsNull_DateOfCirculars = 1 AND [DateOfCirculars] IS NULL) OR ([DateOfCirculars] = @Original_DateOfCirculars)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_PageNo = 1 AND [PageNo] IS NULL) OR ([PageNo] = @Original_PageNo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Circulars", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Circulars", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -952,31 +954,29 @@ namespace IGRSS.DataAccessLayer.SOFileTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateOfCirculars", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfCirculars", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateOfCirculars", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfCirculars", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Department", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Department", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Department", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Subject", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PageNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PageNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PageNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PageNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[SOFile] ([SrNo], [Circulars], [DateOfCirculars], [Department], [Subject], [PageNo]) VALUES (@SrNo, @Circulars, @DateOfCirculars, @Department, @Subject, @PageNo);
-SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SOFile WHERE (SrNo = @SrNo)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [SOFILE] ([Circulars], [DateOfCirculars], [Department], [Subject], [PageNo]) VALUES (@Circulars, @DateOfCirculars, @Department, @Subject, @PageNo);
+SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM SOFILE WHERE (SrNo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Circulars", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Circulars", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfCirculars", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfCirculars", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Department", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Department", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PageNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PageNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[SOFile] SET [SrNo] = @SrNo, [Circulars] = @Circulars, [DateOfCirculars] = @DateOfCirculars, [Department] = @Department, [Subject] = @Subject, [PageNo] = @PageNo WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Circulars = 1 AND [Circulars] IS NULL) OR ([Circulars] = @Original_Circulars)) AND ((@IsNull_DateOfCirculars = 1 AND [DateOfCirculars] IS NULL) OR ([DateOfCirculars] = @Original_DateOfCirculars)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_PageNo = 1 AND [PageNo] IS NULL) OR ([PageNo] = @Original_PageNo)));
-SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SOFile WHERE (SrNo = @SrNo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [SOFILE] SET [Circulars] = @Circulars, [DateOfCirculars] = @DateOfCirculars, [Department] = @Department, [Subject] = @Subject, [PageNo] = @PageNo WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Circulars = 1 AND [Circulars] IS NULL) OR ([Circulars] = @Original_Circulars)) AND ((@IsNull_DateOfCirculars = 1 AND [DateOfCirculars] IS NULL) OR ([DateOfCirculars] = @Original_DateOfCirculars)) AND ((@IsNull_Department = 1 AND [Department] IS NULL) OR ([Department] = @Original_Department)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_PageNo = 1 AND [PageNo] IS NULL) OR ([PageNo] = @Original_PageNo)));
+SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM SOFILE WHERE (SrNo = @SrNo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Circulars", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Circulars", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfCirculars", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfCirculars", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Department", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Department", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PageNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PageNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -985,11 +985,12 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateOfCirculars", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfCirculars", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateOfCirculars", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfCirculars", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Department", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Department", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Department", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Subject", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PageNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PageNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PageNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PageNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1002,19 +1003,24 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo\r\nFROM" +
-                "            dbo.SOFile";
+                "            SOFILE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT Circulars, DateOfCirculars, Department, PageNo, SrNo, Subject FROM SOFILE WHERE (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR (CAST(Circulars AS varchar) LIKE '%' + @searchKeyWord + '%') OR (CAST(DateOfCirculars AS varchar) LIKE '%' + @searchKeyWord + '%') OR (CAST(Department AS varchar) LIKE '%' + @searchKeyWord + '%') OR (CAST(Subject AS varchar) LIKE '%' + @searchKeyWord + '%') OR (CAST(PageNo AS varchar) LIKE '%' + @searchKeyWord + '%')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SOFile.SOFileDataTable dataTable) {
+        public virtual int Fill(SOFile.SOFILEDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1027,9 +1033,9 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SOFile.SOFileDataTable GetData() {
+        public virtual SOFile.SOFILEDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SOFile.SOFileDataTable dataTable = new SOFile.SOFileDataTable();
+            SOFile.SOFILEDataTable dataTable = new SOFile.SOFILEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1037,7 +1043,43 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SOFile.SOFileDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(SOFile.SOFILEDataTable dataTable, string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SOFile.SOFILEDataTable GetDataBy(string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
+            SOFile.SOFILEDataTable dataTable = new SOFile.SOFILEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SOFile.SOFILEDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1045,7 +1087,7 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(SOFile dataSet) {
-            return this.Adapter.Update(dataSet, "SOFile");
+            return this.Adapter.Update(dataSet, "SOFILE");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1129,37 +1171,36 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int SrNo, global::System.Nullable<int> Circulars, global::System.Nullable<global::System.DateTime> DateOfCirculars, string Department, string Subject, global::System.Nullable<int> PageNo) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SrNo));
+        public virtual int Insert(global::System.Nullable<int> Circulars, global::System.Nullable<global::System.DateTime> DateOfCirculars, string Department, string Subject, global::System.Nullable<int> PageNo) {
             if ((Circulars.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Circulars.Value));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Circulars.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((DateOfCirculars.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(DateOfCirculars.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((DateOfCirculars.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateOfCirculars.Value));
-            }
-            else {
+            if ((Department == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Department == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Department));
+            }
+            if ((Subject == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Department));
-            }
-            if ((Subject == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Subject));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Subject));
             }
             if ((PageNo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(PageNo.Value));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(PageNo.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1181,79 +1222,79 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int SrNo, global::System.Nullable<int> Circulars, global::System.Nullable<global::System.DateTime> DateOfCirculars, string Department, string Subject, global::System.Nullable<int> PageNo, int Original_SrNo, global::System.Nullable<int> Original_Circulars, global::System.Nullable<global::System.DateTime> Original_DateOfCirculars, string Original_Department, string Original_Subject, global::System.Nullable<int> Original_PageNo) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SrNo));
+        public virtual int Update(global::System.Nullable<int> Circulars, global::System.Nullable<global::System.DateTime> DateOfCirculars, string Department, string Subject, global::System.Nullable<int> PageNo, int Original_SrNo, global::System.Nullable<int> Original_Circulars, global::System.Nullable<global::System.DateTime> Original_DateOfCirculars, string Original_Department, string Original_Subject, global::System.Nullable<int> Original_PageNo, int SrNo) {
             if ((Circulars.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Circulars.Value));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Circulars.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((DateOfCirculars.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(DateOfCirculars.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((DateOfCirculars.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateOfCirculars.Value));
-            }
-            else {
+            if ((Department == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Department == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Department));
+            }
+            if ((Subject == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Department));
-            }
-            if ((Subject == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Subject));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Subject));
             }
             if ((PageNo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(PageNo.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(PageNo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_SrNo));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_SrNo));
             if ((Original_Circulars.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Circulars.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Circulars.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((Original_DateOfCirculars.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DateOfCirculars.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_DateOfCirculars.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_Department == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Department));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Department));
             }
             if ((Original_Subject == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Subject));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Subject));
             }
             if ((Original_PageNo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_PageNo.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_PageNo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(SrNo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1275,7 +1316,7 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> Circulars, global::System.Nullable<global::System.DateTime> DateOfCirculars, string Department, string Subject, global::System.Nullable<int> PageNo, int Original_SrNo, global::System.Nullable<int> Original_Circulars, global::System.Nullable<global::System.DateTime> Original_DateOfCirculars, string Original_Department, string Original_Subject, global::System.Nullable<int> Original_PageNo) {
-            return this.Update(Original_SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo, Original_SrNo, Original_Circulars, Original_DateOfCirculars, Original_Department, Original_Subject, Original_PageNo);
+            return this.Update(Circulars, DateOfCirculars, Department, Subject, PageNo, Original_SrNo, Original_Circulars, Original_DateOfCirculars, Original_Department, Original_Subject, Original_PageNo, Original_SrNo);
         }
     }
     
@@ -1291,7 +1332,7 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         
         private UpdateOrderOption _updateOrder;
         
-        private SOFileTableAdapter _sOFileTableAdapter;
+        private SOFILETableAdapter _sOFILETableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1313,12 +1354,12 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public SOFileTableAdapter SOFileTableAdapter {
+        public SOFILETableAdapter SOFILETableAdapter {
             get {
-                return this._sOFileTableAdapter;
+                return this._sOFILETableAdapter;
             }
             set {
-                this._sOFileTableAdapter = value;
+                this._sOFILETableAdapter = value;
             }
         }
         
@@ -1341,9 +1382,9 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._sOFileTableAdapter != null) 
-                            && (this._sOFileTableAdapter.Connection != null))) {
-                    return this._sOFileTableAdapter.Connection;
+                if (((this._sOFILETableAdapter != null) 
+                            && (this._sOFILETableAdapter.Connection != null))) {
+                    return this._sOFILETableAdapter.Connection;
                 }
                 return null;
             }
@@ -1358,7 +1399,7 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._sOFileTableAdapter != null)) {
+                if ((this._sOFILETableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1372,12 +1413,12 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(SOFile dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._sOFileTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet._SOFile.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._sOFILETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SOFILE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sOFileTableAdapter.Update(updatedRows));
+                    result = (result + this._sOFILETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1391,11 +1432,11 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(SOFile dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._sOFileTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet._SOFile.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._sOFILETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SOFILE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sOFileTableAdapter.Update(addedRows));
+                    result = (result + this._sOFILETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1409,11 +1450,11 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(SOFile dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._sOFileTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet._SOFile.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sOFILETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SOFILE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sOFileTableAdapter.Update(deletedRows));
+                    result = (result + this._sOFILETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1456,8 +1497,8 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._sOFileTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sOFileTableAdapter.Connection) == false))) {
+            if (((this._sOFILETableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._sOFILETableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1493,13 +1534,13 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._sOFileTableAdapter != null)) {
-                    revertConnections.Add(this._sOFileTableAdapter, this._sOFileTableAdapter.Connection);
-                    this._sOFileTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._sOFileTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._sOFileTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sOFileTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sOFileTableAdapter.Adapter);
+                if ((this._sOFILETableAdapter != null)) {
+                    revertConnections.Add(this._sOFILETableAdapter, this._sOFILETableAdapter.Connection);
+                    this._sOFILETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._sOFILETableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._sOFILETableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._sOFILETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._sOFILETableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1560,9 +1601,9 @@ SELECT SrNo, Circulars, DateOfCirculars, Department, Subject, PageNo FROM dbo.SO
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._sOFileTableAdapter != null)) {
-                    this._sOFileTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sOFileTableAdapter]));
-                    this._sOFileTableAdapter.Transaction = null;
+                if ((this._sOFILETableAdapter != null)) {
+                    this._sOFILETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sOFILETableAdapter]));
+                    this._sOFILETableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

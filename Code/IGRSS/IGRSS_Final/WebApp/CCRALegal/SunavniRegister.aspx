@@ -59,7 +59,6 @@
                               SortExpression="DateOfHearing" />
                           <asp:BoundField DataField="Result" HeaderText="Result" 
                               SortExpression="Result" Visible="False" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

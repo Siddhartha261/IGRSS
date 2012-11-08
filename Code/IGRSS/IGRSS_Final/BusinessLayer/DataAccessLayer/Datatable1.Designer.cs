@@ -851,7 +851,7 @@ SELECT id, name, dob FROM dbo.table1 WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IGRSS.Properties.Settings.Default.IGRSS_DEVConnectionString;
+            this._connection.ConnectionString = global::IGRSS.Properties.Settings.Default.IGRSS_FINALConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

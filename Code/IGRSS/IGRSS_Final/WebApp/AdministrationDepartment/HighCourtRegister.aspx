@@ -76,7 +76,6 @@
                               Visible="False" />
                           <asp:BoundField DataField="JudgementDetail" HeaderText="JudgementDetail" 
                               SortExpression="JudgementDetail" Visible="False" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
                       </Columns>
                   </asp:GridView>
               </td>

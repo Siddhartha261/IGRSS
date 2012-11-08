@@ -2,14 +2,16 @@
 <xs:schema id="GovtDoc" targetNamespace="http://tempuri.org/GovtDoc.xsd" xmlns:mstns="http://tempuri.org/GovtDoc.xsd" xmlns="http://tempuri.org/GovtDoc.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IGRSS_FINALConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IGRSS_FINALConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IGRSS.Properties.Settings.GlobalReference.Default.IGRSS_FINALConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IGRSS_FINALConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IGRSS_FINALConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IGRSS.Properties.Settings.GlobalReference.Default.IGRSS_FINALConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IGRSS.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GovtDocsTableAdapter" GeneratorDataComponentClassName="GovtDocsTableAdapter" Name="GovtDocs" UserDataComponentName="GovtDocsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IGRSS_FINALConnectionString (Settings)" DbObjectName="IGRSS_FINAL.dbo.GovtDocs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="master.dbo.GovtDocs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [GovtDocs] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_InwardNo = 1 AND [InwardNo] IS NULL) OR ([InwardNo] = @Original_InwardNo)) AND ((@IsNull_LetterNo = 1 AND [LetterNo] IS NULL) OR ([LetterNo] = @Original_LetterNo)) AND ((@IsNull_LetterDate = 1 AND [LetterDate] IS NULL) OR ([LetterDate] = @Original_LetterDate)) AND ((@IsNull_NameOfDepartment = 1 AND [NameOfDepartment] IS NULL) OR ([NameOfDepartment] = @Original_NameOfDepartment)) AND ((@IsNull_FileNo = 1 AND [FileNo] IS NULL) OR ([FileNo] = @Original_FileNo)) AND ((@IsNull_TypesOfRecord = 1 AND [TypesOfRecord] IS NULL) OR ([TypesOfRecord] = @Original_TypesOfRecord)))</CommandText>
@@ -51,7 +53,7 @@ SELECT SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, 
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        GovtDocs.*
+                    <CommandText>SELECT        SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, DetailsOfOutput, DetailsOfPreservingFiles, TypesOfRecord, Remarks
 FROM            GovtDocs</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -104,25 +106,64 @@ SELECT SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, 
               <Mapping SourceColumn="Remarks" DataSetColumn="Remarks" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="IGRSS_FINALConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="master.dbo.GovtDocs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Details, DetailsOfOutput, DetailsOfPreservingFiles, FileNo, InwardNo, LetterDate, LetterNo, NameOfDepartment, Remarks, SrNo, TypesOfRecord
+FROM            GovtDocs
+WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(InwardNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Details LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(LetterNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(LetterDate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (NameOfDepartment LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(FileNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(DetailsOfOutput AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(DetailsOfPreservingFiles AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(TypesOfRecord AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Remarks AS varchar) LIKE '%' + @searchKeyWord + '%')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="searchKeyWord" ColumnName="" DataSourceName="" DataTypeServer="nvarchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@searchKeyWord" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>INSERT INTO GovtDocs
-                         (SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, DetailsOfOutput, DetailsOfPreservingFiles, TypesOfRecord, Remarks)
-VALUES        (@SrNo,@InwardNo,@Details,@LetterNo,@LetterDate,@NameOfDepartment,@FileNo,@DetailsOfOutput,@DetailsOfPreservingFiles,@TypesOfRecord,@Remarks); 
-SELECT SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, DetailsOfOutput, DetailsOfPreservingFiles, TypesOfRecord, Remarks FROM GovtDocs WHERE (SrNo = @SrNo)</CommandText>
+                    <CommandText>INSERT INTO [IGRSS_FINAL].[dbo].[GovtDocs]
+           ([InwardNo]
+           ,[Details]
+           ,[LetterNo]
+           ,[LetterDate]
+           ,[NameOfDepartment]
+           ,[FileNo]
+           ,[DetailsOfOutput]
+           ,[DetailsOfPreservingFiles]
+           ,[TypesOfRecord]
+           ,[Remarks])
+     VALUES
+           (@InwardNo, 
+@Details, 
+@LetterNo, 
+@LetterDate, 
+@NameOfDepartment, 
+@FileNo, 
+@DetailsOfOutput, 
+@DetailsOfPreservingFiles, 
+@TypesOfRecord, 
+@Remarks);</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="SrNo" ColumnName="SrNo" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SrNo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SrNo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="InwardNo" ColumnName="InwardNo" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InwardNo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="InwardNo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Details" ColumnName="Details" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Details" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="Details" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="LetterNo" ColumnName="LetterNo" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@LetterNo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="LetterNo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="LetterDate" ColumnName="LetterDate" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LetterDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="LetterDate" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="NameOfDepartment" ColumnName="NameOfDepartment" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@NameOfDepartment" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="NameOfDepartment" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="FileNo" ColumnName="FileNo" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@FileNo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="FileNo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="DetailsOfOutput" ColumnName="DetailsOfOutput" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@DetailsOfOutput" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="DetailsOfOutput" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="DetailsOfPreservingFiles" ColumnName="DetailsOfPreservingFiles" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@DetailsOfPreservingFiles" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="DetailsOfPreservingFiles" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="TypesOfRecord" ColumnName="TypesOfRecord" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nchar(10)" DbType="String" Direction="Input" ParameterName="@TypesOfRecord" Precision="0" ProviderType="NChar" Scale="0" Size="10" SourceColumn="TypesOfRecord" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Remarks" ColumnName="Remarks" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Remarks" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="InwardNo" ColumnName="InwardNo" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@InwardNo" Precision="0" Scale="0" Size="50" SourceColumn="InwardNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Details" ColumnName="Details" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Details" Precision="0" Scale="0" Size="2147483647" SourceColumn="Details" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="LetterNo" ColumnName="LetterNo" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@LetterNo" Precision="0" Scale="0" Size="4" SourceColumn="LetterNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="LetterDate" ColumnName="LetterDate" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LetterDate" Precision="0" Scale="0" Size="8" SourceColumn="LetterDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NameOfDepartment" ColumnName="NameOfDepartment" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@NameOfDepartment" Precision="0" Scale="0" Size="50" SourceColumn="NameOfDepartment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FileNo" ColumnName="FileNo" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@FileNo" Precision="0" Scale="0" Size="4" SourceColumn="FileNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DetailsOfOutput" ColumnName="DetailsOfOutput" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@DetailsOfOutput" Precision="0" Scale="0" Size="2147483647" SourceColumn="DetailsOfOutput" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DetailsOfPreservingFiles" ColumnName="DetailsOfPreservingFiles" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@DetailsOfPreservingFiles" Precision="0" Scale="0" Size="2147483647" SourceColumn="DetailsOfPreservingFiles" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="TypesOfRecord" ColumnName="TypesOfRecord" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@TypesOfRecord" Precision="0" Scale="0" Size="50" SourceColumn="TypesOfRecord" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Remarks" ColumnName="Remarks" DataSourceName="IGRSS_FINAL.dbo.GovtDocs" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Remarks" Precision="0" Scale="0" Size="2147483647" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>

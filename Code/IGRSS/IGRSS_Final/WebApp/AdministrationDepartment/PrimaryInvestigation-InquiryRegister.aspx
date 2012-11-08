@@ -44,18 +44,17 @@
                       EnableModelValidation="True">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
+                              ReadOnly="True" SortExpression="SrNo" />
+                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="Name_Of_Employee" HeaderText="Name Of Employee" 
+                          <asp:BoundField DataField="Name_Of_Employee" HeaderText="Name_Of_Employee" 
                               SortExpression="Name_Of_Employee" />
-                          <asp:BoundField DataField="Designation_Of_Employee" HeaderText="Designation Of Employee" 
+                          <asp:BoundField DataField="Designation_Of_Employee" HeaderText="Designation_Of_Employee" 
                               SortExpression="Designation_Of_Employee" />
-                          <asp:BoundField DataField="Date_Of_Complaint" HeaderText="Date Of Complaint" 
+                          <asp:BoundField DataField="Date_Of_Complaint" HeaderText="Date_Of_Complaint" 
                               SortExpression="Date_Of_Complaint" />
                           <asp:BoundField DataField="Details_To_Vigilance_Commissioner" HeaderText="Details_To_Vigilance_Commissioner" 
-                              SortExpression="Details_To_Vigilance_Commissioner" Visible="False" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
+                              SortExpression="Details_To_Vigilance_Commissioner" />
                       </Columns>
                   </asp:GridView>
               </td>

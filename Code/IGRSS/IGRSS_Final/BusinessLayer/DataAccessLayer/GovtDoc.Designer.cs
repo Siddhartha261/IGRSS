@@ -1233,29 +1233,65 @@ SELECT SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        GovtDocs.*\r\nFROM            GovtDocs";
+            this._commandCollection[0].CommandText = "SELECT        SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, Fi" +
+                "leNo, DetailsOfOutput, DetailsOfPreservingFiles, TypesOfRecord, Remarks\r\nFROM   " +
+                "         GovtDocs";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO GovtDocs
-                         (SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, DetailsOfOutput, DetailsOfPreservingFiles, TypesOfRecord, Remarks)
-VALUES        (@SrNo,@InwardNo,@Details,@LetterNo,@LetterDate,@NameOfDepartment,@FileNo,@DetailsOfOutput,@DetailsOfPreservingFiles,@TypesOfRecord,@Remarks); 
-SELECT SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, DetailsOfOutput, DetailsOfPreservingFiles, TypesOfRecord, Remarks FROM GovtDocs WHERE (SrNo = @SrNo)";
+            this._commandCollection[1].CommandText = @"SELECT        Details, DetailsOfOutput, DetailsOfPreservingFiles, FileNo, InwardNo, LetterDate, LetterNo, NameOfDepartment, Remarks, SrNo, TypesOfRecord
+FROM            GovtDocs
+WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(InwardNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Details LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(LetterNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(LetterDate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (NameOfDepartment LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(FileNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(DetailsOfOutput AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(DetailsOfPreservingFiles AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(TypesOfRecord AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Remarks AS varchar) LIKE '%' + @searchKeyWord + '%')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InwardNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "InwardNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Details", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LetterNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LetterNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LetterDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "LetterDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameOfDepartment", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NameOfDepartment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailsOfOutput", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "DetailsOfOutput", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailsOfPreservingFiles", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "DetailsOfPreservingFiles", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TypesOfRecord", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "TypesOfRecord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarks", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO [IGRSS_FINAL].[dbo].[GovtDocs]
+           ([InwardNo]
+           ,[Details]
+           ,[LetterNo]
+           ,[LetterDate]
+           ,[NameOfDepartment]
+           ,[FileNo]
+           ,[DetailsOfOutput]
+           ,[DetailsOfPreservingFiles]
+           ,[TypesOfRecord]
+           ,[Remarks])
+     VALUES
+           (@InwardNo, 
+@Details, 
+@LetterNo, 
+@LetterDate, 
+@NameOfDepartment, 
+@FileNo, 
+@DetailsOfOutput, 
+@DetailsOfPreservingFiles, 
+@TypesOfRecord, 
+@Remarks);";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InwardNo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "InwardNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Details", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LetterNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LetterNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LetterDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "LetterDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameOfDepartment", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NameOfDepartment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailsOfOutput", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "DetailsOfOutput", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailsOfPreservingFiles", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "DetailsOfPreservingFiles", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TypesOfRecord", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "TypesOfRecord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarks", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1277,6 +1313,42 @@ SELECT SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual GovtDoc.GovtDocsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            GovtDoc.GovtDocsDataTable dataTable = new GovtDoc.GovtDocsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(GovtDoc.GovtDocsDataTable dataTable, string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual GovtDoc.GovtDocsDataTable GetDataBy(string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
             GovtDoc.GovtDocsDataTable dataTable = new GovtDoc.GovtDocsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1641,68 +1713,67 @@ SELECT SrNo, InwardNo, Details, LetterNo, LetterDate, NameOfDepartment, FileNo, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(int SrNo, global::System.Nullable<int> InwardNo, string Details, global::System.Nullable<int> LetterNo, global::System.Nullable<global::System.DateTime> LetterDate, string NameOfDepartment, global::System.Nullable<int> FileNo, string DetailsOfOutput, string DetailsOfPreservingFiles, string TypesOfRecord, string Remarks) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(SrNo));
-            if ((InwardNo.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(InwardNo.Value));
+        public virtual int InsertQuery(string InwardNo, string Details, global::System.Nullable<int> LetterNo, global::System.Nullable<global::System.DateTime> LetterDate, string NameOfDepartment, global::System.Nullable<int> FileNo, string DetailsOfOutput, string DetailsOfPreservingFiles, string TypesOfRecord, string Remarks) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((InwardNo == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+                command.Parameters[0].Value = ((string)(InwardNo));
             }
             if ((Details == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
+                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(Details));
+                command.Parameters[1].Value = ((string)(Details));
             }
             if ((LetterNo.HasValue == true)) {
-                command.Parameters[3].Value = ((int)(LetterNo.Value));
+                command.Parameters[2].Value = ((int)(LetterNo.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((LetterDate.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(LetterDate.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((LetterDate.HasValue == true)) {
-                command.Parameters[4].Value = ((System.DateTime)(LetterDate.Value));
-            }
-            else {
+            if ((NameOfDepartment == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((NameOfDepartment == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
             else {
-                command.Parameters[5].Value = ((string)(NameOfDepartment));
+                command.Parameters[4].Value = ((string)(NameOfDepartment));
             }
             if ((FileNo.HasValue == true)) {
-                command.Parameters[6].Value = ((int)(FileNo.Value));
+                command.Parameters[5].Value = ((int)(FileNo.Value));
             }
             else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
+                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((DetailsOfOutput == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(DetailsOfOutput));
+            }
+            if ((DetailsOfPreservingFiles == null)) {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[7].Value = ((string)(DetailsOfOutput));
+                command.Parameters[7].Value = ((string)(DetailsOfPreservingFiles));
             }
-            if ((DetailsOfPreservingFiles == null)) {
+            if ((TypesOfRecord == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[8].Value = ((string)(DetailsOfPreservingFiles));
+                command.Parameters[8].Value = ((string)(TypesOfRecord));
             }
-            if ((TypesOfRecord == null)) {
+            if ((Remarks == null)) {
                 command.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[9].Value = ((string)(TypesOfRecord));
-            }
-            if ((Remarks == null)) {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[10].Value = ((string)(Remarks));
+                command.Parameters[9].Value = ((string)(Remarks));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

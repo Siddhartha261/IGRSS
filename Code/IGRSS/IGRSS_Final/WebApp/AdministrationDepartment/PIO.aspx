@@ -44,83 +44,87 @@
                       EnableModelValidation="True">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
-                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
+                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
+                              Visible="False" />
+                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="ApplicantName" HeaderText="ApplicantName" 
+                          <asp:BoundField DataField="ApplicantName" HeaderText="Applicant Name" 
                               SortExpression="ApplicantName" />
-                          <asp:BoundField DataField="ApplicationDate" HeaderText="ApplicationDate" 
+                          <asp:BoundField DataField="ApplicationDate" HeaderText="Application Date" 
                               SortExpression="ApplicationDate" />
-                          <asp:BoundField DataField="ApplicantAddress" HeaderText="ApplicantAddress" 
-                              SortExpression="ApplicantAddress" />
+                          <asp:BoundField DataField="ApplicantAddress" HeaderText="Applicant Address" 
+                              SortExpression="ApplicantAddress" Visible="False" />
                           <asp:BoundField DataField="Application_Received_Actual_Date" 
-                              HeaderText="Application_Received_Actual_Date" 
+                              HeaderText="Application Received Actual Date" 
                               SortExpression="Application_Received_Actual_Date" />
                           <asp:CheckBoxField DataField="Appl_BPL" HeaderText="Appl_BPL" 
-                              SortExpression="Appl_BPL" />
+                              SortExpression="Appl_BPL" Visible="False" />
                           <asp:BoundField DataField="Sub_Info_Asked" HeaderText="Sub_Info_Asked" 
-                              SortExpression="Sub_Info_Asked" />
+                              SortExpression="Sub_Info_Asked" Visible="False" />
                           <asp:BoundField DataField="Recvd_Sata_Mandal" HeaderText="Recvd_Sata_Mandal" 
-                              SortExpression="Recvd_Sata_Mandal" />
+                              SortExpression="Recvd_Sata_Mandal" Visible="False" />
                           <asp:BoundField DataField="Recvd_Date" HeaderText="Recvd_Date" 
-                              SortExpression="Recvd_Date" />
+                              SortExpression="Recvd_Date" Visible="False" />
                           <asp:BoundField DataField="Information" HeaderText="Information" 
-                              SortExpression="Information" />
+                              SortExpression="Information" Visible="False" />
                           <asp:BoundField DataField="Recvd_Fees" HeaderText="Recvd_Fees" 
-                              SortExpression="Recvd_Fees" />
+                              SortExpression="Recvd_Fees" Visible="False" />
                           <asp:BoundField DataField="Recvd_Fees_Mode" HeaderText="Recvd_Fees_Mode" 
-                              SortExpression="Recvd_Fees_Mode" />
+                              SortExpression="Recvd_Fees_Mode" Visible="False" />
                           <asp:BoundField DataField="Last_Date_Reply" HeaderText="Last_Date_Reply" 
-                              SortExpression="Last_Date_Reply" />
+                              SortExpression="Last_Date_Reply" Visible="False" />
                           <asp:CheckBoxField DataField="Info_Send" HeaderText="Info_Send" 
-                              SortExpression="Info_Send" />
+                              SortExpression="Info_Send" Visible="False" />
                           <asp:BoundField DataField="Info_Pages" HeaderText="Info_Pages" 
-                              SortExpression="Info_Pages" />
+                              SortExpression="Info_Pages" Visible="False" />
                           <asp:BoundField DataField="Page_Amt" HeaderText="Page_Amt" 
-                              SortExpression="Page_Amt" />
+                              SortExpression="Page_Amt" Visible="False" />
                           <asp:BoundField DataField="Total_Amt" HeaderText="Total_Amt" 
-                              SortExpression="Total_Amt" />
+                              SortExpression="Total_Amt" Visible="False" />
                           <asp:BoundField DataField="Reject_Date" HeaderText="Reject_Date" 
-                              SortExpression="Reject_Date" />
+                              SortExpression="Reject_Date" Visible="False" />
                           <asp:BoundField DataField="Section" HeaderText="Section" 
-                              SortExpression="Section" />
+                              SortExpression="Section" Visible="False" />
                           <asp:BoundField DataField="Reasons" HeaderText="Reasons" 
-                              SortExpression="Reasons" />
+                              SortExpression="Reasons" Visible="False" />
                           <asp:BoundField DataField="FileClosureDate" HeaderText="FileClosureDate" 
-                              SortExpression="FileClosureDate" />
+                              SortExpression="FileClosureDate" Visible="False" />
                           <asp:BoundField DataField="Authority" HeaderText="Authority" 
-                              SortExpression="Authority" />
+                              SortExpression="Authority" Visible="False" />
                           <asp:BoundField DataField="AppealNoFirstAppeal" 
-                              HeaderText="AppealNoFirstAppeal" SortExpression="AppealNoFirstAppeal" />
+                              HeaderText="AppealNoFirstAppeal" SortExpression="AppealNoFirstAppeal" 
+                              Visible="False" />
                           <asp:BoundField DataField="AppealDateFirstAppeal" 
                               HeaderText="AppealDateFirstAppeal" 
-                              SortExpression="AppealDateFirstAppeal" />
+                              SortExpression="AppealDateFirstAppeal" Visible="False" />
                           <asp:BoundField DataField="Order_Authority" HeaderText="Order_Authority" 
-                              SortExpression="Order_Authority" />
+                              SortExpression="Order_Authority" Visible="False" />
                           <asp:BoundField DataField="FileClosureDateFirstAppeal" 
                               HeaderText="FileClosureDateFirstAppeal" 
-                              SortExpression="FileClosureDateFirstAppeal" />
+                              SortExpression="FileClosureDateFirstAppeal" Visible="False" />
                           <asp:BoundField DataField="Letteer_Recvd_Date_commissioner" 
                               HeaderText="Letteer_Recvd_Date_commissioner" 
-                              SortExpression="Letteer_Recvd_Date_commissioner" />
+                              SortExpression="Letteer_Recvd_Date_commissioner" Visible="False" />
                           <asp:BoundField DataField="AppealNoSecondAppeal" 
-                              HeaderText="AppealNoSecondAppeal" SortExpression="AppealNoSecondAppeal" />
+                              HeaderText="AppealNoSecondAppeal" SortExpression="AppealNoSecondAppeal" 
+                              Visible="False" />
                           <asp:BoundField DataField="ApplicationNameSecondAppeal" 
                               HeaderText="ApplicationNameSecondAppeal" 
-                              SortExpression="ApplicationNameSecondAppeal" />
+                              SortExpression="ApplicationNameSecondAppeal" Visible="False" />
                           <asp:BoundField DataField="AddressSecondAppeal" 
-                              HeaderText="AddressSecondAppeal" SortExpression="AddressSecondAppeal" />
+                              HeaderText="AddressSecondAppeal" SortExpression="AddressSecondAppeal" 
+                              Visible="False" />
                           <asp:BoundField DataField="AppealDateSecondAppeal" 
-                              HeaderText="AppealDateSecondAppeal" SortExpression="AppealDateSecondAppeal" />
+                              HeaderText="AppealDateSecondAppeal" 
+                              SortExpression="AppealDateSecondAppeal" Visible="False" />
                           <asp:BoundField DataField="Remarks_SentTo_Commission" 
                               HeaderText="Remarks_SentTo_Commission" 
-                              SortExpression="Remarks_SentTo_Commission" />
+                              SortExpression="Remarks_SentTo_Commission" Visible="False" />
                           <asp:BoundField DataField="Remarks_Send_Date" HeaderText="Remarks_Send_Date" 
-                              SortExpression="Remarks_Send_Date" />
+                              SortExpression="Remarks_Send_Date" Visible="False" />
                           <asp:BoundField DataField="FileClosureDateSecondAppeal" 
                               HeaderText="FileClosureDateSecondAppeal" 
-                              SortExpression="FileClosureDateSecondAppeal" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
+                              SortExpression="FileClosureDateSecondAppeal" Visible="False" />
                       </Columns>
                   </asp:GridView>
               </td>

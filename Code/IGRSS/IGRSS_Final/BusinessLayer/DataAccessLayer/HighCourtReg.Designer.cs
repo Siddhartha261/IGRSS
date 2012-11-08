@@ -279,35 +279,35 @@ namespace IGRSS.DataAccessLayer {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class HighcourtRegDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
-            private global::System.Data.DataColumn columnJudgementDetail;
-            
-            private global::System.Data.DataColumn columnOrderJudgementSheet;
-            
-            private global::System.Data.DataColumn columnDisposalDate;
-            
-            private global::System.Data.DataColumn columnPetitionDispoasedYear;
-            
-            private global::System.Data.DataColumn columnLatestStatus;
-            
-            private global::System.Data.DataColumn columnAffidavitdate;
-            
-            private global::System.Data.DataColumn columnAffidavit;
-            
-            private global::System.Data.DataColumn columnParawiseremarksdate;
-            
-            private global::System.Data.DataColumn columnParawiseremarks;
-            
-            private global::System.Data.DataColumn columnPetitionReason;
-            
-            private global::System.Data.DataColumn columnPetitionerName;
-            
-            private global::System.Data.DataColumn columnDistrictOfficeName;
-            
-            private global::System.Data.DataColumn columnSpecialCivilApplNo;
+            private global::System.Data.DataColumn columnSrNo;
             
             private global::System.Data.DataColumn columnFileno;
             
-            private global::System.Data.DataColumn columnSrNo;
+            private global::System.Data.DataColumn columnSpecialCivilApplNo;
+            
+            private global::System.Data.DataColumn columnDistrictOfficeName;
+            
+            private global::System.Data.DataColumn columnPetitionerName;
+            
+            private global::System.Data.DataColumn columnPetitionReason;
+            
+            private global::System.Data.DataColumn columnParawiseremarks;
+            
+            private global::System.Data.DataColumn columnParawiseremarksdate;
+            
+            private global::System.Data.DataColumn columnAffidavit;
+            
+            private global::System.Data.DataColumn columnAffidavitdate;
+            
+            private global::System.Data.DataColumn columnLatestStatus;
+            
+            private global::System.Data.DataColumn columnPetitionDispoasedYear;
+            
+            private global::System.Data.DataColumn columnDisposalDate;
+            
+            private global::System.Data.DataColumn columnOrderJudgementSheet;
+            
+            private global::System.Data.DataColumn columnJudgementDetail;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -344,105 +344,9 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn JudgementDetailColumn {
+            public global::System.Data.DataColumn SrNoColumn {
                 get {
-                    return this.columnJudgementDetail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrderJudgementSheetColumn {
-                get {
-                    return this.columnOrderJudgementSheet;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DisposalDateColumn {
-                get {
-                    return this.columnDisposalDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PetitionDispoasedYearColumn {
-                get {
-                    return this.columnPetitionDispoasedYear;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LatestStatusColumn {
-                get {
-                    return this.columnLatestStatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AffidavitdateColumn {
-                get {
-                    return this.columnAffidavitdate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AffidavitColumn {
-                get {
-                    return this.columnAffidavit;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ParawiseremarksdateColumn {
-                get {
-                    return this.columnParawiseremarksdate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ParawiseremarksColumn {
-                get {
-                    return this.columnParawiseremarks;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PetitionReasonColumn {
-                get {
-                    return this.columnPetitionReason;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PetitionerNameColumn {
-                get {
-                    return this.columnPetitionerName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DistrictOfficeNameColumn {
-                get {
-                    return this.columnDistrictOfficeName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SpecialCivilApplNoColumn {
-                get {
-                    return this.columnSpecialCivilApplNo;
+                    return this.columnSrNo;
                 }
             }
             
@@ -456,9 +360,105 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SrNoColumn {
+            public global::System.Data.DataColumn SpecialCivilApplNoColumn {
                 get {
-                    return this.columnSrNo;
+                    return this.columnSpecialCivilApplNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DistrictOfficeNameColumn {
+                get {
+                    return this.columnDistrictOfficeName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PetitionerNameColumn {
+                get {
+                    return this.columnPetitionerName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PetitionReasonColumn {
+                get {
+                    return this.columnPetitionReason;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ParawiseremarksColumn {
+                get {
+                    return this.columnParawiseremarks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ParawiseremarksdateColumn {
+                get {
+                    return this.columnParawiseremarksdate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AffidavitColumn {
+                get {
+                    return this.columnAffidavit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AffidavitdateColumn {
+                get {
+                    return this.columnAffidavitdate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LatestStatusColumn {
+                get {
+                    return this.columnLatestStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PetitionDispoasedYearColumn {
+                get {
+                    return this.columnPetitionDispoasedYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DisposalDateColumn {
+                get {
+                    return this.columnDisposalDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrderJudgementSheetColumn {
+                get {
+                    return this.columnOrderJudgementSheet;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JudgementDetailColumn {
+                get {
+                    return this.columnJudgementDetail;
                 }
             }
             
@@ -499,24 +499,24 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HighcourtRegRow AddHighcourtRegRow(string JudgementDetail, string OrderJudgementSheet, System.DateTime DisposalDate, int PetitionDispoasedYear, string LatestStatus, System.DateTime Affidavitdate, bool Affidavit, System.DateTime Parawiseremarksdate, bool Parawiseremarks, string PetitionReason, string PetitionerName, string DistrictOfficeName, int SpecialCivilApplNo, int Fileno) {
+            public HighcourtRegRow AddHighcourtRegRow(int SrNo, int Fileno, int SpecialCivilApplNo, string DistrictOfficeName, string PetitionerName, string PetitionReason, bool Parawiseremarks, System.DateTime Parawiseremarksdate, bool Affidavit, System.DateTime Affidavitdate, string LatestStatus, int PetitionDispoasedYear, System.DateTime DisposalDate, string OrderJudgementSheet, string JudgementDetail) {
                 HighcourtRegRow rowHighcourtRegRow = ((HighcourtRegRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        JudgementDetail,
-                        OrderJudgementSheet,
-                        DisposalDate,
-                        PetitionDispoasedYear,
-                        LatestStatus,
-                        Affidavitdate,
-                        Affidavit,
-                        Parawiseremarksdate,
-                        Parawiseremarks,
-                        PetitionReason,
-                        PetitionerName,
-                        DistrictOfficeName,
-                        SpecialCivilApplNo,
+                        SrNo,
                         Fileno,
-                        null};
+                        SpecialCivilApplNo,
+                        DistrictOfficeName,
+                        PetitionerName,
+                        PetitionReason,
+                        Parawiseremarks,
+                        Parawiseremarksdate,
+                        Affidavit,
+                        Affidavitdate,
+                        LatestStatus,
+                        PetitionDispoasedYear,
+                        DisposalDate,
+                        OrderJudgementSheet,
+                        JudgementDetail};
                 rowHighcourtRegRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHighcourtRegRow);
                 return rowHighcourtRegRow;
@@ -552,70 +552,66 @@ namespace IGRSS.DataAccessLayer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnJudgementDetail = base.Columns["JudgementDetail"];
-                this.columnOrderJudgementSheet = base.Columns["OrderJudgementSheet"];
-                this.columnDisposalDate = base.Columns["DisposalDate"];
-                this.columnPetitionDispoasedYear = base.Columns["PetitionDispoasedYear"];
-                this.columnLatestStatus = base.Columns["LatestStatus"];
-                this.columnAffidavitdate = base.Columns["Affidavitdate"];
-                this.columnAffidavit = base.Columns["Affidavit"];
-                this.columnParawiseremarksdate = base.Columns["Parawiseremarksdate"];
-                this.columnParawiseremarks = base.Columns["Parawiseremarks"];
-                this.columnPetitionReason = base.Columns["PetitionReason"];
-                this.columnPetitionerName = base.Columns["PetitionerName"];
-                this.columnDistrictOfficeName = base.Columns["DistrictOfficeName"];
-                this.columnSpecialCivilApplNo = base.Columns["SpecialCivilApplNo"];
-                this.columnFileno = base.Columns["Fileno"];
                 this.columnSrNo = base.Columns["SrNo"];
+                this.columnFileno = base.Columns["Fileno"];
+                this.columnSpecialCivilApplNo = base.Columns["SpecialCivilApplNo"];
+                this.columnDistrictOfficeName = base.Columns["DistrictOfficeName"];
+                this.columnPetitionerName = base.Columns["PetitionerName"];
+                this.columnPetitionReason = base.Columns["PetitionReason"];
+                this.columnParawiseremarks = base.Columns["Parawiseremarks"];
+                this.columnParawiseremarksdate = base.Columns["Parawiseremarksdate"];
+                this.columnAffidavit = base.Columns["Affidavit"];
+                this.columnAffidavitdate = base.Columns["Affidavitdate"];
+                this.columnLatestStatus = base.Columns["LatestStatus"];
+                this.columnPetitionDispoasedYear = base.Columns["PetitionDispoasedYear"];
+                this.columnDisposalDate = base.Columns["DisposalDate"];
+                this.columnOrderJudgementSheet = base.Columns["OrderJudgementSheet"];
+                this.columnJudgementDetail = base.Columns["JudgementDetail"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnJudgementDetail = new global::System.Data.DataColumn("JudgementDetail", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnJudgementDetail);
-                this.columnOrderJudgementSheet = new global::System.Data.DataColumn("OrderJudgementSheet", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrderJudgementSheet);
-                this.columnDisposalDate = new global::System.Data.DataColumn("DisposalDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDisposalDate);
-                this.columnPetitionDispoasedYear = new global::System.Data.DataColumn("PetitionDispoasedYear", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPetitionDispoasedYear);
-                this.columnLatestStatus = new global::System.Data.DataColumn("LatestStatus", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLatestStatus);
-                this.columnAffidavitdate = new global::System.Data.DataColumn("Affidavitdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAffidavitdate);
-                this.columnAffidavit = new global::System.Data.DataColumn("Affidavit", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAffidavit);
-                this.columnParawiseremarksdate = new global::System.Data.DataColumn("Parawiseremarksdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnParawiseremarksdate);
-                this.columnParawiseremarks = new global::System.Data.DataColumn("Parawiseremarks", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnParawiseremarks);
-                this.columnPetitionReason = new global::System.Data.DataColumn("PetitionReason", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPetitionReason);
-                this.columnPetitionerName = new global::System.Data.DataColumn("PetitionerName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPetitionerName);
-                this.columnDistrictOfficeName = new global::System.Data.DataColumn("DistrictOfficeName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDistrictOfficeName);
-                this.columnSpecialCivilApplNo = new global::System.Data.DataColumn("SpecialCivilApplNo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSpecialCivilApplNo);
-                this.columnFileno = new global::System.Data.DataColumn("Fileno", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFileno);
                 this.columnSrNo = new global::System.Data.DataColumn("SrNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSrNo);
+                this.columnFileno = new global::System.Data.DataColumn("Fileno", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFileno);
+                this.columnSpecialCivilApplNo = new global::System.Data.DataColumn("SpecialCivilApplNo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSpecialCivilApplNo);
+                this.columnDistrictOfficeName = new global::System.Data.DataColumn("DistrictOfficeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistrictOfficeName);
+                this.columnPetitionerName = new global::System.Data.DataColumn("PetitionerName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPetitionerName);
+                this.columnPetitionReason = new global::System.Data.DataColumn("PetitionReason", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPetitionReason);
+                this.columnParawiseremarks = new global::System.Data.DataColumn("Parawiseremarks", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnParawiseremarks);
+                this.columnParawiseremarksdate = new global::System.Data.DataColumn("Parawiseremarksdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnParawiseremarksdate);
+                this.columnAffidavit = new global::System.Data.DataColumn("Affidavit", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAffidavit);
+                this.columnAffidavitdate = new global::System.Data.DataColumn("Affidavitdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAffidavitdate);
+                this.columnLatestStatus = new global::System.Data.DataColumn("LatestStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLatestStatus);
+                this.columnPetitionDispoasedYear = new global::System.Data.DataColumn("PetitionDispoasedYear", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPetitionDispoasedYear);
+                this.columnDisposalDate = new global::System.Data.DataColumn("DisposalDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDisposalDate);
+                this.columnOrderJudgementSheet = new global::System.Data.DataColumn("OrderJudgementSheet", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrderJudgementSheet);
+                this.columnJudgementDetail = new global::System.Data.DataColumn("JudgementDetail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJudgementDetail);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSrNo}, true));
-                this.columnJudgementDetail.MaxLength = 2147483647;
-                this.columnOrderJudgementSheet.MaxLength = 50;
-                this.columnLatestStatus.MaxLength = 50;
-                this.columnPetitionReason.MaxLength = 2147483647;
-                this.columnPetitionerName.MaxLength = 200;
-                this.columnDistrictOfficeName.MaxLength = 256;
-                this.columnSrNo.AutoIncrement = true;
-                this.columnSrNo.AutoIncrementSeed = -1;
-                this.columnSrNo.AutoIncrementStep = -1;
                 this.columnSrNo.AllowDBNull = false;
-                this.columnSrNo.ReadOnly = true;
                 this.columnSrNo.Unique = true;
+                this.columnDistrictOfficeName.MaxLength = 50;
+                this.columnPetitionerName.MaxLength = 200;
+                this.columnPetitionReason.MaxLength = 2147483647;
+                this.columnLatestStatus.MaxLength = 10;
+                this.columnOrderJudgementSheet.MaxLength = 10;
+                this.columnJudgementDetail.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -758,209 +754,12 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string JudgementDetail {
+            public int SrNo {
                 get {
-                    try {
-                        return ((string)(this[this.tableHighcourtReg.JudgementDetailColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'JudgementDetail\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableHighcourtReg.SrNoColumn]));
                 }
                 set {
-                    this[this.tableHighcourtReg.JudgementDetailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OrderJudgementSheet {
-                get {
-                    try {
-                        return ((string)(this[this.tableHighcourtReg.OrderJudgementSheetColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OrderJudgementSheet\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.OrderJudgementSheetColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DisposalDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableHighcourtReg.DisposalDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DisposalDate\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.DisposalDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int PetitionDispoasedYear {
-                get {
-                    try {
-                        return ((int)(this[this.tableHighcourtReg.PetitionDispoasedYearColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PetitionDispoasedYear\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.PetitionDispoasedYearColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LatestStatus {
-                get {
-                    try {
-                        return ((string)(this[this.tableHighcourtReg.LatestStatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LatestStatus\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.LatestStatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Affidavitdate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableHighcourtReg.AffidavitdateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Affidavitdate\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.AffidavitdateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Affidavit {
-                get {
-                    try {
-                        return ((bool)(this[this.tableHighcourtReg.AffidavitColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Affidavit\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.AffidavitColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Parawiseremarksdate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableHighcourtReg.ParawiseremarksdateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Parawiseremarksdate\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.ParawiseremarksdateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Parawiseremarks {
-                get {
-                    try {
-                        return ((bool)(this[this.tableHighcourtReg.ParawiseremarksColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Parawiseremarks\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.ParawiseremarksColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PetitionReason {
-                get {
-                    try {
-                        return ((string)(this[this.tableHighcourtReg.PetitionReasonColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PetitionReason\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.PetitionReasonColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PetitionerName {
-                get {
-                    try {
-                        return ((string)(this[this.tableHighcourtReg.PetitionerNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PetitionerName\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.PetitionerNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DistrictOfficeName {
-                get {
-                    try {
-                        return ((string)(this[this.tableHighcourtReg.DistrictOfficeNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DistrictOfficeName\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.DistrictOfficeNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SpecialCivilApplNo {
-                get {
-                    try {
-                        return ((int)(this[this.tableHighcourtReg.SpecialCivilApplNoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SpecialCivilApplNo\' in table \'HighcourtReg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHighcourtReg.SpecialCivilApplNoColumn] = value;
+                    this[this.tableHighcourtReg.SrNoColumn] = value;
                 }
             }
             
@@ -982,157 +781,222 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SrNo {
+            public int SpecialCivilApplNo {
                 get {
-                    return ((int)(this[this.tableHighcourtReg.SrNoColumn]));
+                    try {
+                        return ((int)(this[this.tableHighcourtReg.SpecialCivilApplNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SpecialCivilApplNo\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableHighcourtReg.SrNoColumn] = value;
+                    this[this.tableHighcourtReg.SpecialCivilApplNoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsJudgementDetailNull() {
-                return this.IsNull(this.tableHighcourtReg.JudgementDetailColumn);
+            public string DistrictOfficeName {
+                get {
+                    try {
+                        return ((string)(this[this.tableHighcourtReg.DistrictOfficeNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DistrictOfficeName\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.DistrictOfficeNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetJudgementDetailNull() {
-                this[this.tableHighcourtReg.JudgementDetailColumn] = global::System.Convert.DBNull;
+            public string PetitionerName {
+                get {
+                    try {
+                        return ((string)(this[this.tableHighcourtReg.PetitionerNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PetitionerName\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.PetitionerNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrderJudgementSheetNull() {
-                return this.IsNull(this.tableHighcourtReg.OrderJudgementSheetColumn);
+            public string PetitionReason {
+                get {
+                    try {
+                        return ((string)(this[this.tableHighcourtReg.PetitionReasonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PetitionReason\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.PetitionReasonColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrderJudgementSheetNull() {
-                this[this.tableHighcourtReg.OrderJudgementSheetColumn] = global::System.Convert.DBNull;
+            public bool Parawiseremarks {
+                get {
+                    try {
+                        return ((bool)(this[this.tableHighcourtReg.ParawiseremarksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Parawiseremarks\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.ParawiseremarksColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDisposalDateNull() {
-                return this.IsNull(this.tableHighcourtReg.DisposalDateColumn);
+            public System.DateTime Parawiseremarksdate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableHighcourtReg.ParawiseremarksdateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Parawiseremarksdate\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.ParawiseremarksdateColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDisposalDateNull() {
-                this[this.tableHighcourtReg.DisposalDateColumn] = global::System.Convert.DBNull;
+            public bool Affidavit {
+                get {
+                    try {
+                        return ((bool)(this[this.tableHighcourtReg.AffidavitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Affidavit\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.AffidavitColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPetitionDispoasedYearNull() {
-                return this.IsNull(this.tableHighcourtReg.PetitionDispoasedYearColumn);
+            public System.DateTime Affidavitdate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableHighcourtReg.AffidavitdateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Affidavitdate\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.AffidavitdateColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPetitionDispoasedYearNull() {
-                this[this.tableHighcourtReg.PetitionDispoasedYearColumn] = global::System.Convert.DBNull;
+            public string LatestStatus {
+                get {
+                    try {
+                        return ((string)(this[this.tableHighcourtReg.LatestStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LatestStatus\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.LatestStatusColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLatestStatusNull() {
-                return this.IsNull(this.tableHighcourtReg.LatestStatusColumn);
+            public int PetitionDispoasedYear {
+                get {
+                    try {
+                        return ((int)(this[this.tableHighcourtReg.PetitionDispoasedYearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PetitionDispoasedYear\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.PetitionDispoasedYearColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLatestStatusNull() {
-                this[this.tableHighcourtReg.LatestStatusColumn] = global::System.Convert.DBNull;
+            public System.DateTime DisposalDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableHighcourtReg.DisposalDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DisposalDate\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.DisposalDateColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAffidavitdateNull() {
-                return this.IsNull(this.tableHighcourtReg.AffidavitdateColumn);
+            public string OrderJudgementSheet {
+                get {
+                    try {
+                        return ((string)(this[this.tableHighcourtReg.OrderJudgementSheetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OrderJudgementSheet\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.OrderJudgementSheetColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAffidavitdateNull() {
-                this[this.tableHighcourtReg.AffidavitdateColumn] = global::System.Convert.DBNull;
+            public string JudgementDetail {
+                get {
+                    try {
+                        return ((string)(this[this.tableHighcourtReg.JudgementDetailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'JudgementDetail\' in table \'HighcourtReg\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHighcourtReg.JudgementDetailColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAffidavitNull() {
-                return this.IsNull(this.tableHighcourtReg.AffidavitColumn);
+            public bool IsFilenoNull() {
+                return this.IsNull(this.tableHighcourtReg.FilenoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAffidavitNull() {
-                this[this.tableHighcourtReg.AffidavitColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsParawiseremarksdateNull() {
-                return this.IsNull(this.tableHighcourtReg.ParawiseremarksdateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetParawiseremarksdateNull() {
-                this[this.tableHighcourtReg.ParawiseremarksdateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsParawiseremarksNull() {
-                return this.IsNull(this.tableHighcourtReg.ParawiseremarksColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetParawiseremarksNull() {
-                this[this.tableHighcourtReg.ParawiseremarksColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPetitionReasonNull() {
-                return this.IsNull(this.tableHighcourtReg.PetitionReasonColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPetitionReasonNull() {
-                this[this.tableHighcourtReg.PetitionReasonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPetitionerNameNull() {
-                return this.IsNull(this.tableHighcourtReg.PetitionerNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPetitionerNameNull() {
-                this[this.tableHighcourtReg.PetitionerNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDistrictOfficeNameNull() {
-                return this.IsNull(this.tableHighcourtReg.DistrictOfficeNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDistrictOfficeNameNull() {
-                this[this.tableHighcourtReg.DistrictOfficeNameColumn] = global::System.Convert.DBNull;
+            public void SetFilenoNull() {
+                this[this.tableHighcourtReg.FilenoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1149,14 +1013,146 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFilenoNull() {
-                return this.IsNull(this.tableHighcourtReg.FilenoColumn);
+            public bool IsDistrictOfficeNameNull() {
+                return this.IsNull(this.tableHighcourtReg.DistrictOfficeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFilenoNull() {
-                this[this.tableHighcourtReg.FilenoColumn] = global::System.Convert.DBNull;
+            public void SetDistrictOfficeNameNull() {
+                this[this.tableHighcourtReg.DistrictOfficeNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPetitionerNameNull() {
+                return this.IsNull(this.tableHighcourtReg.PetitionerNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPetitionerNameNull() {
+                this[this.tableHighcourtReg.PetitionerNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPetitionReasonNull() {
+                return this.IsNull(this.tableHighcourtReg.PetitionReasonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPetitionReasonNull() {
+                this[this.tableHighcourtReg.PetitionReasonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsParawiseremarksNull() {
+                return this.IsNull(this.tableHighcourtReg.ParawiseremarksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetParawiseremarksNull() {
+                this[this.tableHighcourtReg.ParawiseremarksColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsParawiseremarksdateNull() {
+                return this.IsNull(this.tableHighcourtReg.ParawiseremarksdateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetParawiseremarksdateNull() {
+                this[this.tableHighcourtReg.ParawiseremarksdateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAffidavitNull() {
+                return this.IsNull(this.tableHighcourtReg.AffidavitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAffidavitNull() {
+                this[this.tableHighcourtReg.AffidavitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAffidavitdateNull() {
+                return this.IsNull(this.tableHighcourtReg.AffidavitdateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAffidavitdateNull() {
+                this[this.tableHighcourtReg.AffidavitdateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLatestStatusNull() {
+                return this.IsNull(this.tableHighcourtReg.LatestStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLatestStatusNull() {
+                this[this.tableHighcourtReg.LatestStatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPetitionDispoasedYearNull() {
+                return this.IsNull(this.tableHighcourtReg.PetitionDispoasedYearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPetitionDispoasedYearNull() {
+                this[this.tableHighcourtReg.PetitionDispoasedYearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDisposalDateNull() {
+                return this.IsNull(this.tableHighcourtReg.DisposalDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDisposalDateNull() {
+                this[this.tableHighcourtReg.DisposalDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrderJudgementSheetNull() {
+                return this.IsNull(this.tableHighcourtReg.OrderJudgementSheetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrderJudgementSheetNull() {
+                this[this.tableHighcourtReg.OrderJudgementSheetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsJudgementDetailNull() {
+                return this.IsNull(this.tableHighcourtReg.JudgementDetailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetJudgementDetailNull() {
+                this[this.tableHighcourtReg.JudgementDetailColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1319,142 +1315,143 @@ namespace IGRSS.DataAccessLayer.HighCourtRegTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "HighcourtReg";
-            tableMapping.ColumnMappings.Add("JudgementDetail", "JudgementDetail");
-            tableMapping.ColumnMappings.Add("OrderJudgementSheet", "OrderJudgementSheet");
-            tableMapping.ColumnMappings.Add("DisposalDate", "DisposalDate");
-            tableMapping.ColumnMappings.Add("PetitionDispoasedYear", "PetitionDispoasedYear");
-            tableMapping.ColumnMappings.Add("LatestStatus", "LatestStatus");
-            tableMapping.ColumnMappings.Add("Affidavitdate", "Affidavitdate");
-            tableMapping.ColumnMappings.Add("Affidavit", "Affidavit");
-            tableMapping.ColumnMappings.Add("Parawiseremarksdate", "Parawiseremarksdate");
-            tableMapping.ColumnMappings.Add("Parawiseremarks", "Parawiseremarks");
-            tableMapping.ColumnMappings.Add("PetitionReason", "PetitionReason");
-            tableMapping.ColumnMappings.Add("PetitionerName", "PetitionerName");
-            tableMapping.ColumnMappings.Add("DistrictOfficeName", "DistrictOfficeName");
-            tableMapping.ColumnMappings.Add("SpecialCivilApplNo", "SpecialCivilApplNo");
-            tableMapping.ColumnMappings.Add("Fileno", "Fileno");
             tableMapping.ColumnMappings.Add("SrNo", "SrNo");
+            tableMapping.ColumnMappings.Add("Fileno", "Fileno");
+            tableMapping.ColumnMappings.Add("SpecialCivilApplNo", "SpecialCivilApplNo");
+            tableMapping.ColumnMappings.Add("DistrictOfficeName", "DistrictOfficeName");
+            tableMapping.ColumnMappings.Add("PetitionerName", "PetitionerName");
+            tableMapping.ColumnMappings.Add("PetitionReason", "PetitionReason");
+            tableMapping.ColumnMappings.Add("Parawiseremarks", "Parawiseremarks");
+            tableMapping.ColumnMappings.Add("Parawiseremarksdate", "Parawiseremarksdate");
+            tableMapping.ColumnMappings.Add("Affidavit", "Affidavit");
+            tableMapping.ColumnMappings.Add("Affidavitdate", "Affidavitdate");
+            tableMapping.ColumnMappings.Add("LatestStatus", "LatestStatus");
+            tableMapping.ColumnMappings.Add("PetitionDispoasedYear", "PetitionDispoasedYear");
+            tableMapping.ColumnMappings.Add("DisposalDate", "DisposalDate");
+            tableMapping.ColumnMappings.Add("OrderJudgementSheet", "OrderJudgementSheet");
+            tableMapping.ColumnMappings.Add("JudgementDetail", "JudgementDetail");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[HighcourtReg] WHERE (((@IsNull_OrderJudgementSheet = 1 AND [OrderJudgementSheet] IS NULL) OR ([OrderJudgementSheet] = @Original_OrderJudgementSheet)) AND ((@IsNull_DisposalDate = 1 AND [DisposalDate] IS NULL) OR ([DisposalDate] = @Original_DisposalDate)) AND ((@IsNull_PetitionDispoasedYear = 1 AND [PetitionDispoasedYear] IS NULL) OR ([PetitionDispoasedYear] = @Original_PetitionDispoasedYear)) AND ((@IsNull_LatestStatus = 1 AND [LatestStatus] IS NULL) OR ([LatestStatus] = @Original_LatestStatus)) AND ((@IsNull_Affidavitdate = 1 AND [Affidavitdate] IS NULL) OR ([Affidavitdate] = @Original_Affidavitdate)) AND ((@IsNull_Affidavit = 1 AND [Affidavit] IS NULL) OR ([Affidavit] = @Original_Affidavit)) AND ((@IsNull_Parawiseremarksdate = 1 AND [Parawiseremarksdate] IS NULL) OR ([Parawiseremarksdate] = @Original_Parawiseremarksdate)) AND ((@IsNull_Parawiseremarks = 1 AND [Parawiseremarks] IS NULL) OR ([Parawiseremarks] = @Original_Parawiseremarks)) AND ((@IsNull_PetitionerName = 1 AND [PetitionerName] IS NULL) OR ([PetitionerName] = @Original_PetitionerName)) AND ((@IsNull_DistrictOfficeName = 1 AND [DistrictOfficeName] IS NULL) OR ([DistrictOfficeName] = @Original_DistrictOfficeName)) AND ((@IsNull_SpecialCivilApplNo = 1 AND [SpecialCivilApplNo] IS NULL) OR ([SpecialCivilApplNo] = @Original_SpecialCivilApplNo)) AND ((@IsNull_Fileno = 1 AND [Fileno] IS NULL) OR ([Fileno] = @Original_Fileno)) AND ([SrNo] = @Original_SrNo))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[HighcourtReg] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Fileno = 1 AND [Fileno] IS NULL) OR ([Fileno] = @Original_Fileno)) AND ((@IsNull_SpecialCivilApplNo = 1 AND [SpecialCivilApplNo] IS NULL) OR ([SpecialCivilApplNo] = @Original_SpecialCivilApplNo)) AND ((@IsNull_DistrictOfficeName = 1 AND [DistrictOfficeName] IS NULL) OR ([DistrictOfficeName] = @Original_DistrictOfficeName)) AND ((@IsNull_PetitionerName = 1 AND [PetitionerName] IS NULL) OR ([PetitionerName] = @Original_PetitionerName)) AND ((@IsNull_Parawiseremarks = 1 AND [Parawiseremarks] IS NULL) OR ([Parawiseremarks] = @Original_Parawiseremarks)) AND ((@IsNull_Parawiseremarksdate = 1 AND [Parawiseremarksdate] IS NULL) OR ([Parawiseremarksdate] = @Original_Parawiseremarksdate)) AND ((@IsNull_Affidavit = 1 AND [Affidavit] IS NULL) OR ([Affidavit] = @Original_Affidavit)) AND ((@IsNull_Affidavitdate = 1 AND [Affidavitdate] IS NULL) OR ([Affidavitdate] = @Original_Affidavitdate)) AND ((@IsNull_LatestStatus = 1 AND [LatestStatus] IS NULL) OR ([LatestStatus] = @Original_LatestStatus)) AND ((@IsNull_PetitionDispoasedYear = 1 AND [PetitionDispoasedYear] IS NULL) OR ([PetitionDispoasedYear] = @Original_PetitionDispoasedYear)) AND ((@IsNull_DisposalDate = 1 AND [DisposalDate] IS NULL) OR ([DisposalDate] = @Original_DisposalDate)) AND ((@IsNull_OrderJudgementSheet = 1 AND [OrderJudgementSheet] IS NULL) OR ([OrderJudgementSheet] = @Original_OrderJudgementSheet)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderJudgementSheet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderJudgementSheet", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DisposalDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DisposalDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LatestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LatestStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Affidavitdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Affidavitdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Affidavit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Affidavit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parawiseremarksdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parawiseremarksdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parawiseremarks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parawiseremarks", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PetitionerName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PetitionerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistrictOfficeName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictOfficeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fileno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fileno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fileno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fileno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistrictOfficeName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictOfficeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PetitionerName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PetitionerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parawiseremarks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parawiseremarks", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parawiseremarksdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parawiseremarksdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Affidavit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Affidavit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Affidavitdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Affidavitdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LatestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LatestStatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DisposalDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DisposalDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderJudgementSheet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderJudgementSheet", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[HighcourtReg] ([JudgementDetail], [OrderJudgementSheet], [DisposalDate], [PetitionDispoasedYear], [LatestStatus], [Affidavitdate], [Affidavit], [Parawiseremarksdate], [Parawiseremarks], [PetitionReason], [PetitionerName], [DistrictOfficeName], [SpecialCivilApplNo], [Fileno]) VALUES (@JudgementDetail, @OrderJudgementSheet, @DisposalDate, @PetitionDispoasedYear, @LatestStatus, @Affidavitdate, @Affidavit, @Parawiseremarksdate, @Parawiseremarks, @PetitionReason, @PetitionerName, @DistrictOfficeName, @SpecialCivilApplNo, @Fileno);
-SELECT JudgementDetail, OrderJudgementSheet, DisposalDate, PetitionDispoasedYear, LatestStatus, Affidavitdate, Affidavit, Parawiseremarksdate, Parawiseremarks, PetitionReason, PetitionerName, DistrictOfficeName, SpecialCivilApplNo, Fileno, SrNo FROM dbo.HighcourtReg WHERE (SrNo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[HighcourtReg] ([SrNo], [Fileno], [SpecialCivilApplNo], [DistrictOfficeName], [PetitionerName], [PetitionReason], [Parawiseremarks], [Parawiseremarksdate], [Affidavit], [Affidavitdate], [LatestStatus], [PetitionDispoasedYear], [DisposalDate], [OrderJudgementSheet], [JudgementDetail]) VALUES (@SrNo, @Fileno, @SpecialCivilApplNo, @DistrictOfficeName, @PetitionerName, @PetitionReason, @Parawiseremarks, @Parawiseremarksdate, @Affidavit, @Affidavitdate, @LatestStatus, @PetitionDispoasedYear, @DisposalDate, @OrderJudgementSheet, @JudgementDetail);
+SELECT SrNo, Fileno, SpecialCivilApplNo, DistrictOfficeName, PetitionerName, PetitionReason, Parawiseremarks, Parawiseremarksdate, Affidavit, Affidavitdate, LatestStatus, PetitionDispoasedYear, DisposalDate, OrderJudgementSheet, JudgementDetail FROM dbo.HighcourtReg WHERE (SrNo = @SrNo)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JudgementDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JudgementDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderJudgementSheet", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisposalDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LatestStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Affidavitdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Affidavit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parawiseremarksdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parawiseremarks", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionReason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionReason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictOfficeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fileno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fileno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictOfficeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionReason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionReason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parawiseremarks", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parawiseremarksdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Affidavit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Affidavitdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LatestStatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisposalDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderJudgementSheet", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JudgementDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JudgementDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[HighcourtReg] SET [JudgementDetail] = @JudgementDetail, [OrderJudge" +
-                "mentSheet] = @OrderJudgementSheet, [DisposalDate] = @DisposalDate, [PetitionDisp" +
-                "oasedYear] = @PetitionDispoasedYear, [LatestStatus] = @LatestStatus, [Affidavitd" +
-                "ate] = @Affidavitdate, [Affidavit] = @Affidavit, [Parawiseremarksdate] = @Parawi" +
-                "seremarksdate, [Parawiseremarks] = @Parawiseremarks, [PetitionReason] = @Petitio" +
-                "nReason, [PetitionerName] = @PetitionerName, [DistrictOfficeName] = @DistrictOff" +
-                "iceName, [SpecialCivilApplNo] = @SpecialCivilApplNo, [Fileno] = @Fileno WHERE ((" +
-                "(@IsNull_OrderJudgementSheet = 1 AND [OrderJudgementSheet] IS NULL) OR ([OrderJu" +
-                "dgementSheet] = @Original_OrderJudgementSheet)) AND ((@IsNull_DisposalDate = 1 A" +
-                "ND [DisposalDate] IS NULL) OR ([DisposalDate] = @Original_DisposalDate)) AND ((@" +
-                "IsNull_PetitionDispoasedYear = 1 AND [PetitionDispoasedYear] IS NULL) OR ([Petit" +
-                "ionDispoasedYear] = @Original_PetitionDispoasedYear)) AND ((@IsNull_LatestStatus" +
-                " = 1 AND [LatestStatus] IS NULL) OR ([LatestStatus] = @Original_LatestStatus)) A" +
-                "ND ((@IsNull_Affidavitdate = 1 AND [Affidavitdate] IS NULL) OR ([Affidavitdate] " +
-                "= @Original_Affidavitdate)) AND ((@IsNull_Affidavit = 1 AND [Affidavit] IS NULL)" +
-                " OR ([Affidavit] = @Original_Affidavit)) AND ((@IsNull_Parawiseremarksdate = 1 A" +
-                "ND [Parawiseremarksdate] IS NULL) OR ([Parawiseremarksdate] = @Original_Parawise" +
-                "remarksdate)) AND ((@IsNull_Parawiseremarks = 1 AND [Parawiseremarks] IS NULL) O" +
-                "R ([Parawiseremarks] = @Original_Parawiseremarks)) AND ((@IsNull_PetitionerName " +
-                "= 1 AND [PetitionerName] IS NULL) OR ([PetitionerName] = @Original_PetitionerNam" +
-                "e)) AND ((@IsNull_DistrictOfficeName = 1 AND [DistrictOfficeName] IS NULL) OR ([" +
-                "DistrictOfficeName] = @Original_DistrictOfficeName)) AND ((@IsNull_SpecialCivilA" +
-                "pplNo = 1 AND [SpecialCivilApplNo] IS NULL) OR ([SpecialCivilApplNo] = @Original" +
-                "_SpecialCivilApplNo)) AND ((@IsNull_Fileno = 1 AND [Fileno] IS NULL) OR ([Fileno" +
-                "] = @Original_Fileno)) AND ([SrNo] = @Original_SrNo));\r\nSELECT JudgementDetail, " +
-                "OrderJudgementSheet, DisposalDate, PetitionDispoasedYear, LatestStatus, Affidavi" +
-                "tdate, Affidavit, Parawiseremarksdate, Parawiseremarks, PetitionReason, Petition" +
-                "erName, DistrictOfficeName, SpecialCivilApplNo, Fileno, SrNo FROM dbo.HighcourtR" +
-                "eg WHERE (SrNo = @SrNo)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[HighcourtReg] SET [SrNo] = @SrNo, [Fileno] = @Fileno, [SpecialCivil" +
+                "ApplNo] = @SpecialCivilApplNo, [DistrictOfficeName] = @DistrictOfficeName, [Peti" +
+                "tionerName] = @PetitionerName, [PetitionReason] = @PetitionReason, [Parawiserema" +
+                "rks] = @Parawiseremarks, [Parawiseremarksdate] = @Parawiseremarksdate, [Affidavi" +
+                "t] = @Affidavit, [Affidavitdate] = @Affidavitdate, [LatestStatus] = @LatestStatu" +
+                "s, [PetitionDispoasedYear] = @PetitionDispoasedYear, [DisposalDate] = @DisposalD" +
+                "ate, [OrderJudgementSheet] = @OrderJudgementSheet, [JudgementDetail] = @Judgemen" +
+                "tDetail WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Fileno = 1 AND [Fileno] I" +
+                "S NULL) OR ([Fileno] = @Original_Fileno)) AND ((@IsNull_SpecialCivilApplNo = 1 A" +
+                "ND [SpecialCivilApplNo] IS NULL) OR ([SpecialCivilApplNo] = @Original_SpecialCiv" +
+                "ilApplNo)) AND ((@IsNull_DistrictOfficeName = 1 AND [DistrictOfficeName] IS NULL" +
+                ") OR ([DistrictOfficeName] = @Original_DistrictOfficeName)) AND ((@IsNull_Petiti" +
+                "onerName = 1 AND [PetitionerName] IS NULL) OR ([PetitionerName] = @Original_Peti" +
+                "tionerName)) AND ((@IsNull_Parawiseremarks = 1 AND [Parawiseremarks] IS NULL) OR" +
+                " ([Parawiseremarks] = @Original_Parawiseremarks)) AND ((@IsNull_Parawiseremarksd" +
+                "ate = 1 AND [Parawiseremarksdate] IS NULL) OR ([Parawiseremarksdate] = @Original" +
+                "_Parawiseremarksdate)) AND ((@IsNull_Affidavit = 1 AND [Affidavit] IS NULL) OR (" +
+                "[Affidavit] = @Original_Affidavit)) AND ((@IsNull_Affidavitdate = 1 AND [Affidav" +
+                "itdate] IS NULL) OR ([Affidavitdate] = @Original_Affidavitdate)) AND ((@IsNull_L" +
+                "atestStatus = 1 AND [LatestStatus] IS NULL) OR ([LatestStatus] = @Original_Lates" +
+                "tStatus)) AND ((@IsNull_PetitionDispoasedYear = 1 AND [PetitionDispoasedYear] IS" +
+                " NULL) OR ([PetitionDispoasedYear] = @Original_PetitionDispoasedYear)) AND ((@Is" +
+                "Null_DisposalDate = 1 AND [DisposalDate] IS NULL) OR ([DisposalDate] = @Original" +
+                "_DisposalDate)) AND ((@IsNull_OrderJudgementSheet = 1 AND [OrderJudgementSheet] " +
+                "IS NULL) OR ([OrderJudgementSheet] = @Original_OrderJudgementSheet)));\r\nSELECT S" +
+                "rNo, Fileno, SpecialCivilApplNo, DistrictOfficeName, PetitionerName, PetitionRea" +
+                "son, Parawiseremarks, Parawiseremarksdate, Affidavit, Affidavitdate, LatestStatu" +
+                "s, PetitionDispoasedYear, DisposalDate, OrderJudgementSheet, JudgementDetail FRO" +
+                "M dbo.HighcourtReg WHERE (SrNo = @SrNo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JudgementDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JudgementDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderJudgementSheet", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisposalDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LatestStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Affidavitdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Affidavit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parawiseremarksdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parawiseremarks", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionReason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionReason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictOfficeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fileno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fileno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderJudgementSheet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderJudgementSheet", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DisposalDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DisposalDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LatestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LatestStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Affidavitdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Affidavitdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Affidavit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Affidavit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parawiseremarksdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parawiseremarksdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parawiseremarks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parawiseremarks", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PetitionerName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PetitionerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistrictOfficeName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictOfficeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistrictOfficeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionReason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionReason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parawiseremarks", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parawiseremarksdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Affidavit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Affidavitdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LatestStatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisposalDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderJudgementSheet", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JudgementDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JudgementDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fileno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fileno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fileno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fileno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpecialCivilApplNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialCivilApplNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistrictOfficeName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistrictOfficeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistrictOfficeName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PetitionerName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PetitionerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionerName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parawiseremarks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parawiseremarks", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarks", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parawiseremarksdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parawiseremarksdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parawiseremarksdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Affidavit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Affidavit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Affidavitdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Affidavitdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Affidavitdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LatestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LatestStatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LatestStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PetitionDispoasedYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PetitionDispoasedYear", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DisposalDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DisposalDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrderJudgementSheet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderJudgementSheet", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderJudgementSheet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1467,38 +1464,13 @@ SELECT JudgementDetail, OrderJudgementSheet, DisposalDate, PetitionDispoasedYear
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        JudgementDetail, OrderJudgementSheet, DisposalDate, PetitionDispoasedYear, LatestStatus, Affidavitdate, Affidavit, Parawiseremarksdate, Parawiseremarks, 
-                         PetitionReason, PetitionerName, DistrictOfficeName, SpecialCivilApplNo, Fileno, SrNo
+            this._commandCollection[0].CommandText = @"SELECT        SrNo, Fileno, SpecialCivilApplNo, DistrictOfficeName, PetitionerName, PetitionReason, Parawiseremarks, Parawiseremarksdate, Affidavit, Affidavitdate, LatestStatus, 
+                         PetitionDispoasedYear, DisposalDate, OrderJudgementSheet, JudgementDetail
 FROM            dbo.HighcourtReg";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        JudgementDetail, OrderJudgementSheet, DisposalDate, PetitionDispoas" +
-                "edYear, LatestStatus, Affidavitdate, Affidavit, Parawiseremarksdate, Parawiserem" +
-                "arks, \r\n                         PetitionReason, PetitionerName, DistrictOfficeN" +
-                "ame, SpecialCivilApplNo, Fileno, SrNo\r\nFROM            dbo.HighcourtReg\r\nWHERE  " +
-                "      (JudgementDetail LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                    " +
-                "     (OrderJudgementSheet LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                 " +
-                "        (CAST(DisposalDate AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n    " +
-                "                     (CAST(PetitionDispoasedYear AS varchar) LIKE \'%\' + @searchK" +
-                "eyWord + \'%\') OR\r\n                         (LatestStatus LIKE \'%\' + @searchKeyWo" +
-                "rd + \'%\') OR\r\n                         (CAST(Affidavitdate AS varchar) LIKE \'%\' " +
-                "+ @searchKeyWord + \'%\') OR\r\n                         (CAST(Affidavit AS varchar)" +
-                " LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Parawiserem" +
-                "arksdate AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                      " +
-                "   (CAST(Parawiseremarks AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n      " +
-                "                   (PetitionReason LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n        " +
-                "                 (PetitionerName LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n          " +
-                "               (DistrictOfficeName LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n        " +
-                "                 (CAST(SpecialCivilApplNo AS varchar) LIKE \'%\' + @searchKeyWord " +
-                "+ \'%\') OR\r\n                         (CAST(Fileno AS varchar) LIKE \'%\' + @searchK" +
-                "eyWord + \'%\') OR\r\n                         (CAST(SrNo AS varchar) LIKE \'%\' + @se" +
-                "archKeyWord + \'%\')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "JudgementDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1520,42 +1492,6 @@ FROM            dbo.HighcourtReg";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual HighCourtReg.HighcourtRegDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            HighCourtReg.HighcourtRegDataTable dataTable = new HighCourtReg.HighcourtRegDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(HighCourtReg.HighcourtRegDataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((searchKeyWord == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual HighCourtReg.HighcourtRegDataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((searchKeyWord == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
-            }
             HighCourtReg.HighcourtRegDataTable dataTable = new HighCourtReg.HighcourtRegDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1594,104 +1530,104 @@ FROM            dbo.HighcourtReg";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_OrderJudgementSheet, global::System.Nullable<global::System.DateTime> Original_DisposalDate, global::System.Nullable<int> Original_PetitionDispoasedYear, string Original_LatestStatus, global::System.Nullable<global::System.DateTime> Original_Affidavitdate, global::System.Nullable<bool> Original_Affidavit, global::System.Nullable<global::System.DateTime> Original_Parawiseremarksdate, global::System.Nullable<bool> Original_Parawiseremarks, string Original_PetitionerName, string Original_DistrictOfficeName, global::System.Nullable<int> Original_SpecialCivilApplNo, global::System.Nullable<int> Original_Fileno, int Original_SrNo) {
-            if ((Original_OrderJudgementSheet == null)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+        public virtual int Delete(int Original_SrNo, global::System.Nullable<int> Original_Fileno, global::System.Nullable<int> Original_SpecialCivilApplNo, string Original_DistrictOfficeName, string Original_PetitionerName, global::System.Nullable<bool> Original_Parawiseremarks, global::System.Nullable<global::System.DateTime> Original_Parawiseremarksdate, global::System.Nullable<bool> Original_Affidavit, global::System.Nullable<global::System.DateTime> Original_Affidavitdate, string Original_LatestStatus, global::System.Nullable<int> Original_PetitionDispoasedYear, global::System.Nullable<global::System.DateTime> Original_DisposalDate, string Original_OrderJudgementSheet) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SrNo));
+            if ((Original_Fileno.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Fileno.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_OrderJudgementSheet));
-            }
-            if ((Original_DisposalDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_DisposalDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Original_PetitionDispoasedYear.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_PetitionDispoasedYear.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_LatestStatus == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_LatestStatus));
-            }
-            if ((Original_Affidavitdate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_Affidavitdate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Affidavit.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_Affidavit.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Parawiseremarksdate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((System.DateTime)(Original_Parawiseremarksdate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Parawiseremarks.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((bool)(Original_Parawiseremarks.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_PetitionerName == null)) {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_PetitionerName));
-            }
-            if ((Original_DistrictOfficeName == null)) {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((string)(Original_DistrictOfficeName));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((Original_SpecialCivilApplNo.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((int)(Original_SpecialCivilApplNo.Value));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_SpecialCivilApplNo.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_Fileno.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((int)(Original_Fileno.Value));
+            if ((Original_DistrictOfficeName == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_DistrictOfficeName));
             }
-            this.Adapter.DeleteCommand.Parameters[24].Value = ((int)(Original_SrNo));
+            if ((Original_PetitionerName == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PetitionerName));
+            }
+            if ((Original_Parawiseremarks.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((bool)(Original_Parawiseremarks.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Parawiseremarksdate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Parawiseremarksdate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Affidavit.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((bool)(Original_Affidavit.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Affidavitdate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_Affidavitdate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LatestStatus == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_LatestStatus));
+            }
+            if ((Original_PetitionDispoasedYear.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_PetitionDispoasedYear.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DisposalDate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((System.DateTime)(Original_DisposalDate.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_OrderJudgementSheet == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_OrderJudgementSheet));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1712,45 +1648,40 @@ FROM            dbo.HighcourtReg";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string JudgementDetail, string OrderJudgementSheet, global::System.Nullable<global::System.DateTime> DisposalDate, global::System.Nullable<int> PetitionDispoasedYear, string LatestStatus, global::System.Nullable<global::System.DateTime> Affidavitdate, global::System.Nullable<bool> Affidavit, global::System.Nullable<global::System.DateTime> Parawiseremarksdate, global::System.Nullable<bool> Parawiseremarks, string PetitionReason, string PetitionerName, string DistrictOfficeName, global::System.Nullable<int> SpecialCivilApplNo, global::System.Nullable<int> Fileno) {
-            if ((JudgementDetail == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(int SrNo, global::System.Nullable<int> Fileno, global::System.Nullable<int> SpecialCivilApplNo, string DistrictOfficeName, string PetitionerName, string PetitionReason, global::System.Nullable<bool> Parawiseremarks, global::System.Nullable<global::System.DateTime> Parawiseremarksdate, global::System.Nullable<bool> Affidavit, global::System.Nullable<global::System.DateTime> Affidavitdate, string LatestStatus, global::System.Nullable<int> PetitionDispoasedYear, global::System.Nullable<global::System.DateTime> DisposalDate, string OrderJudgementSheet, string JudgementDetail) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SrNo));
+            if ((Fileno.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Fileno.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(JudgementDetail));
-            }
-            if ((OrderJudgementSheet == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(OrderJudgementSheet));
-            }
-            if ((DisposalDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DisposalDate.Value));
+            if ((SpecialCivilApplNo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(SpecialCivilApplNo.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((PetitionDispoasedYear.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(PetitionDispoasedYear.Value));
-            }
-            else {
+            if ((DistrictOfficeName == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((LatestStatus == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DistrictOfficeName));
+            }
+            if ((PetitionerName == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(LatestStatus));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PetitionerName));
             }
-            if ((Affidavitdate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Affidavitdate.Value));
-            }
-            else {
+            if ((PetitionReason == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Affidavit.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(Affidavit.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PetitionReason));
+            }
+            if ((Parawiseremarks.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(Parawiseremarks.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
@@ -1761,41 +1692,47 @@ FROM            dbo.HighcourtReg";
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Parawiseremarks.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(Parawiseremarks.Value));
+            if ((Affidavit.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(Affidavit.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((PetitionReason == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((Affidavitdate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Affidavitdate.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(PetitionReason));
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((PetitionerName == null)) {
+            if ((LatestStatus == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(PetitionerName));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(LatestStatus));
             }
-            if ((DistrictOfficeName == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((PetitionDispoasedYear.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(PetitionDispoasedYear.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(DistrictOfficeName));
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((SpecialCivilApplNo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(SpecialCivilApplNo.Value));
+            if ((DisposalDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(DisposalDate.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Fileno.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(Fileno.Value));
+            if ((OrderJudgementSheet == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(OrderJudgementSheet));
+            }
+            if ((JudgementDetail == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(JudgementDetail));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1818,72 +1755,67 @@ FROM            dbo.HighcourtReg";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string JudgementDetail, 
-                    string OrderJudgementSheet, 
-                    global::System.Nullable<global::System.DateTime> DisposalDate, 
-                    global::System.Nullable<int> PetitionDispoasedYear, 
-                    string LatestStatus, 
-                    global::System.Nullable<global::System.DateTime> Affidavitdate, 
-                    global::System.Nullable<bool> Affidavit, 
-                    global::System.Nullable<global::System.DateTime> Parawiseremarksdate, 
-                    global::System.Nullable<bool> Parawiseremarks, 
-                    string PetitionReason, 
-                    string PetitionerName, 
-                    string DistrictOfficeName, 
-                    global::System.Nullable<int> SpecialCivilApplNo, 
+                    int SrNo, 
                     global::System.Nullable<int> Fileno, 
-                    string Original_OrderJudgementSheet, 
-                    global::System.Nullable<global::System.DateTime> Original_DisposalDate, 
-                    global::System.Nullable<int> Original_PetitionDispoasedYear, 
-                    string Original_LatestStatus, 
-                    global::System.Nullable<global::System.DateTime> Original_Affidavitdate, 
-                    global::System.Nullable<bool> Original_Affidavit, 
-                    global::System.Nullable<global::System.DateTime> Original_Parawiseremarksdate, 
-                    global::System.Nullable<bool> Original_Parawiseremarks, 
-                    string Original_PetitionerName, 
-                    string Original_DistrictOfficeName, 
-                    global::System.Nullable<int> Original_SpecialCivilApplNo, 
-                    global::System.Nullable<int> Original_Fileno, 
+                    global::System.Nullable<int> SpecialCivilApplNo, 
+                    string DistrictOfficeName, 
+                    string PetitionerName, 
+                    string PetitionReason, 
+                    global::System.Nullable<bool> Parawiseremarks, 
+                    global::System.Nullable<global::System.DateTime> Parawiseremarksdate, 
+                    global::System.Nullable<bool> Affidavit, 
+                    global::System.Nullable<global::System.DateTime> Affidavitdate, 
+                    string LatestStatus, 
+                    global::System.Nullable<int> PetitionDispoasedYear, 
+                    global::System.Nullable<global::System.DateTime> DisposalDate, 
+                    string OrderJudgementSheet, 
+                    string JudgementDetail, 
                     int Original_SrNo, 
-                    int SrNo) {
-            if ((JudgementDetail == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                    global::System.Nullable<int> Original_Fileno, 
+                    global::System.Nullable<int> Original_SpecialCivilApplNo, 
+                    string Original_DistrictOfficeName, 
+                    string Original_PetitionerName, 
+                    global::System.Nullable<bool> Original_Parawiseremarks, 
+                    global::System.Nullable<global::System.DateTime> Original_Parawiseremarksdate, 
+                    global::System.Nullable<bool> Original_Affidavit, 
+                    global::System.Nullable<global::System.DateTime> Original_Affidavitdate, 
+                    string Original_LatestStatus, 
+                    global::System.Nullable<int> Original_PetitionDispoasedYear, 
+                    global::System.Nullable<global::System.DateTime> Original_DisposalDate, 
+                    string Original_OrderJudgementSheet) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SrNo));
+            if ((Fileno.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Fileno.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(JudgementDetail));
-            }
-            if ((OrderJudgementSheet == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(OrderJudgementSheet));
-            }
-            if ((DisposalDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DisposalDate.Value));
+            if ((SpecialCivilApplNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(SpecialCivilApplNo.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((PetitionDispoasedYear.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(PetitionDispoasedYear.Value));
-            }
-            else {
+            if ((DistrictOfficeName == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((LatestStatus == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DistrictOfficeName));
+            }
+            if ((PetitionerName == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(LatestStatus));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PetitionerName));
             }
-            if ((Affidavitdate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Affidavitdate.Value));
-            }
-            else {
+            if ((PetitionReason == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Affidavit.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Affidavit.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PetitionReason));
+            }
+            if ((Parawiseremarks.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Parawiseremarks.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
@@ -1894,85 +1826,84 @@ FROM            dbo.HighcourtReg";
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Parawiseremarks.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Parawiseremarks.Value));
+            if ((Affidavit.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Affidavit.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((PetitionReason == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((Affidavitdate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Affidavitdate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(PetitionReason));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((PetitionerName == null)) {
+            if ((LatestStatus == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(PetitionerName));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(LatestStatus));
             }
-            if ((DistrictOfficeName == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((PetitionDispoasedYear.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(PetitionDispoasedYear.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(DistrictOfficeName));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((SpecialCivilApplNo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(SpecialCivilApplNo.Value));
+            if ((DisposalDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(DisposalDate.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Fileno.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Fileno.Value));
-            }
-            else {
+            if ((OrderJudgementSheet == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Original_OrderJudgementSheet == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(OrderJudgementSheet));
+            }
+            if ((JudgementDetail == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_OrderJudgementSheet));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(JudgementDetail));
             }
-            if ((Original_DisposalDate.HasValue == true)) {
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_SrNo));
+            if ((Original_Fileno.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_DisposalDate.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Fileno.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((Original_PetitionDispoasedYear.HasValue == true)) {
+            if ((Original_SpecialCivilApplNo.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_PetitionDispoasedYear.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_SpecialCivilApplNo.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Original_LatestStatus == null)) {
+            if ((Original_DistrictOfficeName == null)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_LatestStatus));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_DistrictOfficeName));
             }
-            if ((Original_Affidavitdate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_Affidavitdate.Value));
-            }
-            else {
+            if ((Original_PetitionerName == null)) {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            if ((Original_Affidavit.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_PetitionerName));
+            }
+            if ((Original_Parawiseremarks.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((bool)(Original_Affidavit.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((bool)(Original_Parawiseremarks.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
@@ -1986,48 +1917,54 @@ FROM            dbo.HighcourtReg";
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
-            if ((Original_Parawiseremarks.HasValue == true)) {
+            if ((Original_Affidavit.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((bool)(Original_Parawiseremarks.Value));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((bool)(Original_Affidavit.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            if ((Original_PetitionerName == null)) {
+            if ((Original_Affidavitdate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_Affidavitdate.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_PetitionerName));
-            }
-            if ((Original_DistrictOfficeName == null)) {
+            if ((Original_LatestStatus == null)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_DistrictOfficeName));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_LatestStatus));
             }
-            if ((Original_SpecialCivilApplNo.HasValue == true)) {
+            if ((Original_PetitionDispoasedYear.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_SpecialCivilApplNo.Value));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_PetitionDispoasedYear.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((Original_Fileno.HasValue == true)) {
+            if ((Original_DisposalDate.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_Fileno.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_DisposalDate.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_SrNo));
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(SrNo));
+            if ((Original_OrderJudgementSheet == null)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_OrderJudgementSheet));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2049,34 +1986,34 @@ FROM            dbo.HighcourtReg";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string JudgementDetail, 
-                    string OrderJudgementSheet, 
-                    global::System.Nullable<global::System.DateTime> DisposalDate, 
-                    global::System.Nullable<int> PetitionDispoasedYear, 
-                    string LatestStatus, 
-                    global::System.Nullable<global::System.DateTime> Affidavitdate, 
-                    global::System.Nullable<bool> Affidavit, 
-                    global::System.Nullable<global::System.DateTime> Parawiseremarksdate, 
-                    global::System.Nullable<bool> Parawiseremarks, 
-                    string PetitionReason, 
-                    string PetitionerName, 
-                    string DistrictOfficeName, 
-                    global::System.Nullable<int> SpecialCivilApplNo, 
                     global::System.Nullable<int> Fileno, 
-                    string Original_OrderJudgementSheet, 
-                    global::System.Nullable<global::System.DateTime> Original_DisposalDate, 
-                    global::System.Nullable<int> Original_PetitionDispoasedYear, 
-                    string Original_LatestStatus, 
-                    global::System.Nullable<global::System.DateTime> Original_Affidavitdate, 
-                    global::System.Nullable<bool> Original_Affidavit, 
-                    global::System.Nullable<global::System.DateTime> Original_Parawiseremarksdate, 
-                    global::System.Nullable<bool> Original_Parawiseremarks, 
-                    string Original_PetitionerName, 
-                    string Original_DistrictOfficeName, 
-                    global::System.Nullable<int> Original_SpecialCivilApplNo, 
+                    global::System.Nullable<int> SpecialCivilApplNo, 
+                    string DistrictOfficeName, 
+                    string PetitionerName, 
+                    string PetitionReason, 
+                    global::System.Nullable<bool> Parawiseremarks, 
+                    global::System.Nullable<global::System.DateTime> Parawiseremarksdate, 
+                    global::System.Nullable<bool> Affidavit, 
+                    global::System.Nullable<global::System.DateTime> Affidavitdate, 
+                    string LatestStatus, 
+                    global::System.Nullable<int> PetitionDispoasedYear, 
+                    global::System.Nullable<global::System.DateTime> DisposalDate, 
+                    string OrderJudgementSheet, 
+                    string JudgementDetail, 
+                    int Original_SrNo, 
                     global::System.Nullable<int> Original_Fileno, 
-                    int Original_SrNo) {
-            return this.Update(JudgementDetail, OrderJudgementSheet, DisposalDate, PetitionDispoasedYear, LatestStatus, Affidavitdate, Affidavit, Parawiseremarksdate, Parawiseremarks, PetitionReason, PetitionerName, DistrictOfficeName, SpecialCivilApplNo, Fileno, Original_OrderJudgementSheet, Original_DisposalDate, Original_PetitionDispoasedYear, Original_LatestStatus, Original_Affidavitdate, Original_Affidavit, Original_Parawiseremarksdate, Original_Parawiseremarks, Original_PetitionerName, Original_DistrictOfficeName, Original_SpecialCivilApplNo, Original_Fileno, Original_SrNo, Original_SrNo);
+                    global::System.Nullable<int> Original_SpecialCivilApplNo, 
+                    string Original_DistrictOfficeName, 
+                    string Original_PetitionerName, 
+                    global::System.Nullable<bool> Original_Parawiseremarks, 
+                    global::System.Nullable<global::System.DateTime> Original_Parawiseremarksdate, 
+                    global::System.Nullable<bool> Original_Affidavit, 
+                    global::System.Nullable<global::System.DateTime> Original_Affidavitdate, 
+                    string Original_LatestStatus, 
+                    global::System.Nullable<int> Original_PetitionDispoasedYear, 
+                    global::System.Nullable<global::System.DateTime> Original_DisposalDate, 
+                    string Original_OrderJudgementSheet) {
+            return this.Update(Original_SrNo, Fileno, SpecialCivilApplNo, DistrictOfficeName, PetitionerName, PetitionReason, Parawiseremarks, Parawiseremarksdate, Affidavit, Affidavitdate, LatestStatus, PetitionDispoasedYear, DisposalDate, OrderJudgementSheet, JudgementDetail, Original_SrNo, Original_Fileno, Original_SpecialCivilApplNo, Original_DistrictOfficeName, Original_PetitionerName, Original_Parawiseremarks, Original_Parawiseremarksdate, Original_Affidavit, Original_Affidavitdate, Original_LatestStatus, Original_PetitionDispoasedYear, Original_DisposalDate, Original_OrderJudgementSheet);
         }
     }
     

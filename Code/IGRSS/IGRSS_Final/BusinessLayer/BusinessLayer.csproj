@@ -149,6 +149,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppealRegister.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\ApplicationDisposalRegister.Designer.cs" />
+    <Compile Include="DataAccessLayer\BillRegister.Designer.cs" />
+    <Compile Include="DataAccessLayer\BookForms.Designer.cs" />
+    <Compile Include="DataAccessLayer\ChequeRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\Citizen.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,10 +163,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Config.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\DataSetDepartment.cs">
+      <DependentUpon>DataSetDepartment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\DataSetDepartment.Designer.cs">
+      <DependentUpon>DataSetDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Datatable1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Datatable1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\DeadStockRegister.Designer.cs" />
+    <Compile Include="DataAccessLayer\demotest1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>demotest.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\DepartmentMaster.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -235,16 +251,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FileManagement.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataAccessLayer\FileRegister.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FileRegister.xsd</DependentUpon>
+    <Compile Include="DataAccessLayer\FileRegisterNew.cs">
+      <DependentUpon>FileRegisterNew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\FileRegisterNew.Designer.cs">
+      <DependentUpon>FileRegisterNew.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\GovtDoc.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GovtDoc.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\GovtDocs.Designer.cs" />
+    <Compile Include="DataAccessLayer\GrantRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\HighCourtReg.cs">
       <DependentUpon>HighCourtReg.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -295,6 +314,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Jantri.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\Kalpataru_Purachase_Stock.Designer.cs" />
     <Compile Include="DataAccessLayer\Leave.cs">
       <DependentUpon>Leave.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -304,6 +324,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Leave.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\LekhanSamagri.Designer.cs" />
+    <Compile Include="DataAccessLayer\LibraryRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\LicenseReNewal.cs">
       <DependentUpon>LicenseReNewal.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -313,11 +335,14 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="DataAccessLayer\MarriageCertificate.Designer.cs" />
+    <Compile Include="DataAccessLayer\Marriage_Volume_Register.Designer.cs" />
     <Compile Include="DataAccessLayer\MLA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MLA.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\NoRecordCertificate.Designer.cs" />
     <Compile Include="DataAccessLayer\officename.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -437,6 +462,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VillageMasterAdministrator.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\VilliganceRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\Worksheetregister.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -719,6 +745,72 @@
     <None Include="DataAccessLayer\AppealTypeMaster.xss">
       <DependentUpon>AppealTypeMaster.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\ApplicationDisposalRegister.xsc">
+      <DependentUpon>ApplicationDisposalRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ApplicationDisposalRegister.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ApplicationDisposalRegister1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\ApplicationDisposalRegister.xss">
+      <DependentUpon>ApplicationDisposalRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\BillRegister.xsc">
+      <DependentUpon>BillRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\BillRegister.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BillRegister1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\BillRegister.xss">
+      <DependentUpon>BillRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\BillRegisterNew.xsc">
+      <DependentUpon>BillRegisterNew.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\BillRegisterNew.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BillRegisterNew1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\BillRegisterNew.xss">
+      <DependentUpon>BillRegisterNew.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\BookForms.xsc">
+      <DependentUpon>BookForms.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\BookForms.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookForms1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\BookForms.xss">
+      <DependentUpon>BookForms.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\CDRegiater.xsc">
+      <DependentUpon>CDRegiater.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\CDRegiater.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CDRegiater1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\CDRegiater.xss">
+      <DependentUpon>CDRegiater.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ChequeRegister.xsc">
+      <DependentUpon>ChequeRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ChequeRegister.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ChequeRegister1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\ChequeRegister.xss">
+      <DependentUpon>ChequeRegister.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Complain.xsc">
       <DependentUpon>Complain.xsd</DependentUpon>
     </None>
@@ -730,6 +822,17 @@
     <None Include="DataAccessLayer\Complain.xss">
       <DependentUpon>Complain.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\DataSetDepartment.xsc">
+      <DependentUpon>DataSetDepartment.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DataSetDepartment.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDepartment1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\DataSetDepartment.xss">
+      <DependentUpon>DataSetDepartment.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Datatable1.xsc">
       <DependentUpon>Datatable1.xsd</DependentUpon>
     </None>
@@ -740,6 +843,50 @@
     </None>
     <None Include="DataAccessLayer\Datatable1.xss">
       <DependentUpon>Datatable1.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DeadStockRegister.xsc">
+      <DependentUpon>DeadStockRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DeadStockRegister.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeadStockRegister1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\DeadStockRegister.xss">
+      <DependentUpon>DeadStockRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Deductions.xsc">
+      <DependentUpon>Deductions.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Deductions.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Deductions1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\Deductions.xss">
+      <DependentUpon>Deductions.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\demotest.xsc">
+      <DependentUpon>demotest.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\demotest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>demotest1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\demotest.xss">
+      <DependentUpon>demotest.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DepartmentalEnquiryReg.xsc">
+      <DependentUpon>DepartmentalEnquiryReg.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\DepartmentalEnquiryReg.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepartmentalEnquiryReg1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\DepartmentalEnquiryReg.xss">
+      <DependentUpon>DepartmentalEnquiryReg.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\DepartmentMaster.xsc">
       <DependentUpon>DepartmentMaster.xsd</DependentUpon>
@@ -822,12 +969,34 @@
       <DependentUpon>FileRegister.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\FileRegister.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FileRegister.Designer.cs</LastGenOutput>
+      <LastGenOutput>FileRegister1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="DataAccessLayer\FileRegister.xss">
       <DependentUpon>FileRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileRegisterNew.xsc">
+      <DependentUpon>FileRegisterNew.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileRegisterNew.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileRegisterNew1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\FileRegisterNew.xss">
+      <DependentUpon>FileRegisterNew.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileRegisters.xsc">
+      <DependentUpon>FileRegisters.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\FileRegisters.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileRegisters1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\FileRegisters.xss">
+      <DependentUpon>FileRegisters.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\GovtDoc.xsc">
       <DependentUpon>GovtDoc.xsd</DependentUpon>
@@ -839,6 +1008,28 @@
     </None>
     <None Include="DataAccessLayer\GovtDoc.xss">
       <DependentUpon>GovtDoc.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\GovtDocs.xsc">
+      <DependentUpon>GovtDocs.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\GovtDocs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GovtDocs1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\GovtDocs.xss">
+      <DependentUpon>GovtDocs.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\GrantRegister.xsc">
+      <DependentUpon>GrantRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\GrantRegister.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GrantRegister1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\GrantRegister.xss">
+      <DependentUpon>GrantRegister.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\HighCourtReg.xsc">
       <DependentUpon>HighCourtReg.xsd</DependentUpon>
@@ -917,6 +1108,17 @@
     <None Include="DataAccessLayer\Jantri.xss">
       <DependentUpon>Jantri.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\Kalpataru_Purachase_Stock.xsc">
+      <DependentUpon>Kalpataru_Purachase_Stock.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Kalpataru_Purachase_Stock.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Kalpataru_Purachase_Stock1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\Kalpataru_Purachase_Stock.xss">
+      <DependentUpon>Kalpataru_Purachase_Stock.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Leave.xsc">
       <DependentUpon>Leave.xsd</DependentUpon>
     </None>
@@ -938,6 +1140,28 @@
     </None>
     <None Include="DataAccessLayer\ActMaster.xss">
       <DependentUpon>ActMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LekhanSamagri.xsc">
+      <DependentUpon>LekhanSamagri.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LekhanSamagri.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LekhanSamagri1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\LekhanSamagri.xss">
+      <DependentUpon>LekhanSamagri.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LibraryRegister.xsc">
+      <DependentUpon>LibraryRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\LibraryRegister.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryRegister1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\LibraryRegister.xss">
+      <DependentUpon>LibraryRegister.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\LicenseApplication.xsc">
       <DependentUpon>LicenseApplication.xsd</DependentUpon>
@@ -972,6 +1196,28 @@
     <None Include="DataAccessLayer\LicenseReNewal.xss">
       <DependentUpon>LicenseReNewal.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\MarriageCertificate.xsc">
+      <DependentUpon>MarriageCertificate.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\MarriageCertificate.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MarriageCertificate1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\MarriageCertificate.xss">
+      <DependentUpon>MarriageCertificate.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Marriage_Volume_Register.xsc">
+      <DependentUpon>Marriage_Volume_Register.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Marriage_Volume_Register.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Marriage_Volume_Register1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\Marriage_Volume_Register.xss">
+      <DependentUpon>Marriage_Volume_Register.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\MLA.xsc">
       <DependentUpon>MLA.xsd</DependentUpon>
     </None>
@@ -982,6 +1228,17 @@
     </None>
     <None Include="DataAccessLayer\MLA.xss">
       <DependentUpon>MLA.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\NoRecordCertificate.xsc">
+      <DependentUpon>NoRecordCertificate.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\NoRecordCertificate.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NoRecordCertificate1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\NoRecordCertificate.xss">
+      <DependentUpon>NoRecordCertificate.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\officename.xsc">
       <DependentUpon>officename.xsd</DependentUpon>

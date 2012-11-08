@@ -20,17 +20,17 @@ namespace IGRSS.DataAccessLayer {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FileRegister")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BillRegister")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FileRegister : global::System.Data.DataSet {
+    public partial class BillRegister : global::System.Data.DataSet {
         
-        private FileRegister1DataTable tableFileRegister1;
+        private BillRegisterDataTable tableBillRegister;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FileRegister() {
+        public BillRegister() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace IGRSS.DataAccessLayer {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected FileRegister(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BillRegister(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace IGRSS.DataAccessLayer {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["FileRegister1"] != null)) {
-                    base.Tables.Add(new FileRegister1DataTable(ds.Tables["FileRegister1"]));
+                if ((ds.Tables["BillRegister"] != null)) {
+                    base.Tables.Add(new BillRegisterDataTable(ds.Tables["BillRegister"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace IGRSS.DataAccessLayer {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FileRegister1DataTable FileRegister1 {
+        public BillRegisterDataTable _BillRegister {
             get {
-                return this.tableFileRegister1;
+                return this.tableBillRegister;
             }
         }
         
@@ -127,7 +127,7 @@ namespace IGRSS.DataAccessLayer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FileRegister cln = ((FileRegister)(base.Clone()));
+            BillRegister cln = ((BillRegister)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace IGRSS.DataAccessLayer {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["FileRegister1"] != null)) {
-                    base.Tables.Add(new FileRegister1DataTable(ds.Tables["FileRegister1"]));
+                if ((ds.Tables["BillRegister"] != null)) {
+                    base.Tables.Add(new BillRegisterDataTable(ds.Tables["BillRegister"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace IGRSS.DataAccessLayer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableFileRegister1 = ((FileRegister1DataTable)(base.Tables["FileRegister1"]));
+            this.tableBillRegister = ((BillRegisterDataTable)(base.Tables["BillRegister"]));
             if ((initTable == true)) {
-                if ((this.tableFileRegister1 != null)) {
-                    this.tableFileRegister1.InitVars();
+                if ((this.tableBillRegister != null)) {
+                    this.tableBillRegister.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace IGRSS.DataAccessLayer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FileRegister";
+            this.DataSetName = "BillRegister";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FileRegister.xsd";
+            this.Namespace = "http://tempuri.org/BillRegister.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableFileRegister1 = new FileRegister1DataTable();
-            base.Tables.Add(this.tableFileRegister1);
+            this.tableBillRegister = new BillRegisterDataTable();
+            base.Tables.Add(this.tableBillRegister);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFileRegister1() {
+        private bool ShouldSerialize_BillRegister() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace IGRSS.DataAccessLayer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FileRegister ds = new FileRegister();
+            BillRegister ds = new BillRegister();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,37 +270,27 @@ namespace IGRSS.DataAccessLayer {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FileRegister1RowChangeEventHandler(object sender, FileRegister1RowChangeEvent e);
+        public delegate void BillRegisterRowChangeEventHandler(object sender, BillRegisterRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FileRegister1DataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class BillRegisterDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+            
+            private global::System.Data.DataColumn columnBillNo;
             
             private global::System.Data.DataColumn columnSrNo;
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnBillDate;
             
-            private global::System.Data.DataColumn columnFileName;
-            
-            private global::System.Data.DataColumn columnFileNo;
-            
-            private global::System.Data.DataColumn columnStartingDate;
-            
-            private global::System.Data.DataColumn columnEndingDate;
-            
-            private global::System.Data.DataColumn columnClassOfFile;
-            
-            private global::System.Data.DataColumn columnDisposalDateOfFile;
-            
-            private global::System.Data.DataColumn columnDisposalDateOn;
+            private global::System.Data.DataColumn columnDetailsOfBill;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FileRegister1DataTable() {
-                this.TableName = "FileRegister1";
+            public BillRegisterDataTable() {
+                this.TableName = "BillRegister";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -308,7 +298,7 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FileRegister1DataTable(global::System.Data.DataTable table) {
+            internal BillRegisterDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -325,9 +315,17 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FileRegister1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected BillRegisterDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BillNoColumn {
+                get {
+                    return this.columnBillNo;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -340,65 +338,17 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn BillDateColumn {
                 get {
-                    return this.columnID;
+                    return this.columnBillDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FileNameColumn {
+            public global::System.Data.DataColumn DetailsOfBillColumn {
                 get {
-                    return this.columnFileName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FileNoColumn {
-                get {
-                    return this.columnFileNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StartingDateColumn {
-                get {
-                    return this.columnStartingDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EndingDateColumn {
-                get {
-                    return this.columnEndingDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ClassOfFileColumn {
-                get {
-                    return this.columnClassOfFile;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DisposalDateOfFileColumn {
-                get {
-                    return this.columnDisposalDateOfFile;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DisposalDateOnColumn {
-                get {
-                    return this.columnDisposalDateOn;
+                    return this.columnDetailsOfBill;
                 }
             }
             
@@ -413,53 +363,48 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FileRegister1Row this[int index] {
+            public BillRegisterRow this[int index] {
                 get {
-                    return ((FileRegister1Row)(this.Rows[index]));
+                    return ((BillRegisterRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FileRegister1RowChangeEventHandler FileRegister1RowChanging;
+            public event BillRegisterRowChangeEventHandler BillRegisterRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FileRegister1RowChangeEventHandler FileRegister1RowChanged;
+            public event BillRegisterRowChangeEventHandler BillRegisterRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FileRegister1RowChangeEventHandler FileRegister1RowDeleting;
+            public event BillRegisterRowChangeEventHandler BillRegisterRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FileRegister1RowChangeEventHandler FileRegister1RowDeleted;
+            public event BillRegisterRowChangeEventHandler BillRegisterRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFileRegister1Row(FileRegister1Row row) {
+            public void AddBillRegisterRow(BillRegisterRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FileRegister1Row AddFileRegister1Row(int SrNo, int ID, string FileName, int FileNo, System.DateTime StartingDate, System.DateTime EndingDate, string ClassOfFile, System.DateTime DisposalDateOfFile, System.DateTime DisposalDateOn) {
-                FileRegister1Row rowFileRegister1Row = ((FileRegister1Row)(this.NewRow()));
+            public BillRegisterRow AddBillRegisterRow(int BillNo, System.DateTime BillDate, string DetailsOfBill) {
+                BillRegisterRow rowBillRegisterRow = ((BillRegisterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        SrNo,
-                        ID,
-                        FileName,
-                        FileNo,
-                        StartingDate,
-                        EndingDate,
-                        ClassOfFile,
-                        DisposalDateOfFile,
-                        DisposalDateOn};
-                rowFileRegister1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFileRegister1Row);
-                return rowFileRegister1Row;
+                        BillNo,
+                        null,
+                        BillDate,
+                        DetailsOfBill};
+                rowBillRegisterRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBillRegisterRow);
+                return rowBillRegisterRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FileRegister1Row FindBySrNo(int SrNo) {
-                return ((FileRegister1Row)(this.Rows.Find(new object[] {
+            public BillRegisterRow FindBySrNo(int SrNo) {
+                return ((BillRegisterRow)(this.Rows.Find(new object[] {
                             SrNo})));
             }
             
@@ -472,7 +417,7 @@ namespace IGRSS.DataAccessLayer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                FileRegister1DataTable cln = ((FileRegister1DataTable)(base.Clone()));
+                BillRegisterDataTable cln = ((BillRegisterDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -480,77 +425,66 @@ namespace IGRSS.DataAccessLayer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new FileRegister1DataTable();
+                return new BillRegisterDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnBillNo = base.Columns["BillNo"];
                 this.columnSrNo = base.Columns["SrNo"];
-                this.columnID = base.Columns["ID"];
-                this.columnFileName = base.Columns["FileName"];
-                this.columnFileNo = base.Columns["FileNo"];
-                this.columnStartingDate = base.Columns["StartingDate"];
-                this.columnEndingDate = base.Columns["EndingDate"];
-                this.columnClassOfFile = base.Columns["ClassOfFile"];
-                this.columnDisposalDateOfFile = base.Columns["DisposalDateOfFile"];
-                this.columnDisposalDateOn = base.Columns["DisposalDateOn"];
+                this.columnBillDate = base.Columns["BillDate"];
+                this.columnDetailsOfBill = base.Columns["DetailsOfBill"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnBillNo = new global::System.Data.DataColumn("BillNo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBillNo);
                 this.columnSrNo = new global::System.Data.DataColumn("SrNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSrNo);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnFileName = new global::System.Data.DataColumn("FileName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFileName);
-                this.columnFileNo = new global::System.Data.DataColumn("FileNo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFileNo);
-                this.columnStartingDate = new global::System.Data.DataColumn("StartingDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStartingDate);
-                this.columnEndingDate = new global::System.Data.DataColumn("EndingDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEndingDate);
-                this.columnClassOfFile = new global::System.Data.DataColumn("ClassOfFile", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClassOfFile);
-                this.columnDisposalDateOfFile = new global::System.Data.DataColumn("DisposalDateOfFile", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDisposalDateOfFile);
-                this.columnDisposalDateOn = new global::System.Data.DataColumn("DisposalDateOn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDisposalDateOn);
+                this.columnBillDate = new global::System.Data.DataColumn("BillDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBillDate);
+                this.columnDetailsOfBill = new global::System.Data.DataColumn("DetailsOfBill", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDetailsOfBill);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSrNo}, true));
+                this.columnSrNo.AutoIncrement = true;
+                this.columnSrNo.AutoIncrementSeed = -1;
+                this.columnSrNo.AutoIncrementStep = -1;
                 this.columnSrNo.AllowDBNull = false;
+                this.columnSrNo.ReadOnly = true;
                 this.columnSrNo.Unique = true;
-                this.columnID.AllowDBNull = false;
-                this.columnFileName.MaxLength = 10;
-                this.columnClassOfFile.MaxLength = 10;
+                this.columnDetailsOfBill.MaxLength = 2147483647;
+                this.ExtendedProperties.Add("Generator_TablePropName", "_BillRegister");
+                this.ExtendedProperties.Add("Generator_UserTableName", "BillRegister");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FileRegister1Row NewFileRegister1Row() {
-                return ((FileRegister1Row)(this.NewRow()));
+            public BillRegisterRow NewBillRegisterRow() {
+                return ((BillRegisterRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FileRegister1Row(builder);
+                return new BillRegisterRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(FileRegister1Row);
+                return typeof(BillRegisterRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.FileRegister1RowChanged != null)) {
-                    this.FileRegister1RowChanged(this, new FileRegister1RowChangeEvent(((FileRegister1Row)(e.Row)), e.Action));
+                if ((this.BillRegisterRowChanged != null)) {
+                    this.BillRegisterRowChanged(this, new BillRegisterRowChangeEvent(((BillRegisterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -558,8 +492,8 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.FileRegister1RowChanging != null)) {
-                    this.FileRegister1RowChanging(this, new FileRegister1RowChangeEvent(((FileRegister1Row)(e.Row)), e.Action));
+                if ((this.BillRegisterRowChanging != null)) {
+                    this.BillRegisterRowChanging(this, new BillRegisterRowChangeEvent(((BillRegisterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -567,8 +501,8 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.FileRegister1RowDeleted != null)) {
-                    this.FileRegister1RowDeleted(this, new FileRegister1RowChangeEvent(((FileRegister1Row)(e.Row)), e.Action));
+                if ((this.BillRegisterRowDeleted != null)) {
+                    this.BillRegisterRowDeleted(this, new BillRegisterRowChangeEvent(((BillRegisterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -576,14 +510,14 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.FileRegister1RowDeleting != null)) {
-                    this.FileRegister1RowDeleting(this, new FileRegister1RowChangeEvent(((FileRegister1Row)(e.Row)), e.Action));
+                if ((this.BillRegisterRowDeleting != null)) {
+                    this.BillRegisterRowDeleting(this, new BillRegisterRowChangeEvent(((BillRegisterRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFileRegister1Row(FileRegister1Row row) {
+            public void RemoveBillRegisterRow(BillRegisterRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -592,7 +526,7 @@ namespace IGRSS.DataAccessLayer {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FileRegister ds = new FileRegister();
+                BillRegister ds = new BillRegister();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -610,7 +544,7 @@ namespace IGRSS.DataAccessLayer {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FileRegister1DataTable";
+                attribute2.FixedValue = "BillRegisterDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -654,233 +588,110 @@ namespace IGRSS.DataAccessLayer {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class FileRegister1Row : global::System.Data.DataRow {
+        public partial class BillRegisterRow : global::System.Data.DataRow {
             
-            private FileRegister1DataTable tableFileRegister1;
+            private BillRegisterDataTable tableBillRegister;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FileRegister1Row(global::System.Data.DataRowBuilder rb) : 
+            internal BillRegisterRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableFileRegister1 = ((FileRegister1DataTable)(this.Table));
+                this.tableBillRegister = ((BillRegisterDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int BillNo {
+                get {
+                    try {
+                        return ((int)(this[this.tableBillRegister.BillNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BillNo\' in table \'BillRegister\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillRegister.BillNoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int SrNo {
                 get {
-                    return ((int)(this[this.tableFileRegister1.SrNoColumn]));
+                    return ((int)(this[this.tableBillRegister.SrNoColumn]));
                 }
                 set {
-                    this[this.tableFileRegister1.SrNoColumn] = value;
+                    this[this.tableBillRegister.SrNoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableFileRegister1.IDColumn]));
-                }
-                set {
-                    this[this.tableFileRegister1.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FileName {
+            public System.DateTime BillDate {
                 get {
                     try {
-                        return ((string)(this[this.tableFileRegister1.FileNameColumn]));
+                        return ((global::System.DateTime)(this[this.tableBillRegister.BillDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FileName\' in table \'FileRegister1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BillDate\' in table \'BillRegister\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFileRegister1.FileNameColumn] = value;
+                    this[this.tableBillRegister.BillDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int FileNo {
+            public string DetailsOfBill {
                 get {
                     try {
-                        return ((int)(this[this.tableFileRegister1.FileNoColumn]));
+                        return ((string)(this[this.tableBillRegister.DetailsOfBillColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FileNo\' in table \'FileRegister1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DetailsOfBill\' in table \'BillRegister\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFileRegister1.FileNoColumn] = value;
+                    this[this.tableBillRegister.DetailsOfBillColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime StartingDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableFileRegister1.StartingDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'StartingDate\' in table \'FileRegister1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFileRegister1.StartingDateColumn] = value;
-                }
+            public bool IsBillNoNull() {
+                return this.IsNull(this.tableBillRegister.BillNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime EndingDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableFileRegister1.EndingDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EndingDate\' in table \'FileRegister1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFileRegister1.EndingDateColumn] = value;
-                }
+            public void SetBillNoNull() {
+                this[this.tableBillRegister.BillNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ClassOfFile {
-                get {
-                    try {
-                        return ((string)(this[this.tableFileRegister1.ClassOfFileColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClassOfFile\' in table \'FileRegister1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFileRegister1.ClassOfFileColumn] = value;
-                }
+            public bool IsBillDateNull() {
+                return this.IsNull(this.tableBillRegister.BillDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DisposalDateOfFile {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableFileRegister1.DisposalDateOfFileColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DisposalDateOfFile\' in table \'FileRegister1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFileRegister1.DisposalDateOfFileColumn] = value;
-                }
+            public void SetBillDateNull() {
+                this[this.tableBillRegister.BillDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DisposalDateOn {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableFileRegister1.DisposalDateOnColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DisposalDateOn\' in table \'FileRegister1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFileRegister1.DisposalDateOnColumn] = value;
-                }
+            public bool IsDetailsOfBillNull() {
+                return this.IsNull(this.tableBillRegister.DetailsOfBillColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFileNameNull() {
-                return this.IsNull(this.tableFileRegister1.FileNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFileNameNull() {
-                this[this.tableFileRegister1.FileNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFileNoNull() {
-                return this.IsNull(this.tableFileRegister1.FileNoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFileNoNull() {
-                this[this.tableFileRegister1.FileNoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStartingDateNull() {
-                return this.IsNull(this.tableFileRegister1.StartingDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStartingDateNull() {
-                this[this.tableFileRegister1.StartingDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEndingDateNull() {
-                return this.IsNull(this.tableFileRegister1.EndingDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEndingDateNull() {
-                this[this.tableFileRegister1.EndingDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsClassOfFileNull() {
-                return this.IsNull(this.tableFileRegister1.ClassOfFileColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetClassOfFileNull() {
-                this[this.tableFileRegister1.ClassOfFileColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDisposalDateOfFileNull() {
-                return this.IsNull(this.tableFileRegister1.DisposalDateOfFileColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDisposalDateOfFileNull() {
-                this[this.tableFileRegister1.DisposalDateOfFileColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDisposalDateOnNull() {
-                return this.IsNull(this.tableFileRegister1.DisposalDateOnColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDisposalDateOnNull() {
-                this[this.tableFileRegister1.DisposalDateOnColumn] = global::System.Convert.DBNull;
+            public void SetDetailsOfBillNull() {
+                this[this.tableBillRegister.DetailsOfBillColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -888,22 +699,22 @@ namespace IGRSS.DataAccessLayer {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FileRegister1RowChangeEvent : global::System.EventArgs {
+        public class BillRegisterRowChangeEvent : global::System.EventArgs {
             
-            private FileRegister1Row eventRow;
+            private BillRegisterRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FileRegister1RowChangeEvent(FileRegister1Row row, global::System.Data.DataRowAction action) {
+            public BillRegisterRowChangeEvent(BillRegisterRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FileRegister1Row Row {
+            public BillRegisterRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -919,7 +730,7 @@ namespace IGRSS.DataAccessLayer {
         }
     }
 }
-namespace IGRSS.DataAccessLayer.FileRegisterTableAdapters {
+namespace IGRSS.DataAccessLayer.BillRegisterTableAdapters {
     
     
     /// <summary>
@@ -931,7 +742,7 @@ namespace IGRSS.DataAccessLayer.FileRegisterTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class FileRegister1TableAdapter : global::System.ComponentModel.Component {
+    public partial class BillRegisterTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -945,7 +756,7 @@ namespace IGRSS.DataAccessLayer.FileRegisterTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FileRegister1TableAdapter() {
+        public BillRegisterTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1042,81 +853,46 @@ namespace IGRSS.DataAccessLayer.FileRegisterTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "FileRegister1";
+            tableMapping.DataSetTable = "BillRegister";
+            tableMapping.ColumnMappings.Add("BillNo", "BillNo");
             tableMapping.ColumnMappings.Add("SrNo", "SrNo");
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("FileName", "FileName");
-            tableMapping.ColumnMappings.Add("FileNo", "FileNo");
-            tableMapping.ColumnMappings.Add("StartingDate", "StartingDate");
-            tableMapping.ColumnMappings.Add("EndingDate", "EndingDate");
-            tableMapping.ColumnMappings.Add("ClassOfFile", "ClassOfFile");
-            tableMapping.ColumnMappings.Add("DisposalDateOfFile", "DisposalDateOfFile");
-            tableMapping.ColumnMappings.Add("DisposalDateOn", "DisposalDateOn");
+            tableMapping.ColumnMappings.Add("BillDate", "BillDate");
+            tableMapping.ColumnMappings.Add("DetailsOfBill", "DetailsOfBill");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[FileRegister] WHERE (([SrNo] = @Original_SrNo) AND ([ID] = @Original_ID) AND ((@IsNull_FileName = 1 AND [FileName] IS NULL) OR ([FileName] = @Original_FileName)) AND ((@IsNull_FileNo = 1 AND [FileNo] IS NULL) OR ([FileNo] = @Original_FileNo)) AND ((@IsNull_StartingDate = 1 AND [StartingDate] IS NULL) OR ([StartingDate] = @Original_StartingDate)) AND ((@IsNull_EndingDate = 1 AND [EndingDate] IS NULL) OR ([EndingDate] = @Original_EndingDate)) AND ((@IsNull_ClassOfFile = 1 AND [ClassOfFile] IS NULL) OR ([ClassOfFile] = @Original_ClassOfFile)) AND ((@IsNull_DisposalDateOfFile = 1 AND [DisposalDateOfFile] IS NULL) OR ([DisposalDateOfFile] = @Original_DisposalDateOfFile)) AND ((@IsNull_DisposalDateOn = 1 AND [DisposalDateOn] IS NULL) OR ([DisposalDateOn] = @Original_DisposalDateOn)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [BillRegister] WHERE (((@IsNull_BillNo = 1 AND [BillNo] IS NULL) OR (" +
+                "[BillNo] = @Original_BillNo)) AND ([SrNo] = @Original_SrNo) AND ((@IsNull_BillDa" +
+                "te = 1 AND [BillDate] IS NULL) OR ([BillDate] = @Original_BillDate)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BillNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StartingDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartingDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartingDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EndingDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndingDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EndingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndingDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClassOfFile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassOfFile", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassOfFile", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassOfFile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DisposalDateOfFile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOfFile", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DisposalDateOfFile", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOfFile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DisposalDateOn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DisposalDateOn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BillDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FileRegister] ([SrNo], [ID], [FileName], [FileNo], [StartingDate], [EndingDate], [ClassOfFile], [DisposalDateOfFile], [DisposalDateOn]) VALUES (@SrNo, @ID, @FileName, @FileNo, @StartingDate, @EndingDate, @ClassOfFile, @DisposalDateOfFile, @DisposalDateOn);
-SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, DisposalDateOfFile, DisposalDateOn FROM dbo.FileRegister WHERE (SrNo = @SrNo)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [BillRegister] ([BillNo], [BillDate], [DetailsOfBill]) VALUES (@BillN" +
+                "o, @BillDate, @DetailsOfBill);\r\nSELECT BillNo, SrNo, BillDate, DetailsOfBill FRO" +
+                "M BillRegister WHERE (SrNo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartingDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndingDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassOfFile", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassOfFile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisposalDateOfFile", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOfFile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisposalDateOn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailsOfBill", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DetailsOfBill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[FileRegister] SET [SrNo] = @SrNo, [ID] = @ID, [FileName] = @FileName, [FileNo] = @FileNo, [StartingDate] = @StartingDate, [EndingDate] = @EndingDate, [ClassOfFile] = @ClassOfFile, [DisposalDateOfFile] = @DisposalDateOfFile, [DisposalDateOn] = @DisposalDateOn WHERE (([SrNo] = @Original_SrNo) AND ([ID] = @Original_ID) AND ((@IsNull_FileName = 1 AND [FileName] IS NULL) OR ([FileName] = @Original_FileName)) AND ((@IsNull_FileNo = 1 AND [FileNo] IS NULL) OR ([FileNo] = @Original_FileNo)) AND ((@IsNull_StartingDate = 1 AND [StartingDate] IS NULL) OR ([StartingDate] = @Original_StartingDate)) AND ((@IsNull_EndingDate = 1 AND [EndingDate] IS NULL) OR ([EndingDate] = @Original_EndingDate)) AND ((@IsNull_ClassOfFile = 1 AND [ClassOfFile] IS NULL) OR ([ClassOfFile] = @Original_ClassOfFile)) AND ((@IsNull_DisposalDateOfFile = 1 AND [DisposalDateOfFile] IS NULL) OR ([DisposalDateOfFile] = @Original_DisposalDateOfFile)) AND ((@IsNull_DisposalDateOn = 1 AND [DisposalDateOn] IS NULL) OR ([DisposalDateOn] = @Original_DisposalDateOn)));
-SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, DisposalDateOfFile, DisposalDateOn FROM dbo.FileRegister WHERE (SrNo = @SrNo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [BillRegister] SET [BillNo] = @BillNo, [BillDate] = @BillDate, [DetailsOfBill] = @DetailsOfBill WHERE (((@IsNull_BillNo = 1 AND [BillNo] IS NULL) OR ([BillNo] = @Original_BillNo)) AND ([SrNo] = @Original_SrNo) AND ((@IsNull_BillDate = 1 AND [BillDate] IS NULL) OR ([BillDate] = @Original_BillDate)));
+SELECT BillNo, SrNo, BillDate, DetailsOfBill FROM BillRegister WHERE (SrNo = @SrNo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartingDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndingDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassOfFile", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassOfFile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisposalDateOfFile", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOfFile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisposalDateOn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailsOfBill", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DetailsOfBill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BillNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FileNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StartingDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartingDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartingDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EndingDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndingDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EndingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndingDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClassOfFile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassOfFile", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassOfFile", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassOfFile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DisposalDateOfFile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOfFile", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DisposalDateOfFile", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOfFile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DisposalDateOn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DisposalDateOn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DisposalDateOn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BillDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1132,8 +908,8 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, " +
-                "DisposalDateOfFile, DisposalDateOn\r\nFROM            dbo.FileRegister";
+            this._commandCollection[0].CommandText = "SELECT        BillNo, SrNo, BillDate, DetailsOfBill\r\nFROM            BillRegister" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1141,7 +917,7 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FileRegister.FileRegister1DataTable dataTable) {
+        public virtual int Fill(BillRegister.BillRegisterDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1154,9 +930,9 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FileRegister.FileRegister1DataTable GetData() {
+        public virtual BillRegister.BillRegisterDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FileRegister.FileRegister1DataTable dataTable = new FileRegister.FileRegister1DataTable();
+            BillRegister.BillRegisterDataTable dataTable = new BillRegister.BillRegisterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1164,15 +940,15 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FileRegister.FileRegister1DataTable dataTable) {
+        public virtual int Update(BillRegister.BillRegisterDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FileRegister dataSet) {
-            return this.Adapter.Update(dataSet, "FileRegister1");
+        public virtual int Update(BillRegister dataSet) {
+            return this.Adapter.Update(dataSet, "BillRegister");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1194,64 +970,23 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_SrNo, int Original_ID, string Original_FileName, global::System.Nullable<int> Original_FileNo, global::System.Nullable<global::System.DateTime> Original_StartingDate, global::System.Nullable<global::System.DateTime> Original_EndingDate, string Original_ClassOfFile, global::System.Nullable<global::System.DateTime> Original_DisposalDateOfFile, global::System.Nullable<global::System.DateTime> Original_DisposalDateOn) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SrNo));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ID));
-            if ((Original_FileName == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+        public virtual int Delete(global::System.Nullable<int> Original_BillNo, int Original_SrNo, global::System.Nullable<global::System.DateTime> Original_BillDate) {
+            if ((Original_BillNo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_BillNo.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_FileName));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Original_FileNo.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_FileNo.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StartingDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_StartingDate.Value));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_SrNo));
+            if ((Original_BillDate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_BillDate.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EndingDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_EndingDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ClassOfFile == null)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_ClassOfFile));
-            }
-            if ((Original_DisposalDateOfFile.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((System.DateTime)(Original_DisposalDateOfFile.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DisposalDateOn.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_DisposalDateOn.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1273,50 +1008,24 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int SrNo, int ID, string FileName, global::System.Nullable<int> FileNo, global::System.Nullable<global::System.DateTime> StartingDate, global::System.Nullable<global::System.DateTime> EndingDate, string ClassOfFile, global::System.Nullable<global::System.DateTime> DisposalDateOfFile, global::System.Nullable<global::System.DateTime> DisposalDateOn) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SrNo));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID));
-            if ((FileName == null)) {
+        public virtual int Insert(global::System.Nullable<int> BillNo, global::System.Nullable<global::System.DateTime> BillDate, string DetailsOfBill) {
+            if ((BillNo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(BillNo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((BillDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(BillDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DetailsOfBill == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FileName));
-            }
-            if ((FileNo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(FileNo.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((StartingDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(StartingDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((EndingDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(EndingDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ClassOfFile == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ClassOfFile));
-            }
-            if ((DisposalDateOfFile.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(DisposalDateOfFile.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((DisposalDateOn.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(DisposalDateOn.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DetailsOfBill));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1338,127 +1047,43 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int SrNo, 
-                    int ID, 
-                    string FileName, 
-                    global::System.Nullable<int> FileNo, 
-                    global::System.Nullable<global::System.DateTime> StartingDate, 
-                    global::System.Nullable<global::System.DateTime> EndingDate, 
-                    string ClassOfFile, 
-                    global::System.Nullable<global::System.DateTime> DisposalDateOfFile, 
-                    global::System.Nullable<global::System.DateTime> DisposalDateOn, 
-                    int Original_SrNo, 
-                    int Original_ID, 
-                    string Original_FileName, 
-                    global::System.Nullable<int> Original_FileNo, 
-                    global::System.Nullable<global::System.DateTime> Original_StartingDate, 
-                    global::System.Nullable<global::System.DateTime> Original_EndingDate, 
-                    string Original_ClassOfFile, 
-                    global::System.Nullable<global::System.DateTime> Original_DisposalDateOfFile, 
-                    global::System.Nullable<global::System.DateTime> Original_DisposalDateOn) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SrNo));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID));
-            if ((FileName == null)) {
+        public virtual int Update(global::System.Nullable<int> BillNo, global::System.Nullable<global::System.DateTime> BillDate, string DetailsOfBill, global::System.Nullable<int> Original_BillNo, int Original_SrNo, global::System.Nullable<global::System.DateTime> Original_BillDate, int SrNo) {
+            if ((BillNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(BillNo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((BillDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(BillDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DetailsOfBill == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FileName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DetailsOfBill));
             }
-            if ((FileNo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(FileNo.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((StartingDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(StartingDate.Value));
+            if ((Original_BillNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_BillNo.Value));
             }
             else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((EndingDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(EndingDate.Value));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_SrNo));
+            if ((Original_BillDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_BillDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ClassOfFile == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ClassOfFile));
-            }
-            if ((DisposalDateOfFile.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(DisposalDateOfFile.Value));
-            }
-            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((DisposalDateOn.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(DisposalDateOn.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_SrNo));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID));
-            if ((Original_FileName == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_FileName));
-            }
-            if ((Original_FileNo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_FileNo.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StartingDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_StartingDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EndingDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_EndingDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ClassOfFile == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_ClassOfFile));
-            }
-            if ((Original_DisposalDateOfFile.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_DisposalDateOfFile.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DisposalDateOn.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_DisposalDateOn.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(SrNo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1479,25 +1104,8 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int ID, 
-                    string FileName, 
-                    global::System.Nullable<int> FileNo, 
-                    global::System.Nullable<global::System.DateTime> StartingDate, 
-                    global::System.Nullable<global::System.DateTime> EndingDate, 
-                    string ClassOfFile, 
-                    global::System.Nullable<global::System.DateTime> DisposalDateOfFile, 
-                    global::System.Nullable<global::System.DateTime> DisposalDateOn, 
-                    int Original_SrNo, 
-                    int Original_ID, 
-                    string Original_FileName, 
-                    global::System.Nullable<int> Original_FileNo, 
-                    global::System.Nullable<global::System.DateTime> Original_StartingDate, 
-                    global::System.Nullable<global::System.DateTime> Original_EndingDate, 
-                    string Original_ClassOfFile, 
-                    global::System.Nullable<global::System.DateTime> Original_DisposalDateOfFile, 
-                    global::System.Nullable<global::System.DateTime> Original_DisposalDateOn) {
-            return this.Update(Original_SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, DisposalDateOfFile, DisposalDateOn, Original_SrNo, Original_ID, Original_FileName, Original_FileNo, Original_StartingDate, Original_EndingDate, Original_ClassOfFile, Original_DisposalDateOfFile, Original_DisposalDateOn);
+        public virtual int Update(global::System.Nullable<int> BillNo, global::System.Nullable<global::System.DateTime> BillDate, string DetailsOfBill, global::System.Nullable<int> Original_BillNo, int Original_SrNo, global::System.Nullable<global::System.DateTime> Original_BillDate) {
+            return this.Update(BillNo, BillDate, DetailsOfBill, Original_BillNo, Original_SrNo, Original_BillDate, Original_SrNo);
         }
     }
     
@@ -1513,7 +1121,7 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         
         private UpdateOrderOption _updateOrder;
         
-        private FileRegister1TableAdapter _fileRegister1TableAdapter;
+        private BillRegisterTableAdapter _billRegisterTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1535,12 +1143,12 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public FileRegister1TableAdapter FileRegister1TableAdapter {
+        public BillRegisterTableAdapter BillRegisterTableAdapter {
             get {
-                return this._fileRegister1TableAdapter;
+                return this._billRegisterTableAdapter;
             }
             set {
-                this._fileRegister1TableAdapter = value;
+                this._billRegisterTableAdapter = value;
             }
         }
         
@@ -1563,9 +1171,9 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._fileRegister1TableAdapter != null) 
-                            && (this._fileRegister1TableAdapter.Connection != null))) {
-                    return this._fileRegister1TableAdapter.Connection;
+                if (((this._billRegisterTableAdapter != null) 
+                            && (this._billRegisterTableAdapter.Connection != null))) {
+                    return this._billRegisterTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1580,7 +1188,7 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._fileRegister1TableAdapter != null)) {
+                if ((this._billRegisterTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1592,14 +1200,14 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(FileRegister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BillRegister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._fileRegister1TableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FileRegister1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._billRegisterTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet._BillRegister.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._fileRegister1TableAdapter.Update(updatedRows));
+                    result = (result + this._billRegisterTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1611,13 +1219,13 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(FileRegister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BillRegister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._fileRegister1TableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FileRegister1.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._billRegisterTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet._BillRegister.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._fileRegister1TableAdapter.Update(addedRows));
+                    result = (result + this._billRegisterTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1629,13 +1237,13 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(FileRegister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BillRegister dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._fileRegister1TableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FileRegister1.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._billRegisterTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet._BillRegister.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._fileRegister1TableAdapter.Update(deletedRows));
+                    result = (result + this._billRegisterTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1671,15 +1279,15 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(FileRegister dataSet) {
+        public virtual int UpdateAll(BillRegister dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._fileRegister1TableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._fileRegister1TableAdapter.Connection) == false))) {
+            if (((this._billRegisterTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._billRegisterTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1715,13 +1323,13 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._fileRegister1TableAdapter != null)) {
-                    revertConnections.Add(this._fileRegister1TableAdapter, this._fileRegister1TableAdapter.Connection);
-                    this._fileRegister1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._fileRegister1TableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._fileRegister1TableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._fileRegister1TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._fileRegister1TableAdapter.Adapter);
+                if ((this._billRegisterTableAdapter != null)) {
+                    revertConnections.Add(this._billRegisterTableAdapter, this._billRegisterTableAdapter.Connection);
+                    this._billRegisterTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._billRegisterTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._billRegisterTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._billRegisterTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._billRegisterTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1782,9 +1390,9 @@ SELECT SrNo, ID, FileName, FileNo, StartingDate, EndingDate, ClassOfFile, Dispos
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._fileRegister1TableAdapter != null)) {
-                    this._fileRegister1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._fileRegister1TableAdapter]));
-                    this._fileRegister1TableAdapter.Transaction = null;
+                if ((this._billRegisterTableAdapter != null)) {
+                    this._billRegisterTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._billRegisterTableAdapter]));
+                    this._billRegisterTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

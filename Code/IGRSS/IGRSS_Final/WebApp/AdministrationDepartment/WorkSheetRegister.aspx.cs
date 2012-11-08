@@ -21,10 +21,7 @@ public partial class LatestPages_WorkSheetRegister : System.Web.UI.Page
         MultiView_worksheet.SetActiveView(MultiView_worksheet.Views[1]);
         FormView_worksheet.ChangeMode(FormViewMode.Insert);
     }
-    protected void btnSearchAppNo_Click(object sender, EventArgs e)
-    {
-
-    }
+         
     protected void txtFileNo_TextChanged(object sender, EventArgs e)
     {
 

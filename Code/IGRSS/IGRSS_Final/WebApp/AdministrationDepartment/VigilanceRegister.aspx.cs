@@ -20,11 +20,33 @@ public partial class LatestPages_VigilanceRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
-        Multiview_Vigilance.SetActiveView(Multiview_Vigilance.Views[1]);
+       
+      
+        Multiview_Vigilance.SetActiveView(view2_Formview);
         FormView_Vigilance.ChangeMode(FormViewMode.Insert);
     }
     protected void applsummaryTextBox_TextChanged(object sender, EventArgs e)
     {
 
     }
+    
+    protected void FormView_Vigilance_ItemCommand(object sender, FormViewCommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "Back":
+                
+               
+                Multiview_Vigilance.SetActiveView(view1_GridView);
+                view1_GridView.DataBind();
+                break;
+        }
+    }
+    protected void ods_Vigilance_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+        e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
+        ods_Vigilance.SelectMethod = "GetDataBy";
+    }
+
+   
 }

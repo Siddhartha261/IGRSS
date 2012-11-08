@@ -66,33 +66,32 @@
                       DataKeyNames="SrNo" DataSourceID="ods_MLA" EnableModelValidation="True">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="InwardNo" HeaderText="Inward No" 
+                              ReadOnly="True" SortExpression="SrNo" />
+                          <asp:BoundField DataField="InwardNo" HeaderText="InwardNo" 
                               SortExpression="InwardNo" />
-                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
+                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="MLAname" HeaderText="MLA Name" 
+                          <asp:BoundField DataField="MLAname" HeaderText="MLAname" 
                               SortExpression="MLAname" />
                           <asp:BoundField DataField="Subject" HeaderText="Subject" 
                               SortExpression="Subject" />
-                          <asp:BoundField DataField="LetterNo" HeaderText="Letter No" 
+                          <asp:BoundField DataField="LetterNo" HeaderText="LetterNo" 
                               SortExpression="LetterNo" />
-                          <asp:BoundField DataField="LetterDate" HeaderText="Letter Date" 
+                          <asp:BoundField DataField="LetterDate" HeaderText="LetterDate" 
                               SortExpression="LetterDate" />
-                          <asp:BoundField DataField="DepartmentName" HeaderText="Department Name" 
+                          <asp:BoundField DataField="DepartmentName" HeaderText="DepartmentName" 
                               SortExpression="DepartmentName" />
-                          <asp:BoundField DataField="FileNumber" HeaderText="File Number" 
+                          <asp:BoundField DataField="FileNumber" HeaderText="FileNumber" 
                               SortExpression="FileNumber" />
                           <asp:BoundField DataField="DetailsofOutput" HeaderText="DetailsofOutput" 
-                              SortExpression="DetailsofOutput" Visible="False" />
+                              SortExpression="DetailsofOutput" />
                           <asp:BoundField DataField="DetailsofFilePreservation" 
                               HeaderText="DetailsofFilePreservation" 
-                              SortExpression="DetailsofFilePreservation" Visible="False" />
+                              SortExpression="DetailsofFilePreservation" />
                           <asp:BoundField DataField="DetailsOfRecord" HeaderText="DetailsOfRecord" 
-                              SortExpression="DetailsOfRecord" Visible="False" />
+                              SortExpression="DetailsOfRecord" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" Visible="False" />
-                          <asp:ButtonField CommandName="Update" Text="Update" />
+                              SortExpression="Remarks" />
                       </Columns>
                   </asp:GridView>
               </td>

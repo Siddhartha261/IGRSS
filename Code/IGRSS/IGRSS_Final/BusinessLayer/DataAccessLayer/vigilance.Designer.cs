@@ -2124,13 +2124,31 @@ SELECT SrNo, Letterno, deptdate, letterdate, applname, empname, emp_desig, appls
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        SrNo, Letterno, deptdate, letterdate, applname, empname, emp_desig," +
                 " applsummary, reportdate, Status, closedate, remarks\r\nFROM            dbo.Vigila" +
                 "nce";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        SrNo, Letterno, deptdate, letterdate, applname, empname, emp_desig, applsummary, reportdate, Status, closedate, remarks
+FROM            dbo.Vigilance
+WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(Letterno AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(deptdate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(letterdate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (applname LIKE '%' + @searchKeyWord + '%') OR
+                         (empname LIKE '%' + @searchKeyWord + '%') OR
+                         (emp_desig LIKE '%' + @searchKeyWord + '%') OR
+                         (applsummary LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(reportdate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (Status LIKE '%' + @searchKeyWord + '%') OR
+                         (CAST(closedate AS varchar) LIKE '%' + @searchKeyWord + '%') OR
+                         (remarks LIKE '%' + @searchKeyWord + '%')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2152,6 +2170,42 @@ SELECT SrNo, Letterno, deptdate, letterdate, applname, empname, emp_desig, appls
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual vigilance.VigilanceDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            vigilance.VigilanceDataTable dataTable = new vigilance.VigilanceDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(vigilance.VigilanceDataTable dataTable, string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual vigilance.VigilanceDataTable GetDataBy(string searchKeyWord) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((searchKeyWord == null)) {
+                throw new global::System.ArgumentNullException("searchKeyWord");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(searchKeyWord));
+            }
             vigilance.VigilanceDataTable dataTable = new vigilance.VigilanceDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
