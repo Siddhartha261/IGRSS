@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="MLAandMinisterRegister.aspx.cs" Inherits="LatestPages_MLAandMinisterRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
-<script language="javascript">
+    <script language="javascript">
 
    
 
@@ -66,32 +66,30 @@
                       DataKeyNames="SrNo" DataSourceID="ods_MLA" EnableModelValidation="True">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" />
-                          <asp:BoundField DataField="InwardNo" HeaderText="InwardNo" 
+                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                          <asp:BoundField DataField="InwardNo" HeaderText="Inward No" 
                               SortExpression="InwardNo" />
-                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
+                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="MLAname" HeaderText="MLAname" 
+                          <asp:BoundField DataField="MLAname" HeaderText="MLA Name" 
                               SortExpression="MLAname" />
                           <asp:BoundField DataField="Subject" HeaderText="Subject" 
                               SortExpression="Subject" />
-                          <asp:BoundField DataField="LetterNo" HeaderText="LetterNo" 
+                          <asp:BoundField DataField="LetterNo" HeaderText="Letter No" 
                               SortExpression="LetterNo" />
-                          <asp:BoundField DataField="LetterDate" HeaderText="LetterDate" 
+                          <asp:BoundField DataField="LetterDate" HeaderText="Letter Date" 
                               SortExpression="LetterDate" />
-                          <asp:BoundField DataField="DepartmentName" HeaderText="DepartmentName" 
+                          <asp:BoundField DataField="DepartmentName" HeaderText="Department Name" 
                               SortExpression="DepartmentName" />
-                          <asp:BoundField DataField="FileNumber" HeaderText="FileNumber" 
+                          <asp:BoundField DataField="FileNumber" HeaderText="File Number" 
                               SortExpression="FileNumber" />
                           <asp:BoundField DataField="DetailsofOutput" HeaderText="DetailsofOutput" 
-                              SortExpression="DetailsofOutput" />
+                              SortExpression="DetailsofOutput" Visible="False" />
                           <asp:BoundField DataField="DetailsofFilePreservation" 
                               HeaderText="DetailsofFilePreservation" 
-                              SortExpression="DetailsofFilePreservation" />
+                              SortExpression="DetailsofFilePreservation" Visible="False" />
                           <asp:BoundField DataField="DetailsOfRecord" HeaderText="DetailsOfRecord" 
-                              SortExpression="DetailsOfRecord" />
-                          <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" />
+                              SortExpression="DetailsOfRecord" Visible="False" />
                       </Columns>
                   </asp:GridView>
               </td>

@@ -96,7 +96,8 @@
                     </asp:Menu>
                     <div id="cphContent" class="content" style="text-align: left; vertical-align: top;
                         border-width: thick; border-color: Black;">
-                        <asp:XmlDataSource ID="MenuSource" runat="server" XPath="IgrssSite/Module" EnableCaching="False" />
+                        <asp:XmlDataSource ID="MenuSource" runat="server" XPath="IgrssSite/Module" 
+                            EnableCaching="False" DataFile="~/XMLFile.xml" />
                         <uc2:StatusInformation ID="StatusInformation1" runat="server" />
                         <asp:ContentPlaceHolder ID="Main" runat="server">
                             <asp:Label ID="Label2" runat="server" BackColor="Transparent" Text="Label"></asp:Label></asp:ContentPlaceHolder>

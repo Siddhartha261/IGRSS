@@ -2,28 +2,32 @@
 <IgrssSite>
   <Module Name="Admin"
     Code="CAC">
-    <View Name="Create Users"
-			  Url="~/Central%20Administration%20Console/CreateUser.aspx"
-			  Mode="CreateUser" Visible="False" />
+  
     <View Name="Assign Permissions"
 			  Url="~/Central%20Administration%20Console/AssignUserPermissions.aspx"
 			  Mode="AssignUserPermissions" Visible="False"/>
     <Module Name="Masters"
 			Code="Mas">
-      <View Name="Acts"
-          Url="~/Central%20Administration%20Console/Masters/ActMaster.aspx"
+      <View Name="File Register"
+          Url="~/AdministrationDepartment/FileRegister.aspx"
           Mode="" Visible="True" />
-      <View Name="Departments"
-          Url="~/Central%20Administration%20Console/Masters/DepartmentMaster.aspx"
-          Mode="CreateUser" Visible="True" />
-      <View Name="Documents"
-          Url="~/Central%20Administration%20Console/Masters/DocumentMaster.aspx"
+      <View Name="Government Documents"
+          Url="~/AdministrationDepartment/GovtDoc.aspx"
           Mode="" Visible="True" />
-      <View Name="Fee Types"
-          Url="~/Central%20Administration%20Console/Masters/FeeMaster.aspx"
+      <View Name="MLA and Minister Register"
+          Url="~/AdministrationDepartment/MLAandMinisterRegister.aspx"
           Mode="" Visible="True" />
-      <View Name="Inspection CheckList"
-          Url="~/Central%20Administration%20Console/Masters/InspectionCheckListMaster.aspx"
+      <View Name="SO File"
+          Url="~/AdministrationDepartment/SOFile.aspx"
+          Mode="" Visible="True" />
+      <View Name="VidhanSabha Tarankit Question Register"
+          Url="~/AdministrationDepartment/VidhanSabhaTarankitQuestionRegister.aspx"
+          Mode="" Visible="True" />
+      <View Name="Vigilance Register"
+          Url="~/AdministrationDepartment/VigilanceRegister.aspx"
+          Mode="" Visible="True" />
+      <View Name="WorkSheet Register"
+          Url="~/AdministrationDepartment/WorkSheetRegister.aspx"
           Mode="" Visible="True"/>
       <View Name="Inspection Types"
           Url="~/Central%20Administration%20Console/Masters/InspectionTypeMaster.aspx"
@@ -87,7 +91,7 @@
 			  Url="~/Adjudication/AdjApplication.aspx?Mode=Readonly"
 			  Mode="Readonly" Visible="True"/>
   </Module>
-  <Module Name="Valuation"
+  <!--<Module Name="Valuation"
 			Code="VAL">
     <View Name="Valuation Request"
 			  Url="~//Adjudication/StampDutyCalculation.aspx"
@@ -95,7 +99,7 @@
     <View Name="PV Request"
 			  Url="~/Adjudication/AdjApplication.aspx?Mode=Verify"
 			  Mode="Verify" Visible="True"/>
-  </Module>
+  </Module>-->
   <Module Name="Appeal"
 			Code="APL">
     <View Name="New"
@@ -121,6 +125,21 @@
 			  Url="~/Appeal/AppealApplication.aspx?Mode=ReadOnly"
 			  Mode="ReadOnly" Visible="True"/>
   </Module>
+
+  <Module Name="CCRA Legal Department" code="CCRA">
+    <Module Name="Appeal Register" code="Appeal">
+      <View Name="New"
+          Url="~/CCRALegal/AppealRegister.aspx?Mode=DataEntry"
+          Mode="DataEntry" Visible="True"/>
+    </Module>
+
+    <Module Name="Sunavni Register" code="Sunavni">
+      <View Name="New"
+          Url="~/CCRALegal/SunavniRegister.aspx?Mode=DataEntry"
+          Mode="DataEntry" Visible="True"/>
+    </Module>
+  </Module>
+  
   <Module Name="Complaint"
 			Code="COM">
     <View Name="New"
@@ -138,8 +157,8 @@
   </Module>
   <Module Name="Inspection"
 			Code="IPS">
-    <View Name="Inspection Itenary New"
-			  Url="~/Inspection/InspectionIternary.aspx?Mode=InspectionItenaryDe"
+    <View Name="Sealing"
+			  Url="~/InspectionDepartment/Sealing.aspx"
 			  Mode="" Visible="True"/>
     <View Name="Inspection Itenary View"
 			  Url="~/Inspection/InspectionIternary.aspx?Mode=InspectionItenary"
@@ -206,15 +225,13 @@
   </Module>
   
   <Module Name="Registers" Code="RGS">
-    <Module Name="Branch"
-			Code="Branch">
-      <View Name="New"
-          Url="~/Inward-Outward/BranchToBranchInward.aspx?Mode=DataEntry"
-          Mode="DataEntry" Visible="True"/>
-      <View Name="Verify"
-          Url="~/Inward-Outward/BranchToBranchInward.aspx?Mode=Verify"
-          Mode="Verify" Visible="True"/>
+    <Module Name="Branch" Code="Branch">
+      <View Name="New" Url="~/Inward-Outward/BranchToBranchInward.aspx?Mode=DataEntry" Mode="DataEntry" Visible="True"/>
+      <View Name="Verify" Url="~/Inward-Outward/BranchToBranchInward.aspx?Mode=Verify" Mode="Verify" Visible="True"/>
     </Module>
+
+    
+    
     <Module Name="Inward"
 			Code="Inward">
       <View Name="New"
