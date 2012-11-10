@@ -227,6 +227,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Employee.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\EmployeeName.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeName.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Fajal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fajal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Faq.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -263,6 +273,11 @@
       <DependentUpon>GovtDoc.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\GovtDocs.Designer.cs" />
+    <Compile Include="DataAccessLayer\Grade.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grade.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\GrantRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\HighCourtReg.cs">
       <DependentUpon>HighCourtReg.xsd</DependentUpon>
@@ -335,6 +350,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="DataAccessLayer\Mahekam.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mahekam.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\MarriageCertificate.Designer.cs" />
     <Compile Include="DataAccessLayer\Marriage_Volume_Register.Designer.cs" />
     <Compile Include="DataAccessLayer\MLA.Designer.cs">
@@ -362,6 +382,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PIO.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\Place_Of_Request.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Place_Of_Request.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Purchase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -380,6 +405,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistrationDocReq.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\ResidenceDistrict.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResidenceDistrict.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Roster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Roster.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\RTI.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -437,6 +472,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TestTable.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\TransferAppl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransferAppl.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\VendorMaster.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -954,6 +994,28 @@
     <None Include="DataAccessLayer\Employee.xss">
       <DependentUpon>Employee.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\EmployeeName.xsc">
+      <DependentUpon>EmployeeName.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\EmployeeName.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeName.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\EmployeeName.xss">
+      <DependentUpon>EmployeeName.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Fajal.xsc">
+      <DependentUpon>Fajal.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Fajal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Fajal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Fajal.xss">
+      <DependentUpon>Fajal.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\FeeMaster.xsc">
       <DependentUpon>FeeMaster.xsd</DependentUpon>
     </None>
@@ -1019,6 +1081,17 @@
     </None>
     <None Include="DataAccessLayer\GovtDocs.xss">
       <DependentUpon>GovtDocs.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Grade.xsc">
+      <DependentUpon>Grade.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Grade.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Grade.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Grade.xss">
+      <DependentUpon>Grade.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\GrantRegister.xsc">
       <DependentUpon>GrantRegister.xsd</DependentUpon>
@@ -1196,6 +1269,17 @@
     <None Include="DataAccessLayer\LicenseReNewal.xss">
       <DependentUpon>LicenseReNewal.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\Mahekam.xsc">
+      <DependentUpon>Mahekam.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Mahekam.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Mahekam.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Mahekam.xss">
+      <DependentUpon>Mahekam.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\MarriageCertificate.xsc">
       <DependentUpon>MarriageCertificate.xsd</DependentUpon>
     </None>
@@ -1284,6 +1368,17 @@
     <None Include="DataAccessLayer\PIO.xss">
       <DependentUpon>PIO.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\Place_Of_Request.xsc">
+      <DependentUpon>Place_Of_Request.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Place_Of_Request.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Place_Of_Request.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Place_Of_Request.xss">
+      <DependentUpon>Place_Of_Request.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Purchase.xsc">
       <DependentUpon>Purchase.xsd</DependentUpon>
     </None>
@@ -1317,6 +1412,17 @@
     <None Include="DataAccessLayer\RefundTypeMaster.xss">
       <DependentUpon>RefundTypeMaster.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\ResidenceDistrict.xsc">
+      <DependentUpon>ResidenceDistrict.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ResidenceDistrict.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResidenceDistrict.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\ResidenceDistrict.xss">
+      <DependentUpon>ResidenceDistrict.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\RevenueStampMaster.xsc">
       <DependentUpon>RevenueStampMaster.xsd</DependentUpon>
     </None>
@@ -1327,6 +1433,17 @@
     </None>
     <None Include="DataAccessLayer\RevenueStampMaster.xss">
       <DependentUpon>RevenueStampMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Roster.xsc">
+      <DependentUpon>Roster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Roster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Roster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Roster.xss">
+      <DependentUpon>Roster.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\RTI.xsc">
       <DependentUpon>RTI.xsd</DependentUpon>
@@ -1426,6 +1543,17 @@
     </None>
     <None Include="DataAccessLayer\TestTable.xss">
       <DependentUpon>TestTable.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\TransferAppl.xsc">
+      <DependentUpon>TransferAppl.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\TransferAppl.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransferAppl.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\TransferAppl.xss">
+      <DependentUpon>TransferAppl.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\VendorMaster.xsc">
       <DependentUpon>VendorMaster.xsd</DependentUpon>
