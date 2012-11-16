@@ -139,6 +139,11 @@
     <Compile Include="BusinessObjects\WorkflowServices\IContextService.cs" />
     <Compile Include="BusinessObjects\WorkflowServices\WorkflowMediator.cs" />
     <Compile Include="BusinessObjects\WorkflowServices\WorkflowResults.cs" />
+    <Compile Include="DataAccessLayer\ACB_Case_Register.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACB_Case_Register.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Adjudication.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -163,6 +168,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Config.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\C_L_Card.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>C_L_Card.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\DataSetDepartment.cs">
       <DependentUpon>DataSetDepartment.xsd</DependentUpon>
     </Compile>
@@ -179,6 +189,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>demotest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Departmental_Inquiry_Register.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Departmental_Inquiry_Register.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\DepartmentMaster.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -287,6 +302,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HighCourtReg.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\InquiryOfficer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InquiryOfficer.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\InquiryRegister.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -741,6 +761,17 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="BusinessObjects\OfficeObject.cd" />
+    <None Include="DataAccessLayer\ACB_Case_Register.xsc">
+      <DependentUpon>ACB_Case_Register.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ACB_Case_Register.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ACB_Case_Register.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\ACB_Case_Register.xss">
+      <DependentUpon>ACB_Case_Register.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Adjudication.xsc">
       <DependentUpon>Adjudication.xsd</DependentUpon>
     </None>
@@ -862,6 +893,17 @@
     <None Include="DataAccessLayer\Complain.xss">
       <DependentUpon>Complain.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\C_L_Card.xsc">
+      <DependentUpon>C_L_Card.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\C_L_Card.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>C_L_Card.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\C_L_Card.xss">
+      <DependentUpon>C_L_Card.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\DataSetDepartment.xsc">
       <DependentUpon>DataSetDepartment.xsd</DependentUpon>
     </None>
@@ -927,6 +969,17 @@
     </None>
     <None Include="DataAccessLayer\DepartmentalEnquiryReg.xss">
       <DependentUpon>DepartmentalEnquiryReg.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Departmental_Inquiry_Register.xsc">
+      <DependentUpon>Departmental_Inquiry_Register.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Departmental_Inquiry_Register.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Departmental_Inquiry_Register.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Departmental_Inquiry_Register.xss">
+      <DependentUpon>Departmental_Inquiry_Register.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\DepartmentMaster.xsc">
       <DependentUpon>DepartmentMaster.xsd</DependentUpon>
@@ -1114,6 +1167,17 @@
     </None>
     <None Include="DataAccessLayer\HighCourtReg.xss">
       <DependentUpon>HighCourtReg.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InquiryOfficer.xsc">
+      <DependentUpon>InquiryOfficer.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InquiryOfficer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InquiryOfficer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\InquiryOfficer.xss">
+      <DependentUpon>InquiryOfficer.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\InquiryRegister.xsc">
       <DependentUpon>InquiryRegister.xsd</DependentUpon>

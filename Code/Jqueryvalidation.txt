@@ -1,0 +1,49 @@
+$("#ctl00_Main_FormView_C_L_Card_InsertButton").click(function(){
+var hasError = false;
+$('input[type="text"]').each(function(index, element){
+	if($(this).text().length===0){
+        $(this).addClass("errorInput");
+		$(this).blur(function(){
+		alert($(this).text().length);
+			if($(this).text().length>0){
+				$(this).removeClass("errorInput");
+			}
+		});
+		hasError = true;
+	}
+});
+if(hasError === true){
+$("#infoDiv > span").remove();
+	$("#infoDiv").append("<span>Required fields are not filled up.</span>").addClass("error").show();
+	$("#infoDiv").click(function(){
+		$(this).fadeOut("slow", "linear");
+	});
+    return false;
+}});
+
+
+
+
+
+$("#ctl00_Main_FormView_C_L_Card_InsertButton").click(function(){
+var hasError = false;
+$('input[type="text"]').each(function(index, element){
+	if($(this).text().length===0){
+        $(this).addClass("errorInput");
+		$(this).blur(function(){
+		alert($(this).text().length);
+			if($(this).text().length>0){
+				$(this).removeClass("errorInput");
+			}
+		});
+		hasError = true;
+	}
+});
+if(hasError === true){
+$("#infoDiv > span").remove();
+	$("#infoDiv").append("<span>Required fields are not filled up.</span>").addClass("error").show();
+	$("#infoDiv").click(function(){
+		$(this).fadeOut("slow", "linear");
+	});
+    return false;
+}});

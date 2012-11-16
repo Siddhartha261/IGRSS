@@ -1,150 +1,168 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="IGRSS_Default.master.cs"
     Inherits="IGRSS_Default" %>
+
 <%@ Register Src="~/UserControls/StatusInformation.ascx" TagName="StatusInformation"
     TagPrefix="uc2" %>
 <%@ Register Src="FormCommands.ascx" TagName="FormCommands" TagPrefix="uc1" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Untitled Page</title>
     <script type="text/javascript" language="Javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     <meta content="Tue, 23 Jul 1982 21:29:02 GMT" http-equiv="Expires" />
     <link href="Styles/css/standard/StandardElements.css" rel="stylesheet" type="text/css" />
     <link href="Styles/css/sunny/jquery-ui-1.9.0.custom.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/css/standard/InfoElements.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
+
+        function checkForEmptyFields() {
+            var hasError = false;
+            $('input[type="text"]').each(function (index, element) {
+                if ($(this).text().length === 0) {
+                    hasError = true;
+                }
+            });
+            if (hasError === true) {
+                $("#infoDiv > span").remove();
+                $("#infoDiv").append("<span>Required fields are not filled up.</span>").addClass("error").show();
+                $("#infoDiv").click(function () {
+                    $(this).fadeOut("slow", "linear");
+                });
+                return false;
+            }
+        }
+
         function resetTextFields() {
             $("input[type='text']").each(function (index, element) { $(element).val(""); });
             $("textarea").each(function (index, element) { $(element).val(""); });
         }
-        function setContentHeight(menuName, logoName)
-        {
-            if(null!=document.getElementById('contentRow'))
-            {
-                document.getElementById('contentRow').style.height=document.body.clientHeight-193;
-            }            
-//            var x;
-//            var y;
-//            if(null!=document.getElementById(menuName))
-//            {
-//            alert(document.getElementById("heading").style.);
-//                //x = document.getElementById("heading").style.position;
-//            alert(x);
-//                x = x + document.getElementById(logoName).style.width;
-//            alert(x);
-////                y = document.getElementById(logoName).style.top;
-////                y = y + document.getElementById(logoName).style.height;
-//                document.getElementById(menuName).style.left=x;
-//            }
+        function setContentHeight(menuName, logoName) {
+            if (null != document.getElementById('contentRow')) {
+                document.getElementById('contentRow').style.height = document.body.clientHeight - 193;
+            }
+            //            var x;
+            //            var y;
+            //            if(null!=document.getElementById(menuName))
+            //            {
+            //            alert(document.getElementById("heading").style.);
+            //                //x = document.getElementById("heading").style.position;
+            //            alert(x);
+            //                x = x + document.getElementById(logoName).style.width;
+            //            alert(x);
+            ////                y = document.getElementById(logoName).style.top;
+            ////                y = y + document.getElementById(logoName).style.height;
+            //                document.getElementById(menuName).style.left=x;
+            //            }
         }
     </script>
-
 </head>
-<body id="masterBody" runat="server"
-    style="height: 100%">
+<body id="masterBody" runat="server" style="height: 100%">
     <form id="form1" runat="server">
-        <table width="100%" style="height: 100%;">
-            <tr align="center">
-                <td style="height: 12px; width: 1397px;">
-                    <div id="header">
-                        <table cellspacing="0" class="header" width="100%">
-                            <tr>
-                                <td colspan="2" align="left" style="width: 470px; height: 22px;">
-                                    <asp:Label ID="Label1" runat="server" ForeColor="White" Text="WELCOME" Height="16px"
-                                        Width="63px" meta:resourcekey="Label1Resource1"></asp:Label>
-                                    <asp:LoginName ID="LoginName" runat="server" Height="16px" ForeColor="White" meta:resourcekey="LoginNameResource1" />
-                                </td>
-                                <td style="height: 22px;" align="left">
-                                    <asp:ImageButton ID="imgGoHome" runat="server" AlternateText="Go Home" ImageUrl="~/Images/GoHome.png"
-                                        PostBackUrl="~/Default.aspx" ValidationGroup="GoHome" meta:resourcekey="imgGoHomeResource1" />
-                                    <asp:ImageButton ID="ImageButton1" runat="server" Height="22px" ImageUrl="~/Images/Search Icon 02.png"
-                                        Width="25px" PostBackUrl="~/Search.aspx" ToolTip="Search" CausesValidation="False" />
-                                    <asp:LoginStatus ID="userLoginStatus" runat="server" Height="23px" LogoutAction="RedirectToLoginPage"
-                                        meta:resourcekey="userLoginStatusResource1" />
-                                </td>
-                                <asp:Label ID="lblmaster" runat="server" meta:resourcekey="lblmasterResource1"></asp:Label></tr>
-                            <tr align="left">
-                                <td class="logo" rowspan="0">
-                                    <asp:Image ID="imgLogo" runat="server" SkinID="AppLogo" meta:resourcekey="imgLogoResource1"
-                                        Width="57px" Height="77px" />
-                                </td>
-                                <td colspan="2" valign="top" style="height: 25px">
-                                    <h1 id="heading">
-                                        Inspector General of Registration &amp; Superintendent of Stamps</h1>
-                                    <h2>
-                                        Bussiness Wing #7. Revenue Department Government of Gujrat</h2>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </td>
-            </tr>
-            <tr id="contentRow" class="content" align="center" valign="top">
-                <td style="width: 1397px">
-                    <asp:Menu ID="IgrssMainMenu" runat="server" Style="z-index: 100; left: 200  px; position:absolute;
-                        top: -26px" DataSourceID="MenuSource" meta:resourcekey="IgrssMainMenuResource1">
-                        <DynamicItemTemplate>
-                            <%# Eval("Text") %>
-                        </DynamicItemTemplate>
-                        <StaticItemTemplate>
-                            <%# Eval("Text") %>
-                        </StaticItemTemplate>
-                        <DataBindings>
-                            <asp:MenuItemBinding DataMember="Module" TextField="Name" ValueField="Code" meta:resourcekey="MenuItemBindingResource1" />
-                            <asp:MenuItemBinding DataMember="View" NavigateUrlField="Url" TextField="Name" ValueField="Name"
-                                meta:resourcekey="MenuItemBindingResource2" />
-                        </DataBindings>
-                    </asp:Menu>
-                    <div id="cphContent" class="content" style="text-align: left; vertical-align: top;
-                        border-width: thick; border-color: Black;">
-                        <asp:XmlDataSource ID="MenuSource" runat="server" XPath="IgrssSite/Module" 
-                            EnableCaching="False" DataFile="~/XMLFile.xml" />
-                        <uc2:StatusInformation ID="StatusInformation1" runat="server" />
+    <table width="100%" style="height: 100%;">
+        <tr align="center">
+            <td style="height: 12px; width: 1397px;">
+                <div id="header">
+                    <table cellspacing="0" class="header" width="100%">
+                        <tr>
+                            <td colspan="2" align="left" style="width: 470px; height: 22px;">
+                                <asp:Label ID="Label1" runat="server" ForeColor="White" Text="WELCOME" Height="16px"
+                                    Width="63px" meta:resourcekey="Label1Resource1"></asp:Label>
+                                <asp:LoginName ID="LoginName" runat="server" Height="16px" ForeColor="White" meta:resourcekey="LoginNameResource1" />
+                            </td>
+                            <td style="height: 22px;" align="left">
+                                <asp:ImageButton ID="imgGoHome" runat="server" AlternateText="Go Home" ImageUrl="~/Images/GoHome.png"
+                                    PostBackUrl="~/Default.aspx" ValidationGroup="GoHome" meta:resourcekey="imgGoHomeResource1" />
+                                <asp:ImageButton ID="ImageButton1" runat="server" Height="22px" ImageUrl="~/Images/Search Icon 02.png"
+                                    Width="25px" PostBackUrl="~/Search.aspx" ToolTip="Search" CausesValidation="False" />
+                                <asp:LoginStatus ID="userLoginStatus" runat="server" Height="23px" LogoutAction="RedirectToLoginPage"
+                                    meta:resourcekey="userLoginStatusResource1" />
+                            </td>
+                            <asp:Label ID="lblmaster" runat="server" meta:resourcekey="lblmasterResource1"></asp:Label></tr>
+                        <tr align="left">
+                            <td class="logo" rowspan="0">
+                                <asp:Image ID="imgLogo" runat="server" SkinID="AppLogo" meta:resourcekey="imgLogoResource1"
+                                    Width="57px" Height="77px" />
+                            </td>
+                            <td colspan="2" valign="top" style="height: 25px">
+                                <h1 id="heading">
+                                    Inspector General of Registration &amp; Superintendent of Stamps</h1>
+                                <h2>
+                                    Bussiness Wing #7. Revenue Department Government of Gujrat</h2>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr id="contentRow" class="content" align="center" valign="top">
+            <td style="width: 1397px">
+                <asp:Menu ID="IgrssMainMenu" runat="server" Style="z-index: 100; left: 200  px; position: absolute;
+                    top: -26px" DataSourceID="MenuSource" meta:resourcekey="IgrssMainMenuResource1">
+                    <DynamicItemTemplate>
+                        <%# Eval("Text") %>
+                    </DynamicItemTemplate>
+                    <StaticItemTemplate>
+                        <%# Eval("Text") %>
+                    </StaticItemTemplate>
+                    <DataBindings>
+                        <asp:MenuItemBinding DataMember="Module" TextField="Name" ValueField="Code" meta:resourcekey="MenuItemBindingResource1" />
+                        <asp:MenuItemBinding DataMember="View" NavigateUrlField="Url" TextField="Name" ValueField="Name"
+                            meta:resourcekey="MenuItemBindingResource2" />
+                    </DataBindings>
+                </asp:Menu>
+                <div id="cphContent" class="content" style="text-align: left; vertical-align: top;
+                    border-width: thick; border-color: Black;">
+                    <asp:XmlDataSource ID="MenuSource" runat="server" XPath="IgrssSite/Module" EnableCaching="False"
+                        DataFile="~/XMLFile.xml" />
+                    <uc2:StatusInformation ID="StatusInformation1" runat="server" />
+                    <div>
+                        <div id="infoDiv">
+                        </div>
                         <asp:ContentPlaceHolder ID="Main" runat="server">
-                            <asp:Label ID="Label2" runat="server" BackColor="Transparent" Text="Label"></asp:Label></asp:ContentPlaceHolder>
-                        <%--<uc1:FormCommands ID="FormCommands1" runat="server" FormName="FormView1" AllowInsert="true" />--%>
+                            <asp:Label ID="Label2" runat="server" BackColor="Transparent" Text="Label"></asp:Label>
+                        </asp:ContentPlaceHolder>
                     </div>
-                    <br />
-                    <asp:GridView ID="grdAlerts" runat="server" AutoGenerateColumns="False" AllowPaging="True"
-                        DataKeyNames="AlertId" OnSelectedIndexChanged="grdAlerts_SelectedIndexChanged"
-                        DataSourceID="odsAlerts" OnRowCommand="grdAlerts_RowCommand" Visible="False"
-                        meta:resourcekey="grdAlertsResource1">
-                        <Columns>
-                            <asp:BoundField DataField="AlertId" HeaderText="AlertId" SortExpression="AlertId"
-                                Visible="False" meta:resourcekey="BoundFieldResource1" />
-                            <asp:TemplateField HeaderText="Message" ShowHeader="False" SortExpression="Message"
-                                meta:resourcekey="TemplateFieldResource1">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="lnkMessage" runat="server" CausesValidation="False" CommandName="Select"
-                                        Text='<%# Bind("Message") %>' CommandArgument='<%# Bind("Link") %>' meta:resourcekey="lnkMessageResource1"></asp:LinkButton>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:BoundField DataField="SentAt" HeaderText="SentAt" SortExpression="SentAt" meta:resourcekey="BoundFieldResource2">
-                                <ItemStyle Width="15%" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="SentBy" HeaderText="SentBy" SortExpression="SentBy" meta:resourcekey="BoundFieldResource3">
-                                <ItemStyle Width="15%" />
-                            </asp:BoundField>
-                        </Columns>
-                    </asp:GridView>
-                    <asp:ObjectDataSource ID="odsAlerts" runat="server" SelectMethod="GetAlertsForUser"
-                        TypeName="IGRSS.BusinessLogicLayer.WorkflowSupport">
-                        <SelectParameters>
-                            <asp:ProfileParameter Name="username" PropertyName="UserName" Type="String" />
-                        </SelectParameters>
-                    </asp:ObjectDataSource>
-                    &nbsp;
-                </td>
-            </tr>
-            <tr class="footer">
-                <td style="width: 1397px">
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" Font-Bold="True" HeaderText="Following Fields are Mandatory" 
-                        meta:resourcekey="ValidationSummary1Resource1" DisplayMode="List" 
-                        ShowSummary="False"  />
-                            
-                </td>
-            </tr>
-            </table>
-        <asp:HiddenField ID="fvName" runat="server" />
+                    <%--<uc1:FormCommands ID="FormCommands1" runat="server" FormName="FormView1" AllowInsert="true" />--%>
+                </div>
+                <br />
+                <asp:GridView ID="grdAlerts" runat="server" AutoGenerateColumns="False" AllowPaging="True"
+                    DataKeyNames="AlertId" OnSelectedIndexChanged="grdAlerts_SelectedIndexChanged"
+                    DataSourceID="odsAlerts" OnRowCommand="grdAlerts_RowCommand" Visible="False"
+                    meta:resourcekey="grdAlertsResource1">
+                    <Columns>
+                        <asp:BoundField DataField="AlertId" HeaderText="AlertId" SortExpression="AlertId"
+                            Visible="False" meta:resourcekey="BoundFieldResource1" />
+                        <asp:TemplateField HeaderText="Message" ShowHeader="False" SortExpression="Message"
+                            meta:resourcekey="TemplateFieldResource1">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lnkMessage" runat="server" CausesValidation="False" CommandName="Select"
+                                    Text='<%# Bind("Message") %>' CommandArgument='<%# Bind("Link") %>' meta:resourcekey="lnkMessageResource1"></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="SentAt" HeaderText="SentAt" SortExpression="SentAt" meta:resourcekey="BoundFieldResource2">
+                            <ItemStyle Width="15%" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="SentBy" HeaderText="SentBy" SortExpression="SentBy" meta:resourcekey="BoundFieldResource3">
+                            <ItemStyle Width="15%" />
+                        </asp:BoundField>
+                    </Columns>
+                </asp:GridView>
+                <asp:ObjectDataSource ID="odsAlerts" runat="server" SelectMethod="GetAlertsForUser"
+                    TypeName="IGRSS.BusinessLogicLayer.WorkflowSupport">
+                    <SelectParameters>
+                        <asp:ProfileParameter Name="username" PropertyName="UserName" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+                &nbsp;
+            </td>
+        </tr>
+        <tr class="footer">
+            <td style="width: 1397px">
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" Font-Bold="True" HeaderText="Following Fields are Mandatory"
+                    meta:resourcekey="ValidationSummary1Resource1" DisplayMode="List" ShowSummary="False" />
+            </td>
+        </tr>
+    </table>
+    <asp:HiddenField ID="fvName" runat="server" />
     </form>
 </body>
 </html>
