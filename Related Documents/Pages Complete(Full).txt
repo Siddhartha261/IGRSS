@@ -1,4 +1,38 @@
 Pages Complete(Full Update & Delete):
+
+1.Account Department:
 -Cheque Register
 -Grant Register
+
+2.Record and Marriage Department:
+-application disposal register
+-deadstock
+-bookform
+-kalpataru
+-lekhan samagri
+-marriage register
+-marriage volume
+-no record register
+-library register
+
+3.Administration Department:
+-WorkSheet Register
+-RTIAppeal Register
 -File Register
+-govt Docs
+-sofile
+-vigilance
+-*Primary Investigation/Inquiry Register(Delete Complete)(Issue In Update)
+-HighCourt Register
+-MLA & Minister Register
+-Vidhansabha Tarankit Question Register*
+
+
+
+
+
+
+
+
+
+

@@ -20,7 +20,13 @@
  
     
 </script>
-<asp:MultiView ID="MultiviewTarankit" runat="server" ActiveViewIndex="0">
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
+<asp:MultiView ID="Multiview_Tarankit" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
 <h1>VidhanSabha Tarankit Question Register</h1>
@@ -41,7 +47,9 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_Tarankit" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_Tarankit" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" onrowdeleted="GridView_Tarankit_RowDeleted" 
+                      onrowdeleting="GridView_Tarankit_RowDeleting" 
+                      onrowediting="GridView_Tarankit_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" />
@@ -66,6 +74,22 @@
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
                               SortExpression="Remarks" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -81,7 +105,9 @@
 <asp:FormView ID="FormView_Tarankit" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Tarankit" EnableModelValidation="True" DefaultMode="Insert" 
         Width="60%" oniteminserting="FormView_Tarankit_ItemInserting" 
-        onitemcommand="FormView_Tarankit_ItemCommand">
+        onitemcommand="FormView_Tarankit_ItemCommand" 
+        oniteminserted="FormView_Tarankit_ItemInserted" 
+        onitemupdated="FormView_Tarankit_ItemUpdated">
         <EditItemTemplate>
                     <table>
         <tr><td>Tarankit/Atarnkit:</td>
@@ -285,22 +311,14 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_Tarankit" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_Tarankit" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.TarankitTableAdapters.tarankitTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_Tarankit_Selecting">
+        UpdateMethod="UpdateQuery" onselecting="ods_Tarankit_Selecting" 
+        ondeleting="ods_Tarankit_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Tarankit_Atarnkit" Type="String" />
-            <asp:Parameter Name="Original_quesno" Type="Int32" />
-            <asp:Parameter Name="Original_MLAname" Type="String" />
-            <asp:Parameter Name="Original_mlaPlace" Type="String" />
-            <asp:Parameter Name="Original_Subject" Type="String" />
-            <asp:Parameter Name="Original_Number" Type="Int32" />
-            <asp:Parameter Name="Original_Reply_Sent" Type="String" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Tarankit_Atarnkit" Type="String" />
@@ -326,19 +344,10 @@
             <asp:Parameter Name="Subject" Type="String" />
             <asp:Parameter Name="Number" Type="Int32" />
             <asp:Parameter Name="Reply_Sent" Type="String" />
-            <asp:Parameter Name="Date" Type="DateTime" />
+            <asp:Parameter Name="Date" Type="String" />
             <asp:Parameter Name="FileNo" Type="Int32" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Tarankit_Atarnkit" Type="String" />
-            <asp:Parameter Name="Original_quesno" Type="Int32" />
-            <asp:Parameter Name="Original_MLAname" Type="String" />
-            <asp:Parameter Name="Original_mlaPlace" Type="String" />
-            <asp:Parameter Name="Original_Subject" Type="String" />
-            <asp:Parameter Name="Original_Number" Type="Int32" />
-            <asp:Parameter Name="Original_Reply_Sent" Type="String" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_mlaname" runat="server" DeleteMethod="Delete" 

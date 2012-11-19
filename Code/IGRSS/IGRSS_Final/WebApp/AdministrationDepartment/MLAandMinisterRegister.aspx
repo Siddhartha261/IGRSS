@@ -43,7 +43,13 @@
         }
     });
 </script>
-<asp:MultiView ID="MultiviewMLA" runat="server" ActiveViewIndex="0">
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
+<asp:MultiView ID="Multiview_MLA" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
 <h1>MLA and Minister&#39;s Register</h1>
@@ -63,33 +69,53 @@
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_MLA" runat="server" AutoGenerateColumns="False" 
-                      DataKeyNames="SrNo" DataSourceID="ods_MLA" EnableModelValidation="True">
+                      DataKeyNames="SrNo" DataSourceID="ods_MLA" EnableModelValidation="True" 
+                      onrowdeleted="GridView_MLA_RowDeleted" onrowdeleting="GridView_MLA_RowDeleting" 
+                      onrowediting="GridView_MLA_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="InwardNo" HeaderText="Inward No" 
+                              ReadOnly="True" SortExpression="SrNo" />
+                          <asp:BoundField DataField="InwardNo" HeaderText="InwardNo" 
                               SortExpression="InwardNo" />
-                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
+                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="MLAname" HeaderText="MLA Name" 
+                          <asp:BoundField DataField="MLAname" HeaderText="MLAname" 
                               SortExpression="MLAname" />
                           <asp:BoundField DataField="Subject" HeaderText="Subject" 
                               SortExpression="Subject" />
-                          <asp:BoundField DataField="LetterNo" HeaderText="Letter No" 
+                          <asp:BoundField DataField="LetterNo" HeaderText="LetterNo" 
                               SortExpression="LetterNo" />
-                          <asp:BoundField DataField="LetterDate" HeaderText="Letter Date" 
+                          <asp:BoundField DataField="LetterDate" HeaderText="LetterDate" 
                               SortExpression="LetterDate" />
-                          <asp:BoundField DataField="DepartmentName" HeaderText="Department Name" 
+                          <asp:BoundField DataField="DepartmentName" HeaderText="DepartmentName" 
                               SortExpression="DepartmentName" />
-                          <asp:BoundField DataField="FileNumber" HeaderText="File Number" 
+                          <asp:BoundField DataField="FileNumber" HeaderText="FileNumber" 
                               SortExpression="FileNumber" />
                           <asp:BoundField DataField="DetailsofOutput" HeaderText="DetailsofOutput" 
-                              SortExpression="DetailsofOutput" Visible="False" />
+                              SortExpression="DetailsofOutput" />
                           <asp:BoundField DataField="DetailsofFilePreservation" 
                               HeaderText="DetailsofFilePreservation" 
-                              SortExpression="DetailsofFilePreservation" Visible="False" />
+                              SortExpression="DetailsofFilePreservation" />
                           <asp:BoundField DataField="DetailsOfRecord" HeaderText="DetailsOfRecord" 
-                              SortExpression="DetailsOfRecord" Visible="False" />
+                              SortExpression="DetailsOfRecord" />
+                          <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
+                              SortExpression="Remarks" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField> 
                       </Columns>
                   </asp:GridView>
               </td>
@@ -105,7 +131,9 @@
 <asp:FormView ID="FormView_MLA" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_MLA" EnableModelValidation="True" DefaultMode="Insert" 
         Width="50%" oniteminserting="FormView_MLA_ItemInserting" 
-        onitemcommand="FormView_MLA_ItemCommand" >
+        onitemcommand="FormView_MLA_ItemCommand" 
+        oniteminserted="FormView_MLA_ItemInserted" 
+        onitemupdated="FormView_MLA_ItemUpdated" >
         <EditItemTemplate>
                 <table>
         <tr><td>Inward No:</td>
@@ -174,13 +202,16 @@
                     Height="60px" TextMode="MultiLine" Width="160px" /></td>
 		</tr>	            
             
-        <tr><td colspan=2 align="center"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Updat" Text="Updat" />
+        <tr><td colspan=2 align="center">
+            <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
+                CommandName="Update" Text="e" CssClass="standardButton" />
 			&nbsp;<asp:Button ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
-                onclientclick="resetTextFields();return false;" />	
+                onclientclick="resetTextFields();return false;" 
+                CssClass="standardButton" />	
             &nbsp;<asp:Button ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" />
+                CausesValidation="False" CommandName="Back" Text="Back" 
+                CssClass="standardButton" />
 			</td>
 		</tr>
     </table>		
@@ -325,21 +356,14 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_MLA" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_MLA" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.MLATableAdapters.MLATableAdapter" 
-        UpdateMethod="Update" onselecting="ods_MLA_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_MLA_Selecting" 
+        ondeleting="ods_MLA_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_InwardNo" Type="String" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_MLAname" Type="String" />
-            <asp:Parameter Name="Original_Subject" Type="String" />
-            <asp:Parameter Name="Original_LetterNo" Type="Int32" />
-            <asp:Parameter Name="Original_LetterDate" Type="DateTime" />
-            <asp:Parameter Name="Original_DepartmentName" Type="String" />
-            <asp:Parameter Name="Original_FileNumber" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="InwardNo" Type="String" />
@@ -372,15 +396,7 @@
             <asp:Parameter Name="DetailsofFilePreservation" Type="String" />
             <asp:Parameter Name="DetailsOfRecord" Type="String" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_InwardNo" Type="String" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_MLAname" Type="String" />
-            <asp:Parameter Name="Original_Subject" Type="String" />
-            <asp:Parameter Name="Original_LetterNo" Type="Int32" />
-            <asp:Parameter Name="Original_LetterDate" Type="DateTime" />
-            <asp:Parameter Name="Original_DepartmentName" Type="String" />
-            <asp:Parameter Name="Original_FileNumber" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_departmentname" runat="server" 

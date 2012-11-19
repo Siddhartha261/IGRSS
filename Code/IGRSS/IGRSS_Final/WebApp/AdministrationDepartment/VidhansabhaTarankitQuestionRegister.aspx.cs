@@ -20,7 +20,7 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
-        MultiviewTarankit.SetActiveView(MultiviewTarankit.Views[1]);
+        Multiview_Tarankit.SetActiveView(Multiview_Tarankit.Views[1]);
         FormView_Tarankit.ChangeMode(FormViewMode.Insert);
     }
     protected void FormView_Tarankit_ItemInserting(object sender, FormViewInsertEventArgs e)
@@ -36,7 +36,7 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
         switch (e.CommandName)
         {
             case "Back":
-                MultiviewTarankit.SetActiveView(ViewGrid);
+                Multiview_Tarankit.SetActiveView(ViewGrid);
                 GridView_Tarankit.DataBind();
                break;
         }
@@ -46,5 +46,61 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
         e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
         ods_Tarankit.SelectMethod = "GetDataBy";
         
+    }
+    protected void GridView_Tarankit_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView_Tarankit_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView_Tarankit.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView_Tarankit.DataKeys[e.RowIndex].Value;
+        ods_Tarankit.Delete();
+    }
+    protected void GridView_Tarankit_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        Multiview_Tarankit.SetActiveView(Formview);
+        FormView_Tarankit.PageIndex = e.NewEditIndex;
+        FormView_Tarankit.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+    }
+    protected void FormView_Tarankit_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FormView_Tarankit_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void ods_Tarankit_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
+    }
+
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
     }
 }

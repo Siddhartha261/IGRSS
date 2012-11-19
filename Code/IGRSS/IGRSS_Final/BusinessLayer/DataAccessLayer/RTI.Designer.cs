@@ -429,10 +429,10 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RTIRow AddRTIRow(int Sr_No, string Appl_name, string Appl_surname, System.DateTime Appl_Date, string PIO_desig, System.DateTime PIO_date, System.DateTime Last_Date, string Decision_Taken) {
+            public RTIRow AddRTIRow(string Appl_name, string Appl_surname, System.DateTime Appl_Date, string PIO_desig, System.DateTime PIO_date, System.DateTime Last_Date, string Decision_Taken) {
                 RTIRow rowRTIRow = ((RTIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Sr_No,
+                        null,
                         Appl_name,
                         Appl_surname,
                         Appl_Date,
@@ -506,13 +506,15 @@ namespace IGRSS.DataAccessLayer {
                 base.Columns.Add(this.columnDecision_Taken);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSr_No}, true));
+                this.columnSr_No.AutoIncrement = true;
+                this.columnSr_No.AutoIncrementSeed = -1;
+                this.columnSr_No.AutoIncrementStep = -1;
                 this.columnSr_No.AllowDBNull = false;
+                this.columnSr_No.ReadOnly = true;
                 this.columnSr_No.Unique = true;
                 this.columnAppl_name.MaxLength = 200;
                 this.columnAppl_surname.MaxLength = 200;
                 this.columnPIO_desig.MaxLength = 50;
-                this.columnLast_Date.AllowDBNull = false;
-                this.columnDecision_Taken.AllowDBNull = false;
                 this.columnDecision_Taken.MaxLength = 100;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_RTI");
                 this.ExtendedProperties.Add("Generator_UserTableName", "RTI");
@@ -751,7 +753,12 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime Last_Date {
                 get {
-                    return ((global::System.DateTime)(this[this.tableRTI.Last_DateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRTI.Last_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Last_Date\' in table \'RTI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRTI.Last_DateColumn] = value;
@@ -762,7 +769,12 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Decision_Taken {
                 get {
-                    return ((string)(this[this.tableRTI.Decision_TakenColumn]));
+                    try {
+                        return ((string)(this[this.tableRTI.Decision_TakenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Decision_Taken\' in table \'RTI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRTI.Decision_TakenColumn] = value;
@@ -827,6 +839,30 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPIO_dateNull() {
                 this[this.tableRTI.PIO_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLast_DateNull() {
+                return this.IsNull(this.tableRTI.Last_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLast_DateNull() {
+                this[this.tableRTI.Last_DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDecision_TakenNull() {
+                return this.IsNull(this.tableRTI.Decision_TakenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDecision_TakenNull() {
+                this[this.tableRTI.Decision_TakenColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1000,7 +1036,7 @@ namespace IGRSS.DataAccessLayer.RTITableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[RTI] WHERE (([Sr_No] = @Original_Sr_No) AND ((@IsNull_Appl_name = 1 AND [Appl_name] IS NULL) OR ([Appl_name] = @Original_Appl_name)) AND ((@IsNull_Appl_surname = 1 AND [Appl_surname] IS NULL) OR ([Appl_surname] = @Original_Appl_surname)) AND ((@IsNull_Appl_Date = 1 AND [Appl_Date] IS NULL) OR ([Appl_Date] = @Original_Appl_Date)) AND ((@IsNull_PIO_desig = 1 AND [PIO_desig] IS NULL) OR ([PIO_desig] = @Original_PIO_desig)) AND ((@IsNull_PIO_date = 1 AND [PIO_date] IS NULL) OR ([PIO_date] = @Original_PIO_date)) AND ([Last_Date] = @Original_Last_Date) AND ([Decision_Taken] = @Original_Decision_Taken))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[RTI] WHERE (([Sr_No] = @Original_Sr_No) AND ((@IsNull_Appl_name = 1 AND [Appl_name] IS NULL) OR ([Appl_name] = @Original_Appl_name)) AND ((@IsNull_Appl_surname = 1 AND [Appl_surname] IS NULL) OR ([Appl_surname] = @Original_Appl_surname)) AND ((@IsNull_Appl_Date = 1 AND [Appl_Date] IS NULL) OR ([Appl_Date] = @Original_Appl_Date)) AND ((@IsNull_PIO_desig = 1 AND [PIO_desig] IS NULL) OR ([PIO_desig] = @Original_PIO_desig)) AND ((@IsNull_PIO_date = 1 AND [PIO_date] IS NULL) OR ([PIO_date] = @Original_PIO_date)) AND ((@IsNull_Last_Date = 1 AND [Last_Date] IS NULL) OR ([Last_Date] = @Original_Last_Date)) AND ((@IsNull_Decision_Taken = 1 AND [Decision_Taken] IS NULL) OR ([Decision_Taken] = @Original_Decision_Taken)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sr_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sr_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Appl_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1013,14 +1049,15 @@ namespace IGRSS.DataAccessLayer.RTITableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PIO_desig", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PIO_desig", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PIO_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PIO_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PIO_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PIO_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Last_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Decision_Taken", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Decision_Taken", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Decision_Taken", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Decision_Taken", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RTI] ([Sr_No], [Appl_name], [Appl_surname], [Appl_Date], [PIO_desig], [PIO_date], [Last_Date], [Decision_Taken]) VALUES (@Sr_No, @Appl_name, @Appl_surname, @Appl_Date, @PIO_desig, @PIO_date, @Last_Date, @Decision_Taken);
-SELECT Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date, Decision_Taken FROM dbo.RTI WHERE (Sr_No = @Sr_No)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RTI] ([Appl_name], [Appl_surname], [Appl_Date], [PIO_desig], [PIO_date], [Last_Date], [Decision_Taken]) VALUES (@Appl_name, @Appl_surname, @Appl_Date, @PIO_desig, @PIO_date, @Last_Date, @Decision_Taken);
+SELECT Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date, Decision_Taken FROM dbo.RTI WHERE (Sr_No = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sr_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sr_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_surname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1030,10 +1067,9 @@ SELECT Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Decision_Taken", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Decision_Taken", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[RTI] SET [Sr_No] = @Sr_No, [Appl_name] = @Appl_name, [Appl_surname] = @Appl_surname, [Appl_Date] = @Appl_Date, [PIO_desig] = @PIO_desig, [PIO_date] = @PIO_date, [Last_Date] = @Last_Date, [Decision_Taken] = @Decision_Taken WHERE (([Sr_No] = @Original_Sr_No) AND ((@IsNull_Appl_name = 1 AND [Appl_name] IS NULL) OR ([Appl_name] = @Original_Appl_name)) AND ((@IsNull_Appl_surname = 1 AND [Appl_surname] IS NULL) OR ([Appl_surname] = @Original_Appl_surname)) AND ((@IsNull_Appl_Date = 1 AND [Appl_Date] IS NULL) OR ([Appl_Date] = @Original_Appl_Date)) AND ((@IsNull_PIO_desig = 1 AND [PIO_desig] IS NULL) OR ([PIO_desig] = @Original_PIO_desig)) AND ((@IsNull_PIO_date = 1 AND [PIO_date] IS NULL) OR ([PIO_date] = @Original_PIO_date)) AND ([Last_Date] = @Original_Last_Date) AND ([Decision_Taken] = @Original_Decision_Taken));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[RTI] SET [Appl_name] = @Appl_name, [Appl_surname] = @Appl_surname, [Appl_Date] = @Appl_Date, [PIO_desig] = @PIO_desig, [PIO_date] = @PIO_date, [Last_Date] = @Last_Date, [Decision_Taken] = @Decision_Taken WHERE (([Sr_No] = @Original_Sr_No) AND ((@IsNull_Appl_name = 1 AND [Appl_name] IS NULL) OR ([Appl_name] = @Original_Appl_name)) AND ((@IsNull_Appl_surname = 1 AND [Appl_surname] IS NULL) OR ([Appl_surname] = @Original_Appl_surname)) AND ((@IsNull_Appl_Date = 1 AND [Appl_Date] IS NULL) OR ([Appl_Date] = @Original_Appl_Date)) AND ((@IsNull_PIO_desig = 1 AND [PIO_desig] IS NULL) OR ([PIO_desig] = @Original_PIO_desig)) AND ((@IsNull_PIO_date = 1 AND [PIO_date] IS NULL) OR ([PIO_date] = @Original_PIO_date)) AND ((@IsNull_Last_Date = 1 AND [Last_Date] IS NULL) OR ([Last_Date] = @Original_Last_Date)) AND ((@IsNull_Decision_Taken = 1 AND [Decision_Taken] IS NULL) OR ([Decision_Taken] = @Original_Decision_Taken)));
 SELECT Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date, Decision_Taken FROM dbo.RTI WHERE (Sr_No = @Sr_No)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sr_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sr_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_surname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1052,8 +1088,11 @@ SELECT Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PIO_desig", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PIO_desig", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PIO_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PIO_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PIO_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PIO_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Last_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Decision_Taken", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Decision_Taken", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Decision_Taken", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Decision_Taken", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sr_No", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sr_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1066,7 +1105,7 @@ SELECT Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Las" +
@@ -1074,7 +1113,12 @@ SELECT Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date, Decision_Taken
+            this._commandCollection[1].CommandText = "DELETE FROM dbo.RTI\r\nWHERE        (Sr_No = @Sr_No)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sr_No", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sr_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date, Decision_Taken
 FROM            dbo.RTI
 WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (Appl_name LIKE '%' + @searchKeyWord + '%') OR
@@ -1084,8 +1128,23 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(PIO_date AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(Last_Date AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (Decision_Taken LIKE '%' + @searchKeyWord + '%')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE       dbo.RTI
+SET                Appl_name = @Appl_name, Appl_surname = @Appl_surname, Appl_Date = @Appl_Date, PIO_desig = @PIO_desig, PIO_date = @PIO_date, Last_Date = @Last_Date, 
+                         Decision_Taken = @Decision_Taken
+WHERE        (Sr_No = @Sr_No)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_name", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_surname", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Appl_Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Appl_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PIO_desig", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "PIO_desig", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PIO_date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "PIO_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Decision_Taken", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Decision_Taken", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sr_No", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sr_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1117,7 +1176,7 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(RTI.RTIDataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1136,7 +1195,7 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual RTI.RTIDataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1181,7 +1240,7 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Sr_No, string Original_Appl_name, string Original_Appl_surname, global::System.Nullable<global::System.DateTime> Original_Appl_Date, string Original_PIO_desig, global::System.Nullable<global::System.DateTime> Original_PIO_date, System.DateTime Original_Last_Date, string Original_Decision_Taken) {
+        public virtual int Delete(int Original_Sr_No, string Original_Appl_name, string Original_Appl_surname, global::System.Nullable<global::System.DateTime> Original_Appl_Date, string Original_PIO_desig, global::System.Nullable<global::System.DateTime> Original_PIO_date, global::System.Nullable<global::System.DateTime> Original_Last_Date, string Original_Decision_Taken) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Sr_No));
             if ((Original_Appl_name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1223,12 +1282,21 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_Last_Date));
-            if ((Original_Decision_Taken == null)) {
-                throw new global::System.ArgumentNullException("Original_Decision_Taken");
+            if ((Original_Last_Date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Last_Date.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Decision_Taken));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Decision_Taken == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Decision_Taken));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1250,44 +1318,48 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Sr_No, string Appl_name, string Appl_surname, global::System.Nullable<global::System.DateTime> Appl_Date, string PIO_desig, global::System.Nullable<global::System.DateTime> PIO_date, System.DateTime Last_Date, string Decision_Taken) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Sr_No));
+        public virtual int Insert(string Appl_name, string Appl_surname, global::System.Nullable<global::System.DateTime> Appl_Date, string PIO_desig, global::System.Nullable<global::System.DateTime> PIO_date, global::System.Nullable<global::System.DateTime> Last_Date, string Decision_Taken) {
             if ((Appl_name == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Appl_name));
+            }
+            if ((Appl_surname == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Appl_name));
-            }
-            if ((Appl_surname == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Appl_surname));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Appl_surname));
             }
             if ((Appl_Date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Appl_Date.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Appl_Date.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((PIO_desig == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PIO_desig));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PIO_desig));
             }
             if ((PIO_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(PIO_date.Value));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PIO_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Last_Date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Last_Date.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Last_Date));
             if ((Decision_Taken == null)) {
-                throw new global::System.ArgumentNullException("Decision_Taken");
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Decision_Taken));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Decision_Taken));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1310,13 +1382,12 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int Sr_No, 
                     string Appl_name, 
                     string Appl_surname, 
                     global::System.Nullable<global::System.DateTime> Appl_Date, 
                     string PIO_desig, 
                     global::System.Nullable<global::System.DateTime> PIO_date, 
-                    System.DateTime Last_Date, 
+                    global::System.Nullable<global::System.DateTime> Last_Date, 
                     string Decision_Taken, 
                     int Original_Sr_No, 
                     string Original_Appl_name, 
@@ -1324,94 +1395,109 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                     global::System.Nullable<global::System.DateTime> Original_Appl_Date, 
                     string Original_PIO_desig, 
                     global::System.Nullable<global::System.DateTime> Original_PIO_date, 
-                    System.DateTime Original_Last_Date, 
-                    string Original_Decision_Taken) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Sr_No));
+                    global::System.Nullable<global::System.DateTime> Original_Last_Date, 
+                    string Original_Decision_Taken, 
+                    int Sr_No) {
             if ((Appl_name == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Appl_name));
+            }
+            if ((Appl_surname == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Appl_name));
-            }
-            if ((Appl_surname == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Appl_surname));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Appl_surname));
             }
             if ((Appl_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Appl_Date.Value));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Appl_Date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((PIO_desig == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PIO_desig));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PIO_desig));
             }
             if ((PIO_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(PIO_date.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PIO_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Last_Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Last_Date.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Last_Date));
             if ((Decision_Taken == null)) {
-                throw new global::System.ArgumentNullException("Decision_Taken");
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Decision_Taken));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Decision_Taken));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Sr_No));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Sr_No));
             if ((Original_Appl_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Appl_name));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Appl_name));
             }
             if ((Original_Appl_surname == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Appl_surname));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Appl_surname));
             }
             if ((Original_Appl_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_Appl_Date.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Appl_Date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_PIO_desig == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PIO_desig));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_PIO_desig));
             }
             if ((Original_PIO_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_PIO_date.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_PIO_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_Last_Date));
+            if ((Original_Last_Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_Last_Date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
             if ((Original_Decision_Taken == null)) {
-                throw new global::System.ArgumentNullException("Original_Decision_Taken");
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Decision_Taken));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Decision_Taken));
             }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Sr_No));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1432,8 +1518,98 @@ WHERE        (CAST(Sr_No AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Appl_name, string Appl_surname, global::System.Nullable<global::System.DateTime> Appl_Date, string PIO_desig, global::System.Nullable<global::System.DateTime> PIO_date, System.DateTime Last_Date, string Decision_Taken, int Original_Sr_No, string Original_Appl_name, string Original_Appl_surname, global::System.Nullable<global::System.DateTime> Original_Appl_Date, string Original_PIO_desig, global::System.Nullable<global::System.DateTime> Original_PIO_date, System.DateTime Original_Last_Date, string Original_Decision_Taken) {
-            return this.Update(Original_Sr_No, Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date, Decision_Taken, Original_Sr_No, Original_Appl_name, Original_Appl_surname, Original_Appl_Date, Original_PIO_desig, Original_PIO_date, Original_Last_Date, Original_Decision_Taken);
+        public virtual int Update(string Appl_name, string Appl_surname, global::System.Nullable<global::System.DateTime> Appl_Date, string PIO_desig, global::System.Nullable<global::System.DateTime> PIO_date, global::System.Nullable<global::System.DateTime> Last_Date, string Decision_Taken, int Original_Sr_No, string Original_Appl_name, string Original_Appl_surname, global::System.Nullable<global::System.DateTime> Original_Appl_Date, string Original_PIO_desig, global::System.Nullable<global::System.DateTime> Original_PIO_date, global::System.Nullable<global::System.DateTime> Original_Last_Date, string Original_Decision_Taken) {
+            return this.Update(Appl_name, Appl_surname, Appl_Date, PIO_desig, PIO_date, Last_Date, Decision_Taken, Original_Sr_No, Original_Appl_name, Original_Appl_surname, Original_Appl_Date, Original_PIO_desig, Original_PIO_date, Original_Last_Date, Original_Decision_Taken, Original_Sr_No);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int Sr_No) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(Sr_No));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string Appl_name, string Appl_surname, global::System.Nullable<global::System.DateTime> Appl_Date, string PIO_desig, global::System.Nullable<global::System.DateTime> PIO_date, global::System.Nullable<global::System.DateTime> Last_Date, string Decision_Taken, int Sr_No) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((Appl_name == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Appl_name));
+            }
+            if ((Appl_surname == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Appl_surname));
+            }
+            if ((Appl_Date.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(Appl_Date.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((PIO_desig == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(PIO_desig));
+            }
+            if ((PIO_date.HasValue == true)) {
+                command.Parameters[4].Value = ((System.DateTime)(PIO_date.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Last_Date.HasValue == true)) {
+                command.Parameters[5].Value = ((System.DateTime)(Last_Date.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Decision_Taken == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(Decision_Taken));
+            }
+            command.Parameters[7].Value = ((int)(Sr_No));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

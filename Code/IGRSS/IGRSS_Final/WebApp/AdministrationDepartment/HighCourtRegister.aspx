@@ -20,6 +20,12 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 
 
 <asp:MultiView ID="Multiview_HighCourtReg" runat="server" ActiveViewIndex="0">
@@ -33,7 +39,7 @@
                             meta:resourcekey="lblllsResource1"></asp:Label></td>
                     <td align="left" >
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1" ontextchanged="txtFileNo_TextChanged"></asp:TextBox></td>
+                            meta:resourcekey="txtFileNoResource1" ></asp:TextBox></td>
                         <td align="right">
                         <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
                             meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
@@ -43,7 +49,10 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_HighCourtReg" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_HighCourtReg" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_HighCourtReg_RowDeleted" 
+                      onrowdeleting="GridView_HighCourtReg_RowDeleting" 
+                      onrowediting="GridView_HighCourtReg_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
                               ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
@@ -76,6 +85,22 @@
                               HeaderText="OrderJudgementSheet" SortExpression="OrderJudgementSheet" />
                           <asp:BoundField DataField="JudgementDetail" HeaderText="JudgementDetail" 
                               SortExpression="JudgementDetail" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -92,131 +117,204 @@
         EnableModelValidation="True" DefaultMode="Insert" 
          oniteminserting="FormView_HighCourtReg_ItemInserting" 
         onitemcommand="FormView_HighCourtReg_ItemCommand" DataKeyNames="SrNo" 
-        DataSourceID="ods_HighCourtReg">
+        DataSourceID="ods_HighCourtReg" 
+        oniteminserted="FormView_HighCourtReg_ItemInserted" 
+        onitemupdated="FormView_HighCourtReg_ItemUpdated">
     <EditItemTemplate>
-        SrNo:
-        <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-        <br />
-        Fileno:
-        <asp:TextBox ID="FilenoTextBox" runat="server" Text='<%# Bind("Fileno") %>' />
-        <br />
-        SpecialCivilApplNo:
-        <asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" 
-            Text='<%# Bind("SpecialCivilApplNo") %>' />
-        <br />
-        DistrictOfficeName:
-        <asp:TextBox ID="DistrictOfficeNameTextBox" runat="server" 
-            Text='<%# Bind("DistrictOfficeName") %>' />
-        <br />
-        PetitionerName:
-        <asp:TextBox ID="PetitionerNameTextBox" runat="server" 
-            Text='<%# Bind("PetitionerName") %>' />
-        <br />
-        PetitionReason:
-        <asp:TextBox ID="PetitionReasonTextBox" runat="server" 
-            Text='<%# Bind("PetitionReason") %>' />
-        <br />
-        Parawiseremarks:
-        <asp:CheckBox ID="ParawiseremarksCheckBox" runat="server" 
-            Checked='<%# Bind("Parawiseremarks") %>' />
-        <br />
-        Parawiseremarksdate:
-        <asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
-            Text='<%# Bind("Parawiseremarksdate") %>' />
-        <br />
-        Affidavit:
-        <asp:CheckBox ID="AffidavitCheckBox" runat="server" 
-            Checked='<%# Bind("Affidavit") %>' />
-        <br />
-        Affidavitdate:
-        <asp:TextBox ID="AffidavitdateTextBox" runat="server" 
-            Text='<%# Bind("Affidavitdate") %>' />
-        <br />
-        LatestStatus:
-        <asp:TextBox ID="LatestStatusTextBox" runat="server" 
-            Text='<%# Bind("LatestStatus") %>' />
-        <br />
-        PetitionDispoasedYear:
-        <asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" 
-            Text='<%# Bind("PetitionDispoasedYear") %>' />
-        <br />
-        DisposalDate:
-        <asp:TextBox ID="DisposalDateTextBox" runat="server" 
-            Text='<%# Bind("DisposalDate") %>' />
-        <br />
-        OrderJudgementSheet:
-        <asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
-            Text='<%# Bind("OrderJudgementSheet") %>' />
-        <br />
-        JudgementDetail:
-        <asp:TextBox ID="JudgementDetailTextBox" runat="server" 
-            Text='<%# Bind("JudgementDetail") %>' />
-        <br />
-        <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-            CommandName="Update" Text="Update" />
-        &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                    <table>
+        <tr>
+		    <td>File No:</td>
+			<td><asp:TextBox ID="FilenoTextBox" runat="server" Text='<%# Bind("Fileno") %>' 
+                    Width="160px" /></td>
+			
+			<td>Affidavit Sent Or Not:</td>
+			<td>
+                <asp:RadioButtonList ID="Radio_affidavit" runat="server" 
+                    RepeatDirection="Horizontal" Width="160px">
+                    <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
+                    <asp:ListItem Text="No" Value="False"></asp:ListItem>
+                </asp:RadioButtonList>
+            </td>
+		</tr>		
+        
+        <tr>
+		    <td>Special Civil Application No:</td>
+			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" 
+            Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" /></td>
+			
+			<td>Affidavit Date:</td>
+			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
+            Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
+		</tr>       
+        
+        <tr>
+		    <td>Name Of District Office:</td>
+			<td>
+                <asp:DropDownList ID="Drop_officename" runat="server" 
+                    DataSourceID="ods_offices" DataTextField="OfficeName" 
+                    DataValueField="OfficeName" Width="160px">
+                </asp:DropDownList>
+            </td>
+			
+			<td>Latest Status:</td>
+			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" 
+            Text='<%# Bind("LatestStatus") %>' Width="160px" /></td>
+		</tr>       
+        
+        <tr>
+		    <td>Petitioner Name:</td>
+			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" 
+            Text='<%# Bind("PetitionerName") %>' Width="160px" /></td>
+			
+			<td>Petition Disposed Year:</td>
+			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" 
+            Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		   <td>Reason Of Petition:</td>
+		   <td><asp:TextBox ID="PetitionReasonTextBox" runat="server" 
+            Text='<%# Bind("PetitionReason") %>' Height="60px" Width="160px" /></td>
+		   
+		   <td>Disposal Date:</td>
+		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
+            Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		   <td>Parawise Remarks Sent Or Not:</td>
+		   <td>
+               <asp:RadioButtonList ID="Radio_parawisermrksent" runat="server" 
+                   RepeatDirection="Horizontal" Width="160px">
+                   <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
+                   <asp:ListItem Text="No" Value="False"></asp:ListItem>
+               </asp:RadioButtonList>
+            </td>
+		   
+		   <td>Order Judgement Sheet:</td>
+		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
+            Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" /></td>
+		</tr>       
+        
+        <tr>
+		    <td>Parawise Remarks Sent Date:</td>
+			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
+            Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
+			
+			<td>Judgement Detail:</td>
+			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 
+            Text='<%# Bind("JudgementDetail") %>' Height="60px" Width="160px" /></td>
+		</tr>       
+        
+        <tr><td align="center" colspan=4>
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+            CommandName="Update" Text="Update" CssClass="standardButton" />
+		&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+            CausesValidation="False" CommandName="Reset" Text="Reset" 
+                CssClass="standardButton" onclientclick="resetTextFields();return false;" />
+        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+            CausesValidation="False" CommandName="Back" Text="Back" 
+                CssClass="standardButton" /></td>
+		</tr>
+    </table>
     </EditItemTemplate>
     <InsertItemTemplate>
-        Fileno:
-        <asp:TextBox ID="FilenoTextBox" runat="server" Text='<%# Bind("Fileno") %>' />
-        <br />
-        SpecialCivilApplNo:
-        <asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" 
-            Text='<%# Bind("SpecialCivilApplNo") %>' />
-        <br />
-        DistrictOfficeName:
-        <asp:TextBox ID="DistrictOfficeNameTextBox" runat="server" 
-            Text='<%# Bind("DistrictOfficeName") %>' />
-        <br />
-        PetitionerName:
-        <asp:TextBox ID="PetitionerNameTextBox" runat="server" 
-            Text='<%# Bind("PetitionerName") %>' />
-        <br />
-        PetitionReason:
-        <asp:TextBox ID="PetitionReasonTextBox" runat="server" 
-            Text='<%# Bind("PetitionReason") %>' />
-        <br />
-        Parawiseremarks:
-        <asp:CheckBox ID="ParawiseremarksCheckBox" runat="server" 
-            Checked='<%# Bind("Parawiseremarks") %>' />
-        <br />
-        Parawiseremarksdate:
-        <asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
-            Text='<%# Bind("Parawiseremarksdate") %>' />
-        <br />
-        Affidavit:
-        <asp:CheckBox ID="AffidavitCheckBox" runat="server" 
-            Checked='<%# Bind("Affidavit") %>' />
-        <br />
-        Affidavitdate:
-        <asp:TextBox ID="AffidavitdateTextBox" runat="server" 
-            Text='<%# Bind("Affidavitdate") %>' />
-        <br />
-        LatestStatus:
-        <asp:TextBox ID="LatestStatusTextBox" runat="server" 
-            Text='<%# Bind("LatestStatus") %>' />
-        <br />
-        PetitionDispoasedYear:
-        <asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" 
-            Text='<%# Bind("PetitionDispoasedYear") %>' />
-        <br />
-        DisposalDate:
-        <asp:TextBox ID="DisposalDateTextBox" runat="server" 
-            Text='<%# Bind("DisposalDate") %>' />
-        <br />
-        OrderJudgementSheet:
-        <asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
-            Text='<%# Bind("OrderJudgementSheet") %>' />
-        <br />
-        JudgementDetail:
-        <asp:TextBox ID="JudgementDetailTextBox" runat="server" 
-            Text='<%# Bind("JudgementDetail") %>' />
-        <br />
-        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-            CommandName="Insert" Text="Insert" />
+                    <table>
+        <tr>
+		    <td>File No:</td>
+			<td><asp:TextBox ID="FilenoTextBox" runat="server" Text='<%# Bind("Fileno") %>' 
+                    Width="160px" /></td>
+			
+			<td>Affidavit Sent Or Not:</td>
+			<td>
+                <asp:RadioButtonList ID="Radio_affidavit" runat="server" 
+                    RepeatDirection="Horizontal" Width="160px">
+                    <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
+                    <asp:ListItem Text="No" Value="False"></asp:ListItem>
+                </asp:RadioButtonList>
+            </td>
+		</tr>		
+        
+        <tr>
+		    <td>Special Civil Application No:</td>
+			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" 
+            Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" /></td>
+			
+			<td>Affidavit Date:</td>
+			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
+            Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
+		</tr>       
+        
+        <tr>
+		    <td>Name Of District Office:</td>
+			<td>
+                <asp:DropDownList ID="Drop_officename" runat="server" 
+                    DataSourceID="ods_offices" DataTextField="OfficeName" 
+                    DataValueField="OfficeName" Width="160px">
+                </asp:DropDownList>
+            </td>
+			
+			<td>Latest Status:</td>
+			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" 
+            Text='<%# Bind("LatestStatus") %>' Width="160px" /></td>
+		</tr>       
+        
+        <tr>
+		    <td>Petitioner Name:</td>
+			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" 
+            Text='<%# Bind("PetitionerName") %>' Width="160px" /></td>
+			
+			<td>Petition Disposed Year:</td>
+			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" 
+            Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		   <td>Reason Of Petition:</td>
+		   <td><asp:TextBox ID="PetitionReasonTextBox" runat="server" 
+            Text='<%# Bind("PetitionReason") %>' Height="60px" Width="160px" /></td>
+		   
+		   <td>Disposal Date:</td>
+		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
+            Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		   <td>Parawise Remarks Sent Or Not:</td>
+		   <td>
+               <asp:RadioButtonList ID="Radio_parawisermrksent" runat="server" 
+                   RepeatDirection="Horizontal" Width="160px">
+                   <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
+                   <asp:ListItem Text="No" Value="False"></asp:ListItem>
+               </asp:RadioButtonList>
+            </td>
+		   
+		   <td>Order Judgement Sheet:</td>
+		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
+            Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" /></td>
+		</tr>       
+        
+        <tr>
+		    <td>Parawise Remarks Sent Date:</td>
+			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
+            Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
+			
+			<td>Judgement Detail:</td>
+			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 
+            Text='<%# Bind("JudgementDetail") %>' Height="60px" Width="160px" /></td>
+		</tr>       
+        
+        <tr><td align="center" colspan=4>
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+            CommandName="Insert" Text="Insert" CssClass="standardButton" />
+		&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+            CausesValidation="False" CommandName="Reset" Text="Reset" 
+                CssClass="standardButton" onclientclick="resetTextFields();return false;" />
         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            CausesValidation="False" CommandName="Back" Text="Back" 
+                CssClass="standardButton" /></td>
+		</tr>
+    </table>
     </InsertItemTemplate>
     <ItemTemplate>
         SrNo:
@@ -287,25 +385,13 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_HighCourtReg" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetDataBy" 
+    <asp:ObjectDataSource ID="ods_HighCourtReg" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.HighCourtRegTableAdapters.HighcourtRegTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_HighCourtReg_Selecting">
+        UpdateMethod="UpdateQuery" onselecting="ods_HighCourtReg_Selecting" 
+        ondeleting="ods_HighCourtReg_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Fileno" Type="Int32" />
-            <asp:Parameter Name="Original_SpecialCivilApplNo" Type="Int32" />
-            <asp:Parameter Name="Original_DistrictOfficeName" Type="String" />
-            <asp:Parameter Name="Original_PetitionerName" Type="String" />
-            <asp:Parameter Name="Original_Parawiseremarks" Type="Boolean" />
-            <asp:Parameter Name="Original_Parawiseremarksdate" Type="DateTime" />
-            <asp:Parameter Name="Original_Affidavit" Type="Boolean" />
-            <asp:Parameter Name="Original_Affidavitdate" Type="DateTime" />
-            <asp:Parameter Name="Original_LatestStatus" Type="String" />
-            <asp:Parameter Name="Original_PetitionDispoasedYear" Type="Int32" />
-            <asp:Parameter Name="Original_DisposalDate" Type="DateTime" />
-            <asp:Parameter Name="Original_OrderJudgementSheet" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Fileno" Type="Int32" />
@@ -342,19 +428,6 @@
             <asp:Parameter Name="DisposalDate" Type="DateTime" />
             <asp:Parameter Name="OrderJudgementSheet" Type="String" />
             <asp:Parameter Name="JudgementDetail" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Fileno" Type="Int32" />
-            <asp:Parameter Name="Original_SpecialCivilApplNo" Type="Int32" />
-            <asp:Parameter Name="Original_DistrictOfficeName" Type="String" />
-            <asp:Parameter Name="Original_PetitionerName" Type="String" />
-            <asp:Parameter Name="Original_Parawiseremarks" Type="Boolean" />
-            <asp:Parameter Name="Original_Parawiseremarksdate" Type="DateTime" />
-            <asp:Parameter Name="Original_Affidavit" Type="Boolean" />
-            <asp:Parameter Name="Original_Affidavitdate" Type="DateTime" />
-            <asp:Parameter Name="Original_LatestStatus" Type="String" />
-            <asp:Parameter Name="Original_PetitionDispoasedYear" Type="Int32" />
-            <asp:Parameter Name="Original_DisposalDate" Type="DateTime" />
-            <asp:Parameter Name="Original_OrderJudgementSheet" Type="String" />
             <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>

@@ -47,4 +47,61 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
                break;
         }
     }
+    protected void GridView_Inquiry_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView_Inquiry_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView_Inquiry.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView_Inquiry.DataKeys[e.RowIndex].Value;
+        ods_Inquiry.Delete();
+    }
+    protected void GridView_Inquiry_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        Multiview_Inquiry.SetActiveView(Formview);
+        FormView_Inquiry.PageIndex = e.NewEditIndex;
+        FormView_Inquiry.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+    }
+    protected void FormView_Inquiry_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FormView_Inquiry_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void ods_Inquiry_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
+    }
+
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
+    }
 }

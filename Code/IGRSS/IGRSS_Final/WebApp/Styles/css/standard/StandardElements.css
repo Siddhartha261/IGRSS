@@ -29,3 +29,16 @@
 	position:relative;
 	top:1px;
 }
+
+.infoBar{
+background-color: #FEDB9C;
+background-color: #FEDB9C;
+color: orange;
+background-color: #FEDB9C;
+border: 1px;
+border-color: #FEDB9C;
+border-style: solid;
+background: #FEDB9C;
+width: 320px;
+padding: 3;
+}

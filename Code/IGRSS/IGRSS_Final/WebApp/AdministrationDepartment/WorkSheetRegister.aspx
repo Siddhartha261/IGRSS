@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="server">
-<script language="javascript">
+&nbsp;<script language="javascript">
 
    
 
@@ -44,6 +44,12 @@
         }
     });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="MultiView_worksheet" runat="server" ActiveViewIndex="0">
 <asp:View ID="viewGrid" runat="server">
 <h1>WORKSHEET REGISTER</h1>
@@ -55,8 +61,8 @@
                     </td>
                 <td>
                     <asp:TextBox ID="txtFileNo" runat="server" MaxLength="15" 
-                        meta:resourcekey="txtFileNoResource1" Width="160px" 
-                        ontextchanged="txtFileNo_TextChanged"></asp:TextBox> 
+                        meta:resourcekey="txtFileNoResource1" Width="160px" >
+                        </asp:TextBox> 
                 </td>
                 <td>
                     <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search" 
@@ -67,7 +73,10 @@
         <td align="right" colspan="3">
             <asp:GridView ID="GridView_worksheet" runat="server" AllowPaging="True" 
                 AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" 
-                DataSourceID="ods_worksheet" EnableModelValidation="True">
+                DataSourceID="ods_worksheet" EnableModelValidation="True" 
+                onrowdeleted="GridView_worksheet_RowDeleted" 
+                onrowdeleting="GridView_worksheet_RowDeleting" 
+                onrowediting="GridView_worksheet_RowEditing">
                 <Columns>
                     <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" 
                         SortExpression="ID" Visible="False" InsertVisible="False" />
@@ -81,6 +90,22 @@
                         SortExpression="Letter_Details" Visible="False" />
                     <asp:BoundField DataField="Work_Disposal_Date" HeaderText="Work Disposal Date" 
                         SortExpression="Work_Disposal_Date" />
+                   <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </td>
@@ -97,20 +122,14 @@
 <asp:View ID="Worksheetregister" runat="server">
 <h1>WORKSHEET REGISTER</h1>
 
-    <asp:ObjectDataSource ID="ods_worksheet" runat="server" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetDataBy" 
+    <asp:ObjectDataSource ID="ods_worksheet" runat="server" SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.WorksheetregisterTableAdapters.WorkSheetRegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_worksheet_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_worksheet_Selecting" ondeleting="ods_worksheet_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_ID" Type="Int32" />
-            <asp:Parameter Name="Original_WorkSheet_No" Type="Int32" />
-            <asp:Parameter Name="Original_Inward_No" Type="String" />
-            <asp:Parameter Name="Original_Name_Of_Person" Type="String" />
-            <asp:Parameter Name="Original_Letter_Details" Type="String" />
-            <asp:Parameter Name="Original_Work_Disposal_Date" Type="DateTime" />
+            <asp:Parameter Name="ID" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="WorkSheet_No" Type="Int32" />
@@ -128,13 +147,8 @@
             <asp:Parameter Name="Inward_No" Type="String" />
             <asp:Parameter Name="Name_Of_Person" Type="String" />
             <asp:Parameter Name="Letter_Details" Type="String" />
-            <asp:Parameter Name="Work_Disposal_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_ID" Type="Int32" />
-            <asp:Parameter Name="Original_WorkSheet_No" Type="Int32" />
-            <asp:Parameter Name="Original_Inward_No" Type="String" />
-            <asp:Parameter Name="Original_Name_Of_Person" Type="String" />
-            <asp:Parameter Name="Original_Letter_Details" Type="String" />
-            <asp:Parameter Name="Original_Work_Disposal_Date" Type="DateTime" />
+            <asp:Parameter Name="Work_Disposal_Date" Type="String" />
+            <asp:Parameter Name="ID" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <center>

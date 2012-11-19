@@ -43,7 +43,13 @@
         }
     });
 </script>
-<asp:MultiView ID="Multiview_RTI" runat="server" ActiveViewIndex="0">
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
+<asp:MultiView ID="MultiView_RTI" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
 <h1>RTI Appeal Register</h1>
@@ -54,20 +60,22 @@
                             meta:resourcekey="lblllsResource1"></asp:Label></td>
                     <td align="left" >
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1" ontextchanged="txtFileNo_TextChanged"></asp:TextBox></td>
+                            meta:resourcekey="txtFileNoResource1"></asp:TextBox></td>
                         <td align="right">
                         <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
-                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
+                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" 
+                                 />
                     </td>
           </tr>
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_RTI" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="Sr_No" DataSourceID="ods_RTI" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" onrowdeleted="GridView_RTI_RowDeleted" 
+                      onrowdeleting="GridView_RTI_RowDeleting" onrowediting="GridView_RTI_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="Sr_No" HeaderText="Sr_No" 
-                              ReadOnly="True" SortExpression="Sr_No" />
+                              ReadOnly="True" SortExpression="Sr_No" InsertVisible="False" />
                           <asp:BoundField DataField="Appl_name" HeaderText="Appl_name" 
                               SortExpression="Appl_name" />
                           <asp:BoundField DataField="Appl_surname" HeaderText="Appl_surname" 
@@ -82,6 +90,22 @@
                               SortExpression="Last_Date" />
                           <asp:BoundField DataField="Decision_Taken" HeaderText="Decision_Taken" 
                               SortExpression="Decision_Taken" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -95,9 +119,10 @@
 <center>
 <h1>RTI Appeal Register</h1>
 <asp:FormView ID="FormView_RTI" runat="server" DataKeyNames="Sr_No" 
-        DataSourceID="ods_RTI" EnableModelValidation="True" DefaultMode="Insert" 
-        Width="50%" oniteminserting="FormView_RTI_ItemInserting" 
-        onitemcommand="FormView_RTI_ItemCommand">
+        DataSourceID="ods_RTI" EnableModelValidation="True" DefaultMode="Insert" oniteminserting="FormView_RTI_ItemInserting" 
+        onitemcommand="FormView_RTI_ItemCommand" 
+        oniteminserted="FormView_RTI_ItemInserted" 
+        onitemupdated="FormView_RTI_ItemUpdated">
         <EditItemTemplate>
             <table>
 		<%--<tr><td>Sr_No:</td>
@@ -135,7 +160,7 @@
 		</tr>	
             
             
-        <tr><td>Decision Taken By:</td>
+        <tr><td>Decision Taken By</td>
 		    <td>
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
@@ -157,7 +182,7 @@
                 CssClass="standardButton" />
 			</td>
 		</tr>
-	</table>	
+	</table>
       			
             
 											
@@ -222,7 +247,7 @@
                 CssClass="standardButton" />
 			</td>
 		</tr>
-	</table>	
+	</table>
         </InsertItemTemplate>
         <ItemTemplate>
             Sr_No:
@@ -265,23 +290,15 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_RTI" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetDataBy" 
+    <asp:ObjectDataSource ID="ods_RTI" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.RTITableAdapters.RTITableAdapter" 
-        UpdateMethod="Update" onselecting="ods_RTI_Selecting">
+        UpdateMethod="UpdateQuery" onselecting="ods_RTI_Selecting" 
+        ondeleting="ods_RTI_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_Sr_No" Type="Int32" />
-            <asp:Parameter Name="Original_Appl_name" Type="String" />
-            <asp:Parameter Name="Original_Appl_surname" Type="String" />
-            <asp:Parameter Name="Original_Appl_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_PIO_desig" Type="String" />
-            <asp:Parameter Name="Original_PIO_date" Type="DateTime" />
-            <asp:Parameter Name="Original_Last_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Decision_Taken" Type="String" />
+            <asp:Parameter Name="Sr_No" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter Name="Sr_No" Type="Int32" />
             <asp:Parameter Name="Appl_name" Type="String" />
             <asp:Parameter Name="Appl_surname" Type="String" />
             <asp:Parameter Name="Appl_Date" Type="DateTime" />
@@ -295,7 +312,6 @@
                 PropertyName="Text" Type="String" />
         </SelectParameters>
         <UpdateParameters>
-            <asp:Parameter Name="Sr_No" Type="Int32" />
             <asp:Parameter Name="Appl_name" Type="String" />
             <asp:Parameter Name="Appl_surname" Type="String" />
             <asp:Parameter Name="Appl_Date" Type="DateTime" />
@@ -303,14 +319,7 @@
             <asp:Parameter Name="PIO_date" Type="DateTime" />
             <asp:Parameter Name="Last_Date" Type="DateTime" />
             <asp:Parameter Name="Decision_Taken" Type="String" />
-            <asp:Parameter Name="Original_Sr_No" Type="Int32" />
-            <asp:Parameter Name="Original_Appl_name" Type="String" />
-            <asp:Parameter Name="Original_Appl_surname" Type="String" />
-            <asp:Parameter Name="Original_Appl_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_PIO_desig" Type="String" />
-            <asp:Parameter Name="Original_PIO_date" Type="DateTime" />
-            <asp:Parameter Name="Original_Last_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Decision_Taken" Type="String" />
+            <asp:Parameter Name="Sr_No" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    
