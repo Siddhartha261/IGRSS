@@ -31,6 +31,7 @@ public partial class CCRALegal_SunavniRegister : System.Web.UI.Page
             case "Back":
                 Multiview_SunavniRegister.SetActiveView(ViewGrid);
                 GridView_SunavniRegister.DataBind();
+                infoDiv.Visible = false;
                 break;
         }
     }
@@ -38,5 +39,69 @@ public partial class CCRALegal_SunavniRegister : System.Web.UI.Page
     {
         e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
         ods_SunavniRegister.SelectMethod = "GetDataBy";
+    }
+    protected void GridView_SunavniRegister_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView_SunavniRegister_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView_SunavniRegister.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView_SunavniRegister.DataKeys[e.RowIndex].Value;
+        ods_SunavniRegister.Delete();
+    }
+    protected void GridView_SunavniRegister_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        Multiview_SunavniRegister.SetActiveView(Formview);
+        FormView_SunavniRegister.PageIndex = e.NewEditIndex;
+        FormView_SunavniRegister.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+    }
+    protected void FormView_SunavniRegister_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FormView_SunavniRegister_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void ods_SunavniRegister_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
+    }
+
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
+    }
+    protected void FormView_SunavniRegister_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        DropDownList DropDownList_AppealNo = FormView_SunavniRegister.FindControl("DropDownList_AppealNo") as DropDownList;
+        e.NewValues["AppealNo"] = DropDownList_AppealNo.SelectedValue;
+
+        DropDownList DropDownList_Versus = FormView_SunavniRegister.FindControl("DropDownList_EmployeeName") as DropDownList;
+        e.NewValues["Versus"] = DropDownList_Versus.SelectedValue;
     }
 }

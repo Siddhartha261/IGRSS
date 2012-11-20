@@ -20,6 +20,13 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
+
 <asp:MultiView ID="Multiview_Departmental_Inquiry_Register" runat="server" 
         ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
@@ -70,6 +77,22 @@
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>

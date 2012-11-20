@@ -45,6 +45,12 @@
         });
     });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_AppealRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
@@ -66,37 +72,56 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_AppealRegister" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_AppealRegister" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_AppealRegister_RowDeleted" 
+                      onrowdeleting="GridView_AppealRegister_RowDeleting" 
+                      onrowediting="GridView_AppealRegister_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
+                              ReadOnly="True" SortExpression="SrNo" />
+                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="KacheriOffice" HeaderText="Kacheri/Office" 
+                          <asp:BoundField DataField="KacheriOffice" HeaderText="KacheriOffice" 
                               SortExpression="KacheriOffice" />
-                          <asp:BoundField DataField="DocumentNo" HeaderText="Document No" 
+                          <asp:BoundField DataField="DocumentNo" HeaderText="DocumentNo" 
                               SortExpression="DocumentNo" />
                           <asp:BoundField DataField="Year" HeaderText="Year" 
                               SortExpression="Year" />
-                          <asp:BoundField DataField="NameOfApplicant" HeaderText="Name Of Applicant" 
+                          <asp:BoundField DataField="NameOfApplicant" HeaderText="NameOfApplicant" 
                               SortExpression="NameOfApplicant" />
                           <asp:BoundField DataField="Versus" HeaderText="Versus" 
                               SortExpression="Versus" />
-                          <asp:BoundField DataField="DeficitStampDuty" HeaderText="Deficit Stamp Duty" 
+                          <asp:BoundField DataField="DeficitStampDuty" HeaderText="DeficitStampDuty" 
                               SortExpression="DeficitStampDuty" />
-                          <asp:BoundField DataField="TotalStampDuty" HeaderText="Total Stamp Duty" 
+                          <asp:BoundField DataField="TotalStampDuty" HeaderText="TotalStampDuty" 
                               SortExpression="TotalStampDuty" />
                           <asp:CheckBoxField DataField="Continue_remand" HeaderText="Continue_remand" 
-                              SortExpression="Continue_remand" Visible="False" />
+                              SortExpression="Continue_remand" />
                           <asp:BoundField DataField="Result" HeaderText="Result" 
-                              SortExpression="Result" Visible="False" />
+                              SortExpression="Result" />
                           <asp:BoundField DataField="OutwardNo" 
-                              HeaderText="Outward No" 
+                              HeaderText="OutwardNo" 
                               SortExpression="OutwardNo" />
                           <asp:BoundField DataField="Date" HeaderText="Date" 
                               SortExpression="Date" />
-                          <asp:BoundField DataField="AGYear" HeaderText="AG Year" 
+                          <asp:BoundField DataField="AGYear" HeaderText="AGYear" 
                               SortExpression="AGYear" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -112,7 +137,9 @@
 <asp:FormView ID="FormView_AppealRegister" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_AppealRegister" EnableModelValidation="True" 
         DefaultMode="Insert" oniteminserting="FormView_AppealRegister_ItemInserting" 
-        onitemcommand="FormView_AppealRegister_ItemCommand" >
+        onitemcommand="FormView_AppealRegister_ItemCommand" 
+        oniteminserted="FormView_AppealRegister_ItemInserted" 
+        onitemupdated="FormView_AppealRegister_ItemUpdated" >
         <EditItemTemplate>
                     <table>
 	    <tr>
@@ -209,7 +236,7 @@
                     CausesValidation="False" CommandName="Back" Text="Back" 
                     CssClass="standardButton" /></td>
 		</tr>	
-    </table>			
+    </table>
             
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -308,7 +335,7 @@
                     CausesValidation="False" CommandName="Back" Text="Back" 
                     CssClass="standardButton" /></td>
 		</tr>	
-    </table>			
+    </table>
             
         </InsertItemTemplate>
         <ItemTemplate>
@@ -374,26 +401,13 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_AppealRegister" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetDataBy" 
+    <asp:ObjectDataSource ID="ods_AppealRegister" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.AppealRegisterTableAdapters.AppealRegisterTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_AppealRegister_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_AppealRegister_Selecting" 
+        ondeleting="ods_AppealRegister_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_KacheriOffice" Type="String" />
-            <asp:Parameter Name="Original_DocumentNo" Type="Int32" />
-            <asp:Parameter Name="Original_Year" Type="Int32" />
-            <asp:Parameter Name="Original_NameOfApplicant" Type="String" />
-            <asp:Parameter Name="Original_Versus" Type="String" />
-            <asp:Parameter Name="Original_DeficitStampDuty" Type="Decimal" />
-            <asp:Parameter Name="Original_TotalStampDuty" Type="Decimal" />
-            <asp:Parameter Name="Original_Continue_remand" Type="Boolean" />
-            <asp:Parameter Name="Original_Result" Type="String" />
-            <asp:Parameter Name="Original_OutwardNo" Type="String" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_AGYear" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="FileNo" Type="Int32" />
@@ -428,20 +442,7 @@
             <asp:Parameter Name="OutwardNo" Type="String" />
             <asp:Parameter Name="Date" Type="DateTime" />
             <asp:Parameter Name="AGYear" Type="Int32" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_KacheriOffice" Type="String" />
-            <asp:Parameter Name="Original_DocumentNo" Type="Int32" />
-            <asp:Parameter Name="Original_Year" Type="Int32" />
-            <asp:Parameter Name="Original_NameOfApplicant" Type="String" />
-            <asp:Parameter Name="Original_Versus" Type="String" />
-            <asp:Parameter Name="Original_DeficitStampDuty" Type="Decimal" />
-            <asp:Parameter Name="Original_TotalStampDuty" Type="Decimal" />
-            <asp:Parameter Name="Original_Continue_remand" Type="Boolean" />
-            <asp:Parameter Name="Original_Result" Type="String" />
-            <asp:Parameter Name="Original_OutwardNo" Type="String" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_AGYear" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_OfficesMaster" runat="server" 

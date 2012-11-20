@@ -46,12 +46,14 @@
 <br />
 <br />
 <center>
-<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+    <asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >
+        <asp:Label ID="lblMsg" runat="server"></asp:Label>
+    </asp:Panel>
 <hr /><br />
 </center>
 <asp:MultiView ID="MultiView_RTI" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
-<hr /><br />
+<br />
 <h1>RTI Appeal Register</h1>
 <table>
           <tr>
@@ -75,20 +77,21 @@
                       onrowdeleting="GridView_RTI_RowDeleting" onrowediting="GridView_RTI_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="Sr_No" HeaderText="Sr_No" 
-                              ReadOnly="True" SortExpression="Sr_No" InsertVisible="False" />
-                          <asp:BoundField DataField="Appl_name" HeaderText="Appl_name" 
+                              ReadOnly="True" SortExpression="Sr_No" InsertVisible="False" 
+                              Visible="False" />
+                          <asp:BoundField DataField="Appl_name" HeaderText="Applicant Name" 
                               SortExpression="Appl_name" />
-                          <asp:BoundField DataField="Appl_surname" HeaderText="Appl_surname" 
+                          <asp:BoundField DataField="Appl_surname" HeaderText="Applicant Surname" 
                               SortExpression="Appl_surname" />
-                          <asp:BoundField DataField="Appl_Date" HeaderText="Appl_Date" 
+                          <asp:BoundField DataField="Appl_Date" HeaderText="Application Date" 
                               SortExpression="Appl_Date" />
-                          <asp:BoundField DataField="PIO_desig" HeaderText="PIO_desig" 
+                          <asp:BoundField DataField="PIO_desig" HeaderText="PIO Designation" 
                               SortExpression="PIO_desig" />
-                          <asp:BoundField DataField="PIO_date" HeaderText="PIO_date" 
+                          <asp:BoundField DataField="PIO_date" HeaderText="PIO Date" 
                               SortExpression="PIO_date" />
-                          <asp:BoundField DataField="Last_Date" HeaderText="Last_Date" 
+                          <asp:BoundField DataField="Last_Date" HeaderText="Last Date " 
                               SortExpression="Last_Date" />
-                          <asp:BoundField DataField="Decision_Taken" HeaderText="Decision_Taken" 
+                          <asp:BoundField DataField="Decision_Taken" HeaderText="Decision" 
                               SortExpression="Decision_Taken" />
                           <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
@@ -122,7 +125,8 @@
         DataSourceID="ods_RTI" EnableModelValidation="True" DefaultMode="Insert" oniteminserting="FormView_RTI_ItemInserting" 
         onitemcommand="FormView_RTI_ItemCommand" 
         oniteminserted="FormView_RTI_ItemInserted" 
-        onitemupdated="FormView_RTI_ItemUpdated">
+        onitemupdated="FormView_RTI_ItemUpdated" 
+        onitemupdating="FormView_RTI_ItemUpdating">
         <EditItemTemplate>
             <table>
 		<%--<tr><td>Sr_No:</td>

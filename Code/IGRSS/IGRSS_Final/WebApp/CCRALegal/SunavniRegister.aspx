@@ -20,6 +20,12 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_SunavniRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
@@ -41,7 +47,10 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_SunavniRegister" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_SunavniRegister" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_SunavniRegister_RowDeleted" 
+                      onrowdeleting="GridView_SunavniRegister_RowDeleting" 
+                      onrowediting="GridView_SunavniRegister_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
@@ -58,7 +67,23 @@
                           <asp:BoundField DataField="DateOfHearing" HeaderText="Date Of Hearing" 
                               SortExpression="DateOfHearing" />
                           <asp:BoundField DataField="Result" HeaderText="Result" 
-                              SortExpression="Result" Visible="False" />
+                              SortExpression="Result" />
+                           <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -74,7 +99,10 @@
 <asp:FormView ID="FormView_SunavniRegister" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_SunavniRegister" EnableModelValidation="True" DefaultMode="Insert" 
         Width="50%" oniteminserting="FormView_SunavniRegister_ItemInserting" 
-        onitemcommand="FormView_SunavniRegister_ItemCommand" >
+        onitemcommand="FormView_SunavniRegister_ItemCommand" 
+        oniteminserted="FormView_SunavniRegister_ItemInserted" 
+        onitemupdated="FormView_SunavniRegister_ItemUpdated" 
+        onitemupdating="FormView_SunavniRegister_ItemUpdating" >
         <EditItemTemplate>
                            <table>
 		    <tr>
@@ -103,8 +131,8 @@
 			    <td>Versus:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
-                        DataSourceID="ods_EmployeeName" DataTextField="NameOfEmployee" 
-                        DataValueField="NameOfEmployee" Width="160px">
+                        DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
+                        DataValueField="FirstName" Width="160px">
                     </asp:DropDownList>
                 </td>
 			</tr>                  
@@ -139,7 +167,7 @@
                         CssClass="standardButton" />
 				</td>
 			</tr>                    
-		</table>				
+		</table>
             
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -170,8 +198,8 @@
 			    <td>Versus:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
-                        DataSourceID="ods_EmployeeName" DataTextField="NameOfEmployee" 
-                        DataValueField="NameOfEmployee" Width="160px">
+                        DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
+                        DataValueField="FirstName" Width="160px">
                     </asp:DropDownList>
                 </td>
 			</tr>                  
@@ -206,7 +234,7 @@
                         CssClass="standardButton" />
 				</td>
 			</tr>                    
-		</table>				
+		</table>
             
         </InsertItemTemplate>
         <ItemTemplate>
@@ -249,20 +277,13 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_SunavniRegister" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetDataBy" 
+    <asp:ObjectDataSource ID="ods_SunavniRegister" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.SunavniRegisterTableAdapters.SunavniRegisterTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_SunavniRegister_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_SunavniRegister_Selecting" 
+        ondeleting="ods_SunavniRegister_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_AppealNo" Type="Int32" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_NameOfPetitioner" Type="String" />
-            <asp:Parameter Name="Original_Versus" Type="String" />
-            <asp:Parameter Name="Original_IssueDateOfLetter" Type="DateTime" />
-            <asp:Parameter Name="Original_DateOfHearing" Type="DateTime" />
-            <asp:Parameter Name="Original_Result" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="AppealNo" Type="Int32" />
@@ -285,127 +306,28 @@
             <asp:Parameter Name="IssueDateOfLetter" Type="DateTime" />
             <asp:Parameter Name="DateOfHearing" Type="DateTime" />
             <asp:Parameter Name="Result" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_AppealNo" Type="Int32" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_NameOfPetitioner" Type="String" />
-            <asp:Parameter Name="Original_Versus" Type="String" />
-            <asp:Parameter Name="Original_IssueDateOfLetter" Type="DateTime" />
-            <asp:Parameter Name="Original_DateOfHearing" Type="DateTime" />
-            <asp:Parameter Name="Original_Result" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_EmployeeName" runat="server" 
-        OldValuesParameterFormatString="original_{0}" SelectMethod="GetEmployeeMaster" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
         
         
-        TypeName="IGRSS.DataAccessLayer.EmployeeTableAdapters.EmployeeMasterTableAdapter" 
+        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter" 
         DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
         <DeleteParameters>
             <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
-            <asp:Parameter Name="Original_EmployeeNo" Type="String" />
             <asp:Parameter Name="Original_FirstName" Type="String" />
-            <asp:Parameter Name="Original_MiddleName" Type="String" />
-            <asp:Parameter Name="Original_LastName" Type="String" />
-            <asp:Parameter Name="Original_PostalAddress" Type="String" />
-            <asp:Parameter Name="Original_PermanentAddress" Type="String" />
-            <asp:Parameter Name="Original_DateOfBirth" Type="DateTime" />
-            <asp:Parameter Name="Original_FatherName" Type="String" />
-            <asp:Parameter Name="Original_Height" Type="Decimal" />
-            <asp:Parameter Name="Original_VisibleMarks" Type="String" />
-            <asp:Parameter DbType="Guid" Name="Original_OfficeId" />
-            <asp:Parameter Name="Original_DepartmentID" DbType="Guid" />
-            <asp:Parameter DbType="Guid" Name="Original_DesignationID" />
-            <asp:Parameter Name="Original_Salary" Type="Decimal" />
-            <asp:Parameter Name="Original_Allowances" Type="Decimal" />
-            <asp:Parameter Name="Original_StartDate" Type="DateTime" />
-            <asp:Parameter Name="Original_EndDate" Type="DateTime" />
-            <asp:Parameter Name="Original_CreatedBy" Type="String" />
-            <asp:Parameter Name="Original_CreatedAt" Type="DateTime" />
-            <asp:Parameter Name="Original_ModifiedBy" Type="String" />
-            <asp:Parameter Name="Original_ModifiedAt" Type="DateTime" />
-            <asp:Parameter Name="Original_IsDeleted" Type="Boolean" />
-            <asp:Parameter Name="Original_DeletedBy" Type="String" />
-            <asp:Parameter Name="Original_DeletedAt" Type="DateTime" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter DbType="Guid" Name="EmployeeID" />
-            <asp:Parameter Name="EmployeeNo" Type="String" />
             <asp:Parameter Name="FirstName" Type="String" />
-            <asp:Parameter Name="MiddleName" Type="String" />
-            <asp:Parameter Name="LastName" Type="String" />
-            <asp:Parameter Name="PostalAddress" Type="String" />
-            <asp:Parameter Name="PermanentAddress" Type="String" />
-            <asp:Parameter Name="DateOfBirth" Type="DateTime" />
-            <asp:Parameter Name="FatherName" Type="String" />
-            <asp:Parameter Name="Height" Type="Decimal" />
-            <asp:Parameter Name="VisibleMarks" Type="String" />
-            <asp:Parameter DbType="Guid" Name="OfficeId" />
-            <asp:Parameter Name="DepartmentID" DbType="Guid" />
-            <asp:Parameter DbType="Guid" Name="DesignationID" />
-            <asp:Parameter Name="Salary" Type="Decimal" />
-            <asp:Parameter Name="Allowances" Type="Decimal" />
-            <asp:Parameter Name="StartDate" Type="DateTime" />
-            <asp:Parameter Name="EndDate" Type="DateTime" />
-            <asp:Parameter Name="CreatedBy" Type="String" />
-            <asp:Parameter Name="CreatedAt" Type="DateTime" />
-            <asp:Parameter Name="ModifiedBy" Type="String" />
-            <asp:Parameter Name="ModifiedAt" Type="DateTime" />
-            <asp:Parameter Name="IsDeleted" Type="Boolean" />
-            <asp:Parameter Name="DeletedBy" Type="String" />
-            <asp:Parameter Name="DeletedAt" Type="DateTime" />
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="EmployeeID" DbType="Guid" />
-            <asp:Parameter Name="EmployeeNo" Type="String" />
             <asp:Parameter Name="FirstName" Type="String" />
-            <asp:Parameter Name="MiddleName" Type="String" />
-            <asp:Parameter Name="LastName" Type="String" />
-            <asp:Parameter Name="PostalAddress" Type="String" />
-            <asp:Parameter Name="PermanentAddress" Type="String" />
-            <asp:Parameter Name="DateOfBirth" Type="DateTime" />
-            <asp:Parameter Name="FatherName" Type="String" />
-            <asp:Parameter Name="Height" Type="Decimal" />
-            <asp:Parameter Name="VisibleMarks" Type="String" />
-            <asp:Parameter DbType="Guid" Name="OfficeID" />
-            <asp:Parameter DbType="Guid" Name="DepartmentID" />
-            <asp:Parameter DbType="Guid" Name="DesignationID" />
-            <asp:Parameter Name="Salary" Type="Decimal" />
-            <asp:Parameter Name="Allowances" Type="Decimal" />
-            <asp:Parameter Name="StartDate" Type="DateTime" />
-            <asp:Parameter Name="EndDate" Type="DateTime" />
-            <asp:Parameter Name="CreatedBy" Type="String" />
-            <asp:Parameter Name="CreatedAt" Type="DateTime" />
-            <asp:Parameter Name="ModifiedBy" Type="String" />
-            <asp:Parameter Name="ModifiedAt" Type="DateTime" />
-            <asp:Parameter Name="IsDeleted" Type="Boolean" />
-            <asp:Parameter Name="DeletedBy" Type="String" />
-            <asp:Parameter Name="DeletedAt" Type="DateTime" />
             <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
-            <asp:Parameter Name="Original_EmployeeNo" Type="String" />
             <asp:Parameter Name="Original_FirstName" Type="String" />
-            <asp:Parameter Name="Original_MiddleName" Type="String" />
-            <asp:Parameter Name="Original_LastName" Type="String" />
-            <asp:Parameter Name="Original_PostalAddress" Type="String" />
-            <asp:Parameter Name="Original_PermanentAddress" Type="String" />
-            <asp:Parameter Name="Original_DateOfBirth" Type="DateTime" />
-            <asp:Parameter Name="Original_FatherName" Type="String" />
-            <asp:Parameter Name="Original_Height" Type="Decimal" />
-            <asp:Parameter Name="Original_VisibleMarks" Type="String" />
-            <asp:Parameter DbType="Guid" Name="Original_OfficeId" />
-            <asp:Parameter Name="Original_DepartmentID" DbType="Guid" />
-            <asp:Parameter DbType="Guid" Name="Original_DesignationID" />
-            <asp:Parameter Name="Original_Salary" Type="Decimal" />
-            <asp:Parameter Name="Original_Allowances" Type="Decimal" />
-            <asp:Parameter Name="Original_StartDate" Type="DateTime" />
-            <asp:Parameter Name="Original_EndDate" Type="DateTime" />
-            <asp:Parameter Name="Original_CreatedBy" Type="String" />
-            <asp:Parameter Name="Original_CreatedAt" Type="DateTime" />
-            <asp:Parameter Name="Original_ModifiedBy" Type="String" />
-            <asp:Parameter Name="Original_ModifiedAt" Type="DateTime" />
-            <asp:Parameter Name="Original_IsDeleted" Type="Boolean" />
-            <asp:Parameter Name="Original_DeletedBy" Type="String" />
-            <asp:Parameter Name="Original_DeletedAt" Type="DateTime" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_AppealNo" runat="server" 

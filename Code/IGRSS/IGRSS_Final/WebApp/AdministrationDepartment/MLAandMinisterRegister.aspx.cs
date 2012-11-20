@@ -40,6 +40,7 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
             case "Back":
                 Multiview_MLA.SetActiveView(ViewGrid);
                 GridView_MLA.DataBind();
+                infoDiv.Visible = false;
                 break;
         }
     }
@@ -98,5 +99,10 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
     {
         lblMsg.Text = message;
         infoDiv.Visible = true;
+    }
+    protected void FormView_MLA_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        DropDownList dropDownOffice = FormView_MLA.FindControl("Drop_departmentname") as DropDownList;
+        e.NewValues["DepartmentName"] = dropDownOffice.SelectedValue;
     }
 }

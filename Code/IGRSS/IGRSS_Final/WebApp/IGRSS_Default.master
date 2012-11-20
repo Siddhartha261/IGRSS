@@ -115,7 +115,8 @@
                         DataFile="~/XMLFile.xml" />
                     <uc2:StatusInformation ID="StatusInformation1" runat="server" />
                     <div>
-                        <div id="infoDiv">
+                        <div id="errorDiv">
+                        
                         </div>
                         <asp:ContentPlaceHolder ID="Main" runat="server">
                             <asp:Label ID="Label2" runat="server" BackColor="Transparent" Text="Label"></asp:Label>

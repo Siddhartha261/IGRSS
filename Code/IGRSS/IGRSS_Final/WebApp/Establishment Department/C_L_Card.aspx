@@ -20,6 +20,12 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_C_L_Card" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
@@ -40,43 +46,69 @@
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_C_L_Card" runat="server" AutoGenerateColumns="False" 
-                      DataKeyNames="SrNo" DataSourceID="ods_C_L_Card" 
-                      EnableModelValidation="True">
+                      DataKeyNames="SrNo,Leave_Approved_Or_Not" DataSourceID="ods_C_L_Card" 
+                      EnableModelValidation="True" 
+                      onrowdatabound="GridView_C_L_Card_RowDataBound" 
+                      onrowdeleted="GridView_C_L_Card_RowDeleted" 
+                      onrowdeleting="GridView_C_L_Card_RowDeleting" 
+                      onrowediting="GridView_C_L_Card_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="Calendar_Year" HeaderText="Calendar Year" 
+                              ReadOnly="True" SortExpression="SrNo" />
+                          <asp:BoundField DataField="Calendar_Year" HeaderText="Calendar_Year" 
                               SortExpression="Calendar_Year" />
-                          <asp:BoundField DataField="OfficeName" HeaderText="Office/Department Name" 
+                          <asp:BoundField DataField="OfficeName" HeaderText="OfficeName" 
                               SortExpression="OfficeName" />
-                          <asp:BoundField DataField="Employee_Name" HeaderText="Employee Name" 
+                          <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" 
                               SortExpression="Employee_Name" />
                           <asp:BoundField DataField="Designation" HeaderText="Designation" 
                               SortExpression="Designation" />
-                          <asp:BoundField DataField="Casual_SrNo" HeaderText="Sr No" 
+                          <asp:BoundField DataField="Casual_SrNo" HeaderText="Casual_SrNo" 
                               SortExpression="Casual_SrNo" />
-                          <asp:BoundField DataField="C_L_Date" HeaderText="C.L. Date/Optional Leave" 
+                          <asp:BoundField DataField="C_L_Date" HeaderText="C_L_Date" 
                               SortExpression="C_L_Date" />
-                          <asp:BoundField DataField="HalfDay_FullDay" HeaderText="HalfDay/FullDay" 
-                              SortExpression="HalfDay_FullDay" Visible="False" />
-                          <asp:BoundField DataField="FirstShift_SecondShift" HeaderText="FirstShift/SecondShift" 
-                              SortExpression="FirstShift_SecondShift" Visible="False" />
-                          <asp:BoundField DataField="Reasons_Of_Leave" HeaderText="Reasons Of Leave" 
-                              SortExpression="Reasons_Of_Leave" Visible="False" />
+                          <asp:BoundField DataField="HalfDay_FullDay" HeaderText="HalfDay_FullDay" 
+                              SortExpression="HalfDay_FullDay" />
+                          <asp:BoundField DataField="FirstShift_SecondShift" HeaderText="FirstShift_SecondShift" 
+                              SortExpression="FirstShift_SecondShift" />
+                          <asp:BoundField DataField="Reasons_Of_Leave" HeaderText="Reasons_Of_Leave" 
+                              SortExpression="Reasons_Of_Leave" />
                           <asp:BoundField DataField="Total_Of_Taken_Leaves" 
-                              HeaderText="Total Of Taken Leaves" 
+                              HeaderText="Total_Of_Taken_Leaves" 
                               SortExpression="Total_Of_Taken_Leaves" />
                           <asp:BoundField DataField="Total_Of_Remaining_Leaves" 
-                              HeaderText="Total Of Remaining Leaves" 
+                              HeaderText="Total_Of_Remaining_Leaves" 
                               SortExpression="Total_Of_Remaining_Leaves" />
-                          <asp:BoundField DataField="As_On" HeaderText="As On" SortExpression="As_On" />
-                          <asp:CheckBoxField DataField="Leave_Approved_Or_Not" 
-                              HeaderText="Leave Approved Or Not" 
-                              SortExpression="Leave_Approved_Or_Not" Visible="False" />
-                          <asp:BoundField DataField="Leave_Applicant" HeaderText="Leave Applicant" 
+                          <asp:BoundField DataField="As_On" HeaderText="As_On" SortExpression="As_On" />
+                          <asp:TemplateField HeaderText="Leave Approved Or Not" 
+                              SortExpression="Leave_Approved_Or_Not" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblLeave_Approved_Or_Not"  runat="server" Text="No" 
+                                        Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
+                                </ItemTemplate>
+                                  <ItemStyle HorizontalAlign="Center" />
+                              </asp:TemplateField>
+                        
+                          <asp:BoundField DataField="Leave_Applicant" HeaderText="Leave_Applicant" 
                               SortExpression="Leave_Applicant" />
-                          <asp:BoundField DataField="Leave_Approved_By" HeaderText="Leave Approved By" 
+                          <asp:BoundField DataField="Leave_Approved_By" HeaderText="Leave_Approved_By" 
                               SortExpression="Leave_Approved_By" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -89,12 +121,16 @@
 <asp:View ID="Formview" runat="server">
 <center>
 <h1>C.L. Card</h1>
-<asp:FormView ID="FormView_C_L_Card" runat="server" DataKeyNames="SrNo" 
+<asp:FormView ID="FormView_C_L_Card" runat="server" DataKeyNames="SrNo,Leave_Approved_Or_Not" 
         DataSourceID="ods_C_L_Card" EnableModelValidation="True" 
         DefaultMode="Insert" oniteminserting="FormView_C_L_Card_ItemInserting" 
-        onitemcommand="FormView_C_L_Card_ItemCommand" >
+        onitemcommand="FormView_C_L_Card_ItemCommand" 
+        ondatabound="FormView_C_L_Card_DataBound" 
+        oniteminserted="FormView_C_L_Card_ItemInserted" 
+        onitemupdated="FormView_C_L_Card_ItemUpdated" 
+        onitemupdating="FormView_C_L_Card_ItemUpdating" >
         <EditItemTemplate>
-<table>
+            <table>
       <tr>
 	     <td>Calendar Year:</td>
 		 <td><asp:TextBox ID="Calendar_YearTextBox" 
@@ -144,20 +180,20 @@
 	   <td colspan="4">&nbsp;<h3>CASUAL LEAVE CARD</h3></td>
 	</tr>
     
-	  <tr>
-          <td>
-              Sr No:</td>
-          <td>
-              <asp:TextBox ID="Casual_SrNoTextBox" runat="server" 
-                  Text='<%# Bind("Casual_SrNo") %>' Width="160px" />
-          </td>
-          <td>
-              Total Of Remaining Leaves:</td>
-          <td>
-              <asp:TextBox ID="Total_Of_Remaining_LeavesTextBox" runat="server" 
-                  Text='<%# Bind("Total_Of_Remaining_Leaves") %>' Width="160px" />
-          </td>
-      </tr>
+	      <tr>
+              <td>
+                  Sr No:</td>
+              <td>
+                  <asp:TextBox ID="Casual_SrNoTextBox" runat="server" 
+                      Text='<%# Bind("Casual_SrNo") %>' Width="160px" />
+              </td>
+              <td>
+                  Total Of Remaining Leaves:</td>
+              <td>
+                  <asp:TextBox ID="Total_Of_Remaining_LeavesTextBox" runat="server" 
+                      Text='<%# Bind("Total_Of_Remaining_Leaves") %>' Width="160px" />
+              </td>
+          </tr>
     
 	<tr>
 	   <td>C.L. Date/Optional Leave:</td>
@@ -237,7 +273,7 @@
 
         </EditItemTemplate>
         <InsertItemTemplate>
-      <table>
+            <table>
       <tr>
 	     <td>Calendar Year:</td>
 		 <td><asp:TextBox ID="Calendar_YearTextBox" 
@@ -377,7 +413,6 @@
 	</tr>
  
 </table>
-
         </InsertItemTemplate>
         <ItemTemplate>
             SrNo:
@@ -514,27 +549,14 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     
-    <asp:ObjectDataSource ID="ods_C_L_Card" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_C_L_Card" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.C_L_CardTableAdapters.C_L_CardTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_C_L_Card_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_C_L_Card_Selecting" 
+        ondeleting="ods_C_L_Card_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Calendar_Year" Type="Int32" />
-            <asp:Parameter Name="Original_OfficeName" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Designation" Type="String" />
-            <asp:Parameter Name="Original_Casual_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_C_L_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_HalfDay_FullDay" Type="String" />
-            <asp:Parameter Name="Original_FirstShift_SecondShift" Type="String" />
-            <asp:Parameter Name="Original_Total_Of_Taken_Leaves" Type="Int32" />
-            <asp:Parameter Name="Original_Total_Of_Remaining_Leaves" Type="Int32" />
-            <asp:Parameter Name="Original_As_On" Type="DateTime" />
-            <asp:Parameter Name="Original_Leave_Approved_Or_Not" Type="Boolean" />
-            <asp:Parameter Name="Original_Leave_Applicant" Type="String" />
-            <asp:Parameter Name="Original_Leave_Approved_By" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Calendar_Year" Type="Int32" />
@@ -573,21 +595,7 @@
             <asp:Parameter Name="Leave_Approved_Or_Not" Type="Boolean" />
             <asp:Parameter Name="Leave_Applicant" Type="String" />
             <asp:Parameter Name="Leave_Approved_By" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Calendar_Year" Type="Int32" />
-            <asp:Parameter Name="Original_OfficeName" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Designation" Type="String" />
-            <asp:Parameter Name="Original_Casual_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_C_L_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_HalfDay_FullDay" Type="String" />
-            <asp:Parameter Name="Original_FirstShift_SecondShift" Type="String" />
-            <asp:Parameter Name="Original_Total_Of_Taken_Leaves" Type="Int32" />
-            <asp:Parameter Name="Original_Total_Of_Remaining_Leaves" Type="Int32" />
-            <asp:Parameter Name="Original_As_On" Type="DateTime" />
-            <asp:Parameter Name="Original_Leave_Approved_Or_Not" Type="Boolean" />
-            <asp:Parameter Name="Original_Leave_Applicant" Type="String" />
-            <asp:Parameter Name="Original_Leave_Approved_By" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

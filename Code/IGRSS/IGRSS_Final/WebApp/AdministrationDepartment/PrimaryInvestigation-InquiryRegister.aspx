@@ -96,7 +96,8 @@
         Width="60%" oniteminserting="FormView_Inquiry_ItemInserting" 
         onitemcommand="FormView_Inquiry_ItemCommand" 
         oniteminserted="FormView_Inquiry_ItemInserted" 
-        onitemupdated="FormView_Inquiry_ItemUpdated">
+        onitemupdated="FormView_Inquiry_ItemUpdated" 
+        onitemupdating="FormView_Inquiry_ItemUpdating">
         <EditItemTemplate>
                             		<table>
 		    <tr><td>File No:</td>

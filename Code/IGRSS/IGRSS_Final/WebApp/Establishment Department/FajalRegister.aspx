@@ -20,6 +20,12 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_Fajal" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />

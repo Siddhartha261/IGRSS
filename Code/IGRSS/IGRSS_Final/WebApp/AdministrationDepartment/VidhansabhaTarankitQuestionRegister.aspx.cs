@@ -38,6 +38,7 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
             case "Back":
                 Multiview_Tarankit.SetActiveView(ViewGrid);
                 GridView_Tarankit.DataBind();
+                infoDiv.Visible = false;
                break;
         }
     }
@@ -102,5 +103,13 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
     {
         lblMsg.Text = message;
         infoDiv.Visible = true;
+    }
+    protected void FormView_Tarankit_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        RadioButtonList Radio_Tarankit = FormView_Tarankit.FindControl("Radio_tarankit") as RadioButtonList;
+        e.NewValues["Tarankit_Atarnkit"] = Radio_Tarankit.SelectedValue;
+
+        DropDownList Drop_mlaname = FormView_Tarankit.FindControl("Drop_mlaname") as DropDownList;
+        e.NewValues["mlaName"] = Drop_mlaname.SelectedValue;
     }
 }

@@ -74,32 +74,32 @@
                       onrowediting="GridView_MLA_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" />
-                          <asp:BoundField DataField="InwardNo" HeaderText="InwardNo" 
+                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                          <asp:BoundField DataField="InwardNo" HeaderText="Inward No" 
                               SortExpression="InwardNo" />
-                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
+                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="MLAname" HeaderText="MLAname" 
+                          <asp:BoundField DataField="MLAname" HeaderText="MLA/MP Name" 
                               SortExpression="MLAname" />
                           <asp:BoundField DataField="Subject" HeaderText="Subject" 
                               SortExpression="Subject" />
-                          <asp:BoundField DataField="LetterNo" HeaderText="LetterNo" 
+                          <asp:BoundField DataField="LetterNo" HeaderText="Letter No" 
                               SortExpression="LetterNo" />
-                          <asp:BoundField DataField="LetterDate" HeaderText="LetterDate" 
+                          <asp:BoundField DataField="LetterDate" HeaderText="Letter Date" 
                               SortExpression="LetterDate" />
-                          <asp:BoundField DataField="DepartmentName" HeaderText="DepartmentName" 
+                          <asp:BoundField DataField="DepartmentName" HeaderText="Department Name" 
                               SortExpression="DepartmentName" />
-                          <asp:BoundField DataField="FileNumber" HeaderText="FileNumber" 
+                          <asp:BoundField DataField="FileNumber" HeaderText="File Number" 
                               SortExpression="FileNumber" />
                           <asp:BoundField DataField="DetailsofOutput" HeaderText="DetailsofOutput" 
-                              SortExpression="DetailsofOutput" />
+                              SortExpression="DetailsofOutput" Visible="False" />
                           <asp:BoundField DataField="DetailsofFilePreservation" 
                               HeaderText="DetailsofFilePreservation" 
-                              SortExpression="DetailsofFilePreservation" />
+                              SortExpression="DetailsofFilePreservation" Visible="False" />
                           <asp:BoundField DataField="DetailsOfRecord" HeaderText="DetailsOfRecord" 
-                              SortExpression="DetailsOfRecord" />
+                              SortExpression="DetailsOfRecord" Visible="False" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" />
+                              SortExpression="Remarks" Visible="False" />
                           <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -133,7 +133,8 @@
         Width="50%" oniteminserting="FormView_MLA_ItemInserting" 
         onitemcommand="FormView_MLA_ItemCommand" 
         oniteminserted="FormView_MLA_ItemInserted" 
-        onitemupdated="FormView_MLA_ItemUpdated" >
+        onitemupdated="FormView_MLA_ItemUpdated" 
+        onitemupdating="FormView_MLA_ItemUpdating" >
         <EditItemTemplate>
                 <table>
         <tr><td>Inward No:</td>
@@ -204,7 +205,7 @@
             
         <tr><td colspan=2 align="center">
             <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="e" CssClass="standardButton" />
+                CommandName="Update" Text="Update" CssClass="standardButton" />
 			&nbsp;<asp:Button ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
                 onclientclick="resetTextFields();return false;" 

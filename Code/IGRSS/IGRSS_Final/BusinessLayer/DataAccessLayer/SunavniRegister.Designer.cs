@@ -1068,7 +1068,7 @@ SELECT SrNo, AppealNo, FileNo, NameOfPetitioner, Versus, IssueDateOfLetter, Date
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        SrNo, AppealNo, FileNo, NameOfPetitioner, Versus, IssueDateOfLetter" +
@@ -1076,7 +1076,12 @@ SELECT SrNo, AppealNo, FileNo, NameOfPetitioner, Versus, IssueDateOfLetter, Date
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        SrNo, AppealNo, FileNo, NameOfPetitioner, Versus, IssueDateOfLetter, DateOfHearing, Result
+            this._commandCollection[1].CommandText = "DELETE FROM dbo.SunavniRegister\r\nWHERE        (SrNo = @SrNo)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        SrNo, AppealNo, FileNo, NameOfPetitioner, Versus, IssueDateOfLetter, DateOfHearing, Result
 FROM            dbo.SunavniRegister
 WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(AppealNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
@@ -1086,8 +1091,23 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(IssueDateOfLetter AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(DateOfHearing AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (Result LIKE '%' + @searchKeyWord + '%')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE       dbo.SunavniRegister
+SET                AppealNo = @AppealNo, FileNo = @FileNo, NameOfPetitioner = @NameOfPetitioner, Versus = @Versus, IssueDateOfLetter = @IssueDateOfLetter, 
+                         DateOfHearing = @DateOfHearing, Result = @Result
+WHERE        (SrNo = @SrNo)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppealNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AppealNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameOfPetitioner", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "NameOfPetitioner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Versus", global::System.Data.SqlDbType.NVarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Versus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IssueDateOfLetter", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "IssueDateOfLetter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfHearing", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfHearing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Result", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Result", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1119,7 +1139,7 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(SunavniRegister.SunavniRegisterDataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1138,7 +1158,7 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual SunavniRegister.SunavniRegisterDataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1415,6 +1435,86 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int AppealNo, int FileNo, string NameOfPetitioner, string Versus, global::System.Nullable<global::System.DateTime> IssueDateOfLetter, global::System.Nullable<global::System.DateTime> DateOfHearing, string Result, int Original_SrNo, int Original_AppealNo, int Original_FileNo, string Original_NameOfPetitioner, string Original_Versus, global::System.Nullable<global::System.DateTime> Original_IssueDateOfLetter, global::System.Nullable<global::System.DateTime> Original_DateOfHearing, string Original_Result) {
             return this.Update(AppealNo, FileNo, NameOfPetitioner, Versus, IssueDateOfLetter, DateOfHearing, Result, Original_SrNo, Original_AppealNo, Original_FileNo, Original_NameOfPetitioner, Original_Versus, Original_IssueDateOfLetter, Original_DateOfHearing, Original_Result, Original_SrNo);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(int AppealNo, int FileNo, string NameOfPetitioner, string Versus, global::System.Nullable<global::System.DateTime> IssueDateOfLetter, global::System.Nullable<global::System.DateTime> DateOfHearing, string Result, int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((int)(AppealNo));
+            command.Parameters[1].Value = ((int)(FileNo));
+            if ((NameOfPetitioner == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(NameOfPetitioner));
+            }
+            if ((Versus == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Versus));
+            }
+            if ((IssueDateOfLetter.HasValue == true)) {
+                command.Parameters[4].Value = ((System.DateTime)(IssueDateOfLetter.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((DateOfHearing.HasValue == true)) {
+                command.Parameters[5].Value = ((System.DateTime)(DateOfHearing.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Result == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(Result));
+            }
+            command.Parameters[7].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

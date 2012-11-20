@@ -531,8 +531,8 @@
     <Compile Include="Exceptions\DataLayerException.cs" />
     <Compile Include="Exceptions\OperationFailedException.cs" />
     <Compile Include="BusinessObjects\FileManager.cs" />
-    <Compile Include="Management\SampleEvent.cs" />
-    <Compile Include="Management\SampleEventProvider.cs" />
+    <Compile Include="Services\Management\SampleEvent.cs" />
+    <Compile Include="Services\Management\SampleEventProvider.cs" />
     <Compile Include="Properties\Settings.cs">
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>

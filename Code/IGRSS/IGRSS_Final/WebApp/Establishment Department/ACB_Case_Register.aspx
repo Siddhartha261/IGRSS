@@ -20,6 +20,12 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_ACB_Case_Register" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
@@ -40,8 +46,12 @@
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_ACB_Case_Register" runat="server" AutoGenerateColumns="False" 
-                      DataKeyNames="SrNo" DataSourceID="ods_ACB_Case_Register" 
-                      EnableModelValidation="True">
+                      DataKeyNames="SrNo,High_court_Appeal,Supreme_Court_Appeal" DataSourceID="ods_ACB_Case_Register" 
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_ACB_Case_Register_RowDeleted" 
+                      onrowdeleting="GridView_ACB_Case_Register_RowDeleting" 
+                      onrowediting="GridView_ACB_Case_Register_RowEditing" 
+                      onrowdatabound="GridView_ACB_Case_Register_RowDataBound">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
@@ -53,9 +63,9 @@
                               SortExpression="Designation" />
                           <asp:BoundField DataField="Place_Of_Event_Occured" HeaderText="Place Of Event Occured" 
                               SortExpression="Place_Of_Event_Occured" />
-                          <asp:BoundField DataField="Summary_Of_Case" HeaderText="Summary Of Case" 
-                              SortExpression="Summary_Of_Case" />
-                          <asp:BoundField DataField="FIR_No" HeaderText="FIR No" 
+                          <asp:BoundField DataField="Summary_Of_Case" HeaderText="Summary_Of_Case" 
+                              SortExpression="Summary_Of_Case" Visible="False" />
+                          <asp:BoundField DataField="FIR_No" HeaderText="F.I.R No" 
                               SortExpression="FIR_No" />
                           <asp:BoundField DataField="Courst_Case_No" HeaderText="Court Case No" 
                               SortExpression="Courst_Case_No" />
@@ -67,31 +77,59 @@
                               HeaderText="Re-Instate Date" 
                               SortExpression="ReInstate_Date" />
                           <asp:BoundField DataField="Order_Of_Court" 
-                              HeaderText="Order Of Court" 
-                              SortExpression="Order_Of_Court" />
-                          <asp:CheckBoxField DataField="High_court_Appeal" HeaderText="High_court_Appeal" 
-                              SortExpression="High_court_Appeal" Visible="False" />
+                              HeaderText="Order_Of_Court" 
+                              SortExpression="Order_Of_Court" Visible="False" />
+                              <asp:TemplateField HeaderText="High court Appeal" 
+                              SortExpression="High_court_Appeal" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblHigh_court_Appeal"  runat="server" Text="No" 
+                                        Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
+                                </ItemTemplate>
+                                  <ItemStyle HorizontalAlign="Center" />
+                              </asp:TemplateField>
                           <asp:BoundField DataField="High_court_Appeal_No" 
                               HeaderText="Appeal No" SortExpression="High_court_Appeal_No" 
                               Visible="False" />
                           <asp:BoundField DataField="High_Court_Appeal_Date" 
-                              HeaderText="Appeal Date" SortExpression="High_Court_Appeal_Date" 
-                              Visible="False" />
+                              HeaderText="High Court Appeal Date" 
+                              SortExpression="High_Court_Appeal_Date" />
                           <asp:BoundField DataField="High_court_appeal_order" 
                               HeaderText="High_court_appeal_order" 
                               SortExpression="High_court_appeal_order" Visible="False" />
-                          <asp:CheckBoxField DataField="Supreme_Court_Appeal" 
-                              HeaderText="Supreme_Court_Appeal" 
-                              SortExpression="Supreme_Court_Appeal" Visible="False" />
+                              <asp:TemplateField HeaderText="Supreme Court Appeal" 
+                              SortExpression="Supreme_Court_Appeal" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblSupreme_Court_Appeal"  runat="server" Text="No" 
+                                        Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
+                                </ItemTemplate>
+                                  <ItemStyle HorizontalAlign="Center" />
+                              </asp:TemplateField>
+                         
                           <asp:BoundField DataField="Supreme_court_appeal_no" HeaderText="Supreme_court_appeal_no" 
                               SortExpression="Supreme_court_appeal_no" Visible="False" />
-                          <asp:BoundField DataField="Supreme_court_appeal_date" HeaderText="Supreme_court_appeal_date" 
-                              SortExpression="Supreme_court_appeal_date" Visible="False" />
+                          <asp:BoundField DataField="Supreme_court_appeal_date" HeaderText="Supreme Court Appeal Date" 
+                              SortExpression="Supreme_court_appeal_date" />
                           <asp:BoundField DataField="Supreme_court_appeal_order" 
                               HeaderText="Supreme_court_appeal_order" 
                               SortExpression="Supreme_court_appeal_order" Visible="False" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -104,11 +142,15 @@
 <asp:View ID="Formview" runat="server">
 <center>
 <h1>ACB Case Register</h1>
-<asp:FormView ID="FormView_ACB_Case_Register" runat="server" DataKeyNames="SrNo" 
+<asp:FormView ID="FormView_ACB_Case_Register" runat="server" DataKeyNames="SrNo,High_court_Appeal,Supreme_Court_Appeal" 
         DataSourceID="ods_ACB_Case_Register" EnableModelValidation="True" 
         DefaultMode="Insert" 
         onitemcommand="FormView_ACB_Case_Register_ItemCommand" 
-        oniteminserting="FormView_ACB_Case_Register_ItemInserting" >
+        oniteminserting="FormView_ACB_Case_Register_ItemInserting" 
+        oniteminserted="FormView_ACB_Case_Register_ItemInserted" 
+        onitemupdated="FormView_ACB_Case_Register_ItemUpdated" 
+        onitemupdating="FormView_ACB_Case_Register_ItemUpdating" 
+        ondatabound="FormView_ACB_Case_Register_DataBound" >
         <EditItemTemplate>
                 <table>
         <tr>
@@ -510,31 +552,14 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     
-    <asp:ObjectDataSource ID="ods_ACB_Case_Register" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_ACB_Case_Register" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.ACB_Case_RegisterTableAdapters.ACB_CaseRegisterTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_ACB_Case_Register_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_ACB_Case_Register_Selecting" 
+        ondeleting="ods_ACB_Case_Register_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_File_No" Type="Int32" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Designation" Type="String" />
-            <asp:Parameter Name="Original_Place_Of_Event_Occured" Type="String" />
-            <asp:Parameter Name="Original_FIR_No" Type="Int32" />
-            <asp:Parameter Name="Original_Courst_Case_No" Type="Int32" />
-            <asp:Parameter Name="Original_Permission_Date_Of_Prosecution" Type="DateTime" />
-            <asp:Parameter Name="Original_Date_Of_Suspension" Type="DateTime" />
-            <asp:Parameter Name="Original_ReInstate_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Order_Of_Court" Type="String" />
-            <asp:Parameter Name="Original_High_court_Appeal" Type="Boolean" />
-            <asp:Parameter Name="Original_High_court_Appeal_No" Type="Int32" />
-            <asp:Parameter Name="Original_High_Court_Appeal_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_High_court_appeal_order" Type="String" />
-            <asp:Parameter Name="Original_Supreme_Court_Appeal" Type="Boolean" />
-            <asp:Parameter Name="Original_Supreme_court_appeal_no" Type="Int32" />
-            <asp:Parameter Name="Original_Supreme_court_appeal_date" Type="DateTime" />
-            <asp:Parameter Name="Original_Supreme_court_appeal_order" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="File_No" Type="Int32" />
@@ -583,25 +608,7 @@
             <asp:Parameter Name="Supreme_court_appeal_date" Type="DateTime" />
             <asp:Parameter Name="Supreme_court_appeal_order" Type="String" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_File_No" Type="Int32" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Designation" Type="String" />
-            <asp:Parameter Name="Original_Place_Of_Event_Occured" Type="String" />
-            <asp:Parameter Name="Original_FIR_No" Type="Int32" />
-            <asp:Parameter Name="Original_Courst_Case_No" Type="Int32" />
-            <asp:Parameter Name="Original_Permission_Date_Of_Prosecution" Type="DateTime" />
-            <asp:Parameter Name="Original_Date_Of_Suspension" Type="DateTime" />
-            <asp:Parameter Name="Original_ReInstate_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Order_Of_Court" Type="String" />
-            <asp:Parameter Name="Original_High_court_Appeal" Type="Boolean" />
-            <asp:Parameter Name="Original_High_court_Appeal_No" Type="Int32" />
-            <asp:Parameter Name="Original_High_Court_Appeal_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_High_court_appeal_order" Type="String" />
-            <asp:Parameter Name="Original_Supreme_Court_Appeal" Type="Boolean" />
-            <asp:Parameter Name="Original_Supreme_court_appeal_no" Type="Int32" />
-            <asp:Parameter Name="Original_Supreme_court_appeal_date" Type="DateTime" />
-            <asp:Parameter Name="Original_Supreme_court_appeal_order" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

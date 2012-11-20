@@ -44,5 +44,61 @@ public partial class CCRALegal_AppealRegister : System.Web.UI.Page
         ods_AppealRegister.SelectMethod = "GetDataBy";
     }
 
-  
+
+    protected void GridView_AppealRegister_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView_AppealRegister_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView_AppealRegister.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView_AppealRegister.DataKeys[e.RowIndex].Value;
+        ods_AppealRegister.Delete();
+    }
+    protected void GridView_AppealRegister_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        Multiview_AppealRegister.SetActiveView(Formview);
+        FormView_AppealRegister.PageIndex = e.NewEditIndex;
+        FormView_AppealRegister.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+    }
+    protected void FormView_AppealRegister_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FormView_AppealRegister_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void ods_AppealRegister_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
+    }
+
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
+    }
 }

@@ -35,6 +35,7 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
             case "Back":
                 Multiview_HighCourtReg.SetActiveView(ViewGrid);
                 GridView_HighCourtReg.DataBind();
+                infoDiv.Visible = false;
                 break;      
         }
     }
@@ -70,6 +71,7 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
     }
     protected void FormView_HighCourtReg_ItemInserted(object sender, FormViewInsertedEventArgs e)
     {
+       
         if (e.Exception == null)
         {
             ShowMessage("Record has been added successfully", false);
@@ -81,6 +83,7 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
     }
     protected void FormView_HighCourtReg_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
     {
+
         if (e.Exception == null)
         {
             ShowMessage("Record has been updated successfully", false);
@@ -99,5 +102,36 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
     {
         lblMsg.Text = message;
         infoDiv.Visible = true;
+    }
+    protected void FormView_HighCourtReg_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        RadioButtonList Radio_parawisermrksent = FormView_HighCourtReg.FindControl("Radio_parawisermrksent") as RadioButtonList;
+        e.NewValues["Parawiseremarks"] = Convert.ToBoolean(Radio_parawisermrksent.SelectedValue);
+
+        RadioButtonList Radio_AffidavitSent = FormView_HighCourtReg.FindControl("Radio_affidavit") as RadioButtonList;
+        e.NewValues["Affidavit"] = Convert.ToBoolean(Radio_AffidavitSent.SelectedValue);
+
+        DropDownList dropdownofficename = FormView_HighCourtReg.FindControl("Drop_officename") as DropDownList;
+        e.NewValues["DistrictOfficeName"] = dropdownofficename.SelectedValue;
+    }
+    protected void GridView_HighCourtReg_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            Label lblParawiseremarks = e.Row.FindControl("lblParawiseremarks") as Label;
+            lblParawiseremarks.Text = Convert.ToBoolean(GridView_HighCourtReg.DataKeys[e.Row.RowIndex].Values[1]) ? "Yes" : "No";
+
+            Label lblAffidavit = e.Row.FindControl("lblAffidavit") as Label;
+            lblAffidavit.Text = Convert.ToBoolean(GridView_HighCourtReg.DataKeys[e.Row.RowIndex].Values[1]) ? "Yes" : "No";
+                
+        }
+    }
+    protected void FormView_HighCourtReg_DataBound(object sender, EventArgs e)
+    {
+        RadioButtonList Radio_parawisermrksent = FormView_HighCourtReg.FindControl("Radio_parawisermrksent") as RadioButtonList;
+        Radio_parawisermrksent.SelectedIndex =  Convert.ToBoolean(FormView_HighCourtReg.DataKey[1])?0:1;
+
+        RadioButtonList Radio_affidavit = FormView_HighCourtReg.FindControl("Radio_affidavit") as RadioButtonList;
+        Radio_affidavit.SelectedIndex = Convert.ToBoolean(FormView_HighCourtReg.DataKey[1]) ? 0 : 1;
     }
 }

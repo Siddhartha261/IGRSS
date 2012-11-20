@@ -29,6 +29,7 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
             case "Back":
                 MultiView_RTI.SetActiveView(ViewGrid);
                 GridView_RTI.DataBind();
+                infoDiv.Visible = false;
                 break;
         }
     }
@@ -97,5 +98,10 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
     {
         lblMsg.Text = message;
         infoDiv.Visible = true;
+    }
+    protected void FormView_RTI_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        RadioButtonList Radio_decisiontaken = FormView_RTI.FindControl("Radio_decisiontaken") as RadioButtonList;
+        e.NewValues["Decision_Taken"] = Radio_decisiontaken.SelectedValue;
     }
 }

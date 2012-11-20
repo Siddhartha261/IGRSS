@@ -1130,7 +1130,7 @@ SELECT SrNo, Kacheri_Office, FromDate, ToDate, PhotoVolumeNo, BookNo, SealedVolu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        SrNo, Kacheri_Office, FromDate, ToDate, PhotoVolumeNo, BookNo, Seal" +
@@ -1138,7 +1138,12 @@ SELECT SrNo, Kacheri_Office, FromDate, ToDate, PhotoVolumeNo, BookNo, SealedVolu
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        SrNo, Kacheri_Office, FromDate, ToDate, PhotoVolumeNo, BookNo, SealedVolumes, RemainingVolumes, Remarks
+            this._commandCollection[1].CommandText = "DELETE FROM dbo.Sealing\r\nWHERE        (SrNo = @SrNo)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        SrNo, Kacheri_Office, FromDate, ToDate, PhotoVolumeNo, BookNo, SealedVolumes, RemainingVolumes, Remarks
 FROM            dbo.Sealing
 WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (Kacheri_Office LIKE '%' + @searchKeyWord + '%') OR
@@ -1149,8 +1154,24 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(RemainingVolumes AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(SealedVolumes AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (Remarks LIKE '%' + @searchKeyWord + '%')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE       dbo.Sealing
+SET                Kacheri_Office = @Kacheri_Office, FromDate = @FromDate, ToDate = @ToDate, PhotoVolumeNo = @PhotoVolumeNo, BookNo = @BookNo, 
+                         SealedVolumes = @SealedVolumes, RemainingVolumes = @RemainingVolumes, Remarks = @Remarks
+WHERE        (SrNo = @SrNo)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kacheri_Office", global::System.Data.SqlDbType.NVarChar, 256, global::System.Data.ParameterDirection.Input, 0, 0, "Kacheri_Office", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FromDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "FromDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ToDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ToDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhotoVolumeNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PhotoVolumeNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "BookNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SealedVolumes", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SealedVolumes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RemainingVolumes", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RemainingVolumes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarks", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1182,7 +1203,7 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(Sealing.SealingDataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1201,7 +1222,7 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Sealing.SealingDataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1551,6 +1572,102 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                     global::System.Nullable<int> Original_SealedVolumes, 
                     global::System.Nullable<int> Original_RemainingVolumes) {
             return this.Update(Kacheri_Office, FromDate, ToDate, PhotoVolumeNo, BookNo, SealedVolumes, RemainingVolumes, Remarks, Original_SrNo, Original_Kacheri_Office, Original_FromDate, Original_ToDate, Original_PhotoVolumeNo, Original_BookNo, Original_SealedVolumes, Original_RemainingVolumes, Original_SrNo);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string Kacheri_Office, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate, global::System.Nullable<int> PhotoVolumeNo, global::System.Nullable<int> BookNo, global::System.Nullable<int> SealedVolumes, global::System.Nullable<int> RemainingVolumes, string Remarks, int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((Kacheri_Office == null)) {
+                throw new global::System.ArgumentNullException("Kacheri_Office");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Kacheri_Office));
+            }
+            if ((FromDate.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(FromDate.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ToDate.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(ToDate.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((PhotoVolumeNo.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(PhotoVolumeNo.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((BookNo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(BookNo.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((SealedVolumes.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(SealedVolumes.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((RemainingVolumes.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(RemainingVolumes.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Remarks == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(Remarks));
+            }
+            command.Parameters[8].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

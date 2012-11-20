@@ -10,14 +10,6 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
     {
 
     }
-    protected void btnSearchAppNo_Click(object sender, EventArgs e)
-    {
-
-    }
-    protected void txtFileNo_TextChanged(object sender, EventArgs e)
-    {
-
-    }
     protected void Button_new_Click(object sender, EventArgs e)
     {
         Multiview_Inquiry.SetActiveView(Multiview_Inquiry.Views[1]);
@@ -44,6 +36,7 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
             case "Back":
                 Multiview_Inquiry.SetActiveView(ViewGrid);
                 GridView_Inquiry.DataBind();
+                infoDiv.Visible = false;
                break;
         }
     }
@@ -103,5 +96,13 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
     {
         lblMsg.Text = message;
         infoDiv.Visible = true;
+    }
+    protected void FormView_Inquiry_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        DropDownList DropDownEmployeeName = FormView_Inquiry.FindControl("Name_Of_EmployeeDropDown") as DropDownList;
+        e.NewValues["Name_Of_Employee"] = DropDownEmployeeName.SelectedValue;
+
+        DropDownList DropDownDesignation = FormView_Inquiry.FindControl("Drop_employeedesignation") as DropDownList;
+        e.NewValues["Designation_Of_Employee"] = DropDownDesignation.SelectedValue;
     }
 }

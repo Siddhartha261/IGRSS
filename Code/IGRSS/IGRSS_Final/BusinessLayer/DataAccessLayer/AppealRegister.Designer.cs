@@ -1366,7 +1366,7 @@ SELECT SrNo, FileNo, KacheriOffice, DocumentNo, Year, NameOfApplicant, Versus, D
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        SrNo, FileNo, KacheriOffice, DocumentNo, Year, NameOfApplicant, Ver" +
@@ -1375,7 +1375,12 @@ SELECT SrNo, FileNo, KacheriOffice, DocumentNo, Year, NameOfApplicant, Versus, D
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        SrNo, FileNo, KacheriOffice, DocumentNo, Year, NameOfApplicant, Versus, DeficitStampDuty, TotalStampDuty, Continue_remand, Result, OutwardNo, Date, 
+            this._commandCollection[1].CommandText = "DELETE FROM dbo.AppealRegister\r\nWHERE        (SrNo = @SrNo)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        SrNo, FileNo, KacheriOffice, DocumentNo, Year, NameOfApplicant, Versus, DeficitStampDuty, TotalStampDuty, Continue_remand, Result, OutwardNo, Date, 
                          AGYear
 FROM            dbo.AppealRegister
 WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
@@ -1392,8 +1397,30 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (OutwardNo LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(Date AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                          (CAST(AGYear AS varchar) LIKE '%' + @searchKeyWord + '%')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE       dbo.AppealRegister
+SET                FileNo = @FileNo, KacheriOffice = @KacheriOffice, DocumentNo = @DocumentNo, Year = @Year, NameOfApplicant = @NameOfApplicant, Versus = @Versus, 
+                         DeficitStampDuty = @DeficitStampDuty, TotalStampDuty = @TotalStampDuty, Continue_remand = @Continue_remand, Result = @Result, OutwardNo = @OutwardNo, 
+                         Date = @Date, AGYear = @AGYear
+WHERE        (SrNo = @SrNo)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FileNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FileNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KacheriOffice", global::System.Data.SqlDbType.NVarChar, 256, global::System.Data.ParameterDirection.Input, 0, 0, "KacheriOffice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameOfApplicant", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "NameOfApplicant", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Versus", global::System.Data.SqlDbType.NVarChar, 256, global::System.Data.ParameterDirection.Input, 0, 0, "Versus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DeficitStampDuty", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DeficitStampDuty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalStampDuty", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "TotalStampDuty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Continue_remand", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Continue_remand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Result", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Result", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OutwardNo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "OutwardNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AGYear", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AGYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1425,7 +1452,7 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(AppealRegister.AppealRegisterDataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1444,7 +1471,7 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual AppealRegister.AppealRegisterDataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1964,6 +1991,132 @@ WHERE        (CAST(SrNo AS varchar) LIKE '%' + @searchKeyWord + '%') OR
                     global::System.Nullable<global::System.DateTime> Original_Date, 
                     global::System.Nullable<int> Original_AGYear) {
             return this.Update(FileNo, KacheriOffice, DocumentNo, Year, NameOfApplicant, Versus, DeficitStampDuty, TotalStampDuty, Continue_remand, Result, OutwardNo, Date, AGYear, Original_SrNo, Original_FileNo, Original_KacheriOffice, Original_DocumentNo, Original_Year, Original_NameOfApplicant, Original_Versus, Original_DeficitStampDuty, Original_TotalStampDuty, Original_Continue_remand, Original_Result, Original_OutwardNo, Original_Date, Original_AGYear, Original_SrNo);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(global::System.Nullable<int> FileNo, string KacheriOffice, global::System.Nullable<int> DocumentNo, global::System.Nullable<int> Year, string NameOfApplicant, string Versus, global::System.Nullable<decimal> DeficitStampDuty, global::System.Nullable<decimal> TotalStampDuty, global::System.Nullable<bool> Continue_remand, string Result, string OutwardNo, global::System.Nullable<global::System.DateTime> Date, global::System.Nullable<int> AGYear, int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((FileNo.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(FileNo.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((KacheriOffice == null)) {
+                throw new global::System.ArgumentNullException("KacheriOffice");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(KacheriOffice));
+            }
+            if ((DocumentNo.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(DocumentNo.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Year.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(Year.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((NameOfApplicant == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(NameOfApplicant));
+            }
+            if ((Versus == null)) {
+                throw new global::System.ArgumentNullException("Versus");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Versus));
+            }
+            if ((DeficitStampDuty.HasValue == true)) {
+                command.Parameters[6].Value = ((decimal)(DeficitStampDuty.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((TotalStampDuty.HasValue == true)) {
+                command.Parameters[7].Value = ((decimal)(TotalStampDuty.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Continue_remand.HasValue == true)) {
+                command.Parameters[8].Value = ((bool)(Continue_remand.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Result == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(Result));
+            }
+            if ((OutwardNo == null)) {
+                throw new global::System.ArgumentNullException("OutwardNo");
+            }
+            else {
+                command.Parameters[10].Value = ((string)(OutwardNo));
+            }
+            if ((Date.HasValue == true)) {
+                command.Parameters[11].Value = ((System.DateTime)(Date.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((AGYear.HasValue == true)) {
+                command.Parameters[12].Value = ((int)(AGYear.Value));
+            }
+            else {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[13].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

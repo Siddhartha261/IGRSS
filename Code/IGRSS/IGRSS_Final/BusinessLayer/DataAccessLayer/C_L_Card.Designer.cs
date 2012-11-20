@@ -1548,7 +1548,7 @@ SELECT SrNo, Calendar_Year, OfficeName, Employee_Name, Designation, Casual_SrNo,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        SrNo, Calendar_Year, OfficeName, Employee_Name, Designation, Casual_SrNo, C_L_Date, HalfDay_FullDay, FirstShift_SecondShift, Reasons_Of_Leave, 
@@ -1557,7 +1557,12 @@ FROM            dbo.C_L_Card";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        SrNo, Calendar_Year, OfficeName, Employee_Name, Designation, Casual" +
+            this._commandCollection[1].CommandText = "DELETE FROM dbo.C_L_Card\r\nWHERE        (SrNo = @SrNo)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        SrNo, Calendar_Year, OfficeName, Employee_Name, Designation, Casual" +
                 "_SrNo, C_L_Date, HalfDay_FullDay, FirstShift_SecondShift, Reasons_Of_Leave, \r\n  " +
                 "                       Total_Of_Taken_Leaves, Total_Of_Remaining_Leaves, As_On, " +
                 "Leave_Approved_Or_Not, Leave_Applicant, Leave_Approved_By\r\nFROM            dbo.C" +
@@ -1579,8 +1584,34 @@ FROM            dbo.C_L_Card";
                 "earchKeyWord + \'%\') OR\r\n                         (Leave_Applicant LIKE \'%\' + @se" +
                 "archKeyWord + \'%\') OR\r\n                         (Leave_Approved_By LIKE \'%\' + @s" +
                 "earchKeyWord + \'%\')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE       dbo.C_L_Card
+SET                Calendar_Year = @Calendar_Year, OfficeName = @OfficeName, Employee_Name = @Employee_Name, Designation = @Designation, 
+                         Casual_SrNo = @Casual_SrNo, C_L_Date = @C_L_Date, HalfDay_FullDay = @HalfDay_FullDay, FirstShift_SecondShift = @FirstShift_SecondShift, 
+                         Reasons_Of_Leave = @Reasons_Of_Leave, Total_Of_Taken_Leaves = @Total_Of_Taken_Leaves, Total_Of_Remaining_Leaves = @Total_Of_Remaining_Leaves, 
+                         As_On = @As_On, Leave_Approved_Or_Not = @Leave_Approved_Or_Not, Leave_Applicant = @Leave_Applicant, 
+                         Leave_Approved_By = @Leave_Approved_By
+WHERE        (SrNo = @SrNo)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Calendar_Year", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Calendar_Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficeName", global::System.Data.SqlDbType.NVarChar, 256, global::System.Data.ParameterDirection.Input, 0, 0, "OfficeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Employee_Name", global::System.Data.SqlDbType.NVarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Designation", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Designation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Casual_SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Casual_SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@C_L_Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "C_L_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HalfDay_FullDay", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "HalfDay_FullDay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstShift_SecondShift", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "FirstShift_SecondShift", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reasons_Of_Leave", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Reasons_Of_Leave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Of_Taken_Leaves", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Of_Taken_Leaves", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Of_Remaining_Leaves", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Of_Remaining_Leaves", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@As_On", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "As_On", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Leave_Approved_Or_Not", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Leave_Approved_Or_Not", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Leave_Applicant", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Leave_Applicant", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Leave_Approved_By", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Leave_Approved_By", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1612,7 +1643,7 @@ FROM            dbo.C_L_Card";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(C_L_Card.C_L_CardDataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1631,7 +1662,7 @@ FROM            dbo.C_L_Card";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual C_L_Card.C_L_CardDataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -2209,6 +2240,160 @@ FROM            dbo.C_L_Card";
                     string Original_Leave_Applicant, 
                     string Original_Leave_Approved_By) {
             return this.Update(Calendar_Year, OfficeName, Employee_Name, Designation, Casual_SrNo, C_L_Date, HalfDay_FullDay, FirstShift_SecondShift, Reasons_Of_Leave, Total_Of_Taken_Leaves, Total_Of_Remaining_Leaves, As_On, Leave_Approved_Or_Not, Leave_Applicant, Leave_Approved_By, Original_SrNo, Original_Calendar_Year, Original_OfficeName, Original_Employee_Name, Original_Designation, Original_Casual_SrNo, Original_C_L_Date, Original_HalfDay_FullDay, Original_FirstShift_SecondShift, Original_Total_Of_Taken_Leaves, Original_Total_Of_Remaining_Leaves, Original_As_On, Original_Leave_Approved_Or_Not, Original_Leave_Applicant, Original_Leave_Approved_By, Original_SrNo);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(
+                    global::System.Nullable<int> Calendar_Year, 
+                    string OfficeName, 
+                    string Employee_Name, 
+                    string Designation, 
+                    global::System.Nullable<int> Casual_SrNo, 
+                    global::System.Nullable<global::System.DateTime> C_L_Date, 
+                    string HalfDay_FullDay, 
+                    string FirstShift_SecondShift, 
+                    string Reasons_Of_Leave, 
+                    global::System.Nullable<int> Total_Of_Taken_Leaves, 
+                    global::System.Nullable<int> Total_Of_Remaining_Leaves, 
+                    global::System.Nullable<global::System.DateTime> As_On, 
+                    global::System.Nullable<bool> Leave_Approved_Or_Not, 
+                    string Leave_Applicant, 
+                    string Leave_Approved_By, 
+                    int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((Calendar_Year.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(Calendar_Year.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((OfficeName == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(OfficeName));
+            }
+            if ((Employee_Name == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Employee_Name));
+            }
+            if ((Designation == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Designation));
+            }
+            if ((Casual_SrNo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(Casual_SrNo.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((C_L_Date.HasValue == true)) {
+                command.Parameters[5].Value = ((System.DateTime)(C_L_Date.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((HalfDay_FullDay == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(HalfDay_FullDay));
+            }
+            if ((FirstShift_SecondShift == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(FirstShift_SecondShift));
+            }
+            if ((Reasons_Of_Leave == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(Reasons_Of_Leave));
+            }
+            if ((Total_Of_Taken_Leaves.HasValue == true)) {
+                command.Parameters[9].Value = ((int)(Total_Of_Taken_Leaves.Value));
+            }
+            else {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Total_Of_Remaining_Leaves.HasValue == true)) {
+                command.Parameters[10].Value = ((int)(Total_Of_Remaining_Leaves.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((As_On.HasValue == true)) {
+                command.Parameters[11].Value = ((System.DateTime)(As_On.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Leave_Approved_Or_Not.HasValue == true)) {
+                command.Parameters[12].Value = ((bool)(Leave_Approved_Or_Not.Value));
+            }
+            else {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Leave_Applicant == null)) {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[13].Value = ((string)(Leave_Applicant));
+            }
+            if ((Leave_Approved_By == null)) {
+                command.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[14].Value = ((string)(Leave_Approved_By));
+            }
+            command.Parameters[15].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

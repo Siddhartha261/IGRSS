@@ -20,6 +20,12 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_Sealing" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
@@ -41,7 +47,9 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_Sealing" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_Sealing" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" onrowdeleted="GridView_Sealing_RowDeleted" 
+                      onrowdeleting="GridView_Sealing_RowDeleting" 
+                      onrowediting="GridView_Sealing_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
@@ -55,12 +63,28 @@
                               SortExpression="PhotoVolumeNo" />
                           <asp:BoundField DataField="BookNo" HeaderText="Book No" 
                               SortExpression="BookNo" />
-                          <asp:BoundField DataField="SealedVolumes" HeaderText="Sealed Volumes During a Single Month" 
+                          <asp:BoundField DataField="SealedVolumes" HeaderText="Sealed Volumes" 
                               SortExpression="SealedVolumes" />
-                          <asp:BoundField DataField="RemainingVolumes" HeaderText="Remaining Volumes to be Sealed at the end of the Month" 
+                          <asp:BoundField DataField="RemainingVolumes" HeaderText="Remaining Volumes" 
                               SortExpression="RemainingVolumes" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField> 
                       </Columns>
                   </asp:GridView>
               </td>
@@ -77,7 +101,10 @@
 <asp:FormView ID="FormView_Sealing" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Sealing" EnableModelValidation="True" 
         DefaultMode="Insert" oniteminserting="FormView_Sealing_ItemInserting" 
-        onitemcommand="FormView_Sealing_ItemCommand" Width="70%" >
+        onitemcommand="FormView_Sealing_ItemCommand" Width="70%" 
+        oniteminserted="FormView_Sealing_ItemInserted" 
+        onitemupdated="FormView_Sealing_ItemUpdated" 
+        onitemupdating="FormView_Sealing_ItemUpdating" >
         <EditItemTemplate>
                                <table>
 	       <tr>
@@ -150,7 +177,7 @@
                   CommandName="Back" Text="Back" CssClass="standardButton" />
 			  </td>			
 		  </tr>	   
-    </table>	   
+    </table>
             
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -225,7 +252,7 @@
                   CommandName="Back" Text="Back" CssClass="standardButton" />
 			  </td>			
 		  </tr>	   
-    </table>	   
+    </table>
             
         </InsertItemTemplate>
         <ItemTemplate>
@@ -274,20 +301,14 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_Sealing" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_Sealing" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.SealingTableAdapters.SealingTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_Sealing_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_Sealing_Selecting" 
+        ondeleting="ods_Sealing_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Kacheri_Office" Type="String" />
-            <asp:Parameter Name="Original_FromDate" Type="DateTime" />
-            <asp:Parameter Name="Original_ToDate" Type="DateTime" />
-            <asp:Parameter Name="Original_PhotoVolumeNo" Type="Int32" />
-            <asp:Parameter Name="Original_BookNo" Type="Int32" />
-            <asp:Parameter Name="Original_SealedVolumes" Type="Int32" />
-            <asp:Parameter Name="Original_RemainingVolumes" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Kacheri_Office" Type="String" />
@@ -312,14 +333,7 @@
             <asp:Parameter Name="SealedVolumes" Type="Int32" />
             <asp:Parameter Name="RemainingVolumes" Type="Int32" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Kacheri_Office" Type="String" />
-            <asp:Parameter Name="Original_FromDate" Type="DateTime" />
-            <asp:Parameter Name="Original_ToDate" Type="DateTime" />
-            <asp:Parameter Name="Original_PhotoVolumeNo" Type="Int32" />
-            <asp:Parameter Name="Original_BookNo" Type="Int32" />
-            <asp:Parameter Name="Original_SealedVolumes" Type="Int32" />
-            <asp:Parameter Name="Original_RemainingVolumes" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_officesmaster" runat="server" 

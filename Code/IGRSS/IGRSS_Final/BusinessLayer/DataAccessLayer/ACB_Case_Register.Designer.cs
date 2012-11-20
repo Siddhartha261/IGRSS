@@ -1839,7 +1839,7 @@ SELECT SrNo, File_No, Employee_Name, Designation, Place_Of_Event_Occured, Summar
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        SrNo, File_No, Employee_Name, Designation, Place_Of_Event_Occured, Summary_Of_Case, FIR_No, Courst_Case_No, Permission_Date_Of_Prosecution, 
@@ -1849,7 +1849,12 @@ FROM            dbo.ACB_CaseRegister";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        SrNo, File_No, Employee_Name, Designation, Place_Of_Event_Occured, " +
+            this._commandCollection[1].CommandText = "DELETE FROM dbo.ACB_CaseRegister\r\nWHERE        (SrNo = @SrNo)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        SrNo, File_No, Employee_Name, Designation, Place_Of_Event_Occured, " +
                 "Summary_Of_Case, FIR_No, Courst_Case_No, Permission_Date_Of_Prosecution, \r\n     " +
                 "                    Date_Of_Suspension, ReInstate_Date, Order_Of_Court, High_cou" +
                 "rt_Appeal, High_court_Appeal_No, High_Court_Appeal_Date, High_court_appeal_order" +
@@ -1879,8 +1884,41 @@ FROM            dbo.ACB_CaseRegister";
                 "(CAST(Supreme_court_appeal_date AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r" +
                 "\n                         (Supreme_court_appeal_order LIKE \'%\' + @searchKeyWord " +
                 "+ \'%\') OR\r\n                         (Remarks LIKE \'%\' + @searchKeyWord + \'%\')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@searchKeyWord", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE       dbo.ACB_CaseRegister
+SET                File_No = @File_No, Employee_Name = @Employee_Name, Designation = @Designation, Place_Of_Event_Occured = @Place_Of_Event_Occured, 
+                         Summary_Of_Case = @Summary_Of_Case, FIR_No = @FIR_No, Courst_Case_No = @Courst_Case_No, 
+                         Permission_Date_Of_Prosecution = @Permission_Date_Of_Prosecution, Date_Of_Suspension = @Date_Of_Suspension, ReInstate_Date = @ReInstate_Date, 
+                         Order_Of_Court = @Order_Of_Court, High_court_Appeal = @High_court_Appeal, High_court_Appeal_No = @High_court_Appeal_No, 
+                         High_Court_Appeal_Date = @High_Court_Appeal_Date, High_court_appeal_order = @High_court_appeal_order, Supreme_Court_Appeal = @Supreme_Court_Appeal, 
+                         Supreme_court_appeal_no = @Supreme_court_appeal_no, Supreme_court_appeal_date = @Supreme_court_appeal_date, 
+                         Supreme_court_appeal_order = @Supreme_court_appeal_order, Remarks = @Remarks
+WHERE        (SrNo = @SrNo)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@File_No", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "File_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Employee_Name", global::System.Data.SqlDbType.NVarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Designation", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Designation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Place_Of_Event_Occured", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Place_Of_Event_Occured", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Summary_Of_Case", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Summary_Of_Case", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIR_No", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FIR_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Courst_Case_No", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Courst_Case_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Permission_Date_Of_Prosecution", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Permission_Date_Of_Prosecution", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Of_Suspension", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Of_Suspension", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReInstate_Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ReInstate_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_Of_Court", global::System.Data.SqlDbType.NVarChar, 350, global::System.Data.ParameterDirection.Input, 0, 0, "Order_Of_Court", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@High_court_Appeal", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "High_court_Appeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@High_court_Appeal_No", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "High_court_Appeal_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@High_Court_Appeal_Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "High_Court_Appeal_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@High_court_appeal_order", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "High_court_appeal_order", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supreme_Court_Appeal", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Supreme_Court_Appeal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supreme_court_appeal_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Supreme_court_appeal_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supreme_court_appeal_date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Supreme_court_appeal_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supreme_court_appeal_order", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Supreme_court_appeal_order", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarks", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Remarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1912,7 +1950,7 @@ FROM            dbo.ACB_CaseRegister";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(ACB_Case_Register.ACB_CaseRegisterDataTable dataTable, string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -1931,7 +1969,7 @@ FROM            dbo.ACB_CaseRegister";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ACB_Case_Register.ACB_CaseRegisterDataTable GetDataBy(string searchKeyWord) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((searchKeyWord == null)) {
                 throw new global::System.ArgumentNullException("searchKeyWord");
             }
@@ -2690,6 +2728,195 @@ FROM            dbo.ACB_CaseRegister";
                     global::System.Nullable<global::System.DateTime> Original_Supreme_court_appeal_date, 
                     string Original_Supreme_court_appeal_order) {
             return this.Update(File_No, Employee_Name, Designation, Place_Of_Event_Occured, Summary_Of_Case, FIR_No, Courst_Case_No, Permission_Date_Of_Prosecution, Date_Of_Suspension, ReInstate_Date, Order_Of_Court, High_court_Appeal, High_court_Appeal_No, High_Court_Appeal_Date, High_court_appeal_order, Supreme_Court_Appeal, Supreme_court_appeal_no, Supreme_court_appeal_date, Supreme_court_appeal_order, Remarks, Original_SrNo, Original_File_No, Original_Employee_Name, Original_Designation, Original_Place_Of_Event_Occured, Original_FIR_No, Original_Courst_Case_No, Original_Permission_Date_Of_Prosecution, Original_Date_Of_Suspension, Original_ReInstate_Date, Original_Order_Of_Court, Original_High_court_Appeal, Original_High_court_Appeal_No, Original_High_Court_Appeal_Date, Original_High_court_appeal_order, Original_Supreme_Court_Appeal, Original_Supreme_court_appeal_no, Original_Supreme_court_appeal_date, Original_Supreme_court_appeal_order, Original_SrNo);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(
+                    global::System.Nullable<int> File_No, 
+                    string Employee_Name, 
+                    string Designation, 
+                    string Place_Of_Event_Occured, 
+                    string Summary_Of_Case, 
+                    global::System.Nullable<int> FIR_No, 
+                    global::System.Nullable<int> Courst_Case_No, 
+                    global::System.Nullable<global::System.DateTime> Permission_Date_Of_Prosecution, 
+                    global::System.Nullable<global::System.DateTime> Date_Of_Suspension, 
+                    global::System.Nullable<global::System.DateTime> ReInstate_Date, 
+                    string Order_Of_Court, 
+                    global::System.Nullable<bool> High_court_Appeal, 
+                    global::System.Nullable<int> High_court_Appeal_No, 
+                    global::System.Nullable<global::System.DateTime> High_Court_Appeal_Date, 
+                    string High_court_appeal_order, 
+                    global::System.Nullable<bool> Supreme_Court_Appeal, 
+                    global::System.Nullable<int> Supreme_court_appeal_no, 
+                    global::System.Nullable<global::System.DateTime> Supreme_court_appeal_date, 
+                    string Supreme_court_appeal_order, 
+                    string Remarks, 
+                    int SrNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((File_No.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(File_No.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Employee_Name == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Employee_Name));
+            }
+            if ((Designation == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Designation));
+            }
+            if ((Place_Of_Event_Occured == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Place_Of_Event_Occured));
+            }
+            if ((Summary_Of_Case == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(Summary_Of_Case));
+            }
+            if ((FIR_No.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(FIR_No.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Courst_Case_No.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(Courst_Case_No.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Permission_Date_Of_Prosecution.HasValue == true)) {
+                command.Parameters[7].Value = ((System.DateTime)(Permission_Date_Of_Prosecution.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Date_Of_Suspension.HasValue == true)) {
+                command.Parameters[8].Value = ((System.DateTime)(Date_Of_Suspension.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((ReInstate_Date.HasValue == true)) {
+                command.Parameters[9].Value = ((System.DateTime)(ReInstate_Date.Value));
+            }
+            else {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Order_Of_Court == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[10].Value = ((string)(Order_Of_Court));
+            }
+            if ((High_court_Appeal.HasValue == true)) {
+                command.Parameters[11].Value = ((bool)(High_court_Appeal.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((High_court_Appeal_No.HasValue == true)) {
+                command.Parameters[12].Value = ((int)(High_court_Appeal_No.Value));
+            }
+            else {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((High_Court_Appeal_Date.HasValue == true)) {
+                command.Parameters[13].Value = ((System.DateTime)(High_Court_Appeal_Date.Value));
+            }
+            else {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((High_court_appeal_order == null)) {
+                command.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[14].Value = ((string)(High_court_appeal_order));
+            }
+            if ((Supreme_Court_Appeal.HasValue == true)) {
+                command.Parameters[15].Value = ((bool)(Supreme_Court_Appeal.Value));
+            }
+            else {
+                command.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Supreme_court_appeal_no.HasValue == true)) {
+                command.Parameters[16].Value = ((int)(Supreme_court_appeal_no.Value));
+            }
+            else {
+                command.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Supreme_court_appeal_date.HasValue == true)) {
+                command.Parameters[17].Value = ((System.DateTime)(Supreme_court_appeal_date.Value));
+            }
+            else {
+                command.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Supreme_court_appeal_order == null)) {
+                command.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[18].Value = ((string)(Supreme_court_appeal_order));
+            }
+            if ((Remarks == null)) {
+                command.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[19].Value = ((string)(Remarks));
+            }
+            command.Parameters[20].Value = ((int)(SrNo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

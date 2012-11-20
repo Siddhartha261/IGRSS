@@ -52,28 +52,28 @@
                       onrowediting="GridView_Tarankit_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" />
-                          <asp:BoundField DataField="Tarankit_Atarnkit" HeaderText="Tarankit_Atarnkit" 
+                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                          <asp:BoundField DataField="Tarankit_Atarnkit" HeaderText="Tarankit/Atarnkit" 
                               SortExpression="Tarankit_Atarnkit" />
-                          <asp:BoundField DataField="quesno" HeaderText="quesno" 
+                          <asp:BoundField DataField="quesno" HeaderText="Question Number" 
                               SortExpression="quesno" />
-                          <asp:BoundField DataField="mlaName" HeaderText="mlaName" 
+                          <asp:BoundField DataField="mlaName" HeaderText="MLA/MP Name" 
                               SortExpression="mlaName" />
-                          <asp:BoundField DataField="mlaPlace" HeaderText="mlaPlace" 
+                          <asp:BoundField DataField="mlaPlace" HeaderText="MLA/MP Place" 
                               SortExpression="mlaPlace" />
                           <asp:BoundField DataField="Subject" HeaderText="Subject" 
                               SortExpression="Subject" />
                           <asp:BoundField DataField="Number" HeaderText="Number" 
                               SortExpression="Number" />
-                          <asp:BoundField DataField="Reply_Sent" HeaderText="Reply_Sent" 
+                          <asp:BoundField DataField="Reply_Sent" HeaderText="Reply Sent" 
                               SortExpression="Reply_Sent" />
                           <asp:BoundField DataField="Date" HeaderText="Date" 
                               SortExpression="Date" />
-                          <asp:BoundField DataField="Fileno" HeaderText="Fileno" 
+                          <asp:BoundField DataField="Fileno" HeaderText="File No" 
                               SortExpression="Fileno" />
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
-                              SortExpression="Remarks" />
+                              SortExpression="Remarks" Visible="False" />
                           <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -107,7 +107,8 @@
         Width="60%" oniteminserting="FormView_Tarankit_ItemInserting" 
         onitemcommand="FormView_Tarankit_ItemCommand" 
         oniteminserted="FormView_Tarankit_ItemInserted" 
-        onitemupdated="FormView_Tarankit_ItemUpdated">
+        onitemupdated="FormView_Tarankit_ItemUpdated" 
+        onitemupdating="FormView_Tarankit_ItemUpdating">
         <EditItemTemplate>
                     <table>
         <tr><td>Tarankit/Atarnkit:</td>

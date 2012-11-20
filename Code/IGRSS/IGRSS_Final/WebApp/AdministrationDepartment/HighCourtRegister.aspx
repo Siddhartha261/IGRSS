@@ -48,44 +48,60 @@
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_HighCourtReg" runat="server" AutoGenerateColumns="False" 
-                      DataKeyNames="SrNo" DataSourceID="ods_HighCourtReg" 
+                      DataKeyNames="SrNo,Parawiseremarks" DataSourceID="ods_HighCourtReg" 
                       EnableModelValidation="True" 
                       onrowdeleted="GridView_HighCourtReg_RowDeleted" 
                       onrowdeleting="GridView_HighCourtReg_RowDeleting" 
-                      onrowediting="GridView_HighCourtReg_RowEditing">
+                      onrowediting="GridView_HighCourtReg_RowEditing" 
+                      onrowdatabound="GridView_HighCourtReg_RowDataBound" Font-Bold="False" 
+                      Font-Names="Times New Roman">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
-                          <asp:BoundField DataField="Fileno" HeaderText="Fileno" 
+                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
+                              Visible="False" />
+                          <asp:BoundField DataField="Fileno" HeaderText="File No" 
                               SortExpression="Fileno" />
                           <asp:BoundField DataField="SpecialCivilApplNo" 
-                              HeaderText="SpecialCivilApplNo" SortExpression="SpecialCivilApplNo" />
-                          <asp:BoundField DataField="DistrictOfficeName" HeaderText="DistrictOfficeName" 
+                              HeaderText="Special Civil Application No" 
+                              SortExpression="SpecialCivilApplNo" />
+                          <asp:BoundField DataField="DistrictOfficeName" HeaderText="Name Of District Office" 
                               SortExpression="DistrictOfficeName" />
-                          <asp:BoundField DataField="PetitionerName" HeaderText="PetitionerName" 
+                          <asp:BoundField DataField="PetitionerName" HeaderText="Petitioner Name" 
                               SortExpression="PetitionerName" />
                           <asp:BoundField DataField="PetitionReason" HeaderText="PetitionReason" 
-                              SortExpression="PetitionReason" />
-                          <asp:CheckBoxField DataField="Parawiseremarks" HeaderText="Parawiseremarks" 
-                              SortExpression="Parawiseremarks" />
+                              SortExpression="PetitionReason" Visible="False" />
+                              <asp:TemplateField HeaderText="Parawiseremarks" SortExpression="Parawiseremarks" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblParawiseremarks"  runat="server" Text="No" 
+                                        Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
+                                </ItemTemplate>
+                                  <ItemStyle HorizontalAlign="Center" />
+                              </asp:TemplateField>
                           <asp:BoundField DataField="Parawiseremarksdate" 
-                              HeaderText="Parawiseremarksdate" SortExpression="Parawiseremarksdate" />
-                          <asp:CheckBoxField DataField="Affidavit" HeaderText="Affidavit" 
-                              SortExpression="Affidavit" />
-                          <asp:BoundField DataField="Affidavitdate" HeaderText="Affidavitdate" 
+                              HeaderText="Parawise Remarks Sent Date" 
+                              SortExpression="Parawiseremarksdate" />
+                              <asp:TemplateField HeaderText="Affidavit Sent Or Not" SortExpression="Affidavit" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblAffidavit"  runat="server" Text="No" 
+                                        Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
+                                </ItemTemplate>
+                                  <ItemStyle HorizontalAlign="Center" />
+                              </asp:TemplateField>
+                         <asp:BoundField DataField="Affidavitdate" HeaderText="Affidavit Date" 
                               SortExpression="Affidavitdate" />
-                          <asp:BoundField DataField="LatestStatus" HeaderText="LatestStatus" 
+                          <asp:BoundField DataField="LatestStatus" HeaderText="Latest Status" 
                               SortExpression="LatestStatus" />
                           <asp:BoundField DataField="PetitionDispoasedYear" 
-                              HeaderText="PetitionDispoasedYear" 
+                              HeaderText="Petition Disposed Year" 
                               SortExpression="PetitionDispoasedYear" />
-                          <asp:BoundField DataField="DisposalDate" HeaderText="DisposalDate" 
+                          <asp:BoundField DataField="DisposalDate" HeaderText="Disposal Date" 
                               SortExpression="DisposalDate" />
                           <asp:BoundField DataField="OrderJudgementSheet" 
-                              HeaderText="OrderJudgementSheet" SortExpression="OrderJudgementSheet" />
+                              HeaderText="OrderJudgementSheet" SortExpression="OrderJudgementSheet" 
+                              Visible="False" />
                           <asp:BoundField DataField="JudgementDetail" HeaderText="JudgementDetail" 
-                              SortExpression="JudgementDetail" />
-                          <asp:TemplateField HeaderText="Actions">
+                              SortExpression="JudgementDetail" Visible="False" />
+                            <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
                                     <tr>
@@ -100,7 +116,7 @@
                                     </tr>
                                 </table>
                             </ItemTemplate>
-                          </asp:TemplateField>
+                          </asp:TemplateField> 
                       </Columns>
                   </asp:GridView>
               </td>
@@ -116,10 +132,12 @@
 <asp:FormView ID="FormView_HighCourtReg" runat="server" 
         EnableModelValidation="True" DefaultMode="Insert" 
          oniteminserting="FormView_HighCourtReg_ItemInserting" 
-        onitemcommand="FormView_HighCourtReg_ItemCommand" DataKeyNames="SrNo" 
+        onitemcommand="FormView_HighCourtReg_ItemCommand" DataKeyNames="SrNo,Parawiseremarks,Affidavit" 
         DataSourceID="ods_HighCourtReg" 
         oniteminserted="FormView_HighCourtReg_ItemInserted" 
-        onitemupdated="FormView_HighCourtReg_ItemUpdated">
+        onitemupdated="FormView_HighCourtReg_ItemUpdated" 
+        onitemupdating="FormView_HighCourtReg_ItemUpdating" 
+        ondatabound="FormView_HighCourtReg_DataBound">
     <EditItemTemplate>
                     <table>
         <tr>
