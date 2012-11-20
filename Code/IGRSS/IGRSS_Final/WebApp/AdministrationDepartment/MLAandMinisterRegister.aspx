@@ -164,7 +164,7 @@
             
         <tr><td>Letter Date:</td>
 		    <td><asp:TextBox ID="LetterDateTextBox" runat="server" 
-                Text='<%# Bind("LetterDate") %>' Width="160px" /></td>
+                Text='<%# Bind("LetterDate") %>' Width="140px" /></td>
 		</tr>	           
             
         <tr><td>Department Name:</td>
@@ -247,7 +247,7 @@
             
         <tr><td>Letter Date:</td>
 		    <td><asp:TextBox ID="LetterDateTextBox" runat="server" 
-                Text='<%# Bind("LetterDate") %>' Width="160px" /></td>
+                Text='<%# Bind("LetterDate") %>' Width="140px" /></td>
 		</tr>	           
             
         <tr><td>Department Name:</td>

@@ -53,11 +53,19 @@
             generateDatePicker(datePickers[index]);
         }
     });
+    
+            
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_SOFile" runat="server" ActiveViewIndex="0">
 <asp:View ID="GridView" runat="server">
-<hr /><br />
-<h1>SO File</h1>
+<br />
+<h1 style="text-align: center">SO FILE</h1>
 <table>
           <tr>
                     <td align="right" style="width:641px;" >
@@ -75,10 +83,12 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_SOFile" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_SOFile" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" onrowdeleted="GridView_SOFile_RowDeleted" 
+                      onrowdeleting="GridView_SOFile_RowDeleting" 
+                      onrowediting="GridView_SOFile_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
                           <asp:BoundField DataField="Circulars" HeaderText="Circulars" 
                               SortExpression="Circulars" />
                           <asp:BoundField DataField="DateOfCirculars" HeaderText="DateOfCirculars" 
@@ -89,6 +99,22 @@
                               SortExpression="Subject" />
                           <asp:BoundField DataField="PageNo" HeaderText="PageNo" 
                               SortExpression="PageNo" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -101,14 +127,17 @@
 
 <asp:View ID="Formview" runat="server">
 <center>
-<h1>SO File</h1>
+<h1>SO FILE</h1>
     <asp:FormView ID="FormView_SOFile" runat="server" DataKeyNames="SrNo" 
-        DataSourceID="ods_SOFile" DefaultMode="Insert" EnableModelValidation="True" 
-        Width="50%" onitemcommand="FormView_SOFile_ItemCommand" 
-        oniteminserting="FormView_SOFile_ItemInserting">
+        DataSourceID="ods_SOFile" DefaultMode="Insert" 
+        EnableModelValidation="True" onitemcommand="FormView_SOFile_ItemCommand" 
+        oniteminserting="FormView_SOFile_ItemInserting" 
+        oniteminserted="FormView_SOFile_ItemInserted" 
+        onitemupdated="FormView_SOFile_ItemUpdated" 
+        onitemupdating="FormView_SOFile_ItemUpdating">
 
         <EditItemTemplate>
-            <table>
+           <table align="center" cellspacing="5">
                 <%--  <tr><td>SrNo:</td>
 									    <td><asp:TextBox ID="SrNoTextBox" runat="server" Text='<%# Bind("SrNo") %>' /></td>
 									</tr>															--%>
@@ -154,17 +183,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" />
+                <td align="center" colspan="2">
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                CommandName="Update" Text="Update"  CssClass="standardButton"/>
+                 &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
+                            CommandName="Reset" Text="Reset" 
+                            onclientclick="resetTextFields();return false;" CssClass="standardButton" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" 
-                            CssClass="standardButton" />
+                CausesValidation="False" CommandName="Back" Text="Back"  CssClass="standardButton"/>
                 </td>
                 </tr>
-            </table>
+                </table>
         </EditItemTemplate>
         <InsertItemTemplate>
-            <table>
+             <table align="center" cellspacing="5">
                 <%--  <tr><td>SrNo:</td>
 									    <td><asp:TextBox ID="SrNoTextBox" runat="server" Text='<%# Bind("SrNo") %>' /></td>
 									</tr>															--%>
@@ -244,16 +276,16 @@
             <asp:Label ID="PageNoLabel" runat="server" Text='<%# Bind("PageNo") %>' />
             <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
-                CommandName="Edit" Text="Edit" CssClass="standardButton" />
+                CommandName="Edit" Text="Edit" />
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
-                CommandName="Delete" Text="Delete" CssClass="standardButton" />
+                CommandName="Delete" Text="Delete" />
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
-                CommandName="New" Text="New" CssClass="standardButton" />
+                CommandName="New" Text="New" />
         </ItemTemplate>
     </asp:FormView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         DeleteMethod="Delete" InsertMethod="Insert" 
-        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+    SelectMethod="GetData" 
         TypeName="IGRSS.DataAccessLayer.DataSetDepartmentTableAdapters.DepartmentMasterTableAdapter" 
         UpdateMethod="Update">
         <DeleteParameters>
@@ -270,21 +302,20 @@
             <asp:Parameter Name="Original_Name" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
+    
+    &nbsp;
 </center>
     
-    <asp:ObjectDataSource ID="ods_SOFile" runat="server" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetDataBy"    
+    <asp:ObjectDataSource ID="ods_SOFile" runat="server"  
+        SelectMethod="GetDataBy" 
+        
         
         TypeName="IGRSS.DataAccessLayer.SOFileTableAdapters.SOFILETableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_SOFile_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_SOFile_Selecting" ondeleting="ods_SOFile_Deleting" 
+        >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Circulars" Type="Int32" />
-            <asp:Parameter Name="Original_DateOfCirculars" Type="DateTime" />
-            <asp:Parameter Name="Original_Department" Type="String" />
-            <asp:Parameter Name="Original_Subject" Type="String" />
-            <asp:Parameter Name="Original_PageNo" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Circulars" Type="Int32" />
@@ -303,12 +334,6 @@
             <asp:Parameter Name="Department" Type="String" />
             <asp:Parameter Name="Subject" Type="String" />
             <asp:Parameter Name="PageNo" Type="Int32" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Circulars" Type="Int32" />
-            <asp:Parameter Name="Original_DateOfCirculars" Type="DateTime" />
-            <asp:Parameter Name="Original_Department" Type="String" />
-            <asp:Parameter Name="Original_Subject" Type="String" />
-            <asp:Parameter Name="Original_PageNo" Type="Int32" />
             <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>

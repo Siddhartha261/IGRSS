@@ -40,10 +40,16 @@
          }
      });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_Kalpataru" runat="server" ActiveViewIndex="0">
 <asp:View ID="View1_GridView_Kalpataru" runat="server">
-<hr /><br />
-<h1>Kalpataru Purchase Stock Register</h1>
+<br />
+<h1 style="text-align: center">Kalpataru Purchase Stock Register</h1>
 <table>
           <tr>
                     <td align="right" style="width:641px;" >
@@ -61,11 +67,12 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_Kalpataru" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_Kalpataru" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" onrowdeleted="GridView_Kalpataru_RowDeleted" 
+                      onrowdeleting="GridView_Kalpataru_RowDeleting" 
+                      onrowediting="GridView_Kalpataru_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
-                              Visible="False" />
+                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
                           <asp:BoundField DataField="Billno" HeaderText="Billno" 
                               SortExpression="Billno" />
                           <asp:BoundField DataField="ListOfConsumableItems" HeaderText="ListOfConsumableItems" 
@@ -74,6 +81,22 @@
                               SortExpression="BillDate" />
                           <asp:BoundField DataField="Quantity" HeaderText="Quantity" 
                               SortExpression="Quantity" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -88,33 +111,51 @@
 <h1>Kalpataru Purchase Stock Register </h1>
     <asp:FormView ID="FormView_Kalpataru" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Kalpataru" DefaultMode="Insert" 
-        EnableModelValidation="True" onitemcommand="FormView_Kalpataru_ItemCommand">
+        EnableModelValidation="True" 
+        onitemcommand="FormView_Kalpataru_ItemCommand" 
+        oniteminserted="FormView_Kalpataru_ItemInserted" 
+        onitemupdated="FormView_Kalpataru_ItemUpdated">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            Billno:
-            <asp:TextBox ID="BillnoTextBox" runat="server" Text='<%# Bind("Billno") %>' />
-            <br />
-            ListOfConsumableItems:
-            <asp:TextBox ID="ListOfConsumableItemsTextBox" runat="server" 
-                Text='<%# Bind("ListOfConsumableItems") %>' />
-            <br />
-            BillDate:
-            <asp:TextBox ID="BillDateTextBox" runat="server" 
-                Text='<%# Bind("BillDate") %>' />
-            <br />
-            Quantity:
-            <asp:TextBox ID="QuantityTextBox" runat="server" 
-                Text='<%# Bind("Quantity") %>' />
-            <br />
+             <table align="center" cellspacing="5">
+			<tr>
+			<td>
+			Bill No:
+			</td>
+			<td>
+			 <asp:TextBox ID="BillnoTextBox" runat="server" Text='<%# Bind("Billno") %>' />
+			</td>
+			</tr>
+           
+            <tr><td>
+			List Of Consumable Items:
+			</td>
+			<td><asp:TextBox ID="ListOfConsumableItemsTextBox" runat="server" 
+                Text='<%# Bind("ListOfConsumableItems") %>' /></td></tr>
+            
+            
+            <tr><td>Date Of Bill:</td>
+			<td> <asp:TextBox ID="BillDateTextBox" runat="server" 
+                Text='<%# Bind("BillDate") %>' /></td></tr>
+            
+           
+            <tr><td>Quantity:</td><td> <asp:TextBox ID="QuantityTextBox" runat="server" 
+                Text='<%# Bind("Quantity") %>' /></td></tr>
+            
+           <tr>
+           <td colspan="2" align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
+                CommandName="Update" Text="Update" CssClass="standardButton" />
+                &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
+                            CausesValidation="False" CommandName="Reset" CssClass="standardButton" 
+                            Text="Reset"   onclientclick="resetTextFields();return false;"/>
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                CausesValidation="False" CommandName="Back" Text="Back" CssClass="standardButton" />
+                </td>
+                </tr>
+                </table>
         </EditItemTemplate>
         <InsertItemTemplate>
-                                   <table align="center" cellspacing="5">
+                                  <table align="center" cellspacing="5">
 			<tr>
 			<td>
 			Bill No:
@@ -183,19 +224,15 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_Kalpataru" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_Kalpataru" runat="server"  
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.Kalpataru_Purachase_StockTableAdapters.Kalpataru_Purchase_Stock_RegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_Kalpataru_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_Kalpataru_Selecting" ondeleting="ods_Kalpataru_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Billno" Type="Int32" />
-            <asp:Parameter Name="Original_ListOfConsumableItems" Type="String" />
-            <asp:Parameter Name="Original_BillDate" Type="DateTime" />
-            <asp:Parameter Name="Original_Quantity" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Billno" Type="Int32" />
@@ -209,14 +246,10 @@
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="Billno" Type="Int32" />
+            <asp:Parameter Name="BillDate" Type="String" />
             <asp:Parameter Name="ListOfConsumableItems" Type="String" />
-            <asp:Parameter Name="BillDate" Type="DateTime" />
             <asp:Parameter Name="Quantity" Type="Int32" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Billno" Type="Int32" />
-            <asp:Parameter Name="Original_ListOfConsumableItems" Type="String" />
-            <asp:Parameter Name="Original_BillDate" Type="DateTime" />
-            <asp:Parameter Name="Original_Quantity" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

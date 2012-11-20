@@ -203,7 +203,7 @@
 			
 			<td>Appeal Date:</td>
 			<td><asp:TextBox ID="High_Court_Appeal_DateTextBox" runat="server" 
-                Text='<%# Bind("High_Court_Appeal_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("High_Court_Appeal_Date") %>' Width="140px" /></td>
 		</tr>           
             
         <tr>
@@ -244,17 +244,17 @@
         <tr>
 		    <td>Permission Date Of Prosecution:</td>
 			<td><asp:TextBox ID="Permission_Date_Of_ProsecutionTextBox" runat="server" 
-                Text='<%# Bind("Permission_Date_Of_Prosecution") %>' Width="160px" /></td>
+                Text='<%# Bind("Permission_Date_Of_Prosecution") %>' Width="140px" /></td>
 			
 			<td>Appeal Date:</td>
 			<td><asp:TextBox ID="Supreme_court_appeal_dateTextBox" runat="server" 
-                Text='<%# Bind("Supreme_court_appeal_date") %>' Width="160px" /></td>
+                Text='<%# Bind("Supreme_court_appeal_date") %>' Width="140px" /></td>
 		</tr>           
             
         <tr>
 		    <td>Date Of Suspension:</td>
 			<td><asp:TextBox ID="Date_Of_SuspensionTextBox" runat="server" 
-                Text='<%# Bind("Date_Of_Suspension") %>' Width="160px" /></td>
+                Text='<%# Bind("Date_Of_Suspension") %>' Width="140px" /></td>
 			
 			<td>Order Of Appeal:</td>
 			<td><asp:TextBox ID="Supreme_court_appeal_orderTextBox" runat="server" 
@@ -264,7 +264,7 @@
         <tr>
 		    <td>Re-Instate Date:</td>
 			<td><asp:TextBox ID="ReInstate_DateTextBox" runat="server" 
-                Text='<%# Bind("ReInstate_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("ReInstate_Date") %>' Width="140px" /></td>
 			
 			<td>Remarks:</td>
 			<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
@@ -336,7 +336,7 @@
 			
 			<td>Appeal Date:</td>
 			<td><asp:TextBox ID="High_Court_Appeal_DateTextBox" runat="server" 
-                Text='<%# Bind("High_Court_Appeal_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("High_Court_Appeal_Date") %>' Width="140px" /></td>
 		</tr>           
             
         <tr>
@@ -377,17 +377,17 @@
         <tr>
 		    <td>Permission Date Of Prosecution:</td>
 			<td><asp:TextBox ID="Permission_Date_Of_ProsecutionTextBox" runat="server" 
-                Text='<%# Bind("Permission_Date_Of_Prosecution") %>' Width="160px" /></td>
+                Text='<%# Bind("Permission_Date_Of_Prosecution") %>' Width="140px" /></td>
 			
 			<td>Appeal Date:</td>
 			<td><asp:TextBox ID="Supreme_court_appeal_dateTextBox" runat="server" 
-                Text='<%# Bind("Supreme_court_appeal_date") %>' Width="160px" /></td>
+                Text='<%# Bind("Supreme_court_appeal_date") %>' Width="140px" /></td>
 		</tr>           
             
         <tr>
 		    <td>Date Of Suspension:</td>
 			<td><asp:TextBox ID="Date_Of_SuspensionTextBox" runat="server" 
-                Text='<%# Bind("Date_Of_Suspension") %>' Width="160px" /></td>
+                Text='<%# Bind("Date_Of_Suspension") %>' Width="140px" /></td>
 			
 			<td>Order Of Appeal:</td>
 			<td><asp:TextBox ID="Supreme_court_appeal_orderTextBox" runat="server" 
@@ -397,7 +397,7 @@
         <tr>
 		    <td>Re-Instate Date:</td>
 			<td><asp:TextBox ID="ReInstate_DateTextBox" runat="server" 
-                Text='<%# Bind("ReInstate_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("ReInstate_Date") %>' Width="140px" /></td>
 			
 			<td>Remarks:</td>
 			<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 

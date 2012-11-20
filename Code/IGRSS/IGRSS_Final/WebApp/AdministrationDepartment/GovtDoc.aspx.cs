@@ -23,6 +23,7 @@ public partial class GovtDoc : System.Web.UI.Page
             case "Back":
                 mvgovtdoc.SetActiveView(viewGrid);
                 viewGrid.DataBind();
+                infoDiv.Visible = false;
                 break;
         }
     }
@@ -40,5 +41,66 @@ public partial class GovtDoc : System.Web.UI.Page
     protected void ButtonSearch_Click(object sender, EventArgs e)
     {
 
+    }
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
+    }
+    protected void GridView2_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView2_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView2.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView2.DataKeys[e.RowIndex].Value;
+        ObjectDataSource_govtdoc.Delete();
+    }
+    protected void GridView2_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        mvgovtdoc.SetActiveView(viewFv);
+        FvGovtDoc.PageIndex = e.NewEditIndex;
+        FvGovtDoc.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+
+    }
+    protected void FvGovtDoc_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FvGovtDoc_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void ObjectDataSource_govtdoc_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
+    }
+    protected void FvGovtDoc_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        DropDownList DropDownListDepartment = FvGovtDoc.FindControl("DropDownListNameOfDepartment") as DropDownList;
+        e.NewValues["NameOfDepartment"] = DropDownListDepartment.SelectedValue;
     }
 }

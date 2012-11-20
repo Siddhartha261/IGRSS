@@ -118,7 +118,7 @@
 			</tr>  
        		   
            <tr>
-		       <td colspan="2">Time Span During Year:</td>
+		       <td colspan="2" class="gridItems">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time Span During Year:</td>
      	   </tr>
        	   
                                    <tr>
@@ -193,7 +193,7 @@
 			</tr>  
        		   
            <tr>
-		       <td colspan="2">Time Span During Year:</td>
+		       <td colspan="2" class="gridItems">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time Span During Year:</td>
      	   </tr>
        	   
                                    <tr>

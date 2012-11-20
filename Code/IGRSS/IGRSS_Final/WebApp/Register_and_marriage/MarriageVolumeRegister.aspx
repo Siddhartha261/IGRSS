@@ -40,9 +40,12 @@
         }
     });
 </script>
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br /></center>
 <asp:MultiView ID="Multiview_Marriage_Volume" runat="server" ActiveViewIndex="0">
 <asp:View ID="View1_Gridview_MarriageVolume" runat="server">
-<hr /><br />
+<br />
 <h1>Marriage Volume List Register</h1>
 <table>
           <tr>
@@ -61,16 +64,35 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_MarriageVolume" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_MarriageVolume" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_MarriageVolume_RowDeleted" 
+                      onrowdeleting="GridView_MarriageVolume_RowDeleting" 
+                      onrowediting="GridView_MarriageVolume_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" />
-                          <asp:BoundField DataField="DateToDate" HeaderText="DateToDate" 
+                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                          <asp:BoundField DataField="DateToDate" HeaderText="Date To Date" 
                               SortExpression="DateToDate" />
-                          <asp:BoundField DataField="VolumeNo" HeaderText="VolumeNo" 
+                          <asp:BoundField DataField="VolumeNo" HeaderText="Volume No" 
                               SortExpression="VolumeNo" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" />
+                              SortExpression="Remarks" Visible="False" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -85,26 +107,43 @@
 <h1>Marriage Volume List Register</h1>
     <asp:FormView ID="FormView_MarriageVolume" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_MarriageVolume" DefaultMode="Insert" 
-        EnableModelValidation="True" onitemcommand="FormView_Marriage_ItemCommand">
+        EnableModelValidation="True" onitemcommand="FormView_Marriage_ItemCommand" 
+        oniteminserted="FormView_MarriageVolume_ItemInserted" 
+        onitemupdated="FormView_MarriageVolume_ItemUpdated">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            DateToDate:
-            <asp:TextBox ID="DateToDateTextBox" runat="server" 
+                      
+			            
+			            <table>
+			<tr>
+			<td>
+			Date To Date:
+			</td>
+			<td>
+			<asp:TextBox ID="DateToDateTextBox" runat="server" 
                 Text='<%# Bind("DateToDate") %>' />
-            <br />
-            VolumeNo:
-            <asp:TextBox ID="VolumeNoTextBox" runat="server" 
-                Text='<%# Bind("VolumeNo") %>' />
-            <br />
-            Remarks:
-            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+			</td>
+			</tr>
+			
+            
+            <tr><td>Volume No:</td><td> <asp:TextBox ID="VolumeNoTextBox" runat="server" 
+                Text='<%# Bind("VolumeNo") %>' /></td></tr>
+            
+           
+            <tr><td>Remarks:</td><td> 
+            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+           
+            <tr><td>
+			<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                            CommandName="Update" CssClass="standardButton" Text="Update" />
+                            &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
+                            CausesValidation="False" CommandName="Cancel" CssClass="standardButton" 
+                            Text="Reset" />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                            CausesValidation="False" CommandName="Back" CssClass="standardButton" 
+                            Text="Back" />
+			</td></tr>
+			</table>
+            
         </EditItemTemplate>
         <InsertItemTemplate>
                                    <table align="center" cellspacing="5">
@@ -162,18 +201,18 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_MarriageVolume" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_MarriageVolume" runat="server" 
         SelectMethod="GetDataBy" 
         
         
         
         TypeName="IGRSS.DataAccessLayer.Marriage_Volume_RegisterTableAdapters.MarriageVolumeListRegisterTableAdapter" 
-        InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_Marriage_Selecting" DeleteMethod="Delete">
+        InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_Marriage_Selecting" DeleteMethod="DeleteQuery" 
+        ondeleting="ods_MarriageVolume_Deleting" 
+       >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_DateToDate" Type="DateTime" />
-            <asp:Parameter Name="Original_VolumeNo" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="DateToDate" Type="DateTime" />
@@ -185,12 +224,10 @@
                 PropertyName="Text" Type="String" />
         </SelectParameters>
         <UpdateParameters>
-            <asp:Parameter Name="DateToDate" Type="DateTime" />
             <asp:Parameter Name="VolumeNo" Type="Int32" />
+            <asp:Parameter Name="DateToDate" Type="DateTime" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_DateToDate" Type="DateTime" />
-            <asp:Parameter Name="Original_VolumeNo" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

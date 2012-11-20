@@ -40,10 +40,15 @@
           }
       });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br /></center>
 <asp:MultiView ID="Multiview_Vigilance" runat="server" ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
-<hr /><br />
-<h1>vigilance register</h1>
+<br />
+<h1 style="text-align: center">VIGILANCE REGISTER</h1>
 <table>
           <tr>
           <td align="right">
@@ -67,9 +72,12 @@
           </tr>
           <tr>
               <td align="right" colspan="3">
-                  <asp:GridView ID="GridView_SOFile" runat="server" AutoGenerateColumns="False" 
+                  <asp:GridView ID="GridView_Vigilance" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_Vigilance" 
-                      EnableModelValidation="True">
+                      
+                      EnableModelValidation="True" onrowdeleted="GridView_Vigilance_RowDeleted" 
+                      onrowdeleting="GridView_Vigilance_RowDeleting" 
+                      onrowediting="GridView_Vigilance_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" />
@@ -95,6 +103,22 @@
                               SortExpression="closedate" />
                           <asp:BoundField DataField="remarks" HeaderText="remarks" 
                               SortExpression="remarks" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -107,115 +131,120 @@
 
 <asp:View ID="view2_Formview" runat="server">
 <center>
-<h1>vigilance register</h1>
+<h1 style="text-align: center">VIGILANCE REGISTER</h1>
     <asp:FormView ID="FormView_Vigilance" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Vigilance" DefaultMode="Insert" 
         EnableModelValidation="True" 
-        onitemcommand="FormView_Vigilance_ItemCommand">
+        onitemcommand="FormView_Vigilance_ItemCommand" 
+        oniteminserted="FormView_Vigilance_ItemInserted" 
+        onitemupdated="FormView_Vigilance_ItemUpdated" 
+        oniteminserting="FormView_Vigilance_ItemInserting" 
+        onitemupdating="FormView_Vigilance_ItemUpdating">
 
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            Letterno:
-            <asp:TextBox ID="LetternoTextBox" runat="server" 
-                Text='<%# Bind("Letterno") %>' />
-            <br />
-            deptdate:
-            <asp:TextBox ID="deptdateTextBox" runat="server" 
-                Text='<%# Bind("deptdate") %>' />
-            <br />
-            letterdate:
-            <asp:TextBox ID="letterdateTextBox" runat="server" 
-                Text='<%# Bind("letterdate") %>' />
-            <br />
-            applname:
-            <asp:TextBox ID="applnameTextBox" runat="server" 
-                Text='<%# Bind("applname") %>' />
-            <br />
-            empname:
-            <asp:TextBox ID="empnameTextBox" runat="server" Text='<%# Bind("empname") %>' />
-            <br />
-            emp_desig:
-            <asp:TextBox ID="emp_desigTextBox" runat="server" 
-                Text='<%# Bind("emp_desig") %>' />
-            <br />
-            applsummary:
-            <asp:TextBox ID="applsummaryTextBox" runat="server" 
-                Text='<%# Bind("applsummary") %>' />
-            <br />
-            reportdate:
-            <asp:TextBox ID="reportdateTextBox" runat="server" 
-                Text='<%# Bind("reportdate") %>' />
-            <br />
-            Status:
-            <asp:TextBox ID="StatusTextBox" runat="server" Text='<%# Bind("Status") %>' />
-            <br />
-            closedate:
-            <asp:TextBox ID="closedateTextBox" runat="server" 
-                Text='<%# Bind("closedate") %>' />
-            <br />
-            remarks:
-            <asp:TextBox ID="remarksTextBox" runat="server" Text='<%# Bind("remarks") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-        </EditItemTemplate>
-        <InsertItemTemplate>
-                 <table align="center" cellspacing="5">
+            <table align="center" cellspacing="5">
     <tr><td>Letter No:</td>
         <td><asp:TextBox ID="LetternoTextBox" runat="server" 
-                Text='<%# Bind("Letterno") %>' Width="160px" /></td>
+                Text='<%# Bind("Letterno") %>' /></td>
 	</tr>
             
             
             <tr><td>Department Date:</td>
-			<td> 
-                <asp:TextBox ID="deptdateTextBox" runat="server" 
-                Text='<%# Bind("deptdate") %>' Width="160px" /></td></tr>
+			<td> <asp:TextBox ID="deptdateTextBox" runat="server" 
+                Text='<%# Bind("deptdate") %>' /></td></tr>
             
            
-            <tr><td>Date OF Letter Received:</td><td>
-                <asp:TextBox ID="letterdateTextBox" runat="server" 
-                Text='<%# Bind("letterdate") %>' Width="160px" /></td></tr>
+            <tr><td>Date OF Letter Received:</td><td><asp:TextBox ID="letterdateTextBox" runat="server" 
+                Text='<%# Bind("letterdate") %>' /></td></tr>
             
             
-            <tr><td>Name Of Applicant:</td><td>
-                <asp:TextBox ID="applnameTextBox" runat="server" 
-                Text='<%# Bind("applname") %>' Width="160px" /></td></tr>
+            <tr><td>Name Of Applicant:</td><td><asp:TextBox ID="applnameTextBox" runat="server" 
+                Text='<%# Bind("applname") %>' /></td></tr>
             
-            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" 
-                    Text='<%# Bind("empname") %>' Width="160px" /></td></tr>
+            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" Text='<%# Bind("empname") %>' /></td></tr>
+           
+            
+            <tr><td> Designation Of Employee:</td><td>  <asp:DropDownList ID="designation" runat="server" 
+                    DataSourceID="ObjectDataSource1" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList></td></tr>
+           
+           
+            <tr><td>Application Summary:</td><td> <asp:TextBox ID="applsummaryTextBox" runat="server" 
+                Text='<%# Bind("applsummary") %>' /></td></tr>
+            
+           
+            <tr><td>Date of Sending Report:</td><td> <asp:TextBox ID="reportdateTextBox" runat="server" 
+                Text='<%# Bind("reportdate") %>' /></td></tr>
+            
+           
+            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" Text='<%# Bind("Status") %>' /></td></tr>
+            
+           
+            <tr><td>File Closing Date:</td><td> <asp:TextBox ID="closedateTextBox" runat="server" 
+                Text='<%# Bind("closedate") %>' /></td></tr>
+            
+           
+            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" Text='<%# Bind("remarks") %>' /></td></tr>
+            
+            <tr>
+            <td colspan="2" align="center">
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                CommandName="Update" Text="Update"   CssClass="standardButton"  />
+                &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="reset" Text="Reset" 
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back"   CssClass="standardButton" />
+                </td>
+                </tr>
+                </tabel>
+        </EditItemTemplate>
+        <InsertItemTemplate>
+                      <table align="center" cellspacing="5">
+    <tr><td>Letter No:</td>
+        <td><asp:TextBox ID="LetternoTextBox" runat="server" 
+                Text='<%# Bind("Letterno") %>' /></td>
+	</tr>
+            
+            
+            <tr><td>Department Date:</td>
+			<td> <asp:TextBox ID="deptdateTextBox" runat="server" 
+                Text='<%# Bind("deptdate") %>' /></td></tr>
+            
+           
+            <tr><td>Date OF Letter Received:</td><td><asp:TextBox ID="letterdateTextBox" runat="server" 
+                Text='<%# Bind("letterdate") %>' /></td></tr>
+            
+            
+            <tr><td>Name Of Applicant:</td><td><asp:TextBox ID="applnameTextBox" runat="server" 
+                Text='<%# Bind("applname") %>' /></td></tr>
+            
+            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" Text='<%# Bind("empname") %>' /></td></tr>
            
             
             <tr><td> Designation Of Employee:</td><td> 
-                <asp:TextBox ID="emp_desigTextBox" runat="server" 
-                Text='<%# Bind("emp_desig") %>' Width="160px" /></td></tr>
+                <asp:DropDownList ID="designation" runat="server" 
+                    DataSourceID="ObjectDataSource1" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList>
+                </td></tr>
            
            
-            <tr><td>Application Summary:</td><td> 
-                <asp:TextBox ID="applsummaryTextBox" runat="server" 
-                Text='<%# Bind("applsummary") %>' Height="60px" Width="160px" /></td></tr>
+            <tr><td>Application Summary:</td><td> <asp:TextBox ID="applsummaryTextBox" runat="server" 
+                Text='<%# Bind("applsummary") %>' /></td></tr>
             
            
-            <tr><td>Date of Sending Report:</td><td> 
-                <asp:TextBox ID="reportdateTextBox" runat="server" 
-                Text='<%# Bind("reportdate") %>' Width="160px" /></td></tr>
+            <tr><td>Date of Sending Report:</td><td> <asp:TextBox ID="reportdateTextBox" runat="server" 
+                Text='<%# Bind("reportdate") %>' /></td></tr>
             
            
-            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" 
-                    Text='<%# Bind("Status") %>' Width="160px" /></td></tr>
+            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" Text='<%# Bind("Status") %>' /></td></tr>
             
            
-            <tr><td>File Closing Date:</td><td> 
-                <asp:TextBox ID="closedateTextBox" runat="server" 
-                Text='<%# Bind("closedate") %>' Width="160px" /></td></tr>
+            <tr><td>File Closing Date:</td><td> <asp:TextBox ID="closedateTextBox" runat="server" 
+                Text='<%# Bind("closedate") %>' /></td></tr>
             
            
-            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" 
-                    Text='<%# Bind("remarks") %>' Height="60px" Width="160px" /></td></tr>
+            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" Text='<%# Bind("remarks") %>' /></td></tr>
             
             
             <tr>
@@ -283,42 +312,65 @@
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         DeleteMethod="Delete" InsertMethod="Insert" 
         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="IGRSS.DataAccessLayer.DataSetDepartmentTableAdapters.DepartmentMasterTableAdapter" 
+        TypeName="IGRSS.DataAccessLayer.DesignationMasterTableAdapters.DesignationMasterTableAdapter" 
         UpdateMethod="Update">
         <DeleteParameters>
-            <asp:Parameter DbType="Guid" Name="Original_DepartmentID" />
+            <asp:Parameter DbType="Guid" Name="Original_DesignationID" />
             <asp:Parameter Name="Original_Name" Type="String" />
+            <asp:Parameter Name="Original_Description" Type="String" />
+            <asp:Parameter Name="Original_CreatedBy" Type="String" />
+            <asp:Parameter Name="Original_CreatedAt" Type="DateTime" />
+            <asp:Parameter Name="Original_ModifiedBy" Type="String" />
+            <asp:Parameter Name="Original_ModifiedAt" Type="DateTime" />
+            <asp:Parameter Name="Original_IsDeleted" Type="Boolean" />
+            <asp:Parameter Name="Original_DeletedBy" Type="String" />
+            <asp:Parameter Name="Original_DeletedAt" Type="DateTime" />
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter DbType="Guid" Name="DepartmentID" />
+            <asp:Parameter DbType="Guid" Name="DesignationID" />
             <asp:Parameter Name="Name" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
+            <asp:Parameter Name="CreatedBy" Type="String" />
+            <asp:Parameter Name="CreatedAt" Type="DateTime" />
+            <asp:Parameter Name="ModifiedBy" Type="String" />
+            <asp:Parameter Name="ModifiedAt" Type="DateTime" />
+            <asp:Parameter Name="IsDeleted" Type="Boolean" />
+            <asp:Parameter Name="DeletedBy" Type="String" />
+            <asp:Parameter Name="DeletedAt" Type="DateTime" />
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="Name" Type="String" />
-            <asp:Parameter DbType="Guid" Name="Original_DepartmentID" />
+            <asp:Parameter Name="Description" Type="String" />
+            <asp:Parameter Name="CreatedBy" Type="String" />
+            <asp:Parameter Name="CreatedAt" Type="DateTime" />
+            <asp:Parameter Name="ModifiedBy" Type="String" />
+            <asp:Parameter Name="ModifiedAt" Type="DateTime" />
+            <asp:Parameter Name="IsDeleted" Type="Boolean" />
+            <asp:Parameter Name="DeletedBy" Type="String" />
+            <asp:Parameter Name="DeletedAt" Type="DateTime" />
+            <asp:Parameter DbType="Guid" Name="Original_DesignationID" />
             <asp:Parameter Name="Original_Name" Type="String" />
+            <asp:Parameter Name="Original_Description" Type="String" />
+            <asp:Parameter Name="Original_CreatedBy" Type="String" />
+            <asp:Parameter Name="Original_CreatedAt" Type="DateTime" />
+            <asp:Parameter Name="Original_ModifiedBy" Type="String" />
+            <asp:Parameter Name="Original_ModifiedAt" Type="DateTime" />
+            <asp:Parameter Name="Original_IsDeleted" Type="Boolean" />
+            <asp:Parameter Name="Original_DeletedBy" Type="String" />
+            <asp:Parameter Name="Original_DeletedAt" Type="DateTime" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </center>
     
-    <asp:ObjectDataSource ID="ods_Vigilance" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_Vigilance" runat="server" 
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.VilliganceRegisterTableAdapters.VigilanceTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting=ods_Vigilance_Selecting>
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting=ods_Vigilance_Selecting ondeleting="ods_Vigilance_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Letterno" Type="Int32" />
-            <asp:Parameter Name="Original_deptdate" Type="DateTime" />
-            <asp:Parameter Name="Original_letterdate" Type="DateTime" />
-            <asp:Parameter Name="Original_applname" Type="String" />
-            <asp:Parameter Name="Original_empname" Type="String" />
-            <asp:Parameter Name="Original_emp_desig" Type="String" />
-            <asp:Parameter Name="Original_reportdate" Type="DateTime" />
-            <asp:Parameter Name="Original_Status" Type="String" />
-            <asp:Parameter Name="Original_closedate" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Letterno" Type="Int32" />
@@ -339,26 +391,17 @@
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="Letterno" Type="Int32" />
-            <asp:Parameter Name="deptdate" Type="DateTime" />
-            <asp:Parameter Name="letterdate" Type="DateTime" />
+            <asp:Parameter Name="deptdate" Type="String" />
+            <asp:Parameter Name="letterdate" Type="String" />
             <asp:Parameter Name="applname" Type="String" />
             <asp:Parameter Name="empname" Type="String" />
             <asp:Parameter Name="emp_desig" Type="String" />
             <asp:Parameter Name="applsummary" Type="String" />
-            <asp:Parameter Name="reportdate" Type="DateTime" />
+            <asp:Parameter Name="reportdate" Type="String" />
             <asp:Parameter Name="Status" Type="String" />
-            <asp:Parameter Name="closedate" Type="DateTime" />
+            <asp:Parameter Name="closedate" Type="String" />
             <asp:Parameter Name="remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Letterno" Type="Int32" />
-            <asp:Parameter Name="Original_deptdate" Type="DateTime" />
-            <asp:Parameter Name="Original_letterdate" Type="DateTime" />
-            <asp:Parameter Name="Original_applname" Type="String" />
-            <asp:Parameter Name="Original_empname" Type="String" />
-            <asp:Parameter Name="Original_emp_desig" Type="String" />
-            <asp:Parameter Name="Original_reportdate" Type="DateTime" />
-            <asp:Parameter Name="Original_Status" Type="String" />
-            <asp:Parameter Name="Original_closedate" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

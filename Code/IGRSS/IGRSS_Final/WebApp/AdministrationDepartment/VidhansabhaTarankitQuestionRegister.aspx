@@ -54,7 +54,7 @@
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
                           <asp:BoundField DataField="Tarankit_Atarnkit" HeaderText="Tarankit/Atarnkit" 
-                              SortExpression="Tarankit_Atarnkit" />
+                              SortExpression="Tarankit_Atarnkit" Visible="False" />
                           <asp:BoundField DataField="quesno" HeaderText="Question Number" 
                               SortExpression="quesno" />
                           <asp:BoundField DataField="mlaName" HeaderText="MLA/MP Name" 
@@ -158,7 +158,7 @@
                 
         <tr><td>Date On Which Information Is Sent:</td>
 		    <td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Width="160px" /></td>
+                    Width="140px" /></td>
 		</tr>	               
                 
         <tr><td>File Number:</td>
@@ -234,7 +234,7 @@
                 
         <tr><td>Date On Which Information Is Sent:</td>
 		    <td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Height="22px" Width="160px" /></td>
+                    Height="22px" Width="140px" /></td>
 		</tr>	               
                 
         <tr><td>File Number:</td>

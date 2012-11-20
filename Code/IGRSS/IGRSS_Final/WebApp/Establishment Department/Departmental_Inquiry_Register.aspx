@@ -49,7 +49,10 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_Departmental_Inquiry_Register" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_Departmental_Inquiry_Register" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_Departmental_Inquiry_Register_RowDeleted" 
+                      onrowdeleting="GridView_Departmental_Inquiry_Register_RowDeleting" 
+                      onrowediting="GridView_Departmental_Inquiry_Register_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
@@ -63,7 +66,7 @@
                               SortExpression="Date_Of_Charge_Sheet" />
                           <asp:BoundField DataField="Name_Of_Employee" HeaderText="Name Of Employee" 
                               SortExpression="Name_Of_Employee" />
-                          <asp:BoundField DataField="Government_Department" HeaderText="Government_Department" 
+                          <asp:BoundField DataField="Government_Department" HeaderText="Government Department" 
                               SortExpression="Government_Department" Visible="False" />
                           <asp:BoundField DataField="Date" HeaderText="Date" 
                               SortExpression="Date" Visible="False" />
@@ -77,7 +80,7 @@
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
-                          <asp:TemplateField HeaderText="Actions">
+                              <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
                                     <tr>
@@ -109,7 +112,10 @@
         DataSourceID="ods_Departmental_Inquiry_Register" EnableModelValidation="True" 
         DefaultMode="Insert" 
         onitemcommand="FormView_Departmental_Inquiry_Register_ItemCommand" 
-        oniteminserting="FormView_Departmental_Inquiry_Register_ItemInserting" >
+        oniteminserting="FormView_Departmental_Inquiry_Register_ItemInserting" 
+        oniteminserted="FormView_Departmental_Inquiry_Register_ItemInserted" 
+        onitemupdated="FormView_Departmental_Inquiry_Register_ItemUpdated" 
+        onitemupdating="FormView_Departmental_Inquiry_Register_ItemUpdating" >
         <EditItemTemplate>
                         <table>
             <tr>
@@ -137,7 +143,7 @@
             <tr>
 			    <td>Date Of Charge Sheet:</td>
 				<td><asp:TextBox ID="Date_Of_Charge_SheetTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="140px" /></td>
 			</tr>             
                 
             <tr>
@@ -160,7 +166,7 @@
             <tr>
 			    <td>Date:</td>
 				<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                        Width="160px" /></td>
+                        Width="140px" /></td>
 			</tr>              
                 
             <tr>
@@ -176,13 +182,14 @@
             <tr>
 			    <td>Date Of Inquiry Submission:</td>
 				<td><asp:TextBox ID="Date_Of_Inquiry_SubmissionTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="140px" /></td>
 			</tr>              
                 
             <tr>
 			    <td>Date Of Receiving Inquiry Report:</td>
 				<td><asp:TextBox ID="Date_Of_Receiving_Inquiry_ReportTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="140px" 
+                        ReadOnly="True" /></td>
 			</tr>               
                 
             <tr>
@@ -200,7 +207,7 @@
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                     CausesValidation="False" CommandName="Back" Text="Back" 
                     CssClass="standardButton" /></td></tr>                
-		</table>			
+		</table>
 
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -230,7 +237,7 @@
             <tr>
 			    <td>Date Of Charge Sheet:</td>
 				<td><asp:TextBox ID="Date_Of_Charge_SheetTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="140px" /></td>
 			</tr>             
                 
             <tr>
@@ -253,7 +260,7 @@
             <tr>
 			    <td>Date:</td>
 				<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                        Width="160px" /></td>
+                        Width="140px" /></td>
 			</tr>              
                 
             <tr>
@@ -269,13 +276,13 @@
             <tr>
 			    <td>Date Of Inquiry Submission:</td>
 				<td><asp:TextBox ID="Date_Of_Inquiry_SubmissionTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="140px" /></td>
 			</tr>              
                 
             <tr>
 			    <td>Date Of Receiving Inquiry Report:</td>
 				<td><asp:TextBox ID="Date_Of_Receiving_Inquiry_ReportTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="140px" /></td>
 			</tr>               
                 
             <tr>
@@ -293,7 +300,7 @@
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                     CausesValidation="False" CommandName="Back" Text="Back" 
                     CssClass="standardButton" /></td></tr>                
-		</table>			
+		</table>
         </InsertItemTemplate>
         <ItemTemplate>
             SrNo:
@@ -353,25 +360,15 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_Departmental_Inquiry_Register" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetDataBy" 
+    <asp:ObjectDataSource ID="ods_Departmental_Inquiry_Register" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
+        SelectMethod="GetDataBy1" 
         TypeName="IGRSS.DataAccessLayer.Departmental_Inquiry_RegisterTableAdapters.Departmental_Inquiry_RegisterTableAdapter" 
-        UpdateMethod="Update" 
-        onselecting="ods_Departmental_Inquiry_Register_Selecting" >
+        UpdateMethod="UpdateQuery" 
+        onselecting="ods_Departmental_Inquiry_Register_Selecting" 
+        ondeleting="ods_Departmental_Inquiry_Register_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_Grade" Type="String" />
-            <asp:Parameter Name="Original_Subject" Type="String" />
-            <asp:Parameter Name="Original_Date_Of_Charge_Sheet" Type="DateTime" />
-            <asp:Parameter Name="Original_Name_Of_Employee" Type="String" />
-            <asp:Parameter Name="Original_Government_Department" Type="String" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Name_Of_Inquiry_Officer" Type="String" />
-            <asp:Parameter Name="Original_Date_Of_Inquiry_Submission" Type="DateTime" />
-            <asp:Parameter Name="Original_Date_Of_Receiving_Inquiry_Report" 
-                Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="FileNo" Type="Int32" />
@@ -402,18 +399,7 @@
             <asp:Parameter Name="Date_Of_Inquiry_Submission" Type="DateTime" />
             <asp:Parameter Name="Date_Of_Receiving_Inquiry_Report" Type="DateTime" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_Grade" Type="String" />
-            <asp:Parameter Name="Original_Subject" Type="String" />
-            <asp:Parameter Name="Original_Date_Of_Charge_Sheet" Type="DateTime" />
-            <asp:Parameter Name="Original_Name_Of_Employee" Type="String" />
-            <asp:Parameter Name="Original_Government_Department" Type="String" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Name_Of_Inquiry_Officer" Type="String" />
-            <asp:Parameter Name="Original_Date_Of_Inquiry_Submission" Type="DateTime" />
-            <asp:Parameter Name="Original_Date_Of_Receiving_Inquiry_Report" 
-                Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_Grade" runat="server" DeleteMethod="Delete" 

@@ -9,6 +9,7 @@
             buttonImageOnly: true
         });
     }
+ 
     $(function () {
         $('input[id*="InwardNoTextBox"]').keydown(function (event) {
             // Allow: backspace, delete, tab, escape, and enter
@@ -40,24 +41,33 @@
         }
     });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
 <asp:MultiView ID="Multiview_GrantRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
-<hr /><br />
-<h1>grant register</h1>
+
+<h1 style="text-align: center">GRANT REGISTER</h1>
 <table>
           <tr>
           <td>
           <table align="center">
-                    <td align="right" style="width:641px;" >
-                        <asp:Label ID="lbllls" runat="server" Text="Enter File Number :" 
-                            meta:resourcekey="lblllsResource1"></asp:Label></td>
-                    <td align="left" >
-                        <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1" ></asp:TextBox></td>
+                    <tr>
+                        <td align="right" style="width:641px;">
+                            <asp:Label ID="lbllls" runat="server" meta:resourcekey="lblllsResource1" 
+                                Text="Enter File Number :"></asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtFileNo" runat="server" 
+                                meta:resourcekey="txtFileNoResource1" Width="160"></asp:TextBox>
+                        </td>
                         <td align="right">
-                        <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
-                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
-                    </td>
+                            <asp:LinkButton ID="btnSearchAppNo" runat="server" CssClass="standardButton" 
+                                meta:resourcekey="btnSearchAppNoResource1" Text="Search" />
+                        </td>
+                    </tr>
                     </table>
                     </td>
           </tr>
@@ -65,23 +75,42 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_GrantRegister" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_GrantRegister" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleting="GridView_GrantRegister_RowDeleting" 
+                      onrowediting="GridView_GrantRegister_RowEditing" 
+                      onrowdeleted="GridView_GrantRegister_RowDeleted">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="BillNo" HeaderText="BillNo" 
+                          <asp:BoundField DataField="BillNo" HeaderText="Bill No" 
                               SortExpression="BillNo" />
                           <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
                           <asp:BoundField DataField="DetailOfBill" HeaderText="DetailOfBill" 
-                              SortExpression="DetailOfBill" />
-                          <asp:BoundField DataField="AmountOfBill" HeaderText="AmountOfBill" 
+                              SortExpression="DetailOfBill" Visible="False" />
+                          <asp:BoundField DataField="AmountOfBill" HeaderText="Amount Of Bill" 
                               SortExpression="AmountOfBill" />
-                          <asp:BoundField DataField="TotalExpense" HeaderText="TotalExpense" 
+                          <asp:BoundField DataField="TotalExpense" HeaderText="Total Expense" 
                               SortExpression="TotalExpense" />
                           <asp:BoundField DataField="Balance" HeaderText="Balance" 
                               SortExpression="Balance" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" />
+                              SortExpression="Remarks" Visible="False" />
+                          <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -93,51 +122,51 @@
 
 <asp:View ID="view2_Formview" runat="server">
 <center>
-<h1>grant register</h1>
+<h1>GRANT REGISTER</h1>
     <asp:FormView ID="FormView_GrantRegister" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_GrantRegister" DefaultMode="Insert" 
         EnableModelValidation="True" onitemcommand="FormView_GrantRegister_ItemCommand" 
-        oniteminserting="FormView_GrantRegister_ItemInserting">
+        oniteminserting="FormView_GrantRegister_ItemInserting" 
+        oniteminserted="FormView_GrantRegister_ItemInserted" 
+        onitemupdated="FormView_GrantRegister_ItemUpdated">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            BillNo:
-            <asp:TextBox ID="BillNoTextBox" runat="server" Text='<%# Bind("BillNo") %>' />
-            <br />
-            Date:
-            <asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' />
-            <br />
-            DetailOfBill:
-            <asp:TextBox ID="DetailOfBillTextBox" runat="server" 
-                Text='<%# Bind("DetailOfBill") %>' />
-            <br />
-            AmountOfBill:
-            <asp:TextBox ID="AmountOfBillTextBox" runat="server" 
-                Text='<%# Bind("AmountOfBill") %>' />
-            <br />
-            TotalExpense:
-            <asp:TextBox ID="TotalExpenseTextBox" runat="server" 
-                Text='<%# Bind("TotalExpense") %>' />
-            <br />
-            Balance:
-            <asp:TextBox ID="BalanceTextBox" runat="server" Text='<%# Bind("Balance") %>' />
-            <br />
-            Remarks:
-            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
-            <br />
+            <table align="center" cellspacing="5">
+			 <tr><td> Bill No:</td><td><asp:TextBox ID="BillNoTextBox" runat="server" Text='<%# Bind("BillNo") %>' /></td></tr>
+			
+            
+            <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' /></td></tr>
+            
+           
+            <tr><td> Details Of Bill:</td><td><asp:TextBox ID="DetailOfBillTextBox" runat="server" 
+                Text='<%# Bind("DetailOfBill") %>' /></td></tr>
+           
+            
+            <tr><td> Amount Of Bill:</td><td> <asp:TextBox ID="AmountOfBillTextBox" runat="server" 
+                Text='<%# Bind("AmountOfBill") %>' /></td></tr>
+           
+           
+            <tr><td>Total Expense:</td><td> <asp:TextBox ID="TotalExpenseTextBox" runat="server" 
+                Text='<%# Bind("TotalExpense") %>' /></td></tr>
+            
+           
+            <tr><td>Balance:</td><td><asp:TextBox ID="BalanceTextBox" runat="server" Text='<%# Bind("Balance") %>' /></td></tr>
+            
+            
+            <tr><td> Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+            <tr><td colspan="2" align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
+                CommandName="Update" Text="Update"  CssClass="standardButton"/>
+                 &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="reset" Text="Reset" 
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                CausesValidation="False" CommandName="Back" Text="Back"  CssClass="standardButton"/>
+                </td>
+                </tr>
         </EditItemTemplate>
         <InsertItemTemplate>
-                        <table align="center" cellspacing="5">
-			 <tr><td> Bill No:</td><td>
-                 <asp:DropDownList ID="DropDownListBillNo" runat="server" 
-                     DataSourceID="ObjectDataSource1" DataTextField="BillNo" DataValueField="BillNo">
-                 </asp:DropDownList>
-                 </td></tr>
+                     <table align="center" cellspacing="5">
+			 <tr><td> Bill No:</td><td><asp:TextBox ID="BillNoTextBox" runat="server" Text='<%# Bind("BillNo") %>' /></td></tr>
 			
             
             <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' /></td></tr>
@@ -209,6 +238,7 @@
                 CommandName="New" Text="New" />
         </ItemTemplate>
     </asp:FormView>
+    
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         DeleteMethod="Delete" InsertMethod="Insert" 
         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
@@ -235,20 +265,17 @@
     </asp:ObjectDataSource>
 </center>
     
-    <asp:ObjectDataSource ID="ods_GrantRegister" runat="server" OldValuesParameterFormatString="original_{0}" 
-        SelectMethod="GetDataBy" 
-        
-        
+    <asp:ObjectDataSource ID="ods_GrantRegister" runat="server"  
+        SelectMethod="GetDataBy1" 
+        DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
+        UpdateMethod="UpdateQuery" 
         TypeName="IGRSS.DataAccessLayer.GrantRegisterTableAdapters.GrantRegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_GrantRegister_Selecting">
+        onselecting="ods_GrantRegister_Selecting" 
+        ondeleting="ods_GrantRegister_Deleting" 
+        >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_BillNo" Type="Int32" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_AmountOfBill" Type="Decimal" />
-            <asp:Parameter Name="Original_TotalExpense" Type="Decimal" />
-            <asp:Parameter Name="Original_Balance" Type="Decimal" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="BillNo" Type="Int32" />
@@ -265,22 +292,18 @@
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="BillNo" Type="Int32" />
-            <asp:Parameter Name="Date" Type="DateTime" />
+            <asp:Parameter Name="Date" Type="String" />
             <asp:Parameter Name="DetailOfBill" Type="String" />
             <asp:Parameter Name="AmountOfBill" Type="Decimal" />
             <asp:Parameter Name="TotalExpense" Type="Decimal" />
             <asp:Parameter Name="Balance" Type="Decimal" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_BillNo" Type="Int32" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_AmountOfBill" Type="Decimal" />
-            <asp:Parameter Name="Original_TotalExpense" Type="Decimal" />
-            <asp:Parameter Name="Original_Balance" Type="Decimal" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     
 </asp:View>    
 </asp:MultiView>
+</center>
 </asp:Content>
 

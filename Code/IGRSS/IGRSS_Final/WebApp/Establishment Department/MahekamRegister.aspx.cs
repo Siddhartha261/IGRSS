@@ -44,7 +44,7 @@ public partial class Establishment_Department_MahekamRegister : System.Web.UI.Pa
             case "Back":
                 Multiview_Mahekam.SetActiveView(ViewGrid);
                 GridView_Mahekam.DataBind();
-                        
+                infoDiv.Visible = false;        
                 break;
         }
     }
@@ -53,4 +53,80 @@ public partial class Establishment_Department_MahekamRegister : System.Web.UI.Pa
         e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
         ods_Mahekam.SelectMethod = "GetDataBy";
    }
+    protected void GridView_Mahekam_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView_Mahekam_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView_Mahekam.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView_Mahekam.DataKeys[e.RowIndex].Value;
+        ods_Mahekam.Delete();
+    }
+    protected void GridView_Mahekam_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        Multiview_Mahekam.SetActiveView(Formview);
+        FormView_Mahekam.PageIndex = e.NewEditIndex;
+        FormView_Mahekam.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+    }
+    protected void FormView_Mahekam_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FormView_Mahekam_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void FormView_Mahekam_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        ListBox ListBox_Designation = FormView_Mahekam.FindControl("ListBox_Designation") as ListBox;
+        e.NewValues["Details_Of_Designation"] = ListBox_Designation.SelectedValue;
+
+        DropDownList DropDown_EmployeeName = FormView_Mahekam.FindControl("DropDownList_EmployeeName") as DropDownList;
+        e.NewValues["Employee_Name"] = DropDown_EmployeeName.SelectedValue;
+
+        DropDownList DropDown_Designation = FormView_Mahekam.FindControl("DropDownList_Designation") as DropDownList;
+        e.NewValues["Designation"] = DropDown_Designation.SelectedValue;
+
+        DropDownList DropDown_Grade = FormView_Mahekam.FindControl("DropDownList_Grade") as DropDownList;
+        e.NewValues["Grade"] = DropDown_Grade.SelectedValue;
+
+        DropDownList DropDown_CurrentOffice = FormView_Mahekam.FindControl("DropDownList_CurrentOffice") as DropDownList;
+        e.NewValues["Current_Office"] = DropDown_CurrentOffice.SelectedValue;
+
+        DropDownList DropDown_ResidenceDistrict = FormView_Mahekam.FindControl("DropDownList_ResidenceDistrict") as DropDownList;
+        e.NewValues["Residence_District"] = DropDown_ResidenceDistrict.SelectedValue;
+    }
+    protected void ods_Mahekam_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
+    }
+
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
+    }
 }

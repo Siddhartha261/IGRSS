@@ -40,11 +40,16 @@
         }
     });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br /></center>
 <asp:MultiView ID="Multiview_ApplicationDisposal" runat="server" 
         ActiveViewIndex="0">
 <asp:View ID="View1_GridView" runat="server">
-<hr /><br />
-<h1>application disposal register</h1>
+    <br />
+<h1 style="text-align: center">APPLICATION DISPOSAL REGISTER</h1>
 <table>
           <tr>
                     <td align="right" style="width:641px;" >
@@ -62,23 +67,42 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_ApplicationDisposal" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_ApplicationDisposal" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_ApplicationDisposal_RowDeleted" 
+                      onrowdeleting="GridView_ApplicationDisposal_RowDeleting" 
+                      onrowediting="GridView_ApplicationDisposal_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
                           <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
-                          <asp:BoundField DataField="ApplicantName" HeaderText="ApplicantName" 
+                          <asp:BoundField DataField="ApplicantName" HeaderText="Applicant Name" 
                               SortExpression="ApplicantName" />
-                          <asp:BoundField DataField="ApplicantAddress" HeaderText="ApplicantAddress" 
-                              SortExpression="ApplicantAddress" />
-                          <asp:BoundField DataField="NoOfCopiesIssued" HeaderText="NoOfCopiesIssued" 
+                          <asp:BoundField DataField="ApplicantAddress" HeaderText="Applicant Address" 
+                              SortExpression="ApplicantAddress" Visible="False" />
+                          <asp:BoundField DataField="NoOfCopiesIssued" HeaderText="No Of Copies Issued" 
                               SortExpression="NoOfCopiesIssued" />
-                          <asp:BoundField DataField="FeesTaken" HeaderText="FeesTaken" 
+                          <asp:BoundField DataField="FeesTaken" HeaderText="Fees Taken" 
                               SortExpression="FeesTaken" />
-                          <asp:BoundField DataField="ReceiptNo" HeaderText="ReceiptNo" 
+                          <asp:BoundField DataField="ReceiptNo" HeaderText="Receipt No" 
                               SortExpression="ReceiptNo" />
-                          <asp:BoundField DataField="DisposalDate" HeaderText="DisposalDate" 
+                          <asp:BoundField DataField="DisposalDate" HeaderText="Disposal Date" 
                               SortExpression="DisposalDate" />
+                                <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -90,50 +114,56 @@
 
 <asp:View ID="view2_Formview" runat="server">
 <center>
-<h1>application disposal register</h1>
+<h1>APPLICATION DISPOSAL REGISTER</h1>
     <asp:FormView ID="FormView_ApplicationDisposal" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_ApplicationDisposal" DefaultMode="Insert" 
         EnableModelValidation="True" 
-        onitemcommand="FormView_ApplicationDisposal_ItemCommand">
+        onitemcommand="FormView_ApplicationDisposal_ItemCommand" 
+        oniteminserted="FormView_ApplicationDisposal_ItemInserted" 
+        onitemupdated="FormView_ApplicationDisposal_ItemUpdated">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            Date:
-            <asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' />
-            <br />
-            ApplicantName:
-            <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' />
-            <br />
-            ApplicantAddress:
-            <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
-                Text='<%# Bind("ApplicantAddress") %>' />
-            <br />
-            NoOfCopiesIssued:
-            <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" 
-                Text='<%# Bind("NoOfCopiesIssued") %>' />
-            <br />
-            FeesTaken:
-            <asp:TextBox ID="FeesTakenTextBox" runat="server" 
-                Text='<%# Bind("FeesTaken") %>' />
-            <br />
-            ReceiptNo:
-            <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
-                Text='<%# Bind("ReceiptNo") %>' />
-            <br />
-            DisposalDate:
-            <asp:TextBox ID="DisposalDateTextBox" runat="server" 
-                Text='<%# Bind("DisposalDate") %>' />
-            <br />
+             <table align="center" cellspacing="5">
+           <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' />
+            <tr><td> Name Of Applicant:</td><td> <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
+                Text='<%# Bind("ApplicantName") %>' /></td></tr>
+           
+           
+           
+           
+            <tr><td>Address Of Applicant:</td><td> <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
+                Text='<%# Bind("ApplicantAddress") %>' /></td></tr>
+            
+           
+            <tr><td>No Of Copies Issued:</td><td> <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" 
+                Text='<%# Bind("NoOfCopiesIssued") %>' /></td></tr>
+            
+           
+            <tr><td>Fees Taken:</td><td> <asp:TextBox ID="FeesTakenTextBox" runat="server" 
+                Text='<%# Bind("FeesTaken") %>' /></td></tr>
+            
+           
+            <tr><td>Receipt No:</td><td> <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
+                Text='<%# Bind("ReceiptNo") %>' /></td></tr>
+            
+           
+            <tr><td> Date Of Disposal:</td><td> <asp:TextBox ID="DisposalDateTextBox" runat="server" 
+                Text='<%# Bind("DisposalDate") %>' /></td></tr>
+                <tr>
+                <td colspan="2" align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
+                CommandName="Update" Text="Update" CssClass="standardButton" />
+                &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="reset" Text="Reset" 
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                CausesValidation="False" CommandName="Back" Text="Back" CssClass="standardButton" />
+                </td>
+                </tr>
+                </table>
         </EditItemTemplate>
         <InsertItemTemplate>
                      
-           <table align="center" cellspacing="5">
+             <table align="center" cellspacing="5">
            <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' />
             <tr><td> Name Of Applicant:</td><td> <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
                 Text='<%# Bind("ApplicantName") %>' /></td></tr>
@@ -212,7 +242,7 @@
     </asp:FormView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         DeleteMethod="Delete" InsertMethod="Insert" 
-        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+       SelectMethod="GetData" 
         TypeName="IGRSS.DataAccessLayer.DataSetDepartmentTableAdapters.DepartmentMasterTableAdapter" 
         UpdateMethod="Update">
         <DeleteParameters>
@@ -231,21 +261,17 @@
     </asp:ObjectDataSource>
 </center>
     
-    <asp:ObjectDataSource ID="ods_ApplicationDisposal" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_ApplicationDisposal" runat="server"  
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.ApplicationDisposalRegisterTableAdapters.ApplicationDisposalRegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_ApplicationDisposal5_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_ApplicationDisposal5_Selecting" 
+        ondeleting="ods_ApplicationDisposal_Deleting" 
+       >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_ApplicantName" Type="String" />
-            <asp:Parameter Name="Original_NoOfCopiesIssued" Type="Int32" />
-            <asp:Parameter Name="Original_FeesTaken" Type="Decimal" />
-            <asp:Parameter Name="Original_ReceiptNo" Type="Int32" />
-            <asp:Parameter Name="Original_DisposalDate" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Date" Type="DateTime" />
@@ -261,20 +287,14 @@
                 PropertyName="Text" Type="String" />
         </SelectParameters>
         <UpdateParameters>
-            <asp:Parameter Name="Date" Type="DateTime" />
+            <asp:Parameter Name="Date" Type="String" />
             <asp:Parameter Name="ApplicantName" Type="String" />
             <asp:Parameter Name="ApplicantAddress" Type="String" />
             <asp:Parameter Name="NoOfCopiesIssued" Type="Int32" />
             <asp:Parameter Name="FeesTaken" Type="Decimal" />
             <asp:Parameter Name="ReceiptNo" Type="Int32" />
-            <asp:Parameter Name="DisposalDate" Type="DateTime" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_ApplicantName" Type="String" />
-            <asp:Parameter Name="Original_NoOfCopiesIssued" Type="Int32" />
-            <asp:Parameter Name="Original_FeesTaken" Type="Decimal" />
-            <asp:Parameter Name="Original_ReceiptNo" Type="Int32" />
-            <asp:Parameter Name="Original_DisposalDate" Type="DateTime" />
+            <asp:Parameter Name="DisposalDate" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

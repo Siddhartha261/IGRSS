@@ -23,6 +23,7 @@ public partial class Register_and_marriage_DeadStockRegister : System.Web.UI.Pag
              
                 Multiview_DeadStock.SetActiveView(View1_GridView);
                 View1_GridView.DataBind();
+                infoDiv.Visible = false;
                 break;
         }
     }
@@ -37,5 +38,66 @@ public partial class Register_and_marriage_DeadStockRegister : System.Web.UI.Pag
       
         RadioButtonList RadioButtonList1 = FormView_DeadStock.FindControl("RadioButtonList1") as RadioButtonList;
         e.Values["Authorityvoucher"] = RadioButtonList1.SelectedValue;
-    } 
+    }
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
+    }
+    protected void FormView_DeadStock_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FormView_DeadStock_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void GridView_DeadStock_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView_DeadStock_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView_DeadStock.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView_DeadStock.DataKeys[e.RowIndex].Value;
+        ods_DeadStock.Delete();
+    }
+    protected void GridView_DeadStock_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        Multiview_DeadStock.SetActiveView(View2_Formview);
+        FormView_DeadStock.PageIndex = e.NewEditIndex;
+        FormView_DeadStock.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+    }
+    protected void ods_DeadStock_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
+    }
+    protected void FormView_DeadStock_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+
+        RadioButtonList RadioButtonList1 = FormView_DeadStock.FindControl("RadioButtonList1") as RadioButtonList;
+        e.NewValues["Authorityvoucher"] = RadioButtonList1.SelectedValue;
+    }
 }

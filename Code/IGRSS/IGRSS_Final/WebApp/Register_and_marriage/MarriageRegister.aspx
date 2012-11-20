@@ -40,10 +40,15 @@
         }
     });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br /></center>
 <asp:MultiView ID="Multiview_Marriage_Certificate" runat="server" 
         ActiveViewIndex="0">
 <asp:View ID="View1_GridView" runat="server">
-<hr /><br />
+<br />
 <h1>marriage certificate register</h1>
 <table>
           <tr>
@@ -71,40 +76,59 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_Marriagecertificate" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_Marriage_certificate" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_Marriagecertificate_RowDeleted" 
+                      onrowdeleting="GridView_Marriagecertificate_RowDeleting" 
+                      onrowediting="GridView_Marriagecertificate_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
                               ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
                               Visible="False" />
-                          <asp:BoundField DataField="Bridegroom_name" HeaderText="Bridegroom_name" 
+                          <asp:BoundField DataField="Bridegroom_name" HeaderText="Bridegroom Name" 
                               SortExpression="Bridegroom_name" />
-                          <asp:BoundField DataField="Bridegroom_father_name" HeaderText="Bridegroom_father_name" 
-                              SortExpression="Bridegroom_father_name" Visible="False" />
-                          <asp:BoundField DataField="Bride_name" HeaderText="Bride_name" 
+                          <asp:BoundField DataField="Bridegroom_father_name" HeaderText="Bridegroom's  Father's Name" 
+                              SortExpression="Bridegroom_father_name" />
+                          <asp:BoundField DataField="Bride_name" HeaderText="Bride Name" 
                               SortExpression="Bride_name" />
-                          <asp:BoundField DataField="Bride_father_name" HeaderText="Bride_father_name" 
-                              SortExpression="Bride_father_name" Visible="False" />
-                          <asp:BoundField DataField="MarriageDate" HeaderText="MarriageDate" 
+                          <asp:BoundField DataField="Bride_father_name" HeaderText="Bride's Father's Name" 
+                              SortExpression="Bride_father_name" />
+                          <asp:BoundField DataField="MarriageDate" HeaderText="Marriage Date" 
                               SortExpression="MarriageDate" />
-                          <asp:BoundField DataField="MarriagePlace" HeaderText="MarriagePlace" 
+                          <asp:BoundField DataField="MarriagePlace" HeaderText="Marriage Place" 
                               SortExpression="MarriagePlace" />
                           <asp:BoundField DataField="Village_church_name" 
-                              HeaderText="Village_church_name" SortExpression="Village_church_name" />
+                              HeaderText="Village/Church Name" SortExpression="Village_church_name" />
                           <asp:BoundField DataField="Talk" HeaderText="Talk" SortExpression="Talk" 
                               Visible="False" />
                           <asp:BoundField DataField="District" HeaderText="District" 
-                              SortExpression="District" />
-                          <asp:BoundField DataField="ApplicationNo" HeaderText="ApplicationNo" 
-                              SortExpression="ApplicationNo" Visible="False" />
-                          <asp:BoundField DataField="ApplicationDate" HeaderText="ApplicationDate" 
+                              SortExpression="District" Visible="False" />
+                          <asp:BoundField DataField="ApplicationNo" HeaderText="Application No" 
+                              SortExpression="ApplicationNo" />
+                          <asp:BoundField DataField="ApplicationDate" HeaderText="Application Date" 
                               SortExpression="ApplicationDate" />
-                          <asp:BoundField DataField="NoOfCopies" HeaderText="NoOfCopies" 
-                              SortExpression="NoOfCopies" />
-                          <asp:BoundField DataField="ReceiptNo" HeaderText="ReceiptNo" 
-                              SortExpression="ReceiptNo" Visible="False" />
+                          <asp:BoundField DataField="NoOfCopies" HeaderText="No Of Copies" 
+                              SortExpression="NoOfCopies" Visible="False" />
+                          <asp:BoundField DataField="ReceiptNo" HeaderText="Receipt No" 
+                              SortExpression="ReceiptNo" />
                           <asp:BoundField DataField="Fees" HeaderText="Fees" SortExpression="Fees" />
-                          <asp:BoundField DataField="CopiesFurnished" HeaderText="CopiesFurnished" 
-                              SortExpression="CopiesFurnished" />
+                          <asp:BoundField DataField="CopiesFurnished" HeaderText="Copies Furnished" 
+                              SortExpression="CopiesFurnished" Visible="False" />
+                               <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -120,77 +144,118 @@
     <asp:FormView ID="FormView_Marriagecertificate" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Marriage_certificate" DefaultMode="Insert" 
         EnableModelValidation="True" 
-        onitemcommand="FormView_Marriage_certificate_ItemCommand">
+        onitemcommand="FormView_Marriage_certificate_ItemCommand" 
+        oniteminserted="FormView_Marriagecertificate_ItemInserted" 
+        onitemupdated="FormView_Marriagecertificate_ItemUpdated">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            Bridegroom_name:
+                     
+			            
+			<table align="center" cellspacing="5">
+			<tr>
+			<td>
+			<table>
+			<tr>
+			<td>Bridegroom Name :
+			</td>
+			<td>
             <asp:TextBox ID="Bridegroom_nameTextBox" runat="server" 
                 Text='<%# Bind("Bridegroom_name") %>' />
-            <br />
-            Bridegroom_father_name:
-            <asp:TextBox ID="Bridegroom_father_nameTextBox" runat="server" 
-                Text='<%# Bind("Bridegroom_father_name") %>' />
-            <br />
-            Bride_name:
-            <asp:TextBox ID="Bride_nameTextBox" runat="server" 
-                Text='<%# Bind("Bride_name") %>' />
-            <br />
-            Bride_father_name:
-            <asp:TextBox ID="Bride_father_nameTextBox" runat="server" 
-                Text='<%# Bind("Bride_father_name") %>' />
-            <br />
-            MarriageDate:
-            <asp:TextBox ID="MarriageDateTextBox" runat="server" 
-                Text='<%# Bind("MarriageDate") %>' />
-            <br />
-            MarriagePlace:
-            <asp:TextBox ID="MarriagePlaceTextBox" runat="server" 
-                Text='<%# Bind("MarriagePlace") %>' />
-            <br />
-            Village_church_name:
-            <asp:TextBox ID="Village_church_nameTextBox" runat="server" 
-                Text='<%# Bind("Village_church_name") %>' />
-            <br />
-            Talk:
-            <asp:TextBox ID="TalkTextBox" runat="server" Text='<%# Bind("Talk") %>' />
-            <br />
-            District:
-            <asp:TextBox ID="DistrictTextBox" runat="server" 
-                Text='<%# Bind("District") %>' />
-            <br />
-            ApplicationNo:
-            <asp:TextBox ID="ApplicationNoTextBox" runat="server" 
-                Text='<%# Bind("ApplicationNo") %>' />
-            <br />
-            ApplicationDate:
-            <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' />
-            <br />
-            NoOfCopies:
-            <asp:TextBox ID="NoOfCopiesTextBox" runat="server" 
-                Text='<%# Bind("NoOfCopies") %>' />
-            <br />
-            ReceiptNo:
-            <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
-                Text='<%# Bind("ReceiptNo") %>' />
-            <br />
-            Fees:
-            <asp:TextBox ID="FeesTextBox" runat="server" Text='<%# Bind("Fees") %>' />
-            <br />
-            CopiesFurnished:
-            <asp:TextBox ID="CopiesFurnishedTextBox" runat="server" 
-                Text='<%# Bind("CopiesFurnished") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+			</td>
+			</tr>
+			
+            <tr><td>Father Name Of Bridegroom:</td><td><asp:TextBox ID="Bridegroom_father_nameTextBox" runat="server" 
+                Text='<%# Bind("Bridegroom_father_name") %>' /></td></tr>
+            
+            
+            <tr><td>Bride Name :</td><td> <asp:TextBox ID="Bride_nameTextBox" runat="server" 
+                Text='<%# Bind("Bride_name") %>' /></td></tr>
+            
+           
+            <tr><td> Father Name Of Bride:</td><td> <asp:TextBox ID="Bride_father_nameTextBox" runat="server" 
+                Text='<%# Bind("Bride_father_name") %>' /></td></tr>
+           
+           
+            <tr><td>Date Of Marriage :</td><td> <asp:TextBox ID="MarriageDateTextBox" runat="server" 
+                Text='<%# Bind("MarriageDate") %>' /></td></tr>
+				
+				</table>
+				</td>
+             
+			 <td align="right">
+			 <table>
+			 <tr><td>Place Of Marriage :</td><td> <asp:TextBox ID="MarriagePlaceTextBox" runat="server" 
+                Text='<%# Bind("MarriagePlace") %>' /></td></tr>
+            
+           
+            <tr><td>Village / Church Name :</td><td> <asp:TextBox ID="Village_church_nameTextBox" runat="server" 
+                Text='<%# Bind("Village_church_name") %>' /></td></tr>
+            
+           
+            <tr><td>Talk:</td><td> <asp:TextBox ID="TalkTextBox" runat="server" Text='<%# Bind("Talk") %>' /></td></tr>
+            
+           
+            <tr><td>District :</td><td> <asp:TextBox ID="DistrictTextBox" runat="server" 
+                Text='<%# Bind("District") %>' /></td></tr>
+			 </table>
+			 </td>
+			 </tr>
+             <tr>
+             <td>
+             <br>
+             </br>
+             </td>
+             </tr>
+			 <tr>
+              <td colspan="2" align="left"> <h5> For Office Use Only</h5></td>
+             </tr>
+			 
+			 <tr>
+			 <td>
+			 <table>
+           
+            <tr><td>Application No:</td><td> <asp:TextBox ID="ApplicationNoTextBox" runat="server" 
+                Text='<%# Bind("ApplicationNo") %>' /></td></tr>
+				
+            
+           
+            <tr><td> Date Of Application:</td> <td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDate") %>' /></td></tr>
+           
+           
+            <tr><td>No Of Copies :</td><td> <asp:TextBox ID="NoOfCopiesTextBox" runat="server" 
+                Text='<%# Bind("NoOfCopies") %>' /></td></tr>
+            
+           
+            <tr><td>Receipt No :</td><td> <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
+                Text='<%# Bind("ReceiptNo") %>' /></td></tr>
+            
+           
+            <tr><td>Fees :</td><td>  <asp:TextBox ID="FeesTextBox" runat="server" Text='<%# Bind("Fees") %>' /></td></tr>
+            
+          
+            <tr><td>Copies Furnished:</td><td><asp:TextBox ID="CopiesFurnishedTextBox" runat="server" 
+                Text='<%# Bind("CopiesFurnished") %>' /></td></tr>
+				</table>
+				</td>
+				</tr>
+            
+            
+            <tr>
+			 <td align="center" colspan="2"> 
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                CommandName="Update" Text="Update" CssClass="standardButton" />
+                 &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="reset" Text="Reset" 
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back" 
+                    CssClass="standardButton" /></td>
+			</tr>
         </EditItemTemplate>
         <InsertItemTemplate>
                         
 			               
+			            
 			            
 			<table align="center" cellspacing="5">
 			<tr>
@@ -365,30 +430,16 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_Marriage_certificate" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_Marriage_certificate" runat="server"  
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.MarriageCertificateTableAdapters.MarriageCertificateTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_Marriage_certificate_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_Marriage_certificate_Selecting" 
+        ondeleting="ods_Marriage_certificate_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Bridegroom_name" Type="String" />
-            <asp:Parameter Name="Original_Bridegroom_father_name" Type="String" />
-            <asp:Parameter Name="Original_Bride_name" Type="String" />
-            <asp:Parameter Name="Original_Bride_father_name" Type="String" />
-            <asp:Parameter Name="Original_MarriageDate" Type="DateTime" />
-            <asp:Parameter Name="Original_MarriagePlace" Type="String" />
-            <asp:Parameter Name="Original_Village_church_name" Type="String" />
-            <asp:Parameter Name="Original_Talk" Type="String" />
-            <asp:Parameter Name="Original_District" Type="String" />
-            <asp:Parameter Name="Original_ApplicationNo" Type="Int32" />
-            <asp:Parameter Name="Original_ApplicationDate" Type="DateTime" />
-            <asp:Parameter Name="Original_NoOfCopies" Type="Int32" />
-            <asp:Parameter Name="Original_ReceiptNo" Type="Int32" />
-            <asp:Parameter Name="Original_Fees" Type="Int32" />
-            <asp:Parameter Name="Original_CopiesFurnished" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Bridegroom_name" Type="String" />
@@ -416,33 +467,18 @@
             <asp:Parameter Name="Bridegroom_father_name" Type="String" />
             <asp:Parameter Name="Bride_name" Type="String" />
             <asp:Parameter Name="Bride_father_name" Type="String" />
-            <asp:Parameter Name="MarriageDate" Type="DateTime" />
+            <asp:Parameter Name="MarriageDate" Type="String" />
             <asp:Parameter Name="MarriagePlace" Type="String" />
             <asp:Parameter Name="Village_church_name" Type="String" />
             <asp:Parameter Name="Talk" Type="String" />
             <asp:Parameter Name="District" Type="String" />
             <asp:Parameter Name="ApplicationNo" Type="Int32" />
-            <asp:Parameter Name="ApplicationDate" Type="DateTime" />
+            <asp:Parameter Name="ApplicationDate" Type="String" />
             <asp:Parameter Name="NoOfCopies" Type="Int32" />
             <asp:Parameter Name="ReceiptNo" Type="Int32" />
             <asp:Parameter Name="Fees" Type="Int32" />
             <asp:Parameter Name="CopiesFurnished" Type="Int32" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Bridegroom_name" Type="String" />
-            <asp:Parameter Name="Original_Bridegroom_father_name" Type="String" />
-            <asp:Parameter Name="Original_Bride_name" Type="String" />
-            <asp:Parameter Name="Original_Bride_father_name" Type="String" />
-            <asp:Parameter Name="Original_MarriageDate" Type="DateTime" />
-            <asp:Parameter Name="Original_MarriagePlace" Type="String" />
-            <asp:Parameter Name="Original_Village_church_name" Type="String" />
-            <asp:Parameter Name="Original_Talk" Type="String" />
-            <asp:Parameter Name="Original_District" Type="String" />
-            <asp:Parameter Name="Original_ApplicationNo" Type="Int32" />
-            <asp:Parameter Name="Original_ApplicationDate" Type="DateTime" />
-            <asp:Parameter Name="Original_NoOfCopies" Type="Int32" />
-            <asp:Parameter Name="Original_ReceiptNo" Type="Int32" />
-            <asp:Parameter Name="Original_Fees" Type="Int32" />
-            <asp:Parameter Name="Original_CopiesFurnished" Type="Int32" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

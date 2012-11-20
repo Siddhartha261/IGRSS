@@ -41,10 +41,16 @@
         }
     });
 </script>
+
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
 <asp:MultiView ID="Multiview_ChequeRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="View1_GridView" runat="server">
-<hr /><br />
-<h1>cheque register</h1>
+    <br />
+<h1 style="text-align: center">CHEQUE REGISTER</h1>
 <table>
           <tr>
           <td align="right">
@@ -68,32 +74,52 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_ChequeRegister" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_ChequeRegister" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_ChequeRegister_RowDeleted" 
+                      onrowdeleting="GridView_ChequeRegister_RowDeleting" 
+                      onrowediting="GridView_ChequeRegister_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="ChequeReceivedDate" HeaderText="ChequeReceivedDate" 
+                          <asp:BoundField DataField="ChequeReceivedDate" HeaderText="Cheque Received Date" 
                               SortExpression="ChequeReceivedDate" />
                           <asp:BoundField DataField="PersonNamegivingcheque" 
-                              HeaderText="PersonNamegivingcheque" SortExpression="PersonNamegivingcheque" />
-                          <asp:BoundField DataField="BankName" HeaderText="BankName" 
+                              HeaderText="Name Of Person Giving Cheque" 
+                              SortExpression="PersonNamegivingcheque" />
+                          <asp:BoundField DataField="BankName" HeaderText="Bank Name" 
                               SortExpression="BankName" />
-                          <asp:BoundField DataField="ChequeNo" HeaderText="ChequeNo" 
+                          <asp:BoundField DataField="ChequeNo" HeaderText="Cheque No" 
                               SortExpression="ChequeNo" />
-                          <asp:BoundField DataField="ChequeDate" HeaderText="ChequeDate" 
+                          <asp:BoundField DataField="ChequeDate" HeaderText="Cheque Date" 
                               SortExpression="ChequeDate" />
                           <asp:BoundField DataField="Amount" HeaderText="Amount" 
                               SortExpression="Amount" />
-                          <asp:BoundField DataField="AccountName" HeaderText="AccountName" 
+                          <asp:BoundField DataField="AccountName" HeaderText="Account Name" 
                               SortExpression="AccountName" />
-                          <asp:BoundField DataField="DateChequeSent" HeaderText="DateChequeSent" 
+                          <asp:BoundField DataField="DateChequeSent" HeaderText="Date Cheque Sent" 
                               SortExpression="DateChequeSent" />
-                          <asp:BoundField DataField="DateOfHisab" HeaderText="DateOfHisab" 
+                          <asp:BoundField DataField="DateOfHisab" HeaderText="Date Of Hisab" 
                               SortExpression="DateOfHisab" />
                           <asp:BoundField DataField="InitialsOfOfficer" HeaderText="InitialsOfOfficer" 
-                              SortExpression="InitialsOfOfficer" />
+                              SortExpression="InitialsOfOfficer" Visible="False" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
+                               <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -105,64 +131,81 @@
 
 <asp:View ID="view2_Formview" runat="server">
 <center>
-<h1>cheque register&nbsp;</h1>
+<h1>CHEQUE REGISTER</h1>
     <asp:FormView ID="FormView_ChequeRgister" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_ChequeRegister" DefaultMode="Insert" 
         EnableModelValidation="True" 
-        onitemcommand="FormView_ChequeRegister_ItemCommand">
+        onitemcommand="FormView_ChequeRegister_ItemCommand" 
+        oniteminserted="FormView_ChequeRgister_ItemInserted" 
+        onitemupdated="FormView_ChequeRgister_ItemUpdated">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            ChequeReceivedDate:
-            <asp:TextBox ID="ChequeReceivedDateTextBox" runat="server" 
+                              <table align="center" cellspacing="5">
+			
+			<tr>
+             <td>Date Of Cheque Received:
+             </td>
+              <td><asp:TextBox ID="ChequeReceivedDateTextBox" runat="server" 
                 Text='<%# Bind("ChequeReceivedDate") %>' />
-            <br />
-            PersonNamegivingcheque:
-            <asp:TextBox ID="PersonNamegivingchequeTextBox" runat="server" 
-                Text='<%# Bind("PersonNamegivingcheque") %>' />
-            <br />
-            BankName:
-            <asp:TextBox ID="BankNameTextBox" runat="server" 
-                Text='<%# Bind("BankName") %>' />
-            <br />
-            ChequeNo:
-            <asp:TextBox ID="ChequeNoTextBox" runat="server" 
-                Text='<%# Bind("ChequeNo") %>' />
-            <br />
-            ChequeDate:
-            <asp:TextBox ID="ChequeDateTextBox" runat="server" 
-                Text='<%# Bind("ChequeDate") %>' />
-            <br />
-            Amount:
-            <asp:TextBox ID="AmountTextBox" runat="server" Text='<%# Bind("Amount") %>' />
-            <br />
-            AccountName:
-            <asp:TextBox ID="AccountNameTextBox" runat="server" 
-                Text='<%# Bind("AccountName") %>' />
-            <br />
-            DateChequeSent:
-            <asp:TextBox ID="DateChequeSentTextBox" runat="server" 
-                Text='<%# Bind("DateChequeSent") %>' />
-            <br />
-            DateOfHisab:
-            <asp:TextBox ID="DateOfHisabTextBox" runat="server" 
-                Text='<%# Bind("DateOfHisab") %>' />
-            <br />
-            InitialsOfOfficer:
-            <asp:TextBox ID="InitialsOfOfficerTextBox" runat="server" 
-                Text='<%# Bind("InitialsOfOfficer") %>' />
-            <br />
-            Remarks:
-            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                </td>	
+                 <td>Person Name giving The cheque:</td>
+			<td> <asp:TextBox ID="PersonNamegivingchequeTextBox" runat="server" 
+                Text='<%# Bind("PersonNamegivingcheque") %>' /></td>
+				</tr>
+				
+            <tr>
+           
+            <td>Bank Name:</td><td> <asp:TextBox ID="BankNameTextBox" runat="server" 
+                Text='<%# Bind("BankName") %>' /></td>
+            
+           
+            <td> Cheque No:</td><td> <asp:TextBox ID="ChequeNoTextBox" runat="server" 
+                Text='<%# Bind("ChequeNo") %>' /></td>
+           </tr>
+           <tr>
+            <td>Date Of Cheque:</td><td> <asp:TextBox ID="ChequeDateTextBox" runat="server" 
+                Text='<%# Bind("ChequeDate") %>' /></td>
+            
+           
+            <td> Amount:</td><td> <asp:TextBox ID="AmountTextBox" runat="server" Text='<%# Bind("Amount") %>' /></td>
+          
+           </tr>
+		   <tr>
+            <td>Account Name:</td><td><asp:TextBox ID="AccountNameTextBox" runat="server" 
+                Text='<%# Bind("AccountName") %>' /></td>
+            
+            
+            <td>Date Of Cheque Sent:</td><td> <asp:TextBox ID="DateChequeSentTextBox" runat="server" 
+                Text='<%# Bind("DateChequeSent") %>' /></td>
+				</tr>
+            
+           <tr>
+            <td> Date Of Hisab:</td><td> <asp:TextBox ID="DateOfHisabTextBox" runat="server" 
+                Text='<%# Bind("DateOfHisab") %>' /></td>
+           
+           
+            <td>Initials Of Officer:</td><td> <asp:TextBox ID="InitialsOfOfficerTextBox" runat="server" 
+                Text='<%# Bind("InitialsOfOfficer") %>' /></td>
+            <tr>
+                <td>
+                    Remarks:</td>
+                <td>
+                    <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
+                </td>
+                <td>
+                </td>
+             <tr><td colspan="4" align="center"><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                 CommandName="Update" Text="Update" CssClass="standardButton"/>
+                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="reset" Text="Reset" 
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                 CausesValidation="False" CommandName="Back" Text="Back"  CssClass="standardButton"/></td></tr>
+             
         </EditItemTemplate>
-        <InsertItemTemplate>
-                                    <table align="center" cellspacing="5">
+
+        <InsertItemTemplate>                                            
+        
+                                <table align="center" cellspacing="5">
 			
 			<tr>
              <td>Date Of Cheque Received:
@@ -287,25 +330,17 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_ChequeRegister" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_ChequeRegister" runat="server"  
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.ChequeRegisterTableAdapters.ChequeRegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_ChequeRegister_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_ChequeRegister_Selecting" 
+        ondeleting="ods_ChequeRegister_Deleting" 
+        >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_ChequeReceivedDate" Type="DateTime" />
-            <asp:Parameter Name="Original_PersonNamegivingcheque" Type="String" />
-            <asp:Parameter Name="Original_BankName" Type="String" />
-            <asp:Parameter Name="Original_ChequeNo" Type="Int32" />
-            <asp:Parameter Name="Original_ChequeDate" Type="DateTime" />
-            <asp:Parameter Name="Original_Amount" Type="Decimal" />
-            <asp:Parameter Name="Original_AccountName" Type="String" />
-            <asp:Parameter Name="Original_DateChequeSent" Type="DateTime" />
-            <asp:Parameter Name="Original_DateOfHisab" Type="DateTime" />
-            <asp:Parameter Name="Original_InitialsOfOfficer" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="ChequeReceivedDate" Type="DateTime" />
@@ -325,32 +360,23 @@
                 PropertyName="Text" Type="String" />
         </SelectParameters>
         <UpdateParameters>
-            <asp:Parameter Name="ChequeReceivedDate" Type="DateTime" />
+            <asp:Parameter Name="ChequeReceivedDate" Type="String" />
             <asp:Parameter Name="PersonNamegivingcheque" Type="String" />
             <asp:Parameter Name="BankName" Type="String" />
             <asp:Parameter Name="ChequeNo" Type="Int32" />
-            <asp:Parameter Name="ChequeDate" Type="DateTime" />
+            <asp:Parameter Name="ChequeDate" Type="String" />
             <asp:Parameter Name="Amount" Type="Decimal" />
             <asp:Parameter Name="AccountName" Type="String" />
-            <asp:Parameter Name="DateChequeSent" Type="DateTime" />
+            <asp:Parameter Name="DateChequeSent" Type="String" />
             <asp:Parameter Name="DateOfHisab" Type="DateTime" />
             <asp:Parameter Name="InitialsOfOfficer" Type="String" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_ChequeReceivedDate" Type="DateTime" />
-            <asp:Parameter Name="Original_PersonNamegivingcheque" Type="String" />
-            <asp:Parameter Name="Original_BankName" Type="String" />
-            <asp:Parameter Name="Original_ChequeNo" Type="Int32" />
-            <asp:Parameter Name="Original_ChequeDate" Type="DateTime" />
-            <asp:Parameter Name="Original_Amount" Type="Decimal" />
-            <asp:Parameter Name="Original_AccountName" Type="String" />
-            <asp:Parameter Name="Original_DateChequeSent" Type="DateTime" />
-            <asp:Parameter Name="Original_DateOfHisab" Type="DateTime" />
-            <asp:Parameter Name="Original_InitialsOfOfficer" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     
 </asp:View>    
 </asp:MultiView>
+</center>
 </asp:Content>
 

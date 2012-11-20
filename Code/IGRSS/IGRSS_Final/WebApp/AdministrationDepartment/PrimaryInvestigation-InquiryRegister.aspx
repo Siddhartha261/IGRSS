@@ -122,7 +122,7 @@
                     
             <tr><td>Date Of Complaint:</td>
 			    <td><asp:TextBox ID="Date_Of_ComplaintTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Complaint") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" /></td>
 			</tr>	                 
                     
             <tr><td>Details To Vigilance Commissioner:</td>
@@ -170,7 +170,7 @@
                     
             <tr><td>Date Of Complaint:</td>
 			    <td><asp:TextBox ID="Date_Of_ComplaintTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Complaint") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" /></td>
 			</tr>	                 
                     
             <tr><td>Details To Vigilance Commissioner:</td>

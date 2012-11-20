@@ -20,6 +20,12 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_Mahekam" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
@@ -41,26 +47,44 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_Mahekam" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_Mahekam" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" onrowdeleted="GridView_Mahekam_RowDeleted" 
+                      onrowdeleting="GridView_Mahekam_RowDeleting" 
+                      onrowediting="GridView_Mahekam_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="Details_Of_Designation" HeaderText="Details Of Designation" 
+                              ReadOnly="True" SortExpression="SrNo" />
+                          <asp:BoundField DataField="Details_Of_Designation" HeaderText="Details_Of_Designation" 
                               SortExpression="Details_Of_Designation" />
-                          <asp:BoundField DataField="Employee_Name" HeaderText="Employee Name" 
+                          <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" 
                               SortExpression="Employee_Name" />
                           <asp:BoundField DataField="Designation" HeaderText="Designation" 
                               SortExpression="Designation" />
                           <asp:BoundField DataField="Grade" HeaderText="Grade" 
                               SortExpression="Grade" />
-                          <asp:BoundField DataField="Residence_District" HeaderText="Residence District" 
+                          <asp:BoundField DataField="Residence_District" HeaderText="Residence_District" 
                               SortExpression="Residence_District" />
-                          <asp:BoundField DataField="Current_Office" HeaderText="Current Office" 
+                          <asp:BoundField DataField="Current_Office" HeaderText="Current_Office" 
                               SortExpression="Current_Office" />
-                          <asp:BoundField DataField="From_Date" HeaderText="From Date" 
+                          <asp:BoundField DataField="From_Date" HeaderText="From_Date" 
                               SortExpression="From_Date" />
-                          <asp:BoundField DataField="To_Date" HeaderText="To Date" 
+                          <asp:BoundField DataField="To_Date" HeaderText="To_Date" 
                               SortExpression="To_Date" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -76,7 +100,10 @@
 <asp:FormView ID="FormView_Mahekam" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Mahekam" EnableModelValidation="True" 
         DefaultMode="Insert" onitemcommand="FormView_Mahekam_ItemCommand" 
-        oniteminserting="FormView_Mahekam_ItemInserting" >
+        oniteminserting="FormView_Mahekam_ItemInserting" 
+        oniteminserted="FormView_Mahekam_ItemInserted" 
+        onitemupdated="FormView_Mahekam_ItemUpdated" 
+        onitemupdating="FormView_Mahekam_ItemUpdating" >
         <EditItemTemplate>
                                                                <table>
                                    <tr>
@@ -153,7 +180,7 @@
                                        CausesValidation="False" CommandName="Back" Text="Back" 
                                           CssClass="standardButton" /></td>
 								  </tr>                                   
-							</table>		               
+							</table>
         </EditItemTemplate>
         <InsertItemTemplate>
                                                                <table>
@@ -231,7 +258,7 @@
                                        CausesValidation="False" CommandName="Back" Text="Back" 
                                           CssClass="standardButton" /></td>
 								  </tr>                                   
-							</table>		   
+							</table>
         </InsertItemTemplate>
         <ItemTemplate>
             SrNo:
@@ -378,21 +405,14 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     
-    <asp:ObjectDataSource ID="ods_Mahekam" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_Mahekam" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.MahekamTableAdapters.MahekamRegisterTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_Mahekam_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_Mahekam_Selecting" 
+        ondeleting="ods_Mahekam_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Details_Of_Designation" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Designation" Type="String" />
-            <asp:Parameter Name="Original_Grade" Type="String" />
-            <asp:Parameter Name="Original_Residence_District" Type="String" />
-            <asp:Parameter Name="Original_Current_Office" Type="String" />
-            <asp:Parameter Name="Original_From_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_To_Date" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Details_Of_Designation" Type="String" />
@@ -417,15 +437,7 @@
             <asp:Parameter Name="Current_Office" Type="String" />
             <asp:Parameter Name="From_Date" Type="DateTime" />
             <asp:Parameter Name="To_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Details_Of_Designation" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Designation" Type="String" />
-            <asp:Parameter Name="Original_Grade" Type="String" />
-            <asp:Parameter Name="Original_Residence_District" Type="String" />
-            <asp:Parameter Name="Original_Current_Office" Type="String" />
-            <asp:Parameter Name="Original_From_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_To_Date" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

@@ -42,6 +42,7 @@ public partial class Establishment_Department_C_L_Card : System.Web.UI.Page
             case "Back":
                 Multiview_C_L_Card.SetActiveView(ViewGrid);
                 GridView_C_L_Card.DataBind();
+                infoDiv.Visible = false;
                 break;
         }
     }
@@ -136,7 +137,11 @@ public partial class Establishment_Department_C_L_Card : System.Web.UI.Page
     }
     protected void FormView_C_L_Card_DataBound(object sender, EventArgs e)
     {
-        RadioButtonList RadioList_LeaveApproved = FormView_C_L_Card.FindControl("RadioButtonList_LeaveApproved") as RadioButtonList;
-        RadioList_LeaveApproved.SelectedIndex = Convert.ToBoolean(FormView_C_L_Card.DataKey[1]) ? 0 : 1;
+        if (FormView_C_L_Card.DefaultMode == FormViewMode.Edit)
+        {
+            RadioButtonList RadioList_LeaveApproved = FormView_C_L_Card.FindControl("RadioButtonList_LeaveApproved") as RadioButtonList;
+            RadioList_LeaveApproved.SelectedIndex = Convert.ToBoolean(FormView_C_L_Card.DataKey[1]) ? 0 : 1;
+        }
+        
     }
 } 

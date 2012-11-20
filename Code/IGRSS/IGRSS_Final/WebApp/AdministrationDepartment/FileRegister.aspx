@@ -40,29 +40,39 @@
             }
         });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_FileRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
-<hr /><br />
-<h1>File register</h1>
+    <br />
+
+<h1 style="text-align: center">FILE REGISTER</h1>
 <table>
           <tr>
-                    <td align="right" style="width:641px;" >
+                    <td align="right" >
                         <asp:Label ID="lbllls" runat="server" Text="Enter File Number :" 
-                            meta:resourcekey="lblllsResource1"></asp:Label></td>
-                    <td align="left" >
-                        <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
+                            meta:resourcekey="lblllsResource1"></asp:Label>
+                    
+                       &nbsp<asp:TextBox Width="160" ID="txtFileNo" runat="server" 
                             meta:resourcekey="txtFileNoResource1" 
-                            ontextchanged="txtFileNo_TextChanged"></asp:TextBox></td>
-                        <td align="right">
-                        <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
+                           ></asp:TextBox>
+                        
+                        &nbsp<asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
                             meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
           </tr>
           <tr>
-              <td align="right" colspan="3">
+              <td colspan="3">
                   <asp:GridView ID="GridView_FileRegister" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_FileRegister" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_FileRegister_RowDeleted" 
+                      onrowdeleting="GridView_FileRegister_RowDeleting" 
+                      onrowediting="GridView_FileRegister_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
                               ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
@@ -82,6 +92,22 @@
                               SortExpression="DisposalDateOfFile" />
                           <asp:BoundField DataField="DisposalDateOn" HeaderText="DisposalDateOn" 
                               SortExpression="DisposalDateOn" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -89,66 +115,63 @@
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
         onclick="Button_new_Click" CssClass="standardButton" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       
 </asp:View>
 
 <asp:View ID="view2_Formview" runat="server">
-<center>
-<h1>file register</h1>
-    <asp:FormView ID="FormView_FileRegister" runat="server" DataKeyNames="SrNo" 
-        DataSourceID="ods_FileRegister" DefaultMode="Insert" EnableModelValidation="True" 
-        Width="50%" onitemcommand="FormView_FileRegister_ItemCommand">
+    <h1 style="text-align: center">
+        FILE REGISTER</h1>
+    <center>
+        <asp:FormView ID="FormView_FileRegister" runat="server" DataKeyNames="SrNo" 
+            DataSourceID="ods_FileRegister" DefaultMode="Insert" 
+            EnableModelValidation="True" onitemcommand="FormView_FileRegister_ItemCommand" 
+            oniteminserted="FormView_FileRegister_ItemInserted" 
+            onitemupdated="FormView_FileRegister_ItemUpdated" 
+            oniteminserting="FormView_FileRegister_ItemInserting" 
+            onitemupdating="FormView_FileRegister_ItemUpdating">
+            <EditItemTemplate>
+                      <table align="center" cellspacing="5">
+<tr><td>Worksheet ID:</td><td >
+    <asp:DropDownList ID="DropDownListWorksheet" runat="server" 
+        DataSourceID="ods_Worksheet" DataTextField="ID" DataValueField="ID">
+    </asp:DropDownList>
+    </td></tr>
+<tr><td>File Name:</td><td><asp:TextBox ID="FileNameTextBox" runat="server" Text='<%# Bind("FileName") %>' /></td></tr>
+<tr><td>File No:</td><td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' /></td></tr>
+<tr><td>Starting Date:</td><td ><asp:TextBox ID="StartingDateTextBox" runat="server" Text='<%# Bind("StartingDate") %>' /></td></tr>
+<tr><td>Ending Date:</td><td><asp:TextBox ID="EndingDateTextBox" runat="server" Text='<%# Bind("EndingDate") %>' /></td></tr>
+<tr><td>Class Of File :</td><td><asp:TextBox ID="ClassOfFileTextBox" runat="server" Text='<%# Bind("ClassOfFile") %>' /></td></tr>
+<tr><td>Disposal Date Of File :</td><td><asp:TextBox ID="DisposalDateOfFileTextBox" runat="server" Text='<%# Bind("DisposalDateOfFile") %>' /></td></tr>
+<tr><td>Disposal Date On :</td><td><asp:TextBox ID="DisposalDateOnTextBox" runat="server" Text='<%# Bind("DisposalDateOn") %>' /></td></tr>
+<tr>
+                    <td align="center" colspan="2">
+                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                            CommandName="Update" Text="Update" CssClass="standardButton" />
+                        &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
+                            CommandName="Reset" Text="Reset" 
+                            onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" 
+                            CommandName="Back" Text="Back" CssClass="standardButton" />
+                    </td>
+                </tr>
 
-        <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            Worksheet_ID:
-            <asp:TextBox ID="Worksheet_IDTextBox" runat="server" 
-                Text='<%# Bind("Worksheet_ID") %>' />
-            <br />
-            FileName:
-            <asp:TextBox ID="FileNameTextBox" runat="server" 
-                Text='<%# Bind("FileName") %>' />
-            <br />
-            FileNo:
-            <asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' />
-            <br />
-            StartingDate:
-            <asp:TextBox ID="StartingDateTextBox" runat="server" 
-                Text='<%# Bind("StartingDate") %>' />
-            <br />
-            EndingDate:
-            <asp:TextBox ID="EndingDateTextBox" runat="server" 
-                Text='<%# Bind("EndingDate") %>' />
-            <br />
-            ClassOfFile:
-            <asp:TextBox ID="ClassOfFileTextBox" runat="server" 
-                Text='<%# Bind("ClassOfFile") %>' />
-            <br />
-            DisposalDateOfFile:
-            <asp:TextBox ID="DisposalDateOfFileTextBox" runat="server" 
-                Text='<%# Bind("DisposalDateOfFile") %>' />
-            <br />
-            DisposalDateOn:
-            <asp:TextBox ID="DisposalDateOnTextBox" runat="server" 
-                Text='<%# Bind("DisposalDateOn") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-        </EditItemTemplate>
-        <InsertItemTemplate>
-            <table align="center" cellspacing="5">
-<tr><td align="right">Worksheet ID:</td><td align="left" style="width:50%"><asp:TextBox ID="Worksheet_IDTextBox" runat="server" Text='<%# Bind("Worksheet_ID") %>' /></td></tr>
-<tr><td align="right">File Name:</td><td align="left" style="width:50%"><asp:TextBox ID="FileNameTextBox" runat="server" Text='<%# Bind("FileName") %>' /></td></tr>
-<tr><td align="right">File No:</td><td align="left" style="width:50%"><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' /></td></tr>
-<tr><td align="right">Starting Date:</td><td align="left" style="width:50%"><asp:TextBox ID="StartingDateTextBox" runat="server" Text='<%# Bind("StartingDate") %>' /></td></tr>
-<tr><td align="right">Ending Date:</td><td align="left" style="width:50%"><asp:TextBox ID="EndingDateTextBox" runat="server" Text='<%# Bind("EndingDate") %>' /></td></tr>
-<tr><td align="right">Class Of File: </td><td align="left" style="width:50%"><asp:TextBox ID="ClassOfFileTextBox" runat="server" Text='<%# Bind("ClassOfFile") %>' /></td></tr>
-<tr><td align="right">Disposal Date Of File :</td><td align="left" style="width:50%"><asp:TextBox ID="DisposalDateOfFileTextBox" runat="server" Text='<%# Bind("DisposalDateOfFile") %>' /></td></tr>
-<tr><td align="right">Disposal Date On:</td><td align="left" style="width:50%"><asp:TextBox ID="DisposalDateOnTextBox" runat="server" Text='<%# Bind("DisposalDateOn") %>' /></td></tr>
+</tr>
+</table>
+            </EditItemTemplate>
+            <InsertItemTemplate>
+                     <table align="center" cellspacing="5">
+<tr><td>Worksheet ID:</td><td>
+    <asp:DropDownList ID="DropDownListWorksheet" runat="server" 
+        DataSourceID="ods_Worksheet" DataTextField="ID" DataValueField="ID">
+    </asp:DropDownList>
+    </td></tr>
+<tr><td>File Name :</td><td><asp:TextBox ID="FileNameTextBox" runat="server" Text='<%# Bind("FileName") %>' /></td></tr>
+<tr><td>File No :</td><td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' /></td></tr>
+<tr><td>Starting Date :</td><td><asp:TextBox ID="StartingDateTextBox" runat="server" Text='<%# Bind("StartingDate") %>' /></td></tr>
+<tr><td>Ending Date :</td><td><asp:TextBox ID="EndingDateTextBox" runat="server" Text='<%# Bind("EndingDate") %>' /></td></tr>
+<tr><td>Class Of File :</td><td><asp:TextBox ID="ClassOfFileTextBox" runat="server" Text='<%# Bind("ClassOfFile") %>' /></td></tr>
+<tr><td>Disposal Date Of File :</td><td><asp:TextBox ID="DisposalDateOfFileTextBox" runat="server" Text='<%# Bind("DisposalDateOfFile") %>' /></td></tr>
+<tr><td>Disposal Date On :</td><td><asp:TextBox ID="DisposalDateOnTextBox" runat="server" Text='<%# Bind("DisposalDateOn") %>' /></td></tr>
 <tr>
                     <td align="center" colspan="2">
                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
@@ -163,70 +186,96 @@
 
 </tr>
 </table>
-        </InsertItemTemplate>
-        <ItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            Worksheet_ID:
-            <asp:Label ID="Worksheet_IDLabel" runat="server" 
-                Text='<%# Bind("Worksheet_ID") %>' />
-            <br />
-            FileName:
-            <asp:Label ID="FileNameLabel" runat="server" 
-                Text='<%# Bind("FileName") %>' />
-            <br />
-            FileNo:
-            <asp:Label ID="FileNoLabel" runat="server" 
-                Text='<%# Bind("FileNo") %>' />
-            <br />
-            StartingDate:
-            <asp:Label ID="StartingDateLabel" runat="server" 
-                Text='<%# Bind("StartingDate") %>' />
-            <br />
-            EndingDate:
-            <asp:Label ID="EndingDateLabel" runat="server" 
-                Text='<%# Bind("EndingDate") %>' />
-            <br />
-            ClassOfFile:
-            <asp:Label ID="ClassOfFileLabel" runat="server" 
-                Text='<%# Bind("ClassOfFile") %>' />
-            <br />
-            DisposalDateOfFile:
-            <asp:Label ID="DisposalDateOfFileLabel" runat="server" 
-                Text='<%# Bind("DisposalDateOfFile") %>' />
-            <br />
-            DisposalDateOn:
-            <asp:Label ID="DisposalDateOnLabel" runat="server" 
-                Text='<%# Bind("DisposalDateOn") %>' />
-            <br />
-            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
-                CommandName="Edit" Text="Edit" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
-                CommandName="Delete" Text="Delete" />
-            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
-                CommandName="New" Text="New" />
-        </ItemTemplate>
-    </asp:FormView>
-</center>
+            </InsertItemTemplate>
+            <ItemTemplate>
+                SrNo:
+                <asp:Label ID="SrNoLabel" runat="server" Text='<%# Eval("SrNo") %>' />
+                <br />
+                Worksheet_ID:
+                <asp:Label ID="Worksheet_IDLabel" runat="server" 
+                    Text='<%# Bind("Worksheet_ID") %>' />
+                <br />
+                FileName:
+                <asp:Label ID="FileNameLabel" runat="server" Text='<%# Bind("FileName") %>' />
+                <br />
+                FileNo:
+                <asp:Label ID="FileNoLabel" runat="server" Text='<%# Bind("FileNo") %>' />
+                <br />
+                StartingDate:
+                <asp:Label ID="StartingDateLabel" runat="server" 
+                    Text='<%# Bind("StartingDate") %>' />
+                <br />
+                EndingDate:
+                <asp:Label ID="EndingDateLabel" runat="server" 
+                    Text='<%# Bind("EndingDate") %>' />
+                <br />
+                ClassOfFile:
+                <asp:Label ID="ClassOfFileLabel" runat="server" 
+                    Text='<%# Bind("ClassOfFile") %>' />
+                <br />
+                DisposalDateOfFile:
+                <asp:Label ID="DisposalDateOfFileLabel" runat="server" 
+                    Text='<%# Bind("DisposalDateOfFile") %>' />
+                <br />
+                DisposalDateOn:
+                <asp:Label ID="DisposalDateOnLabel" runat="server" 
+                    Text='<%# Bind("DisposalDateOn") %>' />
+                <br />
+                <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
+                    CommandName="Edit" Text="Edit" />
+                &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
+                    CommandName="Delete" Text="Delete" />
+                &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
+                    CommandName="New" Text="New" />
+            </ItemTemplate>
+        </asp:FormView>
+        <asp:ObjectDataSource ID="ods_Worksheet" runat="server" DeleteMethod="Delete" 
+            InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+            SelectMethod="GetData" 
+            TypeName="IGRSS.DataAccessLayer.WorksheetregisterTableAdapters.WorkSheetRegisterTableAdapter" 
+            UpdateMethod="Update">
+            <DeleteParameters>
+                <asp:Parameter Name="Original_ID" Type="Int32" />
+                <asp:Parameter Name="Original_WorkSheet_No" Type="Int32" />
+                <asp:Parameter Name="Original_Inward_No" Type="String" />
+                <asp:Parameter Name="Original_Name_Of_Person" Type="String" />
+                <asp:Parameter Name="Original_Letter_Details" Type="String" />
+                <asp:Parameter Name="Original_Work_Disposal_Date" Type="DateTime" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="WorkSheet_No" Type="Int32" />
+                <asp:Parameter Name="Inward_No" Type="String" />
+                <asp:Parameter Name="Name_Of_Person" Type="String" />
+                <asp:Parameter Name="Letter_Details" Type="String" />
+                <asp:Parameter Name="Work_Disposal_Date" Type="DateTime" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="WorkSheet_No" Type="Int32" />
+                <asp:Parameter Name="Inward_No" Type="String" />
+                <asp:Parameter Name="Name_Of_Person" Type="String" />
+                <asp:Parameter Name="Letter_Details" Type="String" />
+                <asp:Parameter Name="Work_Disposal_Date" Type="DateTime" />
+                <asp:Parameter Name="Original_ID" Type="Int32" />
+                <asp:Parameter Name="Original_WorkSheet_No" Type="Int32" />
+                <asp:Parameter Name="Original_Inward_No" Type="String" />
+                <asp:Parameter Name="Original_Name_Of_Person" Type="String" />
+                <asp:Parameter Name="Original_Letter_Details" Type="String" />
+                <asp:Parameter Name="Original_Work_Disposal_Date" Type="DateTime" />
+            </UpdateParameters>
+        </asp:ObjectDataSource>
+    </center>
     
-    <asp:ObjectDataSource ID="ods_FileRegister" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_FileRegister" runat="server" 
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.FileRegisterNewTableAdapters.FileRegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_FileRegister_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_FileRegister_Selecting" 
+        ondeleting="ods_FileRegister_Deleting"     
+        >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Worksheet_ID" Type="Int32" />
-            <asp:Parameter Name="Original_FileName" Type="String" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_StartingDate" Type="DateTime" />
-            <asp:Parameter Name="Original_EndingDate" Type="DateTime" />
-            <asp:Parameter Name="Original_ClassOfFile" Type="String" />
-            <asp:Parameter Name="Original_DisposalDateOfFile" Type="DateTime" />
-            <asp:Parameter Name="Original_DisposalDateOn" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Worksheet_ID" Type="Int32" />
@@ -251,15 +300,7 @@
             <asp:Parameter Name="ClassOfFile" Type="String" />
             <asp:Parameter Name="DisposalDateOfFile" Type="DateTime" />
             <asp:Parameter Name="DisposalDateOn" Type="DateTime" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Worksheet_ID" Type="Int32" />
-            <asp:Parameter Name="Original_FileName" Type="String" />
-            <asp:Parameter Name="Original_FileNo" Type="Int32" />
-            <asp:Parameter Name="Original_StartingDate" Type="DateTime" />
-            <asp:Parameter Name="Original_EndingDate" Type="DateTime" />
-            <asp:Parameter Name="Original_ClassOfFile" Type="String" />
-            <asp:Parameter Name="Original_DisposalDateOfFile" Type="DateTime" />
-            <asp:Parameter Name="Original_DisposalDateOn" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

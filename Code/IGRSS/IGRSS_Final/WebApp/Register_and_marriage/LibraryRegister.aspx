@@ -40,15 +40,20 @@
         }
     });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br /></center>
 <asp:MultiView ID="Multiview_LibraryRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="View1_LibraryRgister" runat="server">
-<hr /><br />
-<h1>Library Register</h1>
+<br />
+<h1 style="text-align: center">Library Register</h1>
 <table>
           <tr>
-          <td align="right">
+          <td>
           <table>
-          
+          <tr>
                     <td align="right" style="width:641px;" >
                         <asp:Label ID="lbllls" runat="server" Text="Enter File Number :" 
                             meta:resourcekey="lblllsResource1"></asp:Label></td>
@@ -59,37 +64,54 @@
                         <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
                             meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
-                    
-                    
-                    </table>
+                    </tr>
                     </td>
+                    </table>
           </tr>
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="LibraryRegister" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_LibraryRegister" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" onrowdeleted="LibraryRegister_RowDeleted" 
+                      onrowdeleting="LibraryRegister_RowDeleting" 
+                      onrowediting="LibraryRegister_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" Visible="False" 
-                              InsertVisible="False" />
+                              ReadOnly="True" SortExpression="SrNo" 
+                              InsertVisible="False" Visible="False" />
                           <asp:BoundField DataField="Title" HeaderText="Title" 
                               SortExpression="Title" />
                           <asp:BoundField DataField="Author" HeaderText="Author" 
                               SortExpression="Author" />
                           <asp:BoundField DataField="Price" HeaderText="Price" 
                               SortExpression="Price" />
-                          <asp:BoundField DataField="No_Of_Communication" HeaderText="No_Of_Communication" 
+                          <asp:BoundField DataField="No_Of_Communication" HeaderText="No Of Communication" 
                               SortExpression="No_Of_Communication" />
-                          <asp:BoundField DataField="Date_Of_Communication" HeaderText="Date_Of_Communication" 
+                          <asp:BoundField DataField="Date_Of_Communication" HeaderText="Date Of Communication" 
                               SortExpression="Date_Of_Communication" />
                           <asp:BoundField DataField="Date_Of_Receipt" 
-                              HeaderText="Date_Of_Receipt" SortExpression="Date_Of_Receipt" />
+                              HeaderText="Date Of Receipt" SortExpression="Date_Of_Receipt" />
                           <asp:BoundField DataField="No_Of_Copies_Receivecd" 
-                              HeaderText="No_Of_Copies_Receivecd" 
+                              HeaderText="No Of Copies Receivecd" 
                               SortExpression="No_Of_Copies_Receivecd" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" />
+                              SortExpression="Remarks" Visible="False" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -103,52 +125,12 @@
 <center>
 <h1>Library Register</h1>
     <asp:FormView ID="FormView_LibraryRegister" runat="server" DataKeyNames="SrNo" 
-        DataSourceID="ods_LibraryRegister" DefaultMode="Insert" 
-        EnableModelValidation="True" 
-        onitemcommand="FormView_LibraryRegister_ItemCommand">
+        DataSourceID="ods_LibraryRegister" DefaultMode="Insert" EnableModelValidation="True" 
+        Width="70%" onitemcommand="FormView_LibraryRegister_ItemCommand" 
+        oniteminserted="FormView_LibraryRegister_ItemInserted" 
+        onitemupdated="FormView_LibraryRegister_ItemUpdated">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            Title:
-            <asp:TextBox ID="TitleTextBox" runat="server" 
-                Text='<%# Bind("Title") %>' />
-            <br />
-            Author:
-            <asp:TextBox ID="AuthorTextBox" runat="server" 
-                Text='<%# Bind("Author") %>' />
-            <br />
-            Price:
-            <asp:TextBox ID="PriceTextBox" runat="server" 
-                Text='<%# Bind("Price") %>' />
-            <br />
-            No_Of_Communication:
-            <asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
-                Text='<%# Bind("No_Of_Communication") %>' />
-            <br />
-            Date_Of_Communication:
-            <asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
-                Text='<%# Bind("Date_Of_Communication") %>' />
-            <br />
-            Date_Of_Receipt:
-            <asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
-                Text='<%# Bind("Date_Of_Receipt") %>' />
-            <br />
-            No_Of_Copies_Receivecd:
-            <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
-                Text='<%# Bind("No_Of_Copies_Receivecd") %>' />
-            <br />
-            Remarks:
-            <asp:TextBox ID="RemarksTextBox" runat="server" 
-                Text='<%# Bind("Remarks") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
-&nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" 
-                CommandName="Cancel" Text="Cancel" />
-        </EditItemTemplate>
-        <InsertItemTemplate>
-                                                                                                    
+                                                   
                                                               <table align="center" cellspacing="5">
 															 <tr>
 															 <td>
@@ -161,9 +143,58 @@
 															 
                                                               <tr><td> Author Of Book :</td><td><asp:TextBox ID="AuthorTextBox" runat="server" Text='<%# Bind("Author") %>' /></td></tr>
                                                              
+                                                            
                                                               
                                                               <tr><td>Price:</td><td><asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' /></td></tr>
                                                               
+                                                              <tr><td>No Of Communication :</td><td><asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
+                                                                  Text='<%# Bind("No_Of_Communication") %>' /></td></tr>
+                                                              
+                                                              
+                                                              <tr><td> Date Of Communication :</td><td><asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
+                                                                  Text='<%# Bind("Date_Of_Communication") %>' /></td></tr>
+                                                             
+                                                              
+                                                              <tr><td>Date Of Receipt :</td><td><asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
+                                                                  Text='<%# Bind("Date_Of_Receipt") %>' /></td></tr>
+                                                              
+                                                              
+                                                              <tr><td>No Of Copies Receivecd :</td><td> <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
+                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' /></td></tr>
+                                                              
+                                                             
+                                                              <tr><td> Remarks :</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+                                                             
+                                                             
+                                                              <tr><td colspan="2" align="center"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                            CommandName="Update" CssClass="standardButton" Text="Update" />
+                            &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
+                            CausesValidation="False" CommandName="Cancel" CssClass="standardButton" 
+                            Text="Reset" onclientclick="resetTextFields();return false;" />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                            CausesValidation="False" CommandName="Back" CssClass="standardButton" 
+                            Text="Back" /></td></tr>
+        </EditItemTemplate>
+        <InsertItemTemplate>
+                                                                                                    
+                                                                     
+                                                                                                    
+                                                                                                   
+                                                              <table align="center" cellspacing="5">
+															 <tr>
+															 <td>
+															 Title Of Book :
+															 </td>
+															 <td><asp:TextBox ID="TitleTextBox" runat="server" Text='<%# Bind("Title") %>' />
+															 </td>
+															 </tr>
+
+															 
+                                                              <tr><td> Author Of Book :</td><td><asp:TextBox ID="AuthorTextBox" runat="server" Text='<%# Bind("Author") %>' /></td></tr>
+                                                             
+                                                              tr>
+                                                              
+                                                              <tr><td>Price:</td><td><asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' /></td></tr>
                                                               
                                                               <tr><td>No Of Communication :</td><td><asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
                                                                   Text='<%# Bind("No_Of_Communication") %>' /></td></tr>
@@ -192,6 +223,10 @@
                         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                             CausesValidation="False" CommandName="Back" CssClass="standardButton" 
                             Text="Back" /></td></tr>
+                            </table>
+                                                              
+        
+
                                                               
         </InsertItemTemplate>
         <ItemTemplate>
@@ -240,23 +275,16 @@
     </asp:FormView>
 </center>
     
-    <asp:ObjectDataSource ID="ods_LibraryRegister" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_LibraryRegister" runat="server" 
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.LibraryRegisterTableAdapters.LibraryRegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_Library_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_Library_Selecting" 
+        ondeleting="ods_LibraryRegister_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Title" Type="String" />
-            <asp:Parameter Name="Original_Author" Type="String" />
-            <asp:Parameter Name="Original_Price" Type="Decimal" />
-            <asp:Parameter Name="Original_No_Of_Communication" Type="Int32" />
-            <asp:Parameter Name="Original_Date_Of_Communication" Type="DateTime" />
-            <asp:Parameter Name="Original_Date_Of_Receipt" Type="DateTime" />
-            <asp:Parameter Name="Original_No_Of_Copies_Receivecd" Type="Int32" />
-            <asp:Parameter Name="Original_Remarks" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Title" Type="String" />
@@ -277,19 +305,11 @@
             <asp:Parameter Name="Author" Type="String" />
             <asp:Parameter Name="Price" Type="Decimal" />
             <asp:Parameter Name="No_Of_Communication" Type="Int32" />
-            <asp:Parameter Name="Date_Of_Communication" Type="DateTime" />
-            <asp:Parameter Name="Date_Of_Receipt" Type="DateTime" />
+            <asp:Parameter Name="Date_Of_Communication" Type="String" />
+            <asp:Parameter Name="Date_Of_Receipt" Type="String" />
             <asp:Parameter Name="No_Of_Copies_Receivecd" Type="Int32" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Title" Type="String" />
-            <asp:Parameter Name="Original_Author" Type="String" />
-            <asp:Parameter Name="Original_Price" Type="Decimal" />
-            <asp:Parameter Name="Original_No_Of_Communication" Type="Int32" />
-            <asp:Parameter Name="Original_Date_Of_Communication" Type="DateTime" />
-            <asp:Parameter Name="Original_Date_Of_Receipt" Type="DateTime" />
-            <asp:Parameter Name="Original_No_Of_Copies_Receivecd" Type="Int32" />
-            <asp:Parameter Name="Original_Remarks" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

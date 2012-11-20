@@ -101,4 +101,34 @@ public partial class CCRALegal_AppealRegister : System.Web.UI.Page
         lblMsg.Text = message;
         infoDiv.Visible = true;
     }
+
+
+    protected void FormView_AppealRegister_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        DropDownList DropDownOffice = FormView_AppealRegister.FindControl("DropDownList_office") as DropDownList;
+        e.NewValues["KacheriOffice"] = DropDownOffice.SelectedValue;
+
+        DropDownList DropDownVersus = FormView_AppealRegister.FindControl("DropdownList_Versus") as DropDownList;
+        e.NewValues["Versus"] = DropDownVersus.SelectedValue;
+
+        RadioButtonList RadioButtonlist_continue = FormView_AppealRegister.FindControl("RadioButtonList_continue") as RadioButtonList;
+        e.NewValues["Continue_remand"] = Convert.ToBoolean(RadioButtonlist_continue.SelectedValue);
+    }
+    protected void GridView_AppealRegister_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            Label lblContinue_remand = e.Row.FindControl("lblContinue_remand") as Label;
+            lblContinue_remand.Text = Convert.ToBoolean(GridView_AppealRegister.DataKeys[e.Row.RowIndex].Values[1]) ? "Yes" : "No";
+        }
+    }
+    protected void FormView_AppealRegister_DataBound(object sender, EventArgs e)
+    {
+        if (FormView_AppealRegister.DefaultMode == FormViewMode.Edit)
+        {
+            RadioButtonList RadioButtonlist_continue = FormView_AppealRegister.FindControl("RadioButtonList_continue") as RadioButtonList;
+            RadioButtonlist_continue.SelectedIndex = Convert.ToBoolean(FormView_AppealRegister.DataKey[1]) ? 0 : 1;
+        }
+        
+    }
 }

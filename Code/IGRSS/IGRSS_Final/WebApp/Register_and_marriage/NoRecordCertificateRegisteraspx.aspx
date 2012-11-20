@@ -40,11 +40,16 @@
         }
     });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br /></script></center>
 <asp:MultiView ID="Multiview_NoRecordCertificate" runat="server" 
         ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
-<hr /><br />
-<h1>Marriage volume register</h1>
+    <br />
+<h1 style="text-align: center">No Record Certificate Register</h1>
 <table>
           <tr>
                   <td align="right">
@@ -70,25 +75,45 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_NoRecordCertificate" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_NoRecordCertificate" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_NoRecordCertificate_RowDeleted" 
+                      onrowdeleting="GridView_NoRecordCertificate_RowDeleting" 
+                      onrowediting="GridView_NoRecordCertificate_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="ApplicantName" HeaderText="ApplicantName" 
+                          <asp:BoundField DataField="ApplicantName" HeaderText="Applicant Name" 
                               SortExpression="ApplicantName" />
                           <asp:BoundField DataField="Address" HeaderText="Address" 
-                              SortExpression="Address" />
-                          <asp:BoundField DataField="ApplicationDate" HeaderText="ApplicationDate" 
+                              SortExpression="Address" Visible="False" />
+                          <asp:BoundField DataField="ApplicationDate" HeaderText="Application Date" 
                               SortExpression="ApplicationDate" />
                           <asp:BoundField DataField="Purpose" HeaderText="Purpose" 
                               SortExpression="Purpose" />
                           <asp:BoundField DataField="SignOfMarriageSubRegistrar" 
-                              HeaderText="SignOfMarriageSubRegistrar" 
-                              SortExpression="SignOfMarriageSubRegistrar" />
+                              HeaderText="Sign Of Marriage Sub Registrar" 
+                              SortExpression="SignOfMarriageSubRegistrar" Visible="False" />
                           <asp:BoundField DataField="ApplicationDisposalDate" 
-                              HeaderText="ApplicationDisposalDate" SortExpression="ApplicationDisposalDate" />
-                          <asp:BoundField DataField="SignOfOfficer" HeaderText="SignOfOfficer" 
-                              SortExpression="SignOfOfficer" />
+                              HeaderText="Application Disposal Date" 
+                              SortExpression="ApplicationDisposalDate" />
+                          <asp:BoundField DataField="SignOfOfficer" HeaderText="Sign Of Officer" 
+                              SortExpression="SignOfOfficer" Visible="False" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -100,49 +125,54 @@
 
 <asp:View ID="View2_Formview" runat="server">
 <center>
-<h1>marriage volume register</h1>
+<h1>no record certificate Register</h1>
     <asp:FormView ID="FormView_NoRecordCertificate" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_NoRecordCertificate" DefaultMode="Insert" 
         EnableModelValidation="True" 
-        onitemcommand="FormView_NoRecordCertficate_ItemCommand">
+        onitemcommand="FormView_NoRecordCertficate_ItemCommand" 
+        oniteminserted="FormView_NoRecordCertificate_ItemInserted" 
+        onitemupdated="FormView_NoRecordCertificate_ItemUpdated">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            ApplicantName:
-            <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' />
-            <br />
-            Address:
-            <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' />
-            <br />
-            ApplicationDate:
-            <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' />
-            <br />
-            Purpose:
-            <asp:TextBox ID="PurposeTextBox" runat="server" Text='<%# Bind("Purpose") %>' />
-            <br />
-            SignOfMarriageSubRegistrar:
-            <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server" 
-                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' />
-            <br />
-            ApplicationDisposalDate:
-            <asp:TextBox ID="ApplicationDisposalDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDisposalDate") %>' />
-            <br />
-            SignOfOfficer:
-            <asp:TextBox ID="SignOfOfficerTextBox" runat="server" 
-                Text='<%# Bind("SignOfOfficer") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+               <table align="center" cellspacing="5">
+			   <tr><td> Name Of Applicant :</td><td> <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
+                Text='<%# Bind("ApplicantName") %>' /></td></tr>
+             
+           
+            <tr><td>Address :</td><td><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' /></td></tr>
+            
+            
+            <tr><td>Date Of Application :</td><td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDate") %>' /></td></tr>
+            
+            
+            <tr><td>Purpose:</td><td> <asp:TextBox ID="PurposeTextBox" runat="server" Text='<%# Bind("Purpose") %>' /></td></tr>
+            
+           
+            <tr><td>Sign Of Marriage SubRegistrar:</td><td> <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server" 
+                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' /></td></tr>
+            
+           
+            <tr><td>Date Of Application Disposal:</td><td><asp:TextBox ID="ApplicationDisposalDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDisposalDate") %>' /></td></tr>
+            
+            
+            <tr><td> Sign Of Officer:</td><td> <asp:TextBox ID="SignOfOfficerTextBox" runat="server" 
+                Text='<%# Bind("SignOfOfficer") %>' /></td></tr>
+           
+           
+            <tr><td align="center" colspan="2"> 
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                CommandName="Update" Text="Update" CssClass="standardButton" />
+                 &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="reset" Text="Reset" 
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back" 
+                    CssClass="standardButton" /></td></tr>
         </EditItemTemplate>
         <InsertItemTemplate>
             
-               <table align="center" cellspacing="5">
+                 <table align="center" cellspacing="5">
 			   <tr><td> Name Of Applicant :</td><td> <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
                 Text='<%# Bind("ApplicantName") %>' /></td></tr>
              
@@ -239,21 +269,16 @@
     </asp:ObjectDataSource>
 </center>
     
-    <asp:ObjectDataSource ID="ods_NoRecordCertificate" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_NoRecordCertificate" runat="server" 
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.NoRecordCertificateTableAdapters.NoRecordCertificateregisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_NoRecordCertificate_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_NoRecordCertificate_Selecting" 
+        ondeleting="ods_NoRecordCertificate_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_ApplicantName" Type="String" />
-            <asp:Parameter Name="Original_ApplicationDate" Type="DateTime" />
-            <asp:Parameter Name="Original_Purpose" Type="String" />
-            <asp:Parameter Name="Original_SignOfMarriageSubRegistrar" Type="String" />
-            <asp:Parameter Name="Original_ApplicationDisposalDate" Type="DateTime" />
-            <asp:Parameter Name="Original_SignOfOfficer" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="ApplicantName" Type="String" />
@@ -271,18 +296,12 @@
         <UpdateParameters>
             <asp:Parameter Name="ApplicantName" Type="String" />
             <asp:Parameter Name="Address" Type="String" />
-            <asp:Parameter Name="ApplicationDate" Type="DateTime" />
+            <asp:Parameter Name="ApplicationDate" Type="String" />
             <asp:Parameter Name="Purpose" Type="String" />
             <asp:Parameter Name="SignOfMarriageSubRegistrar" Type="String" />
-            <asp:Parameter Name="ApplicationDisposalDate" Type="DateTime" />
+            <asp:Parameter Name="ApplicationDisposalDate" Type="String" />
             <asp:Parameter Name="SignOfOfficer" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_ApplicantName" Type="String" />
-            <asp:Parameter Name="Original_ApplicationDate" Type="DateTime" />
-            <asp:Parameter Name="Original_Purpose" Type="String" />
-            <asp:Parameter Name="Original_SignOfMarriageSubRegistrar" Type="String" />
-            <asp:Parameter Name="Original_ApplicationDisposalDate" Type="DateTime" />
-            <asp:Parameter Name="Original_SignOfOfficer" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

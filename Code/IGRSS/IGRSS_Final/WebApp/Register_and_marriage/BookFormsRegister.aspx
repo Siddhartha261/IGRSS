@@ -40,10 +40,16 @@
         }
     });
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_BookFormsRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
-<hr /><br />
-<h1>book forms register</h1>
+<br />
+<h1 style="text-align: center">BOOKFORMS REGISTER</h1>
 <table>
           <tr>
           <td align="right">
@@ -66,30 +72,50 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_BookFormRegister" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_BookFormRegister" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_BookFormRegister_RowDeleted" 
+                      onrowdeleting="GridView_BookFormRegister_RowDeleting" 
+                      onrowediting="GridView_BookFormRegister_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="No_of_forms" HeaderText="No_of_forms" 
-                              SortExpression="No_of_forms" Visible="False" />
-                          <asp:BoundField DataField="No_Demand_quantity" HeaderText="No_Demand_quantity" 
+                          <asp:BoundField DataField="No_of_forms" HeaderText="No of forms" 
+                              SortExpression="No_of_forms" />
+                          <asp:BoundField DataField="No_Demand_quantity" HeaderText="No Of Demand quantity" 
                               SortExpression="No_Demand_quantity" />
                           <asp:BoundField DataField="No_Distributed_Stock" 
-                              HeaderText="No_Distributed_Stock" SortExpression="No_Distributed_Stock" />
-                          <asp:BoundField DataField="Actual_Stock" HeaderText="Actual_Stock" 
+                              HeaderText="No Of Distributed Stock" 
+                              SortExpression="No_Distributed_Stock" />
+                          <asp:BoundField DataField="Actual_Stock" HeaderText="Actual Stock" 
                               SortExpression="Actual_Stock" />
-                          <asp:BoundField DataField="Form_no" HeaderText="Form_no" 
-                              SortExpression="Form_no" Visible="False" />
-                          <asp:BoundField DataField="Dept_name" HeaderText="Dept_name" 
+                          <asp:BoundField DataField="Form_no" HeaderText="Form No" 
+                              SortExpression="Form_no" />
+                          <asp:BoundField DataField="Dept_name" HeaderText="Department Name" 
                               SortExpression="Dept_name" />
-                          <asp:BoundField DataField="No_Forms_Given" HeaderText="No_Forms_Given" 
-                              SortExpression="No_Forms_Given" />
-                          <asp:BoundField DataField="Recd_Date" HeaderText="Recd_Date" 
+                          <asp:BoundField DataField="No_Forms_Given" HeaderText="No OfForms_Given" 
+                              SortExpression="No_Forms_Given" Visible="False" />
+                          <asp:BoundField DataField="Recd_Date" HeaderText="Received Date" 
                               SortExpression="Recd_Date" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
-                          <asp:BoundField DataField="Emp_Name" HeaderText="Emp_Name" 
+                          <asp:BoundField DataField="Emp_Name" HeaderText="Employee Name" 
                               SortExpression="Emp_Name" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -101,58 +127,74 @@
 
 <asp:View ID="view2_Formview" runat="server">
 <center>
-<h1>book forms register</h1>
+<h1 style="text-align: center">BOOK FORMS REGISTER</h1>
   
     <asp:FormView ID="FormView_BookFormRegister" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_BookFormRegister" DefaultMode="Insert" 
         EnableModelValidation="True" onitemcommand="FormView_BookForm_ItemCommand" 
-        oniteminserting="FormView_BookForm_ItemInserting">
+        oniteminserting="FormView_BookForm_ItemInserting" 
+        oniteminserted="FormView_BookFormRegister_ItemInserted" 
+        onitemupdated="FormView_BookFormRegister_ItemUpdated" 
+        onitemupdating="FormView_BookFormRegister_ItemUpdating">
         <EditItemTemplate>
-            SrNo:
-            <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-            <br />
-            No_of_forms:
-            <asp:TextBox ID="No_of_formsTextBox" runat="server" 
-                Text='<%# Bind("No_of_forms") %>' />
-            <br />
-            No_Demand_quantity:
-            <asp:TextBox ID="No_Demand_quantityTextBox" runat="server" 
-                Text='<%# Bind("No_Demand_quantity") %>' />
-            <br />
-            No_Distributed_Stock:
-            <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" 
-                Text='<%# Bind("No_Distributed_Stock") %>' />
-            <br />
-            Actual_Stock:
-            <asp:TextBox ID="Actual_StockTextBox" runat="server" 
-                Text='<%# Bind("Actual_Stock") %>' />
-            <br />
-            Form_no:
-            <asp:TextBox ID="Form_noTextBox" runat="server" Text='<%# Bind("Form_no") %>' />
-            <br />
-            Dept_name:
-            <asp:TextBox ID="Dept_nameTextBox" runat="server" 
-                Text='<%# Bind("Dept_name") %>' />
-            <br />
-            No_Forms_Given:
-            <asp:TextBox ID="No_Forms_GivenTextBox" runat="server" 
-                Text='<%# Bind("No_Forms_Given") %>' />
-            <br />
-            Recd_Date:
-            <asp:TextBox ID="Recd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recd_Date") %>' />
-            <br />
-            Remarks:
-            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
-            <br />
-            Emp_Name:
-            <asp:TextBox ID="Emp_NameTextBox" runat="server" 
-                Text='<%# Bind("Emp_Name") %>' />
-            <br />
+            <table align="center" cellspacing="5">
+			<tr>
+			<td align="left">
+			<table>
+			 <tr><td>No Of Forms :</td><td><asp:TextBox ID="No_of_formsTextBox" runat="server" 
+                Text='<%# Bind("No_of_forms") %>' /></td></tr>
+			
+            
+            <tr><td>No Of Demand Quantity :</td><td><asp:TextBox ID="No_Demand_quantityTextBox" runat="server" 
+                Text='<%# Bind("No_Demand_quantity") %>' /></td></tr>
+            
+            
+            <tr><td> No Of Distributed Stock :</td><td><asp:TextBox ID="No_Distributed_StockTextBox" runat="server" 
+                Text='<%# Bind("No_Distributed_Stock") %>' /></td></tr>
+           
+            
+            <tr><td>Actual Stock :</td><td> <asp:TextBox ID="Actual_StockTextBox" runat="server" 
+                Text='<%# Bind("Actual_Stock") %>' /></td></tr>
+            
+           </table>
+		   </td>
+		   <td align="right">
+		   <table>
+           <tr><td colspan="2" align="right"><h5> After Giving To Employee </h5></td></tr>
+            <tr><td> Form No :</td><td> <asp:TextBox ID="Form_noTextBox" runat="server" Text='<%# Bind("Form_no") %>' /></td></tr>
+           
+           
+            <tr><td>Name Of Department:</td><td>
+                <asp:DropDownList ID="DropDownListDepartment" runat="server" 
+                    DataSourceID="ObjectDataSourceDepartment" DataTextField="Name" 
+                    DataValueField="Name">
+                </asp:DropDownList>
+                </td></tr>
+            
+            
+            <tr><td> No Of Given Forms :</td><td><asp:TextBox ID="No_Forms_GivenTextBox" runat="server" 
+                Text='<%# Bind("No_Forms_Given") %>' /></td></tr>
+           
+            
+            <tr><td> Date Of Employee Received :</td><td> <asp:TextBox ID="Recd_DateTextBox" runat="server" 
+                Text='<%# Bind("Recd_Date") %>' /></td></tr>
+				
+           <tr><td>Name Of Employee Received:</td><td> <asp:TextBox ID="Emp_NameTextBox" runat="server" 
+                Text='<%# Bind("Emp_Name") %>' /></td></tr>
+           
+            <tr><td>Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+            </table>
+			</td>
+			</tr>
+           <tr>
+           <td align="center" colspan="2">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" />
+                CommandName="Update" Text="Update" CssClass="standardButton" />
+                 &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
+                CausesValidation="False" CommandName="reset" Text="Reset" 
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                CausesValidation="False" CommandName="Back" Text="Back" CssClass="standardButton" />
         </EditItemTemplate>
         <InsertItemTemplate>
                         
@@ -270,7 +312,7 @@
     </asp:FormView>
     <asp:ObjectDataSource ID="ObjectDataSourceDepartment" runat="server" 
         DeleteMethod="Delete" InsertMethod="Insert" 
-        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        SelectMethod="GetData" 
         TypeName="IGRSS.DataAccessLayer.DataSetDepartmentTableAdapters.DepartmentMasterTableAdapter" 
         UpdateMethod="Update">
         <DeleteParameters>
@@ -289,25 +331,16 @@
     </asp:ObjectDataSource>
 </center>
     
-    <asp:ObjectDataSource ID="ods_BookFormRegister" runat="server" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_BookFormRegister" runat="server"  
         SelectMethod="GetDataBy" 
         
         
         TypeName="IGRSS.DataAccessLayer.BookFormsTableAdapters.BookFormsRegisterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" 
-        onselecting="ods_BookformRegister_Selecting">
+        DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
+        onselecting="ods_BookformRegister_Selecting" 
+        ondeleting="ods_BookFormRegister_Deleting">
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_No_of_forms" Type="Int32" />
-            <asp:Parameter Name="Original_No_Demand_quantity" Type="Int32" />
-            <asp:Parameter Name="Original_No_Distributed_Stock" Type="Int32" />
-            <asp:Parameter Name="Original_Actual_Stock" Type="Int32" />
-            <asp:Parameter Name="Original_Form_no" Type="Int32" />
-            <asp:Parameter Name="Original_Dept_name" Type="String" />
-            <asp:Parameter Name="Original_No_Forms_Given" Type="Int32" />
-            <asp:Parameter Name="Original_Recd_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Remarks" Type="String" />
-            <asp:Parameter Name="Original_Emp_Name" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="No_of_forms" Type="Int32" />
@@ -333,20 +366,10 @@
             <asp:Parameter Name="Form_no" Type="Int32" />
             <asp:Parameter Name="Dept_name" Type="String" />
             <asp:Parameter Name="No_Forms_Given" Type="Int32" />
-            <asp:Parameter Name="Recd_Date" Type="DateTime" />
-            <asp:Parameter Name="Remarks" Type="String" />
+            <asp:Parameter Name="Recd_Date" Type="String" />
             <asp:Parameter Name="Emp_Name" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_No_of_forms" Type="Int32" />
-            <asp:Parameter Name="Original_No_Demand_quantity" Type="Int32" />
-            <asp:Parameter Name="Original_No_Distributed_Stock" Type="Int32" />
-            <asp:Parameter Name="Original_Actual_Stock" Type="Int32" />
-            <asp:Parameter Name="Original_Form_no" Type="Int32" />
-            <asp:Parameter Name="Original_Dept_name" Type="String" />
-            <asp:Parameter Name="Original_No_Forms_Given" Type="Int32" />
-            <asp:Parameter Name="Original_Recd_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Remarks" Type="String" />
-            <asp:Parameter Name="Original_Emp_Name" Type="String" />
+            <asp:Parameter Name="Remarks" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

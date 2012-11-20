@@ -157,6 +157,7 @@
     <Compile Include="DataAccessLayer\ApplicationDisposalRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\BillRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\BookForms.Designer.cs" />
+    <Compile Include="DataAccessLayer\CDRegiater.Designer.cs" />
     <Compile Include="DataAccessLayer\ChequeRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\Citizen.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -92,7 +92,7 @@
                           <asp:BoundField DataField="Last_Date" HeaderText="Last Date " 
                               SortExpression="Last_Date" />
                           <asp:BoundField DataField="Decision_Taken" HeaderText="Decision" 
-                              SortExpression="Decision_Taken" />
+                              SortExpression="Decision_Taken" Visible="False" />
                           <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -145,7 +145,7 @@
             
         <tr><td>Date Of Application:</td>
 		    <td><asp:TextBox ID="Appl_DateTextBox" runat="server" 
-                Text='<%# Bind("Appl_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Appl_Date") %>' Width="140px" /></td>
 		</tr>	          
             
         <tr><td>PIO's Designation:</td>
@@ -155,12 +155,12 @@
             
         <tr><td>PIO Date:</td>
 		    <td><asp:TextBox ID="PIO_dateTextBox" runat="server" 
-                Text='<%# Bind("PIO_date") %>' Width="160px" /></td>
+                Text='<%# Bind("PIO_date") %>' Width="140px" /></td>
 		</tr>        
             
         <tr><td>Last Date According To 30 Days:</td>
 		    <td><asp:TextBox ID="Last_DateTextBox" runat="server" 
-                Text='<%# Bind("Last_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Last_Date") %>' Width="140px" /></td>
 		</tr>	
             
             
@@ -210,7 +210,7 @@
             
         <tr><td>Date Of Application:</td>
 		    <td><asp:TextBox ID="Appl_DateTextBox" runat="server" 
-                Text='<%# Bind("Appl_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Appl_Date") %>' Width="140px" /></td>
 		</tr>	          
             
         <tr><td>PIO's Designation:</td>
@@ -220,12 +220,12 @@
             
         <tr><td>PIO Date:</td>
 		    <td><asp:TextBox ID="PIO_dateTextBox" runat="server" 
-                Text='<%# Bind("PIO_date") %>' Width="160px" /></td>
+                Text='<%# Bind("PIO_date") %>' Width="140px" /></td>
 		</tr>        
             
         <tr><td>Last Date According To 30 Days:</td>
 		    <td><asp:TextBox ID="Last_DateTextBox" runat="server" 
-                Text='<%# Bind("Last_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Last_Date") %>' Width="140px" /></td>
 		</tr>	
             
             

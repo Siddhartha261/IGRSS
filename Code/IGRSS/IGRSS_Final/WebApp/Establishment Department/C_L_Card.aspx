@@ -54,32 +54,32 @@
                       onrowediting="GridView_C_L_Card_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" />
-                          <asp:BoundField DataField="Calendar_Year" HeaderText="Calendar_Year" 
+                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                          <asp:BoundField DataField="Calendar_Year" HeaderText="Calendar Year" 
                               SortExpression="Calendar_Year" />
-                          <asp:BoundField DataField="OfficeName" HeaderText="OfficeName" 
+                          <asp:BoundField DataField="OfficeName" HeaderText="Office Name" 
                               SortExpression="OfficeName" />
-                          <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" 
+                          <asp:BoundField DataField="Employee_Name" HeaderText="Employee Name" 
                               SortExpression="Employee_Name" />
                           <asp:BoundField DataField="Designation" HeaderText="Designation" 
                               SortExpression="Designation" />
                           <asp:BoundField DataField="Casual_SrNo" HeaderText="Casual_SrNo" 
-                              SortExpression="Casual_SrNo" />
-                          <asp:BoundField DataField="C_L_Date" HeaderText="C_L_Date" 
+                              SortExpression="Casual_SrNo" Visible="False" />
+                          <asp:BoundField DataField="C_L_Date" HeaderText="C.L. Date" 
                               SortExpression="C_L_Date" />
-                          <asp:BoundField DataField="HalfDay_FullDay" HeaderText="HalfDay_FullDay" 
-                              SortExpression="HalfDay_FullDay" />
-                          <asp:BoundField DataField="FirstShift_SecondShift" HeaderText="FirstShift_SecondShift" 
-                              SortExpression="FirstShift_SecondShift" />
+                          <asp:BoundField DataField="HalfDay_FullDay" HeaderText="HalfDay/FullDay" 
+                              SortExpression="HalfDay_FullDay" Visible="False" />
+                          <asp:BoundField DataField="FirstShift_SecondShift" HeaderText="FirstShift/SecondShift" 
+                              SortExpression="FirstShift_SecondShift" Visible="False" />
                           <asp:BoundField DataField="Reasons_Of_Leave" HeaderText="Reasons_Of_Leave" 
-                              SortExpression="Reasons_Of_Leave" />
+                              SortExpression="Reasons_Of_Leave" Visible="False" />
                           <asp:BoundField DataField="Total_Of_Taken_Leaves" 
-                              HeaderText="Total_Of_Taken_Leaves" 
+                              HeaderText="Total Of Taken Leaves" 
                               SortExpression="Total_Of_Taken_Leaves" />
                           <asp:BoundField DataField="Total_Of_Remaining_Leaves" 
-                              HeaderText="Total_Of_Remaining_Leaves" 
+                              HeaderText="Total Of Remaining Leaves" 
                               SortExpression="Total_Of_Remaining_Leaves" />
-                          <asp:BoundField DataField="As_On" HeaderText="As_On" SortExpression="As_On" />
+                          <asp:BoundField DataField="As_On" HeaderText="As On" SortExpression="As_On" />
                           <asp:TemplateField HeaderText="Leave Approved Or Not" 
                               SortExpression="Leave_Approved_Or_Not" ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate>
@@ -89,9 +89,9 @@
                                   <ItemStyle HorizontalAlign="Center" />
                               </asp:TemplateField>
                         
-                          <asp:BoundField DataField="Leave_Applicant" HeaderText="Leave_Applicant" 
+                          <asp:BoundField DataField="Leave_Applicant" HeaderText="Leave Applicant" 
                               SortExpression="Leave_Applicant" />
-                          <asp:BoundField DataField="Leave_Approved_By" HeaderText="Leave_Approved_By" 
+                          <asp:BoundField DataField="Leave_Approved_By" HeaderText="Leave Approved By" 
                               SortExpression="Leave_Approved_By" />
                               <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
@@ -202,7 +202,7 @@
 	   
 	   <td>As On:</td>
 	   <td><asp:TextBox ID="As_OnTextBox" runat="server" Text='<%# Bind("As_On") %>' 
-               Width="150px" /></td>
+               Width="140px" /></td>
 	</tr>
     
 	<tr>
@@ -345,7 +345,7 @@
 	   
 	   <td>As On:</td>
 	   <td><asp:TextBox ID="As_OnTextBox" runat="server" Text='<%# Bind("As_On") %>' 
-               Width="150px" /></td>
+               Width="140px" /></td>
 	</tr>
     
 	<tr>

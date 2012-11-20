@@ -129,10 +129,14 @@ public partial class Establishment_Department_ACB_Case_Register : System.Web.UI.
     }
     protected void FormView_ACB_Case_Register_DataBound(object sender, EventArgs e)
     {
-        RadioButtonList RadioList_HighCourt = FormView_ACB_Case_Register.FindControl("RadioButtonList_HighCourt") as RadioButtonList;
-        RadioList_HighCourt.SelectedIndex = Convert.ToBoolean(FormView_ACB_Case_Register.DataKey[1]) ? 0 : 1;
+        if (FormView_ACB_Case_Register.DefaultMode == FormViewMode.Edit)
+        {
+            RadioButtonList RadioList_HighCourt = FormView_ACB_Case_Register.FindControl("RadioButtonList_HighCourt") as RadioButtonList;
+            RadioList_HighCourt.SelectedIndex = Convert.ToBoolean(FormView_ACB_Case_Register.DataKey[1]) ? 0 : 1;
 
-        RadioButtonList RadioList_SupremeCourt = FormView_ACB_Case_Register.FindControl("RadioButtonList_SupremeCourt") as RadioButtonList;
-        RadioList_SupremeCourt.SelectedIndex = Convert.ToBoolean(FormView_ACB_Case_Register.DataKey[1]) ? 0 : 1;
+            RadioButtonList RadioList_SupremeCourt = FormView_ACB_Case_Register.FindControl("RadioButtonList_SupremeCourt") as RadioButtonList;
+            RadioList_SupremeCourt.SelectedIndex = Convert.ToBoolean(FormView_ACB_Case_Register.DataKey[1]) ? 0 : 1;
+        }
+        
     }
 }

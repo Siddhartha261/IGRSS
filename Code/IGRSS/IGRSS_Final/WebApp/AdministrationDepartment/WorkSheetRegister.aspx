@@ -185,7 +185,7 @@
             				
         <tr><td>Work Disposal Date:</td>
 		    <td><asp:TextBox ID="Work_Disposal_DateTextBox" runat="server" 
-                Text='<%# Bind("Work_Disposal_Date") %>' Width="160px" />
+                Text='<%# Bind("Work_Disposal_Date") %>' Width="140px" />
 			</td>
 		</tr>           
             			
@@ -232,7 +232,7 @@
             				
         <tr><td>Work Disposal Date:</td>
 		    <td><asp:TextBox ID="Work_Disposal_DateTextBox" runat="server" 
-                Text='<%# Bind("Work_Disposal_Date") %>' Width="160px" />
+                Text='<%# Bind("Work_Disposal_Date") %>' Width="140px" />
 			</td>
 		</tr>           
             			

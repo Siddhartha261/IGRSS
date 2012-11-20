@@ -14,7 +14,7 @@ public partial class Register_and_marriage_LekhanSamagri : System.Web.UI.Page
     {
        
         Multiview_LekhanSamagri.SetActiveView(View2_LekhanSamagri);
-        FormView_LibraryRegister.ChangeMode(FormViewMode.Insert);
+        FormView_LekhanSamagri.ChangeMode(FormViewMode.Insert);
     }
     protected void ods_Lekhan_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
@@ -28,12 +28,68 @@ public partial class Register_and_marriage_LekhanSamagri : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Back":
-                //Multiview_SOFile.SetActiveView(GridView);
-                //GridView.DataBind();
+              
                 Multiview_LekhanSamagri.SetActiveView(View1_LekhanSamagri);
                 View1_LekhanSamagri.DataBind();
+                infoDiv.Visible = false;
                 break;
         }
 
+    }
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
+    }
+    protected void GridView_LekhanSamagri_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView_LekhanSamagri_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView_LekhanSamagri.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView_LekhanSamagri.DataKeys[e.RowIndex].Value;
+        ods_Lekhan_Samagri.Delete();
+    }
+    protected void GridView_LekhanSamagri_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+
+        Multiview_LekhanSamagri.SetActiveView(View2_LekhanSamagri);
+        FormView_LekhanSamagri.PageIndex = e.NewEditIndex;
+        FormView_LekhanSamagri.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+    }
+    protected void FormView_LibraryRegister_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FormView_LibraryRegister_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void ods_Lekhan_Samagri_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
     }
 }

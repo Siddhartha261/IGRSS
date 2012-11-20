@@ -47,7 +47,9 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_Fajal" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_Fajal" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" onrowdeleted="GridView_Fajal_RowDeleted" 
+                      onrowdeleting="GridView_Fajal_RowDeleting" 
+                      onrowediting="GridView_Fajal_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
@@ -67,6 +69,22 @@
                               SortExpression="From_Date" />
                           <asp:BoundField DataField="To_Date" HeaderText="To Date" 
                               SortExpression="To_Date" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -82,7 +100,10 @@
 <asp:FormView ID="FormView_Fajal" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Fajal" EnableModelValidation="True" 
         DefaultMode="Insert" onitemcommand="FormView_Fajal_ItemCommand" 
-        oniteminserting="FormView_Fajal_ItemInserting" >
+        oniteminserting="FormView_Fajal_ItemInserting" 
+        oniteminserted="FormView_Fajal_ItemInserted" 
+        onitemupdated="FormView_Fajal_ItemUpdated" 
+        onitemupdating="FormView_Fajal_ItemUpdating" >
         <EditItemTemplate>
                                                                                                                                                                       <table>
                                                               <tr>
@@ -139,13 +160,13 @@
 															    <tr>
 																    <td>From Date:</td>
 																	<td><asp:TextBox ID="From_DateTextBox" runat="server" 
-                                                                         Text='<%# Bind("From_Date") %>' Width="160px" /></td>
+                                                                         Text='<%# Bind("From_Date") %>' Width="140px" /></td>
 																</tr>
 																
 																<tr>
 																    <td>To Date:</td>
 																	<td><asp:TextBox ID="To_DateTextBox" runat="server" Text='<%# Bind("To_Date") %>' 
-                                                                            Width="160px" /></td>
+                                                                            Width="140px" /></td>
 																</tr>
                                                                                                                               
                                                                <tr><td align="center" colspan=2 >
@@ -158,7 +179,7 @@
                                                                    CausesValidation="False" CommandName="Back" Text="Back" 
                                                                        CssClass="standardButton" /></td>
 																</tr>                                                              
-													</table>			   
+													</table>
 
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -217,13 +238,13 @@
 															    <tr>
 																    <td>From Date:</td>
 																	<td><asp:TextBox ID="From_DateTextBox" runat="server" 
-                                                                         Text='<%# Bind("From_Date") %>' Width="160px" /></td>
+                                                                         Text='<%# Bind("From_Date") %>' Width="140px" /></td>
 																</tr>
 																
 																<tr>
 																    <td>To Date:</td>
 																	<td><asp:TextBox ID="To_DateTextBox" runat="server" Text='<%# Bind("To_Date") %>' 
-                                                                            Width="160px" /></td>
+                                                                            Width="140px" /></td>
 																</tr>
                                                                                                                               
                                                                <tr><td align="center" colspan=2 >
@@ -236,8 +257,7 @@
                                                                    CausesValidation="False" CommandName="Back" Text="Back" 
                                                                        CssClass="standardButton" /></td>
 																</tr>                                                              
-													</table>			   
-
+													</table>
         </InsertItemTemplate>
         <ItemTemplate>
             SrNo:
@@ -344,21 +364,14 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     
-    <asp:ObjectDataSource ID="ods_Fajal" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_Fajal" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.FajalTableAdapters.FajalRegisterTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_Fajal_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_Fajal_Selecting" 
+        ondeleting="ods_Fajal_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Details_Of_Designation" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Designation" Type="String" />
-            <asp:Parameter Name="Original_Grade" Type="String" />
-            <asp:Parameter Name="Original_Residence_District" Type="String" />
-            <asp:Parameter Name="Original_Current_Office" Type="String" />
-            <asp:Parameter Name="Original_From_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_To_Date" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Details_Of_Designation" Type="String" />
@@ -383,15 +396,7 @@
             <asp:Parameter Name="Current_Office" Type="String" />
             <asp:Parameter Name="From_Date" Type="DateTime" />
             <asp:Parameter Name="To_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Details_Of_Designation" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Designation" Type="String" />
-            <asp:Parameter Name="Original_Grade" Type="String" />
-            <asp:Parameter Name="Original_Residence_District" Type="String" />
-            <asp:Parameter Name="Original_Current_Office" Type="String" />
-            <asp:Parameter Name="Original_From_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_To_Date" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

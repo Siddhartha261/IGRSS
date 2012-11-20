@@ -162,7 +162,7 @@
 			
 			<td>Affidavit Date:</td>
 			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
-            Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
+            Text='<%# Bind("Affidavitdate") %>' Width="140px" /></td>
 		</tr>       
         
         <tr>
@@ -196,7 +196,7 @@
 		   
 		   <td>Disposal Date:</td>
 		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
-            Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
+            Text='<%# Bind("DisposalDate") %>' Width="140px" /></td>
 		</tr>        
         
         <tr>
@@ -217,7 +217,7 @@
         <tr>
 		    <td>Parawise Remarks Sent Date:</td>
 			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
-            Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
+            Text='<%# Bind("Parawiseremarksdate") %>' Width="140px" /></td>
 			
 			<td>Judgement Detail:</td>
 			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 
@@ -260,7 +260,7 @@
 			
 			<td>Affidavit Date:</td>
 			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
-            Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
+            Text='<%# Bind("Affidavitdate") %>' Width="140px" /></td>
 		</tr>       
         
         <tr>
@@ -294,7 +294,7 @@
 		   
 		   <td>Disposal Date:</td>
 		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
-            Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
+            Text='<%# Bind("DisposalDate") %>' Width="140px" /></td>
 		</tr>        
         
         <tr>
@@ -315,7 +315,7 @@
         <tr>
 		    <td>Parawise Remarks Sent Date:</td>
 			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
-            Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
+            Text='<%# Bind("Parawiseremarksdate") %>' Width="140px" /></td>
 			
 			<td>Judgement Detail:</td>
 			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 

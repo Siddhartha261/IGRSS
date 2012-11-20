@@ -71,40 +71,48 @@
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_AppealRegister" runat="server" AutoGenerateColumns="False" 
-                      DataKeyNames="SrNo" DataSourceID="ods_AppealRegister" 
+                      DataKeyNames="SrNo,Continue_remand" DataSourceID="ods_AppealRegister" 
                       EnableModelValidation="True" 
                       onrowdeleted="GridView_AppealRegister_RowDeleted" 
                       onrowdeleting="GridView_AppealRegister_RowDeleting" 
-                      onrowediting="GridView_AppealRegister_RowEditing">
+                      onrowediting="GridView_AppealRegister_RowEditing" 
+                      onrowdatabound="GridView_AppealRegister_RowDataBound">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" />
-                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
+                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="KacheriOffice" HeaderText="KacheriOffice" 
+                          <asp:BoundField DataField="KacheriOffice" HeaderText="Kacheri/Office" 
                               SortExpression="KacheriOffice" />
-                          <asp:BoundField DataField="DocumentNo" HeaderText="DocumentNo" 
+                          <asp:BoundField DataField="DocumentNo" HeaderText="Document No" 
                               SortExpression="DocumentNo" />
                           <asp:BoundField DataField="Year" HeaderText="Year" 
                               SortExpression="Year" />
-                          <asp:BoundField DataField="NameOfApplicant" HeaderText="NameOfApplicant" 
+                          <asp:BoundField DataField="NameOfApplicant" HeaderText="Name Of Applicant" 
                               SortExpression="NameOfApplicant" />
                           <asp:BoundField DataField="Versus" HeaderText="Versus" 
                               SortExpression="Versus" />
-                          <asp:BoundField DataField="DeficitStampDuty" HeaderText="DeficitStampDuty" 
+                          <asp:BoundField DataField="DeficitStampDuty" HeaderText="Deficit Stamp Duty" 
                               SortExpression="DeficitStampDuty" />
-                          <asp:BoundField DataField="TotalStampDuty" HeaderText="TotalStampDuty" 
+                          <asp:BoundField DataField="TotalStampDuty" HeaderText="Total Stamp Duty" 
                               SortExpression="TotalStampDuty" />
-                          <asp:CheckBoxField DataField="Continue_remand" HeaderText="Continue_remand" 
-                              SortExpression="Continue_remand" />
+                              <asp:TemplateField HeaderText="Continue/Remand" 
+                              SortExpression="Continue_remand" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblContinue_remand"  runat="server" Text="No" 
+                                        Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
+                                </ItemTemplate>
+                                  <ItemStyle HorizontalAlign="Center" />
+                              </asp:TemplateField>
+                      
                           <asp:BoundField DataField="Result" HeaderText="Result" 
-                              SortExpression="Result" />
+                              SortExpression="Result" Visible="False" />
                           <asp:BoundField DataField="OutwardNo" 
-                              HeaderText="OutwardNo" 
+                              HeaderText="Outward No" 
                               SortExpression="OutwardNo" />
                           <asp:BoundField DataField="Date" HeaderText="Date" 
                               SortExpression="Date" />
-                          <asp:BoundField DataField="AGYear" HeaderText="AGYear" 
+                          <asp:BoundField DataField="AGYear" HeaderText="AG Year" 
                               SortExpression="AGYear" />
                           <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
@@ -134,12 +142,14 @@
 <asp:View ID="Formview" runat="server">
 <center>
 <h1>Appeal Register</h1>
-<asp:FormView ID="FormView_AppealRegister" runat="server" DataKeyNames="SrNo" 
+<asp:FormView ID="FormView_AppealRegister" runat="server" DataKeyNames="SrNo,Continue_remand" 
         DataSourceID="ods_AppealRegister" EnableModelValidation="True" 
         DefaultMode="Insert" oniteminserting="FormView_AppealRegister_ItemInserting" 
         onitemcommand="FormView_AppealRegister_ItemCommand" 
         oniteminserted="FormView_AppealRegister_ItemInserted" 
-        onitemupdated="FormView_AppealRegister_ItemUpdated" >
+        onitemupdated="FormView_AppealRegister_ItemUpdated" 
+        ondatabound="FormView_AppealRegister_DataBound" 
+        onitemupdating="FormView_AppealRegister_ItemUpdating" >
         <EditItemTemplate>
                     <table>
 	    <tr>
@@ -212,7 +222,7 @@
 			
 			<td>Date:</td>
 			<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Width="160px" /></td>
+                    Width="140px" /></td>
 		</tr>
 		                 
         <tr>
@@ -311,7 +321,7 @@
 			
 			<td>Date:</td>
 			<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Width="160px" /></td>
+                    Width="140px" /></td>
 		</tr>
 		                 
         <tr>

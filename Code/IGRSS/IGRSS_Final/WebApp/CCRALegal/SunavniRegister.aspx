@@ -140,13 +140,13 @@
             <tr>
 			    <td>Issue Date Of Letter:</td>
 				<td><asp:TextBox ID="IssueDateOfLetterTextBox" runat="server" 
-                        Text='<%# Bind("IssueDateOfLetter") %>' Width="160px" /></td>
+                        Text='<%# Bind("IssueDateOfLetter") %>' Width="140px" /></td>
 			</tr>                  
                     
             <tr>
 			    <td>Date Of Hearing:</td>
 				<td><asp:TextBox ID="DateOfHearingTextBox" runat="server" 
-                        Text='<%# Bind("DateOfHearing") %>' Width="160px" /></td>
+                        Text='<%# Bind("DateOfHearing") %>' Width="140px" /></td>
 			</tr>                  
                     
             <tr>
@@ -207,13 +207,13 @@
             <tr>
 			    <td>Issue Date Of Letter:</td>
 				<td><asp:TextBox ID="IssueDateOfLetterTextBox" runat="server" 
-                        Text='<%# Bind("IssueDateOfLetter") %>' Width="160px" /></td>
+                        Text='<%# Bind("IssueDateOfLetter") %>' Width="140px" /></td>
 			</tr>                  
                     
             <tr>
 			    <td>Date Of Hearing:</td>
 				<td><asp:TextBox ID="DateOfHearingTextBox" runat="server" 
-                        Text='<%# Bind("DateOfHearing") %>' Width="160px" /></td>
+                        Text='<%# Bind("DateOfHearing") %>' Width="140px" /></td>
 			</tr>                  
                     
             <tr>
