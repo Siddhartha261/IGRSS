@@ -120,17 +120,19 @@
 			</td>
 			<td>
 			<asp:TextBox ID="DateToDateTextBox" runat="server" 
-                Text='<%# Bind("DateToDate") %>' />
+                Text='<%# Bind("DateToDate") %>' Width="140px" />
 			</td>
 			</tr>
 			
             
-            <tr><td>Volume No:</td><td> <asp:TextBox ID="VolumeNoTextBox" runat="server" 
-                Text='<%# Bind("VolumeNo") %>' /></td></tr>
+            <tr><td>Volume No:</td><td> 
+                <asp:TextBox ID="VolumeNoTextBox" runat="server" 
+                Text='<%# Bind("VolumeNo") %>' Width="160px" /></td></tr>
             
            
             <tr><td>Remarks:</td><td> 
-            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
+                    Height="60px" Width="160px" /></td></tr>
            
             <tr><td>
 			<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
@@ -153,17 +155,19 @@
 			</td>
 			<td>
 			<asp:TextBox ID="DateToDateTextBox" runat="server" 
-                Text='<%# Bind("DateToDate") %>' />
+                Text='<%# Bind("DateToDate") %>' Width="140px" />
 			</td>
 			</tr>
 			
             
-            <tr><td>Volume No:</td><td> <asp:TextBox ID="VolumeNoTextBox" runat="server" 
-                Text='<%# Bind("VolumeNo") %>' /></td></tr>
+            <tr><td>Volume No:</td><td> 
+                <asp:TextBox ID="VolumeNoTextBox" runat="server" 
+                Text='<%# Bind("VolumeNo") %>' Width="160px" /></td></tr>
             
            
             <tr><td>Remarks:</td><td> 
-            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+            <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
+                    Height="60px" Width="160px" /></td></tr>
            
             <tr><td colspan="2" align="right">
 			<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 

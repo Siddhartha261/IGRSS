@@ -124,30 +124,37 @@
         onitemupdated="FormView_CDRegister_ItemUpdated">
         <EditItemTemplate>
                                         <table align="center" cellspacing="5">
-			   <tr><td> Year Date:</td><td> <asp:TextBox ID="YearDateTextBox" runat="server" 
-                Text='<%# Bind("YearDate") %>' /></td></tr>
+			   <tr><td> Year Date:</td><td> 
+                   <asp:TextBox ID="YearDateTextBox" runat="server" 
+                Text='<%# Bind("YearDate") %>' Width="160px" /></td></tr>
            
            
-            <tr><td>CD No:</td><td><asp:TextBox ID="CD_NoTextBox" runat="server" Text='<%# Bind("CD_No") %>' /></td></tr>
+            <tr><td>CD No:</td><td><asp:TextBox ID="CD_NoTextBox" runat="server" 
+                    Text='<%# Bind("CD_No") %>' Width="160px" /></td></tr>
             
             
-            <tr><td>Details Of Document On CD:</td><td><asp:TextBox ID="DetailsOfDocumentTextBox" runat="server" 
-                Text='<%# Bind("DetailsOfDocument") %>' /></td></tr>
+            <tr><td>Details Of Document On CD:</td><td>
+                <asp:TextBox ID="DetailsOfDocumentTextBox" runat="server" 
+                Text='<%# Bind("DetailsOfDocument") %>' Height="60px" Width="160px" /></td></tr>
             
             
-            <tr><td>Starting No:</td><td> <asp:TextBox ID="StartingNoTextBox" runat="server" 
-                Text='<%# Bind("StartingNo") %>' /></td></tr>
-            
-           
-            <tr><td> Ending No:</td><td><asp:TextBox ID="EndingNoTextBox" runat="server" 
-                Text='<%# Bind("EndingNo") %>' /></td></tr>
-           
-            
-            <tr><td>Second Copy Date:</td><td> <asp:TextBox ID="SecondCopyDateTextBox" runat="server" 
-                Text='<%# Bind("SecondCopyDate") %>' /></td></tr>
+            <tr><td>Starting No:</td><td> 
+                <asp:TextBox ID="StartingNoTextBox" runat="server" 
+                Text='<%# Bind("StartingNo") %>' Width="160px" /></td></tr>
             
            
-            <tr><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+            <tr><td> Ending No:</td><td>
+                <asp:TextBox ID="EndingNoTextBox" runat="server" 
+                Text='<%# Bind("EndingNo") %>' Width="160px" /></td></tr>
+           
+            
+            <tr><td>Second Copy Date:</td><td> 
+                <asp:TextBox ID="SecondCopyDateTextBox" runat="server" 
+                Text='<%# Bind("SecondCopyDate") %>' Width="140px" /></td></tr>
+            
+           
+            <tr><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                    Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
            
            
             <tr>
@@ -165,30 +172,37 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                                                                    <table align="center" cellspacing="5">
-			   <tr><td> Year Date:</td><td> <asp:TextBox ID="YearDateTextBox" runat="server" 
-                Text='<%# Bind("YearDate") %>' /></td></tr>
+			   <tr><td> Year Date:</td><td> 
+                   <asp:TextBox ID="YearDateTextBox" runat="server" 
+                Text='<%# Bind("YearDate") %>' Width="140px" /></td></tr>
            
            
-            <tr><td>CD No:</td><td><asp:TextBox ID="CD_NoTextBox" runat="server" Text='<%# Bind("CD_No") %>' /></td></tr>
+            <tr><td>CD No:</td><td><asp:TextBox ID="CD_NoTextBox" runat="server" 
+                    Text='<%# Bind("CD_No") %>' Width="160px" /></td></tr>
             
             
-            <tr><td>Details Of Document On CD:</td><td><asp:TextBox ID="DetailsOfDocumentTextBox" runat="server" 
-                Text='<%# Bind("DetailsOfDocument") %>' /></td></tr>
+            <tr><td>Details Of Document On CD:</td><td>
+                <asp:TextBox ID="DetailsOfDocumentTextBox" runat="server" 
+                Text='<%# Bind("DetailsOfDocument") %>' Height="60px" Width="160px" /></td></tr>
             
             
-            <tr><td>Starting No:</td><td> <asp:TextBox ID="StartingNoTextBox" runat="server" 
-                Text='<%# Bind("StartingNo") %>' /></td></tr>
-            
-           
-            <tr><td> Ending No:</td><td><asp:TextBox ID="EndingNoTextBox" runat="server" 
-                Text='<%# Bind("EndingNo") %>' /></td></tr>
-           
-            
-            <tr><td>Second Copy Date:</td><td> <asp:TextBox ID="SecondCopyDateTextBox" runat="server" 
-                Text='<%# Bind("SecondCopyDate") %>' /></td></tr>
+            <tr><td>Starting No:</td><td> 
+                <asp:TextBox ID="StartingNoTextBox" runat="server" 
+                Text='<%# Bind("StartingNo") %>' Width="160px" /></td></tr>
             
            
-            <tr><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+            <tr><td> Ending No:</td><td>
+                <asp:TextBox ID="EndingNoTextBox" runat="server" 
+                Text='<%# Bind("EndingNo") %>' Width="160px" /></td></tr>
+           
+            
+            <tr><td>Second Copy Date:</td><td> 
+                <asp:TextBox ID="SecondCopyDateTextBox" runat="server" 
+                Text='<%# Bind("SecondCopyDate") %>' Width="140px" /></td></tr>
+            
+           
+            <tr><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                    Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
            
            
             <tr>

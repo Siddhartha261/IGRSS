@@ -155,65 +155,77 @@
 							   <td>Description Of Article:
 							   </td>
 							   <td><asp:TextBox ID="DescOfArticleTextBox" runat="server" 
-                                    Text='<%# Bind("DescOfArticle") %>' />
+                                    Text='<%# Bind("DescOfArticle") %>' Height="60px" Width="160px" />
 							   </td>
 							   </tr>
 							   
                                 
-                                <tr><td>Authority For purchase :</td><td> <asp:TextBox ID="Authority_For_purchaseTextBox" runat="server" 
-                                    Text='<%# Bind("Authority_For_purchase") %>' /></td></tr>
+                                <tr><td>Authority For purchase :</td><td> 
+                                    <asp:TextBox ID="Authority_For_purchaseTextBox" runat="server" 
+                                    Text='<%# Bind("Authority_For_purchase") %>' Width="160px" /></td></tr>
                                 
                                
-                                <tr><td>Purchase date:</td><td><asp:TextBox ID="Purchase_dateTextBox" runat="server" 
-                                    Text='<%# Bind("Purchase_date") %>' /></td></tr>
+                                <tr><td>Purchase date:</td><td>
+                                    <asp:TextBox ID="Purchase_dateTextBox" runat="server" 
+                                    Text='<%# Bind("Purchase_date") %>' Width="140px" /></td></tr>
                                 
                                 
-                                <tr><td> No Of Quantity:</td><td> <asp:TextBox ID="NoofqtyTextBox" runat="server" Text='<%# Bind("Noofqty") %>' /></td></tr>
+                                <tr><td> No Of Quantity:</td><td> <asp:TextBox ID="NoofqtyTextBox" runat="server" 
+                                        Text='<%# Bind("Noofqty") %>' Width="160px" /></td></tr>
                                
                                
-                                <tr><td>Value :</td><td><asp:TextBox ID="ValueTextBox" runat="server" Text='<%# Bind("Value") %>' /></td></tr>
+                                <tr><td>Value :</td><td><asp:TextBox ID="ValueTextBox" runat="server" 
+                                        Text='<%# Bind("Value") %>' Width="160px" /></td></tr>
                                 
                                 
-                                <tr><td>Initials Of HO:</td><td> <asp:TextBox ID="InitialsOfHOTextBox" runat="server" 
-                                    Text='<%# Bind("InitialsOfHO") %>' /></td></tr>
+                                <tr><td>Initials Of HO:</td><td> 
+                                    <asp:TextBox ID="InitialsOfHOTextBox" runat="server" 
+                                    Text='<%# Bind("InitialsOfHO") %>' Width="160px" /></td></tr>
                                 
                                
-                                <tr><td> No Of Quantity:</td><td>  <asp:TextBox ID="NoQtyTextBox" runat="server" Text='<%# Bind("NoQty") %>' /></td></tr>
+                                <tr><td> No Of Quantity:</td><td>  <asp:TextBox ID="NoQtyTextBox" runat="server" 
+                                        Text='<%# Bind("NoQty") %>' Width="160px" /></td></tr>
                                
                               </table>
 			                    </td>
                                 <td>
 			                  <table>
-                                <tr><td> Nature  Disposal:</td><td><asp:TextBox ID="NatureDisposalTextBox" runat="server" 
-                                    Text='<%# Bind("NatureDisposal") %>' /></td></tr>
+                                <tr><td> Nature  Disposal:</td><td>
+                                    <asp:TextBox ID="NatureDisposalTextBox" runat="server" 
+                                    Text='<%# Bind("NatureDisposal") %>' Width="160px" /></td></tr>
                                
                                 
                                 <tr><td>Authority Voucher:</td><td>
                                     <asp:RadioButtonList ID="RadioButtonList1" runat="server" 
-                                        RepeatDirection="Horizontal">
+                                        RepeatDirection="Horizontal" Width="160px">
                                         <asp:ListItem>Authority</asp:ListItem>
                                         <asp:ListItem>Voucher</asp:ListItem>
                                     </asp:RadioButtonList>
                                     </td></tr>
                                 
                                 
-                                <tr><td>Amount Realized:</td><td><asp:TextBox ID="AmtRealizeTextBox" runat="server" 
-                                    Text='<%# Bind("AmtRealize") %>' /></td></tr>
+                                <tr><td>Amount Realized:</td><td>
+                                    <asp:TextBox ID="AmtRealizeTextBox" runat="server" 
+                                    Text='<%# Bind("AmtRealize") %>' Width="160px" /></td></tr>
                                 
                                 
-                                <tr><td> Date Of Credit:</td><td><asp:TextBox ID="DateCreditTextBox" runat="server" 
-                                    Text='<%# Bind("DateCredit") %>' /></td></tr>
+                                <tr><td> Date Of Credit:</td><td>
+                                    <asp:TextBox ID="DateCreditTextBox" runat="server" 
+                                    Text='<%# Bind("DateCredit") %>' Width="140px" /></td></tr>
                                
                                 
-                                <tr><td>Amount Written Off:</td><td> <asp:TextBox ID="AmtWritten_offTextBox" runat="server" 
-                                    Text='<%# Bind("AmtWritten_off") %>' /></td></tr>
+                                <tr><td>Amount Written Off:</td><td> 
+                                    <asp:TextBox ID="AmtWritten_offTextBox" runat="server" 
+                                    Text='<%# Bind("AmtWritten_off") %>' Width="160px" /></td></tr>
                                 
                                
-                                <tr><td>Balance Stock:</td><td><asp:TextBox ID="BalanceStockTextBox" runat="server" 
-                                    Text='<%# Bind("BalanceStock") %>' /></td></tr>
+                                <tr><td>Balance Stock:</td><td>
+                                    <asp:TextBox ID="BalanceStockTextBox" runat="server" 
+                                    Text='<%# Bind("BalanceStock") %>' Width="160px" /></td></tr>
                                 
                                 
-                                <tr><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+                                <tr><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                                        Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
                                </table>
 				</td>
 				
@@ -243,65 +255,77 @@
 							   <td>Description Of Article:
 							   </td>
 							   <td><asp:TextBox ID="DescOfArticleTextBox" runat="server" 
-                                    Text='<%# Bind("DescOfArticle") %>' />
+                                    Text='<%# Bind("DescOfArticle") %>' Height="60px" Width="160px" />
 							   </td>
 							   </tr>
 							   
                                 
-                                <tr><td>Authority For purchase :</td><td> <asp:TextBox ID="Authority_For_purchaseTextBox" runat="server" 
-                                    Text='<%# Bind("Authority_For_purchase") %>' /></td></tr>
+                                <tr><td>Authority For purchase :</td><td> 
+                                    <asp:TextBox ID="Authority_For_purchaseTextBox" runat="server" 
+                                    Text='<%# Bind("Authority_For_purchase") %>' Width="160px" /></td></tr>
                                 
                                
-                                <tr><td>Purchase date:</td><td><asp:TextBox ID="Purchase_dateTextBox" runat="server" 
-                                    Text='<%# Bind("Purchase_date") %>' /></td></tr>
+                                <tr><td>Purchase date:</td><td>
+                                    <asp:TextBox ID="Purchase_dateTextBox" runat="server" 
+                                    Text='<%# Bind("Purchase_date") %>' Width="140px" /></td></tr>
                                 
                                 
-                                <tr><td> No Of Quantity:</td><td> <asp:TextBox ID="NoofqtyTextBox" runat="server" Text='<%# Bind("Noofqty") %>' /></td></tr>
+                                <tr><td> No Of Quantity:</td><td> <asp:TextBox ID="NoofqtyTextBox" runat="server" 
+                                        Text='<%# Bind("Noofqty") %>' Width="160px" /></td></tr>
                                
                                
-                                <tr><td>Value :</td><td><asp:TextBox ID="ValueTextBox" runat="server" Text='<%# Bind("Value") %>' /></td></tr>
+                                <tr><td>Value :</td><td><asp:TextBox ID="ValueTextBox" runat="server" 
+                                        Text='<%# Bind("Value") %>' Width="160px" /></td></tr>
                                 
                                 
-                                <tr><td>Initials Of HO:</td><td> <asp:TextBox ID="InitialsOfHOTextBox" runat="server" 
-                                    Text='<%# Bind("InitialsOfHO") %>' /></td></tr>
+                                <tr><td>Initials Of HO:</td><td> 
+                                    <asp:TextBox ID="InitialsOfHOTextBox" runat="server" 
+                                    Text='<%# Bind("InitialsOfHO") %>' Width="160px" /></td></tr>
                                 
                                
-                                <tr><td> No Of Quantity:</td><td>  <asp:TextBox ID="NoQtyTextBox" runat="server" Text='<%# Bind("NoQty") %>' /></td></tr>
+                                <tr><td> No Of Quantity:</td><td>  <asp:TextBox ID="NoQtyTextBox" runat="server" 
+                                        Text='<%# Bind("NoQty") %>' Width="160px" /></td></tr>
                                
                               </table>
 			                    </td>
                                 <td>
 			                  <table>
-                                <tr><td> Nature  Disposal:</td><td><asp:TextBox ID="NatureDisposalTextBox" runat="server" 
-                                    Text='<%# Bind("NatureDisposal") %>' /></td></tr>
+                                <tr><td> Nature  Disposal:</td><td>
+                                    <asp:TextBox ID="NatureDisposalTextBox" runat="server" 
+                                    Text='<%# Bind("NatureDisposal") %>' Width="160px" /></td></tr>
                                
                                 
                                 <tr><td>Authority Voucher:</td><td>
                                     <asp:RadioButtonList ID="RadioButtonList1" runat="server" 
-                                        RepeatDirection="Horizontal">
+                                        RepeatDirection="Horizontal" Width="160px">
                                         <asp:ListItem>Authority</asp:ListItem>
                                         <asp:ListItem>Voucher</asp:ListItem>
                                     </asp:RadioButtonList>
                                     </td></tr>
                                 
                                 
-                                <tr><td>Amount Realized:</td><td><asp:TextBox ID="AmtRealizeTextBox" runat="server" 
-                                    Text='<%# Bind("AmtRealize") %>' /></td></tr>
+                                <tr><td>Amount Realized:</td><td>
+                                    <asp:TextBox ID="AmtRealizeTextBox" runat="server" 
+                                    Text='<%# Bind("AmtRealize") %>' Width="160px" /></td></tr>
                                 
                                 
-                                <tr><td> Date Of Credit:</td><td><asp:TextBox ID="DateCreditTextBox" runat="server" 
-                                    Text='<%# Bind("DateCredit") %>' /></td></tr>
+                                <tr><td> Date Of Credit:</td><td>
+                                    <asp:TextBox ID="DateCreditTextBox" runat="server" 
+                                    Text='<%# Bind("DateCredit") %>' Width="140px" /></td></tr>
                                
                                 
-                                <tr><td>Amount Written Off:</td><td> <asp:TextBox ID="AmtWritten_offTextBox" runat="server" 
-                                    Text='<%# Bind("AmtWritten_off") %>' /></td></tr>
+                                <tr><td>Amount Written Off:</td><td> 
+                                    <asp:TextBox ID="AmtWritten_offTextBox" runat="server" 
+                                    Text='<%# Bind("AmtWritten_off") %>' Width="160px" /></td></tr>
                                 
                                
-                                <tr><td>Balance Stock:</td><td><asp:TextBox ID="BalanceStockTextBox" runat="server" 
-                                    Text='<%# Bind("BalanceStock") %>' /></td></tr>
+                                <tr><td>Balance Stock:</td><td>
+                                    <asp:TextBox ID="BalanceStockTextBox" runat="server" 
+                                    Text='<%# Bind("BalanceStock") %>' Width="160px" /></td></tr>
                                 
                                 
-                                <tr><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+                                <tr><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                                        Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
                                </table>
 				</td>
 				

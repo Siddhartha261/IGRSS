@@ -20,6 +20,11 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br /></center>
 <asp:MultiView ID="Multiview_TransferAppl" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
@@ -41,7 +46,10 @@
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_TransferAppl" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="SrNo" DataSourceID="ods_TransferAppl" 
-                      EnableModelValidation="True">
+                      EnableModelValidation="True" 
+                      onrowdeleted="GridView_TransferAppl_RowDeleted" 
+                      onrowdeleting="GridView_TransferAppl_RowDeleting" 
+                      onrowediting="GridView_TransferAppl_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
@@ -66,6 +74,22 @@
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -81,7 +105,10 @@
 <asp:FormView ID="FormView_TransferAppl" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_TransferAppl" EnableModelValidation="True" 
         DefaultMode="Insert" onitemcommand="FormView_TransferAppl_ItemCommand" 
-        oniteminserting="FormView_TransferAppl_ItemInserting" >
+        oniteminserting="FormView_TransferAppl_ItemInserting" 
+        oniteminserted="FormView_TransferAppl_ItemInserted" 
+        onitemupdated="FormView_TransferAppl_ItemUpdated" 
+        onitemupdating="FormView_TransferAppl_ItemUpdating" >
         <EditItemTemplate>
                                    <table>           
 			        <tr>
@@ -122,7 +149,7 @@
                     <tr>
 					   <td>Application Date:</td>
 					   <td><asp:TextBox ID="Application_DateTextBox" runat="server" 
-                           Text='<%# Bind("Application_Date") %>' Width="160px" /></td>
+                           Text='<%# Bind("Application_Date") %>' Width="140px" /></td>
 					   
 					   <td>Reason For Request:</td>
 					   <td>
@@ -143,14 +170,14 @@
 					   <td>Disposed On:</td>
 					   <td>
                            <asp:TextBox ID="Disposed_OnTextBox" runat="server" 
-                               Text='<%# Bind("Disposed_On") %>' Width="160px" />
+                               Text='<%# Bind("Disposed_On") %>' Width="140px" />
                         </td>
 					</tr>		
                                               
                     <tr>
 					   <td>Joining Date On Current Place:</td>
 					   <td><asp:TextBox ID="Joining_DateTextBox" runat="server" 
-                           Text='<%# Bind("Joining_Date") %>' Width="160px" /></td>
+                           Text='<%# Bind("Joining_Date") %>' Width="140px" /></td>
 					   
 					   <td>Remarks:</td>
 					   <td>
@@ -169,7 +196,7 @@
                            CausesValidation="False" CommandName="Back" Text="Back" 
                             CssClass="standardButton" /></td>
 					</tr>                        
-            </table>    
+            </table>
             
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -212,7 +239,7 @@
                     <tr>
 					   <td>Application Date:</td>
 					   <td><asp:TextBox ID="Application_DateTextBox" runat="server" 
-                           Text='<%# Bind("Application_Date") %>' Width="160px" /></td>
+                           Text='<%# Bind("Application_Date") %>' Width="140px" /></td>
 					   
 					   <td>Reason For Request:</td>
 					   <td>
@@ -233,14 +260,14 @@
 					   <td>Disposed On:</td>
 					   <td>
                            <asp:TextBox ID="Disposed_OnTextBox" runat="server" 
-                               Text='<%# Bind("Disposed_On") %>' Width="160px" />
+                               Text='<%# Bind("Disposed_On") %>' Width="140px" />
                         </td>
 					</tr>		
                                               
                     <tr>
 					   <td>Joining Date On Current Place:</td>
 					   <td><asp:TextBox ID="Joining_DateTextBox" runat="server" 
-                           Text='<%# Bind("Joining_Date") %>' Width="160px" /></td>
+                           Text='<%# Bind("Joining_Date") %>' Width="140px" /></td>
 					   
 					   <td>Remarks:</td>
 					   <td>
@@ -259,7 +286,7 @@
                            CausesValidation="False" CommandName="Back" Text="Back" 
                             CssClass="standardButton" /></td>
 					</tr>                        
-            </table>                
+            </table>
         </InsertItemTemplate>
         <ItemTemplate>
             SrNo:
@@ -414,21 +441,14 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     
-    <asp:ObjectDataSource ID="ods_TransferAppl" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_TransferAppl" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.TransferApplTableAdapters.Transfer_Appl_RegisterTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_TransferAppl_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_TransferAppl_Selecting" 
+        ondeleting="ods_TransferAppl_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Details_Of_Designation" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Application_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Current_Place" Type="String" />
-            <asp:Parameter Name="Original_Joining_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Residence_District" Type="String" />
-            <asp:Parameter Name="Original_Place_Of_Request" Type="String" />
-            <asp:Parameter Name="Original_Disposed_On" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Details_Of_Designation" Type="String" />
@@ -457,15 +477,7 @@
             <asp:Parameter Name="Reason_For_Request" Type="String" />
             <asp:Parameter Name="Disposed_On" Type="DateTime" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Details_Of_Designation" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Application_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Current_Place" Type="String" />
-            <asp:Parameter Name="Original_Joining_Date" Type="DateTime" />
-            <asp:Parameter Name="Original_Residence_District" Type="String" />
-            <asp:Parameter Name="Original_Place_Of_Request" Type="String" />
-            <asp:Parameter Name="Original_Disposed_On" Type="DateTime" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

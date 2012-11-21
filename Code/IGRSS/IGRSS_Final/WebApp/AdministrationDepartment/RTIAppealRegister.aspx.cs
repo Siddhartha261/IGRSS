@@ -36,8 +36,7 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
     protected void ods_RTI_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
         e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
-        ods_RTI.SelectMethod = "GetDataBy";
-        
+        ods_RTI.SelectMethod = "GetDataBy";        
     }
 
 
@@ -104,4 +103,5 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
         RadioButtonList Radio_decisiontaken = FormView_RTI.FindControl("Radio_decisiontaken") as RadioButtonList;
         e.NewValues["Decision_Taken"] = Radio_decisiontaken.SelectedValue;
     }
+     
 }

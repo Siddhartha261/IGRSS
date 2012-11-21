@@ -136,34 +136,42 @@
 															 <td>
 															 Title Of Book :
 															 </td>
-															 <td><asp:TextBox ID="TitleTextBox" runat="server" Text='<%# Bind("Title") %>' />
+															 <td><asp:TextBox ID="TitleTextBox" runat="server" Text='<%# Bind("Title") %>' 
+                                                                     Width="160px" />
 															 </td>
 															 </tr>
 
 															 
-                                                              <tr><td> Author Of Book :</td><td><asp:TextBox ID="AuthorTextBox" runat="server" Text='<%# Bind("Author") %>' /></td></tr>
+                                                              <tr><td> Author Of Book :</td><td><asp:TextBox ID="AuthorTextBox" runat="server" 
+                                                                      Text='<%# Bind("Author") %>' Width="160px" /></td></tr>
                                                              
                                                             
                                                               
-                                                              <tr><td>Price:</td><td><asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' /></td></tr>
+                                                              <tr><td>Price:</td><td><asp:TextBox ID="PriceTextBox" runat="server" 
+                                                                      Text='<%# Bind("Price") %>' Width="160px" /></td></tr>
                                                               
-                                                              <tr><td>No Of Communication :</td><td><asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
-                                                                  Text='<%# Bind("No_Of_Communication") %>' /></td></tr>
+                                                              <tr><td>No Of Communication :</td><td>
+                                                                  <asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
+                                                                  Text='<%# Bind("No_Of_Communication") %>' Width="160px" /></td></tr>
                                                               
                                                               
-                                                              <tr><td> Date Of Communication :</td><td><asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
-                                                                  Text='<%# Bind("Date_Of_Communication") %>' /></td></tr>
+                                                              <tr><td> Date Of Communication :</td><td>
+                                                                  <asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
+                                                                  Text='<%# Bind("Date_Of_Communication") %>' Width="140px" /></td></tr>
                                                              
                                                               
-                                                              <tr><td>Date Of Receipt :</td><td><asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
-                                                                  Text='<%# Bind("Date_Of_Receipt") %>' /></td></tr>
+                                                              <tr><td>Date Of Receipt :</td><td>
+                                                                  <asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
+                                                                  Text='<%# Bind("Date_Of_Receipt") %>' Width="140px" /></td></tr>
                                                               
                                                               
-                                                              <tr><td>No Of Copies Receivecd :</td><td> <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
-                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' /></td></tr>
+                                                              <tr><td>No Of Copies Receivecd :</td><td> 
+                                                                  <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
+                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' Width="160px" /></td></tr>
                                                               
                                                              
-                                                              <tr><td> Remarks :</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+                                                              <tr><td> Remarks :</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                                                                      Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
                                                              
                                                              
                                                               <tr><td colspan="2" align="center"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
@@ -185,44 +193,77 @@
 															 <td>
 															 Title Of Book :
 															 </td>
-															 <td><asp:TextBox ID="TitleTextBox" runat="server" Text='<%# Bind("Title") %>' />
+															 <td><asp:TextBox ID="TitleTextBox" runat="server" Text='<%# Bind("Title") %>' 
+                                                                     Width="160px" />
 															 </td>
 															 </tr>
 
 															 
-                                                              <tr><td> Author Of Book :</td><td><asp:TextBox ID="AuthorTextBox" runat="server" Text='<%# Bind("Author") %>' /></td></tr>
+                                                              <tr><td> Author Of Book :</td><td><asp:TextBox ID="AuthorTextBox" runat="server" 
+                                                                      Text='<%# Bind("Author") %>' Width="160px" /></td></tr>
                                                              
-                                                              tr>
-                                                              
-                                                              <tr><td>Price:</td><td><asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' /></td></tr>
-                                                              
-                                                              <tr><td>No Of Communication :</td><td><asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
-                                                                  Text='<%# Bind("No_Of_Communication") %>' /></td></tr>
-                                                              
-                                                              
-                                                              <tr><td> Date Of Communication :</td><td><asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
-                                                                  Text='<%# Bind("Date_Of_Communication") %>' /></td></tr>
-                                                             
-                                                              
-                                                              <tr><td>Date Of Receipt :</td><td><asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
-                                                                  Text='<%# Bind("Date_Of_Receipt") %>' /></td></tr>
-                                                              
-                                                              
-                                                              <tr><td>No Of Copies Receivecd :</td><td> <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
-                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' /></td></tr>
-                                                              
-                                                             
-                                                              <tr><td> Remarks :</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
-                                                             
-                                                             
-                                                              <tr><td colspan="2" align="center"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Insert" CssClass="standardButton" Text="Insert" />
-                            &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
-                            CausesValidation="False" CommandName="Cancel" CssClass="standardButton" 
-                            Text="Reset" onclientclick="resetTextFields();return false;" />
-                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                            CausesValidation="False" CommandName="Back" CssClass="standardButton" 
-                            Text="Back" /></td></tr>
+                                                                  <caption>
+                                                                      <tr>
+                                                                          <td>
+                                                                              Price:</td>
+                                                                          <td>
+                                                                              <asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' 
+                                                                                  Width="160px" />
+                                                                          </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td>
+                                                                              No Of Communication :</td>
+                                                                          <td>
+                                                                              <asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
+                                                                                  Text='<%# Bind("No_Of_Communication") %>' Width="160px" />
+                                                                          </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td>
+                                                                              Date Of Communication :</td>
+                                                                          <td>
+                                                                              <asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
+                                                                                  Text='<%# Bind("Date_Of_Communication") %>' Width="140px" />
+                                                                          </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td>
+                                                                              Date Of Receipt :</td>
+                                                                          <td>
+                                                                              <asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
+                                                                                  Text='<%# Bind("Date_Of_Receipt") %>' Width="140px" />
+                                                                          </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td>
+                                                                              No Of Copies Receivecd :</td>
+                                                                          <td>
+                                                                              <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
+                                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' Width="160px" />
+                                                                          </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td>
+                                                                              Remarks :</td>
+                                                                          <td>
+                                                                              <asp:TextBox ID="RemarksTextBox" runat="server" Height="60px" 
+                                                                                  Text='<%# Bind("Remarks") %>' Width="160px" />
+                                                                          </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td align="center" colspan="2">
+                                                                              <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                                                                                  CommandName="Insert" CssClass="standardButton" Text="Insert" />
+                                                                              &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
+                                                                                  CommandName="Cancel" CssClass="standardButton" 
+                                                                                  onclientclick="resetTextFields();return false;" Text="Reset" />
+                                                                              &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                                                                                  CausesValidation="False" CommandName="Back" CssClass="standardButton" 
+                                                                                  Text="Back" />
+                                                                          </td>
+                                                                      </tr>
+                                                                  </caption>
                             </table>
                                                               
         

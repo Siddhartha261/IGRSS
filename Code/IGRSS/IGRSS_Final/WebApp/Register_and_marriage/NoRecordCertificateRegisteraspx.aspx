@@ -134,30 +134,37 @@
         onitemupdated="FormView_NoRecordCertificate_ItemUpdated">
         <EditItemTemplate>
                <table align="center" cellspacing="5">
-			   <tr><td> Name Of Applicant :</td><td> <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' /></td></tr>
+			   <tr><td> Name Of Applicant :</td><td> 
+                   <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
+                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
              
            
-            <tr><td>Address :</td><td><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' /></td></tr>
+            <tr><td>Address :</td><td><asp:TextBox ID="AddressTextBox" runat="server" 
+                    Text='<%# Bind("Address") %>' Height="60px" Width="160px" /></td></tr>
             
             
-            <tr><td>Date Of Application :</td><td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' /></td></tr>
+            <tr><td>Date Of Application :</td><td>
+                <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDate") %>' Width="140px" /></td></tr>
             
             
-            <tr><td>Purpose:</td><td> <asp:TextBox ID="PurposeTextBox" runat="server" Text='<%# Bind("Purpose") %>' /></td></tr>
+            <tr><td>Purpose:</td><td> <asp:TextBox ID="PurposeTextBox" runat="server" 
+                    Text='<%# Bind("Purpose") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Sign Of Marriage SubRegistrar:</td><td> <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server" 
-                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' /></td></tr>
+            <tr><td>Sign Of Marriage SubRegistrar:</td><td> 
+                <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server" 
+                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Date Of Application Disposal:</td><td><asp:TextBox ID="ApplicationDisposalDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDisposalDate") %>' /></td></tr>
+            <tr><td>Date Of Application Disposal:</td><td>
+                <asp:TextBox ID="ApplicationDisposalDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDisposalDate") %>' Width="140px" /></td></tr>
             
             
-            <tr><td> Sign Of Officer:</td><td> <asp:TextBox ID="SignOfOfficerTextBox" runat="server" 
-                Text='<%# Bind("SignOfOfficer") %>' /></td></tr>
+            <tr><td> Sign Of Officer:</td><td> 
+                <asp:TextBox ID="SignOfOfficerTextBox" runat="server" 
+                Text='<%# Bind("SignOfOfficer") %>' Width="160px" /></td></tr>
            
            
             <tr><td align="center" colspan="2"> 
@@ -173,30 +180,37 @@
         <InsertItemTemplate>
             
                  <table align="center" cellspacing="5">
-			   <tr><td> Name Of Applicant :</td><td> <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' /></td></tr>
+			   <tr><td> Name Of Applicant :</td><td> 
+                   <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
+                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
              
            
-            <tr><td>Address :</td><td><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' /></td></tr>
+            <tr><td>Address :</td><td><asp:TextBox ID="AddressTextBox" runat="server" 
+                    Text='<%# Bind("Address") %>' Height="60px" Width="160px" /></td></tr>
             
             
-            <tr><td>Date Of Application :</td><td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' /></td></tr>
+            <tr><td>Date Of Application :</td><td>
+                <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDate") %>' Width="140px" /></td></tr>
             
             
-            <tr><td>Purpose:</td><td> <asp:TextBox ID="PurposeTextBox" runat="server" Text='<%# Bind("Purpose") %>' /></td></tr>
+            <tr><td>Purpose:</td><td> <asp:TextBox ID="PurposeTextBox" runat="server" 
+                    Text='<%# Bind("Purpose") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Sign Of Marriage SubRegistrar:</td><td> <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server" 
-                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' /></td></tr>
+            <tr><td>Sign Of Marriage SubRegistrar:</td><td> 
+                <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server" 
+                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Date Of Application Disposal:</td><td><asp:TextBox ID="ApplicationDisposalDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDisposalDate") %>' /></td></tr>
+            <tr><td>Date Of Application Disposal:</td><td>
+                <asp:TextBox ID="ApplicationDisposalDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDisposalDate") %>' Width="140px" /></td></tr>
             
             
-            <tr><td> Sign Of Officer:</td><td> <asp:TextBox ID="SignOfOfficerTextBox" runat="server" 
-                Text='<%# Bind("SignOfOfficer") %>' /></td></tr>
+            <tr><td> Sign Of Officer:</td><td> 
+                <asp:TextBox ID="SignOfOfficerTextBox" runat="server" 
+                Text='<%# Bind("SignOfOfficer") %>' Width="160px" /></td></tr>
            
            
             <tr><td align="center" colspan="2"> 

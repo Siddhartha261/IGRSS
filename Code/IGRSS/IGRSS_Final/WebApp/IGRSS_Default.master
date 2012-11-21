@@ -15,12 +15,28 @@
     <script type="text/javascript">
 
         function checkForEmptyFields() {
-            var hasError = false;
-            $('input[type="text"]').each(function (index, element) {
-                if ($(this).text().length === 0) {
-                    hasError = true;
-                }
+            var ret = true;
+            $('textarea').each(function (index, element) {
+                if (ret === true) { ret = isEmpty(element); }
             });
+
+            $('input[type="text"]').each(function (index, element) {
+                if (ret === true) { ret = isEmpty(element); }
+            });
+            return ret;
+        }
+
+        function isEmpty(element) {
+            var hasError = false;
+            if ($(element).val().length === 0) {
+                $(element).addClass("errorInput");
+                $(element).blur(function () {
+                    if ($(element).val().length > 0) {
+                        $(this).removeClass("errorInput");
+                    }
+                });
+                hasError = true;
+            }
             if (hasError === true) {
                 $("#infoDiv > span").remove();
                 $("#infoDiv").append("<span>Required fields are not filled up.</span>").addClass("error").show();

@@ -74,7 +74,9 @@
                   <asp:GridView ID="GridView_RTI" runat="server" AutoGenerateColumns="False" 
                       DataKeyNames="Sr_No" DataSourceID="ods_RTI" 
                       EnableModelValidation="True" onrowdeleted="GridView_RTI_RowDeleted" 
-                      onrowdeleting="GridView_RTI_RowDeleting" onrowediting="GridView_RTI_RowEditing">
+                      onrowdeleting="GridView_RTI_RowDeleting" 
+                      onrowediting="GridView_RTI_RowEditing" 
+                      >
                       <Columns>
                           <asp:BoundField DataField="Sr_No" HeaderText="Sr_No" 
                               ReadOnly="True" SortExpression="Sr_No" InsertVisible="False" 
@@ -91,8 +93,10 @@
                               SortExpression="PIO_date" />
                           <asp:BoundField DataField="Last_Date" HeaderText="Last Date " 
                               SortExpression="Last_Date" />
+                           
+
                           <asp:BoundField DataField="Decision_Taken" HeaderText="Decision" 
-                              SortExpression="Decision_Taken" Visible="False" />
+                              SortExpression="Decision_Taken" />
                           <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -126,7 +130,7 @@
         onitemcommand="FormView_RTI_ItemCommand" 
         oniteminserted="FormView_RTI_ItemInserted" 
         onitemupdated="FormView_RTI_ItemUpdated" 
-        onitemupdating="FormView_RTI_ItemUpdating">
+        onitemupdating="FormView_RTI_ItemUpdating" >
         <EditItemTemplate>
             <table>
 		<%--<tr><td>Sr_No:</td>

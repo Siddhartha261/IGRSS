@@ -123,31 +123,38 @@
         onitemupdated="FormView_ApplicationDisposal_ItemUpdated">
         <EditItemTemplate>
              <table align="center" cellspacing="5">
-           <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' />
-            <tr><td> Name Of Applicant:</td><td> <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' /></td></tr>
+           <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" 
+                   Text='<%# Bind("Date") %>' Width="140px" />
+            <tr><td> Name Of Applicant:</td><td> 
+                <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
+                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
            
            
            
            
-            <tr><td>Address Of Applicant:</td><td> <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
-                Text='<%# Bind("ApplicantAddress") %>' /></td></tr>
+            <tr><td>Address Of Applicant:</td><td> 
+                <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
+                Text='<%# Bind("ApplicantAddress") %>' Height="60px" Width="160px" /></td></tr>
             
            
-            <tr><td>No Of Copies Issued:</td><td> <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" 
-                Text='<%# Bind("NoOfCopiesIssued") %>' /></td></tr>
+            <tr><td>No Of Copies Issued:</td><td> 
+                <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" 
+                Text='<%# Bind("NoOfCopiesIssued") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Fees Taken:</td><td> <asp:TextBox ID="FeesTakenTextBox" runat="server" 
-                Text='<%# Bind("FeesTaken") %>' /></td></tr>
+            <tr><td>Fees Taken:</td><td> 
+                <asp:TextBox ID="FeesTakenTextBox" runat="server" 
+                Text='<%# Bind("FeesTaken") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Receipt No:</td><td> <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
-                Text='<%# Bind("ReceiptNo") %>' /></td></tr>
+            <tr><td>Receipt No:</td><td> 
+                <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
+                Text='<%# Bind("ReceiptNo") %>' Width="160px" /></td></tr>
             
            
-            <tr><td> Date Of Disposal:</td><td> <asp:TextBox ID="DisposalDateTextBox" runat="server" 
-                Text='<%# Bind("DisposalDate") %>' /></td></tr>
+            <tr><td> Date Of Disposal:</td><td> 
+                <asp:TextBox ID="DisposalDateTextBox" runat="server" 
+                Text='<%# Bind("DisposalDate") %>' Width="140px" /></td></tr>
                 <tr>
                 <td colspan="2" align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
@@ -164,31 +171,38 @@
         <InsertItemTemplate>
                      
              <table align="center" cellspacing="5">
-           <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' />
-            <tr><td> Name Of Applicant:</td><td> <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' /></td></tr>
+           <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" 
+                   Text='<%# Bind("Date") %>' Width="140px" />
+            <tr><td> Name Of Applicant:</td><td> 
+                <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
+                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
            
            
            
            
-            <tr><td>Address Of Applicant:</td><td> <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
-                Text='<%# Bind("ApplicantAddress") %>' /></td></tr>
+            <tr><td>Address Of Applicant:</td><td> 
+                <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
+                Text='<%# Bind("ApplicantAddress") %>' Height="60px" Width="160px" /></td></tr>
             
            
-            <tr><td>No Of Copies Issued:</td><td> <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" 
-                Text='<%# Bind("NoOfCopiesIssued") %>' /></td></tr>
+            <tr><td>No Of Copies Issued:</td><td> 
+                <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" 
+                Text='<%# Bind("NoOfCopiesIssued") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Fees Taken:</td><td> <asp:TextBox ID="FeesTakenTextBox" runat="server" 
-                Text='<%# Bind("FeesTaken") %>' /></td></tr>
+            <tr><td>Fees Taken:</td><td> 
+                <asp:TextBox ID="FeesTakenTextBox" runat="server" 
+                Text='<%# Bind("FeesTaken") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Receipt No:</td><td> <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
-                Text='<%# Bind("ReceiptNo") %>' /></td></tr>
+            <tr><td>Receipt No:</td><td> 
+                <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
+                Text='<%# Bind("ReceiptNo") %>' Width="160px" /></td></tr>
             
            
-            <tr><td> Date Of Disposal:</td><td> <asp:TextBox ID="DisposalDateTextBox" runat="server" 
-                Text='<%# Bind("DisposalDate") %>' /></td></tr>
+            <tr><td> Date Of Disposal:</td><td> 
+                <asp:TextBox ID="DisposalDateTextBox" runat="server" 
+                Text='<%# Bind("DisposalDate") %>' Width="140px" /></td></tr>
            
            
             <tr><td align="center" colspan="2"> 

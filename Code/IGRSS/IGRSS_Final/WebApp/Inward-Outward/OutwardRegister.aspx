@@ -133,9 +133,9 @@
                         <tr><td align="right">documentfrombranch:</td><td align="left"><asp:TextBox ID="documentfrombranchTextBox" runat="server" Text='<%# Bind("documentfrombranch") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Description:</td><td align="left"><asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td align="right">SentTo:</td><td align="left">
-                            <asp:DropDownList ID="dropdownlistSentTo" runat="server" 
-                                SelectedValue='<%# Bind("SentTo") %>' DataSourceID="OdsOffices" 
-                                DataTextField="OfficeName" DataValueField="OfficeId" Width="160px"></asp:DropDownList></td></tr>
+                            <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True">
+                            </asp:GridView>
+                            </td></tr>
                         <tr><td align="right">Address:</td><td align="left"><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td align="right">CopyTo:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
@@ -158,9 +158,9 @@
                         <tr><td align="right">documentfrombranch:</td><td align="left"><asp:TextBox ID="documentfrombranchTextBox" runat="server" Text='<%# Bind("documentfrombranch") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Description:</td><td align="left"><asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td align="right">SentTo:</td><td align="left">
-                            <asp:DropDownList ID="dropdownlistSentTo" runat="server" 
-                                SelectedValue='<%# Bind("SentTo") %>' DataSourceID="OdsOffices" 
-                                DataTextField="OfficeName" DataValueField="OfficeId" Width="160px"></asp:DropDownList></td></tr>
+                            <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True">
+                            </asp:GridView>
+                            </td></tr>
                         <tr><td align="right">Address:</td><td align="left"><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td align="right">CopyTo:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>

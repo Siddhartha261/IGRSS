@@ -89,27 +89,27 @@
                     onrowdeleting="GridView2_RowDeleting" onrowediting="GridView2_RowEditing">
                     <Columns>
                         <asp:BoundField DataField="Details" HeaderText="Details" 
-                            SortExpression="Details" />
+                            SortExpression="Details" Visible="False" />
                         <asp:BoundField DataField="DetailsOfOutput" HeaderText="DetailsOfOutput" 
-                            SortExpression="DetailsOfOutput" />
+                            SortExpression="DetailsOfOutput" Visible="False" />
                         <asp:BoundField DataField="DetailsOfPreservingFiles" 
                             HeaderText="DetailsOfPreservingFiles" 
-                            SortExpression="DetailsOfPreservingFiles" />
-                        <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
+                            SortExpression="DetailsOfPreservingFiles" Visible="False" />
+                        <asp:BoundField DataField="FileNo" HeaderText="File No" 
                             SortExpression="FileNo" />
-                        <asp:BoundField DataField="InwardNo" HeaderText="InwardNo" 
+                        <asp:BoundField DataField="InwardNo" HeaderText="Inward No" 
                             SortExpression="InwardNo" />
-                        <asp:BoundField DataField="LetterDate" HeaderText="LetterDate" 
+                        <asp:BoundField DataField="LetterDate" HeaderText="Letter Date" 
                             SortExpression="LetterDate" />
-                        <asp:BoundField DataField="LetterNo" HeaderText="LetterNo" 
+                        <asp:BoundField DataField="LetterNo" HeaderText="Letter No" 
                             SortExpression="LetterNo" />
-                        <asp:BoundField DataField="NameOfDepartment" HeaderText="NameOfDepartment" 
+                        <asp:BoundField DataField="NameOfDepartment" HeaderText="Name Of Department" 
                             SortExpression="NameOfDepartment" />
                         <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                            SortExpression="Remarks" />
+                            SortExpression="Remarks" Visible="False" />
                         <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                            ReadOnly="True" SortExpression="SrNo" />
-                        <asp:BoundField DataField="TypesOfRecord" HeaderText="TypesOfRecord" 
+                            ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                        <asp:BoundField DataField="TypesOfRecord" HeaderText="Types Of Record" 
                             SortExpression="TypesOfRecord" />
                             <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
@@ -147,21 +147,39 @@
                     onitemupdated="FvGovtDoc_ItemUpdated" onitemupdating="FvGovtDoc_ItemUpdating">
                     <EditItemTemplate>
                         <table align="center" cellspacing="5">
-<tr><td align="right">Details:</td><td align="left" style="width:50%"><asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' /></td></tr>
-<tr><td align="right">Details Of Output:</td><td align="left" style="width:50%"><asp:TextBox ID="DetailsOfOutputTextBox" runat="server" Text='<%# Bind("DetailsOfOutput") %>' /></td></tr>
-<tr><td align="right">Details Of Preserving Files:</td><td align="left" style="width:50%"><asp:TextBox ID="DetailsOfPreservingFilesTextBox" runat="server" Text='<%# Bind("DetailsOfPreservingFiles") %>' /></td></tr>
-<tr><td align="right">File No:</td><td align="left" style="width:50%"><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' /></td></tr>
-<tr><td align="right">Inward No:</td><td align="left" style="width:50%"><asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' /></td></tr>
-<tr><td align="right">Letter Date:</td><td align="left" style="width:50%"><asp:TextBox ID="LetterDateTextBox" runat="server" Text='<%# Bind("LetterDate") %>' /></td></tr>
-<tr><td align="right">Letter No:</td><td align="left" style="width:50%"><asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' /></td></tr>
+<tr><td align="right">Details:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' 
+        Height="60px" Width="160px" /></td></tr>
+<tr><td align="right">Details Of Output:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="DetailsOfOutputTextBox" runat="server" 
+        Text='<%# Bind("DetailsOfOutput") %>' Height="60px" Width="160px" /></td></tr>
+<tr><td align="right">Details Of Preserving Files:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="DetailsOfPreservingFilesTextBox" runat="server" 
+        Text='<%# Bind("DetailsOfPreservingFiles") %>' Height="60px" Width="160px" /></td></tr>
+<tr><td align="right">File No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
+        Width="160px" /></td></tr>
+<tr><td align="right">Inward No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' 
+        Width="160px" /></td></tr>
+<tr><td align="right">Letter Date:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="LetterDateTextBox" runat="server" 
+        Text='<%# Bind("LetterDate") %>' Width="140px" /></td></tr>
+<tr><td align="right">Letter No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' 
+        Width="160px" /></td></tr>
 <tr><td align="right">Name Of Department:</td><td align="left" style="width:50%">
     <asp:DropDownList ID="DropDownListNameOfDepartment" runat="server" 
         DataSourceID="ObjectDataSource_govtdoc" DataTextField="NameOfDepartment" 
-        DataValueField="NameOfDepartment">
+        DataValueField="NameOfDepartment" Width="160px">
     </asp:DropDownList>
     </td></tr>
-<tr><td align="right">Remarks:</td><td align="left" style="width:50%"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
-<tr><td align="right">Types Of Record:</td><td align="left" style="width:50%"><asp:TextBox ID="TypesOfRecordTextBox" runat="server" Text='<%# Bind("TypesOfRecord") %>' /></td></tr>
+<tr><td align="right">Remarks:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
+        Height="60px" Width="160px" /></td></tr>
+<tr><td align="right">Types Of Record:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="TypesOfRecordTextBox" runat="server" 
+        Text='<%# Bind("TypesOfRecord") %>' Width="160px" /></td></tr>
                      
                      <tr><td align="center" colspan="2">   <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                             CommandName="Update" Text="Update"  CssClass="standardButton" />
@@ -176,21 +194,39 @@
                     </EditItemTemplate>
                     <InsertItemTemplate>
                                    <table align="center" cellspacing="5">
-<tr><td align="right">Details:</td><td align="left" style="width:50%"><asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' /></td></tr>
-<tr><td align="right">Details Of Output:</td><td align="left" style="width:50%"><asp:TextBox ID="DetailsOfOutputTextBox" runat="server" Text='<%# Bind("DetailsOfOutput") %>' /></td></tr>
-<tr><td align="right">Details Of Preserving Files:</td><td align="left" style="width:50%"><asp:TextBox ID="DetailsOfPreservingFilesTextBox" runat="server" Text='<%# Bind("DetailsOfPreservingFiles") %>' /></td></tr>
-<tr><td align="right">File No:</td><td align="left" style="width:50%"><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' /></td></tr>
-<tr><td align="right">Inward No:</td><td align="left" style="width:50%"><asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' /></td></tr>
-<tr><td align="right">Letter Date:</td><td align="left" style="width:50%"><asp:TextBox ID="LetterDateTextBox" runat="server" Text='<%# Bind("LetterDate") %>' /></td></tr>
-<tr><td align="right">Letter No:</td><td align="left" style="width:50%"><asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' /></td></tr>
+<tr><td align="right">Details:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' 
+        Height="60px" Width="160px" /></td></tr>
+<tr><td align="right">Details Of Output:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="DetailsOfOutputTextBox" runat="server" 
+        Text='<%# Bind("DetailsOfOutput") %>' Height="60px" Width="160px" /></td></tr>
+<tr><td align="right">Details Of Preserving Files:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="DetailsOfPreservingFilesTextBox" runat="server" 
+        Text='<%# Bind("DetailsOfPreservingFiles") %>' Height="60px" Width="160px" /></td></tr>
+<tr><td align="right">File No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
+        Width="160px" /></td></tr>
+<tr><td align="right">Inward No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' 
+        Width="160px" /></td></tr>
+<tr><td align="right">Letter Date:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="LetterDateTextBox" runat="server" 
+        Text='<%# Bind("LetterDate") %>' Width="140px" /></td></tr>
+<tr><td align="right">Letter No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' 
+        Width="160px" /></td></tr>
 <tr><td align="right">Name Of Department:</td><td align="left" style="width:50%">
     <asp:DropDownList ID="DropDownListNameOfDepartment" runat="server" 
         DataSourceID="ObjectDataSource_govtdoc" DataTextField="NameOfDepartment" 
-        DataValueField="NameOfDepartment">
+        DataValueField="NameOfDepartment" Width="160px">
     </asp:DropDownList>
     </td></tr>
-<tr><td align="right">Remarks:</td><td align="left" style="width:50%"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
-<tr><td align="right">Types Of Record:</td><td align="left" style="width:50%"><asp:TextBox ID="TypesOfRecordTextBox" runat="server" Text='<%# Bind("TypesOfRecord") %>' /></td></tr>
+<tr><td align="right">Remarks:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
+        Height="60px" Width="160px" /></td></tr>
+<tr><td align="right">Types Of Record:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="TypesOfRecordTextBox" runat="server" 
+        Text='<%# Bind("TypesOfRecord") %>' Width="160px" /></td></tr>
 <tr>
    <td  colspan="2" align="center">
     <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 

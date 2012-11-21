@@ -159,89 +159,123 @@
 			</td>
 			<td>
             <asp:TextBox ID="Bridegroom_nameTextBox" runat="server" 
-                Text='<%# Bind("Bridegroom_name") %>' />
+                Text='<%# Bind("Bridegroom_name") %>' Width="160px" />
 			</td>
+			    <td style="width: 4px">
+                    Place Of Marriage :</td>
+                <td>
+                    <asp:TextBox ID="MarriagePlaceTextBox" runat="server" 
+                        Text='<%# Bind("MarriagePlace") %>' Width="160px" />
+                </td>
 			</tr>
 			
-            <tr><td>Father Name Of Bridegroom:</td><td><asp:TextBox ID="Bridegroom_father_nameTextBox" runat="server" 
-                Text='<%# Bind("Bridegroom_father_name") %>' /></td></tr>
+            <tr><td>Father Name Of Bridegroom:</td><td>
+                <asp:TextBox ID="Bridegroom_father_nameTextBox" runat="server" 
+                Text='<%# Bind("Bridegroom_father_name") %>' Width="160px" /></td>
+                <td style="width: 4px">
+                    Village / Church Name :</td>
+                <td>
+                    <asp:TextBox ID="Village_church_nameTextBox" runat="server" 
+                        Text='<%# Bind("Village_church_name") %>' Width="160px" />
+                </td>
+                </tr>
             
             
-            <tr><td>Bride Name :</td><td> <asp:TextBox ID="Bride_nameTextBox" runat="server" 
-                Text='<%# Bind("Bride_name") %>' /></td></tr>
+            <tr><td>Bride Name :</td><td> 
+                <asp:TextBox ID="Bride_nameTextBox" runat="server" 
+                Text='<%# Bind("Bride_name") %>' Width="160px" /></td>
+                <td style="width: 4px">
+                    Talk:</td>
+                <td>
+                    <asp:TextBox ID="TalkTextBox" runat="server" Text='<%# Bind("Talk") %>' 
+                        Width="160px" />
+                </td>
+                </tr>
             
            
-            <tr><td> Father Name Of Bride:</td><td> <asp:TextBox ID="Bride_father_nameTextBox" runat="server" 
-                Text='<%# Bind("Bride_father_name") %>' /></td></tr>
+            <tr><td> Father Name Of Bride:</td><td> 
+                <asp:TextBox ID="Bride_father_nameTextBox" runat="server" 
+                Text='<%# Bind("Bride_father_name") %>' Width="160px" /></td>
+                <td style="width: 4px">
+                    District :</td>
+                <td>
+                    <asp:TextBox ID="DistrictTextBox" runat="server" Text='<%# Bind("District") %>' 
+                        Width="160px" />
+                </td>
+                </tr>
            
            
-            <tr><td>Date Of Marriage :</td><td> <asp:TextBox ID="MarriageDateTextBox" runat="server" 
-                Text='<%# Bind("MarriageDate") %>' /></td></tr>
+            <tr><td>Date Of Marriage :</td><td> 
+                <asp:TextBox ID="MarriageDateTextBox" runat="server" 
+                Text='<%# Bind("MarriageDate") %>' Width="140px" /></td></tr>
+				
+				<tr>
+                    <td>
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center">
+                        <h4>For Office Use Only</h4></td>
+                </tr>
+                <tr>
+                    <td>
+                        Application No:</td>
+                    <td>
+                        <asp:TextBox ID="ApplicationNoTextBox" runat="server" 
+                            Text='<%# Bind("ApplicationNo") %>' Width="160px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date Of Application:</td>
+                    <td>
+                        <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                            Text='<%# Bind("ApplicationDate") %>' Width="140px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        No Of Copies:</td>
+                    <td>
+                        <asp:TextBox ID="NoOfCopiesTextBox" runat="server" 
+                            Text='<%# Bind("NoOfCopies") %>' Width="160px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Receipt No:</td>
+                    <td>
+                        <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
+                            Text='<%# Bind("ReceiptNo") %>' Width="160px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Fees :</td>
+                    <td>
+                        <asp:TextBox ID="FeesTextBox" runat="server" Text='<%# Bind("Fees") %>' 
+                            Width="160px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Copies Furnished</td>
+                    <td>
+                        <asp:TextBox ID="CopiesFurnishedTextBox" runat="server" 
+                            Text='<%# Bind("CopiesFurnished") %>' Width="160px" />
+                    </td>
+                </tr>
 				
 				</table>
 				</td>
              
-			 <td align="right">
-			 <table>
-			 <tr><td>Place Of Marriage :</td><td> <asp:TextBox ID="MarriagePlaceTextBox" runat="server" 
-                Text='<%# Bind("MarriagePlace") %>' /></td></tr>
-            
-           
-            <tr><td>Village / Church Name :</td><td> <asp:TextBox ID="Village_church_nameTextBox" runat="server" 
-                Text='<%# Bind("Village_church_name") %>' /></td></tr>
-            
-           
-            <tr><td>Talk:</td><td> <asp:TextBox ID="TalkTextBox" runat="server" Text='<%# Bind("Talk") %>' /></td></tr>
-            
-           
-            <tr><td>District :</td><td> <asp:TextBox ID="DistrictTextBox" runat="server" 
-                Text='<%# Bind("District") %>' /></td></tr>
-			 </table>
-			 </td>
 			 </tr>
-             <tr>
-             <td>
-             <br>
-             </br>
-             </td>
-             </tr>
-			 <tr>
-              <td colspan="2" align="left"> <h5> For Office Use Only</h5></td>
-             </tr>
-			 
-			 <tr>
-			 <td>
-			 <table>
-           
-            <tr><td>Application No:</td><td> <asp:TextBox ID="ApplicationNoTextBox" runat="server" 
-                Text='<%# Bind("ApplicationNo") %>' /></td></tr>
-				
-            
-           
-            <tr><td> Date Of Application:</td> <td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' /></td></tr>
-           
-           
-            <tr><td>No Of Copies :</td><td> <asp:TextBox ID="NoOfCopiesTextBox" runat="server" 
-                Text='<%# Bind("NoOfCopies") %>' /></td></tr>
-            
-           
-            <tr><td>Receipt No :</td><td> <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
-                Text='<%# Bind("ReceiptNo") %>' /></td></tr>
-            
-           
-            <tr><td>Fees :</td><td>  <asp:TextBox ID="FeesTextBox" runat="server" Text='<%# Bind("Fees") %>' /></td></tr>
-            
-          
-            <tr><td>Copies Furnished:</td><td><asp:TextBox ID="CopiesFurnishedTextBox" runat="server" 
-                Text='<%# Bind("CopiesFurnished") %>' /></td></tr>
-				</table>
-				</td>
-				</tr>
             
             
             <tr>
-			 <td align="center" colspan="2"> 
+			 <td align="center"> 
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update" CssClass="standardButton" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
@@ -264,91 +298,182 @@
 			<tr>
 			<td>Bridegroom Name :
 			</td>
-			<td>
+			<td style="width: 160px">
             <asp:TextBox ID="Bridegroom_nameTextBox" runat="server" 
-                Text='<%# Bind("Bridegroom_name") %>' />
+                Text='<%# Bind("Bridegroom_name") %>' Width="160px" />
 			</td>
+			    <td style="width: 160px">
+                    Place Of Marriage :</td>
+                <td style="width: 160px">
+                    <asp:TextBox ID="MarriagePlaceTextBox" runat="server" 
+                        Text='<%# Bind("MarriagePlace") %>' Width="160px" />
+                </td>
 			</tr>
 			
-            <tr><td>Father Name Of Bridegroom:</td><td><asp:TextBox ID="Bridegroom_father_nameTextBox" runat="server" 
-                Text='<%# Bind("Bridegroom_father_name") %>' /></td></tr>
+            <tr><td>Father Name Of Bridegroom:</td><td style="width: 160px">
+                <asp:TextBox ID="Bridegroom_father_nameTextBox" runat="server" 
+                Text='<%# Bind("Bridegroom_father_name") %>' Width="160px" /></td>
+                <td style="width: 160px">
+                    Village / Church Name :</td>
+                <td style="width: 160px">
+                    <asp:TextBox ID="Village_church_nameTextBox" runat="server" 
+                        Text='<%# Bind("Village_church_name") %>' Width="160px" />
+                </td>
+                </tr>
             
             
-            <tr><td>Bride Name :</td><td> <asp:TextBox ID="Bride_nameTextBox" runat="server" 
-                Text='<%# Bind("Bride_name") %>' /></td></tr>
+            <tr><td>Bride Name :</td><td style="width: 160px"> 
+                <asp:TextBox ID="Bride_nameTextBox" runat="server" 
+                Text='<%# Bind("Bride_name") %>' Width="160px" /></td>
+                <td style="width: 160px">
+                    Talk:</td>
+                <td style="width: 160px">
+                    <asp:TextBox ID="TalkTextBox" runat="server" Text='<%# Bind("Talk") %>' 
+                        Width="160px" />
+                </td>
+                </tr>
             
            
-            <tr><td> Father Name Of Bride:</td><td> <asp:TextBox ID="Bride_father_nameTextBox" runat="server" 
-                Text='<%# Bind("Bride_father_name") %>' /></td></tr>
+            <tr><td> Father Name Of Bride:</td><td style="width: 160px"> 
+                <asp:TextBox ID="Bride_father_nameTextBox" runat="server" 
+                Text='<%# Bind("Bride_father_name") %>' Width="160px" /></td>
+                <td style="width: 160px">
+                    District :</td>
+                <td style="width: 160px">
+                    <asp:TextBox ID="DistrictTextBox" runat="server" Text='<%# Bind("District") %>' 
+                        Width="160px" />
+                </td>
+                </tr>
            
            
-            <tr><td>Date Of Marriage :</td><td> <asp:TextBox ID="MarriageDateTextBox" runat="server" 
-                Text='<%# Bind("MarriageDate") %>' /></td></tr>
+            <tr><td>Date Of Marriage :</td><td style="width: 160px"> 
+                <asp:TextBox ID="MarriageDateTextBox" runat="server" 
+                Text='<%# Bind("MarriageDate") %>' Width="140px" /></td>
+                <td style="width: 160px">
+                    &nbsp;</td>
+                <td style="width: 160px">
+                    &nbsp;</td>
+                </tr>
+				
+				<tr>
+                    <td>
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center">
+                        <h4>For Office Use Only</h4></td>
+                    <td style="text-align: center">
+                        &nbsp;</td>
+                    <td style="text-align: center">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        Application No:</td>
+                    <td style="width: 160px">
+                        <asp:TextBox ID="ApplicationNoTextBox" runat="server" 
+                            Text='<%# Bind("ApplicationNo") %>' Width="160px" />
+                    </td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        Date Of Application:</td>
+                    <td style="width: 160px">
+                        <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                            Text='<%# Bind("ApplicationDate") %>' Width="140px" />
+                    </td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        No Of Copies :</td>
+                    <td style="width: 160px">
+                        <asp:TextBox ID="NoOfCopiesTextBox" runat="server" 
+                            Text='<%# Bind("NoOfCopies") %>' Width="160px" />
+                    </td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        Receipt No :</td>
+                    <td style="width: 160px">
+                        <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
+                            Text='<%# Bind("ReceiptNo") %>' Width="160px" />
+                    </td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        Fees :</td>
+                    <td style="width: 160px">
+                        <asp:TextBox ID="FeesTextBox" runat="server" Text='<%# Bind("Fees") %>' 
+                            Width="160px" />
+                    </td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        Copies Furnished:</td>
+                    <td style="width: 160px">
+                        <asp:TextBox ID="CopiesFurnishedTextBox" runat="server" 
+                            Text='<%# Bind("CopiesFurnished") %>' Width="160px" />
+                    </td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                    <td style="width: 160px">
+                        &nbsp;</td>
+                </tr>
 				
 				</table>
 				</td>
              
-			 <td align="right">
-			 <table>
-			 <tr><td>Place Of Marriage :</td><td> <asp:TextBox ID="MarriagePlaceTextBox" runat="server" 
-                Text='<%# Bind("MarriagePlace") %>' /></td></tr>
-            
-           
-            <tr><td>Village / Church Name :</td><td> <asp:TextBox ID="Village_church_nameTextBox" runat="server" 
-                Text='<%# Bind("Village_church_name") %>' /></td></tr>
-            
-           
-            <tr><td>Talk:</td><td> <asp:TextBox ID="TalkTextBox" runat="server" Text='<%# Bind("Talk") %>' /></td></tr>
-            
-           
-            <tr><td>District :</td><td> <asp:TextBox ID="DistrictTextBox" runat="server" 
-                Text='<%# Bind("District") %>' /></td></tr>
-			 </table>
-			 </td>
 			 </tr>
-             <tr>
-             <td>
-             <br>
-             </br>
-             </td>
-             </tr>
-			 <tr>
-              <td colspan="2" align="left"> <h5> For Office Use Only</h5></td>
-             </tr>
-			 
-			 <tr>
-			 <td>
-			 <table>
-           
-            <tr><td>Application No:</td><td> <asp:TextBox ID="ApplicationNoTextBox" runat="server" 
-                Text='<%# Bind("ApplicationNo") %>' /></td></tr>
-				
-            
-           
-            <tr><td> Date Of Application:</td> <td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' /></td></tr>
-           
-           
-            <tr><td>No Of Copies :</td><td> <asp:TextBox ID="NoOfCopiesTextBox" runat="server" 
-                Text='<%# Bind("NoOfCopies") %>' /></td></tr>
-            
-           
-            <tr><td>Receipt No :</td><td> <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
-                Text='<%# Bind("ReceiptNo") %>' /></td></tr>
-            
-           
-            <tr><td>Fees :</td><td>  <asp:TextBox ID="FeesTextBox" runat="server" Text='<%# Bind("Fees") %>' /></td></tr>
-            
-          
-            <tr><td>Copies Furnished:</td><td><asp:TextBox ID="CopiesFurnishedTextBox" runat="server" 
-                Text='<%# Bind("CopiesFurnished") %>' /></td></tr>
-				</table>
-				</td>
-				</tr>
             
             
             <tr>
-			 <td align="center" colspan="2"> 
+			 <td align="center"> 
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Insert" CssClass="standardButton" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 

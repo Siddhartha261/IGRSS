@@ -10,14 +10,7 @@ public partial class LatestPages_PIO : System.Web.UI.Page
     {
 
     }
-    protected void btnSearchAppNo_Click(object sender, EventArgs e)
-    {
-
-    }
-    protected void txtFileNo_TextChanged(object sender, EventArgs e)
-    {
-
-    }
+   
     protected void Button_new_Click(object sender, EventArgs e)
     {
         Multiview_PIO.SetActiveView(Multiview_PIO.Views[1]);
@@ -51,5 +44,75 @@ public partial class LatestPages_PIO : System.Web.UI.Page
     {
         e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
         ods_PIO.SelectMethod = "GetDataBy";
+    }
+    protected void GridView_PIO_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been deleted successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to delete record", true);
+        }
+    }
+    protected void GridView_PIO_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        GridView_PIO.Rows[e.RowIndex].Visible = false;
+        ViewState["deleteKey"] = GridView_PIO.DataKeys[e.RowIndex].Value;
+        ods_PIO.Delete();
+    }
+    protected void GridView_PIO_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        Multiview_PIO.SetActiveView(Formview);
+        FormView_PIO.PageIndex = e.NewEditIndex;
+        FormView_PIO.DefaultMode = FormViewMode.Edit;
+        e.NewEditIndex = -1;
+    }
+    protected void FormView_PIO_ItemInserted(object sender, FormViewInsertedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been added successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to add record", true);
+        }
+    }
+    protected void FormView_PIO_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+    {
+        if (e.Exception == null)
+        {
+            ShowMessage("Record has been updated successfully", false);
+        }
+        else
+        {
+            ShowMessage("Unable to update record", true);
+        }
+    }
+    protected void FormView_PIO_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        RadioButtonList Radio_BPL = FormView_PIO.FindControl("Radio_applbpl") as RadioButtonList;
+        e.NewValues["Appl_BPL"] = Convert.ToBoolean(Radio_BPL.SelectedValue);
+
+        RadioButtonList Radio_information = FormView_PIO.FindControl("Radio_information") as RadioButtonList;
+        e.NewValues["Information"] = Radio_information.SelectedValue;
+
+        DropDownList Drop_FeeMode = FormView_PIO.FindControl("Drop_recvdfessmode") as DropDownList;
+        e.NewValues["Recvd_Fees_Mode"] = Drop_FeeMode.SelectedValue;
+
+        RadioButtonList Radio_InfoSend = FormView_PIO.FindControl("Radio_informationsend") as RadioButtonList;
+        e.NewValues["Info_Send"] = Convert.ToBoolean(Radio_InfoSend.SelectedValue);
+    }
+    protected void ods_PIO_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
+    {
+        e.InputParameters["SrNo"] = ViewState["deleteKey"];
+    }
+
+    private void ShowMessage(string message, bool isError)
+    {
+        lblMsg.Text = message;
+        infoDiv.Visible = true;
     }
 }

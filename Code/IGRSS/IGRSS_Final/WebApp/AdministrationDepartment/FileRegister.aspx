@@ -133,16 +133,24 @@
                       <table align="center" cellspacing="5">
 <tr><td>Worksheet ID:</td><td >
     <asp:DropDownList ID="DropDownListWorksheet" runat="server" 
-        DataSourceID="ods_Worksheet" DataTextField="ID" DataValueField="ID">
+        DataSourceID="ods_Worksheet" DataTextField="ID" DataValueField="ID" 
+        Width="160px">
     </asp:DropDownList>
     </td></tr>
-<tr><td>File Name:</td><td><asp:TextBox ID="FileNameTextBox" runat="server" Text='<%# Bind("FileName") %>' /></td></tr>
-<tr><td>File No:</td><td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' /></td></tr>
-<tr><td>Starting Date:</td><td ><asp:TextBox ID="StartingDateTextBox" runat="server" Text='<%# Bind("StartingDate") %>' /></td></tr>
-<tr><td>Ending Date:</td><td><asp:TextBox ID="EndingDateTextBox" runat="server" Text='<%# Bind("EndingDate") %>' /></td></tr>
-<tr><td>Class Of File :</td><td><asp:TextBox ID="ClassOfFileTextBox" runat="server" Text='<%# Bind("ClassOfFile") %>' /></td></tr>
-<tr><td>Disposal Date Of File :</td><td><asp:TextBox ID="DisposalDateOfFileTextBox" runat="server" Text='<%# Bind("DisposalDateOfFile") %>' /></td></tr>
-<tr><td>Disposal Date On :</td><td><asp:TextBox ID="DisposalDateOnTextBox" runat="server" Text='<%# Bind("DisposalDateOn") %>' /></td></tr>
+<tr><td>File Name:</td><td><asp:TextBox ID="FileNameTextBox" runat="server" 
+        Text='<%# Bind("FileName") %>' Width="160px" /></td></tr>
+<tr><td>File No:</td><td><asp:TextBox ID="FileNoTextBox" runat="server" 
+        Text='<%# Bind("FileNo") %>' Width="160px" /></td></tr>
+<tr><td>Starting Date:</td><td ><asp:TextBox ID="StartingDateTextBox" 
+        runat="server" Text='<%# Bind("StartingDate") %>' Width="140px" /></td></tr>
+<tr><td>Ending Date:</td><td><asp:TextBox ID="EndingDateTextBox" runat="server" 
+        Text='<%# Bind("EndingDate") %>' Width="140px" /></td></tr>
+<tr><td>Class Of File :</td><td><asp:TextBox ID="ClassOfFileTextBox" runat="server" 
+        Text='<%# Bind("ClassOfFile") %>' Width="160px" /></td></tr>
+<tr><td>Disposal Date Of File :</td><td><asp:TextBox ID="DisposalDateOfFileTextBox" 
+        runat="server" Text='<%# Bind("DisposalDateOfFile") %>' Width="140px" /></td></tr>
+<tr><td>Disposal Date On :</td><td><asp:TextBox ID="DisposalDateOnTextBox" 
+        runat="server" Text='<%# Bind("DisposalDateOn") %>' Width="140px" /></td></tr>
 <tr>
                     <td align="center" colspan="2">
                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
@@ -162,16 +170,24 @@
                      <table align="center" cellspacing="5">
 <tr><td>Worksheet ID:</td><td>
     <asp:DropDownList ID="DropDownListWorksheet" runat="server" 
-        DataSourceID="ods_Worksheet" DataTextField="ID" DataValueField="ID">
+        DataSourceID="ods_Worksheet" DataTextField="ID" DataValueField="ID" 
+        Width="160px">
     </asp:DropDownList>
     </td></tr>
-<tr><td>File Name :</td><td><asp:TextBox ID="FileNameTextBox" runat="server" Text='<%# Bind("FileName") %>' /></td></tr>
-<tr><td>File No :</td><td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' /></td></tr>
-<tr><td>Starting Date :</td><td><asp:TextBox ID="StartingDateTextBox" runat="server" Text='<%# Bind("StartingDate") %>' /></td></tr>
-<tr><td>Ending Date :</td><td><asp:TextBox ID="EndingDateTextBox" runat="server" Text='<%# Bind("EndingDate") %>' /></td></tr>
-<tr><td>Class Of File :</td><td><asp:TextBox ID="ClassOfFileTextBox" runat="server" Text='<%# Bind("ClassOfFile") %>' /></td></tr>
-<tr><td>Disposal Date Of File :</td><td><asp:TextBox ID="DisposalDateOfFileTextBox" runat="server" Text='<%# Bind("DisposalDateOfFile") %>' /></td></tr>
-<tr><td>Disposal Date On :</td><td><asp:TextBox ID="DisposalDateOnTextBox" runat="server" Text='<%# Bind("DisposalDateOn") %>' /></td></tr>
+<tr><td>File Name :</td><td><asp:TextBox ID="FileNameTextBox" runat="server" 
+        Text='<%# Bind("FileName") %>' Width="160px" /></td></tr>
+<tr><td>File No :</td><td><asp:TextBox ID="FileNoTextBox" runat="server" 
+        Text='<%# Bind("FileNo") %>' Width="160px" /></td></tr>
+<tr><td>Starting Date :</td><td><asp:TextBox ID="StartingDateTextBox" 
+        runat="server" Text='<%# Bind("StartingDate") %>' Width="140px" /></td></tr>
+<tr><td>Ending Date :</td><td><asp:TextBox ID="EndingDateTextBox" runat="server" 
+        Text='<%# Bind("EndingDate") %>' Width="140px" /></td></tr>
+<tr><td>Class Of File :</td><td><asp:TextBox ID="ClassOfFileTextBox" runat="server" 
+        Text='<%# Bind("ClassOfFile") %>' Width="160px" /></td></tr>
+<tr><td>Disposal Date Of File :</td><td><asp:TextBox ID="DisposalDateOfFileTextBox" 
+        runat="server" Text='<%# Bind("DisposalDateOfFile") %>' Width="140px" /></td></tr>
+<tr><td>Disposal Date On :</td><td><asp:TextBox ID="DisposalDateOnTextBox" 
+        runat="server" Text='<%# Bind("DisposalDateOn") %>' Width="140px" /></td></tr>
 <tr>
                     <td align="center" colspan="2">
                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 

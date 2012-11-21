@@ -80,29 +80,29 @@
                       onrowediting="GridView_Vigilance_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" />
-                          <asp:BoundField DataField="Letterno" HeaderText="Letterno" 
+                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
+                          <asp:BoundField DataField="Letterno" HeaderText="Letter No" 
                               SortExpression="Letterno" />
-                          <asp:BoundField DataField="deptdate" HeaderText="deptdate" 
+                          <asp:BoundField DataField="deptdate" HeaderText="Department Date" 
                               SortExpression="deptdate" />
-                          <asp:BoundField DataField="letterdate" HeaderText="letterdate" 
+                          <asp:BoundField DataField="letterdate" HeaderText="Letter Date" 
                               SortExpression="letterdate" />
-                          <asp:BoundField DataField="applname" HeaderText="applname" 
+                          <asp:BoundField DataField="applname" HeaderText="Applicant Name" 
                               SortExpression="applname" />
-                          <asp:BoundField DataField="empname" HeaderText="empname" 
+                          <asp:BoundField DataField="empname" HeaderText="Employee Name" 
                               SortExpression="empname" />
-                          <asp:BoundField DataField="emp_desig" HeaderText="emp_desig" 
+                          <asp:BoundField DataField="emp_desig" HeaderText="Employee Designation" 
                               SortExpression="emp_desig" />
-                          <asp:BoundField DataField="applsummary" HeaderText="applsummary" 
-                              SortExpression="applsummary" />
-                          <asp:BoundField DataField="reportdate" HeaderText="reportdate" 
+                          <asp:BoundField DataField="applsummary" HeaderText="Application Summary" 
+                              SortExpression="applsummary" Visible="False" />
+                          <asp:BoundField DataField="reportdate" HeaderText="Report Date" 
                               SortExpression="reportdate" />
                           <asp:BoundField DataField="Status" HeaderText="Status" 
                               SortExpression="Status" />
-                          <asp:BoundField DataField="closedate" HeaderText="closedate" 
+                          <asp:BoundField DataField="closedate" HeaderText="Close Date" 
                               SortExpression="closedate" />
                           <asp:BoundField DataField="remarks" HeaderText="remarks" 
-                              SortExpression="remarks" />
+                              SortExpression="remarks" Visible="False" />
                               <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -145,46 +145,56 @@
             <table align="center" cellspacing="5">
     <tr><td>Letter No:</td>
         <td><asp:TextBox ID="LetternoTextBox" runat="server" 
-                Text='<%# Bind("Letterno") %>' /></td>
+                Text='<%# Bind("Letterno") %>' Width="160px" /></td>
 	</tr>
             
             
             <tr><td>Department Date:</td>
-			<td> <asp:TextBox ID="deptdateTextBox" runat="server" 
-                Text='<%# Bind("deptdate") %>' /></td></tr>
+			<td> 
+                <asp:TextBox ID="deptdateTextBox" runat="server" 
+                Text='<%# Bind("deptdate") %>' Width="140px" /></td></tr>
             
            
-            <tr><td>Date OF Letter Received:</td><td><asp:TextBox ID="letterdateTextBox" runat="server" 
-                Text='<%# Bind("letterdate") %>' /></td></tr>
+            <tr><td>Date OF Letter Received:</td><td>
+                <asp:TextBox ID="letterdateTextBox" runat="server" 
+                Text='<%# Bind("letterdate") %>' Width="140px" /></td></tr>
             
             
-            <tr><td>Name Of Applicant:</td><td><asp:TextBox ID="applnameTextBox" runat="server" 
-                Text='<%# Bind("applname") %>' /></td></tr>
+            <tr><td>Name Of Applicant:</td><td>
+                <asp:TextBox ID="applnameTextBox" runat="server" 
+                Text='<%# Bind("applname") %>' Width="160px" /></td></tr>
             
-            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" Text='<%# Bind("empname") %>' /></td></tr>
+            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" 
+                    Text='<%# Bind("empname") %>' Width="160px" /></td></tr>
            
             
             <tr><td> Designation Of Employee:</td><td>  <asp:DropDownList ID="designation" runat="server" 
-                    DataSourceID="ObjectDataSource1" DataTextField="Name" DataValueField="Name">
+                    DataSourceID="ObjectDataSource1" DataTextField="Name" 
+                    DataValueField="Name" Width="160px">
                 </asp:DropDownList></td></tr>
            
            
-            <tr><td>Application Summary:</td><td> <asp:TextBox ID="applsummaryTextBox" runat="server" 
-                Text='<%# Bind("applsummary") %>' /></td></tr>
+            <tr><td>Application Summary:</td><td> 
+                <asp:TextBox ID="applsummaryTextBox" runat="server" 
+                Text='<%# Bind("applsummary") %>' Height="60px" Width="160px" /></td></tr>
             
            
-            <tr><td>Date of Sending Report:</td><td> <asp:TextBox ID="reportdateTextBox" runat="server" 
-                Text='<%# Bind("reportdate") %>' /></td></tr>
+            <tr><td>Date of Sending Report:</td><td> 
+                <asp:TextBox ID="reportdateTextBox" runat="server" 
+                Text='<%# Bind("reportdate") %>' Width="140px" /></td></tr>
             
            
-            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" Text='<%# Bind("Status") %>' /></td></tr>
+            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" 
+                    Text='<%# Bind("Status") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>File Closing Date:</td><td> <asp:TextBox ID="closedateTextBox" runat="server" 
-                Text='<%# Bind("closedate") %>' /></td></tr>
+            <tr><td>File Closing Date:</td><td> 
+                <asp:TextBox ID="closedateTextBox" runat="server" 
+                Text='<%# Bind("closedate") %>' Width="140px" /></td></tr>
             
            
-            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" Text='<%# Bind("remarks") %>' /></td></tr>
+            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" 
+                    Text='<%# Bind("remarks") %>' Height="60px" Width="160px" /></td></tr>
             
             <tr>
             <td colspan="2" align="center">
@@ -203,48 +213,58 @@
                       <table align="center" cellspacing="5">
     <tr><td>Letter No:</td>
         <td><asp:TextBox ID="LetternoTextBox" runat="server" 
-                Text='<%# Bind("Letterno") %>' /></td>
+                Text='<%# Bind("Letterno") %>' Width="160px" /></td>
 	</tr>
             
             
             <tr><td>Department Date:</td>
-			<td> <asp:TextBox ID="deptdateTextBox" runat="server" 
-                Text='<%# Bind("deptdate") %>' /></td></tr>
+			<td> 
+                <asp:TextBox ID="deptdateTextBox" runat="server" 
+                Text='<%# Bind("deptdate") %>' Width="140px" /></td></tr>
             
            
-            <tr><td>Date OF Letter Received:</td><td><asp:TextBox ID="letterdateTextBox" runat="server" 
-                Text='<%# Bind("letterdate") %>' /></td></tr>
+            <tr><td>Date OF Letter Received:</td><td>
+                <asp:TextBox ID="letterdateTextBox" runat="server" 
+                Text='<%# Bind("letterdate") %>' Width="140px" /></td></tr>
             
             
-            <tr><td>Name Of Applicant:</td><td><asp:TextBox ID="applnameTextBox" runat="server" 
-                Text='<%# Bind("applname") %>' /></td></tr>
+            <tr><td>Name Of Applicant:</td><td>
+                <asp:TextBox ID="applnameTextBox" runat="server" 
+                Text='<%# Bind("applname") %>' Width="160px" /></td></tr>
             
-            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" Text='<%# Bind("empname") %>' /></td></tr>
+            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" 
+                    Text='<%# Bind("empname") %>' Width="160px" /></td></tr>
            
             
             <tr><td> Designation Of Employee:</td><td> 
                 <asp:DropDownList ID="designation" runat="server" 
-                    DataSourceID="ObjectDataSource1" DataTextField="Name" DataValueField="Name">
+                    DataSourceID="ObjectDataSource1" DataTextField="Name" 
+                    DataValueField="Name" Width="160px">
                 </asp:DropDownList>
                 </td></tr>
            
            
-            <tr><td>Application Summary:</td><td> <asp:TextBox ID="applsummaryTextBox" runat="server" 
-                Text='<%# Bind("applsummary") %>' /></td></tr>
+            <tr><td>Application Summary:</td><td> 
+                <asp:TextBox ID="applsummaryTextBox" runat="server" 
+                Text='<%# Bind("applsummary") %>' Height="60px" Width="160px" /></td></tr>
             
            
-            <tr><td>Date of Sending Report:</td><td> <asp:TextBox ID="reportdateTextBox" runat="server" 
-                Text='<%# Bind("reportdate") %>' /></td></tr>
+            <tr><td>Date of Sending Report:</td><td> 
+                <asp:TextBox ID="reportdateTextBox" runat="server" 
+                Text='<%# Bind("reportdate") %>' Width="140px" /></td></tr>
             
            
-            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" Text='<%# Bind("Status") %>' /></td></tr>
+            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" 
+                    Text='<%# Bind("Status") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>File Closing Date:</td><td> <asp:TextBox ID="closedateTextBox" runat="server" 
-                Text='<%# Bind("closedate") %>' /></td></tr>
+            <tr><td>File Closing Date:</td><td> 
+                <asp:TextBox ID="closedateTextBox" runat="server" 
+                Text='<%# Bind("closedate") %>' Width="140px" /></td></tr>
             
            
-            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" Text='<%# Bind("remarks") %>' /></td></tr>
+            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" 
+                    Text='<%# Bind("remarks") %>' Height="60px" Width="160px" /></td></tr>
             
             
             <tr>

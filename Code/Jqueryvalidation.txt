@@ -4,7 +4,6 @@ $('input[type="text"]').each(function(index, element){
 	if($(this).text().length===0){
         $(this).addClass("errorInput");
 		$(this).blur(function(){
-		alert($(this).text().length);
 			if($(this).text().length>0){
 				$(this).removeClass("errorInput");
 			}
@@ -28,11 +27,10 @@ $("#infoDiv > span").remove();
 $("#ctl00_Main_FormView_C_L_Card_InsertButton").click(function(){
 var hasError = false;
 $('input[type="text"]').each(function(index, element){
-	if($(this).text().length===0){
-        $(this).addClass("errorInput");
-		$(this).blur(function(){
-		alert($(this).text().length);
-			if($(this).text().length>0){
+	if($(element).text().length===0){
+        $(element).addClass("errorInput");
+		$(element).blur(function(){
+			if($(element).text().length>0){
 				$(this).removeClass("errorInput");
 			}
 		});

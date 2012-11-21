@@ -49,7 +49,7 @@
 <asp:MultiView ID="Multiview_BookFormsRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
 <br />
-<h1 style="text-align: center">BOOKFORMS REGISTER</h1>
+<h1 style="text-align: center">BOOK FORMS REGISTER</h1>
 <table>
           <tr>
           <td align="right">
@@ -127,7 +127,7 @@
 
 <asp:View ID="view2_Formview" runat="server">
 <center>
-<h1 style="text-align: center">BOOK FORMS REGISTER</h1>
+<h1 style="text-align: center">BOOK&nbsp; FORMS REGISTER</h1>
   
     <asp:FormView ID="FormView_BookFormRegister" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_BookFormRegister" DefaultMode="Insert" 
@@ -141,48 +141,57 @@
 			<tr>
 			<td align="left">
 			<table>
-			 <tr><td>No Of Forms :</td><td><asp:TextBox ID="No_of_formsTextBox" runat="server" 
-                Text='<%# Bind("No_of_forms") %>' /></td></tr>
+			 <tr><td>No Of Forms :</td><td>
+                 <asp:TextBox ID="No_of_formsTextBox" runat="server" 
+                Text='<%# Bind("No_of_forms") %>' Width="160px" /></td></tr>
 			
             
-            <tr><td>No Of Demand Quantity :</td><td><asp:TextBox ID="No_Demand_quantityTextBox" runat="server" 
-                Text='<%# Bind("No_Demand_quantity") %>' /></td></tr>
+            <tr><td>No Of Demand Quantity :</td><td>
+                <asp:TextBox ID="No_Demand_quantityTextBox" runat="server" 
+                Text='<%# Bind("No_Demand_quantity") %>' Width="160px" /></td></tr>
             
             
-            <tr><td> No Of Distributed Stock :</td><td><asp:TextBox ID="No_Distributed_StockTextBox" runat="server" 
-                Text='<%# Bind("No_Distributed_Stock") %>' /></td></tr>
+            <tr><td> No Of Distributed Stock :</td><td>
+                <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" 
+                Text='<%# Bind("No_Distributed_Stock") %>' Width="160px" /></td></tr>
            
             
-            <tr><td>Actual Stock :</td><td> <asp:TextBox ID="Actual_StockTextBox" runat="server" 
-                Text='<%# Bind("Actual_Stock") %>' /></td></tr>
+            <tr><td>Actual Stock :</td><td> 
+                <asp:TextBox ID="Actual_StockTextBox" runat="server" 
+                Text='<%# Bind("Actual_Stock") %>' Width="160px" /></td></tr>
             
            </table>
 		   </td>
 		   <td align="right">
 		   <table>
            <tr><td colspan="2" align="right"><h5> After Giving To Employee </h5></td></tr>
-            <tr><td> Form No :</td><td> <asp:TextBox ID="Form_noTextBox" runat="server" Text='<%# Bind("Form_no") %>' /></td></tr>
+            <tr><td> Form No :</td><td> <asp:TextBox ID="Form_noTextBox" runat="server" 
+                    Text='<%# Bind("Form_no") %>' Width="160px" /></td></tr>
            
            
             <tr><td>Name Of Department:</td><td>
                 <asp:DropDownList ID="DropDownListDepartment" runat="server" 
                     DataSourceID="ObjectDataSourceDepartment" DataTextField="Name" 
-                    DataValueField="Name">
+                    DataValueField="Name" Width="160px">
                 </asp:DropDownList>
                 </td></tr>
             
             
-            <tr><td> No Of Given Forms :</td><td><asp:TextBox ID="No_Forms_GivenTextBox" runat="server" 
-                Text='<%# Bind("No_Forms_Given") %>' /></td></tr>
+            <tr><td> No Of Given Forms :</td><td>
+                <asp:TextBox ID="No_Forms_GivenTextBox" runat="server" 
+                Text='<%# Bind("No_Forms_Given") %>' Width="160px" /></td></tr>
            
             
-            <tr><td> Date Of Employee Received :</td><td> <asp:TextBox ID="Recd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recd_Date") %>' /></td></tr>
+            <tr><td> Date Of Employee Received :</td><td> 
+                <asp:TextBox ID="Recd_DateTextBox" runat="server" 
+                Text='<%# Bind("Recd_Date") %>' Width="140px" /></td></tr>
 				
-           <tr><td>Name Of Employee Received:</td><td> <asp:TextBox ID="Emp_NameTextBox" runat="server" 
-                Text='<%# Bind("Emp_Name") %>' /></td></tr>
+           <tr><td>Name Of Employee Received:</td><td> 
+               <asp:TextBox ID="Emp_NameTextBox" runat="server" 
+                Text='<%# Bind("Emp_Name") %>' Width="160px" /></td></tr>
            
-            <tr><td>Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+            <tr><td>Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                    Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
             </table>
 			</td>
 			</tr>
@@ -203,48 +212,57 @@
 			<tr>
 			<td align="left">
 			<table>
-			 <tr><td>No Of Forms :</td><td><asp:TextBox ID="No_of_formsTextBox" runat="server" 
-                Text='<%# Bind("No_of_forms") %>' /></td></tr>
+			 <tr><td>No Of Forms :</td><td>
+                 <asp:TextBox ID="No_of_formsTextBox" runat="server" 
+                Text='<%# Bind("No_of_forms") %>' Width="160px" /></td></tr>
 			
             
-            <tr><td>No Of Demand Quantity :</td><td><asp:TextBox ID="No_Demand_quantityTextBox" runat="server" 
-                Text='<%# Bind("No_Demand_quantity") %>' /></td></tr>
+            <tr><td>No Of Demand Quantity :</td><td>
+                <asp:TextBox ID="No_Demand_quantityTextBox" runat="server" 
+                Text='<%# Bind("No_Demand_quantity") %>' Width="160px" /></td></tr>
             
             
-            <tr><td> No Of Distributed Stock :</td><td><asp:TextBox ID="No_Distributed_StockTextBox" runat="server" 
-                Text='<%# Bind("No_Distributed_Stock") %>' /></td></tr>
+            <tr><td> No Of Distributed Stock :</td><td>
+                <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" 
+                Text='<%# Bind("No_Distributed_Stock") %>' Width="160px" /></td></tr>
            
             
-            <tr><td>Actual Stock :</td><td> <asp:TextBox ID="Actual_StockTextBox" runat="server" 
-                Text='<%# Bind("Actual_Stock") %>' /></td></tr>
+            <tr><td>Actual Stock :</td><td> 
+                <asp:TextBox ID="Actual_StockTextBox" runat="server" 
+                Text='<%# Bind("Actual_Stock") %>' Width="160px" /></td></tr>
             
            </table>
 		   </td>
 		   <td align="right">
 		   <table>
            <tr><td colspan="2" align="right"><h5> After Giving To Employee </h5></td></tr>
-            <tr><td> Form No :</td><td> <asp:TextBox ID="Form_noTextBox" runat="server" Text='<%# Bind("Form_no") %>' /></td></tr>
+            <tr><td> Form No :</td><td> <asp:TextBox ID="Form_noTextBox" runat="server" 
+                    Text='<%# Bind("Form_no") %>' Width="160px" /></td></tr>
            
            
             <tr><td>Name Of Department:</td><td>
                 <asp:DropDownList ID="DropDownListDepartment" runat="server" 
                     DataSourceID="ObjectDataSourceDepartment" DataTextField="Name" 
-                    DataValueField="Name">
+                    DataValueField="Name" Width="160px">
                 </asp:DropDownList>
                 </td></tr>
             
             
-            <tr><td> No Of Given Forms :</td><td><asp:TextBox ID="No_Forms_GivenTextBox" runat="server" 
-                Text='<%# Bind("No_Forms_Given") %>' /></td></tr>
+            <tr><td> No Of Given Forms :</td><td>
+                <asp:TextBox ID="No_Forms_GivenTextBox" runat="server" 
+                Text='<%# Bind("No_Forms_Given") %>' Width="160px" /></td></tr>
            
             
-            <tr><td> Date Of Employee Received :</td><td> <asp:TextBox ID="Recd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recd_Date") %>' /></td></tr>
+            <tr><td> Date Of Employee Received :</td><td> 
+                <asp:TextBox ID="Recd_DateTextBox" runat="server" 
+                Text='<%# Bind("Recd_Date") %>' Width="140px" /></td></tr>
 				
-           <tr><td>Name Of Employee Received:</td><td> <asp:TextBox ID="Emp_NameTextBox" runat="server" 
-                Text='<%# Bind("Emp_Name") %>' /></td></tr>
+           <tr><td>Name Of Employee Received:</td><td> 
+               <asp:TextBox ID="Emp_NameTextBox" runat="server" 
+                Text='<%# Bind("Emp_Name") %>' Width="160px" /></td></tr>
            
-            <tr><td>Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' /></td></tr>
+            <tr><td>Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                    Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
             </table>
 			</td>
 			</tr>

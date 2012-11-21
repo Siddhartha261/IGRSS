@@ -11,10 +11,6 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
 
     }
 
-    protected void txtFileNo_TextChanged(object sender, EventArgs e)
-    {
-
-    }
     protected void Button_new_Click(object sender, EventArgs e)
     {
         Multiview_MLA.SetActiveView(Multiview_MLA.Views[1]);

@@ -88,7 +88,8 @@
                       onrowediting="GridView_SOFile_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
+                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
+                              Visible="False" />
                           <asp:BoundField DataField="Circulars" HeaderText="Circulars" 
                               SortExpression="Circulars" />
                           <asp:BoundField DataField="DateOfCirculars" HeaderText="DateOfCirculars" 
@@ -154,7 +155,7 @@
                         Date Of Circulars:</td>
                     <td>
                         <asp:TextBox ID="DateOfCircularsTextBox" runat="server" 
-                            Text='<%# Bind("DateOfCirculars") %>' Width="160px" />
+                            Text='<%# Bind("DateOfCirculars") %>' Width="140px" TabIndex="1" />
                     </td>
                 </tr>
                 <tr>
@@ -162,7 +163,8 @@
                         From Which Department:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" 
-                            DataSourceID="ObjectDataSource1" DataTextField="Name" DataValueField="Name">
+                            DataSourceID="ObjectDataSource1" DataTextField="Name" 
+                            DataValueField="Name" TabIndex="2">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -171,7 +173,7 @@
                         Subject:</td>
                     <td>
                         <asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                            Width="160px" />
+                            Width="160px" TabIndex="3" />
                     </td>
                 </tr>
                 <tr>
@@ -179,7 +181,7 @@
                         Page No:</td>
                     <td>
                         <asp:TextBox ID="PageNoTextBox" runat="server" Text='<%# Bind("PageNo") %>' 
-                            Width="160px" />
+                            Width="160px" TabIndex="4" />
                     </td>
                 </tr>
                 <tr>
@@ -213,7 +215,7 @@
                         Date Of Circulars:</td>
                     <td>
                         <asp:TextBox ID="DateOfCircularsTextBox" runat="server" 
-                            Text='<%# Bind("DateOfCirculars") %>' Width="160px" />
+                            Text='<%# Bind("DateOfCirculars") %>' Width="140px" TabIndex="1" />
                     </td>
                 </tr>
                 <tr>
@@ -221,7 +223,8 @@
                         From Which Department:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" 
-                            DataSourceID="ObjectDataSource1" DataTextField="Name" DataValueField="Name">
+                            DataSourceID="ObjectDataSource1" DataTextField="Name" 
+                            DataValueField="Name" TabIndex="2">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -230,7 +233,7 @@
                         Subject:</td>
                     <td>
                         <asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                            Width="160px" />
+                            Width="160px" TabIndex="3" />
                     </td>
                 </tr>
                 <tr>
@@ -238,7 +241,7 @@
                         Page No:</td>
                     <td>
                         <asp:TextBox ID="PageNoTextBox" runat="server" Text='<%# Bind("PageNo") %>' 
-                            Width="160px" />
+                            Width="160px" TabIndex="4" />
                     </td>
                 </tr>
                 <tr>

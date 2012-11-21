@@ -20,6 +20,12 @@
  
     
 </script>
+<br />
+<br />
+<center>
+<asp:Panel id="infoDiv" runat="server" Visible="false" CssClass="infoBar" >&nbsp;<asp:Label ID="lblMsg" runat="server"></asp:Label></asp:Panel>
+<hr /><br />
+</center>
 <asp:MultiView ID="Multiview_Roster" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
@@ -40,11 +46,14 @@
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_Roster" runat="server" AutoGenerateColumns="False" 
-                      DataKeyNames="SrNo" DataSourceID="ods_Roster" EnableModelValidation="True">
+                      DataKeyNames="SrNo" DataSourceID="ods_Roster" EnableModelValidation="True" 
+                      onrowdeleted="GridView_Roster_RowDeleted" 
+                      onrowdeleting="GridView_Roster_RowDeleting" 
+                      onrowediting="GridView_Roster_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="Deatils_Of_Designation" HeaderText="Deatils Of Designation" 
+                          <asp:BoundField DataField="Deatils_Of_Designation" HeaderText="Deatils_Of_Designation" 
                               SortExpression="Deatils_Of_Designation" Visible="False" />
                           <asp:BoundField DataField="Anamat_Type" HeaderText="Anamat Type" 
                               SortExpression="Anamat_Type" />
@@ -52,8 +61,8 @@
                               SortExpression="Types_Of_Recruitment" />
                           <asp:BoundField DataField="Recruitment_Year" HeaderText="Recruitment Year" 
                               SortExpression="Recruitment_Year" />
-                          <asp:BoundField DataField="Roster_SrNo" HeaderText="Roster SrNo" 
-                              SortExpression="Roster_SrNo" />
+                          <asp:BoundField DataField="Roster_SrNo" HeaderText="Roster_SrNo" 
+                              SortExpression="Roster_SrNo" Visible="False" />
                           <asp:BoundField DataField="Reserved_For_Category" HeaderText="Reserved For Category" 
                               SortExpression="Reserved_For_Category" />
                           <asp:BoundField DataField="Employee_Name" HeaderText="Employee Name" 
@@ -65,6 +74,22 @@
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
+                              <asp:TemplateField HeaderText="Actions">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                          </asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
@@ -80,7 +105,10 @@
 <asp:FormView ID="FormView_Roster" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Roster" EnableModelValidation="True" 
         DefaultMode="Insert" oniteminserting="FormView_Roster_ItemInserting" 
-        onitemcommand="FormView_Roster_ItemCommand" >
+        onitemcommand="FormView_Roster_ItemCommand" 
+        oniteminserted="FormView_Roster_ItemInserted" 
+        onitemupdated="FormView_Roster_ItemUpdated" 
+        onitemupdating="FormView_Roster_ItemUpdating" >
         <EditItemTemplate>
                         <table>
             <tr>
@@ -162,7 +190,7 @@
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                     CausesValidation="False" CommandName="Back" Text="Back" 
                     CssClass="standardButton" /></td></tr>    
-        </table>			
+        </table>
             
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -246,7 +274,7 @@
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                     CausesValidation="False" CommandName="Back" Text="Back" 
                     CssClass="standardButton" /></td></tr>    
-        </table>			
+        </table>
             
         </InsertItemTemplate>
         <ItemTemplate>
@@ -327,22 +355,14 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     
-    <asp:ObjectDataSource ID="ods_Roster" runat="server" DeleteMethod="Delete" 
-        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+    <asp:ObjectDataSource ID="ods_Roster" runat="server" DeleteMethod="DeleteQuery" 
+        InsertMethod="Insert" 
         SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.RosterTableAdapters.RosterRegisterTableAdapter" 
-        UpdateMethod="Update" onselecting="ods_Roster_Selecting" >
+        UpdateMethod="UpdateQuery" onselecting="ods_Roster_Selecting" 
+        ondeleting="ods_Roster_Deleting" >
         <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Deatils_Of_Designation" Type="String" />
-            <asp:Parameter Name="Original_Anamat_Type" Type="String" />
-            <asp:Parameter Name="Original_Types_Of_Recruitment" Type="String" />
-            <asp:Parameter Name="Original_Recruitment_Year" Type="Int32" />
-            <asp:Parameter Name="Original_Roster_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Reserved_For_Category" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Date_Of_Appointment" Type="DateTime" />
-            <asp:Parameter Name="Original_Appointed_Authority" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Deatils_Of_Designation" Type="String" />
@@ -371,16 +391,7 @@
             <asp:Parameter Name="Date_Of_Appointment" Type="DateTime" />
             <asp:Parameter Name="Appointed_Authority" Type="String" />
             <asp:Parameter Name="Remarks" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Deatils_Of_Designation" Type="String" />
-            <asp:Parameter Name="Original_Anamat_Type" Type="String" />
-            <asp:Parameter Name="Original_Types_Of_Recruitment" Type="String" />
-            <asp:Parameter Name="Original_Recruitment_Year" Type="Int32" />
-            <asp:Parameter Name="Original_Roster_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Reserved_For_Category" Type="String" />
-            <asp:Parameter Name="Original_Employee_Name" Type="String" />
-            <asp:Parameter Name="Original_Date_Of_Appointment" Type="DateTime" />
-            <asp:Parameter Name="Original_Appointed_Authority" Type="String" />
+            <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

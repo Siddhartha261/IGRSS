@@ -72,12 +72,13 @@
                       onrowediting="GridView_Kalpataru_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
-                          <asp:BoundField DataField="Billno" HeaderText="Billno" 
+                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
+                              Visible="False" />
+                          <asp:BoundField DataField="Billno" HeaderText="Bill No" 
                               SortExpression="Billno" />
-                          <asp:BoundField DataField="ListOfConsumableItems" HeaderText="ListOfConsumableItems" 
+                          <asp:BoundField DataField="ListOfConsumableItems" HeaderText="List Of Consumable Items" 
                               SortExpression="ListOfConsumableItems" />
-                          <asp:BoundField DataField="BillDate" HeaderText="BillDate" 
+                          <asp:BoundField DataField="BillDate" HeaderText="Bill Date" 
                               SortExpression="BillDate" />
                           <asp:BoundField DataField="Quantity" HeaderText="Quantity" 
                               SortExpression="Quantity" />
@@ -122,7 +123,8 @@
 			Bill No:
 			</td>
 			<td>
-			 <asp:TextBox ID="BillnoTextBox" runat="server" Text='<%# Bind("Billno") %>' />
+			 <asp:TextBox ID="BillnoTextBox" runat="server" Text='<%# Bind("Billno") %>' 
+                    Width="160px" />
 			</td>
 			</tr>
            
@@ -130,16 +132,18 @@
 			List Of Consumable Items:
 			</td>
 			<td><asp:TextBox ID="ListOfConsumableItemsTextBox" runat="server" 
-                Text='<%# Bind("ListOfConsumableItems") %>' /></td></tr>
+                Text='<%# Bind("ListOfConsumableItems") %>' Width="160px" /></td></tr>
             
             
             <tr><td>Date Of Bill:</td>
-			<td> <asp:TextBox ID="BillDateTextBox" runat="server" 
-                Text='<%# Bind("BillDate") %>' /></td></tr>
+			<td> 
+                <asp:TextBox ID="BillDateTextBox" runat="server" 
+                Text='<%# Bind("BillDate") %>' Width="140px" /></td></tr>
             
            
-            <tr><td>Quantity:</td><td> <asp:TextBox ID="QuantityTextBox" runat="server" 
-                Text='<%# Bind("Quantity") %>' /></td></tr>
+            <tr><td>Quantity:</td><td> 
+                <asp:TextBox ID="QuantityTextBox" runat="server" 
+                Text='<%# Bind("Quantity") %>' Width="160px" /></td></tr>
             
            <tr>
            <td colspan="2" align="center">
@@ -161,7 +165,8 @@
 			Bill No:
 			</td>
 			<td>
-			 <asp:TextBox ID="BillnoTextBox" runat="server" Text='<%# Bind("Billno") %>' />
+			 <asp:TextBox ID="BillnoTextBox" runat="server" Text='<%# Bind("Billno") %>' 
+                    Width="160px" />
 			</td>
 			</tr>
            
@@ -169,16 +174,18 @@
 			List Of Consumable Items:
 			</td>
 			<td><asp:TextBox ID="ListOfConsumableItemsTextBox" runat="server" 
-                Text='<%# Bind("ListOfConsumableItems") %>' /></td></tr>
+                Text='<%# Bind("ListOfConsumableItems") %>' Width="160px" /></td></tr>
             
             
             <tr><td>Date Of Bill:</td>
-			<td> <asp:TextBox ID="BillDateTextBox" runat="server" 
-                Text='<%# Bind("BillDate") %>' /></td></tr>
+			<td> 
+                <asp:TextBox ID="BillDateTextBox" runat="server" 
+                Text='<%# Bind("BillDate") %>' Width="140px" /></td></tr>
             
            
-            <tr><td>Quantity:</td><td> <asp:TextBox ID="QuantityTextBox" runat="server" 
-                Text='<%# Bind("Quantity") %>' /></td></tr>
+            <tr><td>Quantity:</td><td> 
+                <asp:TextBox ID="QuantityTextBox" runat="server" 
+                Text='<%# Bind("Quantity") %>' Width="160px" /></td></tr>
             
            
             <tr><td colspan="2">

@@ -151,45 +151,53 @@
 						</td>
 						<td>
                         <asp:TextBox ID="Article_descTextBox" runat="server" 
-                            Text='<%# Bind("Article_desc") %>' />
+                            Text='<%# Bind("Article_desc") %>' Height="60px" Width="160px" />
 							</tr>
                         <tr><td>Name Of Purchase Authority:</td>
                         <td><asp:TextBox ID="PurchaseauthoritynameTextBox" runat="server" 
-                            Text='<%# Bind("Purchaseauthorityname") %>' /></td></tr>
+                            Text='<%# Bind("Purchaseauthorityname") %>' Width="160px" /></td></tr>
                         
                         
-                        <tr><td>Date Of Purchase:</td><td><asp:TextBox ID="PurchaseDateTextBox" runat="server" 
-                            Text='<%# Bind("PurchaseDate") %>' /></td></tr>
+                        <tr><td>Date Of Purchase:</td><td>
+                            <asp:TextBox ID="PurchaseDateTextBox" runat="server" 
+                            Text='<%# Bind("PurchaseDate") %>' Width="140px" /></td></tr>
                         
                         
-                        <tr><td>Quantity:</td><td><asp:TextBox ID="QuantityTextBox" runat="server" 
-                            Text='<%# Bind("Quantity") %>' /></td></tr>
+                        <tr><td>Quantity:</td><td>
+                            <asp:TextBox ID="QuantityTextBox" runat="server" 
+                            Text='<%# Bind("Quantity") %>' Width="160px" /></td></tr>
                         
                         
-                        <tr><td>Price Of Article:</td><td><asp:TextBox ID="ArticlePriceTextBox" runat="server" 
-                            Text='<%# Bind("ArticlePrice") %>' /></td></tr>
+                        <tr><td>Price Of Article:</td><td>
+                            <asp:TextBox ID="ArticlePriceTextBox" runat="server" 
+                            Text='<%# Bind("ArticlePrice") %>' Width="160px" /></td></tr>
 							</table>
 							</td>
                         
 						<td align="right">
                         <table width="100%">
-                        <tr><td> Employee Receiving Date:</td><td><asp:TextBox ID="EmployeeReceivingDateTextBox" runat="server" 
-                            Text='<%# Bind("EmployeeReceivingDate") %>' /></td></tr>
+                        <tr><td> Employee Receiving Date:</td><td>
+                            <asp:TextBox ID="EmployeeReceivingDateTextBox" runat="server" 
+                            Text='<%# Bind("EmployeeReceivingDate") %>' Width="140px" /></td></tr>
                        
                         
-                        <tr><td>Article Completion Date:</td><td>  <asp:TextBox ID="ArticleCompletiobDateTextBox" runat="server" 
-                            Text='<%# Bind("ArticleCompletiobDate") %>' /></td></tr>
+                        <tr><td>Article Completion Date:</td><td>  
+                            <asp:TextBox ID="ArticleCompletiobDateTextBox" runat="server" 
+                            Text='<%# Bind("ArticleCompletiobDate") %>' Width="140px" /></td></tr>
                         
                       
-                        <tr><td>Signature Of Employee:</td><td> <asp:TextBox ID="EmployeeSignTextBox" runat="server" 
-                            Text='<%# Bind("EmployeeSign") %>' /></td></tr>
+                        <tr><td>Signature Of Employee:</td><td> 
+                            <asp:TextBox ID="EmployeeSignTextBox" runat="server" 
+                            Text='<%# Bind("EmployeeSign") %>' Width="160px" /></td></tr>
                         
                        
-                        <tr><td>Signature Of Officers:</td><td><asp:TextBox ID="OfficersignTextBox" runat="server" 
-                            Text='<%# Bind("Officersign") %>' /></td></tr>
+                        <tr><td>Signature Of Officers:</td><td>
+                            <asp:TextBox ID="OfficersignTextBox" runat="server" 
+                            Text='<%# Bind("Officersign") %>' Width="160px" /></td></tr>
                         
                         
-                        <tr><td>Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
+                        <tr><td>Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" 
+                                Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" />
                         <tr><td></td><td></td></tr></td></tr>
                         </table>
                        <tr><td colspan="2" align="center">
@@ -216,61 +224,69 @@
 						</td>
 						<td>
                         <asp:TextBox ID="Article_descTextBox" runat="server" 
-                            Text='<%# Bind("Article_desc") %>' />
+                            Text='<%# Bind("Article_desc") %>' Height="60px" Width="160px" />
 							</tr>
                         <tr><td>Name Of Purchase Authority:</td>
                         <td><asp:TextBox ID="PurchaseauthoritynameTextBox" runat="server" 
-                            Text='<%# Bind("Purchaseauthorityname") %>' /></td></tr>
+                            Text='<%# Bind("Purchaseauthorityname") %>' Width="160px" /></td></tr>
                         
                         
-                        <tr><td>Date Of Purchase:</td><td><asp:TextBox ID="PurchaseDateTextBox" runat="server" 
-                            Text='<%# Bind("PurchaseDate") %>' /></td></tr>
+                        <tr><td>Date Of Purchase:</td><td>
+                            <asp:TextBox ID="PurchaseDateTextBox" runat="server" 
+                            Text='<%# Bind("PurchaseDate") %>' Width="140px" /></td></tr>
                         
                         
-                        <tr><td>Quantity:</td><td><asp:TextBox ID="QuantityTextBox" runat="server" 
-                            Text='<%# Bind("Quantity") %>' /></td></tr>
+                        <tr><td>Quantity:</td><td>
+                            <asp:TextBox ID="QuantityTextBox" runat="server" 
+                            Text='<%# Bind("Quantity") %>' Width="160px" /></td></tr>
                         
                         
-                        <tr><td>Price Of Article:</td><td><asp:TextBox ID="ArticlePriceTextBox" runat="server" 
-                            Text='<%# Bind("ArticlePrice") %>' /></td></tr>
+                        <tr><td>Price Of Article:</td><td>
+                            <asp:TextBox ID="ArticlePriceTextBox" runat="server" 
+                            Text='<%# Bind("ArticlePrice") %>' Width="160px" /></td></tr>
 							</table>
 							</td>
                         
 						<td align="right">
                         <table width="100%">
-                        <tr><td> Employee Receiving Date:</td><td><asp:TextBox ID="EmployeeReceivingDateTextBox" runat="server" 
-                            Text='<%# Bind("EmployeeReceivingDate") %>' /></td></tr>
+                        <tr><td> Employee Receiving Date:</td><td>
+                            <asp:TextBox ID="EmployeeReceivingDateTextBox" runat="server" 
+                            Text='<%# Bind("EmployeeReceivingDate") %>' Width="140px" /></td></tr>
                        
                         
-                        <tr><td>Article Completion Date:</td><td>  <asp:TextBox ID="ArticleCompletiobDateTextBox" runat="server" 
-                            Text='<%# Bind("ArticleCompletiobDate") %>' /></td></tr>
+                        <tr><td>Article Completion Date:</td><td>  
+                            <asp:TextBox ID="ArticleCompletiobDateTextBox" runat="server" 
+                            Text='<%# Bind("ArticleCompletiobDate") %>' Width="140px" /></td></tr>
                         
                       
-                        <tr><td>Signature Of Employee:</td><td> <asp:TextBox ID="EmployeeSignTextBox" runat="server" 
-                            Text='<%# Bind("EmployeeSign") %>' /></td></tr>
+                        <tr><td>Signature Of Employee:</td><td> 
+                            <asp:TextBox ID="EmployeeSignTextBox" runat="server" 
+                            Text='<%# Bind("EmployeeSign") %>' Width="160px" /></td></tr>
                         
                        
-                        <tr><td>Signature Of Officers:</td><td><asp:TextBox ID="OfficersignTextBox" runat="server" 
-                            Text='<%# Bind("Officersign") %>' /></td></tr>
+                        <tr><td>Signature Of Officers:</td><td>
+                            <asp:TextBox ID="OfficersignTextBox" runat="server" 
+                            Text='<%# Bind("Officersign") %>' Width="160px" /></td></tr>
                         
                         
-                        <tr><td>Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
+                        <tr><td>Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" 
+                                Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" />
                         <tr><td></td><td></td></tr></td></tr>
                         </table>
+						    <tr>
+                                <td align="center" colspan="2">
+                                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                                        CommandName="Insert" CssClass="standardButton" Text="Insert" />
+                                    &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
+                                        CommandName="Cancel" CssClass="standardButton" 
+                                        onclientclick="resetTextFields();return false;" Text="Reset" />
+                                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                                        CausesValidation="False" CommandName="Back" CssClass="standardButton" 
+                                        Text="Back" />
+                                </td>
+                            </tr>
 						</td>
-                        <tr>
-						<td colspan="2" align="center">
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Insert" CssClass="standardButton" Text="Insert" />
-                            &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
-                            CausesValidation="False" CommandName="Cancel" CssClass="standardButton" 
-                            Text="Reset"  onclientclick="resetTextFields();return false;" />
-                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                            CausesValidation="False" CommandName="Back" CssClass="standardButton" 
-                            Text="Back" />
-							</td>
-							</tr>
-							</table>
+                        	</table>
         </InsertItemTemplate>
         <ItemTemplate>
             SrNo:
