@@ -131,7 +131,6 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
         if (FormView_HighCourtReg.DefaultMode == FormViewMode.Edit)
         {
             RadioButtonList Radio_parawisermrksent = FormView_HighCourtReg.FindControl("Radio_parawisermrksent") as RadioButtonList;
-
             Radio_parawisermrksent.SelectedIndex = Convert.ToBoolean(FormView_HighCourtReg.DataKey[1]) ? 0 : 1;
 
             RadioButtonList Radio_affidavit = FormView_HighCourtReg.FindControl("Radio_affidavit") as RadioButtonList;

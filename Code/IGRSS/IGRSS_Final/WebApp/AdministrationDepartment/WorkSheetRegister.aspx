@@ -238,7 +238,8 @@
             			
         <tr><td colspan=2 align="center">
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                CommandName="Insert" Text="Insert" CssClass="standardButton" 
+                onclientclick="checkForEmptyFields();" />
 			&nbsp;<asp:LinkButton ID="ResetButton"  runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
                 onclientclick="resetTextFields();return false;" 

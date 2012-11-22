@@ -80,26 +80,24 @@
                         SortExpression="OutwardNo" InsertVisible="False" Visible="false"/>
                     <asp:BoundField DataField="FormattedOutwardNo" HeaderText="FormattedOutwardNo" 
                         SortExpression="FormattedOutwardNo" Visible="false"/>
-                        <asp:BoundField DataField="outward_no" HeaderText="OutwardNo" ReadOnly="True" 
+                        <asp:BoundField DataField="outward_no" HeaderText="Outward No" ReadOnly="True" 
                         SortExpression="outward_no" />
-                    <asp:BoundField DataField="LetterNo" HeaderText="LetterNo" 
+                    <asp:BoundField DataField="LetterNo" HeaderText="Letter No" 
                         SortExpression="LetterNo" />
-                    <asp:BoundField DataField="OutwardDate" HeaderText="OutwardDate" 
+                    <asp:BoundField DataField="OutwardDate" HeaderText="Outward Date" 
                         SortExpression="OutwardDate" />
-                    <asp:BoundField DataField="documentfrombranch" HeaderText="documentfrombranch" 
+                    <asp:BoundField DataField="documentfrombranch" HeaderText="Document Sent From Branch" 
                         SortExpression="documentfrombranch" />
                     <asp:BoundField DataField="Description" HeaderText="Description" 
-                        SortExpression="Description" />
-                    <asp:BoundField DataField="SentTo" HeaderText="SentTo" 
+                        SortExpression="Description" Visible="False" />
+                    <asp:BoundField DataField="SentTo" HeaderText="Sent To" 
                         SortExpression="SentTo" />
                     <asp:BoundField DataField="Address" HeaderText="Address" 
-                        SortExpression="Address" />
-                    <asp:BoundField DataField="CopyTo" HeaderText="CopyTo" 
+                        SortExpression="Address" Visible="False" />
+                    <asp:BoundField DataField="CopyTo" HeaderText="Copy To" 
                         SortExpression="CopyTo" />
                     <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                        SortExpression="Remarks" />
-                    
-                    <asp:ButtonField CommandName="Update" Text="Update" />
+                        SortExpression="Remarks" Visible="False" />
                     
                 </Columns>
                 <EmptyDataTemplate>
@@ -126,18 +124,18 @@
                 oniteminserted="FvOutward_ItemInserted">
                 <InsertItemTemplate>
                     <table >
-                        <tr><td align="right">OutwardNo:</td><td align="left"><asp:TextBox ID="FormattedOutwardNoTextBox" runat="server" 
+                        <tr><td align="right">Outward No:</td><td align="left"><asp:TextBox ID="FormattedOutwardNoTextBox" runat="server" 
                         Text='<%# Bind("FormattedOutwardNo") %>' Width="160px"/></td></tr>
-                        <tr><td align="right">OutwardDate:</td><td align="left"><asp:TextBox ID="OutwardDateTextBox" runat="server" Text='<%# Bind("OutwardDate") %>' Width="160px" /></td></tr>
-                        <tr><td align="right">LetterNo:</td><td align="left"><asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' Width="160px" /></td></tr>
-                        <tr><td align="right">documentfrombranch:</td><td align="left"><asp:TextBox ID="documentfrombranchTextBox" runat="server" Text='<%# Bind("documentfrombranch") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Outward Date:</td><td align="left"><asp:TextBox ID="OutwardDateTextBox" runat="server" Text='<%# Bind("OutwardDate") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Letter No:</td><td align="left"><asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Document From Branch:</td><td align="left"><asp:TextBox ID="documentfrombranchTextBox" runat="server" Text='<%# Bind("documentfrombranch") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Description:</td><td align="left"><asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td align="right">SentTo:</td><td align="left">
-                            <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True">
-                            </asp:GridView>
+                        <tr><td align="right">Sent To:</td><td align="left">
+                            <asp:DropDownList ID="DropDownList_SentTo" runat="server" Width="160px">
+                            </asp:DropDownList>
                             </td></tr>
                         <tr><td align="right">Address:</td><td align="left"><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td align="right">CopyTo:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Copy To:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" 
                                 CausesValidation="True" CommandName="Insert" Text="Insert" 
@@ -151,18 +149,18 @@
                 </InsertItemTemplate>
                 <EditItemTemplate>
                     <table >
-                        <tr><td align="right">OutwardNo:</td><td align="left"><asp:TextBox ID="FormattedOutwardNoTextBox" runat="server" 
+                        <tr><td align="right">Outward No:</td><td align="left"><asp:TextBox ID="FormattedOutwardNoTextBox" runat="server" 
                         Text='<%# Bind("FormattedOutwardNo") %>' Width="160px"/></td></tr>
-                        <tr><td align="right">OutwardDate:</td><td align="left"><asp:TextBox ID="OutwardDateTextBox" runat="server" Text='<%# Bind("OutwardDate") %>' Width="160px" /></td></tr>
-                        <tr><td align="right">LetterNo:</td><td align="left"><asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' Width="160px" /></td></tr>
-                        <tr><td align="right">documentfrombranch:</td><td align="left"><asp:TextBox ID="documentfrombranchTextBox" runat="server" Text='<%# Bind("documentfrombranch") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Outward Date:</td><td align="left"><asp:TextBox ID="OutwardDateTextBox" runat="server" Text='<%# Bind("OutwardDate") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Letter No:</td><td align="left"><asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Document From Branch:</td><td align="left"><asp:TextBox ID="documentfrombranchTextBox" runat="server" Text='<%# Bind("documentfrombranch") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Description:</td><td align="left"><asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td align="right">SentTo:</td><td align="left">
-                            <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True">
-                            </asp:GridView>
+                        <tr><td align="right">Sent To:</td><td align="left">
+                            <asp:DropDownList ID="DropDownList_SentTo" runat="server" Width="160px">
+                            </asp:DropDownList>
                             </td></tr>
                         <tr><td align="right">Address:</td><td align="left"><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td align="right">CopyTo:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Copy To:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
                         <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
                         <tr><td colspan="2" align="center">
                             <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 

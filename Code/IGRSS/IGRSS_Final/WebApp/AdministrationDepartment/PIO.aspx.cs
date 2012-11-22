@@ -115,4 +115,26 @@ public partial class LatestPages_PIO : System.Web.UI.Page
         lblMsg.Text = message;
         infoDiv.Visible = true;
     }
+    protected void GridView_PIO_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            Label lblAppl_BPL = e.Row.FindControl("lblAppl_BPL") as Label;
+            lblAppl_BPL.Text = Convert.ToBoolean(GridView_PIO.DataKeys[e.Row.RowIndex].Values[1]) ? "Yes" : "No";
+
+            Label lblInfo_Send = e.Row.FindControl("Info_Send") as Label;
+            lblInfo_Send.Text = Convert.ToBoolean(GridView_PIO.DataKeys[e.Row.RowIndex].Values[1]) ? "Partial" : "Complete";
+        }
+    }
+    protected void FormView_PIO_DataBound(object sender, EventArgs e)
+    {
+        if (FormView_PIO.DefaultMode == FormViewMode.Edit)
+        {
+            RadioButtonList Radio_BPL = FormView_PIO.FindControl("Radio_applbpl") as RadioButtonList;
+            Radio_BPL.SelectedIndex = Convert.ToBoolean(FormView_PIO.DataKey[1]) ? 0 : 1;
+
+            RadioButtonList Radio_InfoSend = FormView_PIO.FindControl("Radio_informationsend") as RadioButtonList;
+            Radio_InfoSend.SelectedIndex = Convert.ToBoolean(FormView_PIO.DataKey[1]) ? 0 : 1;            
+        }
+    }
 }

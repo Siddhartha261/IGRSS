@@ -46,88 +46,106 @@
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_PIO" runat="server" AutoGenerateColumns="False" 
-                      DataKeyNames="SrNo" DataSourceID="ods_PIO" 
+                      DataKeyNames="SrNo,Appl_BPL,Info_Send" DataSourceID="ods_PIO" 
                       EnableModelValidation="True" onrowdeleted="GridView_PIO_RowDeleted" 
-                      onrowdeleting="GridView_PIO_RowDeleting" onrowediting="GridView_PIO_RowEditing">
+                      onrowdeleting="GridView_PIO_RowDeleting" 
+                      onrowediting="GridView_PIO_RowEditing" 
+                      onrowdatabound="GridView_PIO_RowDataBound">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
-                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" />
-                          <asp:BoundField DataField="FileNo" HeaderText="FileNo" 
+                              ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
+                              Visible="False" />
+                          <asp:BoundField DataField="FileNo" HeaderText="File No" 
                               SortExpression="FileNo" />
-                          <asp:BoundField DataField="ApplicantName" HeaderText="ApplicantName" 
+                          <asp:BoundField DataField="ApplicantName" HeaderText="Applicant Name" 
                               SortExpression="ApplicantName" />
-                          <asp:BoundField DataField="ApplicationDate" HeaderText="ApplicationDate" 
+                          <asp:BoundField DataField="ApplicationDate" HeaderText="Application Date" 
                               SortExpression="ApplicationDate" />
                           <asp:BoundField DataField="ApplicantAddress" HeaderText="ApplicantAddress" 
-                              SortExpression="ApplicantAddress" />
+                              SortExpression="ApplicantAddress" Visible="False" />
                           <asp:BoundField DataField="Application_Received_Actual_Date" 
-                              HeaderText="Application_Received_Actual_Date" 
+                              HeaderText="Application Received Actual Date" 
                               SortExpression="Application_Received_Actual_Date" />
-                          <asp:CheckBoxField DataField="Appl_BPL" HeaderText="Appl_BPL" 
-                              SortExpression="Appl_BPL" />
-                          <asp:BoundField DataField="Sub_Info_Asked" HeaderText="Sub_Info_Asked" 
+                              <asp:TemplateField HeaderText="Application Is BPL" SortExpression="Appl_BPL" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblAppl_BPL"  runat="server" Text="No" 
+                                        Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
+                                </ItemTemplate>
+                                  <ItemStyle HorizontalAlign="Center" />
+                              </asp:TemplateField>                          
+                          <asp:BoundField DataField="Sub_Info_Asked" HeaderText="Subject Of Information Asked" 
                               SortExpression="Sub_Info_Asked" />
                           <asp:BoundField DataField="Recvd_Sata_Mandal" HeaderText="Recvd_Sata_Mandal" 
-                              SortExpression="Recvd_Sata_Mandal" />
-                          <asp:BoundField DataField="Recvd_Date" HeaderText="Recvd_Date" 
+                              SortExpression="Recvd_Sata_Mandal" Visible="False" />
+                          <asp:BoundField DataField="Recvd_Date" HeaderText="Received Date" 
                               SortExpression="Recvd_Date" />
                           <asp:BoundField DataField="Information" HeaderText="Information" 
-                              SortExpression="Information" />
-                          <asp:BoundField DataField="Recvd_Fees" HeaderText="Recvd_Fees" 
+                              SortExpression="Information" Visible="False" />
+                          <asp:BoundField DataField="Recvd_Fees" HeaderText="Received Fees" 
                               SortExpression="Recvd_Fees" />
-                          <asp:BoundField DataField="Recvd_Fees_Mode" HeaderText="Recvd_Fees_Mode" 
+                          <asp:BoundField DataField="Recvd_Fees_Mode" HeaderText="Received Fees Mode" 
                               SortExpression="Recvd_Fees_Mode" />
-                          <asp:BoundField DataField="Last_Date_Reply" HeaderText="Last_Date_Reply" 
+                          <asp:BoundField DataField="Last_Date_Reply" HeaderText="Last Date Of Reply" 
                               SortExpression="Last_Date_Reply" />
-                          <asp:CheckBoxField DataField="Info_Send" HeaderText="Info_Send" 
-                              SortExpression="Info_Send" />
+                              <asp:TemplateField HeaderText="Information Send" SortExpression="Info_Send" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblInfo_Send"  runat="server" Text="Partial" 
+                                        Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
+                                </ItemTemplate>
+                                  <ItemStyle HorizontalAlign="Center" />
+                              </asp:TemplateField>
+                         <%-- <asp:CheckBoxField DataField="Info_Send" HeaderText="Information Send" 
+                              SortExpression="Info_Send" />--%>
                           <asp:BoundField DataField="Info_Pages" HeaderText="Info_Pages" 
-                              SortExpression="Info_Pages" />
+                              SortExpression="Info_Pages" Visible="False" />
                           <asp:BoundField DataField="Page_Amt" HeaderText="Page_Amt" 
-                              SortExpression="Page_Amt" />
+                              SortExpression="Page_Amt" Visible="False" />
                           <asp:BoundField DataField="Total_Amt" HeaderText="Total_Amt" 
-                              SortExpression="Total_Amt" />
-                          <asp:BoundField DataField="Reject_Date" HeaderText="Reject_Date" 
+                              SortExpression="Total_Amt" Visible="False" />
+                          <asp:BoundField DataField="Reject_Date" HeaderText="Rejection Date" 
                               SortExpression="Reject_Date" />
                           <asp:BoundField DataField="Section" HeaderText="Section" 
                               SortExpression="Section" />
                           <asp:BoundField DataField="Reasons" HeaderText="Reasons" 
-                              SortExpression="Reasons" />
+                              SortExpression="Reasons" Visible="False" />
                           <asp:BoundField DataField="FileClosureDate" HeaderText="FileClosureDate" 
-                              SortExpression="FileClosureDate" />
+                              SortExpression="FileClosureDate" Visible="False" />
                           <asp:BoundField DataField="Authority" HeaderText="Authority" 
-                              SortExpression="Authority" />
+                              SortExpression="Authority" Visible="False" />
                           <asp:BoundField DataField="AppealNoFirstAppeal" 
-                              HeaderText="AppealNoFirstAppeal" SortExpression="AppealNoFirstAppeal" />
+                              HeaderText="AppealNoFirstAppeal" SortExpression="AppealNoFirstAppeal" 
+                              Visible="False" />
                           <asp:BoundField DataField="AppealDateFirstAppeal" 
                               HeaderText="AppealDateFirstAppeal" 
-                              SortExpression="AppealDateFirstAppeal" />
-                          <asp:BoundField DataField="Order_Authority" HeaderText="Order_Authority" 
+                              SortExpression="AppealDateFirstAppeal" Visible="False" />
+                          <asp:BoundField DataField="Order_Authority" HeaderText="Order Number From Authority" 
                               SortExpression="Order_Authority" />
                           <asp:BoundField DataField="FileClosureDateFirstAppeal" 
                               HeaderText="FileClosureDateFirstAppeal" 
-                              SortExpression="FileClosureDateFirstAppeal" />
+                              SortExpression="FileClosureDateFirstAppeal" Visible="False" />
                           <asp:BoundField DataField="Letteer_Recvd_Date_commissioner" 
-                              HeaderText="Letteer_Recvd_Date_commissioner" 
+                              HeaderText="Letter Recvd Date From Commissioner" 
                               SortExpression="Letteer_Recvd_Date_commissioner" />
                           <asp:BoundField DataField="AppealNoSecondAppeal" 
-                              HeaderText="AppealNoSecondAppeal" SortExpression="AppealNoSecondAppeal" />
+                              HeaderText="AppealNoSecondAppeal" SortExpression="AppealNoSecondAppeal" 
+                              Visible="False" />
                           <asp:BoundField DataField="ApplicationNameSecondAppeal" 
-                              HeaderText="ApplicationNameSecondAppeal" 
+                              HeaderText="Application Name" 
                               SortExpression="ApplicationNameSecondAppeal" />
                           <asp:BoundField DataField="AddressSecondAppeal" 
-                              HeaderText="AddressSecondAppeal" SortExpression="AddressSecondAppeal" />
+                              HeaderText="AddressSecondAppeal" SortExpression="AddressSecondAppeal" 
+                              Visible="False" />
                           <asp:BoundField DataField="AppealDateSecondAppeal" 
                               HeaderText="AppealDateSecondAppeal" 
-                              SortExpression="AppealDateSecondAppeal" />
+                              SortExpression="AppealDateSecondAppeal" Visible="False" />
                           <asp:BoundField DataField="Remarks_SentTo_Commission" 
                               HeaderText="Remarks_SentTo_Commission" 
-                              SortExpression="Remarks_SentTo_Commission" />
-                          <asp:BoundField DataField="Remarks_Send_Date" HeaderText="Remarks_Send_Date" 
+                              SortExpression="Remarks_SentTo_Commission" Visible="False" />
+                          <asp:BoundField DataField="Remarks_Send_Date" HeaderText="Remarks Send Date" 
                               SortExpression="Remarks_Send_Date" />
                           <asp:BoundField DataField="FileClosureDateSecondAppeal" 
                               HeaderText="FileClosureDateSecondAppeal" 
-                              SortExpression="FileClosureDateSecondAppeal" />
+                              SortExpression="FileClosureDateSecondAppeal" Visible="False" />
                               <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -158,12 +176,13 @@
 <h1>PIO & APIO Register</h1>
 
     
-    <asp:FormView ID="FormView_PIO" runat="server" DataKeyNames="SrNo" 
+    <asp:FormView ID="FormView_PIO" runat="server" DataKeyNames="SrNo,Appl_BPL,Info_Send" 
         DataSourceID="ods_PIO" DefaultMode="Insert" EnableModelValidation="True" 
         oniteminserting="FormView_PIO_ItemInserting" 
         oniteminserted="FormView_PIO_ItemInserted" 
         onitemupdated="FormView_PIO_ItemUpdated" 
-        onitemupdating="FormView_PIO_ItemUpdating">
+        onitemupdating="FormView_PIO_ItemUpdating" 
+        ondatabound="FormView_PIO_DataBound">
         <EditItemTemplate>
                   <table cellpadding="5" cellspacing="5" width="100%">
         <tr>
@@ -194,7 +213,7 @@
         <tr>
 		    <td>Date Of Application:</td>
 			<td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' Width="160px" /></td>
+                Text='<%# Bind("ApplicationDate") %>' Width="140px" /></td>
 			
 			<td>Received Fees Mode:</td>
 			<td>
@@ -213,13 +232,13 @@
 			
 			<td>Last Date Of Reply/Rejection:</td>
 			<td><asp:TextBox ID="Last_Date_ReplyTextBox" runat="server" 
-                Text='<%# Bind("Last_Date_Reply") %>' Width="160px" /></td>		
+                Text='<%# Bind("Last_Date_Reply") %>' Width="140px" /></td>		
 		</tr>     
             			
         <tr>
 		    <td>Actual Received Date Of Application:</td>
 			<td><asp:TextBox ID="Application_Received_Actual_DateTextBox" runat="server" 
-                Text='<%# Bind("Application_Received_Actual_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Application_Received_Actual_Date") %>' Width="140px" /></td>
 			
 			<td>Information Send:</td>
 			<td>
@@ -269,11 +288,11 @@
         <tr>
 		    <td>Received Date:</td>
 			<td><asp:TextBox ID="Recvd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recvd_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Recvd_Date") %>' Width="140px" /></td>
 			
 			<td>Rejection Date:</td>
 			<td><asp:TextBox ID="Reject_DateTextBox" runat="server" 
-                Text='<%# Bind("Reject_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Reject_Date") %>' Width="140px" /></td>
 		</tr>       
             				
         <tr>
@@ -300,7 +319,7 @@
 			
 			<td>File Closure Date:</td>
 			<td><asp:TextBox ID="FileClosureDateTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDate") %>' Width="160px" /></td>
+                Text='<%# Bind("FileClosureDate") %>' Width="140px" /></td>
 		</tr> 	         
             				
                     <tr>
@@ -317,7 +336,7 @@
 			
 			<td>Letter Received Date from Commissioner:</td>
 			<td><asp:TextBox ID="Letteer_Recvd_Date_commissionerTextBox" runat="server" 
-                Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="160px" /></td>
+                Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="140px" /></td>
 		</tr> 	         
             				
         <tr>
@@ -333,7 +352,7 @@
         <tr>
 		    <td>Appeal Date:</td>
 			<td><asp:TextBox ID="AppealDateFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealDateFirstAppeal") %>' Width="160px" /></td>
+                Text='<%# Bind("AppealDateFirstAppeal") %>' Width="140px" /></td>
 			
 			<td>Application Name:</td>
 			<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" 
@@ -354,11 +373,11 @@
         <tr>
 		    <td>File Closure Date:</td>
 			<td><asp:TextBox ID="FileClosureDateFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="160px" /></td>
+                Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="140px" /></td>
 				
 			<td>Appeal Date:</td>
 			<td><asp:TextBox ID="AppealDateSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealDateSecondAppeal") %>' Width="160px" /></td>
+                Text='<%# Bind("AppealDateSecondAppeal") %>' Width="140px" /></td>
 		</tr>         
             				
         <tr>
@@ -377,7 +396,7 @@
 			
 			<td>Remarks Send Date:</td>
 			<td><asp:TextBox ID="Remarks_Send_DateTextBox" runat="server" 
-                Text='<%# Bind("Remarks_Send_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Remarks_Send_Date") %>' Width="140px" /></td>
 		</tr>        
 			
         <tr>
@@ -386,7 +405,7 @@
 			
 			<td>File Closure Date:</td>
 			<td><asp:TextBox ID="FileClosureDateSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="160px" /></td>
+                Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="140px" /></td>
 		</tr> 	
 		
         <tr >
@@ -434,7 +453,7 @@
         <tr>
 		    <td>Date Of Application:</td>
 			<td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' Width="160px" /></td>
+                Text='<%# Bind("ApplicationDate") %>' Width="140px" /></td>
 			
 			<td>Received Fees Mode:</td>
 			<td>
@@ -453,13 +472,13 @@
 			
 			<td>Last Date Of Reply/Rejection:</td>
 			<td><asp:TextBox ID="Last_Date_ReplyTextBox" runat="server" 
-                Text='<%# Bind("Last_Date_Reply") %>' Width="160px" /></td>		
+                Text='<%# Bind("Last_Date_Reply") %>' Width="140px" /></td>		
 		</tr>     
             			
         <tr>
 		    <td>Actual Received Date Of Application:</td>
 			<td><asp:TextBox ID="Application_Received_Actual_DateTextBox" runat="server" 
-                Text='<%# Bind("Application_Received_Actual_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Application_Received_Actual_Date") %>' Width="140px" /></td>
 			
 			<td>Information Send:</td>
 			<td>
@@ -509,11 +528,11 @@
         <tr>
 		    <td>Received Date:</td>
 			<td><asp:TextBox ID="Recvd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recvd_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Recvd_Date") %>' Width="140px" /></td>
 			
 			<td>Rejection Date:</td>
 			<td><asp:TextBox ID="Reject_DateTextBox" runat="server" 
-                Text='<%# Bind("Reject_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Reject_Date") %>' Width="140px" /></td>
 		</tr>       
             				
         <tr>
@@ -540,7 +559,7 @@
 			
 			<td>File Closure Date:</td>
 			<td><asp:TextBox ID="FileClosureDateTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDate") %>' Width="160px" /></td>
+                Text='<%# Bind("FileClosureDate") %>' Width="140px" /></td>
 		</tr> 	         
             				
                     <tr>
@@ -557,7 +576,7 @@
 			
 			<td>Letter Received Date from Commissioner:</td>
 			<td><asp:TextBox ID="Letteer_Recvd_Date_commissionerTextBox" runat="server" 
-                Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="160px" /></td>
+                Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="140px" /></td>
 		</tr> 	         
             				
         <tr>
@@ -573,7 +592,7 @@
         <tr>
 		    <td>Appeal Date:</td>
 			<td><asp:TextBox ID="AppealDateFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealDateFirstAppeal") %>' Width="160px" /></td>
+                Text='<%# Bind("AppealDateFirstAppeal") %>' Width="140px" /></td>
 			
 			<td>Application Name:</td>
 			<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" 
@@ -594,11 +613,11 @@
         <tr>
 		    <td>File Closure Date:</td>
 			<td><asp:TextBox ID="FileClosureDateFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="160px" /></td>
+                Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="140px" /></td>
 				
 			<td>Appeal Date:</td>
 			<td><asp:TextBox ID="AppealDateSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealDateSecondAppeal") %>' Width="160px" /></td>
+                Text='<%# Bind("AppealDateSecondAppeal") %>' Width="140px" /></td>
 		</tr>         
             				
         <tr>
@@ -617,7 +636,7 @@
 			
 			<td>Remarks Send Date:</td>
 			<td><asp:TextBox ID="Remarks_Send_DateTextBox" runat="server" 
-                Text='<%# Bind("Remarks_Send_Date") %>' Width="160px" /></td>
+                Text='<%# Bind("Remarks_Send_Date") %>' Width="140px" /></td>
 		</tr>        
 			
         <tr>
@@ -626,7 +645,7 @@
 			
 			<td>File Closure Date:</td>
 			<td><asp:TextBox ID="FileClosureDateSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="160px" /></td>
+                Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="140px" /></td>
 		</tr> 	
 		
         <tr >
