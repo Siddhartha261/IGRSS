@@ -137,37 +137,37 @@
         onitemupdating="FormView_MLA_ItemUpdating" >
         <EditItemTemplate>
                 <table>
-        <tr><td>Inward No:</td>
+        <tr align="left"><td>Inward No:</td>
 		    <td><asp:TextBox ID="InwardNoTextBox" runat="server" 
-                Text='<%# Bind("InwardNo") %>' Width="160px" /></td>
+                Text='<%# Bind("InwardNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>					
             
-        <tr><td>File No:</td>
-		    <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                    Width="160px" /></td>
+        <tr align="left"><td>File No:</td>
+		    <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	          
          
-        <tr><td>MLA/MP/Minister's Name:</td>
+        <tr align="left"><td>MLA/MP/Minister's Name:</td>
 		    <td><asp:TextBox ID="MLAnameTextBox" runat="server" Text='<%# Bind("MLAname") %>' 
-                    Width="160px" /></td>
+                    Width="160px" MaxLength="30" /></td>
 		</tr>	           
             
-        <tr><td>Subject:</td>
+        <tr align="left"><td>Subject:</td>
 		    <td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                    Width="160px" /></td>
+                    Width="160px" MaxLength="20" /></td>
 		</tr>	            
             
-        <tr><td>Letter No:</td>
-		    <td><asp:TextBox ID="LetterNoTextBox" runat="server" 
-                Text='<%# Bind("LetterNo") %>' Width="160px" /></td>
+        <tr align="left"><td>Letter No:</td>
+		    <td><asp:TextBox ID="LetterNoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("LetterNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	            
             
-        <tr><td>Letter Date:</td>
+        <tr align="left"><td>Letter Date:</td>
 		    <td><asp:TextBox ID="LetterDateTextBox" runat="server" 
-                Text='<%# Bind("LetterDate") %>' Width="140px" /></td>
+                Text='<%# Bind("LetterDate") %>' Width="160px" /></td>
 		</tr>	           
             
-        <tr><td>Department Name:</td>
+        <tr align="left"><td>Department Name:</td>
 			<td>
                 <asp:DropDownList ID="Drop_departmentname" runat="server" 
                     DataSourceID="ods_departmentname" DataTextField="Name" DataValueField="Name">
@@ -175,30 +175,30 @@
             </td>
 		</tr>	           
             
-        <tr><td>File Number:</td>
-		    <td><asp:TextBox ID="FileNumberTextBox" runat="server" 
-                Text='<%# Bind("FileNumber") %>' Width="160px" /></td>
+        <tr align="left"><td>File Number:</td>
+		    <td><asp:TextBox ID="FileNumberTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("FileNumber") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	           
             
-        <tr><td>Details Of Output:</td>
+        <tr align="left"><td>Details Of Output:</td>
 		    <td><asp:TextBox ID="DetailsofOutputTextBox" runat="server" 
                 Text='<%# Bind("DetailsofOutput") %>' Height="60px" TextMode="MultiLine" 
                     Width="160px" /></td>
 		</tr>	            
             
-        <tr><td>Details Of File Preservation:</td>
+        <tr align="left"><td>Details Of File Preservation:</td>
 		    <td><asp:TextBox ID="DetailsofFilePreservationTextBox" runat="server" 
                 Text='<%# Bind("DetailsofFilePreservation") %>' Height="60px" 
                     TextMode="MultiLine" Width="160px" /></td>
 		</tr>	          
             
-        <tr><td>Details Of Record:</td>
+        <tr align="left"><td>Details Of Record:</td>
 		    <td><asp:TextBox ID="DetailsOfRecordTextBox" runat="server" 
                 Text='<%# Bind("DetailsOfRecord") %>' Height="60px" TextMode="MultiLine" 
                     Width="160px" /></td>
 		</tr>	           
             
-        <tr><td>Remarks:</td>
+        <tr align="left"><td>Remarks:</td>
 		    <td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                     Height="60px" TextMode="MultiLine" Width="160px" /></td>
 		</tr>	            
@@ -220,37 +220,37 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                 <table>
-        <tr><td>Inward No:</td>
+        <tr align="left"><td>Inward No:</td>
 		    <td><asp:TextBox ID="InwardNoTextBox" runat="server" 
-                Text='<%# Bind("InwardNo") %>' Width="160px" /></td>
+                Text='<%# Bind("InwardNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>					
             
-        <tr><td>File No:</td>
-		    <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                    Width="160px" /></td>
+        <tr align="left"><td>File No:</td>
+		    <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	          
          
-        <tr><td>MLA/MP/Minister's Name:</td>
+        <tr align="left"><td>MLA/MP/Minister's Name:</td>
 		    <td><asp:TextBox ID="MLAnameTextBox" runat="server" Text='<%# Bind("MLAname") %>' 
-                    Width="160px" /></td>
+                    Width="160px" MaxLength="30" /></td>
 		</tr>	           
             
-        <tr><td>Subject:</td>
+        <tr align="left"><td>Subject:</td>
 		    <td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                    Width="160px" /></td>
+                    Width="160px" MaxLength="20" /></td>
 		</tr>	            
             
-        <tr><td>Letter No:</td>
-		    <td><asp:TextBox ID="LetterNoTextBox" runat="server" 
-                Text='<%# Bind("LetterNo") %>' Width="160px" /></td>
+        <tr align="left"><td>Letter No:</td>
+		    <td><asp:TextBox ID="LetterNoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("LetterNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	            
             
-        <tr><td>Letter Date:</td>
+        <tr align="left"><td>Letter Date:</td>
 		    <td><asp:TextBox ID="LetterDateTextBox" runat="server" 
-                Text='<%# Bind("LetterDate") %>' Width="140px" /></td>
+                Text='<%# Bind("LetterDate") %>' Width="160px" /></td>
 		</tr>	           
             
-        <tr><td>Department Name:</td>
+        <tr align="left"><td>Department Name:</td>
 			<td>
                 <asp:DropDownList ID="Drop_departmentname" runat="server" 
                     DataSourceID="ods_departmentname" DataTextField="Name" DataValueField="Name">
@@ -258,30 +258,30 @@
             </td>
 		</tr>	           
             
-        <tr><td>File Number:</td>
-		    <td><asp:TextBox ID="FileNumberTextBox" runat="server" 
-                Text='<%# Bind("FileNumber") %>' Width="160px" /></td>
+        <tr align="left"><td>File Number:</td>
+		    <td><asp:TextBox ID="FileNumberTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("FileNumber") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	           
             
-        <tr><td>Details Of Output:</td>
+        <tr align="left"><td>Details Of Output:</td>
 		    <td><asp:TextBox ID="DetailsofOutputTextBox" runat="server" 
                 Text='<%# Bind("DetailsofOutput") %>' Height="60px" TextMode="MultiLine" 
                     Width="160px" /></td>
 		</tr>	            
             
-        <tr><td>Details Of File Preservation:</td>
+        <tr align="left"><td>Details Of File Preservation:</td>
 		    <td><asp:TextBox ID="DetailsofFilePreservationTextBox" runat="server" 
                 Text='<%# Bind("DetailsofFilePreservation") %>' Height="60px" 
                     TextMode="MultiLine" Width="160px" /></td>
 		</tr>	          
             
-        <tr><td>Details Of Record:</td>
+        <tr align="left"><td>Details Of Record:</td>
 		    <td><asp:TextBox ID="DetailsOfRecordTextBox" runat="server" 
                 Text='<%# Bind("DetailsOfRecord") %>' Height="60px" TextMode="MultiLine" 
                     Width="160px" /></td>
 		</tr>	           
             
-        <tr><td>Remarks:</td>
+        <tr align="left"><td>Remarks:</td>
 		    <td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                     Height="60px" TextMode="MultiLine" Width="160px" /></td>
 		</tr>	            

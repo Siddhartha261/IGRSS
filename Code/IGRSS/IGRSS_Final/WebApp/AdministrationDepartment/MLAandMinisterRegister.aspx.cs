@@ -13,6 +13,7 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
 
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_MLA.SetActiveView(Multiview_MLA.Views[1]);
         FormView_MLA.ChangeMode(FormViewMode.Insert);
     }
@@ -61,7 +62,7 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
     {
         Multiview_MLA.SetActiveView(Formview);
         FormView_MLA.PageIndex = e.NewEditIndex;
-        FormView_MLA.DefaultMode = FormViewMode.Edit;
+        FormView_MLA.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_MLA_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -85,6 +86,7 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_MLA.SetActiveView(ViewGrid);
     }
     protected void ods_MLA_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

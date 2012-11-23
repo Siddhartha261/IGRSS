@@ -118,13 +118,13 @@
         onitemupdating="FormView_Departmental_Inquiry_Register_ItemUpdating" >
         <EditItemTemplate>
                         <table>
-            <tr>
+            <tr align="left">
 			   <td>File No:</td>
-			   <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                       Width="160px" /></td>
+			   <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                       Width="160px" MaxLength="10" /></td>
 			</tr>
 			
-            <tr>
+            <tr align="left">
 			    <td>Grade:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_Grade" runat="server" 
@@ -134,25 +134,25 @@
                 </td>
 			</tr>             
                 
-            <tr>
+            <tr align="left">
 			    <td>Subject:</td>
 				<td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                        Width="160px" /></td>
+                        Width="160px" MaxLength="20" /></td>
 			</tr>             
                 
-            <tr>
+            <tr align="left">
 			    <td>Date Of Charge Sheet:</td>
 				<td><asp:TextBox ID="Date_Of_Charge_SheetTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="140px" /></td>
+                    Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="160px" /></td>
 			</tr>             
                 
-            <tr>
+            <tr align="left">
 			    <td>Name Of Employee:</td>
 				<td><asp:TextBox ID="Name_Of_EmployeeTextBox" runat="server" 
-                    Text='<%# Bind("Name_Of_Employee") %>' Width="160px" /></td>
+                    Text='<%# Bind("Name_Of_Employee") %>' Width="160px" MaxLength="30" /></td>
 			</tr>              
                 
-            <tr>
+            <tr align="left">
 			    <td>Whether Case In Pending In Government/Department:</td>
 				<td>
                     <asp:RadioButtonList ID="RadioButtonList_Govt_Dept" runat="server" 
@@ -163,13 +163,13 @@
                 </td>
 			</tr>               
                 
-            <tr>
+            <tr align="left">
 			    <td>Date:</td>
 				<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                        Width="140px" /></td>
+                        Width="160px" /></td>
 			</tr>              
                 
-            <tr>
+            <tr align="left">
 			    <td>Name Of Inquiry Officer:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_InquiryOfficer" runat="server" 
@@ -179,20 +179,20 @@
                 </td>
 			</tr>              
                 
-            <tr>
+            <tr align="left">
 			    <td>Date Of Inquiry Submission:</td>
 				<td><asp:TextBox ID="Date_Of_Inquiry_SubmissionTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="140px" /></td>
+                    Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="160px" /></td>
 			</tr>              
                 
-            <tr>
+            <tr align="left">
 			    <td>Date Of Receiving Inquiry Report:</td>
 				<td><asp:TextBox ID="Date_Of_Receiving_Inquiry_ReportTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="140px" 
+                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="160px" 
                         ReadOnly="True" /></td>
 			</tr>               
                 
-            <tr>
+            <tr align="left">
 			    <td>Remarks:</td>
 				<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                         Height="60px" Width="160px" /></td>
@@ -212,13 +212,13 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                         <table>
-            <tr>
+            <tr align="left">
 			   <td>File No:</td>
-			   <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                       Width="160px" /></td>
+			   <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                       Width="160px" MaxLength="10" /></td>
 			</tr>
 			
-            <tr>
+            <tr align="left">
 			    <td>Grade:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_Grade" runat="server" 
@@ -228,25 +228,25 @@
                 </td>
 			</tr>             
                 
-            <tr>
+            <tr align="left">
 			    <td>Subject:</td>
 				<td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                        Width="160px" /></td>
+                        Width="160px" MaxLength="20" /></td>
 			</tr>             
                 
-            <tr>
+            <tr align="left">
 			    <td>Date Of Charge Sheet:</td>
 				<td><asp:TextBox ID="Date_Of_Charge_SheetTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="140px" /></td>
+                    Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="160px" /></td>
 			</tr>             
                 
-            <tr>
+            <tr align="left">
 			    <td>Name Of Employee:</td>
 				<td><asp:TextBox ID="Name_Of_EmployeeTextBox" runat="server" 
-                    Text='<%# Bind("Name_Of_Employee") %>' Width="160px" /></td>
+                    Text='<%# Bind("Name_Of_Employee") %>' Width="160px" MaxLength="20" /></td>
 			</tr>              
                 
-            <tr>
+            <tr align="left">
 			    <td>Whether Case In Pending In Government/Department:</td>
 				<td>
                     <asp:RadioButtonList ID="RadioButtonList_Govt_Dept" runat="server" 
@@ -257,13 +257,13 @@
                 </td>
 			</tr>               
                 
-            <tr>
+            <tr align="left">
 			    <td>Date:</td>
 				<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                        Width="140px" /></td>
+                        Width="160px" /></td>
 			</tr>              
                 
-            <tr>
+            <tr align="left">
 			    <td>Name Of Inquiry Officer:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_InquiryOfficer" runat="server" 
@@ -273,19 +273,19 @@
                 </td>
 			</tr>              
                 
-            <tr>
+            <tr align="left">
 			    <td>Date Of Inquiry Submission:</td>
 				<td><asp:TextBox ID="Date_Of_Inquiry_SubmissionTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="140px" /></td>
+                    Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="160px" /></td>
 			</tr>              
                 
-            <tr>
+            <tr align="left">
 			    <td>Date Of Receiving Inquiry Report:</td>
 				<td><asp:TextBox ID="Date_Of_Receiving_Inquiry_ReportTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="140px" /></td>
+                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="160px" /></td>
 			</tr>               
                 
-            <tr>
+            <tr align="left">
 			    <td>Remarks:</td>
 				<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                         Height="60px" Width="160px" /></td>

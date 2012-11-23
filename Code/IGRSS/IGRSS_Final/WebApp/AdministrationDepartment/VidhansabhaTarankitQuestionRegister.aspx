@@ -111,7 +111,7 @@
         onitemupdating="FormView_Tarankit_ItemUpdating">
         <EditItemTemplate>
                     <table>
-        <tr><td>Tarankit/Atarnkit:</td>
+        <tr align="left"><td>Tarankit/Atarnkit:</td>
 		    <td><asp:RadioButtonList ID="Radio_tarankit" runat="server" 
                 RepeatDirection="Horizontal" Width="160px">
                 <asp:ListItem Text="Starred" Value="Starred"></asp:ListItem>
@@ -120,12 +120,12 @@
 			</td>
 		</tr>			
             
-        <tr><td>Question Number:</td>
-		    <td><asp:TextBox ID="quesnoTextBox" runat="server" Text='<%# Bind("quesno") %>' 
-                    Width="160px" /></td>
+        <tr align="left"><td>Question Number:</td>
+		    <td><asp:TextBox ID="quesnoTextBox" runat="server" numeric="integer" Text='<%# Bind("quesno") %>' 
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	             
             
-		<tr><td>Name Of MLA/MP:</td>
+		<tr align="left"><td>Name Of MLA/MP:</td>
 		    <td>
                 <asp:DropDownList ID="Drop_mlaname" runat="server" DataSourceID="ods_mlaname" 
                     DataTextField="MLAname" DataValueField="MLAname">
@@ -133,40 +133,40 @@
             </td>
 		</tr>	            
             
-        <tr><td>Place Of MLA/MP:</td>
+        <tr align="left"><td>Place Of MLA/MP:</td>
 		    <td><asp:TextBox ID="mlaPlaceTextBox" runat="server" 
-                Text='<%# Bind("mlaPlace") %>' Width="160px" />
+                Text='<%# Bind("mlaPlace") %>' Width="160px" MaxLength="20" />
 			</td>
 		</tr>	              
                 
-        <tr><td>Subject:</td>
+        <tr align="left"><td>Subject:</td>
 		    <td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                    Width="160px" /></td>
+                    Width="160px" MaxLength="20" /></td>
 		</tr>	              
                 
-        <tr><td>Number Given By Government:</td>
-		    <td><asp:TextBox ID="NumberTextBox" runat="server" Text='<%# Bind("Number") %>' 
-                    Width="160px" /></td>
+        <tr align="left"><td>Number Given By Government:</td>
+		    <td><asp:TextBox ID="NumberTextBox" runat="server" numeric="integer" Text='<%# Bind("Number") %>' 
+                    Width="160px" MaxLength="20" /></td>
 		</tr>	              
                 
-        <tr><td>Reply Sent:</td>
+        <tr align="left"><td>Reply Sent:</td>
 		    <td><asp:TextBox ID="Reply_SentTextBox" runat="server" 
-                    Text='<%# Bind("Reply_Sent") %>' Width="160px" />
+                    Text='<%# Bind("Reply_Sent") %>' Width="160px" MaxLength="30" />
 			</td>
 		</tr>	
                 
                 
-        <tr><td>Date On Which Information Is Sent:</td>
+        <tr align="left"><td>Date On Which Information Is Sent:</td>
 		    <td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Width="140px" /></td>
+                    Width="160px" /></td>
 		</tr>	               
                 
-        <tr><td>File Number:</td>
-		    <td><asp:TextBox ID="FilenoTextBox" runat="server" Text='<%# Bind("Fileno") %>' 
-                    Width="160px" /></td>
+        <tr align="left"><td>File Number:</td>
+		    <td><asp:TextBox ID="FilenoTextBox" runat="server" numeric="integer" Text='<%# Bind("Fileno") %>' 
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	             
                 
-        <tr><td>Remarks:</td>
+        <tr align="left"><td>Remarks:</td>
 		    <td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                     Height="60px" TextMode="MultiLine" Width="160px" /></td>
 		</tr>	             
@@ -187,7 +187,7 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                     <table>
-        <tr><td>Tarankit/Atarnkit:</td>
+        <tr align="left"><td>Tarankit/Atarnkit:</td>
 		    <td><asp:RadioButtonList ID="Radio_tarankit" runat="server" 
                 RepeatDirection="Horizontal" Width="160px">
                 <asp:ListItem Text="Starred" Value="Starred"></asp:ListItem>
@@ -196,12 +196,12 @@
 			</td>
 		</tr>			
             
-        <tr><td>Question Number:</td>
-		    <td><asp:TextBox ID="quesnoTextBox" runat="server" Text='<%# Bind("quesno") %>' 
-                    Width="160px" /></td>
+        <tr align="left"><td>Question Number:</td>
+		    <td><asp:TextBox ID="quesnoTextBox" runat="server" numeric="integer" Text='<%# Bind("quesno") %>' 
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	             
             
-		<tr><td>Name Of MLA/MP:</td>
+		<tr align="left"><td>Name Of MLA/MP:</td>
 		    <td>
                 <asp:DropDownList ID="Drop_mlaname" runat="server" DataSourceID="ods_mlaname" 
                     DataTextField="MLAname" DataValueField="MLAname">
@@ -209,40 +209,40 @@
             </td>
 		</tr>	            
             
-        <tr><td>Place Of MLA/MP:</td>
+        <tr align="left"><td>Place Of MLA/MP:</td>
 		    <td><asp:TextBox ID="mlaPlaceTextBox" runat="server" 
-                Text='<%# Bind("mlaPlace") %>' Width="160px" />
+                Text='<%# Bind("mlaPlace") %>' Width="160px" MaxLength="20" />
 			</td>
 		</tr>	              
                 
-        <tr><td>Subject:</td>
+        <tr align="left"><td>Subject:</td>
 		    <td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                    Width="160px" /></td>
+                    Width="160px" MaxLength="20" /></td>
 		</tr>	              
                 
-        <tr><td>Number Given By Government:</td>
-		    <td><asp:TextBox ID="NumberTextBox" runat="server" Text='<%# Bind("Number") %>' 
-                    Width="160px" /></td>
+        <tr align="left"><td>Number Given By Government:</td>
+		    <td><asp:TextBox ID="NumberTextBox" runat="server" numeric="integer" Text='<%# Bind("Number") %>' 
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	              
                 
-        <tr><td>Reply Sent:</td>
+        <tr align="left"><td>Reply Sent:</td>
 		    <td><asp:TextBox ID="Reply_SentTextBox" runat="server" 
-                    Text='<%# Bind("Reply_Sent") %>' Width="160px" />
+                    Text='<%# Bind("Reply_Sent") %>' Width="160px" MaxLength="30" />
 			</td>
 		</tr>	
                 
                 
-        <tr><td>Date On Which Information Is Sent:</td>
+        <tr align="left"><td>Date On Which Information Is Sent:</td>
 		    <td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Height="22px" Width="140px" /></td>
+                    Height="22px" Width="160px" /></td>
 		</tr>	               
                 
-        <tr><td>File Number:</td>
-		    <td><asp:TextBox ID="FilenoTextBox" runat="server" Text='<%# Bind("Fileno") %>' 
-                    Width="160px" /></td>
+        <tr align="left"><td>File Number:</td>
+		    <td><asp:TextBox ID="FilenoTextBox" runat="server" numeric="integer" Text='<%# Bind("Fileno") %>' 
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	             
                 
-        <tr><td>Remarks:</td>
+        <tr align="left"><td>Remarks:</td>
 		    <td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                     Height="60px" TextMode="MultiLine" Width="160px" /></td>
 		</tr>	             

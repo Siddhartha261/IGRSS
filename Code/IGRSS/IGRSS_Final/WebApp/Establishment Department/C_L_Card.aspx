@@ -130,30 +130,31 @@
         onitemupdated="FormView_C_L_Card_ItemUpdated" 
         onitemupdating="FormView_C_L_Card_ItemUpdating" >
         <EditItemTemplate>
-            <table>
-      <tr>
+            <table border>
+      <tr align="left">
 	     <td>Calendar Year:</td>
 		 <td><asp:TextBox ID="Calendar_YearTextBox" 
-                 runat="server"                                                                                                                                   
-                 Text='<%# Bind("Calendar_Year") %>' Width="160px" /></td>
+                 runat="server" numeric="integer"                                                                                                                                   
+                 Text='<%# Bind("Calendar_Year") %>' Width="160px" MaxLength="4" /></td>
 		 
 		 <td></td>
 		 <td></td>
 	 </tr>                                                                                                                                                      
-                                                                                                                                                                      <tr>
-		<td>Office/Department Name:</td>
-		<td>
+      
+      <tr><td>Office/Department Name:</td>
+		<td align="left">
             <asp:DropDownList ID="DropDownList_Office" runat="server" Width="160px" 
                 DataSourceID="ods_office" DataTextField="OfficeName" 
                 DataValueField="OfficeName">
             </asp:DropDownList>
                                                                                                                                                                           </td>
 																																									    <td></td>
-		<td></td>
-	</tr>                                                                                                                                                      
+		<td></td></tr>                                                                                                                                                                <tr>
+		
+	<%--</tr>--%>                                                                                                                                                      
                                                                                                                                                                      <tr>
 		<td>Employee Name:</td>
-		<td>
+		<td align="left">
             <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
                 DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
                 DataValueField="FirstName" Width="160px">
@@ -163,7 +164,7 @@
 		<td></td>
 	</tr>
 	
-    <tr>
+    <tr align="left">
 	    <td>Designation:</td>
 		<td>
             <asp:DropDownList ID="DropDownList_Designation" runat="server" 
@@ -180,32 +181,33 @@
 	   <td colspan="4">&nbsp;<h3>CASUAL LEAVE CARD</h3></td>
 	</tr>
     
-	      <tr>
+	      <tr align="left">
               <td>
                   Sr No:</td>
               <td>
-                  <asp:TextBox ID="Casual_SrNoTextBox" runat="server" 
-                      Text='<%# Bind("Casual_SrNo") %>' Width="160px" />
+                  <asp:TextBox ID="Casual_SrNoTextBox" runat="server" numeric="integer"
+                      Text='<%# Bind("Casual_SrNo") %>' Width="160px" MaxLength="10" />
               </td>
               <td>
                   Total Of Remaining Leaves:</td>
               <td>
-                  <asp:TextBox ID="Total_Of_Remaining_LeavesTextBox" runat="server" 
-                      Text='<%# Bind("Total_Of_Remaining_Leaves") %>' Width="160px" />
+                  <asp:TextBox ID="Total_Of_Remaining_LeavesTextBox" runat="server" numeric="integer"
+                      Text='<%# Bind("Total_Of_Remaining_Leaves") %>' Width="160px" 
+                      MaxLength="2" />
               </td>
           </tr>
     
-	<tr>
+	<tr align="left">
 	   <td>C.L. Date/Optional Leave:</td>
 	   <td><asp:TextBox ID="C_L_DateTextBox" runat="server" 
-            Text='<%# Bind("C_L_Date") %>' Width="150px" /></td>
+            Text='<%# Bind("C_L_Date") %>' Width="160px" /></td>
 	   
 	   <td>As On:</td>
 	   <td><asp:TextBox ID="As_OnTextBox" runat="server" Text='<%# Bind("As_On") %>' 
-               Width="140px" /></td>
+               Width="160px" /></td>
 	</tr>
     
-	<tr>
+	<tr align="left">
 	   <td>HalfDay/FullDay:</td>
 	   <td>
            <asp:RadioButtonList ID="RadioButtonList_HalfFullDay" runat="server" 
@@ -224,7 +226,7 @@
            </asp:RadioButtonList>
         </td>
 	</tr>                                                                                                                                                            
-    <tr>
+    <tr align="left">
 	   <td>FirstShift/SecondShift:</td>
 	   <td>
            <asp:RadioButtonList ID="RadioButtonList_shift" runat="server" 
@@ -236,23 +238,23 @@
 	   
 	   <td>Leave Applicant:</td>
 	   <td><asp:TextBox ID="Leave_ApplicantTextBox" runat="server" 
-          Text='<%# Bind("Leave_Applicant") %>' Width="160px" /></td>
+          Text='<%# Bind("Leave_Applicant") %>' Width="160px" MaxLength="30" /></td>
 	</tr>
     
-	<tr>
+	<tr align="left">
 	    <td>Reasons Of Leave:</td>
 		<td><asp:TextBox ID="Reasons_Of_LeaveTextBox" runat="server" 
             Text='<%# Bind("Reasons_Of_Leave") %>' Height="60px" Width="160px" /></td>
 		
 		<td>Leave Approved By:</td>
 		<td><asp:TextBox ID="Leave_Approved_ByTextBox" runat="server" 
-            Text='<%# Bind("Leave_Approved_By") %>' Width="160px" /></td>
+            Text='<%# Bind("Leave_Approved_By") %>' Width="160px" MaxLength="30" /></td>
 	</tr>
     
-	<tr>
+	<tr align="left">
 	   <td>Total Of Taken Leaves:</td>
 	   <td><asp:TextBox ID="Total_Of_Taken_LeavesTextBox" runat="server" 
-           Text='<%# Bind("Total_Of_Taken_Leaves") %>' Width="160px" /></td>
+           Text='<%# Bind("Total_Of_Taken_Leaves") %>' Width="160px" MaxLength="2" /></td>
 	   
 	   <td></td>
 	   <td></td>
@@ -274,18 +276,18 @@
         </EditItemTemplate>
         <InsertItemTemplate>
             <table>
-      <tr>
+      <tr align="left">
 	     <td>Calendar Year:</td>
-		 <td><asp:TextBox ID="Calendar_YearTextBox" 
+		 <td><asp:TextBox ID="Calendar_YearTextBox" numeric="integer"
                  runat="server"                                                                                                                                   
-                 Text='<%# Bind("Calendar_Year") %>' Width="160px" /></td>
+                 Text='<%# Bind("Calendar_Year") %>' Width="160px" MaxLength="4" /></td>
 		 
 		 <td></td>
 		 <td></td>
 	 </tr>                                                                                                                                                      
                                                                                                                                                                       <tr>
 		<td>Office/Department Name:</td>
-		<td>
+		<td align="left">
             <asp:DropDownList ID="DropDownList_Office" runat="server" Width="160px" 
                 DataSourceID="ods_office" DataTextField="OfficeName" 
                 DataValueField="OfficeName">
@@ -296,7 +298,7 @@
 	</tr>                                                                                                                                                      
                                                                                                                                                                      <tr>
 		<td>Employee Name:</td>
-		<td>
+		<td align="left">
             <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
                 DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
                 DataValueField="FirstName" Width="160px">
@@ -306,7 +308,7 @@
 		<td></td>
 	</tr>
 	
-    <tr>
+    <tr align="left">
 	    <td>Designation:</td>
 		<td>
             <asp:DropDownList ID="DropDownList_Designation" runat="server" 
@@ -323,32 +325,33 @@
 	   <td colspan="4">&nbsp;<h3>CASUAL LEAVE CARD</h3></td>
 	</tr>
     
-	      <tr>
+	      <tr align="left">
               <td>
                   Sr No:</td>
               <td>
-                  <asp:TextBox ID="Casual_SrNoTextBox" runat="server" 
-                      Text='<%# Bind("Casual_SrNo") %>' Width="160px" />
+                  <asp:TextBox ID="Casual_SrNoTextBox" runat="server" numeric="integer"
+                      Text='<%# Bind("Casual_SrNo") %>' Width="160px" MaxLength="10" />
               </td>
               <td>
                   Total Of Remaining Leaves:</td>
               <td>
-                  <asp:TextBox ID="Total_Of_Remaining_LeavesTextBox" runat="server" 
-                      Text='<%# Bind("Total_Of_Remaining_Leaves") %>' Width="160px" />
+                  <asp:TextBox ID="Total_Of_Remaining_LeavesTextBox" runat="server" numeric="integer"
+                      Text='<%# Bind("Total_Of_Remaining_Leaves") %>' Width="160px" 
+                      MaxLength="2" />
               </td>
           </tr>
     
-	<tr>
+	<tr align="left">
 	   <td>C.L. Date/Optional Leave:</td>
 	   <td><asp:TextBox ID="C_L_DateTextBox" runat="server" 
-            Text='<%# Bind("C_L_Date") %>' Width="150px" /></td>
+            Text='<%# Bind("C_L_Date") %>' Width="160px" /></td>
 	   
 	   <td>As On:</td>
 	   <td><asp:TextBox ID="As_OnTextBox" runat="server" Text='<%# Bind("As_On") %>' 
-               Width="140px" /></td>
+               Width="160px" /></td>
 	</tr>
     
-	<tr>
+	<tr align="left">
 	   <td>HalfDay/FullDay:</td>
 	   <td>
            <asp:RadioButtonList ID="RadioButtonList_HalfFullDay" runat="server" 
@@ -367,7 +370,7 @@
            </asp:RadioButtonList>
         </td>
 	</tr>                                                                                                                                                            
-    <tr>
+    <tr align="left">
 	   <td>FirstShift/SecondShift:</td>
 	   <td>
            <asp:RadioButtonList ID="RadioButtonList_shift" runat="server" 
@@ -379,23 +382,23 @@
 	   
 	   <td>Leave Applicant:</td>
 	   <td><asp:TextBox ID="Leave_ApplicantTextBox" runat="server" 
-          Text='<%# Bind("Leave_Applicant") %>' Width="160px" /></td>
+          Text='<%# Bind("Leave_Applicant") %>' Width="160px" MaxLength="30" /></td>
 	</tr>
     
-	<tr>
+	<tr align="left">
 	    <td>Reasons Of Leave:</td>
 		<td><asp:TextBox ID="Reasons_Of_LeaveTextBox" runat="server" 
             Text='<%# Bind("Reasons_Of_Leave") %>' Height="60px" Width="160px" /></td>
 		
 		<td>Leave Approved By:</td>
 		<td><asp:TextBox ID="Leave_Approved_ByTextBox" runat="server" 
-            Text='<%# Bind("Leave_Approved_By") %>' Width="160px" /></td>
+            Text='<%# Bind("Leave_Approved_By") %>' Width="160px" MaxLength="30" /></td>
 	</tr>
     
-	<tr>
+	<tr align="left">
 	   <td>Total Of Taken Leaves:</td>
-	   <td><asp:TextBox ID="Total_Of_Taken_LeavesTextBox" runat="server" 
-           Text='<%# Bind("Total_Of_Taken_Leaves") %>' Width="160px" /></td>
+	   <td><asp:TextBox ID="Total_Of_Taken_LeavesTextBox" runat="server" numeric="integer"
+           Text='<%# Bind("Total_Of_Taken_Leaves") %>' Width="160px" MaxLength="2" /></td>
 	   
 	   <td></td>
 	   <td></td>

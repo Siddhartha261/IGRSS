@@ -12,6 +12,7 @@ public partial class CCRALegal_SunavniRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_SunavniRegister.SetActiveView(Multiview_SunavniRegister.Views[1]);
         FormView_SunavniRegister.ChangeMode(FormViewMode.Insert);
     }
@@ -61,7 +62,7 @@ public partial class CCRALegal_SunavniRegister : System.Web.UI.Page
     {
         Multiview_SunavniRegister.SetActiveView(Formview);
         FormView_SunavniRegister.PageIndex = e.NewEditIndex;
-        FormView_SunavniRegister.DefaultMode = FormViewMode.Edit;
+        FormView_SunavniRegister.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_SunavniRegister_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -74,6 +75,7 @@ public partial class CCRALegal_SunavniRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to add record", true);
         }
+        Multiview_SunavniRegister.SetActiveView(ViewGrid);
     }
     protected void FormView_SunavniRegister_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
     {

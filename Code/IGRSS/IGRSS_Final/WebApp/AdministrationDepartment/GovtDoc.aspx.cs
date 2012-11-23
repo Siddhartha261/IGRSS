@@ -10,6 +10,7 @@ public partial class GovtDoc : System.Web.UI.Page
 
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         mvgovtdoc.SetActiveView(viewFv);
         FvGovtDoc.ChangeMode(FormViewMode.Insert); ;
     }
@@ -68,7 +69,7 @@ public partial class GovtDoc : System.Web.UI.Page
     {
         mvgovtdoc.SetActiveView(viewFv);
         FvGovtDoc.PageIndex = e.NewEditIndex;
-        FvGovtDoc.DefaultMode = FormViewMode.Edit;
+        FvGovtDoc.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
 
     }
@@ -93,6 +94,7 @@ public partial class GovtDoc : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        mvgovtdoc.SetActiveView(viewGrid);
     }
     protected void ObjectDataSource_govtdoc_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

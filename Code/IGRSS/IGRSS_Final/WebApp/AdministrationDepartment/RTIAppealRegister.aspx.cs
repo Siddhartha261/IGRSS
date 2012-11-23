@@ -14,6 +14,7 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
    
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         MultiView_RTI.SetActiveView(MultiView_RTI.Views[1]);
         FormView_RTI.ChangeMode(FormViewMode.Insert);
     }
@@ -63,7 +64,7 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
     {
         MultiView_RTI.SetActiveView(Formview);
         FormView_RTI.PageIndex = e.NewEditIndex;
-        FormView_RTI.DefaultMode = FormViewMode.Edit;
+        FormView_RTI.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_RTI_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -87,6 +88,7 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        MultiView_RTI.SetActiveView(ViewGrid);
     }
     protected void ods_RTI_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

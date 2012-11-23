@@ -12,6 +12,7 @@ public partial class Establishment_Department_Departmental_Inquiry_Register : Sy
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_Departmental_Inquiry_Register.SetActiveView(Multiview_Departmental_Inquiry_Register.Views[1]);
         FormView_Departmental_Inquiry_Register.ChangeMode(FormViewMode.Insert);
     }
@@ -63,7 +64,7 @@ public partial class Establishment_Department_Departmental_Inquiry_Register : Sy
     {
         Multiview_Departmental_Inquiry_Register.SetActiveView(Formview);
         FormView_Departmental_Inquiry_Register.PageIndex = e.NewEditIndex;
-        FormView_Departmental_Inquiry_Register.DefaultMode = FormViewMode.Edit;
+        FormView_Departmental_Inquiry_Register.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_Departmental_Inquiry_Register_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -88,6 +89,7 @@ public partial class Establishment_Department_Departmental_Inquiry_Register : Sy
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Departmental_Inquiry_Register.SetActiveView(ViewGrid);
     }
     protected void FormView_Departmental_Inquiry_Register_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {

@@ -12,6 +12,7 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_Inquiry.SetActiveView(Multiview_Inquiry.Views[1]);
         FormView_Inquiry.ChangeMode(FormViewMode.Insert);
     }
@@ -62,7 +63,7 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
     {
         Multiview_Inquiry.SetActiveView(Formview);
         FormView_Inquiry.PageIndex = e.NewEditIndex;
-        FormView_Inquiry.DefaultMode = FormViewMode.Edit;
+        FormView_Inquiry.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_Inquiry_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -86,6 +87,7 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Inquiry.SetActiveView(ViewGrid);
     }
     protected void ods_Inquiry_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

@@ -12,6 +12,7 @@ public partial class Account_Department_GrantRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_GrantRegister.SetActiveView(view2_Formview);
         FormView_GrantRegister.ChangeMode(FormViewMode.Insert);
     }
@@ -45,7 +46,7 @@ public partial class Account_Department_GrantRegister : System.Web.UI.Page
     {
         Multiview_GrantRegister.SetActiveView(view2_Formview);
         FormView_GrantRegister.PageIndex = e.NewEditIndex;
-        FormView_GrantRegister.DefaultMode = FormViewMode.Edit;
+        FormView_GrantRegister.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void GridView_GrantRegister_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -79,6 +80,7 @@ public partial class Account_Department_GrantRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_GrantRegister.SetActiveView(view1_GridView);
     }
 
     private void ShowMessage(string message, bool isError)

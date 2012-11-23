@@ -12,6 +12,7 @@ public partial class Account_Department_ChequeRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_ChequeRegister.SetActiveView(view2_Formview);
         FormView_ChequeRgister.ChangeMode(FormViewMode.Insert);
     }
@@ -41,7 +42,7 @@ public partial class Account_Department_ChequeRegister : System.Web.UI.Page
     {
         Multiview_ChequeRegister.SetActiveView(view2_Formview);
         FormView_ChequeRgister.PageIndex = e.NewEditIndex;
-        FormView_ChequeRgister.DefaultMode = FormViewMode.Edit;
+        FormView_ChequeRgister.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
 
     }
@@ -82,6 +83,7 @@ public partial class Account_Department_ChequeRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_ChequeRegister.SetActiveView(View1_GridView);
 
     }
     private void ShowMessage(string message, bool isError)

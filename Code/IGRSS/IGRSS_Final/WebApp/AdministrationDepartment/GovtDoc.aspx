@@ -147,39 +147,39 @@
                     onitemupdated="FvGovtDoc_ItemUpdated" onitemupdating="FvGovtDoc_ItemUpdating">
                     <EditItemTemplate>
                         <table align="center" cellspacing="5">
-<tr><td align="right">Details:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Details:</td><td align="left" style="width:50%">
     <asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' 
         Height="60px" Width="160px" /></td></tr>
-<tr><td align="right">Details Of Output:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Details Of Output:</td><td align="left" style="width:50%">
     <asp:TextBox ID="DetailsOfOutputTextBox" runat="server" 
         Text='<%# Bind("DetailsOfOutput") %>' Height="60px" Width="160px" /></td></tr>
-<tr><td align="right">Details Of Preserving Files:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Details Of Preserving Files:</td><td align="left" style="width:50%">
     <asp:TextBox ID="DetailsOfPreservingFilesTextBox" runat="server" 
         Text='<%# Bind("DetailsOfPreservingFiles") %>' Height="60px" Width="160px" /></td></tr>
-<tr><td align="right">File No:</td><td align="left" style="width:50%">
-    <asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-        Width="160px" /></td></tr>
-<tr><td align="right">Inward No:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">File No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+        Width="160px" MaxLength="10" /></td></tr>
+<tr align="left"><td align="right">Inward No:</td><td align="left" style="width:50%">
     <asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' 
-        Width="160px" /></td></tr>
-<tr><td align="right">Letter Date:</td><td align="left" style="width:50%">
+        Width="160px" MaxLength="10" /></td></tr>
+<tr align="left"><td align="right">Letter Date:</td><td align="left" style="width:50%">
     <asp:TextBox ID="LetterDateTextBox" runat="server" 
-        Text='<%# Bind("LetterDate") %>' Width="140px" /></td></tr>
-<tr><td align="right">Letter No:</td><td align="left" style="width:50%">
-    <asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' 
-        Width="160px" /></td></tr>
-<tr><td align="right">Name Of Department:</td><td align="left" style="width:50%">
+        Text='<%# Bind("LetterDate") %>' Width="160px" /></td></tr>
+<tr align="left"><td align="right">Letter No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="LetterNoTextBox" runat="server" numeric="integer" Text='<%# Bind("LetterNo") %>' 
+        Width="160px" MaxLength="10" /></td></tr>
+<tr align="left"><td align="right">Name Of Department:</td><td align="left" style="width:50%">
     <asp:DropDownList ID="DropDownListNameOfDepartment" runat="server" 
         DataSourceID="ObjectDataSource_govtdoc" DataTextField="NameOfDepartment" 
         DataValueField="NameOfDepartment" Width="160px">
     </asp:DropDownList>
     </td></tr>
-<tr><td align="right">Remarks:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Remarks:</td><td align="left" style="width:50%">
     <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
         Height="60px" Width="160px" /></td></tr>
-<tr><td align="right">Types Of Record:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Types Of Record:</td><td align="left" style="width:50%">
     <asp:TextBox ID="TypesOfRecordTextBox" runat="server" 
-        Text='<%# Bind("TypesOfRecord") %>' Width="160px" /></td></tr>
+        Text='<%# Bind("TypesOfRecord") %>' Width="160px" MaxLength="20" /></td></tr>
                      
                      <tr><td align="center" colspan="2">   <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                             CommandName="Update" Text="Update"  CssClass="standardButton" />
@@ -194,39 +194,39 @@
                     </EditItemTemplate>
                     <InsertItemTemplate>
                                    <table align="center" cellspacing="5">
-<tr><td align="right">Details:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Details:</td><td align="left" style="width:50%">
     <asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' 
         Height="60px" Width="160px" /></td></tr>
-<tr><td align="right">Details Of Output:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Details Of Output:</td><td align="left" style="width:50%">
     <asp:TextBox ID="DetailsOfOutputTextBox" runat="server" 
         Text='<%# Bind("DetailsOfOutput") %>' Height="60px" Width="160px" /></td></tr>
-<tr><td align="right">Details Of Preserving Files:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Details Of Preserving Files:</td><td align="left" style="width:50%">
     <asp:TextBox ID="DetailsOfPreservingFilesTextBox" runat="server" 
         Text='<%# Bind("DetailsOfPreservingFiles") %>' Height="60px" Width="160px" /></td></tr>
-<tr><td align="right">File No:</td><td align="left" style="width:50%">
-    <asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-        Width="160px" /></td></tr>
-<tr><td align="right">Inward No:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">File No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+        Width="160px" MaxLength="10" /></td></tr>
+<tr align="left"><td align="right">Inward No:</td><td align="left" style="width:50%">
     <asp:TextBox ID="InwardNoTextBox" runat="server" Text='<%# Bind("InwardNo") %>' 
-        Width="160px" /></td></tr>
-<tr><td align="right">Letter Date:</td><td align="left" style="width:50%">
+        Width="160px" MaxLength="10" /></td></tr>
+<tr align="left"><td align="right">Letter Date:</td><td align="left" style="width:50%">
     <asp:TextBox ID="LetterDateTextBox" runat="server" 
-        Text='<%# Bind("LetterDate") %>' Width="140px" /></td></tr>
-<tr><td align="right">Letter No:</td><td align="left" style="width:50%">
-    <asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' 
-        Width="160px" /></td></tr>
-<tr><td align="right">Name Of Department:</td><td align="left" style="width:50%">
+        Text='<%# Bind("LetterDate") %>' Width="160px" /></td></tr>
+<tr align="left"><td align="right">Letter No:</td><td align="left" style="width:50%">
+    <asp:TextBox ID="LetterNoTextBox" runat="server" numeric="integer" Text='<%# Bind("LetterNo") %>' 
+        Width="160px" MaxLength="10" /></td></tr>
+<tr align="left"><td align="right">Name Of Department:</td><td align="left" style="width:50%">
     <asp:DropDownList ID="DropDownListNameOfDepartment" runat="server" 
         DataSourceID="ObjectDataSource_govtdoc" DataTextField="NameOfDepartment" 
         DataValueField="NameOfDepartment" Width="160px">
     </asp:DropDownList>
     </td></tr>
-<tr><td align="right">Remarks:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Remarks:</td><td align="left" style="width:50%">
     <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
         Height="60px" Width="160px" /></td></tr>
-<tr><td align="right">Types Of Record:</td><td align="left" style="width:50%">
+<tr align="left"><td align="right">Types Of Record:</td><td align="left" style="width:50%">
     <asp:TextBox ID="TypesOfRecordTextBox" runat="server" 
-        Text='<%# Bind("TypesOfRecord") %>' Width="160px" /></td></tr>
+        Text='<%# Bind("TypesOfRecord") %>' Width="160px" MaxLength="20" /></td></tr>
 <tr>
    <td  colspan="2" align="center">
     <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 

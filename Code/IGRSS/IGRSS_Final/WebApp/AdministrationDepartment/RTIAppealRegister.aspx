@@ -125,6 +125,7 @@
 <asp:View ID="Formview" runat="server">
 <center>
 <h1>RTI Appeal Register</h1>
+<center></center>
 <asp:FormView ID="FormView_RTI" runat="server" DataKeyNames="Sr_No" 
         DataSourceID="ods_RTI" EnableModelValidation="True" DefaultMode="Insert" oniteminserting="FormView_RTI_ItemInserting" 
         onitemcommand="FormView_RTI_ItemCommand" 
@@ -137,39 +138,45 @@
 		    <td><asp:TextBox ID="Sr_NoTextBox" runat="server" Text='<%# Bind("Sr_No") %>' /></td>
 		</tr>    	--%>
             
-        <tr><td>Name Of Applicant:</td>
-		    <td><asp:TextBox ID="Appl_nameTextBox" runat="server" 
-                Text='<%# Bind("Appl_name") %>' Width="160px" /></td>
+        <tr><td class="gridItems">Name Of Applicant:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_nameTextBox" runat="server" 
+                Text='<%# Bind("Appl_name") %>' Width="160px" MaxLength="20" /></td>
 		</tr>	         
             
-        <tr><td>SurName Of Applicant:</td>
-		    <td><asp:TextBox ID="Appl_surnameTextBox" runat="server" 
-                Text='<%# Bind("Appl_surname") %>' Width="160px" /></td>
+        <tr><td class="gridItems">SurName Of Applicant:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_surnameTextBox" runat="server" 
+                Text='<%# Bind("Appl_surname") %>' Width="160px" MaxLength="20" /></td>
 		</tr>          
             
-        <tr><td>Date Of Application:</td>
-		    <td><asp:TextBox ID="Appl_DateTextBox" runat="server" 
-                Text='<%# Bind("Appl_Date") %>' Width="140px" /></td>
+        <tr><td class="gridItems">Date Of Application:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_DateTextBox" runat="server" 
+                Text='<%# Bind("Appl_Date") %>' Width="160px" /></td>
 		</tr>	          
             
-        <tr><td>PIO's Designation:</td>
-		    <td><asp:TextBox ID="PIO_desigTextBox" runat="server" 
-                Text='<%# Bind("PIO_desig") %>' Width="160px" /></td>
+        <tr><td class="gridItems">PIO's Designation:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="PIO_desigTextBox" runat="server" 
+                Text='<%# Bind("PIO_desig") %>' Width="160px" MaxLength="20" /></td>
 		</tr>        
             
-        <tr><td>PIO Date:</td>
-		    <td><asp:TextBox ID="PIO_dateTextBox" runat="server" 
-                Text='<%# Bind("PIO_date") %>' Width="140px" /></td>
+        <tr><td class="gridItems">PIO Date:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="PIO_dateTextBox" runat="server" 
+                Text='<%# Bind("PIO_date") %>' Width="160px" /></td>
 		</tr>        
             
-        <tr><td>Last Date According To 30 Days:</td>
-		    <td><asp:TextBox ID="Last_DateTextBox" runat="server" 
-                Text='<%# Bind("Last_Date") %>' Width="140px" /></td>
+        <tr><td class="gridItems">Last Date According To 30 Days:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Last_DateTextBox" runat="server" 
+                Text='<%# Bind("Last_Date") %>' Width="160px" /></td>
 		</tr>	
             
             
-        <tr><td>Decision Taken By</td>
-		    <td>
+        <tr><td class="gridItems">Decision Taken By</td>
+		    <td class="gridItems">
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
                     <asp:ListItem Text="Appellate" Value="Appellate"></asp:ListItem>
@@ -202,39 +209,45 @@
 		    <td><asp:TextBox ID="Sr_NoTextBox" runat="server" Text='<%# Bind("Sr_No") %>' /></td>
 		</tr>    	--%>
             
-        <tr><td>Name Of Applicant:</td>
-		    <td><asp:TextBox ID="Appl_nameTextBox" runat="server" 
-                Text='<%# Bind("Appl_name") %>' Width="160px" /></td>
+        <tr><td class="gridItems">Name Of Applicant:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_nameTextBox" runat="server" 
+                Text='<%# Bind("Appl_name") %>' Width="160px" MaxLength="20" /></td>
 		</tr>	         
             
-        <tr><td>SurName Of Applicant:</td>
-		    <td><asp:TextBox ID="Appl_surnameTextBox" runat="server" 
-                Text='<%# Bind("Appl_surname") %>' Width="160px" /></td>
+        <tr><td class="gridItems">SurName Of Applicant:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_surnameTextBox" runat="server" 
+                Text='<%# Bind("Appl_surname") %>' Width="160px" MaxLength="20" /></td>
 		</tr>          
             
-        <tr><td>Date Of Application:</td>
-		    <td><asp:TextBox ID="Appl_DateTextBox" runat="server" 
-                Text='<%# Bind("Appl_Date") %>' Width="140px" /></td>
+        <tr><td class="gridItems">Date Of Application:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_DateTextBox" runat="server" 
+                Text='<%# Bind("Appl_Date") %>' Width="160px" /></td>
 		</tr>	          
             
-        <tr><td>PIO's Designation:</td>
-		    <td><asp:TextBox ID="PIO_desigTextBox" runat="server" 
-                Text='<%# Bind("PIO_desig") %>' Width="160px" /></td>
+        <tr><td class="gridItems">PIO's Designation:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="PIO_desigTextBox" runat="server" 
+                Text='<%# Bind("PIO_desig") %>' Width="160px" MaxLength="20" /></td>
 		</tr>        
             
-        <tr><td>PIO Date:</td>
-		    <td><asp:TextBox ID="PIO_dateTextBox" runat="server" 
-                Text='<%# Bind("PIO_date") %>' Width="140px" /></td>
+        <tr><td class="gridItems">PIO Date:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="PIO_dateTextBox" runat="server" 
+                Text='<%# Bind("PIO_date") %>' Width="160px" /></td>
 		</tr>        
             
-        <tr><td>Last Date According To 30 Days:</td>
-		    <td><asp:TextBox ID="Last_DateTextBox" runat="server" 
-                Text='<%# Bind("Last_Date") %>' Width="140px" /></td>
+        <tr><td class="gridItems">Last Date According To 30 Days:</td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Last_DateTextBox" runat="server" 
+                Text='<%# Bind("Last_Date") %>' Width="160px" /></td>
 		</tr>	
             
             
-        <tr><td>Decision Taken By</td>
-		    <td>
+        <tr><td class="gridItems">Decision Taken By</td>
+		    <td class="gridItems">
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
                     <asp:ListItem Text="Appellate" Value="Appellate"></asp:ListItem>

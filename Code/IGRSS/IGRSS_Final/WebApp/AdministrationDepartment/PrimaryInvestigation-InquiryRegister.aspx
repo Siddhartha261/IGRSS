@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="PrimaryInvestigation-InquiryRegister.aspx.cs" Inherits="LatestPages_PrimaryInvestigation_InquiryRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
-<script language="javascript">
+    <script language="javascript">
 
     function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
@@ -100,19 +100,19 @@
         onitemupdating="FormView_Inquiry_ItemUpdating">
         <EditItemTemplate>
                             		<table>
-		    <tr><td>File No:</td>
-			    <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                        Width="160px" /></td>
+		    <tr align="left"><td>File No:</td>
+			    <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                        Width="160px" MaxLength="10" /></td>
 			</tr>        			
                     
-            <tr><td>Name Of Employee:</td>
+            <tr align="left"><td>Name Of Employee:</td>
 			    <td><asp:DropDownList ID="Name_Of_EmployeeDropDown" runat="server" 
                         DataSourceID="ObjectDataSourceEmployee" DataTextField="FirstName" 
                         DataValueField="FirstName"></asp:DropDownList>
                 </td>
 			</tr>	                 
                     
-            <tr><td>Designation Of Employee:</td>
+            <tr align="left"><td>Designation Of Employee:</td>
 			    <td>
                     <asp:DropDownList ID="Drop_employeedesignation" runat="server" 
                         DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name">
@@ -120,12 +120,12 @@
                 </td>
 			</tr>	                 
                     
-            <tr><td>Date Of Complaint:</td>
+            <tr align="left"><td>Date Of Complaint:</td>
 			    <td><asp:TextBox ID="Date_Of_ComplaintTextBox" runat="server" 
                     Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" /></td>
 			</tr>	                 
                     
-            <tr><td>Details To Vigilance Commissioner:</td>
+            <tr align="left"><td>Details To Vigilance Commissioner:</td>
 			    <td><asp:TextBox ID="Details_To_Vigilance_CommissionerTextBox" runat="server" 
                     Text='<%# Bind("Details_To_Vigilance_Commissioner") %>' Height="60px" 
                         Width="160px" /></td>
@@ -148,19 +148,19 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                             		<table>
-		    <tr><td>File No:</td>
-			    <td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                        Width="160px" /></td>
+		    <tr align="left"><td>File No:</td>
+			    <td><asp:TextBox ID="FileNoTextBox" numeric="integer" runat="server" Text='<%# Bind("FileNo") %>' 
+                        Width="160px" MaxLength="10" /></td>
 			</tr>        			
                     
-            <tr><td>Name Of Employee:</td>
+            <tr align="left"><td>Name Of Employee:</td>
 			    <td><asp:DropDownList ID="Name_Of_EmployeeDropDown" runat="server" 
                         DataSourceID="ObjectDataSourceEmployee" DataTextField="FirstName" 
                         DataValueField="FirstName"></asp:DropDownList>
                 </td>
 			</tr>	                 
                     
-            <tr><td>Designation Of Employee:</td>
+            <tr align="left"><td>Designation Of Employee:</td>
 			    <td>
                     <asp:DropDownList ID="Drop_employeedesignation" runat="server" 
                         DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name">
@@ -168,12 +168,12 @@
                 </td>
 			</tr>	                 
                     
-            <tr><td>Date Of Complaint:</td>
+            <tr align="left"><td>Date Of Complaint:</td>
 			    <td><asp:TextBox ID="Date_Of_ComplaintTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" /></td>
+                    Text='<%# Bind("Date_Of_Complaint") %>' Width="160px" /></td>
 			</tr>	                 
                     
-            <tr><td>Details To Vigilance Commissioner:</td>
+            <tr align="left"><td>Details To Vigilance Commissioner:</td>
 			    <td><asp:TextBox ID="Details_To_Vigilance_CommissionerTextBox" runat="server" 
                     Text='<%# Bind("Details_To_Vigilance_Commissioner") %>' Height="60px" 
                         Width="160px" /></td>

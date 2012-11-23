@@ -20,6 +20,7 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_Tarankit.SetActiveView(Multiview_Tarankit.Views[1]);
         FormView_Tarankit.ChangeMode(FormViewMode.Insert);
     }
@@ -69,7 +70,7 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
     {
         Multiview_Tarankit.SetActiveView(Formview);
         FormView_Tarankit.PageIndex = e.NewEditIndex;
-        FormView_Tarankit.DefaultMode = FormViewMode.Edit;
+        FormView_Tarankit.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_Tarankit_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -93,6 +94,7 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Tarankit.SetActiveView(ViewGrid);
     }
     protected void ods_Tarankit_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

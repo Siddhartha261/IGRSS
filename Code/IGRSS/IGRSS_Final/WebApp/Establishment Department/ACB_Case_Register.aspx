@@ -153,17 +153,17 @@
         ondatabound="FormView_ACB_Case_Register_DataBound" >
         <EditItemTemplate>
                 <table>
-        <tr>
+        <tr align="left">
 		    <td>File No:</td>
-			<td><asp:TextBox ID="File_NoTextBox" runat="server" Text='<%# Bind("File_No") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="File_NoTextBox" runat="server" numeric="integer" Text='<%# Bind("File_No") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Order Of Court:</td>
 			<td><asp:TextBox ID="Order_Of_CourtTextBox" runat="server" 
-                Text='<%# Bind("Order_Of_Court") %>' Width="160px" /></td>
+                Text='<%# Bind("Order_Of_Court") %>' Width="160px" MaxLength="20" /></td>
 		</tr>				
             
-        <tr>
+        <tr align="left">
 		    <td>Employee Name:</td>
 			<td>
                 <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
@@ -182,7 +182,7 @@
             </td>
 		</tr>          
             
-        <tr>
+        <tr align="left">
 		    <td>Designation:</td>
 			<td>
                 <asp:DropDownList ID="DropDownList_Designation" runat="server" 
@@ -192,34 +192,35 @@
             </td>
 			
 			<td>Appeal No:</td>
-			<td><asp:TextBox ID="High_court_Appeal_NoTextBox" runat="server" 
-                Text='<%# Bind("High_court_Appeal_No") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="High_court_Appeal_NoTextBox" numeric="integer" runat="server" 
+                Text='<%# Bind("High_court_Appeal_No") %>' Width="160px" MaxLength="10" /></td>
 		</tr>           
             
-        <tr>
+        <tr align="left">
 		    <td>Place Of Event Occured:</td>
 			<td><asp:TextBox ID="Place_Of_Event_OccuredTextBox" runat="server" 
-                Text='<%# Bind("Place_Of_Event_Occured") %>' Width="160px" /></td>
+                Text='<%# Bind("Place_Of_Event_Occured") %>' Width="160px" MaxLength="20" /></td>
 			
 			<td>Appeal Date:</td>
-			<td><asp:TextBox ID="High_Court_Appeal_DateTextBox" runat="server" 
-                Text='<%# Bind("High_Court_Appeal_Date") %>' Width="140px" /></td>
+			<td style="margin-left: 40px">
+                <asp:TextBox ID="High_Court_Appeal_DateTextBox" runat="server" 
+                Text='<%# Bind("High_Court_Appeal_Date") %>' Width="160px" /></td>
 		</tr>           
             
-        <tr>
+        <tr align="left">
 		    <td>Summary Of Case:</td>
 			<td><asp:TextBox ID="Summary_Of_CaseTextBox" runat="server" 
                 Text='<%# Bind("Summary_Of_Case") %>' Height="60px" Width="160px" /></td>
 			
 			<td>Order Of Appeal:</td>
 			<td><asp:TextBox ID="High_court_appeal_orderTextBox" runat="server" 
-                Text='<%# Bind("High_court_appeal_order") %>' Width="160px" /></td>
+                Text='<%# Bind("High_court_appeal_order") %>' Width="160px" MaxLength="20" /></td>
 		</tr>           
             
-        <tr>
+        <tr align="left">
 		    <td>F.I.R No:</td>
-			<td><asp:TextBox ID="FIR_NoTextBox" runat="server" Text='<%# Bind("FIR_No") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="FIR_NoTextBox" runat="server" numeric="integer" Text='<%# Bind("FIR_No") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Whether Appealed in Supreme Court:</td>
 			<td>
@@ -231,40 +232,41 @@
             </td>
 		</tr>         
             
-        <tr>
+        <tr align="left">
 		    <td>Court Case No:</td>
-			<td><asp:TextBox ID="Courst_Case_NoTextBox" runat="server" 
-                Text='<%# Bind("Courst_Case_No") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="Courst_Case_NoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Courst_Case_No") %>' Width="160px" MaxLength="10" /></td>
 			
 			<td>Appeal No:</td>
-			<td><asp:TextBox ID="Supreme_court_appeal_noTextBox" runat="server" 
-                Text='<%# Bind("Supreme_court_appeal_no") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="Supreme_court_appeal_noTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Supreme_court_appeal_no") %>' Width="160px" MaxLength="10" /></td>
 		</tr>          
             
-        <tr>
+        <tr align="left">
 		    <td>Permission Date Of Prosecution:</td>
 			<td><asp:TextBox ID="Permission_Date_Of_ProsecutionTextBox" runat="server" 
-                Text='<%# Bind("Permission_Date_Of_Prosecution") %>' Width="140px" /></td>
+                Text='<%# Bind("Permission_Date_Of_Prosecution") %>' Width="160px" /></td>
 			
 			<td>Appeal Date:</td>
 			<td><asp:TextBox ID="Supreme_court_appeal_dateTextBox" runat="server" 
-                Text='<%# Bind("Supreme_court_appeal_date") %>' Width="140px" /></td>
+                Text='<%# Bind("Supreme_court_appeal_date") %>' Width="160px" /></td>
 		</tr>           
             
-        <tr>
+        <tr align="left">
 		    <td>Date Of Suspension:</td>
 			<td><asp:TextBox ID="Date_Of_SuspensionTextBox" runat="server" 
-                Text='<%# Bind("Date_Of_Suspension") %>' Width="140px" /></td>
+                Text='<%# Bind("Date_Of_Suspension") %>' Width="160px" /></td>
 			
 			<td>Order Of Appeal:</td>
 			<td><asp:TextBox ID="Supreme_court_appeal_orderTextBox" runat="server" 
-                Text='<%# Bind("Supreme_court_appeal_order") %>' Width="160px" /></td>
+                Text='<%# Bind("Supreme_court_appeal_order") %>' Width="160px" 
+                    MaxLength="20" /></td>
 		</tr>          
             
-        <tr>
+        <tr align="left">
 		    <td>Re-Instate Date:</td>
 			<td><asp:TextBox ID="ReInstate_DateTextBox" runat="server" 
-                Text='<%# Bind("ReInstate_Date") %>' Width="140px" /></td>
+                Text='<%# Bind("ReInstate_Date") %>' Width="160px" /></td>
 			
 			<td>Remarks:</td>
 			<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
@@ -286,17 +288,17 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                 <table>
-        <tr>
+        <tr align="left">
 		    <td>File No:</td>
-			<td><asp:TextBox ID="File_NoTextBox" runat="server" Text='<%# Bind("File_No") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="File_NoTextBox" runat="server" numeric="integer" Text='<%# Bind("File_No") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Order Of Court:</td>
 			<td><asp:TextBox ID="Order_Of_CourtTextBox" runat="server" 
-                Text='<%# Bind("Order_Of_Court") %>' Width="160px" /></td>
+                Text='<%# Bind("Order_Of_Court") %>' Width="160px" MaxLength="20" /></td>
 		</tr>				
             
-        <tr>
+        <tr align="left">
 		    <td>Employee Name:</td>
 			<td>
                 <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
@@ -315,7 +317,7 @@
             </td>
 		</tr>          
             
-        <tr>
+        <tr align="left">
 		    <td>Designation:</td>
 			<td>
                 <asp:DropDownList ID="DropDownList_Designation" runat="server" 
@@ -325,34 +327,35 @@
             </td>
 			
 			<td>Appeal No:</td>
-			<td><asp:TextBox ID="High_court_Appeal_NoTextBox" runat="server" 
-                Text='<%# Bind("High_court_Appeal_No") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="High_court_Appeal_NoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("High_court_Appeal_No") %>' Width="160px" MaxLength="10" /></td>
 		</tr>           
             
-        <tr>
+        <tr align="left">
 		    <td>Place Of Event Occured:</td>
 			<td><asp:TextBox ID="Place_Of_Event_OccuredTextBox" runat="server" 
-                Text='<%# Bind("Place_Of_Event_Occured") %>' Width="160px" /></td>
+                Text='<%# Bind("Place_Of_Event_Occured") %>' Width="160px" MaxLength="20" /></td>
 			
 			<td>Appeal Date:</td>
-			<td><asp:TextBox ID="High_Court_Appeal_DateTextBox" runat="server" 
-                Text='<%# Bind("High_Court_Appeal_Date") %>' Width="140px" /></td>
+			<td style="margin-left: 40px">
+                <asp:TextBox ID="High_Court_Appeal_DateTextBox" runat="server" 
+                Text='<%# Bind("High_Court_Appeal_Date") %>' Width="160px" /></td>
 		</tr>           
             
-        <tr>
+        <tr align="left">
 		    <td>Summary Of Case:</td>
 			<td><asp:TextBox ID="Summary_Of_CaseTextBox" runat="server" 
                 Text='<%# Bind("Summary_Of_Case") %>' Height="60px" Width="160px" /></td>
 			
 			<td>Order Of Appeal:</td>
 			<td><asp:TextBox ID="High_court_appeal_orderTextBox" runat="server" 
-                Text='<%# Bind("High_court_appeal_order") %>' Width="160px" /></td>
+                Text='<%# Bind("High_court_appeal_order") %>' Width="160px" MaxLength="20" /></td>
 		</tr>           
             
-        <tr>
+        <tr align="left">
 		    <td>F.I.R No:</td>
-			<td><asp:TextBox ID="FIR_NoTextBox" runat="server" Text='<%# Bind("FIR_No") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="FIR_NoTextBox" runat="server" numeric="integer" Text='<%# Bind("FIR_No") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Whether Appealed in Supreme Court:</td>
 			<td>
@@ -364,40 +367,41 @@
             </td>
 		</tr>         
             
-        <tr>
+        <tr align="left">
 		    <td>Court Case No:</td>
-			<td><asp:TextBox ID="Courst_Case_NoTextBox" runat="server" 
-                Text='<%# Bind("Courst_Case_No") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="Courst_Case_NoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Courst_Case_No") %>' Width="160px" MaxLength="10" /></td>
 			
 			<td>Appeal No:</td>
-			<td><asp:TextBox ID="Supreme_court_appeal_noTextBox" runat="server" 
-                Text='<%# Bind("Supreme_court_appeal_no") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="Supreme_court_appeal_noTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Supreme_court_appeal_no") %>' Width="160px" MaxLength="10" /></td>
 		</tr>          
             
-        <tr>
+        <tr align="left">
 		    <td>Permission Date Of Prosecution:</td>
 			<td><asp:TextBox ID="Permission_Date_Of_ProsecutionTextBox" runat="server" 
-                Text='<%# Bind("Permission_Date_Of_Prosecution") %>' Width="140px" /></td>
+                Text='<%# Bind("Permission_Date_Of_Prosecution") %>' Width="160px" /></td>
 			
 			<td>Appeal Date:</td>
 			<td><asp:TextBox ID="Supreme_court_appeal_dateTextBox" runat="server" 
-                Text='<%# Bind("Supreme_court_appeal_date") %>' Width="140px" /></td>
+                Text='<%# Bind("Supreme_court_appeal_date") %>' Width="160px" /></td>
 		</tr>           
             
-        <tr>
+        <tr align="left">
 		    <td>Date Of Suspension:</td>
 			<td><asp:TextBox ID="Date_Of_SuspensionTextBox" runat="server" 
-                Text='<%# Bind("Date_Of_Suspension") %>' Width="140px" /></td>
+                Text='<%# Bind("Date_Of_Suspension") %>' Width="160px" /></td>
 			
 			<td>Order Of Appeal:</td>
 			<td><asp:TextBox ID="Supreme_court_appeal_orderTextBox" runat="server" 
-                Text='<%# Bind("Supreme_court_appeal_order") %>' Width="160px" /></td>
+                Text='<%# Bind("Supreme_court_appeal_order") %>' Width="160px" 
+                    MaxLength="20" /></td>
 		</tr>          
             
-        <tr>
+        <tr align="left">
 		    <td>Re-Instate Date:</td>
 			<td><asp:TextBox ID="ReInstate_DateTextBox" runat="server" 
-                Text='<%# Bind("ReInstate_Date") %>' Width="140px" /></td>
+                Text='<%# Bind("ReInstate_Date") %>' Width="160px" /></td>
 			
 			<td>Remarks:</td>
 			<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 

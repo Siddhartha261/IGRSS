@@ -14,6 +14,7 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
 
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        
         Multiview_HighCourtReg.SetActiveView(Multiview_HighCourtReg.Views[1]);
         FormView_HighCourtReg.ChangeMode(FormViewMode.Insert);
     }
@@ -66,7 +67,7 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
     {
         Multiview_HighCourtReg.SetActiveView(Formview);
         FormView_HighCourtReg.PageIndex = e.NewEditIndex;
-        FormView_HighCourtReg.DefaultMode = FormViewMode.Edit;
+        FormView_HighCourtReg.DefaultMode=FormViewMode.Edit;
         e.NewEditIndex = -1;
     }
     protected void FormView_HighCourtReg_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -92,6 +93,7 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        
     }
     protected void ods_HighCourtReg_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

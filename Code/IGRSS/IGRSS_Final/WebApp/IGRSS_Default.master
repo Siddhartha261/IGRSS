@@ -47,6 +47,26 @@
             }
         }
 
+        $(document).ready(function () {
+            $('input[numeric]').keyup(function () {
+                var d = $(this).attr('numeric');
+                var val = $(this).val();
+                var orignalValue = val;
+                val = val.replace(/[0-9]*/g, "");
+                var msg = "Only Numeric Values allowed.";
+                if (val != '') {
+                    orignalValue = orignalValue.replace(/([^0-9].*)/g, "")
+                    $(this).val(orignalValue);
+                    alert(msg);
+                }
+            });
+        });
+
+        function charactersOnly(val) {
+            return val.search(/[^a-zA-Z]+/) === -1;
+        }
+
+
         function resetTextFields() {
             $("input[type='text']").each(function (index, element) { $(element).val(""); });
             $("textarea").each(function (index, element) { $(element).val(""); });

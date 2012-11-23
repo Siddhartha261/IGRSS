@@ -105,29 +105,29 @@
         onitemupdating="FormView_SunavniRegister_ItemUpdating" >
         <EditItemTemplate>
                            <table>
-		    <tr>
+		    <tr align="left">
 			    <td>Appeal No:</td>
 				<td>
-                    <asp:DropDownList ID="DropDownList_AppealNo" runat="server" 
+                    <asp:DropDownList ID="DropDownList_AppealNo" runat="server"
                         DataSourceID="ods_AppealNo" DataTextField="SrNo" DataValueField="SrNo" 
                         Width="160px">
                     </asp:DropDownList>
                 </td>
 			</tr>	        
                     
-            <tr>
+            <tr align="left">
 			    <td>File No:</td>
-				<td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                        Width="160px" /></td>
+				<td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                        Width="160px" MaxLength="10" /></td>
 			</tr>                   
                     
-            <tr>
+            <tr align="left">
 			    <td>Name Of Petitioner:</td>
 				<td><asp:TextBox ID="NameOfPetitionerTextBox" runat="server" 
-                        Text='<%# Bind("NameOfPetitioner") %>' Width="160px" /></td>
+                        Text='<%# Bind("NameOfPetitioner") %>' Width="160px" MaxLength="30" /></td>
 			</tr>                   
                     
-            <tr>
+            <tr align="left">
 			    <td>Versus:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
@@ -137,22 +137,22 @@
                 </td>
 			</tr>                  
                     
-            <tr>
+            <tr align="left">
 			    <td>Issue Date Of Letter:</td>
 				<td><asp:TextBox ID="IssueDateOfLetterTextBox" runat="server" 
-                        Text='<%# Bind("IssueDateOfLetter") %>' Width="140px" /></td>
+                        Text='<%# Bind("IssueDateOfLetter") %>' Width="160px" /></td>
 			</tr>                  
                     
-            <tr>
+            <tr align="left">
 			    <td>Date Of Hearing:</td>
 				<td><asp:TextBox ID="DateOfHearingTextBox" runat="server" 
-                        Text='<%# Bind("DateOfHearing") %>' Width="140px" /></td>
+                        Text='<%# Bind("DateOfHearing") %>' Width="160px" /></td>
 			</tr>                  
                     
-            <tr>
+            <tr align="left">
 			    <td>Result:</td>
 				<td><asp:TextBox ID="ResultTextBox" runat="server" Text='<%# Bind("Result") %>' 
-                        Width="160px" /></td>
+                        Width="160px" MaxLength="20" /></td>
 			</tr>                    
                     
             <tr>
@@ -172,7 +172,7 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                            <table>
-		    <tr>
+		    <tr align="left">
 			    <td>Appeal No:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_AppealNo" runat="server" 
@@ -182,19 +182,19 @@
                 </td>
 			</tr>	        
                     
-            <tr>
+            <tr align="left">
 			    <td>File No:</td>
-				<td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                        Width="160px" /></td>
+				<td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                        Width="160px" MaxLength="10" /></td>
 			</tr>                   
                     
-            <tr>
+            <tr align="left">
 			    <td>Name Of Petitioner:</td>
 				<td><asp:TextBox ID="NameOfPetitionerTextBox" runat="server" 
-                        Text='<%# Bind("NameOfPetitioner") %>' Width="160px" /></td>
+                        Text='<%# Bind("NameOfPetitioner") %>' Width="160px" MaxLength="30" /></td>
 			</tr>                   
                     
-            <tr>
+            <tr align="left">
 			    <td>Versus:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
@@ -204,22 +204,22 @@
                 </td>
 			</tr>                  
                     
-            <tr>
+            <tr align="left">
 			    <td>Issue Date Of Letter:</td>
 				<td><asp:TextBox ID="IssueDateOfLetterTextBox" runat="server" 
-                        Text='<%# Bind("IssueDateOfLetter") %>' Width="140px" /></td>
+                        Text='<%# Bind("IssueDateOfLetter") %>' Width="160px" /></td>
 			</tr>                  
                     
-            <tr>
+            <tr align="left">
 			    <td>Date Of Hearing:</td>
 				<td><asp:TextBox ID="DateOfHearingTextBox" runat="server" 
-                        Text='<%# Bind("DateOfHearing") %>' Width="140px" /></td>
+                        Text='<%# Bind("DateOfHearing") %>' Width="160px" /></td>
 			</tr>                  
                     
-            <tr>
+            <tr align="left">
 			    <td>Result:</td>
 				<td><asp:TextBox ID="ResultTextBox" runat="server" Text='<%# Bind("Result") %>' 
-                        Width="160px" /></td>
+                        Width="160px" MaxLength="20" /></td>
 			</tr>                    
                     
             <tr>

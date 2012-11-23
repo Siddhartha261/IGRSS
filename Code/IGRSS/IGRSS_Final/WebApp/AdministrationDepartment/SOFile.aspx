@@ -142,23 +142,23 @@
                 <%--  <tr><td>SrNo:</td>
 									    <td><asp:TextBox ID="SrNoTextBox" runat="server" Text='<%# Bind("SrNo") %>' /></td>
 									</tr>															--%>
-                <tr>
+                <tr align="left">
                     <td>
                         Circulars:</td>
                     <td>
-                        <asp:TextBox ID="CircularsTextBox" runat="server" 
-                            Text='<%# Bind("Circulars") %>' Width="160px" />
+                        <asp:TextBox ID="CircularsTextBox" numeric="integer" runat="server" 
+                            Text='<%# Bind("Circulars") %>' Width="160px" MaxLength="10" />
                     </td>
                 </tr>
-                <tr>
+                <tr align="left">
                     <td>
                         Date Of Circulars:</td>
                     <td>
                         <asp:TextBox ID="DateOfCircularsTextBox" runat="server" 
-                            Text='<%# Bind("DateOfCirculars") %>' Width="140px" TabIndex="1" />
+                            Text='<%# Bind("DateOfCirculars") %>' Width="160px" TabIndex="1" />
                     </td>
                 </tr>
-                <tr>
+                <tr align="left">
                     <td>
                         From Which Department:</td>
                     <td>
@@ -168,20 +168,20 @@
                         </asp:DropDownList>
                     </td>
                 </tr>
-                <tr>
+                <tr align="left">
                     <td>
                         Subject:</td>
                     <td>
                         <asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                            Width="160px" TabIndex="3" />
+                            Width="160px" TabIndex="3" MaxLength="20" />
                     </td>
                 </tr>
-                <tr>
+                <tr align="left">
                     <td>
                         Page No:</td>
                     <td>
-                        <asp:TextBox ID="PageNoTextBox" runat="server" Text='<%# Bind("PageNo") %>' 
-                            Width="160px" TabIndex="4" />
+                        <asp:TextBox ID="PageNoTextBox" runat="server" numeric="integer" Text='<%# Bind("PageNo") %>' 
+                            Width="160px" TabIndex="4" MaxLength="10" />
                     </td>
                 </tr>
                 <tr>
@@ -202,23 +202,23 @@
                 <%--  <tr><td>SrNo:</td>
 									    <td><asp:TextBox ID="SrNoTextBox" runat="server" Text='<%# Bind("SrNo") %>' /></td>
 									</tr>															--%>
-                <tr>
+                <tr align="left">
                     <td>
                         Circulars:</td>
                     <td>
-                        <asp:TextBox ID="CircularsTextBox" runat="server" 
-                            Text='<%# Bind("Circulars") %>' Width="160px" />
+                        <asp:TextBox ID="CircularsTextBox" runat="server" numeric="integer"
+                            Text='<%# Bind("Circulars") %>' Width="160px" MaxLength="10" />
                     </td>
                 </tr>
-                <tr>
+                <tr align="left">
                     <td>
                         Date Of Circulars:</td>
                     <td>
                         <asp:TextBox ID="DateOfCircularsTextBox" runat="server" 
-                            Text='<%# Bind("DateOfCirculars") %>' Width="140px" TabIndex="1" />
+                            Text='<%# Bind("DateOfCirculars") %>' Width="160px" TabIndex="1" />
                     </td>
                 </tr>
-                <tr>
+                <tr align="left">
                     <td>
                         From Which Department:</td>
                     <td>
@@ -228,20 +228,20 @@
                         </asp:DropDownList>
                     </td>
                 </tr>
-                <tr>
+                <tr align="left">
                     <td>
                         Subject:</td>
                     <td>
                         <asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
-                            Width="160px" TabIndex="3" />
+                            Width="160px" TabIndex="3" MaxLength="20" />
                     </td>
                 </tr>
-                <tr>
+                <tr align="left">
                     <td>
                         Page No:</td>
                     <td>
-                        <asp:TextBox ID="PageNoTextBox" runat="server" Text='<%# Bind("PageNo") %>' 
-                            Width="160px" TabIndex="4" />
+                        <asp:TextBox ID="PageNoTextBox" runat="server" numeric="integer" Text='<%# Bind("PageNo") %>' 
+                            Width="160px" TabIndex="4" MaxLength="10" />
                     </td>
                 </tr>
                 <tr>

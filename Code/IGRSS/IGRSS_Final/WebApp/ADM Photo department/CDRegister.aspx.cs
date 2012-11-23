@@ -12,6 +12,7 @@ public partial class ADM_Photo_department_CDRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_CDRegister.SetActiveView(view2_Formview);
         FormView_CDRegister.ChangeMode(FormViewMode.Insert);
 
@@ -60,7 +61,7 @@ public partial class ADM_Photo_department_CDRegister : System.Web.UI.Page
     {
         Multiview_CDRegister.SetActiveView(view2_Formview);
         FormView_CDRegister.PageIndex = e.NewEditIndex;
-        FormView_CDRegister.DefaultMode = FormViewMode.Edit;
+        FormView_CDRegister.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_CDRegister_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -84,6 +85,7 @@ public partial class ADM_Photo_department_CDRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_CDRegister.SetActiveView(view1_GridView);
     }
     protected void ods_CDRegister_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

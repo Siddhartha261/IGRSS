@@ -20,8 +20,7 @@ public partial class LatestPages_VigilanceRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
-       
-      
+        infoDiv.Visible = false;      
         Multiview_Vigilance.SetActiveView(view2_Formview);
         FormView_Vigilance.ChangeMode(FormViewMode.Insert);
     }
@@ -76,6 +75,7 @@ public partial class LatestPages_VigilanceRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Vigilance.SetActiveView(view1_GridView);
     }
     protected void ods_Vigilance_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {
@@ -103,7 +103,7 @@ public partial class LatestPages_VigilanceRegister : System.Web.UI.Page
     {
         Multiview_Vigilance.SetActiveView(view2_Formview);
             FormView_Vigilance.PageIndex = e.NewEditIndex;
-            FormView_Vigilance.DefaultMode = FormViewMode.Edit;
+            FormView_Vigilance.ChangeMode(FormViewMode.Edit);
            e.NewEditIndex = -1;
     }
     protected void FormView_Vigilance_ItemInserting(object sender, FormViewInsertEventArgs e)

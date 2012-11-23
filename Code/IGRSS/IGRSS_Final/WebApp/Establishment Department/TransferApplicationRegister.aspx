@@ -111,7 +111,7 @@
         onitemupdating="FormView_TransferAppl_ItemUpdating" >
         <EditItemTemplate>
                                    <table>           
-			        <tr>
+			        <tr align="left">
 					   <td>Details Of Designation:</td>
 					   <td>
                            <asp:ListBox ID="ListBox_Designation" runat="server" 
@@ -128,7 +128,7 @@
                         </td>
 					</tr>				   
                        
-                    <tr>
+                    <tr align="left">
 					   <td>Employee Name:</td>
 					   <td>
                            <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
@@ -146,10 +146,10 @@
                         </td>
 					</tr>                       
                        
-                    <tr>
+                    <tr align="left">
 					   <td>Application Date:</td>
 					   <td><asp:TextBox ID="Application_DateTextBox" runat="server" 
-                           Text='<%# Bind("Application_Date") %>' Width="140px" /></td>
+                           Text='<%# Bind("Application_Date") %>' Width="160px" /></td>
 					   
 					   <td>Reason For Request:</td>
 					   <td>
@@ -158,7 +158,7 @@
                         </td>
 					</tr>                      
                        
-                    <tr>
+                    <tr align="left">
 					   <td>Current Place:</td>
 					   <td>
                            <asp:DropDownList ID="DropDownList_CurrentPlace" runat="server" 
@@ -170,14 +170,14 @@
 					   <td>Disposed On:</td>
 					   <td>
                            <asp:TextBox ID="Disposed_OnTextBox" runat="server" 
-                               Text='<%# Bind("Disposed_On") %>' Width="140px" />
+                               Text='<%# Bind("Disposed_On") %>' Width="160px" />
                         </td>
 					</tr>		
                                               
-                    <tr>
+                    <tr align="left">
 					   <td>Joining Date On Current Place:</td>
 					   <td><asp:TextBox ID="Joining_DateTextBox" runat="server" 
-                           Text='<%# Bind("Joining_Date") %>' Width="140px" /></td>
+                           Text='<%# Bind("Joining_Date") %>' Width="160px" /></td>
 					   
 					   <td>Remarks:</td>
 					   <td>
@@ -201,7 +201,7 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                                    <table>           
-			        <tr>
+			        <tr align="left">
 					   <td>Details Of Designation:</td>
 					   <td>
                            <asp:ListBox ID="ListBox_Designation" runat="server" 
@@ -218,7 +218,7 @@
                         </td>
 					</tr>				   
                        
-                    <tr>
+                    <tr align="left">
 					   <td>Employee Name:</td>
 					   <td>
                            <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
@@ -236,10 +236,10 @@
                         </td>
 					</tr>                       
                        
-                    <tr>
+                    <tr align="left">
 					   <td>Application Date:</td>
 					   <td><asp:TextBox ID="Application_DateTextBox" runat="server" 
-                           Text='<%# Bind("Application_Date") %>' Width="140px" /></td>
+                           Text='<%# Bind("Application_Date") %>' Width="160px" /></td>
 					   
 					   <td>Reason For Request:</td>
 					   <td>
@@ -248,7 +248,7 @@
                         </td>
 					</tr>                      
                        
-                    <tr>
+                    <tr align="left">
 					   <td>Current Place:</td>
 					   <td>
                            <asp:DropDownList ID="DropDownList_CurrentPlace" runat="server" 
@@ -260,14 +260,14 @@
 					   <td>Disposed On:</td>
 					   <td>
                            <asp:TextBox ID="Disposed_OnTextBox" runat="server" 
-                               Text='<%# Bind("Disposed_On") %>' Width="140px" />
+                               Text='<%# Bind("Disposed_On") %>' Width="160px" />
                         </td>
 					</tr>		
                                               
-                    <tr>
+                    <tr align="left">
 					   <td>Joining Date On Current Place:</td>
 					   <td><asp:TextBox ID="Joining_DateTextBox" runat="server" 
-                           Text='<%# Bind("Joining_Date") %>' Width="140px" /></td>
+                           Text='<%# Bind("Joining_Date") %>' Width="160px" /></td>
 					   
 					   <td>Remarks:</td>
 					   <td>

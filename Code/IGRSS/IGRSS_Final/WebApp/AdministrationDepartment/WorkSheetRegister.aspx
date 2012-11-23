@@ -159,33 +159,33 @@
             onitemcommand="FormView_worksheet_ItemCommand">
         <EditItemTemplate>
                 <table>
-        <tr><td>WorkSheet No:</td>
-		    <td><asp:TextBox ID="WorkSheet_NoTextBox" runat="server" 
-                Text='<%# Bind("WorkSheet_No") %>' Width="160px" />
+        <tr align="left"><td>WorkSheet No:</td>
+		    <td><asp:TextBox ID="WorkSheet_NoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("WorkSheet_No") %>' Width="160px" MaxLength="10" />
 			</td>
 		</tr>		
            
-		<tr><td>Inward No:</td>
-		    <td><asp:TextBox ID="Inward_NoTextBox" runat="server" 
+		<tr align="left"><td>Inward No:</td>
+		    <td style="margin-left: 40px"><asp:TextBox ID="Inward_NoTextBox" MaxLength="10" runat="server" 
                 Text='<%# Bind("Inward_No") %>' Width="160px" />
 			</td>
 		</tr>        
             				
-        <tr><td>Name Of Person:</td>
+        <tr align="left"><td>Name Of Person:</td>
 		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" 
-                Text='<%# Bind("Name_Of_Person") %>' Width="160px" />
+                Text='<%# Bind("Name_Of_Person") %>' Width="160px" MaxLength="30" />
 			</td>
 		</tr>          
             			
-        <tr><td>Letter Details:</td>
+        <tr align="left"><td>Letter Details:</td>
 		    <td><asp:TextBox ID="Letter_DetailsTextBox" runat="server" Height="60px" 
                 Text='<%# Bind("Letter_Details") %>' TextMode="MultiLine" Width="160px" />
 			</td>
 		</tr>           
             				
-        <tr><td>Work Disposal Date:</td>
+        <tr align="left"><td>Work Disposal Date:</td>
 		    <td><asp:TextBox ID="Work_Disposal_DateTextBox" runat="server" 
-                Text='<%# Bind("Work_Disposal_Date") %>' Width="140px" />
+                Text='<%# Bind("Work_Disposal_Date") %>' Width="160px" />
 			</td>
 		</tr>           
             			
@@ -206,33 +206,33 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                 <table>
-        <tr><td>WorkSheet No:</td>
-		    <td><asp:TextBox ID="WorkSheet_NoTextBox" runat="server" 
-                Text='<%# Bind("WorkSheet_No") %>' Width="160px" />
+        <tr align="left"><td>WorkSheet No:</td>
+		    <td><asp:TextBox ID="WorkSheet_NoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("WorkSheet_No") %>' Width="160px" MaxLength="10" />
 			</td>
 		</tr>		
            
-		<tr><td>Inward No:</td>
-		    <td><asp:TextBox ID="Inward_NoTextBox" runat="server" 
+		<tr align="left"><td>Inward No:</td>
+		    <td><asp:TextBox ID="Inward_NoTextBox" runat="server" MaxLength="10"
                 Text='<%# Bind("Inward_No") %>' Width="160px" />
 			</td>
 		</tr>        
             				
-        <tr><td>Name Of Person:</td>
+        <tr align="left"><td>Name Of Person:</td>
 		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" 
-                Text='<%# Bind("Name_Of_Person") %>' Width="160px" />
+                Text='<%# Bind("Name_Of_Person") %>' Width="160px" MaxLength="30" />
 			</td>
 		</tr>          
             			
-        <tr><td>Letter Details:</td>
+        <tr align="left"><td>Letter Details:</td>
 		    <td><asp:TextBox ID="Letter_DetailsTextBox" runat="server" Height="60px" 
                 Text='<%# Bind("Letter_Details") %>' TextMode="MultiLine" Width="160px" />
 			</td>
 		</tr>           
             				
-        <tr><td>Work Disposal Date:</td>
+        <tr align="left"><td>Work Disposal Date:</td>
 		    <td><asp:TextBox ID="Work_Disposal_DateTextBox" runat="server" 
-                Text='<%# Bind("Work_Disposal_Date") %>' Width="140px" />
+                Text='<%# Bind("Work_Disposal_Date") %>' Width="160px" />
 			</td>
 		</tr>           
             			

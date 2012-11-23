@@ -24,6 +24,7 @@ public partial class LatestPages_SOFile : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_SOFile.SetActiveView(Formview);
         FormView_SOFile.ChangeMode(FormViewMode.Insert);
     }
@@ -77,7 +78,7 @@ public partial class LatestPages_SOFile : System.Web.UI.Page
     {
         Multiview_SOFile.SetActiveView(Formview);
         FormView_SOFile.PageIndex = e.NewEditIndex;
-        FormView_SOFile.DefaultMode = FormViewMode.Edit;
+        FormView_SOFile.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
 
     }
@@ -106,6 +107,7 @@ public partial class LatestPages_SOFile : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_SOFile.SetActiveView(GridView);
     }
 
 

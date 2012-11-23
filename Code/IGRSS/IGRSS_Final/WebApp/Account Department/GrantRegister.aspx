@@ -131,34 +131,38 @@
         onitemupdated="FormView_GrantRegister_ItemUpdated">
         <EditItemTemplate>
             <table align="center" cellspacing="5">
-			 <tr><td> Bill No:</td><td><asp:TextBox ID="BillNoTextBox" runat="server" 
-                     Text='<%# Bind("BillNo") %>' Width="160px" /></td></tr>
+			 <tr align="left"><td> Bill No:</td><td>
+                 <asp:TextBox ID="BillNoTextBox" runat="server" numeric="integer"
+                     Text='<%# Bind("BillNo") %>' Width="160px" MaxLength="10" /></td></tr>
 			
             
-            <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" 
-                    Text='<%# Bind("Date") %>' Width="140px" /></td></tr>
+            <tr align="left"><td>Date:</td><td> 
+                <asp:TextBox ID="DateTextBox" runat="server" 
+                    Text='<%# Bind("Date") %>' Width="160px" /></td></tr>
             
            
-            <tr><td> Details Of Bill:</td><td>
+            <tr align="left"><td> Details Of Bill:</td><td>
                 <asp:TextBox ID="DetailOfBillTextBox" runat="server" 
-                Text='<%# Bind("DetailOfBill") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("DetailOfBill") %>' Width="160px" Height="60px" 
+                    TextMode="MultiLine" /></td></tr>
            
             
-            <tr><td> Amount Of Bill:</td><td> 
-                <asp:TextBox ID="AmountOfBillTextBox" runat="server" 
-                Text='<%# Bind("AmountOfBill") %>' Width="160px" /></td></tr>
+            <tr align="left"><td> Amount Of Bill:</td><td> 
+                <asp:TextBox ID="AmountOfBillTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("AmountOfBill") %>' Width="160px" MaxLength="10" /></td></tr>
            
            
-            <tr><td>Total Expense:</td><td> 
-                <asp:TextBox ID="TotalExpenseTextBox" runat="server" 
-                Text='<%# Bind("TotalExpense") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Total Expense:</td><td style="margin-left: 40px"> 
+                <asp:TextBox ID="TotalExpenseTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("TotalExpense") %>' Width="160px" MaxLength="10" /></td></tr>
             
            
-            <tr><td>Balance:</td><td><asp:TextBox ID="BalanceTextBox" runat="server" 
-                    Text='<%# Bind("Balance") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Balance:</td><td>
+                <asp:TextBox ID="BalanceTextBox" runat="server" numeric="integer"
+                    Text='<%# Bind("Balance") %>' Width="160px" MaxLength="10" /></td></tr>
             
             
-            <tr><td> Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" 
+            <tr align="left"><td> Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" 
                     Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
             <tr><td colspan="2" align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
@@ -173,34 +177,38 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                      <table align="center" cellspacing="5">
-			 <tr><td> Bill No:</td><td><asp:TextBox ID="BillNoTextBox" runat="server" 
-                     Text='<%# Bind("BillNo") %>' Width="160px" /></td></tr>
+			 <tr align="left"><td> Bill No:</td><td>
+                 <asp:TextBox ID="BillNoTextBox" runat="server" numeric="integer"
+                     Text='<%# Bind("BillNo") %>' Width="160px" MaxLength="10" /></td></tr>
 			
             
-            <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" 
-                    Text='<%# Bind("Date") %>' Width="140px" /></td></tr>
+            <tr align="left"><td>Date:</td><td> 
+                <asp:TextBox ID="DateTextBox" runat="server" 
+                    Text='<%# Bind("Date") %>' Width="160px" /></td></tr>
             
            
-            <tr><td> Details Of Bill:</td><td>
+            <tr align="left"><td> Details Of Bill:</td><td>
                 <asp:TextBox ID="DetailOfBillTextBox" runat="server" 
-                Text='<%# Bind("DetailOfBill") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("DetailOfBill") %>' Width="160px" Height="60px" 
+                    TextMode="MultiLine" /></td></tr>
            
             
-            <tr><td> Amount Of Bill:</td><td> 
-                <asp:TextBox ID="AmountOfBillTextBox" runat="server" 
-                Text='<%# Bind("AmountOfBill") %>' Width="160px" /></td></tr>
+            <tr align="left"><td> Amount Of Bill:</td><td> 
+                <asp:TextBox ID="AmountOfBillTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("AmountOfBill") %>' Width="160px" MaxLength="10" /></td></tr>
            
            
-            <tr><td>Total Expense:</td><td> 
-                <asp:TextBox ID="TotalExpenseTextBox" runat="server" 
-                Text='<%# Bind("TotalExpense") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Total Expense:</td><td> 
+                <asp:TextBox ID="TotalExpenseTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("TotalExpense") %>' Width="160px" MaxLength="10" /></td></tr>
             
            
-            <tr><td>Balance:</td><td><asp:TextBox ID="BalanceTextBox" runat="server" 
-                    Text='<%# Bind("Balance") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Balance:</td><td>
+                <asp:TextBox ID="BalanceTextBox" runat="server" numeric="integer"
+                    Text='<%# Bind("Balance") %>' Width="160px" MaxLength="10" /></td></tr>
             
             
-            <tr><td> Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" 
+            <tr align="left"><td> Remarks:</td><td><asp:TextBox ID="RemarksTextBox" runat="server" 
                     Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
            
             

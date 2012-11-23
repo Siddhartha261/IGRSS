@@ -12,6 +12,7 @@ public partial class Establishment_Department_MahekamRegister : System.Web.UI.Pa
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_Mahekam.SetActiveView(Multiview_Mahekam.Views[1]);
         FormView_Mahekam.ChangeMode(FormViewMode.Insert);
     }
@@ -74,7 +75,7 @@ public partial class Establishment_Department_MahekamRegister : System.Web.UI.Pa
     {
         Multiview_Mahekam.SetActiveView(Formview);
         FormView_Mahekam.PageIndex = e.NewEditIndex;
-        FormView_Mahekam.DefaultMode = FormViewMode.Edit;
+        FormView_Mahekam.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_Mahekam_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -98,6 +99,7 @@ public partial class Establishment_Department_MahekamRegister : System.Web.UI.Pa
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Mahekam.SetActiveView(ViewGrid);
     }
     protected void FormView_Mahekam_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {

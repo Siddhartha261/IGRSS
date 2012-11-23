@@ -152,17 +152,17 @@
         onitemupdating="FormView_AppealRegister_ItemUpdating" >
         <EditItemTemplate>
                     <table>
-	    <tr>
+	    <tr align="left">
 		    <td>File No:</td>
-			<td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Deficit Stamp Duty:</td>
 			<td><asp:TextBox ID="DeficitStampDutyTextBox" runat="server" 
-                    Text='<%# Bind("DeficitStampDuty") %>' Width="160px" /></td>
+                    Text='<%# Bind("DeficitStampDuty") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	            
 		               
-        <tr>
+        <tr align="left">
 		    <td>Kacheri/Office:</td>
 			<td>
                 <asp:DropDownList ID="DropDownList_office" runat="server" 
@@ -173,13 +173,13 @@
 			
 			<td>Total Stamp Duty:</td>
 			<td><asp:TextBox ID="TotalStampDutyTextBox" runat="server" 
-                    Text='<%# Bind("TotalStampDuty") %>' Width="160px" /></td>
+                    Text='<%# Bind("TotalStampDuty") %>' Width="160px" MaxLength="10" /></td>
 		</tr>
 		           
-        <tr>
+        <tr align="left">
 		    <td>Document No:</td>
-			<td><asp:TextBox ID="DocumentNoTextBox" runat="server" 
-                    Text='<%# Bind("DocumentNo") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="DocumentNoTextBox" runat="server" numeric="integer"
+                    Text='<%# Bind("DocumentNo") %>' Width="160px" MaxLength="10" /></td>
 			
 			<td>Continue Or Remand:</td>
 			<td>
@@ -191,27 +191,27 @@
             </td>
 		</tr>
 		      
-        <tr>
+        <tr align="left">
 		    <td>Year:</td>
-			<td><asp:TextBox ID="YearTextBox" runat="server" Text='<%# Bind("Year") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="YearTextBox" runat="server" numeric="integer" Text='<%# Bind("Year") %>' 
+                    Width="160px" MaxLength="4" /></td>
 			
 			<td>Result:</td>
 			<td><asp:TextBox ID="ResultTextBox" runat="server" Text='<%# Bind("Result") %>' 
-                    Width="160px" /></td>
+                    Width="160px" MaxLength="20" /></td>
 		</tr>
 		                       
-        <tr>
+        <tr align="left">
 		    <td>Name Of Applicant:</td>
 			<td><asp:TextBox ID="NameOfApplicantTextBox" runat="server" 
-                    Text='<%# Bind("NameOfApplicant") %>' Width="160px" /></td>
+                    Text='<%# Bind("NameOfApplicant") %>' Width="160px" MaxLength="30" /></td>
 			
 			<td>Outward No:</td>
 			<td><asp:TextBox ID="OutwardNoTextBox" runat="server" 
-                    Text='<%# Bind("OutwardNo") %>' Width="160px" /></td>
+                    Text='<%# Bind("OutwardNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>
 		                   
-        <tr>
+        <tr align="left">
 		    <td>Versus:</td>
 			<td>
                 <asp:DropDownList ID="DropdownList_Versus" runat="server" 
@@ -222,16 +222,16 @@
 			
 			<td>Date:</td>
 			<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Width="140px" /></td>
+                    Width="160px" /></td>
 		</tr>
 		                 
-        <tr>
+        <tr align="left">
 		    <td></td>
 			<td></td>
 			
 			<td>AG Year:</td>
-			<td><asp:TextBox ID="AGYearTextBox" runat="server" Text='<%# Bind("AGYear") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="AGYearTextBox" runat="server" numeric="integer" Text='<%# Bind("AGYear") %>' 
+                    Width="160px" MaxLength="4" /></td>
 		</tr>
 		               
         <tr>
@@ -251,17 +251,17 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                     <table>
-	    <tr>
+	    <tr align="left">
 		    <td>File No:</td>
-			<td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Deficit Stamp Duty:</td>
 			<td><asp:TextBox ID="DeficitStampDutyTextBox" runat="server" 
-                    Text='<%# Bind("DeficitStampDuty") %>' Width="160px" /></td>
+                    Text='<%# Bind("DeficitStampDuty") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	            
 		               
-        <tr>
+        <tr align="left">
 		    <td>Kacheri/Office:</td>
 			<td>
                 <asp:DropDownList ID="DropDownList_office" runat="server" 
@@ -272,13 +272,13 @@
 			
 			<td>Total Stamp Duty:</td>
 			<td><asp:TextBox ID="TotalStampDutyTextBox" runat="server" 
-                    Text='<%# Bind("TotalStampDuty") %>' Width="160px" /></td>
+                    Text='<%# Bind("TotalStampDuty") %>' Width="160px" MaxLength="10" /></td>
 		</tr>
 		           
-        <tr>
+        <tr align="left">
 		    <td>Document No:</td>
-			<td><asp:TextBox ID="DocumentNoTextBox" runat="server" 
-                    Text='<%# Bind("DocumentNo") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="DocumentNoTextBox" runat="server" numeric="integer"
+                    Text='<%# Bind("DocumentNo") %>' Width="160px" MaxLength="10" /></td>
 			
 			<td>Continue Or Remand:</td>
 			<td>
@@ -290,27 +290,27 @@
             </td>
 		</tr>
 		      
-        <tr>
+        <tr align="left">
 		    <td>Year:</td>
-			<td><asp:TextBox ID="YearTextBox" runat="server" Text='<%# Bind("Year") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="YearTextBox" runat="server" numeric="integer" Text='<%# Bind("Year") %>' 
+                    Width="160px" MaxLength="4" /></td>
 			
 			<td>Result:</td>
 			<td><asp:TextBox ID="ResultTextBox" runat="server" Text='<%# Bind("Result") %>' 
-                    Width="160px" /></td>
+                    Width="160px" MaxLength="20" /></td>
 		</tr>
 		                       
-        <tr>
+        <tr align="left">
 		    <td>Name Of Applicant:</td>
 			<td><asp:TextBox ID="NameOfApplicantTextBox" runat="server" 
-                    Text='<%# Bind("NameOfApplicant") %>' Width="160px" /></td>
+                    Text='<%# Bind("NameOfApplicant") %>' Width="160px" MaxLength="30" /></td>
 			
 			<td>Outward No:</td>
 			<td><asp:TextBox ID="OutwardNoTextBox" runat="server" 
-                    Text='<%# Bind("OutwardNo") %>' Width="160px" /></td>
+                    Text='<%# Bind("OutwardNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>
 		                   
-        <tr>
+        <tr align="left">
 		    <td>Versus:</td>
 			<td>
                 <asp:DropDownList ID="DropdownList_Versus" runat="server" 
@@ -321,16 +321,16 @@
 			
 			<td>Date:</td>
 			<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Width="140px" /></td>
+                    Width="160px" /></td>
 		</tr>
 		                 
-        <tr>
+        <tr align="left">
 		    <td></td>
 			<td></td>
 			
 			<td>AG Year:</td>
-			<td><asp:TextBox ID="AGYearTextBox" runat="server" Text='<%# Bind("AGYear") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="AGYearTextBox" runat="server" numeric="integer" Text='<%# Bind("AGYear") %>' 
+                    Width="160px" MaxLength="4" /></td>
 		</tr>
 		               
         <tr>

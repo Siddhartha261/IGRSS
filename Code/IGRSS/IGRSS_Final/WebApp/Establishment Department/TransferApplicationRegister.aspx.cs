@@ -29,6 +29,7 @@ public partial class Establishment_Department_TransferApplicationRegister : Syst
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_TransferAppl.SetActiveView(Multiview_TransferAppl.Views[1]);
         FormView_TransferAppl.ChangeMode(FormViewMode.Insert);
     }
@@ -69,7 +70,7 @@ public partial class Establishment_Department_TransferApplicationRegister : Syst
     {
         Multiview_TransferAppl.SetActiveView(Formview);
         FormView_TransferAppl.PageIndex = e.NewEditIndex;
-        FormView_TransferAppl.DefaultMode = FormViewMode.Edit;
+        FormView_TransferAppl.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_TransferAppl_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -93,6 +94,7 @@ public partial class Establishment_Department_TransferApplicationRegister : Syst
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_TransferAppl.SetActiveView(ViewGrid);
     }
     protected void FormView_TransferAppl_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {

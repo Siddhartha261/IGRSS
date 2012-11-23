@@ -64,7 +64,7 @@ public partial class Establishment_Department_RosterRegister : System.Web.UI.Pag
     {
         Multiview_Roster.SetActiveView(Formview);
         FormView_Roster.PageIndex = e.NewEditIndex;
-        FormView_Roster.DefaultMode = FormViewMode.Edit;
+        FormView_Roster.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_Roster_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -88,6 +88,7 @@ public partial class Establishment_Department_RosterRegister : System.Web.UI.Pag
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Roster.SetActiveView(ViewGrid);
     }
     protected void FormView_Roster_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {

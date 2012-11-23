@@ -106,7 +106,7 @@
         onitemupdating="FormView_Fajal_ItemUpdating" >
         <EditItemTemplate>
                                                                                                                                                                       <table>
-                                                              <tr>
+                                                              <tr align="left">
 															     <td>Details Of Designation:</td>
 															     <td> 
                                                                      <asp:ListBox ID="ListBox_Designation" runat="server" 
@@ -115,7 +115,7 @@
 															     </td>
 															  </tr>									
 															                                                                 
-                                                               <tr>
+                                                               <tr align="left">
 															      <td>Employee Name:</td>
 																  <td>
                                                                       <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
@@ -125,7 +125,7 @@
                                                                    </td>
 																</tr>                                                             
                                                                
-                                                               <tr>
+                                                               <tr align="left">
 															       <td>Designation:</td>
 																   <td>
                                                                        <asp:DropDownList ID="DropDownList_Designation" runat="server" 
@@ -135,7 +135,7 @@
                                                                    </td>
 																</tr>                                                              
                                                                
-                                                               <tr>
+                                                               <tr align="left">
 															       <td>Grade:</td>
 																   <td>
                                                                        <asp:DropDownList ID="DropDownList_Grade" runat="server" 
@@ -145,28 +145,28 @@
                                                                    </td>
 																</tr>                                                            
                                                                
-                                                               <tr>
+                                                               <tr align="left">
 															       <td>Residence District:</td>
 																   <td><asp:TextBox ID="Residence_DistrictTextBox" runat="server" 
-                                                                   Text='<%# Bind("Residence_District") %>' Width="160px" /></td>
+                                                                   Text='<%# Bind("Residence_District") %>' Width="160px" MaxLength="20" /></td>
 																</tr>                                                            
                                                                
-                                                               <tr>
+                                                               <tr align="left">
 															       <td>Current Office:</td>
 																   <td><asp:TextBox ID="Current_OfficeTextBox" runat="server" 
-                                                                   Text='<%# Bind("Current_Office") %>' Width="160px" /></td>
+                                                                   Text='<%# Bind("Current_Office") %>' Width="160px" MaxLength="20" /></td>
 																</tr>
 															
-															    <tr>
+															    <tr align="left">
 																    <td>From Date:</td>
 																	<td><asp:TextBox ID="From_DateTextBox" runat="server" 
-                                                                         Text='<%# Bind("From_Date") %>' Width="140px" /></td>
+                                                                         Text='<%# Bind("From_Date") %>' Width="160px" /></td>
 																</tr>
 																
-																<tr>
+																<tr align="left">
 																    <td>To Date:</td>
 																	<td><asp:TextBox ID="To_DateTextBox" runat="server" Text='<%# Bind("To_Date") %>' 
-                                                                            Width="140px" /></td>
+                                                                            Width="160px" /></td>
 																</tr>
                                                                                                                               
                                                                <tr><td align="center" colspan=2 >
@@ -183,8 +183,8 @@
 
         </EditItemTemplate>
         <InsertItemTemplate>
-                                                                                                                                                                <table>
-                                                              <tr>
+                                                                                                                                                                <table align="center">
+                                                              <tr align="left">
 															     <td>Details Of Designation:</td>
 															     <td> 
                                                                      <asp:ListBox ID="ListBox_Designation" runat="server" 
@@ -193,7 +193,7 @@
 															     </td>
 															  </tr>									
 															                                                                 
-                                                               <tr>
+                                                               <tr align="left">
 															      <td>Employee Name:</td>
 																  <td>
                                                                       <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
@@ -203,7 +203,7 @@
                                                                    </td>
 																</tr>                                                             
                                                                
-                                                               <tr>
+                                                               <tr align="left">
 															       <td>Designation:</td>
 																   <td>
                                                                        <asp:DropDownList ID="DropDownList_Designation" runat="server" 
@@ -213,7 +213,7 @@
                                                                    </td>
 																</tr>                                                              
                                                                
-                                                               <tr>
+                                                               <tr align="left">
 															       <td>Grade:</td>
 																   <td>
                                                                        <asp:DropDownList ID="DropDownList_Grade" runat="server" 
@@ -223,28 +223,28 @@
                                                                    </td>
 																</tr>                                                            
                                                                
-                                                               <tr>
+                                                               <tr align="left">
 															       <td>Residence District:</td>
 																   <td><asp:TextBox ID="Residence_DistrictTextBox" runat="server" 
-                                                                   Text='<%# Bind("Residence_District") %>' Width="160px" /></td>
+                                                                   Text='<%# Bind("Residence_District") %>' Width="160px" MaxLength="20" /></td>
 																</tr>                                                            
                                                                
-                                                               <tr>
+                                                               <tr align="left">
 															       <td>Current Office:</td>
 																   <td><asp:TextBox ID="Current_OfficeTextBox" runat="server" 
-                                                                   Text='<%# Bind("Current_Office") %>' Width="160px" /></td>
+                                                                   Text='<%# Bind("Current_Office") %>' Width="160px" MaxLength="20" /></td>
 																</tr>
 															
-															    <tr>
+															    <tr align="left">
 																    <td>From Date:</td>
 																	<td><asp:TextBox ID="From_DateTextBox" runat="server" 
-                                                                         Text='<%# Bind("From_Date") %>' Width="140px" /></td>
+                                                                         Text='<%# Bind("From_Date") %>' Width="160px" /></td>
 																</tr>
 																
-																<tr>
+																<tr align="left">
 																    <td>To Date:</td>
 																	<td><asp:TextBox ID="To_DateTextBox" runat="server" Text='<%# Bind("To_Date") %>' 
-                                                                            Width="140px" /></td>
+                                                                            Width="160px" /></td>
 																</tr>
                                                                                                                               
                                                                <tr><td align="center" colspan=2 >

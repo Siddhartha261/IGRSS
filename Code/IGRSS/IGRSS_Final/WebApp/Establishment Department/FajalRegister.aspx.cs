@@ -12,6 +12,7 @@ public partial class Establishment_Department_FajalRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_Fajal.SetActiveView(Multiview_Fajal.Views[1]);
         FormView_Fajal.ChangeMode(FormViewMode.Insert);
     }
@@ -67,7 +68,7 @@ public partial class Establishment_Department_FajalRegister : System.Web.UI.Page
     {
         Multiview_Fajal.SetActiveView(Formview);
         FormView_Fajal.PageIndex = e.NewEditIndex;
-        FormView_Fajal.DefaultMode = FormViewMode.Edit;
+        FormView_Fajal.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_Fajal_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -92,6 +93,7 @@ public partial class Establishment_Department_FajalRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Fajal.SetActiveView(ViewGrid);
     }
     protected void FormView_Fajal_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {

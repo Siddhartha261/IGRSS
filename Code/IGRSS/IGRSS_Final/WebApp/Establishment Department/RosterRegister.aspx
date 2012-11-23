@@ -111,7 +111,7 @@
         onitemupdating="FormView_Roster_ItemUpdating" >
         <EditItemTemplate>
                         <table>
-            <tr>
+            <tr align="left">
 			    <td>Deatils Of Designation:</td>
 				<td>
                     <asp:ListBox ID="ListBox_Designation" runat="server" 
@@ -133,7 +133,7 @@
                 </td>
 			</tr>        			
                 
-            <tr>
+            <tr align="left">
 			    <td>Anamat Type:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_AnamatType" runat="server" Width="160px">
@@ -148,33 +148,33 @@
 				
 				<td>Employee Name:</td>
 				<td><asp:TextBox ID="Employee_NameTextBox" runat="server" 
-                    Text='<%# Bind("Employee_Name") %>' Width="160px" /></td>
+                    Text='<%# Bind("Employee_Name") %>' Width="160px" MaxLength="30" /></td>
 			</tr>                       
                 
-            <tr>
+            <tr align="left">
 				<td>Types Of Recruitment:</td>
 				<td><asp:TextBox ID="Types_Of_RecruitmentTextBox" runat="server" 
-                    Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" /></td>
+                    Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" MaxLength="20" /></td>
 				
 				<td>Date Of Appointment:</td>
 				<td><asp:TextBox ID="Date_Of_AppointmentTextBox" runat="server" 
                     Text='<%# Bind("Date_Of_Appointment") %>' Width="160px" /></td>
 			</tr>   
                                 
-            <tr>
+            <tr align="left">
 			    <td>Recruitment Year:</td>
-				<td><asp:TextBox ID="Recruitment_YearTextBox" runat="server" 
-                    Text='<%# Bind("Recruitment_Year") %>' Width="160px" /></td>
+				<td><asp:TextBox ID="Recruitment_YearTextBox" runat="server" numeric="integer"
+                    Text='<%# Bind("Recruitment_Year") %>' Width="160px" MaxLength="4" /></td>
 				
 				<td>Appointed Authority:</td>
 				<td><asp:TextBox ID="Appointed_AuthorityTextBox" runat="server" 
-                    Text='<%# Bind("Appointed_Authority") %>' Width="160px" /></td>				
+                    Text='<%# Bind("Appointed_Authority") %>' Width="160px" MaxLength="20" /></td>				
 			</tr> 
                                 
-            <tr>
+            <tr align="left">
 			    <td>Roster SrNo:</td>
-				<td><asp:TextBox ID="Roster_SrNoTextBox" runat="server" 
-                    Text='<%# Bind("Roster_SrNo") %>' Width="160px" /></td>
+				<td><asp:TextBox ID="Roster_SrNoTextBox" runat="server" numeric="integer"
+                    Text='<%# Bind("Roster_SrNo") %>' Width="160px" MaxLength="10" /></td>
 				
 				<td>Remarks:</td>
 				<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
@@ -195,7 +195,7 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                        <table>
-            <tr>
+            <tr align="left">
 			    <td>Deatils Of Designation:</td>
 				<td>
                     <asp:ListBox ID="ListBox_Designation" runat="server" 
@@ -217,7 +217,7 @@
                 </td>
 			</tr>        			
                 
-            <tr>
+            <tr align="left">
 			    <td>Anamat Type:</td>
 				<td>
                     <asp:DropDownList ID="DropDownList_AnamatType" runat="server" Width="160px">
@@ -232,33 +232,33 @@
 				
 				<td>Employee Name:</td>
 				<td><asp:TextBox ID="Employee_NameTextBox" runat="server" 
-                    Text='<%# Bind("Employee_Name") %>' Width="160px" /></td>
+                    Text='<%# Bind("Employee_Name") %>' Width="160px" MaxLength="30" /></td>
 			</tr>                       
                 
-            <tr>
+            <tr align="left">
 				<td>Types Of Recruitment:</td>
 				<td><asp:TextBox ID="Types_Of_RecruitmentTextBox" runat="server" 
-                    Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" /></td>
+                    Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" MaxLength="20" /></td>
 				
 				<td>Date Of Appointment:</td>
 				<td><asp:TextBox ID="Date_Of_AppointmentTextBox" runat="server" 
                     Text='<%# Bind("Date_Of_Appointment") %>' Width="160px" /></td>
 			</tr>   
                                 
-            <tr>
+            <tr align="left">
 			    <td>Recruitment Year:</td>
-				<td><asp:TextBox ID="Recruitment_YearTextBox" runat="server" 
-                    Text='<%# Bind("Recruitment_Year") %>' Width="160px" /></td>
+				<td><asp:TextBox ID="Recruitment_YearTextBox" runat="server" numeric="integer"
+                    Text='<%# Bind("Recruitment_Year") %>' Width="160px" MaxLength="4" /></td>
 				
 				<td>Appointed Authority:</td>
 				<td><asp:TextBox ID="Appointed_AuthorityTextBox" runat="server" 
-                    Text='<%# Bind("Appointed_Authority") %>' Width="160px" /></td>				
+                    Text='<%# Bind("Appointed_Authority") %>' Width="160px" MaxLength="20" /></td>				
 			</tr> 
                                 
-            <tr>
+            <tr align="left">
 			    <td>Roster SrNo:</td>
-				<td><asp:TextBox ID="Roster_SrNoTextBox" runat="server" 
-                    Text='<%# Bind("Roster_SrNo") %>' Width="160px" /></td>
+				<td><asp:TextBox ID="Roster_SrNoTextBox" runat="server" numeric="integer"
+                    Text='<%# Bind("Roster_SrNo") %>' Width="160px" MaxLength="10" /></td>
 				
 				<td>Remarks:</td>
 				<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 

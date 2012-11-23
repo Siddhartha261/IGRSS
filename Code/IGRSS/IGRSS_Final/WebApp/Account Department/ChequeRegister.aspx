@@ -141,61 +141,66 @@
         <EditItemTemplate>
                               <table align="center" cellspacing="5">
 			
-			<tr>
+			<tr align="left">
              <td>Date Of Cheque Received:
              </td>
               <td><asp:TextBox ID="ChequeReceivedDateTextBox" runat="server" 
-                Text='<%# Bind("ChequeReceivedDate") %>' Width="140px" />
+                Text='<%# Bind("ChequeReceivedDate") %>' Width="160px" />
                 </td>	
                  <td>Person Name giving The cheque:</td>
 			<td> 
                 <asp:TextBox ID="PersonNamegivingchequeTextBox" runat="server" 
-                Text='<%# Bind("PersonNamegivingcheque") %>' Width="160px" TabIndex="5" /></td>
+                Text='<%# Bind("PersonNamegivingcheque") %>' Width="160px" TabIndex="5" 
+                    MaxLength="30" /></td>
 				</tr>
 				
-            <tr>
+            <tr align="left">
            
             <td>Bank Name:</td><td> 
                 <asp:TextBox ID="BankNameTextBox" runat="server" 
-                Text='<%# Bind("BankName") %>' Width="160px" TabIndex="1" /></td>
+                Text='<%# Bind("BankName") %>' Width="160px" TabIndex="1" MaxLength="30" /></td>
             
            
-            <td> Cheque No:</td><td> 
-                <asp:TextBox ID="ChequeNoTextBox" runat="server" 
-                Text='<%# Bind("ChequeNo") %>' Width="160px" TabIndex="6" /></td>
+            <td> Cheque No:</td><td style="margin-left: 40px"> 
+                <asp:TextBox ID="ChequeNoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("ChequeNo") %>' Width="160px" TabIndex="6" MaxLength="6" /></td>
            </tr>
-           <tr>
+           <tr align="left">
             <td>Date Of Cheque:</td><td> 
                <asp:TextBox ID="ChequeDateTextBox" runat="server" 
-                Text='<%# Bind("ChequeDate") %>' Width="140px" TabIndex="2" /></td>
+                Text='<%# Bind("ChequeDate") %>' Width="160px" TabIndex="2" /></td>
             
            
             <td> Amount:</td><td> 
-               <asp:TextBox ID="AmountTextBox" runat="server" 
-                   Text='<%# Bind("Amount") %>' Width="160px" TabIndex="7" /></td>
+               <asp:TextBox ID="AmountTextBox" runat="server" numeric="integer"
+                   Text='<%# Bind("Amount") %>' Width="160px" TabIndex="7" MaxLength="10" /></td>
           
            </tr>
-		   <tr>
+		   <tr align="left">
             <td>Account Name:</td><td>
                <asp:TextBox ID="AccountNameTextBox" runat="server" 
-                Text='<%# Bind("AccountName") %>' Width="160px" TabIndex="3" /></td>
+                Text='<%# Bind("AccountName") %>' Width="160px" TabIndex="3" MaxLength="30" /></td>
             
             
             <td>Date Of Cheque Sent:</td><td> 
                <asp:TextBox ID="DateChequeSentTextBox" runat="server" 
-                Text='<%# Bind("DateChequeSent") %>' Width="140px" TabIndex="8" /></td>
+                Text='<%# Bind("DateChequeSent") %>' Width="160px" TabIndex="8" /></td>
 				</tr>
             
-           <tr>
-            <td> Date Of Hisab:</td><td> 
-               <asp:TextBox ID="DateOfHisabTextBox" runat="server" 
-                Text='<%# Bind("DateOfHisab") %>' Width="140px" TabIndex="4" /></td>
+           <tr align="left">
+            <td> Date Of Hisab:</td>
+            <td><asp:TextBox ID="DateOfHisabTextBox" runat="server" 
+                Text='<%# Bind("DateOfHisab") %>' Width="160px" TabIndex="4" />
+            </td>           
            
-           
-            <td>Initials Of Officer:</td><td style="margin-left: 40px"> 
+            <td>Initials Of Officer:</td>
+            <td style="margin-left: 40px"> 
                <asp:TextBox ID="InitialsOfOfficerTextBox" runat="server" 
-                Text='<%# Bind("InitialsOfOfficer") %>' Width="160px" TabIndex="9" /></td>
-            <tr>
+                Text='<%# Bind("InitialsOfOfficer") %>' Width="160px" TabIndex="9" 
+                   MaxLength="6" />
+           </td>
+           </tr>
+            <tr >
                 <td>
                     Remarks:</td>
                 <td>
@@ -204,7 +209,7 @@
                 </td>
                 <td>
                 </td>
-             <tr><td colspan="4" align="center">
+             <tr align="left"><td colspan="4" align="center">
                  <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                  CommandName="Update" Text="Update" CssClass="standardButton" TabIndex="11"/>
                   &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
@@ -221,61 +226,63 @@
         
                                 <table align="center" cellspacing="5">
 			
-			<tr>
+			<tr align="left">
              <td>Date Of Cheque Received:
              </td>
               <td><asp:TextBox ID="ChequeReceivedDateTextBox" runat="server" 
-                Text='<%# Bind("ChequeReceivedDate") %>' Width="140px" />
+                Text='<%# Bind("ChequeReceivedDate") %>' Width="160px" />
                 </td>	
                  <td>Person Name giving The cheque:</td>
 			<td> 
                 <asp:TextBox ID="PersonNamegivingchequeTextBox" runat="server" 
-                Text='<%# Bind("PersonNamegivingcheque") %>' Width="160px" TabIndex="5" /></td>
+                Text='<%# Bind("PersonNamegivingcheque") %>' Width="160px" TabIndex="5" 
+                    MaxLength="30" /></td>
 				</tr>
 				
-            <tr>
+            <tr align="left">
            
             <td>Bank Name:</td><td> 
                 <asp:TextBox ID="BankNameTextBox" runat="server" 
-                Text='<%# Bind("BankName") %>' Width="160px" TabIndex="1" /></td>
+                Text='<%# Bind("BankName") %>' Width="160px" TabIndex="1" MaxLength="30" /></td>
             
            
             <td> Cheque No:</td><td> 
-                <asp:TextBox ID="ChequeNoTextBox" runat="server" 
+                <asp:TextBox ID="ChequeNoTextBox" runat="server" numeric="integer" 
                 Text='<%# Bind("ChequeNo") %>' Width="160px" TabIndex="6" /></td>
            </tr>
-           <tr>
+           <tr align="left">
             <td>Date Of Cheque:</td><td> 
                <asp:TextBox ID="ChequeDateTextBox" runat="server" 
-                Text='<%# Bind("ChequeDate") %>' Width="140px" TabIndex="2" /></td>
+                Text='<%# Bind("ChequeDate") %>' Width="160px" TabIndex="2" /></td>
             
            
             <td> Amount:</td><td style="margin-left: 40px"> 
-               <asp:TextBox ID="AmountTextBox" runat="server" 
-                   Text='<%# Bind("Amount") %>' Width="160px" TabIndex="7" /></td>
+               <asp:TextBox ID="AmountTextBox" runat="server" numeric="integer"
+                   Text='<%# Bind("Amount") %>' Width="160px" TabIndex="7" MaxLength="10" /></td>
           
            </tr>
-		   <tr>
+		   <tr align="left">
             <td>Account Name:</td><td>
                <asp:TextBox ID="AccountNameTextBox" runat="server" 
-                Text='<%# Bind("AccountName") %>' Width="160px" TabIndex="3" /></td>
+                Text='<%# Bind("AccountName") %>' Width="160px" TabIndex="3" MaxLength="30" /></td>
             
             
             <td>Date Of Cheque Sent:</td><td> 
                <asp:TextBox ID="DateChequeSentTextBox" runat="server" 
-                Text='<%# Bind("DateChequeSent") %>' Width="140px" TabIndex="8" /></td>
+                Text='<%# Bind("DateChequeSent") %>' Width="160px" TabIndex="8" /></td>
 				</tr>
             
-           <tr>
+           <tr align="left">
             <td> Date Of Hisab:</td><td> 
                <asp:TextBox ID="DateOfHisabTextBox" runat="server" 
-                Text='<%# Bind("DateOfHisab") %>' Width="140px" TabIndex="4" /></td>
+                Text='<%# Bind("DateOfHisab") %>' Width="160px" TabIndex="4" /></td>
            
            
             <td>Initials Of Officer:</td><td> 
                <asp:TextBox ID="InitialsOfOfficerTextBox" runat="server" 
-                Text='<%# Bind("InitialsOfOfficer") %>' Width="160px" TabIndex="9" /></td>
-            <tr>
+                Text='<%# Bind("InitialsOfOfficer") %>' Width="160px" TabIndex="9" 
+                   MaxLength="6" /></td>
+            <tr align="left">
                 <td>
                     Remarks:</td>
                 <td>

@@ -25,6 +25,7 @@ public partial class LatestPages_WorkSheetRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         MultiView_worksheet.SetActiveView(MultiView_worksheet.Views[1]);
         FormView_worksheet.ChangeMode(FormViewMode.Insert);
     }
@@ -40,6 +41,7 @@ public partial class LatestPages_WorkSheetRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        MultiView_worksheet.SetActiveView(viewGrid);
     }
     protected void ods_worksheet_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
@@ -78,7 +80,7 @@ public partial class LatestPages_WorkSheetRegister : System.Web.UI.Page
     {
         MultiView_worksheet.SetActiveView(Worksheetregister);
         FormView_worksheet.PageIndex = e.NewEditIndex;
-        FormView_worksheet.DefaultMode = FormViewMode.Edit;
+        FormView_worksheet.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void ods_worksheet_Deleting(object sender, ObjectDataSourceMethodEventArgs e)

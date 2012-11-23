@@ -48,7 +48,7 @@
           <tr>
               <td align="right" colspan="3">
                   <asp:GridView ID="GridView_HighCourtReg" runat="server" AutoGenerateColumns="False" 
-                      DataKeyNames="SrNo,Parawiseremarks" DataSourceID="ods_HighCourtReg" 
+                      DataKeyNames="SrNo,Parawiseremarks,Affidavit" DataSourceID="ods_HighCourtReg" 
                       EnableModelValidation="True" 
                       onrowdeleted="GridView_HighCourtReg_RowDeleted" 
                       onrowdeleting="GridView_HighCourtReg_RowDeleting" 
@@ -140,10 +140,10 @@
         ondatabound="FormView_HighCourtReg_DataBound">
     <EditItemTemplate>
                     <table>
-        <tr>
+        <tr align="left">
 		    <td>File No:</td>
-			<td><asp:TextBox ID="FilenoTextBox" runat="server" Text='<%# Bind("Fileno") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="FilenoTextBox" runat="server" numeric="integer" Text='<%# Bind("Fileno") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Affidavit Sent Or Not:</td>
 			<td>
@@ -155,17 +155,17 @@
             </td>
 		</tr>		
         
-        <tr>
+        <tr align="left">
 		    <td>Special Civil Application No:</td>
-			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" 
-            Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" numeric="integer"
+            Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" MaxLength="10" /></td>
 			
 			<td>Affidavit Date:</td>
 			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
-            Text='<%# Bind("Affidavitdate") %>' Width="140px" /></td>
+            Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
 		</tr>       
         
-        <tr>
+        <tr align="left">
 		    <td>Name Of District Office:</td>
 			<td>
                 <asp:DropDownList ID="Drop_officename" runat="server" 
@@ -176,30 +176,30 @@
 			
 			<td>Latest Status:</td>
 			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" 
-            Text='<%# Bind("LatestStatus") %>' Width="160px" /></td>
+            Text='<%# Bind("LatestStatus") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
-        <tr>
+        <tr align="left">
 		    <td>Petitioner Name:</td>
 			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" 
-            Text='<%# Bind("PetitionerName") %>' Width="160px" /></td>
+            Text='<%# Bind("PetitionerName") %>' Width="160px" MaxLength="30" /></td>
 			
 			<td>Petition Disposed Year:</td>
-			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" 
-            Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" numeric="integer"
+            Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" MaxLength="4" /></td>
 		</tr>        
         
-        <tr>
+        <tr align="left">
 		   <td>Reason Of Petition:</td>
 		   <td><asp:TextBox ID="PetitionReasonTextBox" runat="server" 
             Text='<%# Bind("PetitionReason") %>' Height="60px" Width="160px" /></td>
 		   
 		   <td>Disposal Date:</td>
 		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
-            Text='<%# Bind("DisposalDate") %>' Width="140px" /></td>
+            Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
 		</tr>        
         
-        <tr>
+        <tr align="left">
 		   <td>Parawise Remarks Sent Or Not:</td>
 		   <td>
                <asp:RadioButtonList ID="Radio_parawisermrksent" runat="server" 
@@ -211,13 +211,13 @@
 		   
 		   <td>Order Judgement Sheet:</td>
 		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
-            Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" /></td>
+            Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
-        <tr>
+        <tr align="left">
 		    <td>Parawise Remarks Sent Date:</td>
 			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
-            Text='<%# Bind("Parawiseremarksdate") %>' Width="140px" /></td>
+            Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
 			
 			<td>Judgement Detail:</td>
 			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 
@@ -238,10 +238,10 @@
     </EditItemTemplate>
     <InsertItemTemplate>
                     <table>
-        <tr>
+       <tr align="left">
 		    <td>File No:</td>
-			<td><asp:TextBox ID="FilenoTextBox" runat="server" Text='<%# Bind("Fileno") %>' 
-                    Width="160px" /></td>
+			<td><asp:TextBox ID="FilenoTextBox" runat="server" numeric="integer" Text='<%# Bind("Fileno") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Affidavit Sent Or Not:</td>
 			<td>
@@ -253,17 +253,17 @@
             </td>
 		</tr>		
         
-        <tr>
+        <tr align="left">
 		    <td>Special Civil Application No:</td>
-			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" 
-            Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" numeric="integer"
+            Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" MaxLength="10" /></td>
 			
 			<td>Affidavit Date:</td>
 			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
-            Text='<%# Bind("Affidavitdate") %>' Width="140px" /></td>
+            Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
 		</tr>       
         
-        <tr>
+        <tr align="left">
 		    <td>Name Of District Office:</td>
 			<td>
                 <asp:DropDownList ID="Drop_officename" runat="server" 
@@ -274,30 +274,30 @@
 			
 			<td>Latest Status:</td>
 			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" 
-            Text='<%# Bind("LatestStatus") %>' Width="160px" /></td>
+            Text='<%# Bind("LatestStatus") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
-        <tr>
+        <tr align="left">
 		    <td>Petitioner Name:</td>
 			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" 
-            Text='<%# Bind("PetitionerName") %>' Width="160px" /></td>
+            Text='<%# Bind("PetitionerName") %>' Width="160px" MaxLength="30" /></td>
 			
 			<td>Petition Disposed Year:</td>
-			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" 
-            Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" /></td>
+			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" numeric="integer"
+            Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" MaxLength="4" /></td>
 		</tr>        
         
-        <tr>
+        <tr align="left">
 		   <td>Reason Of Petition:</td>
 		   <td><asp:TextBox ID="PetitionReasonTextBox" runat="server" 
             Text='<%# Bind("PetitionReason") %>' Height="60px" Width="160px" /></td>
 		   
 		   <td>Disposal Date:</td>
 		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
-            Text='<%# Bind("DisposalDate") %>' Width="140px" /></td>
+            Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
 		</tr>        
         
-        <tr>
+        <tr align="left">
 		   <td>Parawise Remarks Sent Or Not:</td>
 		   <td>
                <asp:RadioButtonList ID="Radio_parawisermrksent" runat="server" 
@@ -309,13 +309,13 @@
 		   
 		   <td>Order Judgement Sheet:</td>
 		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
-            Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" /></td>
+            Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
-        <tr>
+        <tr align="left">
 		    <td>Parawise Remarks Sent Date:</td>
 			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
-            Text='<%# Bind("Parawiseremarksdate") %>' Width="140px" /></td>
+            Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
 			
 			<td>Judgement Detail:</td>
 			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 

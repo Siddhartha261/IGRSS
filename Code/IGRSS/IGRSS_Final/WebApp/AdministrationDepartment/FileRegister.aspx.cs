@@ -21,7 +21,7 @@ public partial class LatestPages_FileRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
-       
+        infoDiv.Visible = false;
         Multiview_FileRegister.SetActiveView(view2_Formview);
         FormView_FileRegister.ChangeMode(FormViewMode.Insert);
     }
@@ -42,7 +42,6 @@ public partial class LatestPages_FileRegister : System.Web.UI.Page
                 Multiview_FileRegister.SetActiveView(view1_GridView);
                 view1_GridView.DataBind();
                 infoDiv.Visible = false;
-
                 break;
         }
     }
@@ -65,6 +64,7 @@ public partial class LatestPages_FileRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_FileRegister.SetActiveView(view1_GridView);
     }
     protected void GridView_FileRegister_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
@@ -76,7 +76,7 @@ public partial class LatestPages_FileRegister : System.Web.UI.Page
     {
         Multiview_FileRegister.SetActiveView(view2_Formview);
         FormView_FileRegister.PageIndex = e.NewEditIndex;
-        FormView_FileRegister.DefaultMode = FormViewMode.Edit;
+        FormView_FileRegister.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void GridView_FileRegister_RowDeleted(object sender, GridViewDeletedEventArgs e)

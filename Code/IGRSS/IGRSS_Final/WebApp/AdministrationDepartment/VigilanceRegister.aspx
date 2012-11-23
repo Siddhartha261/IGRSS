@@ -143,57 +143,59 @@
 
         <EditItemTemplate>
             <table align="center" cellspacing="5">
-    <tr><td>Letter No:</td>
-        <td><asp:TextBox ID="LetternoTextBox" runat="server" 
-                Text='<%# Bind("Letterno") %>' Width="160px" /></td>
+    <tr align="left"><td>Letter No:</td>
+        <td><asp:TextBox ID="LetternoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Letterno") %>' Width="160px" MaxLength="10" /></td>
 	</tr>
             
             
-            <tr><td>Department Date:</td>
+            <tr align="left"><td>Department Date:</td>
 			<td> 
                 <asp:TextBox ID="deptdateTextBox" runat="server" 
-                Text='<%# Bind("deptdate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("deptdate") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Date OF Letter Received:</td><td>
+            <tr align="left"><td>Date OF Letter Received:</td><td>
                 <asp:TextBox ID="letterdateTextBox" runat="server" 
-                Text='<%# Bind("letterdate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("letterdate") %>' Width="160px" /></td></tr>
             
             
-            <tr><td>Name Of Applicant:</td><td>
+            <tr align="left"><td>Name Of Applicant:</td><td>
                 <asp:TextBox ID="applnameTextBox" runat="server" 
-                Text='<%# Bind("applname") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("applname") %>' Width="160px" MaxLength="30" /></td></tr>
             
-            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" 
-                    Text='<%# Bind("empname") %>' Width="160px" /></td></tr>
+            <tr align="left"><td> Name Of Employee:</td><td>
+                <asp:TextBox ID="empnameTextBox" runat="server" 
+                    Text='<%# Bind("empname") %>' Width="160px" MaxLength="30" /></td></tr>
            
             
-            <tr><td> Designation Of Employee:</td><td>  <asp:DropDownList ID="designation" runat="server" 
+            <tr align="left"><td> Designation Of Employee:</td><td>  <asp:DropDownList ID="designation" runat="server" 
                     DataSourceID="ObjectDataSource1" DataTextField="Name" 
                     DataValueField="Name" Width="160px">
                 </asp:DropDownList></td></tr>
            
            
-            <tr><td>Application Summary:</td><td> 
+            <tr align="left"><td>Application Summary:</td><td> 
                 <asp:TextBox ID="applsummaryTextBox" runat="server" 
                 Text='<%# Bind("applsummary") %>' Height="60px" Width="160px" /></td></tr>
             
            
-            <tr><td>Date of Sending Report:</td><td> 
+            <tr align="left"><td>Date of Sending Report:</td><td> 
                 <asp:TextBox ID="reportdateTextBox" runat="server" 
-                Text='<%# Bind("reportdate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("reportdate") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" 
-                    Text='<%# Bind("Status") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Latest Status:</td><td> 
+                <asp:TextBox ID="StatusTextBox" runat="server" 
+                    Text='<%# Bind("Status") %>' Width="160px" MaxLength="20" /></td></tr>
             
            
-            <tr><td>File Closing Date:</td><td> 
+            <tr align="left"><td>File Closing Date:</td><td> 
                 <asp:TextBox ID="closedateTextBox" runat="server" 
-                Text='<%# Bind("closedate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("closedate") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" 
+            <tr align="left"><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" 
                     Text='<%# Bind("remarks") %>' Height="60px" Width="160px" /></td></tr>
             
             <tr>
@@ -211,32 +213,33 @@
         </EditItemTemplate>
         <InsertItemTemplate>
                       <table align="center" cellspacing="5">
-    <tr><td>Letter No:</td>
-        <td><asp:TextBox ID="LetternoTextBox" runat="server" 
-                Text='<%# Bind("Letterno") %>' Width="160px" /></td>
+    <tr align="left"><td>Letter No:</td>
+        <td><asp:TextBox ID="LetternoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Letterno") %>' Width="160px" MaxLength="10" /></td>
 	</tr>
             
             
-            <tr><td>Department Date:</td>
+            <tr align="left"><td>Department Date:</td>
 			<td> 
                 <asp:TextBox ID="deptdateTextBox" runat="server" 
-                Text='<%# Bind("deptdate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("deptdate") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Date OF Letter Received:</td><td>
+            <tr align="left"><td>Date OF Letter Received:</td><td>
                 <asp:TextBox ID="letterdateTextBox" runat="server" 
-                Text='<%# Bind("letterdate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("letterdate") %>' Width="160px" /></td></tr>
             
             
-            <tr><td>Name Of Applicant:</td><td>
+            <tr align="left"><td>Name Of Applicant:</td><td>
                 <asp:TextBox ID="applnameTextBox" runat="server" 
-                Text='<%# Bind("applname") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("applname") %>' Width="160px" MaxLength="30" /></td></tr>
             
-            <tr><td> Name Of Employee:</td><td><asp:TextBox ID="empnameTextBox" runat="server" 
-                    Text='<%# Bind("empname") %>' Width="160px" /></td></tr>
+            <tr align="left"><td> Name Of Employee:</td><td>
+                <asp:TextBox ID="empnameTextBox" runat="server" 
+                    Text='<%# Bind("empname") %>' Width="160px" MaxLength="30" /></td></tr>
            
             
-            <tr><td> Designation Of Employee:</td><td> 
+            <tr align="left"><td> Designation Of Employee:</td><td> 
                 <asp:DropDownList ID="designation" runat="server" 
                     DataSourceID="ObjectDataSource1" DataTextField="Name" 
                     DataValueField="Name" Width="160px">
@@ -244,26 +247,27 @@
                 </td></tr>
            
            
-            <tr><td>Application Summary:</td><td> 
+            <tr align="left"><td>Application Summary:</td><td> 
                 <asp:TextBox ID="applsummaryTextBox" runat="server" 
                 Text='<%# Bind("applsummary") %>' Height="60px" Width="160px" /></td></tr>
             
            
-            <tr><td>Date of Sending Report:</td><td> 
+            <tr align="left"><td>Date of Sending Report:</td><td> 
                 <asp:TextBox ID="reportdateTextBox" runat="server" 
-                Text='<%# Bind("reportdate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("reportdate") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Latest Status:</td><td> <asp:TextBox ID="StatusTextBox" runat="server" 
-                    Text='<%# Bind("Status") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Latest Status:</td><td> 
+                <asp:TextBox ID="StatusTextBox" runat="server" 
+                    Text='<%# Bind("Status") %>' Width="160px" MaxLength="20" /></td></tr>
             
            
-            <tr><td>File Closing Date:</td><td> 
+            <tr align="left"><td>File Closing Date:</td><td> 
                 <asp:TextBox ID="closedateTextBox" runat="server" 
-                Text='<%# Bind("closedate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("closedate") %>' Width="160px" /></td></tr>
             
            
-            <tr><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" 
+            <tr align="left"><td>Remarks:</td><td><asp:TextBox ID="remarksTextBox" runat="server" 
                     Text='<%# Bind("remarks") %>' Height="60px" Width="160px" /></td></tr>
             
             
