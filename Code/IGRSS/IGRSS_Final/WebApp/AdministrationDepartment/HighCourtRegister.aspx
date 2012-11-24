@@ -36,12 +36,11 @@
           <tr>
                     <td align="right" width="80%" >
                         <asp:Label ID="lbllls" runat="server" Text="Enter File Number :" 
-                            meta:resourcekey="lblllsResource1"></asp:Label></td>
-                    <td align="left" >
-                        <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1" ></asp:TextBox></td>
-                        <td align="right">
-                        <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
+                            meta:resourcekey="lblllsResource1"></asp:Label>
+                    
+                    &nbsp<asp:TextBox Width="160" ID="txtFileNo" runat="server" 
+                            meta:resourcekey="txtFileNoResource1" ></asp:TextBox>
+                    &nbsp<asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
                             meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
           </tr>
@@ -54,7 +53,7 @@
                       onrowdeleting="GridView_HighCourtReg_RowDeleting" 
                       onrowediting="GridView_HighCourtReg_RowEditing" 
                       onrowdatabound="GridView_HighCourtReg_RowDataBound" Font-Bold="False" 
-                      Font-Names="Times New Roman">
+                      Font-Names="Times New Roman" AllowPaging="True">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
                               ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
@@ -142,10 +141,18 @@
                     <table>
         <tr align="left">
 		    <td>File No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="FilenoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="FilenoTextBox" runat="server" numeric="integer" Text='<%# Bind("Fileno") %>' 
                     Width="160px" MaxLength="10" /></td>
 			
 			<td>Affidavit Sent Or Not:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="Radio_affidavit" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td>
                 <asp:RadioButtonList ID="Radio_affidavit" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
@@ -157,16 +164,26 @@
         
         <tr align="left">
 		    <td>Special Civil Application No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="SpecialCivilApplNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" numeric="integer"
             Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" MaxLength="10" /></td>
 			
 			<td>Affidavit Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
             Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
 		</tr>       
         
         <tr align="left">
 		    <td>Name Of District Office:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="Drop_officename" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td>
                 <asp:DropDownList ID="Drop_officename" runat="server" 
                     DataSourceID="ods_offices" DataTextField="OfficeName" 
@@ -175,32 +192,50 @@
             </td>
 			
 			<td>Latest Status:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" 
             Text='<%# Bind("LatestStatus") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
         <tr align="left">
 		    <td>Petitioner Name:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="PetitionerNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" 
             Text='<%# Bind("PetitionerName") %>' Width="160px" MaxLength="30" /></td>
 			
 			<td>Petition Disposed Year:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="PetitionDispoasedYearTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" numeric="integer"
             Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" MaxLength="4" /></td>
 		</tr>        
         
         <tr align="left">
 		   <td>Reason Of Petition:</td>
+		    <td>
+                &nbsp;</td>
 		   <td><asp:TextBox ID="PetitionReasonTextBox" runat="server" 
             Text='<%# Bind("PetitionReason") %>' Height="60px" Width="160px" /></td>
 		   
 		   <td>Disposal Date:</td>
+		    <td>
+                &nbsp;</td>
 		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
             Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
 		</tr>        
         
         <tr align="left">
 		   <td>Parawise Remarks Sent Or Not:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="Radio_parawisermrksent" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		   <td>
                <asp:RadioButtonList ID="Radio_parawisermrksent" runat="server" 
                    RepeatDirection="Horizontal" Width="160px">
@@ -210,21 +245,27 @@
             </td>
 		   
 		   <td>Order Judgement Sheet:</td>
+		    <td>
+                &nbsp;</td>
 		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
             Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
         <tr align="left">
 		    <td>Parawise Remarks Sent Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
             Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
 			
 			<td>Judgement Detail:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 
             Text='<%# Bind("JudgementDetail") %>' Height="60px" Width="160px" /></td>
 		</tr>       
         
-        <tr><td align="center" colspan=4>
+        <tr><td align="center" colspan=6>
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
             CommandName="Update" Text="Update" CssClass="standardButton" />
 		&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
@@ -240,10 +281,18 @@
                     <table>
        <tr align="left">
 		    <td>File No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="FilenoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="FilenoTextBox" runat="server" numeric="integer" Text='<%# Bind("Fileno") %>' 
                     Width="160px" MaxLength="10" /></td>
 			
 			<td>Affidavit Sent Or Not:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="Radio_affidavit" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td>
                 <asp:RadioButtonList ID="Radio_affidavit" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
@@ -255,16 +304,26 @@
         
         <tr align="left">
 		    <td>Special Civil Application No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="SpecialCivilApplNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" numeric="integer"
             Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" MaxLength="10" /></td>
 			
 			<td>Affidavit Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
             Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
 		</tr>       
         
         <tr align="left">
 		    <td>Name Of District Office:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="Drop_officename" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td>
                 <asp:DropDownList ID="Drop_officename" runat="server" 
                     DataSourceID="ods_offices" DataTextField="OfficeName" 
@@ -273,32 +332,50 @@
             </td>
 			
 			<td>Latest Status:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" 
             Text='<%# Bind("LatestStatus") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
         <tr align="left">
 		    <td>Petitioner Name:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="PetitionerNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" 
             Text='<%# Bind("PetitionerName") %>' Width="160px" MaxLength="30" /></td>
 			
 			<td>Petition Disposed Year:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="PetitionDispoasedYearTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" numeric="integer"
             Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" MaxLength="4" /></td>
 		</tr>        
         
         <tr align="left">
 		   <td>Reason Of Petition:</td>
+		    <td>
+                &nbsp;</td>
 		   <td><asp:TextBox ID="PetitionReasonTextBox" runat="server" 
             Text='<%# Bind("PetitionReason") %>' Height="60px" Width="160px" /></td>
 		   
 		   <td>Disposal Date:</td>
+		    <td>
+                &nbsp;</td>
 		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
             Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
 		</tr>        
         
         <tr align="left">
 		   <td>Parawise Remarks Sent Or Not:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="Radio_parawisermrksent" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		   <td>
                <asp:RadioButtonList ID="Radio_parawisermrksent" runat="server" 
                    RepeatDirection="Horizontal" Width="160px">
@@ -308,21 +385,27 @@
             </td>
 		   
 		   <td>Order Judgement Sheet:</td>
+		    <td>
+                &nbsp;</td>
 		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
             Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
         <tr align="left">
 		    <td>Parawise Remarks Sent Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
             Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
 			
 			<td>Judgement Detail:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 
             Text='<%# Bind("JudgementDetail") %>' Height="60px" Width="160px" /></td>
-		</tr>       
+		</tr>              
         
-        <tr><td align="center" colspan=4>
+        <tr><td align="center" colspan=6>
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
             CommandName="Insert" Text="Insert" CssClass="standardButton" />
 		&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 

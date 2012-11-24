@@ -9,6 +9,7 @@ public partial class LatestPages_FileRegister : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //ClientScript.RegisterHiddenField("__EVENTTARGET", btnSearchAppNo.ClientID);
 
     }
     protected void btnSearchAppNo_Click(object sender, EventArgs e)

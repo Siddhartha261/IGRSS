@@ -10,28 +10,28 @@
             });
         }
         $(function () {
-            $('input[id*="InwardNoTextBox"]').keydown(function (event) {
-                // Allow: backspace, delete, tab, escape, and enter
-                if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
-                // Allow: Ctrl+A
-            (event.keyCode == 65 && event.ctrlKey === true) ||
-                // Allow: home, end, left, right
-            (event.keyCode >= 35 && event.keyCode <= 39)) {
+            $('input[id*="inwardnotextbox"]').keydown(function (event) {
+                // allow: backspace, delete, tab, escape, and enter
+                if (event.keycode == 46 || event.keycode == 8 || event.keycode == 9 || event.keycode == 27 || event.keycode == 13 ||
+                // allow: ctrl+a
+            (event.keycode == 65 && event.ctrlkey === true) ||
+                // allow: home, end, left, right
+            (event.keycode >= 35 && event.keycode <= 39)) {
                     // let it happen, don't do anything
                     return;
                 }
                 else {
-                    // Ensure that it is a number and stop the keypress
-                    if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
-                        event.preventDefault();
+                    // ensure that it is a number and stop the keypress
+                    if (event.shiftkey || (event.keycode < 48 || event.keycode > 57) && (event.keycode < 96 || event.keycode > 105)) {
+                        event.preventdefault();
                     }
                 }
             });
 
-            $('input[id*="InwardNoTextBox"]').blur(function () {
-                if (isNaN($('input[id*="InwardNoTextBox"]').val()) || $('input[id*="InwardNoTextBox"]').val().length == 0) { $('input[id*="InwardNoTextBox"]').val(''); return; }
-                var formattedNumber = 'IGR\/' + $('input[id*="InwardNoTextBox"]').val() + '\/' + new Date().getFullYear();
-                $('input[id*="InwardNoTextBox"]').val(formattedNumber.toString());
+            $('input[id*="inwardnotextbox"]').blur(function () {
+                if (isnan($('input[id*="inwardnotextbox"]').val()) || $('input[id*="inwardnotextbox"]').val().length == 0) { $('input[id*="inwardnotextbox"]').val(''); return; }
+                var formattednumber = 'igr\/' + $('input[id*="inwardnotextbox"]').val() + '\/' + new date().getfullyear();
+                $('input[id*="inwardnotextbox"]').val(formattednumber.tostring());
             });
 
             var datePickers = ["StartingDateTextBox", "EndingDateTextBox", "DisposalDateOfFileTextBox", "DisposalDateOnTextBox"];
@@ -61,7 +61,7 @@
                             meta:resourcekey="txtFileNoResource1" 
                            ></asp:TextBox>
                         
-                        &nbsp<asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
+                        &nbsp<asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search" 
                             meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
           </tr>
@@ -72,7 +72,7 @@
                       EnableModelValidation="True" 
                       onrowdeleted="GridView_FileRegister_RowDeleted" 
                       onrowdeleting="GridView_FileRegister_RowDeleting" 
-                      onrowediting="GridView_FileRegister_RowEditing">
+                      onrowediting="GridView_FileRegister_RowEditing" AllowPaging="True">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" 
                               ReadOnly="True" SortExpression="SrNo" InsertVisible="False" 
@@ -115,7 +115,7 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="n" />
        
 </asp:View>
 
@@ -132,42 +132,59 @@
             onitemupdating="FormView_FileRegister_ItemUpdating">
             <EditItemTemplate>
                       <table align="center" cellspacing="5">
-<tr align="left"><td>Worksheet No:</td><td >
+<tr align="left"><td>Worksheet No:</td><td>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+        ControlToValidate="DropDownListWorksheet" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </td><td>
     <asp:DropDownList ID="DropDownListWorksheet" runat="server" 
         DataSourceID="ods_Worksheet" DataTextField="ID" DataValueField="ID" 
         Width="160px">
     </asp:DropDownList>
     </td></tr>
-<tr align="left"><td>File Name:</td><td>
-    <asp:TextBox ID="FileNameTextBox" runat="server" 
-        Text='<%# Bind("FileName") %>' Width="160px" MaxLength="20" /></td></tr>
-<tr align="left"><td>File No:</td><td>
+<tr align="left"><td>File Name :</td><td>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+        ControlToValidate="FileNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </td><td>
+    <asp:TextBox ID="FileNameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+        Text='<%# Bind("FileName") %>' Width="160px" MaxLength="20" TabIndex="1" /></td></tr>
+<tr align="left"><td>File No :</td><td>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+        ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </td><td>
     <asp:TextBox ID="FileNoTextBox" runat="server"  numeric="integer"
-        Text='<%# Bind("FileNo") %>' Width="160px" MaxLength="10" /></td></tr>
-<tr align="left"><td>Starting Date:</td><td >
+        Text='<%# Bind("FileNo") %>' Width="160px" MaxLength="10" TabIndex="2" /></td></tr>
+<tr align="left"><td>Starting Date :</td><td></td><td>
     <asp:TextBox ID="StartingDateTextBox" 
-        runat="server" Text='<%# Bind("StartingDate") %>' Width="160px" /></td></tr>
-<tr align="left"><td>Ending Date:</td><td>
+        runat="server" Text='<%# Bind("StartingDate") %>' Width="160px" 
+        TabIndex="3" /></td></tr>
+<tr align="left"><td>Ending Date :</td><td></td><td>
     <asp:TextBox ID="EndingDateTextBox" runat="server" 
-        Text='<%# Bind("EndingDate") %>' Width="160px" /></td></tr>
+        Text='<%# Bind("EndingDate") %>' Width="160px" TabIndex="4" /></td></tr>
 <tr align="left"><td>Class Of File :</td><td>
-    <asp:TextBox ID="ClassOfFileTextBox" runat="server" 
-        Text='<%# Bind("ClassOfFile") %>' Width="160px" MaxLength="10" /></td></tr>
-<tr align="left"><td>Disposal Date Of File :</td><td>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+        ControlToValidate="ClassOfFileTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </td><td>
+    <asp:TextBox ID="ClassOfFileTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+        Text='<%# Bind("ClassOfFile") %>' Width="160px" MaxLength="10" TabIndex="5" /></td></tr>
+<tr align="left"><td>Disposal Date Of File :</td><td></td><td>
     <asp:TextBox ID="DisposalDateOfFileTextBox" 
-        runat="server" Text='<%# Bind("DisposalDateOfFile") %>' Width="160px" /></td></tr>
-<tr align="left"><td>Disposal Date On :</td><td>
+        runat="server" Text='<%# Bind("DisposalDateOfFile") %>' Width="160px" 
+        TabIndex="6" /></td></tr>
+<tr align="left"><td>Disposal Date On :</td><td></td><td>
     <asp:TextBox ID="DisposalDateOnTextBox" 
-        runat="server" Text='<%# Bind("DisposalDateOn") %>' Width="160px" /></td></tr>
+        runat="server" Text='<%# Bind("DisposalDateOn") %>' Width="160px" 
+        TabIndex="7" /></td></tr>
 <tr>
-                    <td align="center" colspan="2">
+                    <td align="center" colspan="3">
                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Update" Text="Update" CssClass="standardButton" />
+                            CommandName="Update" Text="Update" CssClass="standardButton" 
+                            TabIndex="8" />
                         &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
                             CommandName="Reset" Text="Reset" 
-                            onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+                            onclientclick="resetTextFields();return false;" CssClass="standardButton" 
+                            TabIndex="9" />
                         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" 
-                            CommandName="Back" Text="Back" CssClass="standardButton" />
+                            CommandName="Back" Text="Back" CssClass="standardButton" TabIndex="10" />
                     </td>
                 </tr>
 
@@ -177,41 +194,58 @@
             <InsertItemTemplate>
                      <table align="center" cellspacing="5">
 <tr align="left"><td>Worksheet No:</td><td>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+        ControlToValidate="DropDownListWorksheet" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </td><td>
     <asp:DropDownList ID="DropDownListWorksheet" runat="server" 
         DataSourceID="ods_Worksheet" DataTextField="ID" DataValueField="ID" 
         Width="160px">
     </asp:DropDownList>
     </td></tr>
 <tr align="left"><td>File Name :</td><td>
-    <asp:TextBox ID="FileNameTextBox" runat="server" 
-        Text='<%# Bind("FileName") %>' Width="160px" MaxLength="20" /></td></tr>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+        ControlToValidate="FileNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </td><td>
+    <asp:TextBox ID="FileNameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+        Text='<%# Bind("FileName") %>' Width="160px" MaxLength="20" TabIndex="1" /></td></tr>
 <tr align="left"><td>File No :</td><td>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+        ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </td><td>
     <asp:TextBox ID="FileNoTextBox" runat="server"  numeric="integer"
-        Text='<%# Bind("FileNo") %>' Width="160px" MaxLength="10" /></td></tr>
-<tr align="left"><td>Starting Date :</td><td>
+        Text='<%# Bind("FileNo") %>' Width="160px" MaxLength="10" TabIndex="2" /></td></tr>
+<tr align="left"><td>Starting Date :</td><td></td><td>
     <asp:TextBox ID="StartingDateTextBox" 
-        runat="server" Text='<%# Bind("StartingDate") %>' Width="160px" /></td></tr>
-<tr align="left"><td>Ending Date :</td><td>
+        runat="server" Text='<%# Bind("StartingDate") %>' Width="160px" 
+        TabIndex="3" /></td></tr>
+<tr align="left"><td>Ending Date :</td><td></td><td>
     <asp:TextBox ID="EndingDateTextBox" runat="server" 
-        Text='<%# Bind("EndingDate") %>' Width="160px" /></td></tr>
+        Text='<%# Bind("EndingDate") %>' Width="160px" TabIndex="4" /></td></tr>
 <tr align="left"><td>Class Of File :</td><td>
-    <asp:TextBox ID="ClassOfFileTextBox" runat="server" 
-        Text='<%# Bind("ClassOfFile") %>' Width="160px" MaxLength="10" /></td></tr>
-<tr align="left"><td>Disposal Date Of File :</td><td>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+        ControlToValidate="ClassOfFileTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </td><td>
+    <asp:TextBox ID="ClassOfFileTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+        Text='<%# Bind("ClassOfFile") %>' Width="160px" MaxLength="10" TabIndex="5" /></td></tr>
+<tr align="left"><td>Disposal Date Of File :</td><td></td><td>
     <asp:TextBox ID="DisposalDateOfFileTextBox" 
-        runat="server" Text='<%# Bind("DisposalDateOfFile") %>' Width="160px" /></td></tr>
-<tr align="left"><td>Disposal Date On :</td><td>
+        runat="server" Text='<%# Bind("DisposalDateOfFile") %>' Width="160px" 
+        TabIndex="6" /></td></tr>
+<tr align="left"><td>Disposal Date On :</td><td></td><td>
     <asp:TextBox ID="DisposalDateOnTextBox" 
-        runat="server" Text='<%# Bind("DisposalDateOn") %>' Width="160px" /></td></tr>
+        runat="server" Text='<%# Bind("DisposalDateOn") %>' Width="160px" 
+        TabIndex="7" /></td></tr>
 <tr>
-                    <td align="center" colspan="2">
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                    <td align="center" colspan="3" style="margin-left: 40px">
+                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True"
+                            CommandName="Insert" Text="Insert" CssClass="standardButton" 
+                            TabIndex="8" />
                         &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
                             CommandName="Reset" Text="Reset" 
-                            onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+                            onclientclick="resetTextFields();return false;" CssClass="standardButton" 
+                            TabIndex="9" />
                         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" 
-                            CommandName="Back" Text="Back" CssClass="standardButton" />
+                            CommandName="Back" Text="Back" CssClass="standardButton" TabIndex="10" />
                     </td>
                 </tr>
 

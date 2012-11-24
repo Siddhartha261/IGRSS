@@ -2,8 +2,6 @@
 	-moz-box-shadow:inset 0px 1px 0px 0px #fceaca;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fceaca;
 	box-shadow:inset 0px 1px 0px 0px #fceaca;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffce79), color-stop(1, #eeaf41) );
-	background:-moz-linear-gradient( center top, #ffce79 5%, #eeaf41 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffce79', endColorstr='#eeaf41');
 	background-color:#ffce79;
 	-moz-border-radius:6px;
@@ -18,6 +16,7 @@
 	padding:3px 15px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #ce8e28;
+    text-align: center;
 }.standardButton:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eeaf41), color-stop(1, #ffce79) );
 	background:-moz-linear-gradient( center top, #eeaf41 5%, #ffce79 100% );
