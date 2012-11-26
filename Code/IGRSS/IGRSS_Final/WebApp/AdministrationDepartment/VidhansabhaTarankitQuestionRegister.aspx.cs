@@ -8,7 +8,8 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        RadioButtonList Radio_Tarankit = FormView_Tarankit.FindControl("Radio_tarankit") as RadioButtonList;
+        Radio_Tarankit.Focus();
     }
     protected void btnSearchAppNo_Click(object sender, EventArgs e)
     {

@@ -101,46 +101,64 @@
         <EditItemTemplate>
                             		<table>
 		    <tr align="left"><td>File No:</td>
+			    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 			    <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
                         Width="160px" MaxLength="10" /></td>
 			</tr>        			
                     
             <tr align="left"><td>Name Of Employee:</td>
+			    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="Name_Of_EmployeeDropDown" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 			    <td><asp:DropDownList ID="Name_Of_EmployeeDropDown" runat="server" 
                         DataSourceID="ObjectDataSourceEmployee" DataTextField="FirstName" 
-                        DataValueField="FirstName"></asp:DropDownList>
+                        DataValueField="FirstName" TabIndex="1"></asp:DropDownList>
                 </td>
 			</tr>	                 
                     
             <tr align="left"><td>Designation Of Employee:</td>
 			    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="Drop_employeedesignation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+			    <td>
                     <asp:DropDownList ID="Drop_employeedesignation" runat="server" 
-                        DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name">
+                        DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
+                        TabIndex="2">
                     </asp:DropDownList>
                 </td>
 			</tr>	                 
                     
             <tr align="left"><td>Date Of Complaint:</td>
+			    <td>
+                    &nbsp;</td>
 			    <td><asp:TextBox ID="Date_Of_ComplaintTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" /></td>
+                    Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" TabIndex="3" /></td>
 			</tr>	                 
                     
             <tr align="left"><td>Details To Vigilance Commissioner:</td>
+			    <td>
+                    &nbsp;</td>
 			    <td><asp:TextBox ID="Details_To_Vigilance_CommissionerTextBox" runat="server" 
                     Text='<%# Bind("Details_To_Vigilance_Commissioner") %>' Height="60px" 
-                        Width="160px" /></td>
+                        Width="160px" TabIndex="4" /></td>
 			</tr>	                 
                     
-            <tr><td colspan=2 align="center">
+            <tr><td colspan=3 align="center">
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                        CommandName="Update" Text="Update" CssClass="standardButton" />
+                        CommandName="Update" Text="Update" CssClass="standardButton" 
+                    TabIndex="5" />
 					&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                       CausesValidation="False" CommandName="Reset" Text="Reset" 
                     onclientclick="resetTextFields();return false;" 
-                    CssClass="standardButton" />
+                    CssClass="standardButton" TabIndex="6" />
                     &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                         CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" />
+                    CssClass="standardButton" TabIndex="7" />
 				</td>
 			</tr>                  
 		</table>				 
@@ -149,46 +167,64 @@
         <InsertItemTemplate>
                             		<table>
 		    <tr align="left"><td>File No:</td>
-			    <td><asp:TextBox ID="FileNoTextBox" numeric="integer" runat="server" Text='<%# Bind("FileNo") %>' 
+			    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+			    <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
                         Width="160px" MaxLength="10" /></td>
 			</tr>        			
                     
             <tr align="left"><td>Name Of Employee:</td>
+			    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="Name_Of_EmployeeDropDown" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 			    <td><asp:DropDownList ID="Name_Of_EmployeeDropDown" runat="server" 
                         DataSourceID="ObjectDataSourceEmployee" DataTextField="FirstName" 
-                        DataValueField="FirstName"></asp:DropDownList>
+                        DataValueField="FirstName" TabIndex="1"></asp:DropDownList>
                 </td>
 			</tr>	                 
                     
             <tr align="left"><td>Designation Of Employee:</td>
 			    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="Drop_employeedesignation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+			    <td>
                     <asp:DropDownList ID="Drop_employeedesignation" runat="server" 
-                        DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name">
+                        DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
+                        TabIndex="2">
                     </asp:DropDownList>
                 </td>
 			</tr>	                 
                     
             <tr align="left"><td>Date Of Complaint:</td>
+			    <td>
+                    &nbsp;</td>
 			    <td><asp:TextBox ID="Date_Of_ComplaintTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Complaint") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" TabIndex="3" /></td>
 			</tr>	                 
                     
             <tr align="left"><td>Details To Vigilance Commissioner:</td>
+			    <td>
+                    &nbsp;</td>
 			    <td><asp:TextBox ID="Details_To_Vigilance_CommissionerTextBox" runat="server" 
                     Text='<%# Bind("Details_To_Vigilance_Commissioner") %>' Height="60px" 
-                        Width="160px" /></td>
+                        Width="160px" TabIndex="4" /></td>
 			</tr>	                 
                     
-            <tr><td colspan=2 align="center">
+            <tr><td colspan=3 align="center">
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                        CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                        CommandName="Insert" Text="Insert" CssClass="standardButton" 
+                    TabIndex="5" />
 					&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                       CausesValidation="False" CommandName="Reset" Text="Reset" 
                     onclientclick="resetTextFields();return false;" 
-                    CssClass="standardButton" />
+                    CssClass="standardButton" TabIndex="6" />
                     &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                         CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" />
+                    CssClass="standardButton" TabIndex="7" />
 				</td>
 			</tr>                  
 		</table>				 

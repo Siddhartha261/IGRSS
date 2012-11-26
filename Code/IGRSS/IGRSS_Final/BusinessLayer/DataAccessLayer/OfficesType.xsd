@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OfficesType" targetNamespace="http://tempuri.org/OfficesType.xsd" xmlns:mstns="http://tempuri.org/OfficesType.xsd" xmlns="http://tempuri.org/OfficesType.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IGRSS_FINALConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IGRSS_FINALConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IGRSS.Properties.Settings.GlobalReference.Default.IGRSS_FINALConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IGRSS_DEVConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IGRSS_DEVConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IGRSS.Properties.Settings.GlobalReference.Default.IGRSS_DEVConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Offices1TableAdapter" GeneratorDataComponentClassName="Offices1TableAdapter" Name="Offices1" UserDataComponentName="Offices1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IGRSS_DEVConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.Offices.OfficeName, dbo.Offices.OfficeTypeId, dbo.Offices.OfficeId, dbo.OfficeTypes_LKP.OfficeTypeId AS Expr1
+FROM            dbo.Offices INNER JOIN
+                         dbo.OfficeTypes_LKP ON dbo.Offices.OfficeTypeId = dbo.OfficeTypes_LKP.OfficeTypeId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OfficeName" DataSetColumn="OfficeName" />
+              <Mapping SourceColumn="OfficeTypeId" DataSetColumn="OfficeTypeId" />
+              <Mapping SourceColumn="OfficeId" DataSetColumn="OfficeId" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OfficesType" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OfficesType" msprop:Generator_UserDSName="OfficesType">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Offices1" msprop:Generator_TableClassName="Offices1DataTable" msprop:Generator_TableVarName="tableOffices1" msprop:Generator_TablePropName="Offices1" msprop:Generator_RowDeletingName="Offices1RowDeleting" msprop:Generator_UserTableName="Offices1" msprop:Generator_RowChangingName="Offices1RowChanging" msprop:Generator_RowEvHandlerName="Offices1RowChangeEventHandler" msprop:Generator_RowDeletedName="Offices1RowDeleted" msprop:Generator_RowEvArgName="Offices1RowChangeEvent" msprop:Generator_RowChangedName="Offices1RowChanged" msprop:Generator_RowClassName="Offices1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OfficeName" msprop:Generator_ColumnVarNameInTable="columnOfficeName" msprop:Generator_ColumnPropNameInRow="OfficeName" msprop:Generator_ColumnPropNameInTable="OfficeNameColumn" msprop:Generator_UserColumnName="OfficeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfficeTypeId" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnOfficeTypeId" msprop:Generator_ColumnPropNameInRow="OfficeTypeId" msprop:Generator_ColumnPropNameInTable="OfficeTypeIdColumn" msprop:Generator_UserColumnName="OfficeTypeId" type="xs:string" minOccurs="0" />
+              <xs:element name="OfficeId" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnOfficeId" msprop:Generator_ColumnPropNameInRow="OfficeId" msprop:Generator_ColumnPropNameInTable="OfficeIdColumn" msprop:Generator_UserColumnName="OfficeId" type="xs:string" />
+              <xs:element name="Expr1" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Offices1" />
+      <xs:field xpath="mstns:OfficeId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -185,480 +185,710 @@
         ondatabound="FormView_PIO_DataBound">
         <EditItemTemplate>
                   <table cellpadding="5" cellspacing="5" width="100%">
-        <tr>
+        <tr align="left">
 		    <td>File No:</td>
-			<td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                    Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px"><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Information:</td>
 			<td>
+                &nbsp;</td>
+			<td>
                 <asp:RadioButtonList ID="Radio_information" runat="server" 
-                    RepeatDirection="Horizontal" Width="160px">
+                    RepeatDirection="Horizontal" Width="160px" TabIndex="9">
                     <asp:ListItem Text="Partial" Value="Partial"></asp:ListItem>
                     <asp:ListItem Text="Complete" Value="Complete"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
 		</tr>	
             
-        <tr>
+        <tr align="left">
 		    <td>Applicant's Name:</td>
-			<td><asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="ApplicantNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px"><asp:TextBox ID="ApplicantNameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("ApplicantName") %>' Width="160px" MaxLength="30" 
+                    TabIndex="1" /></td>
 			
 			<td>Received Fees:</td>
-			<td><asp:TextBox ID="Recvd_FeesTextBox" runat="server" 
-                Text='<%# Bind("Recvd_Fees") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="Recvd_FeesTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="Recvd_FeesTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Recvd_Fees") %>' Width="160px" MaxLength="10" TabIndex="10" /></td>
 		</tr>
             				
-        <tr>
+        <tr align="left">
 		    <td>Date Of Application:</td>
-			<td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDate") %>' Width="160px" TabIndex="2" /></td>
 			
 			<td>Received Fees Mode:</td>
 			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="Drop_recvdfessmode" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td>
                 <asp:DropDownList ID="Drop_recvdfessmode" runat="server" 
                     DataSourceID="ods_FeeMaster" DataTextField="Name" DataValueField="Name" 
-                    Width="160px">
+                    Width="160px" TabIndex="11">
                 </asp:DropDownList>
             </td>
 		</tr>
                     
-		<tr>
+		<tr align="left">
 		    <td>Address Of Applicant:</td>
-			<td><asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
                 Text='<%# Bind("ApplicantAddress") %>' Height="60px" TextMode="MultiLine" 
-                    Width="160px" /></td>
+                    Width="160px" TabIndex="3" /></td>
 			
 			<td>Last Date Of Reply/Rejection:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Last_Date_ReplyTextBox" runat="server" 
-                Text='<%# Bind("Last_Date_Reply") %>' Width="140px" /></td>		
+                Text='<%# Bind("Last_Date_Reply") %>' Width="160px" TabIndex="12" /></td>		
 		</tr>     
             			
-        <tr>
+        <tr align="left">
 		    <td>Actual Received Date Of Application:</td>
-			<td><asp:TextBox ID="Application_Received_Actual_DateTextBox" runat="server" 
-                Text='<%# Bind("Application_Received_Actual_Date") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="Application_Received_Actual_DateTextBox" runat="server" 
+                Text='<%# Bind("Application_Received_Actual_Date") %>' Width="160px" 
+                    TabIndex="4" /></td>
 			
 			<td>Information Send:</td>
 			<td>
+                &nbsp;</td>
+			<td>
                 <asp:RadioButtonList ID="Radio_informationsend" runat="server" 
-                    RepeatDirection="Horizontal" Width="160px">
+                    RepeatDirection="Horizontal" Width="160px" TabIndex="13">
                     <asp:ListItem Text="Partial" Value="True"></asp:ListItem>
                     <asp:ListItem Text="Complete" Value="False"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
 		</tr>     
             		
-        <tr>
+        <tr align="left">
 		    <td>Application Is BPL:</td>
 			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="Radio_applbpl" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px">
                 <asp:RadioButtonList ID="Radio_applbpl" runat="server" 
-                    RepeatDirection="Horizontal" Width="160px">
+                    RepeatDirection="Horizontal" Width="160px" TabIndex="5">
                     <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
                     <asp:ListItem Text="No" Value="False"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
 			
 			<td>Information Pages:</td>
-			<td><asp:TextBox ID="Info_PagesTextBox" runat="server" 
-                Text='<%# Bind("Info_Pages") %>' Width="160px" /></td>
+			<td>
+                &nbsp;</td>
+			<td><asp:TextBox ID="Info_PagesTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Info_Pages") %>' Width="160px" TabIndex="14" /></td>
 		</tr> 	            
             				
-        <tr>
+        <tr align="left">
 		    <td>Subject Of Information Asked:</td>
-			<td><asp:TextBox ID="Sub_Info_AskedTextBox" runat="server" 
-                Text='<%# Bind("Sub_Info_Asked") %>' Width="160px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="Sub_Info_AskedTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Sub_Info_Asked") %>' Width="160px" MaxLength="20" 
+                    TabIndex="6" /></td>
 			
 			<td>Amount Per Page:</td>
-			<td><asp:TextBox ID="Page_AmtTextBox" runat="server" 
-                Text='<%# Bind("Page_Amt") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ControlToValidate="Page_AmtTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="Page_AmtTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Page_Amt") %>' Width="160px" TabIndex="15" /></td>
 		</tr> 	           
             				
-        <tr>
+        <tr align="left">
 		    <td>Received From Other Sata-Mandal:</td>
-			<td><asp:TextBox ID="Recvd_Sata_MandalTextBox" runat="server" 
-                Text='<%# Bind("Recvd_Sata_Mandal") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="Recvd_Sata_MandalTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px"><asp:TextBox ID="Recvd_Sata_MandalTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Recvd_Sata_Mandal") %>' Width="160px" MaxLength="20" 
+                    TabIndex="7" /></td>
 			
 			<td>Total Amount:</td>
-			<td><asp:TextBox ID="Total_AmtTextBox" runat="server" 
-                Text='<%# Bind("Total_Amt") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="Total_AmtTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="Total_AmtTextBox" runat="server" numeric="integer" 
+                Text='<%# Bind("Total_Amt") %>' Width="160px" TabIndex="16" /></td>
 		</tr> 	            
             				
-        <tr>
+        <tr align="left">
 		    <td>Received Date:</td>
-			<td><asp:TextBox ID="Recvd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recvd_Date") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="Recvd_DateTextBox" runat="server" 
+                Text='<%# Bind("Recvd_Date") %>' Width="160px" TabIndex="8" /></td>
 			
 			<td>Rejection Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Reject_DateTextBox" runat="server" 
-                Text='<%# Bind("Reject_Date") %>' Width="140px" /></td>
+                Text='<%# Bind("Reject_Date") %>' Width="160px" TabIndex="17" /></td>
 		</tr>       
             				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>Under Which Section:</td>
-			<td><asp:TextBox ID="SectionTextBox" runat="server" Text='<%# Bind("Section") %>' 
-                    Width="160px" /></td>			
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="SectionTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="SectionTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Section") %>' 
+                    Width="160px" TabIndex="18" /></td>			
 		</tr> 	          
             				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>Reasons:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="ReasonsTextBox" runat="server" Text='<%# Bind("Reasons") %>' 
-                    Height="60px" TextMode="MultiLine" Width="160px" /></td>
+                    Height="60px" TextMode="MultiLine" Width="160px" TabIndex="19" /></td>
 		</tr>         
             				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>File Closure Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="FileClosureDateTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDate") %>' Width="140px" /></td>
+                Text='<%# Bind("FileClosureDate") %>' Width="160px" TabIndex="20" /></td>
 		</tr> 	         
             				
                     <tr>
-                        <td colspan="2" style="text-align: center"><h2>FIRST APPEAL</h2>
+                        <td colspan="3" style="text-align: center"><h2>FIRST APPEAL</h2>
                             &nbsp;</td>
-                        <td colspan="2" style="text-align: center"><h2>SECOND APPEAL</h2>
+                        <td colspan="3" style="text-align: center"><h2>SECOND APPEAL</h2>
                             &nbsp;</td>
                     </tr>
             				
-        <tr>
+        <tr align="left">
 		    <td>Whether Appealed to Appellate/Authority:</td>
-			<td><asp:TextBox ID="AuthorityTextBox" runat="server" 
-                Text='<%# Bind("Authority") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ControlToValidate="AuthorityTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px"><asp:TextBox ID="AuthorityTextBox" runat="server" 
+                Text='<%# Bind("Authority") %>' Width="160px" TabIndex="21" /></td>
 			
 			<td>Letter Received Date from Commissioner:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Letteer_Recvd_Date_commissionerTextBox" runat="server" 
-                Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="140px" /></td>
+                Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="160px" 
+                    TabIndex="26" /></td>
 		</tr> 	         
             				
-        <tr>
+        <tr align="left">
 		   <td>Appeal No:</td>
-		   <td><asp:TextBox ID="AppealNoFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealNoFirstAppeal") %>' Width="160px" /></td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
+                    ControlToValidate="AppealNoFirstAppealTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		   <td style="width: 170px"><asp:TextBox ID="AppealNoFirstAppealTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("AppealNoFirstAppeal") %>' Width="160px" TabIndex="22" /></td>
 		   
 		   <td>Appeal No:</td>
-		   <td><asp:TextBox ID="AppealNoSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealNoSecondAppeal") %>' Width="160px" /></td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" 
+                    ControlToValidate="AppealNoSecondAppealTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		   <td><asp:TextBox ID="AppealNoSecondAppealTextBox" runat="server" numeric="integer" 
+                Text='<%# Bind("AppealNoSecondAppeal") %>' Width="160px" TabIndex="27" /></td>
 		</tr>          
             				
-        <tr>
+        <tr align="left">
 		    <td>Appeal Date:</td>
-			<td><asp:TextBox ID="AppealDateFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealDateFirstAppeal") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="AppealDateFirstAppealTextBox" runat="server" 
+                Text='<%# Bind("AppealDateFirstAppeal") %>' Width="160px" TabIndex="23" /></td>
 			
 			<td>Application Name:</td>
-			<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("ApplicationNameSecondAppeal") %>' Width="160px" /></td>			
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" 
+                    ControlToValidate="ApplicationNameSecondAppealTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("ApplicationNameSecondAppeal") %>' Width="160px" 
+                    TabIndex="28" /></td>			
 		</tr>         
             				
-        <tr>
+        <tr align="left">
 		    <td>Order Number Passed By Appellate/Authority:</td>
-		    <td><asp:TextBox ID="Order_AuthorityTextBox" runat="server" 
-                Text='<%# Bind("Order_Authority") %>' Width="160px" /></td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" 
+                    ControlToValidate="Order_AuthorityTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td style="width: 170px"><asp:TextBox ID="Order_AuthorityTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Order_Authority") %>' Width="160px" TabIndex="24" /></td>
 			
 			<td>Address:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="AddressSecondAppealTextBox" runat="server" 
                 Text='<%# Bind("AddressSecondAppeal") %>' Height="60px" TextMode="MultiLine" 
-                    Width="160px" /></td>
+                    Width="160px" TabIndex="29" /></td>
 		</tr>          
             			
-        <tr>
+        <tr align="left">
 		    <td>File Closure Date:</td>
-			<td><asp:TextBox ID="FileClosureDateFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="FileClosureDateFirstAppealTextBox" runat="server" 
+                Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="160px" TabIndex="25" /></td>
 				
 			<td>Appeal Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="AppealDateSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealDateSecondAppeal") %>' Width="140px" /></td>
+                Text='<%# Bind("AppealDateSecondAppeal") %>' Width="160px" TabIndex="30" /></td>
 		</tr>         
             				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>Remarks Sent To Commission:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Remarks_SentTo_CommissionTextBox" runat="server" 
                 Text='<%# Bind("Remarks_SentTo_Commission") %>' Height="60px" 
-                    TextMode="MultiLine" Width="160px" /></td>
+                    TextMode="MultiLine" Width="160px" TabIndex="31" /></td>
 		</tr>         
            				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>Remarks Send Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Remarks_Send_DateTextBox" runat="server" 
-                Text='<%# Bind("Remarks_Send_Date") %>' Width="140px" /></td>
+                Text='<%# Bind("Remarks_Send_Date") %>' Width="160px" TabIndex="32" /></td>
 		</tr>        
 			
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>File Closure Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="FileClosureDateSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="140px" /></td>
+                Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="160px" 
+                    TabIndex="33" /></td>
 		</tr> 	
 		
-        <tr >
-		    <td align="center" colspan="4">
+        <tr>
+		    <td align="center" colspan="6">
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" />
+                CommandName="Update" Text="Update" CssClass="standardButton" TabIndex="34" />
 			&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
                     CssClass="standardButton" 
-                    onclientclick="resetTextFields();return false;" />	
+                    onclientclick="resetTextFields();return false;" TabIndex="35" />	
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td>			
+                    CssClass="standardButton" TabIndex="36" /></td>			
 		</tr>           
 	</table>
 
         </EditItemTemplate>
         <InsertItemTemplate>
                 <table cellpadding="5" cellspacing="5" width="100%">
-        <tr>
+        <tr align="left">
 		    <td>File No:</td>
-			<td><asp:TextBox ID="FileNoTextBox" runat="server" Text='<%# Bind("FileNo") %>' 
-                    Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px"><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
+                    Width="160px" MaxLength="10" /></td>
 			
 			<td>Information:</td>
 			<td>
+                &nbsp;</td>
+			<td>
                 <asp:RadioButtonList ID="Radio_information" runat="server" 
-                    RepeatDirection="Horizontal" Width="160px">
+                    RepeatDirection="Horizontal" Width="160px" TabIndex="9">
                     <asp:ListItem Text="Partial" Value="Partial"></asp:ListItem>
                     <asp:ListItem Text="Complete" Value="Complete"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
 		</tr>	
             
-        <tr>
+        <tr align="left">
 		    <td>Applicant's Name:</td>
-			<td><asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="ApplicantNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px"><asp:TextBox ID="ApplicantNameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("ApplicantName") %>' Width="160px" MaxLength="30" 
+                    TabIndex="1" /></td>
 			
 			<td>Received Fees:</td>
-			<td><asp:TextBox ID="Recvd_FeesTextBox" runat="server" 
-                Text='<%# Bind("Recvd_Fees") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="Recvd_FeesTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="Recvd_FeesTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Recvd_Fees") %>' Width="160px" MaxLength="10" TabIndex="10" /></td>
 		</tr>
             				
-        <tr>
+        <tr align="left">
 		    <td>Date Of Application:</td>
-			<td><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="ApplicationDateTextBox" runat="server" 
+                Text='<%# Bind("ApplicationDate") %>' Width="160px" TabIndex="2" /></td>
 			
 			<td>Received Fees Mode:</td>
 			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="Drop_recvdfessmode" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td>
                 <asp:DropDownList ID="Drop_recvdfessmode" runat="server" 
                     DataSourceID="ods_FeeMaster" DataTextField="Name" DataValueField="Name" 
-                    Width="160px">
+                    Width="160px" TabIndex="11">
                 </asp:DropDownList>
             </td>
 		</tr>
                     
-		<tr>
+		<tr align="left">
 		    <td>Address Of Applicant:</td>
-			<td><asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
                 Text='<%# Bind("ApplicantAddress") %>' Height="60px" TextMode="MultiLine" 
-                    Width="160px" /></td>
+                    Width="160px" TabIndex="3" /></td>
 			
 			<td>Last Date Of Reply/Rejection:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Last_Date_ReplyTextBox" runat="server" 
-                Text='<%# Bind("Last_Date_Reply") %>' Width="140px" /></td>		
+                Text='<%# Bind("Last_Date_Reply") %>' Width="160px" TabIndex="12" /></td>		
 		</tr>     
             			
-        <tr>
+        <tr align="left">
 		    <td>Actual Received Date Of Application:</td>
-			<td><asp:TextBox ID="Application_Received_Actual_DateTextBox" runat="server" 
-                Text='<%# Bind("Application_Received_Actual_Date") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="Application_Received_Actual_DateTextBox" runat="server" 
+                Text='<%# Bind("Application_Received_Actual_Date") %>' Width="160px" 
+                    TabIndex="4" /></td>
 			
 			<td>Information Send:</td>
 			<td>
+                &nbsp;</td>
+			<td>
                 <asp:RadioButtonList ID="Radio_informationsend" runat="server" 
-                    RepeatDirection="Horizontal" Width="160px">
+                    RepeatDirection="Horizontal" Width="160px" TabIndex="13">
                     <asp:ListItem Text="Partial" Value="True"></asp:ListItem>
                     <asp:ListItem Text="Complete" Value="False"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
 		</tr>     
             		
-        <tr>
+        <tr align="left">
 		    <td>Application Is BPL:</td>
 			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="Radio_applbpl" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px">
                 <asp:RadioButtonList ID="Radio_applbpl" runat="server" 
-                    RepeatDirection="Horizontal" Width="160px">
+                    RepeatDirection="Horizontal" Width="160px" TabIndex="5">
                     <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
                     <asp:ListItem Text="No" Value="False"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
 			
 			<td>Information Pages:</td>
-			<td><asp:TextBox ID="Info_PagesTextBox" runat="server" 
-                Text='<%# Bind("Info_Pages") %>' Width="160px" /></td>
+			<td>
+                &nbsp;</td>
+			<td><asp:TextBox ID="Info_PagesTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Info_Pages") %>' Width="160px" TabIndex="14" /></td>
 		</tr> 	            
             				
-        <tr>
+        <tr align="left">
 		    <td>Subject Of Information Asked:</td>
-			<td><asp:TextBox ID="Sub_Info_AskedTextBox" runat="server" 
-                Text='<%# Bind("Sub_Info_Asked") %>' Width="160px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="Sub_Info_AskedTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Sub_Info_Asked") %>' Width="160px" MaxLength="20" 
+                    TabIndex="6" /></td>
 			
 			<td>Amount Per Page:</td>
-			<td><asp:TextBox ID="Page_AmtTextBox" runat="server" 
-                Text='<%# Bind("Page_Amt") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ControlToValidate="Page_AmtTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="Page_AmtTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Page_Amt") %>' Width="160px" TabIndex="15" /></td>
 		</tr> 	           
             				
-        <tr>
+        <tr align="left">
 		    <td>Received From Other Sata-Mandal:</td>
-			<td><asp:TextBox ID="Recvd_Sata_MandalTextBox" runat="server" 
-                Text='<%# Bind("Recvd_Sata_Mandal") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="Recvd_Sata_MandalTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px"><asp:TextBox ID="Recvd_Sata_MandalTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Recvd_Sata_Mandal") %>' Width="160px" MaxLength="20" 
+                    TabIndex="7" /></td>
 			
 			<td>Total Amount:</td>
-			<td><asp:TextBox ID="Total_AmtTextBox" runat="server" 
-                Text='<%# Bind("Total_Amt") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="Total_AmtTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="Total_AmtTextBox" runat="server" numeric="integer" 
+                Text='<%# Bind("Total_Amt") %>' Width="160px" TabIndex="16" /></td>
 		</tr> 	            
             				
-        <tr>
+        <tr align="left">
 		    <td>Received Date:</td>
-			<td><asp:TextBox ID="Recvd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recvd_Date") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="Recvd_DateTextBox" runat="server" 
+                Text='<%# Bind("Recvd_Date") %>' Width="160px" TabIndex="8" /></td>
 			
 			<td>Rejection Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Reject_DateTextBox" runat="server" 
-                Text='<%# Bind("Reject_Date") %>' Width="140px" /></td>
+                Text='<%# Bind("Reject_Date") %>' Width="160px" TabIndex="17" /></td>
 		</tr>       
             				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>Under Which Section:</td>
-			<td><asp:TextBox ID="SectionTextBox" runat="server" Text='<%# Bind("Section") %>' 
-                    Width="160px" /></td>			
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="SectionTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="SectionTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Section") %>' 
+                    Width="160px" TabIndex="18" /></td>			
 		</tr> 	          
             				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>Reasons:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="ReasonsTextBox" runat="server" Text='<%# Bind("Reasons") %>' 
-                    Height="60px" TextMode="MultiLine" Width="160px" /></td>
+                    Height="60px" TextMode="MultiLine" Width="160px" TabIndex="19" /></td>
 		</tr>         
             				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>File Closure Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="FileClosureDateTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDate") %>' Width="140px" /></td>
+                Text='<%# Bind("FileClosureDate") %>' Width="160px" TabIndex="20" /></td>
 		</tr> 	         
             				
                     <tr>
-                        <td colspan="2" style="text-align: center"><h2>FIRST APPEAL</h2>
+                        <td colspan="3" style="text-align: center"><h2>FIRST APPEAL</h2>
                             &nbsp;</td>
-                        <td colspan="2" style="text-align: center"><h2>SECOND APPEAL</h2>
+                        <td colspan="3" style="text-align: center"><h2>SECOND APPEAL</h2>
                             &nbsp;</td>
                     </tr>
             				
-        <tr>
+        <tr align="left">
 		    <td>Whether Appealed to Appellate/Authority:</td>
-			<td><asp:TextBox ID="AuthorityTextBox" runat="server" 
-                Text='<%# Bind("Authority") %>' Width="160px" /></td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ControlToValidate="AuthorityTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td style="width: 170px"><asp:TextBox ID="AuthorityTextBox" runat="server" 
+                Text='<%# Bind("Authority") %>' Width="160px" TabIndex="21" /></td>
 			
 			<td>Letter Received Date from Commissioner:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Letteer_Recvd_Date_commissionerTextBox" runat="server" 
-                Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="140px" /></td>
+                Text='<%# Bind("Letteer_Recvd_Date_commissioner") %>' Width="160px" 
+                    TabIndex="26" /></td>
 		</tr> 	         
             				
-        <tr>
+        <tr align="left">
 		   <td>Appeal No:</td>
-		   <td><asp:TextBox ID="AppealNoFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealNoFirstAppeal") %>' Width="160px" /></td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
+                    ControlToValidate="AppealNoFirstAppealTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		   <td style="width: 170px"><asp:TextBox ID="AppealNoFirstAppealTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("AppealNoFirstAppeal") %>' Width="160px" TabIndex="22" /></td>
 		   
 		   <td>Appeal No:</td>
-		   <td><asp:TextBox ID="AppealNoSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealNoSecondAppeal") %>' Width="160px" /></td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" 
+                    ControlToValidate="AppealNoSecondAppealTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		   <td><asp:TextBox ID="AppealNoSecondAppealTextBox" runat="server" numeric="integer" 
+                Text='<%# Bind("AppealNoSecondAppeal") %>' Width="160px" TabIndex="27" /></td>
 		</tr>          
             				
-        <tr>
+        <tr align="left">
 		    <td>Appeal Date:</td>
-			<td><asp:TextBox ID="AppealDateFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealDateFirstAppeal") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="AppealDateFirstAppealTextBox" runat="server" 
+                Text='<%# Bind("AppealDateFirstAppeal") %>' Width="160px" TabIndex="23" /></td>
 			
 			<td>Application Name:</td>
-			<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("ApplicationNameSecondAppeal") %>' Width="160px" /></td>			
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" 
+                    ControlToValidate="ApplicationNameSecondAppealTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("ApplicationNameSecondAppeal") %>' Width="160px" 
+                    TabIndex="28" /></td>			
 		</tr>         
             				
-        <tr>
+        <tr align="left">
 		    <td>Order Number Passed By Appellate/Authority:</td>
-		    <td><asp:TextBox ID="Order_AuthorityTextBox" runat="server" 
-                Text='<%# Bind("Order_Authority") %>' Width="160px" /></td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" 
+                    ControlToValidate="Order_AuthorityTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td style="width: 170px"><asp:TextBox ID="Order_AuthorityTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Order_Authority") %>' Width="160px" TabIndex="24" /></td>
 			
 			<td>Address:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="AddressSecondAppealTextBox" runat="server" 
                 Text='<%# Bind("AddressSecondAppeal") %>' Height="60px" TextMode="MultiLine" 
-                    Width="160px" /></td>
+                    Width="160px" TabIndex="29" /></td>
 		</tr>          
             			
-        <tr>
+        <tr align="left">
 		    <td>File Closure Date:</td>
-			<td><asp:TextBox ID="FileClosureDateFirstAppealTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="140px" /></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"><asp:TextBox ID="FileClosureDateFirstAppealTextBox" runat="server" 
+                Text='<%# Bind("FileClosureDateFirstAppeal") %>' Width="160px" TabIndex="25" /></td>
 				
 			<td>Appeal Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="AppealDateSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("AppealDateSecondAppeal") %>' Width="140px" /></td>
+                Text='<%# Bind("AppealDateSecondAppeal") %>' Width="160px" TabIndex="30" /></td>
 		</tr>         
             				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>Remarks Sent To Commission:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Remarks_SentTo_CommissionTextBox" runat="server" 
                 Text='<%# Bind("Remarks_SentTo_Commission") %>' Height="60px" 
-                    TextMode="MultiLine" Width="160px" /></td>
+                    TextMode="MultiLine" Width="160px" TabIndex="31" /></td>
 		</tr>         
            				
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>Remarks Send Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="Remarks_Send_DateTextBox" runat="server" 
-                Text='<%# Bind("Remarks_Send_Date") %>' Width="140px" /></td>
+                Text='<%# Bind("Remarks_Send_Date") %>' Width="160px" TabIndex="32" /></td>
 		</tr>        
 			
-        <tr>
+        <tr align="left">
 		    <td></td>
-			<td></td>
+			<td>
+                &nbsp;</td>
+			<td style="width: 170px"></td>
 			
 			<td>File Closure Date:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="FileClosureDateSecondAppealTextBox" runat="server" 
-                Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="140px" /></td>
+                Text='<%# Bind("FileClosureDateSecondAppeal") %>' Width="160px" 
+                    TabIndex="33" /></td>
 		</tr> 	
 		
         <tr >
-		    <td align="center" colspan="4">
+		    <td align="center" colspan="6">
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                CommandName="Insert" Text="Insert" CssClass="standardButton" TabIndex="34" />
 			&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
                     CssClass="standardButton" 
-                    onclientclick="resetTextFields();return false;" />	
+                    onclientclick="resetTextFields();return false;" TabIndex="35" />	
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td>			
+                    CssClass="standardButton" TabIndex="36" /></td>			
 		</tr>           
 	</table>
 

@@ -279,6 +279,237 @@
                             </td></tr>
                         <tr>
                             <td align="right">
+                                &nbsp;</td>
+                            <td align="left">
+                                <asp:Button ID="Button_addcopytodetails" runat="server" Text="Add" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" colspan="2">
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                                    EnableModelValidation="True">
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="">
+                                            <HeaderTemplate>
+                                                <asp:CheckBox ID="CheckBox2" runat="server" />
+                                            </HeaderTemplate>
+                                            <ItemTemplate>
+                                                <asp:CheckBox ID="CheckBox1" runat="server" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Name">
+                        <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server"> <%#Eval("Name")%></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    
+                       <asp:TemplateField HeaderText="Address">
+                       <ItemTemplate>
+                                <asp:Label ID="Label2" runat="server"> <%#Eval("Address")%></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Price Or Stamp Value">
+                             <ItemTemplate>
+                                <asp:Label ID="Label3" runat="server"> <%#Eval("PriceOrStampValue")%></asp:Label>
+                            </ItemTemplate>
+                       </asp:TemplateField>
+
+                                      
+                                       
+                      </Columns>                                    
+                                </asp:GridView>
+                            </td>
+                        </tr>
+                        <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" 
+                                CausesValidation="True" CommandName="Insert" Text="Insert" 
+                                CssClass="standardButton" />&nbsp;<asp:Button 
+                                ID="ResetButton" runat="server" CausesValidation="True" CommandName="Reset" 
+                                Text="Reset" onclientclick="resetTextFields();return false;" 
+                                CssClass="standardButton" />&nbsp;<asp:Button ID="InsertCancelButton" 
+                                runat="server" CausesValidation="False" CommandName="Back" Text="Back" 
+                                CssClass="standardButton" /></td></tr>
+                    </table>
+                </InsertItemTemplate>
+                <EditItemTemplate>
+                    <%--<table >
+                        <tr><td align="right">Outward No:</td><td align="left"><asp:TextBox ID="FormattedOutwardNoTextBox" runat="server" 
+                        Text='<%# Bind("FormattedOutwardNo") %>' Width="160px"/></td></tr>
+                        <tr><td align="right">Outward Date:</td><td align="left"><asp:TextBox ID="OutwardDateTextBox" runat="server" Text='<%# Bind("OutwardDate") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Letter No:</td><td align="left"><asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Document From Branch:</td><td align="left"><asp:TextBox ID="documentfrombranchTextBox" runat="server" Text='<%# Bind("documentfrombranch") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Description:</td><td align="left"><asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" /></td></tr>
+                        <tr><td align="right">Sent To:</td><td align="left">
+                            <asp:DropDownList ID="DropDownList_SentTo" runat="server" Width="160px">
+                            </asp:DropDownList>
+                            </td></tr>
+                        <tr><td align="right">Address:</td><td align="left"><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' TextMode="MultiLine" Width="160px" /></td></tr>
+                        <tr><td align="right">Copy To:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
+                        <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
+                        <tr><td colspan="2" align="center">
+                            <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
+                        CommandName="Update" Text="Update" CssClass="standardButton" />&nbsp; <asp:Button ID="ResetButton" 
+                                runat="server" CausesValidation="True" 
+                        CommandName="Reset" Text="Reset" onclientclick="resetTextFields();return false;" 
+                                CssClass="standardButton" /> &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
+                        CausesValidation="False" CommandName="Back" Text="Back" 
+                                CssClass="standardButton" /></td></tr>
+                    </table>--%>
+                    <table >
+                        <tr><td align="right">Outward No:</td><td align="left"><asp:TextBox ID="FormattedOutwardNoTextBox" runat="server" 
+                        Text='<%# Bind("FormattedOutwardNo") %>' Width="160px"/></td></tr>
+                        <tr><td align="right">Outward Date:</td><td align="left">
+                            <asp:TextBox ID="OutwardDateTextBox" runat="server" 
+                                Text='<%# Bind("OutwardDate") %>' Width="140px" /></td></tr>
+                        <tr>
+                            <td align="right">
+                                File Number:</td>
+                            <td align="left">
+                                <asp:TextBox ID="TextBox_Fileno" runat="server" 
+                                    Text='<%# Bind("OutwardDate") %>' Width="160px" />
+                            </td>
+                        </tr>
+                        <tr><td align="right">Letter No:</td><td align="left">
+                            <asp:ListBox ID="ListBox1" runat="server">
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>11</asp:ListItem>
+                                <asp:ListItem>12</asp:ListItem>
+                                <asp:ListItem>13</asp:ListItem>
+                                <asp:ListItem>14</asp:ListItem>
+                            </asp:ListBox>
+                            </td></tr>
+                        <tr><td align="right">Document From Branch:</td><td align="left">
+                            <asp:DropDownList ID="DropDownList_frombranch" runat="server">
+                                <asp:ListItem>Branch1</asp:ListItem>
+                                <asp:ListItem>Branch2</asp:ListItem>
+                                <asp:ListItem>Branch3</asp:ListItem>
+                                <asp:ListItem>Branch4</asp:ListItem>
+                                <asp:ListItem>Branch5</asp:ListItem>
+                            </asp:DropDownList>
+                            </td></tr>
+                        <tr><td align="right">Description:</td><td align="left">
+                            <asp:TextBox ID="DescriptionTextBox" runat="server" 
+                                Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" 
+                                Height="60px" /></td></tr>
+                        <tr>
+                            <td align="right">
+                                Remarks:</td>
+                            <td align="left">
+                                <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
+                                    TextMode="MultiLine" Width="160px" Height="60px" />
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td align="right" colspan="2" style="text-align: center">
+                                SENT TO DETAILS</td>
+                        </tr>
+                        <tr>
+                            <td align="right" colspan="2" style="text-align: center">
+                                &nbsp;</td>
+                        </tr>
+                        <tr><td align="right">Sent To:</td><td align="left">
+                            <asp:DropDownList ID="DropDownList_SentTo" runat="server" Width="160px">
+                                <asp:ListItem>Registrar</asp:ListItem>
+                                <asp:ListItem>SubRegistrar</asp:ListItem>
+                                <asp:ListItem>Other</asp:ListItem>
+                            </asp:DropDownList>
+                            </td></tr>
+                        <tr><td align="right">Office</td><td align="left">
+                            <asp:DropDownList ID="DropDownList_Office" runat="server" Width="160px">
+                                <asp:ListItem>Office1</asp:ListItem>
+                                <asp:ListItem>Office2</asp:ListItem>
+                                <asp:ListItem>Office3</asp:ListItem>
+                                <asp:ListItem>Office4</asp:ListItem>
+                                <asp:ListItem>Office5</asp:ListItem>
+                            </asp:DropDownList>
+                            </td></tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;Name:</td>
+                            <td align="left">
+                                <asp:TextBox ID="OfficeNameTextBox" runat="server" Text='<%# Bind("CopyTo") %>' 
+                                    Width="160px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Address:</td>
+                            <td align="left">
+                                <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' 
+                                    TextMode="MultiLine" Width="160px" Height="60px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;</td>
+                            <td align="left">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="right" colspan="2" style="text-align: center">
+                                DISPATCH DETAILS</td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;</td>
+                            <td align="left">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Send Via:</td>
+                            <td align="left">
+                                <asp:DropDownList ID="DropDownList_SendVia" runat="server" Width="160px">
+                                    <asp:ListItem>Post</asp:ListItem>
+                                    <asp:ListItem>Couriers</asp:ListItem>
+                                    <asp:ListItem>Speed Post</asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                Courier Name(If Sent through Courier):&nbsp;
+                            </td>
+                            <td align="left" style="margin-left: 40px">
+                                <asp:TextBox ID="CourierTextBox" runat="server" Text='<%# Bind("CopyTo") %>' 
+                                    Width="160px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;</td>
+                            <td align="left" style="margin-left: 40px">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="right" colspan="2" style="text-align: center">
+                                COPY TO DETAILS</td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;</td>
+                            <td align="left" style="margin-left: 40px">
+                                &nbsp;</td>
+                        </tr>
+                        <tr><td align="right">Copy To:</td><td align="left">
+                            <asp:ListBox ID="ListBox2" runat="server">
+                                <asp:ListItem>Registrar</asp:ListItem>
+                                <asp:ListItem>SubRegistrar</asp:ListItem>
+                                <asp:ListItem>Other</asp:ListItem>
+                            </asp:ListBox>
+                            </td></tr>
+                        <tr><td align="right">Office:</td><td align="left">
+                            <asp:DropDownList ID="DropDownList_Office_copyto" runat="server" Width="160px">
+                                <asp:ListItem>Office1</asp:ListItem>
+                                <asp:ListItem>Office2</asp:ListItem>
+                                <asp:ListItem>Office3</asp:ListItem>
+                                <asp:ListItem>Office4</asp:ListItem>
+                                <asp:ListItem>Office5</asp:ListItem>
+                            </asp:DropDownList>
+                            </td></tr>
+                        <tr>
+                            <td align="right">
                                 Name:</td>
                             <td align="left">
                                 <asp:TextBox ID="OfficeNameTextBox_copyto" runat="server" 
@@ -337,38 +568,13 @@
                                 </asp:GridView>
                             </td>
                         </tr>
-                        <tr><td colspan="2" align="center"><asp:Button ID="InsertButton" runat="server" 
-                                CausesValidation="True" CommandName="Insert" Text="Insert" 
+                        <tr><td colspan="2" align="center"><asp:Button ID="UpdateButton" runat="server" 
+                                CausesValidation="True" CommandName="Update" Text="Update" 
                                 CssClass="standardButton" />&nbsp;<asp:Button 
                                 ID="ResetButton" runat="server" CausesValidation="True" CommandName="Reset" 
                                 Text="Reset" onclientclick="resetTextFields();return false;" 
                                 CssClass="standardButton" />&nbsp;<asp:Button ID="InsertCancelButton" 
                                 runat="server" CausesValidation="False" CommandName="Back" Text="Back" 
-                                CssClass="standardButton" /></td></tr>
-                    </table>
-                </InsertItemTemplate>
-                <EditItemTemplate>
-                    <table >
-                        <tr><td align="right">Outward No:</td><td align="left"><asp:TextBox ID="FormattedOutwardNoTextBox" runat="server" 
-                        Text='<%# Bind("FormattedOutwardNo") %>' Width="160px"/></td></tr>
-                        <tr><td align="right">Outward Date:</td><td align="left"><asp:TextBox ID="OutwardDateTextBox" runat="server" Text='<%# Bind("OutwardDate") %>' Width="160px" /></td></tr>
-                        <tr><td align="right">Letter No:</td><td align="left"><asp:TextBox ID="LetterNoTextBox" runat="server" Text='<%# Bind("LetterNo") %>' Width="160px" /></td></tr>
-                        <tr><td align="right">Document From Branch:</td><td align="left"><asp:TextBox ID="documentfrombranchTextBox" runat="server" Text='<%# Bind("documentfrombranch") %>' Width="160px" /></td></tr>
-                        <tr><td align="right">Description:</td><td align="left"><asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td align="right">Sent To:</td><td align="left">
-                            <asp:DropDownList ID="DropDownList_SentTo" runat="server" Width="160px">
-                            </asp:DropDownList>
-                            </td></tr>
-                        <tr><td align="right">Address:</td><td align="left"><asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td align="right">Copy To:</td><td align="left"><asp:TextBox ID="CopyToTextBox" runat="server" Text='<%# Bind("CopyTo") %>' Width="160px" /></td></tr>
-                        <tr><td align="right">Remarks:</td><td align="left"><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' TextMode="MultiLine" Width="160px" /></td></tr>
-                        <tr><td colspan="2" align="center">
-                            <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
-                        CommandName="Update" Text="Update" CssClass="standardButton" />&nbsp; <asp:Button ID="ResetButton" 
-                                runat="server" CausesValidation="True" 
-                        CommandName="Reset" Text="Reset" onclientclick="resetTextFields();return false;" 
-                                CssClass="standardButton" /> &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" 
-                        CausesValidation="False" CommandName="Back" Text="Back" 
                                 CssClass="standardButton" /></td></tr>
                     </table>
                 </EditItemTemplate>

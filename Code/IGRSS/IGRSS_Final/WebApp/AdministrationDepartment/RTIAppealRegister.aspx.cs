@@ -8,7 +8,8 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        TextBox TextBox_Name_Of_Applicant = FormView_RTI.FindControl("Appl_nameTextBox") as TextBox;
+        TextBox_Name_Of_Applicant.Focus();
     }
     
    

@@ -8,7 +8,8 @@ public partial class LatestPages_PIO : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //TextBox TextBox_FileNo = FormView_PIO.FindControl("FileNoTextBox") as TextBox;
+        //TextBox_FileNo.Focus();
     }
    
     protected void Button_new_Click(object sender, EventArgs e)
@@ -122,8 +123,7 @@ public partial class LatestPages_PIO : System.Web.UI.Page
             Label lblAppl_BPL = e.Row.FindControl("lblAppl_BPL") as Label;
             lblAppl_BPL.Text = Convert.ToBoolean(GridView_PIO.DataKeys[e.Row.RowIndex].Values[1]) ? "Yes" : "No";
 
-            Label lblInfo_Send = e.Row.FindControl("Info_Send") as Label;
-            lblInfo_Send.Text = Convert.ToBoolean(GridView_PIO.DataKeys[e.Row.RowIndex].Values[1]) ? "Partial" : "Complete";
+            
         }
     }
     protected void FormView_PIO_DataBound(object sender, EventArgs e)

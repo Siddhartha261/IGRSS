@@ -194,7 +194,7 @@
 			<td>Latest Status:</td>
 			<td>
                 &nbsp;</td>
-			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" 
+			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
             Text='<%# Bind("LatestStatus") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
@@ -204,7 +204,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                     ControlToValidate="PetitionerNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
-			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" 
+			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
             Text='<%# Bind("PetitionerName") %>' Width="160px" MaxLength="30" /></td>
 			
 			<td>Petition Disposed Year:</td>
@@ -247,7 +247,7 @@
 		   <td>Order Judgement Sheet:</td>
 		    <td>
                 &nbsp;</td>
-		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
+		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
             Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
@@ -334,17 +334,17 @@
 			<td>Latest Status:</td>
 			<td>
                 &nbsp;</td>
-			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" 
+			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
             Text='<%# Bind("LatestStatus") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         
         <tr align="left">
 		    <td>Petitioner Name:</td>
 			<td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" onkeypress="return AllowAlphabet(event)"
                     ControlToValidate="PetitionerNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
-			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" 
+			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
             Text='<%# Bind("PetitionerName") %>' Width="160px" MaxLength="30" /></td>
 			
 			<td>Petition Disposed Year:</td>
@@ -387,7 +387,7 @@
 		   <td>Order Judgement Sheet:</td>
 		    <td>
                 &nbsp;</td>
-		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" 
+		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
             Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" MaxLength="20" /></td>
 		</tr>       
         

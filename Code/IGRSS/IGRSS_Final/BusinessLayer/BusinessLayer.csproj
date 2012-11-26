@@ -169,6 +169,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Config.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\CopyTo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CopyTo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\C_L_Card.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -389,6 +394,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>officename.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\OfficesType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OfficesType.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Outward.cs">
       <DependentUpon>Outward.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -397,6 +407,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Outward.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\OutwardRegister_Latest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutwardRegister_Latest.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\PIO.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -893,6 +908,17 @@
     </None>
     <None Include="DataAccessLayer\Complain.xss">
       <DependentUpon>Complain.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\CopyTo.xsc">
+      <DependentUpon>CopyTo.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\CopyTo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CopyTo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\CopyTo.xss">
+      <DependentUpon>CopyTo.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\C_L_Card.xsc">
       <DependentUpon>C_L_Card.xsd</DependentUpon>
@@ -1411,6 +1437,17 @@
     <None Include="DataAccessLayer\OfficesMaster.xss">
       <DependentUpon>OfficesMaster.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\OfficesType.xsc">
+      <DependentUpon>OfficesType.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\OfficesType.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OfficesType.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\OfficesType.xss">
+      <DependentUpon>OfficesType.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Outward.xsc">
       <DependentUpon>Outward.xsd</DependentUpon>
     </None>
@@ -1421,6 +1458,17 @@
     </None>
     <None Include="DataAccessLayer\Outward.xss">
       <DependentUpon>Outward.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\OutwardRegister_Latest.xsc">
+      <DependentUpon>OutwardRegister_Latest.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\OutwardRegister_Latest.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutwardRegister_Latest.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\OutwardRegister_Latest.xss">
+      <DependentUpon>OutwardRegister_Latest.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\PIO.xsc">
       <DependentUpon>PIO.xsd</DependentUpon>

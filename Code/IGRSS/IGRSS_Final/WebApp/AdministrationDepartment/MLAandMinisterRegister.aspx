@@ -2,9 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
     <script language="javascript">
-
-   
-
     function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
             showOn: "both",
@@ -36,6 +33,8 @@
             var formattedNumber = 'IGR\/' + $('input[id*="InwardNoTextBox"]').val() + '\/' + new Date().getFullYear();
             $('input[id*="InwardNoTextBox"]').val(formattedNumber.toString());
         });
+
+   
 
         var datePickers = ["LetterDateTextBox"];
         for (var index = 0; index < datePickers.length; index++) {
@@ -138,36 +137,60 @@
         <EditItemTemplate>
                 <table>
         <tr align="left"><td>Inward No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                    ControlToValidate="InwardNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="InwardNoTextBox" runat="server" 
                 Text='<%# Bind("InwardNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>					
             
         <tr align="left"><td>File No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
                     Width="160px" MaxLength="10" /></td>
 		</tr>	          
          
         <tr align="left"><td>MLA/MP/Minister's Name:</td>
-		    <td><asp:TextBox ID="MLAnameTextBox" runat="server" Text='<%# Bind("MLAname") %>' 
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="MLAnameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td><asp:TextBox ID="MLAnameTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("MLAname") %>' 
                     Width="160px" MaxLength="30" /></td>
 		</tr>	           
             
         <tr align="left"><td>Subject:</td>
-		    <td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
+		    <td>
+                &nbsp;</td>
+		    <td><asp:TextBox ID="SubjectTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Subject") %>' 
                     Width="160px" MaxLength="20" /></td>
 		</tr>	            
             
         <tr align="left"><td>Letter No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="LetterNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="LetterNoTextBox" runat="server" numeric="integer"
                 Text='<%# Bind("LetterNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	            
             
         <tr align="left"><td>Letter Date:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="LetterDateTextBox" runat="server" 
                 Text='<%# Bind("LetterDate") %>' Width="160px" /></td>
 		</tr>	           
             
         <tr align="left"><td>Department Name:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="Drop_departmentname" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td>
                 <asp:DropDownList ID="Drop_departmentname" runat="server" 
                     DataSourceID="ods_departmentname" DataTextField="Name" DataValueField="Name">
@@ -176,34 +199,46 @@
 		</tr>	           
             
         <tr align="left"><td>File Number:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="FileNumberTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="FileNumberTextBox" runat="server" numeric="integer"
                 Text='<%# Bind("FileNumber") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	           
             
         <tr align="left"><td>Details Of Output:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="DetailsofOutputTextBox" runat="server" 
                 Text='<%# Bind("DetailsofOutput") %>' Height="60px" TextMode="MultiLine" 
                     Width="160px" /></td>
 		</tr>	            
             
         <tr align="left"><td>Details Of File Preservation:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="DetailsofFilePreservationTextBox" runat="server" 
                 Text='<%# Bind("DetailsofFilePreservation") %>' Height="60px" 
                     TextMode="MultiLine" Width="160px" /></td>
 		</tr>	          
             
         <tr align="left"><td>Details Of Record:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="DetailsOfRecordTextBox" runat="server" 
                 Text='<%# Bind("DetailsOfRecord") %>' Height="60px" TextMode="MultiLine" 
                     Width="160px" /></td>
 		</tr>	           
             
         <tr align="left"><td>Remarks:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                     Height="60px" TextMode="MultiLine" Width="160px" /></td>
 		</tr>	            
             
-        <tr><td colspan=2 align="center">
+        <tr><td colspan=3 align="center">
             <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update" CssClass="standardButton" />
 			&nbsp;<asp:Button ID="ResetButton" runat="server" 
@@ -221,36 +256,60 @@
         <InsertItemTemplate>
                 <table>
         <tr align="left"><td>Inward No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                    ControlToValidate="InwardNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="InwardNoTextBox" runat="server" 
                 Text='<%# Bind("InwardNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>					
             
         <tr align="left"><td>File No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
                     Width="160px" MaxLength="10" /></td>
 		</tr>	          
          
         <tr align="left"><td>MLA/MP/Minister's Name:</td>
-		    <td><asp:TextBox ID="MLAnameTextBox" runat="server" Text='<%# Bind("MLAname") %>' 
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="MLAnameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td><asp:TextBox ID="MLAnameTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("MLAname") %>' 
                     Width="160px" MaxLength="30" /></td>
 		</tr>	           
             
         <tr align="left"><td>Subject:</td>
-		    <td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
+		    <td>
+                &nbsp;</td>
+		    <td><asp:TextBox ID="SubjectTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Subject") %>' 
                     Width="160px" MaxLength="20" /></td>
 		</tr>	            
             
         <tr align="left"><td>Letter No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="LetterNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="LetterNoTextBox" runat="server" numeric="integer"
                 Text='<%# Bind("LetterNo") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	            
             
         <tr align="left"><td>Letter Date:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="LetterDateTextBox" runat="server" 
                 Text='<%# Bind("LetterDate") %>' Width="160px" /></td>
 		</tr>	           
             
         <tr align="left"><td>Department Name:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="Drop_departmentname" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td>
                 <asp:DropDownList ID="Drop_departmentname" runat="server" 
                     DataSourceID="ods_departmentname" DataTextField="Name" DataValueField="Name">
@@ -259,34 +318,46 @@
 		</tr>	           
             
         <tr align="left"><td>File Number:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="FileNumberTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="FileNumberTextBox" runat="server" numeric="integer"
                 Text='<%# Bind("FileNumber") %>' Width="160px" MaxLength="10" /></td>
 		</tr>	           
             
         <tr align="left"><td>Details Of Output:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="DetailsofOutputTextBox" runat="server" 
                 Text='<%# Bind("DetailsofOutput") %>' Height="60px" TextMode="MultiLine" 
                     Width="160px" /></td>
 		</tr>	            
             
         <tr align="left"><td>Details Of File Preservation:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="DetailsofFilePreservationTextBox" runat="server" 
                 Text='<%# Bind("DetailsofFilePreservation") %>' Height="60px" 
                     TextMode="MultiLine" Width="160px" /></td>
 		</tr>	          
             
         <tr align="left"><td>Details Of Record:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="DetailsOfRecordTextBox" runat="server" 
                 Text='<%# Bind("DetailsOfRecord") %>' Height="60px" TextMode="MultiLine" 
                     Width="160px" /></td>
 		</tr>	           
             
         <tr align="left"><td>Remarks:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                     Height="60px" TextMode="MultiLine" Width="160px" /></td>
 		</tr>	            
             
-        <tr><td colspan=2 align="center">
+        <tr><td colspan=3 align="center">
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Insert" CssClass="standardButton" />
 			&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 

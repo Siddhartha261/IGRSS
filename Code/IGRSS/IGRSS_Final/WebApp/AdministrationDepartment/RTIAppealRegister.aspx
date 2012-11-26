@@ -75,7 +75,7 @@
                       DataKeyNames="Sr_No" DataSourceID="ods_RTI" 
                       EnableModelValidation="True" onrowdeleted="GridView_RTI_RowDeleted" 
                       onrowdeleting="GridView_RTI_RowDeleting" 
-                      onrowediting="GridView_RTI_RowEditing" 
+                      onrowediting="GridView_RTI_RowEditing" AllowPaging="True" 
                       >
                       <Columns>
                           <asp:BoundField DataField="Sr_No" HeaderText="Sr_No" 
@@ -124,33 +124,42 @@
 
 <asp:View ID="Formview" runat="server">
 <center>
-<h1>RTI Appeal Register</h1>
-<center></center>
-<asp:FormView ID="FormView_RTI" runat="server" DataKeyNames="Sr_No" 
+<h1>RTI Appeal Register</h1></center>
+<center><asp:FormView ID="FormView_RTI" runat="server" DataKeyNames="Sr_No" 
         DataSourceID="ods_RTI" EnableModelValidation="True" DefaultMode="Insert" oniteminserting="FormView_RTI_ItemInserting" 
         onitemcommand="FormView_RTI_ItemCommand" 
         oniteminserted="FormView_RTI_ItemInserted" 
         onitemupdated="FormView_RTI_ItemUpdated" 
         onitemupdating="FormView_RTI_ItemUpdating" >
         <EditItemTemplate>
-            <table>
+            <table align="center">
 		<%--<tr><td>Sr_No:</td>
 		    <td><asp:TextBox ID="Sr_NoTextBox" runat="server" Text='<%# Bind("Sr_No") %>' /></td>
 		</tr>    	--%>
             
         <tr><td class="gridItems">Name Of Applicant:</td>
 		    <td class="gridItems">
-                <asp:TextBox ID="Appl_nameTextBox" runat="server" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="Appl_nameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("Appl_name") %>' Width="160px" MaxLength="20" /></td>
 		</tr>	         
             
         <tr><td class="gridItems">SurName Of Applicant:</td>
 		    <td class="gridItems">
-                <asp:TextBox ID="Appl_surnameTextBox" runat="server" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                    ControlToValidate="Appl_surnameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_surnameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("Appl_surname") %>' Width="160px" MaxLength="20" /></td>
 		</tr>          
             
         <tr><td class="gridItems">Date Of Application:</td>
+		    <td class="gridItems">
+                &nbsp;</td>
 		    <td class="gridItems">
                 <asp:TextBox ID="Appl_DateTextBox" runat="server" 
                 Text='<%# Bind("Appl_Date") %>' Width="160px" /></td>
@@ -158,11 +167,17 @@
             
         <tr><td class="gridItems">PIO's Designation:</td>
 		    <td class="gridItems">
-                <asp:TextBox ID="PIO_desigTextBox" runat="server" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="PIO_desigTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td class="gridItems">
+                <asp:TextBox ID="PIO_desigTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("PIO_desig") %>' Width="160px" MaxLength="20" /></td>
 		</tr>        
             
         <tr><td class="gridItems">PIO Date:</td>
+		    <td class="gridItems">
+                &nbsp;</td>
 		    <td class="gridItems">
                 <asp:TextBox ID="PIO_dateTextBox" runat="server" 
                 Text='<%# Bind("PIO_date") %>' Width="160px" /></td>
@@ -170,12 +185,16 @@
             
         <tr><td class="gridItems">Last Date According To 30 Days:</td>
 		    <td class="gridItems">
+                &nbsp;</td>
+		    <td class="gridItems">
                 <asp:TextBox ID="Last_DateTextBox" runat="server" 
                 Text='<%# Bind("Last_Date") %>' Width="160px" /></td>
 		</tr>	
             
             
         <tr><td class="gridItems">Decision Taken By</td>
+		    <td class="gridItems">
+                &nbsp;</td>
 		    <td class="gridItems">
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
@@ -185,7 +204,7 @@
             </td>
 		</tr>	          
             
-        <tr><td colspan=2 align="center">
+        <tr><td colspan=3 align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update" CssClass="standardButton" />
 		 	    &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
@@ -204,24 +223,34 @@
                             
         </EditItemTemplate>
         <InsertItemTemplate>
-               <table>
+               <table align="center">
 		<%--<tr><td>Sr_No:</td>
 		    <td><asp:TextBox ID="Sr_NoTextBox" runat="server" Text='<%# Bind("Sr_No") %>' /></td>
 		</tr>    	--%>
             
         <tr><td class="gridItems">Name Of Applicant:</td>
 		    <td class="gridItems">
-                <asp:TextBox ID="Appl_nameTextBox" runat="server" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="Appl_nameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("Appl_name") %>' Width="160px" MaxLength="20" /></td>
 		</tr>	         
             
         <tr><td class="gridItems">SurName Of Applicant:</td>
 		    <td class="gridItems">
-                <asp:TextBox ID="Appl_surnameTextBox" runat="server" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                    ControlToValidate="Appl_surnameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td class="gridItems">
+                <asp:TextBox ID="Appl_surnameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("Appl_surname") %>' Width="160px" MaxLength="20" /></td>
 		</tr>          
             
         <tr><td class="gridItems">Date Of Application:</td>
+		    <td class="gridItems">
+                &nbsp;</td>
 		    <td class="gridItems">
                 <asp:TextBox ID="Appl_DateTextBox" runat="server" 
                 Text='<%# Bind("Appl_Date") %>' Width="160px" /></td>
@@ -229,17 +258,25 @@
             
         <tr><td class="gridItems">PIO's Designation:</td>
 		    <td class="gridItems">
-                <asp:TextBox ID="PIO_desigTextBox" runat="server" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="PIO_desigTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td class="gridItems">
+                <asp:TextBox ID="PIO_desigTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("PIO_desig") %>' Width="160px" MaxLength="20" /></td>
 		</tr>        
             
         <tr><td class="gridItems">PIO Date:</td>
+		    <td class="gridItems">
+                &nbsp;</td>
 		    <td class="gridItems">
                 <asp:TextBox ID="PIO_dateTextBox" runat="server" 
                 Text='<%# Bind("PIO_date") %>' Width="160px" /></td>
 		</tr>        
             
         <tr><td class="gridItems">Last Date According To 30 Days:</td>
+		    <td class="gridItems">
+                &nbsp;</td>
 		    <td class="gridItems">
                 <asp:TextBox ID="Last_DateTextBox" runat="server" 
                 Text='<%# Bind("Last_Date") %>' Width="160px" /></td>
@@ -248,24 +285,27 @@
             
         <tr><td class="gridItems">Decision Taken By</td>
 		    <td class="gridItems">
+                &nbsp;</td>
+		    <td class="gridItems">
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 
                     RepeatDirection="Horizontal" Width="160px">
                     <asp:ListItem Text="Appellate" Value="Appellate"></asp:ListItem>
                     <asp:ListItem Text="Committee" Value="Committee"></asp:ListItem>
                 </asp:RadioButtonList>
             </td>
-		</tr>	          
+		</tr>		          
             
-        <tr><td colspan=2 align="center">
+        <tr><td colspan=3 align="center">
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                CommandName="Insert" Text="Insert" CssClass="standardButton" 
+                TabIndex="1" />
 		 	    &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
                 onclientclick="resetTextFields();return false;" 
-                CssClass="standardButton" />
+                CssClass="standardButton" TabIndex="2" />
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                CssClass="standardButton" />
+                CssClass="standardButton" TabIndex="3" />
 			</td>
 		</tr>
 	</table>
@@ -308,8 +348,9 @@
 &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
                 CommandName="New" Text="New" />
         </ItemTemplate>
-    </asp:FormView>
-</center>
+    </asp:FormView></center>
+
+
     
     <asp:ObjectDataSource ID="ods_RTI" runat="server" DeleteMethod="DeleteQuery" 
         InsertMethod="Insert" SelectMethod="GetDataBy" 
