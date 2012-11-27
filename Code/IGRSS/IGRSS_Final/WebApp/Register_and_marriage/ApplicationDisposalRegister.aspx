@@ -109,7 +109,7 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="n" />
 </asp:View>
 
 <asp:View ID="view2_Formview" runat="server">
@@ -123,40 +123,83 @@
         onitemupdated="FormView_ApplicationDisposal_ItemUpdated">
         <EditItemTemplate>
              <table align="center" cellspacing="5">
-           <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" 
-                   Text='<%# Bind("Date") %>' Width="140px" />
-            <tr><td> Name Of Applicant:</td><td> 
-                <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
-           
-           
-           
-           
-            <tr><td>Address Of Applicant:</td><td> 
-                <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
-                Text='<%# Bind("ApplicantAddress") %>' Height="60px" Width="160px" /></td></tr>
-            
-           
-            <tr><td>No Of Copies Issued:</td><td> 
-                <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" 
-                Text='<%# Bind("NoOfCopiesIssued") %>' Width="160px" /></td></tr>
-            
-           
-            <tr><td>Fees Taken:</td><td> 
-                <asp:TextBox ID="FeesTakenTextBox" runat="server" 
-                Text='<%# Bind("FeesTaken") %>' Width="160px" /></td></tr>
-            
-           
-            <tr><td>Receipt No:</td><td> 
-                <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
-                Text='<%# Bind("ReceiptNo") %>' Width="160px" /></td></tr>
-            
-           
-            <tr><td> Date Of Disposal:</td><td> 
-                <asp:TextBox ID="DisposalDateTextBox" runat="server" 
-                Text='<%# Bind("DisposalDate") %>' Width="140px" /></td></tr>
+                 <tr align="left"><td>Date:</td> <td>
+                     &nbsp;<td>
+                   <asp:TextBox ID="DateTextBox" runat="server" MaxLength="20" 
+                       Text='<%# Bind("Date") %>' Width="160px" />
+                   <tr align="left">
+                       <td>
+                           Name Of Applicant:</td>
+                       <td>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                               ControlToValidate="ApplicantNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="ApplicantNameTextBox" runat="server" MaxLength="30" 
+                               onkeypress="return AllowAlphabet(event)" 
+                               Text='<%# Bind("ApplicantName") %>' Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           Address Of Applicant:</td>
+                       <td>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="ApplicantAddressTextBox" runat="server" Height="60px" 
+                               Text='<%# Bind("ApplicantAddress") %>' TextMode="MultiLine" 
+                               Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           No Of Copies Issued:</td>
+                       <td>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                               ControlToValidate="NoOfCopiesIssuedTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" MaxLength="10" 
+                               numeric="integer" Text='<%# Bind("NoOfCopiesIssued") %>' 
+                               Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           Fees Taken:</td>
+                       <td>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                               ControlToValidate="FeesTakenTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="FeesTakenTextBox" runat="server" MaxLength="5" numeric="integer"
+                               Text='<%# Bind("FeesTaken") %>' Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           Receipt No:</td>
+                       <td>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                               ControlToValidate="ReceiptNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="ReceiptNoTextBox" runat="server" MaxLength="10" 
+                               numeric="integer" Text='<%# Bind("ReceiptNo") %>' Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           Date Of Disposal:</td>
+                       <td>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="DisposalDateTextBox" runat="server" MaxLength="20" 
+                               Text='<%# Bind("DisposalDate") %>' Width="160px" />
+                       </td>
+                   </tr>
                 <tr>
-                <td colspan="2" align="center">
+                <td colspan="3" align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update" CssClass="standardButton" />
                 &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
@@ -168,52 +211,100 @@
                 </tr>
                 </table>
         </EditItemTemplate>
+        
         <InsertItemTemplate>
                      
              <table align="center" cellspacing="5">
-           <tr><td>Date:</td><td> <asp:TextBox ID="DateTextBox" runat="server" 
-                   Text='<%# Bind("Date") %>' Width="140px" />
-            <tr><td> Name Of Applicant:</td><td> 
-                <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
-           
-           
-           
-           
-            <tr><td>Address Of Applicant:</td><td> 
-                <asp:TextBox ID="ApplicantAddressTextBox" runat="server" 
-                Text='<%# Bind("ApplicantAddress") %>' Height="60px" Width="160px" /></td></tr>
-            
-           
-            <tr><td>No Of Copies Issued:</td><td> 
-                <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" 
-                Text='<%# Bind("NoOfCopiesIssued") %>' Width="160px" /></td></tr>
-            
-           
-            <tr><td>Fees Taken:</td><td> 
-                <asp:TextBox ID="FeesTakenTextBox" runat="server" 
-                Text='<%# Bind("FeesTaken") %>' Width="160px" /></td></tr>
-            
-           
-            <tr><td>Receipt No:</td><td> 
-                <asp:TextBox ID="ReceiptNoTextBox" runat="server" 
-                Text='<%# Bind("ReceiptNo") %>' Width="160px" /></td></tr>
-            
-           
-            <tr><td> Date Of Disposal:</td><td> 
-                <asp:TextBox ID="DisposalDateTextBox" runat="server" 
-                Text='<%# Bind("DisposalDate") %>' Width="140px" /></td></tr>
-           
-           
-            <tr><td align="center" colspan="2"> 
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" />
-                 &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
-                CausesValidation="False" CommandName="reset" Text="Reset" 
-                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td></tr>
+           <tr align="left"><td>Date:</td> <td>
+               &nbsp;<td>
+                   <asp:TextBox ID="DateTextBox" runat="server" MaxLength="20" 
+                       Text='<%# Bind("Date") %>' Width="160px" />
+                   <tr align="left">
+                       <td>
+                           Name Of Applicant:</td>
+                       <td>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                               ControlToValidate="ApplicantNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="ApplicantNameTextBox" runat="server" MaxLength="30" 
+                               onkeypress="return AllowAlphabet(event)" 
+                               Text='<%# Bind("ApplicantName") %>' Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           Address Of Applicant:</td>
+                       <td>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="ApplicantAddressTextBox" runat="server" Height="60px" 
+                               Text='<%# Bind("ApplicantAddress") %>' TextMode="MultiLine" 
+                               Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           No Of Copies Issued:</td>
+                       <td>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                               ControlToValidate="NoOfCopiesIssuedTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="NoOfCopiesIssuedTextBox" runat="server" MaxLength="10" 
+                               numeric="integer" Text='<%# Bind("NoOfCopiesIssued") %>' 
+                               Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           Fees Taken:</td>
+                       <td>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                               ControlToValidate="FeesTakenTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="FeesTakenTextBox" runat="server" MaxLength="5" numeric="integer"
+                               Text='<%# Bind("FeesTaken") %>' Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           Receipt No:</td>
+                       <td>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                               ControlToValidate="ReceiptNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="ReceiptNoTextBox" runat="server" MaxLength="10" 
+                               numeric="integer" Text='<%# Bind("ReceiptNo") %>' Width="160px" />
+                       </td>
+                   </tr>
+                   <tr align="left">
+                       <td>
+                           Date Of Disposal:</td>
+                       <td>
+                       </td>
+                       <td>
+                           <asp:TextBox ID="DisposalDateTextBox" runat="server" MaxLength="20" 
+                               Text='<%# Bind("DisposalDate") %>' Width="160px" />
+                       </td>
+                   </tr>
+                   <tr>
+                       <td align="center" colspan="3">
+                           <asp:LinkButton ID="InsertButton" runat="server" AccessKey="I" 
+                               CausesValidation="True" CommandName="Insert" CssClass="standardButton" 
+                               Text="Insert" />
+                           &nbsp;<asp:LinkButton ID="ResetButton" runat="server" AccessKey="R" 
+                               CausesValidation="False" CommandName="reset" CssClass="standardButton" 
+                               onclientclick="resetTextFields();return false;" Text="Reset" />
+                           &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" AccessKey="B" 
+                               CausesValidation="False" CommandName="Back" CssClass="standardButton" 
+                               Text="Back" />
+                       </td>
+                   </tr>
+               </td>
+               </td>
           
 				</table>
         </InsertItemTemplate>
@@ -281,7 +372,7 @@
         
         TypeName="IGRSS.DataAccessLayer.ApplicationDisposalRegisterTableAdapters.ApplicationDisposalRegisterTableAdapter" 
         DeleteMethod="DeleteQuery" InsertMethod="Insert" UpdateMethod="UpdateQuery" 
-        onselecting="ods_ApplicationDisposal5_Selecting" 
+        onselecting="ods_ApplicationDisposal_Selecting" 
         ondeleting="ods_ApplicationDisposal_Deleting" 
        >
         <DeleteParameters>

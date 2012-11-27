@@ -9,6 +9,19 @@
             buttonImageOnly: true
         });
     }
+
+
+    function AllowAlphabet(e) {
+        isIE = document.all ? 1 : 0
+        keyEntry = !isIE ? e.which : event.keyCode;
+        if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+            return true;
+        else {
+            alert('Please Enter Only Character values.');
+            return false;
+        }
+    }
+
     $(function () {
         $('input[id*="InwardNoTextBox"]').keydown(function (event) {
             // Allow: backspace, delete, tab, escape, and enter
@@ -50,7 +63,7 @@
 <asp:MultiView ID="Multiview_CDRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
     <br />
-<h1>cd&nbsp; Register</h1>
+<h1 align="center">cd&nbsp; Register</h1>
 <table>
           <tr>
                     <td align="right" style="width:641px;" >
@@ -73,19 +86,19 @@
                       onrowdeleting="GridView_CDRegister_RowDeleting" 
                       onrowediting="GridView_CDRegister_RowEditing">
                       <Columns>
-                          <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
+                          <asp:BoundField DataField="SrNo" HeaderText="Sr No" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
                           <asp:BoundField DataField="YearDate" HeaderText="Year Date" 
-                              SortExpression="YearDate" />
+                              SortExpression="YearDate" Visible="False" />
                           <asp:BoundField DataField="CD_No" HeaderText="CD No" SortExpression="CD_No" />
-                          <asp:BoundField DataField="DetailsOfDocument" HeaderText="DetailsOfDocument" 
+                          <asp:BoundField DataField="DetailsOfDocument" HeaderText="Details Of Document" 
                               SortExpression="DetailsOfDocument" Visible="False" />
                           <asp:BoundField DataField="StartingNo" HeaderText="Starting No" 
                               SortExpression="StartingNo" />
                           <asp:BoundField DataField="EndingNo" HeaderText="Ending No" 
                               SortExpression="EndingNo" />
                           <asp:BoundField DataField="SecondCopyDate" HeaderText="Second Copy Date" 
-                              SortExpression="SecondCopyDate" />
+                              SortExpression="SecondCopyDate" Visible="False" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
                               <asp:TemplateField HeaderText="Actions">
@@ -110,12 +123,12 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="N" />
 </asp:View>
 
 <asp:View ID="view2_Formview" runat="server">
 <center>
-<h1>cd&nbsp; register</h1>
+<h1 align="center">cd&nbsp; register</h1>
     <asp:FormView ID="FormView_CDRegister" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_CDRegister" DefaultMode="Insert" 
         EnableModelValidation="True" 
@@ -123,100 +136,132 @@
         oniteminserted="FormView_CDRegister_ItemInserted" 
         onitemupdated="FormView_CDRegister_ItemUpdated">
         <EditItemTemplate>
-                                        <table align="center" cellspacing="5">
-			   <tr align="left"><td> Year Date:</td><td> 
+                                                                                <table align="center" cellspacing="5">
+			   <tr align="left" ><td> Year Date:</td><td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                       ErrorMessage="*" ControlToValidate="YearDateTextBox">*</asp:RequiredFieldValidator>
+                   </td><td> 
                    <asp:TextBox ID="YearDateTextBox" runat="server" 
                 Text='<%# Bind("YearDate") %>' Width="160px" /></td></tr>
            
            
             <tr align="left"><td>CD No:</td><td>
-                <asp:TextBox ID="CD_NoTextBox" runat="server" numeric="integer"
-                    Text='<%# Bind("CD_No") %>' Width="160px" MaxLength="10" /></td></tr>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="*" ControlToValidate="CD_NoTextBox">*</asp:RequiredFieldValidator>
+                </td><td><asp:TextBox ID="CD_NoTextBox" runat="server" 
+                    Text='<%# Bind("CD_No") %>' Width="160px" numeric="integer" /></td></tr>
             
             
-            <tr align="left"><td>Details Of Document On CD:</td><td>
-                <asp:TextBox ID="DetailsOfDocumentTextBox" runat="server" 
-                Text='<%# Bind("DetailsOfDocument") %>' Height="60px" Width="160px" /></td></tr>
             
             
-            <tr align="left"><td>Starting No:</td><td> 
-                <asp:TextBox ID="StartingNoTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("StartingNo") %>' Width="160px" MaxLength="10" /></td></tr>
+            <tr align="left"><td>Starting No:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ErrorMessage="*" ControlToValidate="StartingNoTextBox">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="StartingNoTextBox" runat="server" 
+                Text='<%# Bind("StartingNo") %>' Width="160px"  numeric="integer" /></td></tr>
             
            
             <tr align="left"><td> Ending No:</td><td>
-                <asp:TextBox ID="EndingNoTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("EndingNo") %>' Width="160px" MaxLength="10" /></td></tr>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ErrorMessage="*" ControlToValidate="EndingNoTextBox">*</asp:RequiredFieldValidator>
+                </td><td>
+                <asp:TextBox ID="EndingNoTextBox" runat="server" 
+                Text='<%# Bind("EndingNo") %>' Width="160px"  numeric="integer" /></td></tr>
            
             
-            <tr align="left"><td>Second Copy Date:</td><td> 
+            <tr align="left"><td>Second Copy Date:</td><td></td><td> 
                 <asp:TextBox ID="SecondCopyDateTextBox" runat="server" 
                 Text='<%# Bind("SecondCopyDate") %>' Width="160px" /></td></tr>
             
            
-            <tr align="left"><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
-                    Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
+            <tr align="left"><td>Details Of Document On CD:</td><td></td><td>
+                <asp:TextBox ID="DetailsOfDocumentTextBox" runat="server"  onkeypress="return AllowAlphabet(event)" 
+                Text='<%# Bind("DetailsOfDocument") %>' Width="160px" Height="60px" 
+                    TextMode="MultiLine" /></td></tr>
+
+            <tr align="left"><td> Remarks:</td><td></td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                    Text='<%# Bind("Remarks") %>' Width="160px" /></td></tr>
+           
            
            
             <tr>
-			<td align="center" colspan="2"> 
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" />
+			<td align="center" colspan="3"> 
+                <asp:LinkButton ID="uPDATEButton" runat="server" CausesValidation="True" 
+                CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="U" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
-                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" 
+                    AccessKey="R" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td></tr>
+                    CssClass="standardButton" AccessKey="B" /></td></tr>
             
 				</table>
         </EditItemTemplate>
         <InsertItemTemplate>
                                                                    <table align="center" cellspacing="5">
-			   <tr align="left"><td> Year Date:</td><td> 
+			   <tr align="left" ><td> Year Date:</td><td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                       ErrorMessage="*" ControlToValidate="YearDateTextBox">*</asp:RequiredFieldValidator>
+                   </td><td> 
                    <asp:TextBox ID="YearDateTextBox" runat="server" 
-                Text='<%# Bind("YearDate") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("YearDate") %>' Width="160px" MaxLength="4" /></td></tr>
            
            
             <tr align="left"><td>CD No:</td><td>
-                <asp:TextBox ID="CD_NoTextBox" runat="server" numeric="integer"
-                    Text='<%# Bind("CD_No") %>' Width="160px" MaxLength="10" /></td></tr>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="*" ControlToValidate="CD_NoTextBox">*</asp:RequiredFieldValidator>
+                </td><td>
+                    <asp:TextBox ID="CD_NoTextBox" runat="server" 
+                    Text='<%# Bind("CD_No") %>' Width="160px" numeric="integer" MaxLength="10" /></td></tr>
             
             
-            <tr align="left"><td>Details Of Document On CD:</td><td>
-                <asp:TextBox ID="DetailsOfDocumentTextBox" runat="server" 
-                Text='<%# Bind("DetailsOfDocument") %>' Height="60px" Width="160px" /></td></tr>
+           
             
             
             <tr align="left"><td>Starting No:</td><td>
-                <asp:TextBox ID="StartingNoTextBox" runat="server"  numeric="integer"
-                Text='<%# Bind("StartingNo") %>' Width="160px" MaxLength="10" /></td></tr>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ErrorMessage="*" ControlToValidate="StartingNoTextBox">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="StartingNoTextBox" runat="server" 
+                Text='<%# Bind("StartingNo") %>' Width="160px"  numeric="integer" MaxLength="10" /></td></tr>
             
            
             <tr align="left"><td> Ending No:</td><td>
-                <asp:TextBox ID="EndingNoTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("EndingNo") %>' Width="160px" MaxLength="10" /></td></tr>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ErrorMessage="*" ControlToValidate="EndingNoTextBox">*</asp:RequiredFieldValidator>
+                </td><td>
+                <asp:TextBox ID="EndingNoTextBox" runat="server" 
+                Text='<%# Bind("EndingNo") %>' Width="160px"  numeric="integer" MaxLength="10" /></td></tr>
            
             
-            <tr align="left"><td>Second Copy Date:</td><td> 
+            <tr align="left"><td>Second Copy Date:</td><td></td><td> 
                 <asp:TextBox ID="SecondCopyDateTextBox" runat="server" 
                 Text='<%# Bind("SecondCopyDate") %>' Width="160px" /></td></tr>
+
+                 <tr align="left"><td>Details Of Document On CD:</td><td></td><td>
+                <asp:TextBox ID="DetailsOfDocumentTextBox" runat="server"  onkeypress="return AllowAlphabet(event)" 
+                Text='<%# Bind("DetailsOfDocument") %>' Width="160px" Height="60px" 
+                    TextMode="MultiLine" /></td></tr>
             
            
-            <tr align="left"><td> Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
-                    Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
+            <tr align="left"><td> Remarks:</td><td></td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                    Text='<%# Bind("Remarks") %>' Width="160px" Height="60px" 
+                    TextMode="MultiLine" /></td></tr>
            
            
             <tr>
-			<td align="center" colspan="2"> 
+			<td align="center" colspan="3"> 
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                CommandName="Insert" Text="Insert" CssClass="standardButton" AccessKey="I" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
-                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" 
+                    AccessKey="R" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td></tr>
+                    CssClass="standardButton" AccessKey="B" /></td></tr>
             
 				</table>
         </InsertItemTemplate>

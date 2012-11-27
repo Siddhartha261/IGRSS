@@ -25,6 +25,8 @@ public partial class LatestPages_SOFile : System.Web.UI.Page
     protected void Button_new_Click(object sender, EventArgs e)
     {
         infoDiv.Visible = false;
+        TextBox txt = (TextBox)FormView_SOFile.FindControl("CircularsTextBox");
+        txt.Focus();
         Multiview_SOFile.SetActiveView(Formview);
         FormView_SOFile.ChangeMode(FormViewMode.Insert);
     }
@@ -48,6 +50,30 @@ public partial class LatestPages_SOFile : System.Web.UI.Page
     }
     protected void FormView_SOFile_ItemInserting(object sender, FormViewInsertEventArgs e)
     {
+        TextBox txt1 = (TextBox)FormView_SOFile.FindControl("CircularsTextBox");
+        TextBox txt2 = (TextBox)FormView_SOFile.FindControl("DateOfCircularsTextBox");
+        TextBox txt3= (TextBox)FormView_SOFile.FindControl("CircularsTextBox");
+        TextBox txt4 = (TextBox)FormView_SOFile.FindControl("SubjectTextBox");
+        TextBox txt5 = (TextBox)FormView_SOFile.FindControl("PageNoTextBox");
+        DateTime curr_date = DateTime.Now;
+
+        if (txt1.Text=="")
+        {
+            e.Values["Circulars"] = 0;
+        }
+        if (txt2.Text == "")
+        {
+            e.Values["DateOfCirculars"] = curr_date;
+        }
+       
+        if (txt4.Text == "")
+        {
+            e.Values["Subject"] = "";
+        }
+        if (txt5.Text == "")
+        {
+            e.Values["PageNo"] = 0;
+        }
         DropDownList DropDownList1 = FormView_SOFile.FindControl("DropDownList1") as DropDownList;
         e.Values["Department"] = DropDownList1.SelectedValue;
     }
@@ -76,6 +102,12 @@ public partial class LatestPages_SOFile : System.Web.UI.Page
     }
     protected void GridView_SOFile_RowEditing(object sender, GridViewEditEventArgs e)
     {
+        ////temp code
+        //DropDownList DropDownList1 = (DropDownList)FormView_SOFile.FindControl("DropDownList1");
+        //GridView gridview = (GridView)FormView_SOFile.FindControl("GridView_SOFile");
+        //String str=gridview.Columns[2].ToString();
+        //DropDownList1.SelectedValue = str;
+        ////ends temp code
         Multiview_SOFile.SetActiveView(Formview);
         FormView_SOFile.PageIndex = e.NewEditIndex;
         FormView_SOFile.ChangeMode(FormViewMode.Edit);

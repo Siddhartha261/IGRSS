@@ -15,8 +15,22 @@ public partial class ADM_Photo_department_CDRegister : System.Web.UI.Page
         infoDiv.Visible = false;
         Multiview_CDRegister.SetActiveView(view2_Formview);
         FormView_CDRegister.ChangeMode(FormViewMode.Insert);
-
-    }
+        TextBox txt1 = (TextBox)FormView_CDRegister.FindControl("YearDateTextBox");
+        TextBox txt2 = (TextBox)FormView_CDRegister.FindControl("CD_NoTextBox");
+        TextBox txt3 = (TextBox)FormView_CDRegister.FindControl("DetailsOfDocumentTextBox");
+        TextBox txt4 = (TextBox)FormView_CDRegister.FindControl("StartingNoTextBox");
+        TextBox txt5 = (TextBox)FormView_CDRegister.FindControl("EndingNoTextBox");
+        TextBox txt6 = (TextBox)FormView_CDRegister.FindControl("SecondCopyDateTextBox");
+        TextBox txt7 = (TextBox)FormView_CDRegister.FindControl("RemarksTextBox");
+        txt1.Focus();
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+     }
     protected void FormView_CDRegister_ItemCommand(object sender, FormViewCommandEventArgs e)
     {
         switch (e.CommandName)
@@ -59,6 +73,7 @@ public partial class ADM_Photo_department_CDRegister : System.Web.UI.Page
     }
     protected void GridView_CDRegister_RowEditing(object sender, GridViewEditEventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_CDRegister.SetActiveView(view2_Formview);
         FormView_CDRegister.PageIndex = e.NewEditIndex;
         FormView_CDRegister.ChangeMode(FormViewMode.Edit);

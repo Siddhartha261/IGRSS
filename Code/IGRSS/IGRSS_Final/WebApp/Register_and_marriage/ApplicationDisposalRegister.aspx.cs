@@ -12,8 +12,24 @@ public partial class Register_and_marriage_ApplicationDisposalRegister : System.
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_ApplicationDisposal.SetActiveView(view2_Formview);
         FormView_ApplicationDisposal.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = (TextBox)FormView_ApplicationDisposal.FindControl("DateTextBox");
+        TextBox txt2 = (TextBox)FormView_ApplicationDisposal.FindControl("ApplicantNameTextBox");
+        TextBox txt3 = (TextBox)FormView_ApplicationDisposal.FindControl("ApplicantAddressTextBox");
+        TextBox txt4 = (TextBox)FormView_ApplicationDisposal.FindControl("NoOfCopiesIssuedTextBox");
+        TextBox txt5 = (TextBox)FormView_ApplicationDisposal.FindControl("FeesTakenTextBox");
+        TextBox txt6 = (TextBox)FormView_ApplicationDisposal.FindControl("ReceiptNoTextBox");
+        TextBox txt7 = (TextBox)FormView_ApplicationDisposal.FindControl("DisposalDateTextBox");
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt1.Focus();
 
     }
     protected void FormView_ApplicationDisposal_ItemCommand(object sender, FormViewCommandEventArgs e)
@@ -28,7 +44,7 @@ public partial class Register_and_marriage_ApplicationDisposalRegister : System.
         }
 
     }
-    protected void ods_ApplicationDisposal5_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    protected void ods_ApplicationDisposal_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
         e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
         ods_ApplicationDisposal.SelectMethod = "GetDataBy";
@@ -57,9 +73,10 @@ public partial class Register_and_marriage_ApplicationDisposalRegister : System.
     }
     protected void GridView_ApplicationDisposal_RowEditing(object sender, GridViewEditEventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_ApplicationDisposal.SetActiveView(view2_Formview);
         FormView_ApplicationDisposal.PageIndex = e.NewEditIndex;
-        FormView_ApplicationDisposal.DefaultMode = FormViewMode.Edit;
+        FormView_ApplicationDisposal.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_ApplicationDisposal_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
@@ -72,6 +89,7 @@ public partial class Register_and_marriage_ApplicationDisposalRegister : System.
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_ApplicationDisposal.SetActiveView(View1_GridView);
     }
     protected void FormView_ApplicationDisposal_ItemInserted(object sender, FormViewInsertedEventArgs e)
     {
@@ -88,4 +106,5 @@ public partial class Register_and_marriage_ApplicationDisposalRegister : System.
     {
         e.InputParameters["SrNo"] = ViewState["deleteKey"];
     }
+    
 }

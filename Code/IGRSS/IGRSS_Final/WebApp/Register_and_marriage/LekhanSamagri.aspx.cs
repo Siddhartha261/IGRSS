@@ -12,9 +12,29 @@ public partial class Register_and_marriage_LekhanSamagri : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
-       
+        infoDiv.Visible = false;
         Multiview_LekhanSamagri.SetActiveView(View2_LekhanSamagri);
         FormView_LekhanSamagri.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = (TextBox)FormView_LekhanSamagri.FindControl("TextBoxPurchaseAuthority");
+        TextBox txt2 = (TextBox)FormView_LekhanSamagri.FindControl("TextBoxQuantity");
+        TextBox txt3 = (TextBox)FormView_LekhanSamagri.FindControl("PurchaseDateTextBox");
+        TextBox txt4 = (TextBox)FormView_LekhanSamagri.FindControl("Article_descTextBox");
+        TextBox txt5 = (TextBox)FormView_LekhanSamagri.FindControl("RemarksTextBox");
+        TextBox txt6 = (TextBox)FormView_LekhanSamagri.FindControl("EmployeeReceivingDateTextBox");
+        TextBox txt7 = (TextBox)FormView_LekhanSamagri.FindControl("ArticleCompletiobDateTextBox");
+        TextBox txt8 = (TextBox)FormView_LekhanSamagri.FindControl("EmployeeSignTextBox");
+        TextBox txt9 = (TextBox)FormView_LekhanSamagri.FindControl("Article_descTextBox");
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        txt8.Text = "";
+        txt9.Text = "";
+        txt1.Focus();
     }
     protected void ods_Lekhan_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
@@ -60,10 +80,10 @@ public partial class Register_and_marriage_LekhanSamagri : System.Web.UI.Page
     }
     protected void GridView_LekhanSamagri_RowEditing(object sender, GridViewEditEventArgs e)
     {
-
+        infoDiv.Visible = false;
         Multiview_LekhanSamagri.SetActiveView(View2_LekhanSamagri);
         FormView_LekhanSamagri.PageIndex = e.NewEditIndex;
-        FormView_LekhanSamagri.DefaultMode = FormViewMode.Edit;
+        FormView_LekhanSamagri.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_LibraryRegister_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -87,6 +107,7 @@ public partial class Register_and_marriage_LekhanSamagri : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_LekhanSamagri.SetActiveView(View1_LekhanSamagri);
     }
     protected void ods_Lekhan_Samagri_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

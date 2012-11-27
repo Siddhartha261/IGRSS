@@ -80,93 +80,204 @@
         Width="50%" oniteminserting="FormView_Diary_ItemInserting" 
         oniteminserted="FormView_Diary_ItemInserted" >
         <EditItemTemplate>
-                           SrNo:
-                           <asp:Label ID="SrNoLabel1" runat="server" Text='<%# Eval("SrNo") %>' />
-                           <br />
-                           Daysduringmonth:
-                           <asp:TextBox ID="DaysduringmonthTextBox" runat="server" 
-                               Text='<%# Bind("Daysduringmonth") %>' />
-                           <br />
-                           TakenLeave:
-                           <asp:TextBox ID="TakenLeaveTextBox" runat="server" 
-                               Text='<%# Bind("TakenLeave") %>' />
-                           <br />
-                           workingDays:
-                           <asp:TextBox ID="workingDaysTextBox" runat="server" 
-                               Text='<%# Bind("workingDays") %>' />
-                           <br />
-                           InspectionFromDate:
-                           <asp:TextBox ID="InspectionFromDateTextBox" runat="server" 
-                               Text='<%# Bind("InspectionFromDate") %>' />
-                           <br />
-                           InspectionToDate:
-                           <asp:TextBox ID="InspectionToDateTextBox" runat="server" 
-                               Text='<%# Bind("InspectionToDate") %>' />
-                           <br />
-                           NoOfOfficeinspected:
-                           <asp:ListBox ID="ListBox_officename" runat="server" 
-                               DataSourceID="ods_officesmaster" DataTextField="OfficeName" 
-                               DataValueField="OfficeId"></asp:ListBox>
-                           <br />
-                           Timetakenduringinspection:
-                           <asp:TextBox ID="TimetakenduringinspectionTextBox" runat="server" 
-                               Text='<%# Bind("Timetakenduringinspection") %>' />
-                           <br />
-                           NoOfDocuments:
-                           <asp:TextBox ID="NoOfDocumentsTextBox" runat="server" 
-                               Text='<%# Bind("NoOfDocuments") %>' />
-                           <br />
-                           Remarks:
-                           <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' />
-                           <br />
-                           <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                               CommandName="Update" Text="Update" />
-&nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" 
-                               Text="Cancel" />
-            
+    <table>
+       <tr>
+		    <td>Days During Month:</td>
+			<td>
+                <asp:DropDownList ID="DropDownList_DaysDuringMonth" runat="server">
+                    <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                    <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                    <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                    <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                    <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                    <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                    <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                    <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                    <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                    <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                    <asp:ListItem Text="13" Value="13"></asp:ListItem>
+                    <asp:ListItem Text="14" Value="14"></asp:ListItem>
+                    <asp:ListItem Text="15" Value="15"></asp:ListItem>
+                    <asp:ListItem Text="16" Value="16"></asp:ListItem>
+                    <asp:ListItem Text="17" Value="17"></asp:ListItem>
+                    <asp:ListItem Text="18" Value="18"></asp:ListItem>
+                    <asp:ListItem Text="19" Value="19"></asp:ListItem>
+                    <asp:ListItem Text="20" Value="20"></asp:ListItem>
+                    <asp:ListItem Text="21" Value="21"></asp:ListItem>
+                    <asp:ListItem Text="22" Value="22"></asp:ListItem>
+                    <asp:ListItem Text="23" Value="23"></asp:ListItem>
+                    <asp:ListItem Text="24" Value="24"></asp:ListItem>
+                    <asp:ListItem Text="25" Value="25"></asp:ListItem>
+                    <asp:ListItem Text="26" Value="26"></asp:ListItem>
+                    <asp:ListItem Text="27" Value="27"></asp:ListItem>
+                    <asp:ListItem Text="28" Value="28"></asp:ListItem>
+                    <asp:ListItem Text="29" Value="29"></asp:ListItem>
+                    <asp:ListItem Text="30" Value="30"></asp:ListItem>
+                    <asp:ListItem Text="31" Value="31"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+		</tr>		
+        
+        <tr>
+		    <td>Taken Leave:</td>
+			<td><asp:TextBox ID="TakenLeaveTextBox" runat="server" 
+            Text='<%# Bind("TakenLeave") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>Working Days:</td>
+			<td><asp:TextBox ID="workingDaysTextBox" runat="server" 
+            Text='<%# Bind("workingDays") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>Inspection From Date:</td>
+			<td><asp:TextBox ID="InspectionFromDateTextBox" runat="server" 
+            Text='<%# Bind("InspectionFromDate") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>Inspection To Date:</td>
+			<td><asp:TextBox ID="InspectionToDateTextBox" runat="server" 
+            Text='<%# Bind("InspectionToDate") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>No Of Office Inspected:</td>
+			<td><asp:ListBox ID="ListBox_officename" runat="server" 
+            DataSourceID="ods_officesmaster" DataTextField="OfficeName" 
+            DataValueField="OfficeId" Width="160px"></asp:ListBox></td>
+		</tr>        
+        
+        <tr>
+		    <td>Time Taken During Inspection:</td>
+			<td><asp:TextBox ID="NoOfOfficeinspectedTextBox" runat="server" 
+            Text='<%# Bind("NoOfOfficeinspected") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>No Of Documents:</td>
+			<td><asp:TextBox ID="TimetakenduringinspectionTextBox" runat="server" 
+            Text='<%# Bind("Timetakenduringinspection") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>Remarks:</td>
+			<td><asp:TextBox ID="NoOfDocumentsTextBox" runat="server" 
+            Text='<%# Bind("NoOfDocuments") %>' Height="60px" TextMode="MultiLine" 
+                    Width="160px" /></td>
+		</tr>     
+        
+        <tr><td colspan="2"><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+            CommandName="Update" Text="Update" />
+&nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" CommandName="Reset" 
+            Text="Reset" />			
+&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Back" 
+            Text="Back" /></td>
+		</tr>        
+	</table>		
         </EditItemTemplate>
         <InsertItemTemplate>
-                           Daysduringmonth:
-                           <asp:TextBox ID="DaysduringmonthTextBox" runat="server" 
-                               Text='<%# Bind("Daysduringmonth") %>' />
-                           <br />
-                           TakenLeave:
-                           <asp:TextBox ID="TakenLeaveTextBox" runat="server" 
-                               Text='<%# Bind("TakenLeave") %>' />
-                           <br />
-                           workingDays:
-                           <asp:TextBox ID="workingDaysTextBox" runat="server" 
-                               Text='<%# Bind("workingDays") %>' />
-                           <br />
-                           InspectionFromDate:
-                           <asp:TextBox ID="InspectionFromDateTextBox" runat="server" 
-                               Text='<%# Bind("InspectionFromDate") %>' />
-                           <br />
-                           InspectionToDate:
-                           <asp:TextBox ID="InspectionToDateTextBox" runat="server" 
-                               Text='<%# Bind("InspectionToDate") %>' />
-                           <br />
-                           NoOfOfficeinspected:
-                           <asp:ListBox ID="ListBox_officename" runat="server" 
-                               DataSourceID="ods_officesmaster" DataTextField="OfficeName" 
-                               DataValueField="OfficeId"></asp:ListBox>
-                           <br />
-                           Timetakenduringinspection:
-                           <asp:TextBox ID="NoOfOfficeinspectedTextBox" runat="server" 
-                               Text='<%# Bind("NoOfOfficeinspected") %>' />
-                           <br />
-                           NoOfDocuments:
-                           <asp:TextBox ID="TimetakenduringinspectionTextBox" runat="server" 
-                               Text='<%# Bind("Timetakenduringinspection") %>' />
-                           <br />
-                           Remarks:
-                           <asp:TextBox ID="NoOfDocumentsTextBox" runat="server" 
-                               Text='<%# Bind("NoOfDocuments") %>' />
-                           <br />
-                           <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                               CommandName="Insert" Text="Insert" />
-&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" 
-                               Text="Cancel" />
+            <table>
+        <tr>
+		    <td>Days During Month:</td>
+			<td>
+                <asp:DropDownList ID="DropDownList_DaysDuringMonth" runat="server">
+                    <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                    <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                    <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                    <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                    <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                    <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                    <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                    <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                    <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                    <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                    <asp:ListItem Text="13" Value="13"></asp:ListItem>
+                    <asp:ListItem Text="14" Value="14"></asp:ListItem>
+                    <asp:ListItem Text="15" Value="15"></asp:ListItem>
+                    <asp:ListItem Text="16" Value="16"></asp:ListItem>
+                    <asp:ListItem Text="17" Value="17"></asp:ListItem>
+                    <asp:ListItem Text="18" Value="18"></asp:ListItem>
+                    <asp:ListItem Text="19" Value="19"></asp:ListItem>
+                    <asp:ListItem Text="20" Value="20"></asp:ListItem>
+                    <asp:ListItem Text="21" Value="21"></asp:ListItem>
+                    <asp:ListItem Text="22" Value="22"></asp:ListItem>
+                    <asp:ListItem Text="23" Value="23"></asp:ListItem>
+                    <asp:ListItem Text="24" Value="24"></asp:ListItem>
+                    <asp:ListItem Text="25" Value="25"></asp:ListItem>
+                    <asp:ListItem Text="26" Value="26"></asp:ListItem>
+                    <asp:ListItem Text="27" Value="27"></asp:ListItem>
+                    <asp:ListItem Text="28" Value="28"></asp:ListItem>
+                    <asp:ListItem Text="29" Value="29"></asp:ListItem>
+                    <asp:ListItem Text="30" Value="30"></asp:ListItem>
+                    <asp:ListItem Text="31" Value="31"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+		</tr>		
+        
+        <tr>
+		    <td>Taken Leave:</td>
+			<td><asp:TextBox ID="TakenLeaveTextBox" runat="server" 
+            Text='<%# Bind("TakenLeave") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>Working Days:</td>
+			<td><asp:TextBox ID="workingDaysTextBox" runat="server" 
+            Text='<%# Bind("workingDays") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>Inspection From Date:</td>
+			<td><asp:TextBox ID="InspectionFromDateTextBox" runat="server" 
+            Text='<%# Bind("InspectionFromDate") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>Inspection To Date:</td>
+			<td><asp:TextBox ID="InspectionToDateTextBox" runat="server" 
+            Text='<%# Bind("InspectionToDate") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>No Of Office Inspected:</td>
+			<td><asp:ListBox ID="ListBox_officename" runat="server" 
+            DataSourceID="ods_officesmaster" DataTextField="OfficeName" 
+            DataValueField="OfficeId" Width="160px"></asp:ListBox></td>
+		</tr>        
+        
+        <tr>
+		    <td>Time Taken During Inspection:</td>
+			<td><asp:TextBox ID="NoOfOfficeinspectedTextBox" runat="server" 
+            Text='<%# Bind("NoOfOfficeinspected") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>No Of Documents:</td>
+			<td><asp:TextBox ID="TimetakenduringinspectionTextBox" runat="server" 
+            Text='<%# Bind("Timetakenduringinspection") %>' Width="160px" /></td>
+		</tr>        
+        
+        <tr>
+		    <td>Remarks:</td>
+			<td><asp:TextBox ID="NoOfDocumentsTextBox" runat="server" 
+            Text='<%# Bind("NoOfDocuments") %>' Height="60px" TextMode="MultiLine" 
+                    Width="160px" /></td>
+		</tr>        
+        
+        <tr><td colspan="2"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+            CommandName="Insert" Text="Insert" />
+&nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" CommandName="Reset" 
+            Text="Reset" />			
+&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Back" 
+            Text="Back" /></td>
+		</tr>        
+	</table>		
             
         </InsertItemTemplate>
         <ItemTemplate>

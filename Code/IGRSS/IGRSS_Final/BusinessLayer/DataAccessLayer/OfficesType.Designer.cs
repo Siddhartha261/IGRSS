@@ -281,11 +281,9 @@ namespace IGRSS.DataAccessLayer {
             
             private global::System.Data.DataColumn columnOfficeName;
             
-            private global::System.Data.DataColumn columnOfficeTypeId;
-            
             private global::System.Data.DataColumn columnOfficeId;
             
-            private global::System.Data.DataColumn columnExpr1;
+            private global::System.Data.DataColumn columnOfficeTypeId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -330,14 +328,6 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OfficeTypeIdColumn {
-                get {
-                    return this.columnOfficeTypeId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn OfficeIdColumn {
                 get {
                     return this.columnOfficeId;
@@ -346,9 +336,9 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
+            public global::System.Data.DataColumn OfficeTypeIdColumn {
                 get {
-                    return this.columnExpr1;
+                    return this.columnOfficeTypeId;
                 }
             }
             
@@ -389,13 +379,12 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Offices1Row AddOffices1Row(string OfficeName, System.Guid OfficeTypeId, System.Guid OfficeId, System.Guid Expr1) {
+            public Offices1Row AddOffices1Row(string OfficeName, System.Guid OfficeId, System.Guid OfficeTypeId) {
                 Offices1Row rowOffices1Row = ((Offices1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OfficeName,
-                        OfficeTypeId,
                         OfficeId,
-                        Expr1};
+                        OfficeTypeId};
                 rowOffices1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOffices1Row);
                 return rowOffices1Row;
@@ -432,9 +421,8 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnOfficeName = base.Columns["OfficeName"];
-                this.columnOfficeTypeId = base.Columns["OfficeTypeId"];
                 this.columnOfficeId = base.Columns["OfficeId"];
-                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnOfficeTypeId = base.Columns["OfficeTypeId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,19 +430,16 @@ namespace IGRSS.DataAccessLayer {
             private void InitClass() {
                 this.columnOfficeName = new global::System.Data.DataColumn("OfficeName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOfficeName);
-                this.columnOfficeTypeId = new global::System.Data.DataColumn("OfficeTypeId", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOfficeTypeId);
                 this.columnOfficeId = new global::System.Data.DataColumn("OfficeId", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOfficeId);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
+                this.columnOfficeTypeId = new global::System.Data.DataColumn("OfficeTypeId", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOfficeTypeId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnOfficeId}, true));
                 this.columnOfficeName.AllowDBNull = false;
                 this.columnOfficeName.MaxLength = 256;
                 this.columnOfficeId.AllowDBNull = false;
                 this.columnOfficeId.Unique = true;
-                this.columnExpr1.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -608,22 +593,6 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid OfficeTypeId {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableOffices1.OfficeTypeIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OfficeTypeId\' in table \'Offices1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOffices1.OfficeTypeIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.Guid OfficeId {
                 get {
                     return ((global::System.Guid)(this[this.tableOffices1.OfficeIdColumn]));
@@ -635,12 +604,17 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid Expr1 {
+            public System.Guid OfficeTypeId {
                 get {
-                    return ((global::System.Guid)(this[this.tableOffices1.Expr1Column]));
+                    try {
+                        return ((global::System.Guid)(this[this.tableOffices1.OfficeTypeIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OfficeTypeId\' in table \'Offices1\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableOffices1.Expr1Column] = value;
+                    this[this.tableOffices1.OfficeTypeIdColumn] = value;
                 }
             }
             
@@ -817,9 +791,8 @@ namespace IGRSS.DataAccessLayer.OfficesTypeTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Offices1";
             tableMapping.ColumnMappings.Add("OfficeName", "OfficeName");
-            tableMapping.ColumnMappings.Add("OfficeTypeId", "OfficeTypeId");
             tableMapping.ColumnMappings.Add("OfficeId", "OfficeId");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("OfficeTypeId", "OfficeTypeId");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -833,13 +806,21 @@ namespace IGRSS.DataAccessLayer.OfficesTypeTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        dbo.Offices.OfficeName, dbo.Offices.OfficeTypeId, dbo.Offices.OfficeId, dbo.OfficeTypes_LKP.OfficeTypeId AS Expr1
-FROM            dbo.Offices INNER JOIN
-                         dbo.OfficeTypes_LKP ON dbo.Offices.OfficeTypeId = dbo.OfficeTypes_LKP.OfficeTypeId";
+            this._commandCollection[0].CommandText = "SELECT        dbo.Offices.OfficeId, dbo.Offices.OfficeName, dbo.Offices.OfficeTyp" +
+                "eId\r\nFROM            dbo.Offices INNER JOIN\r\n                         dbo.Office" +
+                "Types_LKP ON dbo.Offices.OfficeTypeId = dbo.OfficeTypes_LKP.OfficeTypeId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        dbo.Offices.OfficeId, dbo.Offices.OfficeName, dbo.Offices.OfficeTypeId
+FROM            dbo.Offices INNER JOIN
+                         dbo.OfficeTypes_LKP ON dbo.Offices.OfficeTypeId = dbo.OfficeTypes_LKP.OfficeTypeId
+WHERE        (dbo.Offices.OfficeTypeId = @OfficeTypeId)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OfficeTypeId", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, "OfficeTypeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -861,6 +842,42 @@ FROM            dbo.Offices INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual OfficesType.Offices1DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            OfficesType.Offices1DataTable dataTable = new OfficesType.Offices1DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(OfficesType.Offices1DataTable dataTable, global::System.Nullable<global::System.Guid> OfficeTypeId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((OfficeTypeId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.Guid)(OfficeTypeId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual OfficesType.Offices1DataTable GetDataBy(global::System.Nullable<global::System.Guid> OfficeTypeId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((OfficeTypeId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.Guid)(OfficeTypeId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             OfficesType.Offices1DataTable dataTable = new OfficesType.Offices1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

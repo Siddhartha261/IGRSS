@@ -9,6 +9,19 @@
             buttonImageOnly: true
         });
     }
+
+
+    function AllowAlphabet(e) {
+        isIE = document.all ? 1 : 0
+        keyEntry = !isIE ? e.which : event.keyCode;
+        if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+            return true;
+        else {
+            alert('Please Enter Only Character values.');
+            return false;
+        }
+    }
+
     $(function () {
         $('input[id*="InwardNoTextBox"]').keydown(function (event) {
             // Allow: backspace, delete, tab, escape, and enter
@@ -49,7 +62,7 @@
 <asp:MultiView ID="Multiview_BookFormsRegister" runat="server" ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
 <br />
-<h1 style="text-align: center">BOOK FORMS REGISTER</h1>
+<h1 style="text-align: center" align="center">BOOKFORMS REGISTER</h1>
 <table>
           <tr>
           <td align="right">
@@ -77,29 +90,29 @@
                       onrowdeleting="GridView_BookFormRegister_RowDeleting" 
                       onrowediting="GridView_BookFormRegister_RowEditing">
                       <Columns>
-                          <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
+                          <asp:BoundField DataField="SrNo" HeaderText="Sr No" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
-                          <asp:BoundField DataField="No_of_forms" HeaderText="No of forms" 
-                              SortExpression="No_of_forms" />
-                          <asp:BoundField DataField="No_Demand_quantity" HeaderText="No Of Demand quantity" 
+                          <asp:BoundField DataField="No_of_forms" HeaderText="No of Forms" 
+                              SortExpression="No_of_forms" Visible="False" />
+                          <asp:BoundField DataField="No_Demand_quantity" HeaderText="No Demand Quantity" 
                               SortExpression="No_Demand_quantity" />
                           <asp:BoundField DataField="No_Distributed_Stock" 
-                              HeaderText="No Of Distributed Stock" 
-                              SortExpression="No_Distributed_Stock" />
+                              HeaderText="No Distributed Stock" SortExpression="No_Distributed_Stock" 
+                              Visible="False" />
                           <asp:BoundField DataField="Actual_Stock" HeaderText="Actual Stock" 
-                              SortExpression="Actual_Stock" />
+                              SortExpression="Actual_Stock" Visible="False" />
                           <asp:BoundField DataField="Form_no" HeaderText="Form No" 
-                              SortExpression="Form_no" />
+                              SortExpression="Form_no" Visible="False" />
                           <asp:BoundField DataField="Dept_name" HeaderText="Department Name" 
-                              SortExpression="Dept_name" />
-                          <asp:BoundField DataField="No_Forms_Given" HeaderText="No OfForms_Given" 
-                              SortExpression="No_Forms_Given" Visible="False" />
+                              SortExpression="Dept_name" Visible="False" />
+                          <asp:BoundField DataField="No_Forms_Given" HeaderText="No Forms Given" 
+                              SortExpression="No_Forms_Given" />
                           <asp:BoundField DataField="Recd_Date" HeaderText="Received Date" 
                               SortExpression="Recd_Date" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" Visible="False" />
+                              SortExpression="Remarks" />
                           <asp:BoundField DataField="Emp_Name" HeaderText="Employee Name" 
-                              SortExpression="Emp_Name" />
+                              SortExpression="Emp_Name" Visible="False" />
                               <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -122,12 +135,12 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="N" />
 </asp:View>
 
 <asp:View ID="view2_Formview" runat="server">
 <center>
-<h1 style="text-align: center">BOOK&nbsp; FORMS REGISTER</h1>
+<h1 style="text-align: center" align="center">BOOK FORMS REGISTER</h1>
   
     <asp:FormView ID="FormView_BookFormRegister" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_BookFormRegister" DefaultMode="Insert" 
@@ -137,148 +150,166 @@
         onitemupdated="FormView_BookFormRegister_ItemUpdated" 
         onitemupdating="FormView_BookFormRegister_ItemUpdating">
         <EditItemTemplate>
-            <table align="center" cellspacing="5">
-			<tr>
-			<td align="left">
-			<table>
-			 <tr><td>No Of Forms :</td><td>
-                 <asp:TextBox ID="No_of_formsTextBox" runat="server" 
-                Text='<%# Bind("No_of_forms") %>' Width="160px" /></td></tr>
-			
-            
-            <tr><td>No Of Demand Quantity :</td><td>
-                <asp:TextBox ID="No_Demand_quantityTextBox" runat="server" 
-                Text='<%# Bind("No_Demand_quantity") %>' Width="160px" /></td></tr>
-            
-            
-            <tr><td> No Of Distributed Stock :</td><td>
-                <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" 
-                Text='<%# Bind("No_Distributed_Stock") %>' Width="160px" /></td></tr>
-           
-            
-            <tr><td>Actual Stock :</td><td> 
-                <asp:TextBox ID="Actual_StockTextBox" runat="server" 
-                Text='<%# Bind("Actual_Stock") %>' Width="160px" /></td></tr>
-            
-           </table>
-		   </td>
-		   <td align="right">
-		   <table>
-           <tr><td colspan="2" align="right"><h5> After Giving To Employee </h5></td></tr>
-            <tr><td> Form No :</td><td> <asp:TextBox ID="Form_noTextBox" runat="server" 
-                    Text='<%# Bind("Form_no") %>' Width="160px" /></td></tr>
-           
-           
-            <tr><td>Name Of Department:</td><td>
-                <asp:DropDownList ID="DropDownListDepartment" runat="server" 
+         <table align="center" cellspacing="5">
+         <tr align="left">
+		 <td></td>
+		 <td></td>
+         <td></td>
+		 <td colspan="3" align="center"><h4> After Giving To Employee :</h4></td>
+		 </tr>
+		 <tr align="left">
+		 <td>No Of Forms :</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                 ControlToValidate="No_Forms_GivenTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td>
+		 <td><asp:TextBox ID="No_of_formsTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("No_of_forms") %>' MaxLength="10" Width="160px" /></td>
+		 <td>Name Of Department:</td><td></td>
+		 <td> 
+             <asp:DropDownList ID="DropDownListDepartment" runat="server" 
                     DataSourceID="ObjectDataSourceDepartment" DataTextField="Name" 
                     DataValueField="Name" Width="160px">
-                </asp:DropDownList>
-                </td></tr>
-            
-            
-            <tr><td> No Of Given Forms :</td><td>
-                <asp:TextBox ID="No_Forms_GivenTextBox" runat="server" 
-                Text='<%# Bind("No_Forms_Given") %>' Width="160px" /></td></tr>
-           
-            
-            <tr><td> Date Of Employee Received :</td><td> 
-                <asp:TextBox ID="Recd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recd_Date") %>' Width="140px" /></td></tr>
-				
-           <tr><td>Name Of Employee Received:</td><td> 
-               <asp:TextBox ID="Emp_NameTextBox" runat="server" 
-                Text='<%# Bind("Emp_Name") %>' Width="160px" /></td></tr>
-           
-            <tr><td>Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
-                    Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
-            </table>
-			</td>
-			</tr>
-           <tr>
-           <td align="center" colspan="2">
+                </asp:DropDownList></td>
+		 </tr>
+		 <tr align="left">
+		 <td>No Of Demand Quantity :</td><td></td>
+		 <td><asp:TextBox ID="No_Demand_quantityTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("No_Demand_quantity") %>' MaxLength="10" Width="160px" /></td>
+		<td> No Of&nbsp; Forms Given:</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                 ControlToValidate="No_Forms_GivenTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td><td>
+             <asp:TextBox ID="No_Forms_GivenTextBox" runat="server"  numeric="integer"
+                Text='<%# Bind("No_Forms_Given") %>' MaxLength="10" Width="160px" /></td>
+		 </tr>
+		 <tr align="left">
+		 <td> No Of Distributed Stock :</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                 ControlToValidate="No_Distributed_StockTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td><td>
+             <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("No_Distributed_Stock") %>' MaxLength="10" Width="160px" /></td>
+		<td> Date Of Employee Receiving Forms:</td><td></td><td> 
+             <asp:TextBox ID="Recd_DateTextBox" runat="server" 
+                Text='<%# Bind("Recd_Date") %>' MaxLength="20" Width="160px" /></td>
+		 </tr>
+		 <tr align="left">
+		<td>Actual Stock :</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                 ControlToValidate="Actual_StockTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td><td> 
+             <asp:TextBox ID="Actual_StockTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Actual_Stock") %>' MaxLength="10" Width="160px" /></td>
+		 <td>Name Of Employee Receiving Forms:</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                 ControlToValidate="Emp_NameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td><td> 
+             <asp:TextBox ID="Emp_NameTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Emp_Name") %>' MaxLength="30" Width="160px" /></td>
+		 </tr>
+		 <tr align="left">
+		<td>Remarks:</td><td></td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                 Text='<%# Bind("Remarks") %>' Height="60px" TextMode="MultiLine" 
+                 Width="160px" /></td>
+                 <td></td>
+		 <td></td>
+		 <td></td>
+		 </tr>
+		 <tr>
+		  <td align="center" colspan="6">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" />
+                CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="U" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
-                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+                    onclientclick="resetTextFields();return false;" 
+                  CssClass="standardButton" AccessKey="R" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" CssClass="standardButton" />
+                CausesValidation="False" CommandName="Back" Text="Back" 
+                  CssClass="standardButton" AccessKey="B" />
+				</td>
+		 </tr>
+		 </table>
         </EditItemTemplate>
         <InsertItemTemplate>
-                        
-			
-			<table align="center" cellspacing="5">
-			<tr>
-			<td align="left">
-			<table>
-			 <tr><td>No Of Forms :</td><td>
-                 <asp:TextBox ID="No_of_formsTextBox" runat="server" 
-                Text='<%# Bind("No_of_forms") %>' Width="160px" /></td></tr>
-			
-            
-            <tr><td>No Of Demand Quantity :</td><td>
-                <asp:TextBox ID="No_Demand_quantityTextBox" runat="server" 
-                Text='<%# Bind("No_Demand_quantity") %>' Width="160px" /></td></tr>
-            
-            
-            <tr><td> No Of Distributed Stock :</td><td>
-                <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" 
-                Text='<%# Bind("No_Distributed_Stock") %>' Width="160px" /></td></tr>
-           
-            
-            <tr><td>Actual Stock :</td><td> 
-                <asp:TextBox ID="Actual_StockTextBox" runat="server" 
-                Text='<%# Bind("Actual_Stock") %>' Width="160px" /></td></tr>
-            
-           </table>
-		   </td>
-		   <td align="right">
-		   <table>
-           <tr><td colspan="2" align="right"><h5> After Giving To Employee </h5></td></tr>
-            <tr><td> Form No :</td><td> <asp:TextBox ID="Form_noTextBox" runat="server" 
-                    Text='<%# Bind("Form_no") %>' Width="160px" /></td></tr>
-           
-           
-            <tr><td>Name Of Department:</td><td>
-                <asp:DropDownList ID="DropDownListDepartment" runat="server" 
+            <table align="center" cellspacing="5">
+         <tr align="left">
+		 <td></td>
+		 <td></td>
+         <td></td>
+		 <td colspan="3" align="center"><h4> After Giving To Employee :</h4></td>
+		 </tr>
+		 <tr align="left">
+		 <td>No Of Forms :</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                 ControlToValidate="No_Forms_GivenTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td>
+		 <td><asp:TextBox ID="No_of_formsTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("No_of_forms") %>' MaxLength="10" Width="160px" /></td>
+		 <td>Name Of Department:</td><td></td>
+		 <td> 
+             <asp:DropDownList ID="DropDownListDepartment" runat="server" 
                     DataSourceID="ObjectDataSourceDepartment" DataTextField="Name" 
                     DataValueField="Name" Width="160px">
-                </asp:DropDownList>
-                </td></tr>
-            
-            
-            <tr><td> No Of Given Forms :</td><td>
-                <asp:TextBox ID="No_Forms_GivenTextBox" runat="server" 
-                Text='<%# Bind("No_Forms_Given") %>' Width="160px" /></td></tr>
-           
-            
-            <tr><td> Date Of Employee Received :</td><td> 
-                <asp:TextBox ID="Recd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recd_Date") %>' Width="140px" /></td></tr>
-				
-           <tr><td>Name Of Employee Received:</td><td> 
-               <asp:TextBox ID="Emp_NameTextBox" runat="server" 
-                Text='<%# Bind("Emp_Name") %>' Width="160px" /></td></tr>
-           
-            <tr><td>Remarks:</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
-                    Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
-            </table>
-			</td>
-			</tr>
-           
-            
-            
-           
-            <tr><td align="center" colspan="2"> 
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                </asp:DropDownList></td>
+		 </tr>
+		 <tr align="left">
+		 <td>No Of Demand Quantity :</td><td></td>
+		 <td><asp:TextBox ID="No_Demand_quantityTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("No_Demand_quantity") %>' MaxLength="10" Width="160px" /></td>
+		<td> No Of&nbsp; Forms Given:</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                 ControlToValidate="No_Forms_GivenTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td><td>
+             <asp:TextBox ID="No_Forms_GivenTextBox" runat="server"  numeric="integer"
+                Text='<%# Bind("No_Forms_Given") %>' MaxLength="10" Width="160px" /></td>
+		 </tr>
+		 <tr align="left">
+		 <td> No Of Distributed Stock :</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                 ControlToValidate="No_Distributed_StockTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td><td>
+             <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("No_Distributed_Stock") %>' MaxLength="10" Width="160px" /></td>
+		<td> Date Of Employee Receiving Forms :</td><td></td><td> 
+             <asp:TextBox ID="Recd_DateTextBox" runat="server" 
+                Text='<%# Bind("Recd_Date") %>' MaxLength="20" Width="160px" /></td>
+		 </tr>
+		 <tr align="left">
+		<td>Actual Stock :</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                 ControlToValidate="Actual_StockTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td><td> 
+             <asp:TextBox ID="Actual_StockTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("Actual_Stock") %>' MaxLength="10" Width="160px" /></td>
+		 <td>Name Of Employee Receiving Forms:</td><td>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                 ControlToValidate="Emp_NameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+             </td><td> 
+             <asp:TextBox ID="Emp_NameTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Emp_Name") %>' MaxLength="30" Width="160px" /></td>
+		 </tr>
+		 <tr align="left">
+		<td>Remarks:</td><td></td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+                 Text='<%# Bind("Remarks") %>' Height="60px" TextMode="MultiLine" 
+                 Width="160px" /></td>
+                 <td></td>
+		 <td></td>
+		 <td></td>
+		 </tr>
+		 <tr>
+		  <td align="center" colspan="6">
+            <asp:LinkButton ID="Button" runat="server" CausesValidation="True" 
+                CommandName="Insert" Text="Insert" CssClass="standardButton" AccessKey="I" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
-                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                    onclientclick="resetTextFields();return false;" 
+                  CssClass="standardButton" AccessKey="R" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td></tr>
+                  CssClass="standardButton" AccessKey="B" />
+				</td>
+		 </tr>
+		 </table>
             
         </InsertItemTemplate>
         <ItemTemplate>

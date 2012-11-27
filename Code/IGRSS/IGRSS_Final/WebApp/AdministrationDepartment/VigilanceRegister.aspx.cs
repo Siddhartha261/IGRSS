@@ -20,6 +20,27 @@ public partial class LatestPages_VigilanceRegister : System.Web.UI.Page
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        TextBox txt1=(TextBox)FormView_Vigilance.FindControl("LetternoTextBox");
+        TextBox txt2 = (TextBox)FormView_Vigilance.FindControl("deptdateTextBox");
+        TextBox txt3 = (TextBox)FormView_Vigilance.FindControl("letterdateTextBox");
+        TextBox txt4 = (TextBox)FormView_Vigilance.FindControl("applnameTextBox");
+        TextBox txt5 = (TextBox)FormView_Vigilance.FindControl("empnameTextBox");
+        TextBox txt6 = (TextBox)FormView_Vigilance.FindControl("applsummaryTextBox");
+        TextBox txt7 = (TextBox)FormView_Vigilance.FindControl("reportdateTextBox");
+        TextBox txt8 = (TextBox)FormView_Vigilance.FindControl("StatusTextBox");
+        TextBox txt9 = (TextBox)FormView_Vigilance.FindControl("closedateTextBox");
+        TextBox txt10 = (TextBox)FormView_Vigilance.FindControl("remarksTextBox");
+        txt1.Focus();
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        txt9.Text = "";
+        txt10.Text = "";
         infoDiv.Visible = false;      
         Multiview_Vigilance.SetActiveView(view2_Formview);
         FormView_Vigilance.ChangeMode(FormViewMode.Insert);

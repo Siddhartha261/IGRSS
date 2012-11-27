@@ -1,0 +1,47 @@
+Pages Done:
+
+1.ADMINISTRATION DEPARTMENT:
+-File Register
+-Govt Doc
+-High Court Register
+-Mla & Minister Register
+-Primary Investigation/Inquiry register
+-RTI Appeal Register
+-SOFile
+-Vidhansabha Tarankit Question Register
+-Vigilance Register
+-WorkSheet Register
+
+2.CCRA LEGAL DEPARTMENT:
+-Appeal Register
+-Sunavni Register
+
+3.ESTABLISHMENT DEPARTMENT:
+-ACB Case Register
+-C.L.Card
+-Departmental Inquiry Register
+-Fajal Register
+-Mahekam Register
+-Roster Register
+-Transfer Application Register
+
+4.INSPECTION DEPARTMENT:
+-Sealing 
+
+5.ACCOUNT DEPARTMENT:
+-Cheque Register
+-Grant Register
+
+6.ADM PHOTO DEPARTMENT:
+-CD Register
+
+7.REGISTER AND MARRIAGE:
+-Application Disposal Register
+-Book Forms Register
+-Dead Stock Register
+-Kalpataru Purchase Stock
+-Lekhan Samagri
+-Library Register
+-Marriage Register
+-Marriage Volume Register
+-No Record Certificate Register

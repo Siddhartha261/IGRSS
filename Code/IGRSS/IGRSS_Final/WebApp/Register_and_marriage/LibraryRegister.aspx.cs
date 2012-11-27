@@ -13,8 +13,26 @@ public partial class Register_and_marriage_LibraryRegisteraspx : System.Web.UI.P
 
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_LibraryRegister.SetActiveView(View2_LibraryRegister);
         FormView_LibraryRegister.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = (TextBox)FormView_LibraryRegister.FindControl("TitleTextBox");
+        TextBox txt2 = (TextBox)FormView_LibraryRegister.FindControl("AuthorTextBox");
+        TextBox txt3 = (TextBox)FormView_LibraryRegister.FindControl("PriceTextBox");
+        TextBox txt4 = (TextBox)FormView_LibraryRegister.FindControl("No_Of_CommunicationTextBox");
+        TextBox txt5 = (TextBox)FormView_LibraryRegister.FindControl("Date_Of_CommunicationTextBox");
+        TextBox txt6 = (TextBox)FormView_LibraryRegister.FindControl("Date_Of_ReceiptTextBox");
+        TextBox txt7 = (TextBox)FormView_LibraryRegister.FindControl("No_Of_Copies_ReceivecdTextBox");
+        TextBox txt8 = (TextBox)FormView_LibraryRegister.FindControl("RemarksTextBox");
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        txt1.Focus();
     }
     protected void ods_Library_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
@@ -60,7 +78,7 @@ public partial class Register_and_marriage_LibraryRegisteraspx : System.Web.UI.P
     {
         Multiview_LibraryRegister.SetActiveView(View2_LibraryRegister);
         FormView_LibraryRegister.PageIndex = e.NewEditIndex;
-        FormView_LibraryRegister.DefaultMode = FormViewMode.Edit;
+        FormView_LibraryRegister.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_LibraryRegister_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -84,6 +102,7 @@ public partial class Register_and_marriage_LibraryRegisteraspx : System.Web.UI.P
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_LibraryRegister.SetActiveView(View1_LibraryRgister);
     }
     protected void ods_LibraryRegister_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

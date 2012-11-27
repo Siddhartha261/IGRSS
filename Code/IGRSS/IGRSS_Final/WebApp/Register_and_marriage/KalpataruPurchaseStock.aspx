@@ -9,6 +9,18 @@
              buttonImageOnly: true
          });
      }
+
+     function AllowAlphabet(e) {
+         isIE = document.all ? 1 : 0
+         keyEntry = !isIE ? e.which : event.keyCode;
+         if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+             return true;
+         else {
+             alert('Please Enter Only Character values.');
+             return false;
+         }
+     }
+
      $(function () {
          $('input[id*="InwardNoTextBox"]').keydown(function (event) {
              // Allow: backspace, delete, tab, escape, and enter
@@ -49,7 +61,7 @@
 <asp:MultiView ID="Multiview_Kalpataru" runat="server" ActiveViewIndex="0">
 <asp:View ID="View1_GridView_Kalpataru" runat="server">
 <br />
-<h1 style="text-align: center">Kalpataru Purchase Stock Register</h1>
+<h1 style="text-align: center" align="center">Kalpataru Purchase Stock Register</h1>
 <table>
           <tr>
                     <td align="right" style="width:641px;" >
@@ -76,10 +88,10 @@
                               Visible="False" />
                           <asp:BoundField DataField="Billno" HeaderText="Bill No" 
                               SortExpression="Billno" />
-                          <asp:BoundField DataField="ListOfConsumableItems" HeaderText="List Of Consumable Items" 
+                          <asp:BoundField DataField="ListOfConsumableItems" HeaderText="List  Of Consumable Items" 
                               SortExpression="ListOfConsumableItems" />
                           <asp:BoundField DataField="BillDate" HeaderText="Bill Date" 
-                              SortExpression="BillDate" />
+                              SortExpression="BillDate" Visible="False" />
                           <asp:BoundField DataField="Quantity" HeaderText="Quantity" 
                               SortExpression="Quantity" />
                               <asp:TemplateField HeaderText="Actions">
@@ -104,12 +116,12 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="N" />
 </asp:View>
 
 <asp:View ID="View2_Formview_Kalpataru" runat="server">
 <center>
-<h1>Kalpataru Purchase Stock Register </h1>
+<h1 align="center">Kalpataru Purchase Stock Register </h1>
     <asp:FormView ID="FormView_Kalpataru" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Kalpataru" DefaultMode="Insert" 
         EnableModelValidation="True" 
@@ -117,86 +129,111 @@
         oniteminserted="FormView_Kalpataru_ItemInserted" 
         onitemupdated="FormView_Kalpataru_ItemUpdated">
         <EditItemTemplate>
-             <table align="center" cellspacing="5">
-			<tr>
+                                   <table align="center" cellspacing="5">
+			<tr align="left">
 			<td>
 			Bill No:
 			</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="BillnoTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td>
 			<td>
-			 <asp:TextBox ID="BillnoTextBox" runat="server" Text='<%# Bind("Billno") %>' 
-                    Width="160px" />
+			 <asp:TextBox ID="BillnoTextBox" runat="server" numeric="integer" Text='<%# Bind("Billno") %>' 
+                    MaxLength="10" Width="160px" />
 			</td>
 			</tr>
            
-            <tr><td>
+            <tr align="left"><td>
 			List Of Consumable Items:
-			</td>
+			</td><td></td>
 			<td><asp:TextBox ID="ListOfConsumableItemsTextBox" runat="server" 
-                Text='<%# Bind("ListOfConsumableItems") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("ListOfConsumableItems") %>' TabIndex="1" Width="160px" /></td></tr>
             
             
-            <tr><td>Date Of Bill:</td>
+            <tr align="left"><td>Date Of Bill:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="BillDateTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td>
 			<td> 
                 <asp:TextBox ID="BillDateTextBox" runat="server" 
-                Text='<%# Bind("BillDate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("BillDate") %>' TabIndex="2" MaxLength="20" Width="160px" /></td></tr>
             
            
-            <tr><td>Quantity:</td><td> 
+            <tr align="left"><td>Quantity:</td><td> <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="QuantityTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator></td><td> 
                 <asp:TextBox ID="QuantityTextBox" runat="server" 
-                Text='<%# Bind("Quantity") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("Quantity") %>' TabIndex="3" MaxLength="5" numeric="integer" 
+                    Width="160px" /></td></tr>
+            
             
            <tr>
-           <td colspan="2" align="center">
+           <td colspan="3" align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" />
+                CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="U" 
+                   TabIndex="4" />
                 &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
                             CausesValidation="False" CommandName="Reset" CssClass="standardButton" 
-                            Text="Reset"   onclientclick="resetTextFields();return false;"/>
+                            Text="Reset"   onclientclick="resetTextFields();return false;" 
+                   AccessKey="R" TabIndex="5"/>
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" CssClass="standardButton" />
+                CausesValidation="False" CommandName="Back" Text="Back" 
+                   CssClass="standardButton" AccessKey="B" TabIndex="6" />
                 </td>
                 </tr>
                 </table>
         </EditItemTemplate>
         <InsertItemTemplate>
                                   <table align="center" cellspacing="5">
-			<tr>
+			<tr align="left">
 			<td>
 			Bill No:
 			</td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="BillnoTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td>
 			<td>
-			 <asp:TextBox ID="BillnoTextBox" runat="server" Text='<%# Bind("Billno") %>' 
-                    Width="160px" />
+			 <asp:TextBox ID="BillnoTextBox" runat="server" numeric="integer" Text='<%# Bind("Billno") %>' 
+                    MaxLength="10" Width="160px" />
 			</td>
 			</tr>
            
-            <tr><td>
+            <tr align="left"><td>
 			List Of Consumable Items:
-			</td>
+			</td><td></td>
 			<td><asp:TextBox ID="ListOfConsumableItemsTextBox" runat="server" 
-                Text='<%# Bind("ListOfConsumableItems") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("ListOfConsumableItems") %>' TabIndex="1" Width="160px" 
+                    Height="60px" TextMode="MultiLine" /></td></tr>
             
             
-            <tr><td>Date Of Bill:</td>
+            <tr align="left"><td>Date Of Bill:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="BillDateTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td>
 			<td> 
                 <asp:TextBox ID="BillDateTextBox" runat="server" 
-                Text='<%# Bind("BillDate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("BillDate") %>' TabIndex="2" MaxLength="20" Width="160px" /></td></tr>
             
            
-            <tr><td>Quantity:</td><td> 
+            <tr align="left"><td>Quantity:</td><td> <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="QuantityTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator></td><td> 
                 <asp:TextBox ID="QuantityTextBox" runat="server" 
-                Text='<%# Bind("Quantity") %>' Width="160px" /></td></tr>
+                Text='<%# Bind("Quantity") %>' TabIndex="3" MaxLength="5" numeric="integer" 
+                    Width="160px" /></td></tr>
             
            
-            <tr><td colspan="2">
+            <tr><td colspan="3">
 			<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Insert" CssClass="standardButton" Text="Insert" />
+                            CommandName="Insert" CssClass="standardButton" Text="Insert" 
+                    TabIndex="4" AccessKey="I" />
                             &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
                             CausesValidation="False" CommandName="Reset" CssClass="standardButton" 
-                            Text="Reset"   onclientclick="resetTextFields();return false;"/>
+                            Text="Reset"   onclientclick="resetTextFields();return false;" 
+                    TabIndex="5" AccessKey="R"/>
                             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                             CausesValidation="False" CommandName="Back" CssClass="standardButton" 
-                            Text="Back" />
+                            Text="Back" TabIndex="6" AccessKey="B" />
                             
                             
 			</td></tr>

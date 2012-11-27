@@ -263,7 +263,18 @@
                                         <td>
                                             &nbsp;</td>
                                         <td>
-                                            &nbsp;</td>
+                                            <asp:ObjectDataSource ID="ods_offices" runat="server" 
+                                                DataObjectTypeName="IGRSS.DataAccessLayer.OfficesType+Offices1DataTable" 
+                                                DeleteMethod="Fill" InsertMethod="Fill" 
+                                                OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataBy" 
+                                                TypeName="IGRSS.DataAccessLayer.OfficesTypeTableAdapters.Offices1TableAdapter" 
+                                                UpdateMethod="Fill">
+                                                <SelectParameters>
+                                                    <asp:ControlParameter ControlID="DropDownList_CopyTo" DbType="Guid" 
+                                                        DefaultValue="0" Name="OfficeTypeId" PropertyName="SelectedValue" />
+                                                </SelectParameters>
+                                            </asp:ObjectDataSource>
+                                        </td>
                                     </tr>
                     
                 <tr>
@@ -271,7 +282,8 @@
 					<td>
                         <asp:DropDownList ID="DropDownList_CopyTo" runat="server" 
                             DataSourceID="ods_CopyTo" DataTextField="OfficeTypeName" 
-                            DataValueField="OfficeTypeId">
+                            DataValueField="OfficeTypeId" AutoPostBack="True" 
+                            onselectedindexchanged="DropDownList_CopyTo_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
 				</tr>                   
@@ -289,7 +301,8 @@
                                         <td>
                                             &nbsp;</td>
                                         <td>
-                                            <asp:Button ID="Button_addcopytodetails" runat="server" Text="Add" />
+                                            <asp:Button ID="Button_addcopytodetails" runat="server" Text="Add" 
+                                                onclick="Button_addcopytodetails_Click" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -573,10 +586,6 @@
             </asp:ObjectDataSource>--%>
             <asp:ObjectDataSource ID="OdsDepartmentMaster" runat="server" SelectMethod="GetDepartmentMasterDetails"
                 TypeName="IGRSS.BusinessLogicLayer.Employee" OldValuesParameterFormatString="original_{0}">
-            </asp:ObjectDataSource>
-            <asp:ObjectDataSource ID="ods_offices" runat="server" 
-                OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-                TypeName="IGRSS.DataAccessLayer.OfficesTypeTableAdapters.Offices1TableAdapter">
             </asp:ObjectDataSource>
             <asp:ObjectDataSource ID="ods_CopyTo" runat="server" DeleteMethod="Delete" 
                 InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 

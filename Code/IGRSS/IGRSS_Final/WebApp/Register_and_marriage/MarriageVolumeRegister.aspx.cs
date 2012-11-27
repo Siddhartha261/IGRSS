@@ -12,9 +12,17 @@ public partial class Register_and_marriage_MarriageVolumeRegister : System.Web.U
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
-     
+
+        infoDiv.Visible = false;
         Multiview_Marriage_Volume.SetActiveView(view2_Formview_MarriageVolume);
         FormView_MarriageVolume.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = (TextBox)FormView_MarriageVolume.FindControl("DateToDateTextBox");
+        TextBox txt2 = (TextBox)FormView_MarriageVolume.FindControl("VolumeNoTextBox");
+        TextBox txt3 = (TextBox)FormView_MarriageVolume.FindControl("RemarksTextBox");
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt1.Focus();
     }
     protected void ods_Marriage_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
@@ -59,9 +67,10 @@ public partial class Register_and_marriage_MarriageVolumeRegister : System.Web.U
     }
     protected void GridView_MarriageVolume_RowEditing(object sender, GridViewEditEventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_Marriage_Volume.SetActiveView(view2_Formview_MarriageVolume);
         FormView_MarriageVolume.PageIndex = e.NewEditIndex;
-        FormView_MarriageVolume.DefaultMode = FormViewMode.Edit;
+        FormView_MarriageVolume.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_MarriageVolume_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -85,6 +94,7 @@ public partial class Register_and_marriage_MarriageVolumeRegister : System.Web.U
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Marriage_Volume.SetActiveView(View1_Gridview_MarriageVolume);
     }
     protected void ods_MarriageVolume_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

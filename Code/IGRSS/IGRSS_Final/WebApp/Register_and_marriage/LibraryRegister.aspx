@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="LibraryRegister.aspx.cs" Inherits="Register_and_marriage_LibraryRegisteraspx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
-<script language="javascript">
+    <script language="javascript">
     function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
             showOn: "both",
@@ -9,6 +9,19 @@
             buttonImageOnly: true
         });
     }
+
+
+    function AllowAlphabet(e) {
+        isIE = document.all ? 1 : 0
+        keyEntry = !isIE ? e.which : event.keyCode;
+        if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+            return true;
+        else {
+            alert('Please Enter Only Character values.');
+            return false;
+        }
+    }
+
     $(function () {
         $('input[id*="InwardNoTextBox"]').keydown(function (event) {
             // Allow: backspace, delete, tab, escape, and enter
@@ -86,102 +99,116 @@
                           <asp:BoundField DataField="Price" HeaderText="Price" 
                               SortExpression="Price" />
                           <asp:BoundField DataField="No_Of_Communication" HeaderText="No Of Communication" 
-                              SortExpression="No_Of_Communication" />
+                              SortExpression="No_Of_Communication" Visible="False" />
                           <asp:BoundField DataField="Date_Of_Communication" HeaderText="Date Of Communication" 
-                              SortExpression="Date_Of_Communication" />
+                              SortExpression="Date_Of_Communication" Visible="False" />
                           <asp:BoundField DataField="Date_Of_Receipt" 
-                              HeaderText="Date Of Receipt" SortExpression="Date_Of_Receipt" />
+                              HeaderText="Date Of Receipt" SortExpression="Date_Of_Receipt" 
+                              Visible="False" />
                           <asp:BoundField DataField="No_Of_Copies_Receivecd" 
                               HeaderText="No Of Copies Receivecd" 
                               SortExpression="No_Of_Copies_Receivecd" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
-                              <asp:TemplateField HeaderText="Actions">
-                            <ItemTemplate>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
-                                                ImageUrl="~/Styles/css/sunny/images/edit.png" />
-                                        </td>
-                                        <td>
-                                            <asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
-                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </ItemTemplate>
-                          </asp:TemplateField>
+                              <asp:TemplateField HeaderText="Actions"><ItemTemplate><table><tr><td><asp:ImageButton ID="ImageButton1" CommandName="Edit" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/edit.png" /></td><td><asp:ImageButton ID="ImageButton2" CommandName="Delete" runat="server" 
+                                                ImageUrl="~/Styles/css/sunny/images/deletecross.png" /></td></tr></table></ItemTemplate></asp:TemplateField>
                       </Columns>
                   </asp:GridView>
               </td>
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="n" />
 </asp:View>
 
 <asp:View ID="View2_LibraryRegister" runat="server">
 <center>
 <h1>Library Register</h1>
     <asp:FormView ID="FormView_LibraryRegister" runat="server" DataKeyNames="SrNo" 
-        DataSourceID="ods_LibraryRegister" DefaultMode="Insert" EnableModelValidation="True" 
-        Width="70%" onitemcommand="FormView_LibraryRegister_ItemCommand" 
+        DataSourceID="ods_LibraryRegister" DefaultMode="Insert" 
+        EnableModelValidation="True" onitemcommand="FormView_LibraryRegister_ItemCommand" 
         oniteminserted="FormView_LibraryRegister_ItemInserted" 
         onitemupdated="FormView_LibraryRegister_ItemUpdated">
         <EditItemTemplate>
                                                    
-                                                              <table align="center" cellspacing="5">
-															 <tr>
+                                                           <table align="center" cellspacing="5">
+															 <tr align="left">
 															 <td>
 															 Title Of Book :
-															 </td>
-															 <td><asp:TextBox ID="TitleTextBox" runat="server" Text='<%# Bind("Title") %>' 
-                                                                     Width="160px" />
+															 </td><td>
+                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                                                         ErrorMessage="*" ControlToValidate="TitleTextBox">*</asp:RequiredFieldValidator>
+                                                                 </td>
+															 <td><asp:TextBox ID="TitleTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Title") %>' 
+                                                                     MaxLength="25" Width="160px" />
 															 </td>
 															 </tr>
 
 															 
-                                                              <tr><td> Author Of Book :</td><td><asp:TextBox ID="AuthorTextBox" runat="server" 
-                                                                      Text='<%# Bind("Author") %>' Width="160px" /></td></tr>
+                                                              <tr align="left"><td> Author Of Book :</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="AuthorTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td>
+                                                                  <asp:TextBox ID="AuthorTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                                                                      Text='<%# Bind("Author") %>' MaxLength="30" Width="160px" /></td></tr>
                                                              
-                                                            
+                                                           
                                                               
-                                                              <tr><td>Price:</td><td><asp:TextBox ID="PriceTextBox" runat="server" 
-                                                                      Text='<%# Bind("Price") %>' Width="160px" /></td></tr>
+                                                              <tr align="left" ><td>Price:</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="PriceTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td><asp:TextBox ID="PriceTextBox" runat="server" 
+                                                                      Text='<%# Bind("Price") %>' MaxLength="5" numeric="integer" 
+                                                                      Width="160px" /></td></tr>
                                                               
-                                                              <tr><td>No Of Communication :</td><td>
+                                                              <tr align="left"><td>No Of Communication :</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="No_Of_CommunicationTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td>
                                                                   <asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
-                                                                  Text='<%# Bind("No_Of_Communication") %>' Width="160px" /></td></tr>
+                                                                  Text='<%# Bind("No_Of_Communication") %>' MaxLength="5" numeric="integer" 
+                                                                      Width="160px" /></td></tr>
                                                               
                                                               
-                                                              <tr><td> Date Of Communication :</td><td>
+                                                              <tr align="left"><td> Date Of Communication :</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="Date_Of_CommunicationTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td>
                                                                   <asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
-                                                                  Text='<%# Bind("Date_Of_Communication") %>' Width="140px" /></td></tr>
+                                                                  Text='<%# Bind("Date_Of_Communication") %>' MaxLength="20" Width="160px" /></td></tr>
                                                              
                                                               
-                                                              <tr><td>Date Of Receipt :</td><td>
+                                                              <tr align="left"><td>Date Of Receipt :</td><td></td><td>
                                                                   <asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
-                                                                  Text='<%# Bind("Date_Of_Receipt") %>' Width="140px" /></td></tr>
+                                                                  Text='<%# Bind("Date_Of_Receipt") %>' MaxLength="20" Width="160px" /></td></tr>
                                                               
                                                               
-                                                              <tr><td>No Of Copies Receivecd :</td><td> 
+                                                              <tr align="left"><td>No Of Copies Receivecd :</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="No_Of_Copies_ReceivecdTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td> 
                                                                   <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
-                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' Width="160px" /></td></tr>
+                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' MaxLength="5" numeric="integer" 
+                                                                      Width="160px" /></td></tr>
                                                               
                                                              
-                                                              <tr><td> Remarks :</td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
-                                                                      Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td></tr>
+                                                              <tr align="left"><td style="height: 68px"> Remarks :</td><td></td><td style="height: 68px"> 
+                                                                  <asp:TextBox ID="RemarksTextBox" runat="server" 
+                                                                      Text='<%# Bind("Remarks") %>' AccessKey="i" Height="60px" 
+                                                                      TextMode="MultiLine" Width="160px" /></td></tr>
                                                              
                                                              
-                                                              <tr><td colspan="2" align="center"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Update" CssClass="standardButton" Text="Update" />
+                                                             
+                                                              <tr><td colspan="3" align="center">
+                                                                  <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                            CommandName="Update" CssClass="standardButton" Text="Update" AccessKey="U" />
                             &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
                             CausesValidation="False" CommandName="Cancel" CssClass="standardButton" 
-                            Text="Reset" onclientclick="resetTextFields();return false;" />
+                            Text="Reset" onclientclick="resetTextFields();return false;" AccessKey="R" />
                         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                             CausesValidation="False" CommandName="Back" CssClass="standardButton" 
-                            Text="Back" /></td></tr>
+                            Text="Back" AccessKey="B" /></td></tr>
         </EditItemTemplate>
         <InsertItemTemplate>
                                                                                                     
@@ -189,81 +216,81 @@
                                                                                                     
                                                                                                    
                                                               <table align="center" cellspacing="5">
-															 <tr>
+															 <tr align="left">
 															 <td>
 															 Title Of Book :
-															 </td>
-															 <td><asp:TextBox ID="TitleTextBox" runat="server" Text='<%# Bind("Title") %>' 
-                                                                     Width="160px" />
+															 </td><td>
+                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                                                         ErrorMessage="*" ControlToValidate="TitleTextBox">*</asp:RequiredFieldValidator>
+                                                                 </td>
+															 <td><asp:TextBox ID="TitleTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Title") %>' 
+                                                                     MaxLength="25" Width="160px" />
 															 </td>
 															 </tr>
 
 															 
-                                                              <tr><td> Author Of Book :</td><td><asp:TextBox ID="AuthorTextBox" runat="server" 
-                                                                      Text='<%# Bind("Author") %>' Width="160px" /></td></tr>
+                                                              <tr align="left"><td> Author Of Book :</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="AuthorTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td>
+                                                                  <asp:TextBox ID="AuthorTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                                                                      Text='<%# Bind("Author") %>' MaxLength="30" Width="160px" /></td></tr>
                                                              
-                                                                  <caption>
-                                                                      <tr>
-                                                                          <td>
-                                                                              Price:</td>
-                                                                          <td>
-                                                                              <asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' 
-                                                                                  Width="160px" />
-                                                                          </td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                          <td>
-                                                                              No Of Communication :</td>
-                                                                          <td>
-                                                                              <asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
-                                                                                  Text='<%# Bind("No_Of_Communication") %>' Width="160px" />
-                                                                          </td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                          <td>
-                                                                              Date Of Communication :</td>
-                                                                          <td>
-                                                                              <asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
-                                                                                  Text='<%# Bind("Date_Of_Communication") %>' Width="140px" />
-                                                                          </td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                          <td>
-                                                                              Date Of Receipt :</td>
-                                                                          <td>
-                                                                              <asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
-                                                                                  Text='<%# Bind("Date_Of_Receipt") %>' Width="140px" />
-                                                                          </td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                          <td>
-                                                                              No Of Copies Receivecd :</td>
-                                                                          <td>
-                                                                              <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
-                                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' Width="160px" />
-                                                                          </td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                          <td>
-                                                                              Remarks :</td>
-                                                                          <td>
-                                                                              <asp:TextBox ID="RemarksTextBox" runat="server" Height="60px" 
-                                                                                  Text='<%# Bind("Remarks") %>' Width="160px" />
-                                                                          </td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                          <td align="center" colspan="2">
-                                                                              <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                                                                                  CommandName="Insert" CssClass="standardButton" Text="Insert" />
-                                                                              &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
-                                                                                  CommandName="Cancel" CssClass="standardButton" 
-                                                                                  onclientclick="resetTextFields();return false;" Text="Reset" />
-                                                                              &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                                                                                  CausesValidation="False" CommandName="Back" CssClass="standardButton" 
-                                                                                  Text="Back" />
-                                                                          </td>
-                                                                      </tr>
-                                                                  </caption>
+                                                           
+                                                              
+                                                              <tr align="left" ><td>Price:</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="PriceTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td><asp:TextBox ID="PriceTextBox" runat="server" 
+                                                                      Text='<%# Bind("Price") %>' MaxLength="5" numeric="integer" 
+                                                                      Width="160px" /></td></tr>
+                                                              
+                                                              <tr align="left"><td>No Of Communication :</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="No_Of_CommunicationTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td>
+                                                                  <asp:TextBox ID="No_Of_CommunicationTextBox" runat="server" 
+                                                                  Text='<%# Bind("No_Of_Communication") %>' MaxLength="5" numeric="integer" 
+                                                                      Width="160px" /></td></tr>
+                                                              
+                                                              
+                                                              <tr align="left"><td> Date Of Communication :</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="Date_Of_CommunicationTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td>
+                                                                  <asp:TextBox ID="Date_Of_CommunicationTextBox" runat="server" 
+                                                                  Text='<%# Bind("Date_Of_Communication") %>' MaxLength="20" Width="160px" /></td></tr>
+                                                             
+                                                              
+                                                              <tr align="left"><td>Date Of Receipt :</td><td></td><td>
+                                                                  <asp:TextBox ID="Date_Of_ReceiptTextBox" runat="server" 
+                                                                  Text='<%# Bind("Date_Of_Receipt") %>' MaxLength="20" Width="160px" /></td></tr>
+                                                              
+                                                              
+                                                              <tr align="left"><td>No Of Copies Receivecd :</td><td>
+                                                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                                                      ErrorMessage="*" ControlToValidate="No_Of_Copies_ReceivecdTextBox">*</asp:RequiredFieldValidator>
+                                                                  </td><td> 
+                                                                  <asp:TextBox ID="No_Of_Copies_ReceivecdTextBox" runat="server" 
+                                                                  Text='<%# Bind("No_Of_Copies_Receivecd") %>' MaxLength="5" numeric="integer" 
+                                                                      Width="160px" /></td></tr>
+                                                              
+                                                             
+                                                              <tr align="left"><td style="height: 68px"> Remarks :</td><td></td><td style="height: 68px"> 
+                                                                  <asp:TextBox ID="RemarksTextBox" runat="server" 
+                                                                      Text='<%# Bind("Remarks") %>' AccessKey="i" Height="60px" 
+                                                                      TextMode="MultiLine" Width="160px" /></td></tr>
+                                                             
+                                                             
+                                                              <tr><td colspan="3" align="center">
+                                                                  <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                            CommandName="Insert" CssClass="standardButton" Text="Insert" OnClientClick="checkForEmptyFields();" AccessKey="I" />
+                            &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
+                            CausesValidation="False" CommandName="Cancel" CssClass="standardButton" 
+                            Text="Reset" onclientclick="resetTextFields();return false;" AccessKey="R" />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                            CausesValidation="False" CommandName="Back" CssClass="standardButton" 
+                            Text="Back" AccessKey="B" /></td></tr>
                             </table>
                                                               
         

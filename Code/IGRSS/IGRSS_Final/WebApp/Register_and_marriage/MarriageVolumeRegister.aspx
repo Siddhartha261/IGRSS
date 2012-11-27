@@ -46,7 +46,7 @@
 <asp:MultiView ID="Multiview_Marriage_Volume" runat="server" ActiveViewIndex="0">
 <asp:View ID="View1_Gridview_MarriageVolume" runat="server">
 <br />
-<h1>Marriage Volume List Register</h1>
+<h1 align="center">Marriage Volume List Register</h1>
 <table>
           <tr>
                     <td align="right" style="width:641px;" >
@@ -76,7 +76,7 @@
                           <asp:BoundField DataField="VolumeNo" HeaderText="Volume No" 
                               SortExpression="VolumeNo" />
                           <asp:BoundField DataField="Remarks" HeaderText="Remarks" 
-                              SortExpression="Remarks" Visible="False" />
+                              SortExpression="Remarks" />
                               <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -104,80 +104,91 @@
 
 <asp:View ID="view2_Formview_MarriageVolume" runat="server">
 <center style="width: 640px">
-<h1>Marriage Volume List Register</h1>
+<h1 align="center">Marriage Volume List Register</h1>
     <asp:FormView ID="FormView_MarriageVolume" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_MarriageVolume" DefaultMode="Insert" 
         EnableModelValidation="True" onitemcommand="FormView_Marriage_ItemCommand" 
         oniteminserted="FormView_MarriageVolume_ItemInserted" 
         onitemupdated="FormView_MarriageVolume_ItemUpdated">
         <EditItemTemplate>
-                      
-			            
-			            <table>
-			<tr>
+                                            <table align="center" cellspacing="5">
+			<tr align="left">
 			<td>
 			Date To Date:
-			</td>
+			</td><td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ErrorMessage="*" ControlToValidate="DateToDateTextBox">*</asp:RequiredFieldValidator>
+                </td>
 			<td>
 			<asp:TextBox ID="DateToDateTextBox" runat="server" 
-                Text='<%# Bind("DateToDate") %>' Width="140px" />
+                Text='<%# Bind("DateToDate") %>' MaxLength="20" Width="160px" />
 			</td>
 			</tr>
 			
             
-            <tr><td>Volume No:</td><td> 
-                <asp:TextBox ID="VolumeNoTextBox" runat="server" 
-                Text='<%# Bind("VolumeNo") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Volume No:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="*" ControlToValidate="VolumeNoTextBox">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="VolumeNoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("VolumeNo") %>' TabIndex="1" MaxLength="10" Width="160px" /></td></tr>
             
            
-            <tr><td>Remarks:</td><td> 
+            <tr align="left"><td>Remarks:</td><td></td><td> 
             <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
-                    Height="60px" Width="160px" /></td></tr>
+                    TabIndex="2" Height="60px" TextMode="MultiLine" Width="160px" /></td></tr>
            
-            <tr><td>
-			<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Update" CssClass="standardButton" Text="Update" />
-                            &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
-                            CausesValidation="False" CommandName="Cancel" CssClass="standardButton" 
-                            Text="Reset" />
-                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                            CausesValidation="False" CommandName="Back" CssClass="standardButton" 
-                            Text="Back" />
-			</td></tr>
+             
+                     <tr><td align="center" colspan="3">   <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                            CommandName="Update" Text="Update"  CssClass="standardButton" />
+                             &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="True" 
+           CommandName="Reset" Text="Reset" 
+           onclientclick="resetTextFields();return false;" CssClass="standardButton"/>
+&nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Back"
+                            Text="Back"   CssClass="standardButton"/>
+                            </td>
+                            </tr>
 			</table>
             
         </EditItemTemplate>
         <InsertItemTemplate>
                                    <table align="center" cellspacing="5">
-			<tr>
+			<tr align="left">
 			<td>
 			Date To Date:
-			</td>
+			</td><td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ErrorMessage="*" ControlToValidate="DateToDateTextBox">*</asp:RequiredFieldValidator>
+                </td>
 			<td>
 			<asp:TextBox ID="DateToDateTextBox" runat="server" 
-                Text='<%# Bind("DateToDate") %>' Width="140px" />
+                Text='<%# Bind("DateToDate") %>' MaxLength="20" Width="160px" />
 			</td>
 			</tr>
 			
             
-            <tr><td>Volume No:</td><td> 
-                <asp:TextBox ID="VolumeNoTextBox" runat="server" 
-                Text='<%# Bind("VolumeNo") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Volume No:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="*" ControlToValidate="VolumeNoTextBox">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="VolumeNoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("VolumeNo") %>' TabIndex="1" MaxLength="10" Width="160px" /></td></tr>
             
            
-            <tr><td>Remarks:</td><td> 
+            <tr align="left"><td>Remarks:</td><td></td><td> 
             <asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
-                    Height="60px" Width="160px" /></td></tr>
+                    TabIndex="2" Height="60px" TextMode="MultiLine" Width="160px" /></td></tr>
            
-            <tr><td colspan="2" align="right">
+            <tr><td colspan="3" align="right">
 			<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                            CommandName="Insert" CssClass="standardButton" Text="Insert" />
+                            CommandName="Insert" CssClass="standardButton" Text="Insert" 
+                    TabIndex="3" AccessKey="I" />
                             &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" 
                             CausesValidation="False" CommandName="Cancel" CssClass="standardButton" 
-                            Text="Reset" />
+                            Text="Reset" TabIndex="4" AccessKey="R" />
                         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                             CausesValidation="False" CommandName="Back" CssClass="standardButton" 
-                            Text="Back" />
+                            Text="Back" TabIndex="5" AccessKey="B" />
 			</td></tr>
             
         </InsertItemTemplate>

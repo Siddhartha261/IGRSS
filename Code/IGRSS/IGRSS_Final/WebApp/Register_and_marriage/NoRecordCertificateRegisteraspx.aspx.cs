@@ -12,10 +12,24 @@ public partial class Register_and_marriage_NoRecordCertificateRegisteraspx : Sys
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
-        
+        infoDiv.Visible = false;
         Multiview_NoRecordCertificate.SetActiveView(View2_Formview);
         FormView_NoRecordCertificate.ChangeMode(FormViewMode.Insert);
-
+        TextBox txt1 = (TextBox)FormView_NoRecordCertificate.FindControl("ApplicantNameTextBox");
+        TextBox txt2 = (TextBox)FormView_NoRecordCertificate.FindControl("ApplicantNameTextBox");
+        TextBox txt3 = (TextBox)FormView_NoRecordCertificate.FindControl("ApplicantNameTextBox");
+        TextBox txt4 = (TextBox)FormView_NoRecordCertificate.FindControl("ApplicantNameTextBox");
+        TextBox txt5= (TextBox)FormView_NoRecordCertificate.FindControl("ApplicantNameTextBox");
+        TextBox txt6 = (TextBox)FormView_NoRecordCertificate.FindControl("ApplicantNameTextBox");
+        TextBox txt7 = (TextBox)FormView_NoRecordCertificate.FindControl("ApplicantNameTextBox");
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt1.Focus();
     }
     private void ShowMessage(string message, bool isError)
     {
@@ -58,9 +72,10 @@ public partial class Register_and_marriage_NoRecordCertificateRegisteraspx : Sys
     }
     protected void GridView_NoRecordCertificate_RowEditing(object sender, GridViewEditEventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_NoRecordCertificate.SetActiveView(View2_Formview);
         FormView_NoRecordCertificate.PageIndex = e.NewEditIndex;
-        FormView_NoRecordCertificate.DefaultMode = FormViewMode.Edit;
+        FormView_NoRecordCertificate.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_NoRecordCertificate_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -84,6 +99,7 @@ public partial class Register_and_marriage_NoRecordCertificateRegisteraspx : Sys
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_NoRecordCertificate.SetActiveView(view1_GridView);
     }
     protected void ods_NoRecordCertificate_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

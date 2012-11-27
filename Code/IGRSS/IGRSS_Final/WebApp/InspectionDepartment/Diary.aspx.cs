@@ -17,6 +17,8 @@ public partial class InspectionDepartment_Diary : System.Web.UI.Page
     }
     protected void FormView_Diary_ItemInserting(object sender, FormViewInsertEventArgs e)
     {
+        DropDownList DropDown_DaysDuringMonth = FormView_Diary.FindControl("DropDownList_DaysDuringMonth") as DropDownList;
+        e.Values["Daysduringmonth"] =Convert.ToInt32(DropDown_DaysDuringMonth.SelectedValue);
         ListBox ListBox_office = FormView_Diary.FindControl("ListBox_officename") as ListBox;
         int[] selectedIndices = ListBox_office.GetSelectedIndices();
         e.Values["NoOfOfficeinspected"] = selectedIndices.Length;

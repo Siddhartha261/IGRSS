@@ -12,8 +12,28 @@ public partial class Register_and_marriage_BookFormsRegister : System.Web.UI.Pag
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_BookFormsRegister.SetActiveView(view2_Formview);
         FormView_BookFormRegister.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt2 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt3= (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt4 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt5 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt6 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt7 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt8 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt9 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        txt9.Text = "";
+        txt1.Focus();
 
     }
 
@@ -67,9 +87,10 @@ public partial class Register_and_marriage_BookFormsRegister : System.Web.UI.Pag
     }
     protected void GridView_BookFormRegister_RowEditing(object sender, GridViewEditEventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_BookFormsRegister.SetActiveView(view2_Formview);
         FormView_BookFormRegister.PageIndex = e.NewEditIndex;
-        FormView_BookFormRegister.DefaultMode = FormViewMode.Edit;
+        FormView_BookFormRegister.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_BookFormRegister_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -93,6 +114,7 @@ public partial class Register_and_marriage_BookFormsRegister : System.Web.UI.Pag
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_BookFormsRegister.SetActiveView(view1_GridView);
     }
     protected void ods_BookFormRegister_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

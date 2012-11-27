@@ -9,6 +9,18 @@
             buttonImageOnly: true
         });
     }
+
+    function AllowAlphabet(e) {
+        isIE = document.all ? 1 : 0
+        keyEntry = !isIE ? e.which : event.keyCode;
+        if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+            return true;
+        else {
+            alert('Please Enter Only Character values.');
+            return false;
+        }
+    }
+
     $(function () {
         $('input[id*="InwardNoTextBox"]').keydown(function (event) {
             // Allow: backspace, delete, tab, escape, and enter
@@ -49,7 +61,7 @@
         ActiveViewIndex="0">
 <asp:View ID="view1_GridView" runat="server">
     <br />
-<h1 style="text-align: center">No Record Certificate Register</h1>
+<h1 style="text-align: center" align="center">No Record Certificate Register</h1>
 <table>
           <tr>
                   <td align="right">
@@ -80,24 +92,24 @@
                       onrowdeleting="GridView_NoRecordCertificate_RowDeleting" 
                       onrowediting="GridView_NoRecordCertificate_RowEditing">
                       <Columns>
-                          <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
+                          <asp:BoundField DataField="SrNo" HeaderText="Sr No" InsertVisible="False" 
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
                           <asp:BoundField DataField="ApplicantName" HeaderText="Applicant Name" 
                               SortExpression="ApplicantName" />
                           <asp:BoundField DataField="Address" HeaderText="Address" 
                               SortExpression="Address" Visible="False" />
                           <asp:BoundField DataField="ApplicationDate" HeaderText="Application Date" 
-                              SortExpression="ApplicationDate" />
+                              SortExpression="ApplicationDate" Visible="False" />
                           <asp:BoundField DataField="Purpose" HeaderText="Purpose" 
-                              SortExpression="Purpose" />
+                              SortExpression="Purpose" Visible="False" />
                           <asp:BoundField DataField="SignOfMarriageSubRegistrar" 
-                              HeaderText="Sign Of Marriage Sub Registrar" 
-                              SortExpression="SignOfMarriageSubRegistrar" Visible="False" />
+                              HeaderText="Sign Of Marriage SubRegistrar" 
+                              SortExpression="SignOfMarriageSubRegistrar" />
                           <asp:BoundField DataField="ApplicationDisposalDate" 
                               HeaderText="Application Disposal Date" 
-                              SortExpression="ApplicationDisposalDate" />
+                              SortExpression="ApplicationDisposalDate" Visible="False" />
                           <asp:BoundField DataField="SignOfOfficer" HeaderText="Sign Of Officer" 
-                              SortExpression="SignOfOfficer" Visible="False" />
+                              SortExpression="SignOfOfficer" />
                               <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <table>
@@ -125,7 +137,7 @@
 
 <asp:View ID="View2_Formview" runat="server">
 <center>
-<h1>no record certificate Register</h1>
+<h1 align="center">no record certificate Register</h1>
     <asp:FormView ID="FormView_NoRecordCertificate" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_NoRecordCertificate" DefaultMode="Insert" 
         EnableModelValidation="True" 
@@ -134,40 +146,59 @@
         onitemupdated="FormView_NoRecordCertificate_ItemUpdated">
         <EditItemTemplate>
                <table align="center" cellspacing="5">
-			   <tr><td> Name Of Applicant :</td><td> 
-                   <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
+			   <tr align="left"><td> Name Of Applicant :</td><td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                       ControlToValidate="ApplicantNameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                   </td><td> 
+                   <asp:TextBox ID="ApplicantNameTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("ApplicantName") %>' Width="160px" MaxLength="30" /></td></tr>
              
            
-            <tr><td>Address :</td><td><asp:TextBox ID="AddressTextBox" runat="server" 
-                    Text='<%# Bind("Address") %>' Height="60px" Width="160px" /></td></tr>
+            <tr align="left"><td>Address :</td><td></td><td>
+                <asp:TextBox ID="AddressTextBox" runat="server" 
+                    Text='<%# Bind("Address") %>' TabIndex="1" Width="160px" MaxLength="200" /></td></tr>
             
             
-            <tr><td>Date Of Application :</td><td>
+            <tr align="left"><td>Date Of Application :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="ApplicationDateTextBox" EnableViewState="False" 
+                    ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td>
                 <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("ApplicationDate") %>' TabIndex="2" Width="160px" MaxLength="20" /></td></tr>
             
             
-            <tr><td>Purpose:</td><td> <asp:TextBox ID="PurposeTextBox" runat="server" 
-                    Text='<%# Bind("Purpose") %>' Width="160px" /></td></tr>
-            
-           
-            <tr><td>Sign Of Marriage SubRegistrar:</td><td> 
-                <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server" 
-                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Purpose:</td><td></td><td> 
+                <asp:TextBox ID="PurposeTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Purpose") %>' TabIndex="3" Width="160px" MaxLength="100" /></td></tr>
             
            
-            <tr><td>Date Of Application Disposal:</td><td>
+            <tr><td>Sign Of Marriage SubRegistrar:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="SignOfMarriageSubRegistrarTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' TabIndex="4" Width="160px" 
+                        MaxLength="30" /></td></tr>
+            
+           
+            <tr align="left"><td>Date Of Application Disposal:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="ApplicationDisposalDateTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td>
                 <asp:TextBox ID="ApplicationDisposalDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDisposalDate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("ApplicationDisposalDate") %>' TabIndex="5" Width="160px" 
+                        MaxLength="20" /></td></tr>
             
             
-            <tr><td> Sign Of Officer:</td><td> 
-                <asp:TextBox ID="SignOfOfficerTextBox" runat="server" 
-                Text='<%# Bind("SignOfOfficer") %>' Width="160px" /></td></tr>
+            <tr align="left"><td> Sign Of Officer:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="SignOfOfficerTextBox" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="SignOfOfficerTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("SignOfOfficer") %>' TabIndex="6" Width="160px" MaxLength="30" /></td></tr>
            
-           
-            <tr><td align="center" colspan="2"> 
+            <tr><td align="center" colspan="3"> 
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update" CssClass="standardButton" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
@@ -180,48 +211,69 @@
         <InsertItemTemplate>
             
                  <table align="center" cellspacing="5">
-			   <tr><td> Name Of Applicant :</td><td> 
-                   <asp:TextBox ID="ApplicantNameTextBox" runat="server" 
-                Text='<%# Bind("ApplicantName") %>' Width="160px" /></td></tr>
+			   <tr align="left"><td> Name Of Applicant :</td><td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                       ControlToValidate="ApplicantNameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                   </td><td> 
+                   <asp:TextBox ID="ApplicantNameTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("ApplicantName") %>' Width="160px" MaxLength="30" /></td></tr>
              
            
-            <tr><td>Address :</td><td><asp:TextBox ID="AddressTextBox" runat="server" 
-                    Text='<%# Bind("Address") %>' Height="60px" Width="160px" /></td></tr>
+            <tr align="left"><td>Address :</td><td></td><td>
+                <asp:TextBox ID="AddressTextBox" runat="server" 
+                    Text='<%# Bind("Address") %>' TabIndex="1" Width="160px" MaxLength="200" /></td></tr>
             
             
-            <tr><td>Date Of Application :</td><td>
+            <tr align="left"><td>Date Of Application :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="ApplicationDateTextBox" EnableViewState="False" 
+                    ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td>
                 <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("ApplicationDate") %>' TabIndex="2" Width="160px" MaxLength="20" /></td></tr>
             
             
-            <tr><td>Purpose:</td><td> <asp:TextBox ID="PurposeTextBox" runat="server" 
-                    Text='<%# Bind("Purpose") %>' Width="160px" /></td></tr>
-            
-           
-            <tr><td>Sign Of Marriage SubRegistrar:</td><td> 
-                <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server" 
-                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' Width="160px" /></td></tr>
+            <tr align="left"><td>Purpose:</td><td></td><td> 
+                <asp:TextBox ID="PurposeTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Purpose") %>' TabIndex="3" Width="160px" MaxLength="100" /></td></tr>
             
            
-            <tr><td>Date Of Application Disposal:</td><td>
+            <tr align="left"><td>Sign Of Marriage SubRegistrar:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="SignOfMarriageSubRegistrarTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="SignOfMarriageSubRegistrarTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("SignOfMarriageSubRegistrar") %>' TabIndex="4" Width="160px" 
+                        MaxLength="30" /></td></tr>
+            
+           
+            <tr align="left"><td>Date Of Application Disposal:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="ApplicationDisposalDateTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td>
                 <asp:TextBox ID="ApplicationDisposalDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDisposalDate") %>' Width="140px" /></td></tr>
+                Text='<%# Bind("ApplicationDisposalDate") %>' TabIndex="5" Width="160px" 
+                        MaxLength="20" /></td></tr>
             
             
-            <tr><td> Sign Of Officer:</td><td> 
-                <asp:TextBox ID="SignOfOfficerTextBox" runat="server" 
-                Text='<%# Bind("SignOfOfficer") %>' Width="160px" /></td></tr>
+            <tr align="left"><td> Sign Of Officer:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="SignOfOfficerTextBox" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="SignOfOfficerTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("SignOfOfficer") %>' TabIndex="6" Width="160px" MaxLength="30" /></td></tr>
            
            
-            <tr><td align="center" colspan="2"> 
+            <tr><td align="center" colspan="3"> 
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                CommandName="Insert" Text="Insert" CssClass="standardButton" TabIndex="7" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
-                    onclientclick="resetTextFields();return false;" CssClass="standardButton" />
+                    onclientclick="resetTextFields();return false;" CssClass="standardButton" 
+                    TabIndex="8" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td></tr>
+                    CssClass="standardButton" TabIndex="9" /></td></tr>
             
         </InsertItemTemplate>
         <ItemTemplate>
