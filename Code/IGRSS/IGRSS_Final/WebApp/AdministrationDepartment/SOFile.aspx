@@ -11,6 +11,21 @@
                 buttonImageOnly: true
             });
         }
+        //temp code
+        function comparedate() {
+            var txtbox = document.getElementById('<%=FormView_SOFile.FindControl("DateOfCircularsTextBox").ClientID%>');
+            var date1 = new Date(txtbox);
+            var datenow = new Date();
+            datenow = "2012-11-28";
+            var day = datenow.getDate();
+            var month = datenow.getMonth();
+            var year = datenow.getFullYear();
+            var year1=date1
+            if (txtbox >= datenow) {
+                alert("Please enter valide date");
+            }
+        }
+        //ends temp code
         function isNumberKey(evt) {
             var charCode = (evt.which) ? evt.which : event.keyCode
             if (charCode > 31 && (charCode < 48 || charCode > 57))
@@ -179,7 +194,7 @@
                    
                 </tr>
                 <tr>
-                <td align="center" colspan="2">
+                <td align="center" colspan="3">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update"  CssClass="standardButton"/>
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
@@ -210,7 +225,7 @@
                         ControlToValidate="DateOfCircularsTextBox" 
                         ErrorMessage="*">*</asp:RequiredFieldValidator>
                     </td>
-                    <td> <asp:TextBox ID="DateOfCircularsTextBox" runat="server" Text='<%# Bind("DateOfCirculars") %>' Width="160px" MaxLength="10" /> </td>
+                    <td> <asp:TextBox ID="DateOfCircularsTextBox" runat="server"   Text='<%# Bind("DateOfCirculars") %>' Width="160px" MaxLength="10" /> </td>
                   
                 </tr>
                 <tr align="left">
@@ -237,7 +252,7 @@
                 <tr>
                 <td align="center" colspan="3">
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert"  CssClass="standardButton" AccessKey="I"/>
+                CommandName="Insert" Text="Insert"  CssClass="standardButton" AccessKey="I" OnClientClick="comparedate()"/>
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
                             CommandName="Reset" Text="Reset" 
                             onclientclick="resetTextFields();return false;" 

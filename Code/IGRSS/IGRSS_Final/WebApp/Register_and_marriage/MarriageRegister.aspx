@@ -188,7 +188,7 @@
 			<td>Bride Name :</td><td> 
                 <asp:TextBox ID="Bride_nameTextBox" runat="server" 
                 Text='<%# Bind("Bride_name") %>' MaxLength="30" /></td>
-				<td>Talk:</td><td> <asp:TextBox ID="TalkTextBox" runat="server" 
+				<td>Taluka:</td><td> <asp:TextBox ID="TalkTextBox" runat="server" 
                     Text='<%# Bind("Talk") %>' Height="60px" TextMode="MultiLine" /></td>
 			</tr>	
 			<tr align="left"><td> Father Name Of Bride:</td><td> 
@@ -293,7 +293,7 @@
                 </td><td> 
                 <asp:TextBox ID="Bride_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("Bride_name") %>' MaxLength="30" TabIndex="2" Width="160px" /></td>
-				<td>Talk:</td><td></td><td> <asp:TextBox ID="TalkTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+				<td>Taluka:</td><td></td><td> <asp:TextBox ID="TalkTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                     Text='<%# Bind("Talk") %>' TabIndex="7" Width="160px" /></td>
 			</tr>	
 			<tr align="left"><td> Father Name Of Bride:</td><td></td><td> 

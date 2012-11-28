@@ -16,6 +16,29 @@ public partial class LatestPages_MLAandMinisterRegister : System.Web.UI.Page
         infoDiv.Visible = false;
         Multiview_MLA.SetActiveView(Multiview_MLA.Views[1]);
         FormView_MLA.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = FormView_MLA.FindControl("InwardNoTextBox") as TextBox;
+        TextBox txt2 = FormView_MLA.FindControl("FileNoTextBox") as TextBox;
+        TextBox txt3 = FormView_MLA.FindControl("MLAnameTextBox") as TextBox;
+        TextBox txt4 = FormView_MLA.FindControl("SubjectTextBox") as TextBox;
+        TextBox txt5 = FormView_MLA.FindControl("LetterNoTextBox") as TextBox;
+        TextBox txt6 = FormView_MLA.FindControl("LetterDateTextBox") as TextBox;
+        TextBox txt7 = FormView_MLA.FindControl("FileNumberTextBox") as TextBox;
+        TextBox txt8 = FormView_MLA.FindControl("DetailsofOutputTextBox") as TextBox;
+        TextBox txt9 = FormView_MLA.FindControl("DetailsofFilePreservationTextBox") as TextBox;
+        TextBox txt10 = FormView_MLA.FindControl("DetailsOfRecordTextBox") as TextBox;
+        TextBox txt11 = FormView_MLA.FindControl("RemarksTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        txt9.Text = "";
+        txt10.Text = "";
+        txt11.Text = "";
+        txt1.Focus();
     }
 
 

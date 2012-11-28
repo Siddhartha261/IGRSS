@@ -28,6 +28,15 @@ public partial class LatestPages_WorkSheetRegister : System.Web.UI.Page
         infoDiv.Visible = false;
         MultiView_worksheet.SetActiveView(MultiView_worksheet.Views[1]);
         FormView_worksheet.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = FormView_worksheet.FindControl("WorkSheet_NoTextBox") as TextBox;
+        TextBox txt2 = FormView_worksheet.FindControl("Inward_NoTextBox") as TextBox;
+        TextBox txt3 = FormView_worksheet.FindControl("Name_Of_PersonTextBox") as TextBox;
+        TextBox txt4 = FormView_worksheet.FindControl("Work_Disposal_DateTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt1.Focus();
     }
          
   

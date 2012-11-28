@@ -85,7 +85,7 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="n" />
 </asp:View>
 
 <asp:View ID="Formview" runat="server">
@@ -145,7 +145,7 @@
                     &nbsp;</td>
 			    <td><asp:TextBox ID="Details_To_Vigilance_CommissionerTextBox" runat="server" 
                     Text='<%# Bind("Details_To_Vigilance_Commissioner") %>' Height="60px" 
-                        Width="160px" TabIndex="4" /></td>
+                        Width="160px" TabIndex="4" TextMode="MultiLine" /></td>
 			</tr>	                 
                     
             <tr><td colspan=3 align="center">
@@ -203,7 +203,7 @@
 			    <td>
                     &nbsp;</td>
 			    <td><asp:TextBox ID="Date_Of_ComplaintTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" TabIndex="3" /></td>
+                    Text='<%# Bind("Date_Of_Complaint") %>' Width="160px" TabIndex="3" /></td>
 			</tr>	                 
                     
             <tr align="left"><td>Details To Vigilance Commissioner:</td>
@@ -211,7 +211,7 @@
                     &nbsp;</td>
 			    <td><asp:TextBox ID="Details_To_Vigilance_CommissionerTextBox" runat="server" 
                     Text='<%# Bind("Details_To_Vigilance_Commissioner") %>' Height="60px" 
-                        Width="160px" TabIndex="4" /></td>
+                        Width="160px" TabIndex="4" TextMode="MultiLine" /></td>
 			</tr>	                 
                     
             <tr><td colspan=3 align="center">

@@ -56,16 +56,15 @@
 <hr /><br />
 <h1>Appeal Register</h1>
 <table>
-          <tr>
-                    <td align="right" style="width:641px;" >
+          <tr align="right">
+                    <td  style="width:641px;" >
                         <asp:Label ID="lbllls" runat="server" Text="Enter File Number :" 
-                            meta:resourcekey="lblllsResource1"></asp:Label></td>
-                    <td align="left" >
-                        <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1"></asp:TextBox></td>
-                        <td align="right">
-                        <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
-                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
+                            meta:resourcekey="lblllsResource1"></asp:Label>
+                            &nbsp
+                    <td align="left"><asp:TextBox Width="160" ID="txtFileNo" runat="server" 
+                            meta:resourcekey="txtFileNoResource1"></asp:TextBox>
+                    <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
+                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" /></td>                      
                     </td>
           </tr>
           <tr>
@@ -135,7 +134,7 @@
               </td>
           </tr>
  </table>
- <asp:LinkButton ID="Button_new" runat="server" Text="New" 
+ <asp:LinkButton ID="Button_new" runat="server" Text="New" AccessKey="n"
         onclick="Button_new_Click" CssClass="standardButton" />
 </asp:View>
 
@@ -151,40 +150,61 @@
         ondatabound="FormView_AppealRegister_DataBound" 
         onitemupdating="FormView_AppealRegister_ItemUpdating" >
         <EditItemTemplate>
-                    <table>
+                    <table align="center">
 	    <tr align="left">
 		    <td>File No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
                     Width="160px" MaxLength="10" /></td>
 			
 			<td>Deficit Stamp Duty:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="DeficitStampDutyTextBox" runat="server" 
-                    Text='<%# Bind("DeficitStampDuty") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("DeficitStampDuty") %>' Width="160px" MaxLength="10" 
+                    TabIndex="6" /></td>
 		</tr>	            
 		               
         <tr align="left">
 		    <td>Kacheri/Office:</td>
 			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td>
                 <asp:DropDownList ID="DropDownList_office" runat="server" 
                     DataSourceID="ods_OfficesMaster" DataTextField="OfficeName" 
-                    DataValueField="OfficeName" Width="160px">
+                    DataValueField="OfficeName" Width="160px" TabIndex="1">
                 </asp:DropDownList>
             </td>
 			
 			<td>Total Stamp Duty:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="TotalStampDutyTextBox" runat="server" 
-                    Text='<%# Bind("TotalStampDuty") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("TotalStampDuty") %>' Width="160px" MaxLength="10" 
+                    TabIndex="7" /></td>
 		</tr>
 		           
         <tr align="left">
 		    <td>Document No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="DocumentNoTextBox" runat="server" numeric="integer"
-                    Text='<%# Bind("DocumentNo") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("DocumentNo") %>' Width="160px" MaxLength="10" 
+                    TabIndex="2" /></td>
 			
 			<td>Continue Or Remand:</td>
 			<td>
+                &nbsp;</td>
+			<td>
                 <asp:RadioButtonList ID="RadioButtonList_continue" runat="server" 
-                    RepeatDirection="Horizontal">
+                    RepeatDirection="Horizontal" TabIndex="8">
                     <asp:ListItem Text="Continue" Value="True"></asp:ListItem>
                     <asp:ListItem Text="Remand" Value="False"></asp:ListItem>
                 </asp:RadioButtonList>
@@ -193,97 +213,149 @@
 		      
         <tr align="left">
 		    <td>Year:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="YearTextBox" runat="server" numeric="integer" Text='<%# Bind("Year") %>' 
-                    Width="160px" MaxLength="4" /></td>
+                    Width="160px" MaxLength="4" TabIndex="3" /></td>
 			
 			<td>Result:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="ResultTextBox" runat="server" Text='<%# Bind("Result") %>' 
-                    Width="160px" MaxLength="20" /></td>
+                    Width="160px" MaxLength="20" TabIndex="9" /></td>
 		</tr>
 		                       
         <tr align="left">
 		    <td>Name Of Applicant:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="NameOfApplicantTextBox" runat="server" 
-                    Text='<%# Bind("NameOfApplicant") %>' Width="160px" MaxLength="30" /></td>
+                    Text='<%# Bind("NameOfApplicant") %>' Width="160px" MaxLength="30" 
+                    TabIndex="4" /></td>
 			
 			<td>Outward No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="OutwardNoTextBox" runat="server" 
-                    Text='<%# Bind("OutwardNo") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("OutwardNo") %>' Width="160px" MaxLength="10" 
+                    TabIndex="10" /></td>
 		</tr>
 		                   
         <tr align="left">
 		    <td>Versus:</td>
 			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td>
                 <asp:DropDownList ID="DropdownList_Versus" runat="server" 
                     DataSourceID="ods_OfficesMaster" DataTextField="OfficeName" 
-                    DataValueField="OfficeName">
+                    DataValueField="OfficeName" TabIndex="5">
                 </asp:DropDownList>
             </td>
 			
 			<td>Date:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Width="160px" /></td>
+                    Width="160px" TabIndex="11" /></td>
 		</tr>
 		                 
         <tr align="left">
 		    <td></td>
+			<td>
+                &nbsp;</td>
 			<td></td>
 			
 			<td>AG Year:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="AGYearTextBox" runat="server" numeric="integer" Text='<%# Bind("AGYear") %>' 
-                    Width="160px" MaxLength="4" /></td>
+                    Width="160px" MaxLength="4" TabIndex="12" /></td>
 		</tr>
 		               
         <tr>
-		    <td align="center" colspan=4>
+		    <td align="center" colspan=6>
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                    CommandName="Update" Text="Update" CssClass="standardButton" />
+                    CommandName="Update" Text="Update" CssClass="standardButton" 
+                    TabIndex="13" />
 				&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                     CausesValidation="False" CommandName="Reset" Text="Reset" 
                     CssClass="standardButton" 
-                    onclientclick="resetTextFields();return false;" />
+                    onclientclick="resetTextFields();return false;" TabIndex="14" />
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                     CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td>
+                    CssClass="standardButton" TabIndex="15" /></td>
 		</tr>	
     </table>
             
         </EditItemTemplate>
         <InsertItemTemplate>
-                    <table>
+                    <table align="center">
 	    <tr align="left">
 		    <td>File No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
                     Width="160px" MaxLength="10" /></td>
 			
 			<td>Deficit Stamp Duty:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="DeficitStampDutyTextBox" runat="server" 
-                    Text='<%# Bind("DeficitStampDuty") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("DeficitStampDuty") %>' Width="160px" MaxLength="10" 
+                    TabIndex="6" /></td>
 		</tr>	            
 		               
         <tr align="left">
 		    <td>Kacheri/Office:</td>
 			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td>
                 <asp:DropDownList ID="DropDownList_office" runat="server" 
                     DataSourceID="ods_OfficesMaster" DataTextField="OfficeName" 
-                    DataValueField="OfficeName" Width="160px">
+                    DataValueField="OfficeName" Width="160px" TabIndex="1">
                 </asp:DropDownList>
             </td>
 			
 			<td>Total Stamp Duty:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="TotalStampDutyTextBox" runat="server" 
-                    Text='<%# Bind("TotalStampDuty") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("TotalStampDuty") %>' Width="160px" MaxLength="10" 
+                    TabIndex="7" /></td>
 		</tr>
 		           
         <tr align="left">
 		    <td>Document No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="DocumentNoTextBox" runat="server" numeric="integer"
-                    Text='<%# Bind("DocumentNo") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("DocumentNo") %>' Width="160px" MaxLength="10" 
+                    TabIndex="2" /></td>
 			
 			<td>Continue Or Remand:</td>
 			<td>
+                &nbsp;</td>
+			<td>
                 <asp:RadioButtonList ID="RadioButtonList_continue" runat="server" 
-                    RepeatDirection="Horizontal">
+                    RepeatDirection="Horizontal" TabIndex="8">
                     <asp:ListItem Text="Continue" Value="True"></asp:ListItem>
                     <asp:ListItem Text="Remand" Value="False"></asp:ListItem>
                 </asp:RadioButtonList>
@@ -292,58 +364,89 @@
 		      
         <tr align="left">
 		    <td>Year:</td>
+			<td>
+                &nbsp;</td>
 			<td><asp:TextBox ID="YearTextBox" runat="server" numeric="integer" Text='<%# Bind("Year") %>' 
-                    Width="160px" MaxLength="4" /></td>
+                    Width="160px" MaxLength="4" TabIndex="3" /></td>
 			
 			<td>Result:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="ResultTextBox" runat="server" Text='<%# Bind("Result") %>' 
-                    Width="160px" MaxLength="20" /></td>
+                    Width="160px" MaxLength="20" TabIndex="9" /></td>
 		</tr>
 		                       
         <tr align="left">
 		    <td>Name Of Applicant:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="NameOfApplicantTextBox" runat="server" 
-                    Text='<%# Bind("NameOfApplicant") %>' Width="160px" MaxLength="30" /></td>
+                    Text='<%# Bind("NameOfApplicant") %>' Width="160px" MaxLength="30" 
+                    TabIndex="4" /></td>
 			
 			<td>Outward No:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="OutwardNoTextBox" runat="server" 
-                    Text='<%# Bind("OutwardNo") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("OutwardNo") %>' Width="160px" MaxLength="10" 
+                    TabIndex="10" /></td>
 		</tr>
 		                   
         <tr align="left">
 		    <td>Versus:</td>
 			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+			<td>
                 <asp:DropDownList ID="DropdownList_Versus" runat="server" 
                     DataSourceID="ods_OfficesMaster" DataTextField="OfficeName" 
-                    DataValueField="OfficeName">
+                    DataValueField="OfficeName" TabIndex="5">
                 </asp:DropDownList>
             </td>
 			
 			<td>Date:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
-                    Width="160px" /></td>
+                    Width="160px" TabIndex="11" /></td>
 		</tr>
 		                 
         <tr align="left">
 		    <td></td>
+			<td>
+                &nbsp;</td>
 			<td></td>
 			
 			<td>AG Year:</td>
+			<td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 			<td><asp:TextBox ID="AGYearTextBox" runat="server" numeric="integer" Text='<%# Bind("AGYear") %>' 
-                    Width="160px" MaxLength="4" /></td>
+                    Width="160px" MaxLength="4" TabIndex="12" /></td>
 		</tr>
 		               
         <tr>
-		    <td align="center" colspan=4>
+		    <td align="center" colspan=6>
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                    CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                    CommandName="Insert" Text="Insert" CssClass="standardButton" 
+                    TabIndex="13" />
 				&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                     CausesValidation="False" CommandName="Reset" Text="Reset" 
                     CssClass="standardButton" 
-                    onclientclick="resetTextFields();return false;" />
+                    onclientclick="resetTextFields();return false;" TabIndex="14" />
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                     CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td>
+                    CssClass="standardButton" TabIndex="15" /></td>
 		</tr>	
     </table>
             

@@ -108,6 +108,12 @@ public partial class LatestPages_SOFile : System.Web.UI.Page
         //String str=gridview.Columns[2].ToString();
         //DropDownList1.SelectedValue = str;
         ////ends temp code
+
+        //temp code
+        //DropDownList DropDownList1 = (DropDownList)FormView_SOFile.FindControl("DropDownList1");
+        //GridView gridview = (GridView)FormView_SOFile.FindControl("GridView_SOFile");
+        //DropDownList1.SelectedValue=ods_SOFile.UpdateParameters["Department"].DefaultValue;   
+        //ends temp code
         Multiview_SOFile.SetActiveView(Formview);
         FormView_SOFile.PageIndex = e.NewEditIndex;
         FormView_SOFile.ChangeMode(FormViewMode.Edit);

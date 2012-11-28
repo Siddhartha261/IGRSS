@@ -122,7 +122,7 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="n" />
 </asp:View>
 
 <asp:View ID="Formview" runat="server">
@@ -295,7 +295,7 @@
             </td>
 			<td>
                 <asp:RadioButtonList ID="Radio_affidavit" runat="server" 
-                    RepeatDirection="Horizontal" Width="160px">
+                    RepeatDirection="Horizontal" Width="160px" TabIndex="7">
                     <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
                     <asp:ListItem Text="No" Value="False"></asp:ListItem>
                 </asp:RadioButtonList>
@@ -308,14 +308,16 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="SpecialCivilApplNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
-			<td><asp:TextBox ID="SpecialCivilApplNoTextBox" runat="server" numeric="integer"
-            Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" MaxLength="10" /></td>
+			<td style="margin-left: 40px"><asp:TextBox ID="SpecialCivilApplNoTextBox" 
+                    runat="server" numeric="integer"
+            Text='<%# Bind("SpecialCivilApplNo") %>' Width="160px" MaxLength="10" 
+                    TabIndex="1" /></td>
 			
 			<td>Affidavit Date:</td>
 			<td>
                 &nbsp;</td>
 			<td><asp:TextBox ID="AffidavitdateTextBox" runat="server" 
-            Text='<%# Bind("Affidavitdate") %>' Width="160px" /></td>
+            Text='<%# Bind("Affidavitdate") %>' Width="160px" TabIndex="8" /></td>
 		</tr>       
         
         <tr align="left">
@@ -327,7 +329,7 @@
 			<td>
                 <asp:DropDownList ID="Drop_officename" runat="server" 
                     DataSourceID="ods_offices" DataTextField="OfficeName" 
-                    DataValueField="OfficeName" Width="160px">
+                    DataValueField="OfficeName" Width="160px" TabIndex="2">
                 </asp:DropDownList>
             </td>
 			
@@ -335,7 +337,7 @@
 			<td>
                 &nbsp;</td>
 			<td><asp:TextBox ID="LatestStatusTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-            Text='<%# Bind("LatestStatus") %>' Width="160px" MaxLength="20" /></td>
+            Text='<%# Bind("LatestStatus") %>' Width="160px" MaxLength="20" TabIndex="9" /></td>
 		</tr>       
         
         <tr align="left">
@@ -345,7 +347,7 @@
                     ControlToValidate="PetitionerNameTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
 			<td><asp:TextBox ID="PetitionerNameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-            Text='<%# Bind("PetitionerName") %>' Width="160px" MaxLength="30" /></td>
+            Text='<%# Bind("PetitionerName") %>' Width="160px" MaxLength="30" TabIndex="3" /></td>
 			
 			<td>Petition Disposed Year:</td>
 			<td>
@@ -353,7 +355,8 @@
                     ControlToValidate="PetitionDispoasedYearTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
 			<td><asp:TextBox ID="PetitionDispoasedYearTextBox" runat="server" numeric="integer"
-            Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" MaxLength="4" /></td>
+            Text='<%# Bind("PetitionDispoasedYear") %>' Width="160px" MaxLength="4" 
+                    TabIndex="10" /></td>
 		</tr>        
         
         <tr align="left">
@@ -361,13 +364,13 @@
 		    <td>
                 &nbsp;</td>
 		   <td><asp:TextBox ID="PetitionReasonTextBox" runat="server" 
-            Text='<%# Bind("PetitionReason") %>' Height="60px" Width="160px" /></td>
+            Text='<%# Bind("PetitionReason") %>' Height="60px" Width="160px" TabIndex="4" /></td>
 		   
 		   <td>Disposal Date:</td>
 		    <td>
                 &nbsp;</td>
 		   <td><asp:TextBox ID="DisposalDateTextBox" runat="server" 
-            Text='<%# Bind("DisposalDate") %>' Width="160px" /></td>
+            Text='<%# Bind("DisposalDate") %>' Width="160px" TabIndex="11" /></td>
 		</tr>        
         
         <tr align="left">
@@ -378,7 +381,7 @@
             </td>
 		   <td>
                <asp:RadioButtonList ID="Radio_parawisermrksent" runat="server" 
-                   RepeatDirection="Horizontal" Width="160px">
+                   RepeatDirection="Horizontal" Width="160px" TabIndex="5">
                    <asp:ListItem Text="Yes" Value="True"></asp:ListItem>
                    <asp:ListItem Text="No" Value="False"></asp:ListItem>
                </asp:RadioButtonList>
@@ -388,7 +391,8 @@
 		    <td>
                 &nbsp;</td>
 		   <td><asp:TextBox ID="OrderJudgementSheetTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-            Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" MaxLength="20" /></td>
+            Text='<%# Bind("OrderJudgementSheet") %>' Width="160px" MaxLength="20" 
+                   TabIndex="12" /></td>
 		</tr>       
         
         <tr align="left">
@@ -396,24 +400,25 @@
 			<td>
                 &nbsp;</td>
 			<td><asp:TextBox ID="ParawiseremarksdateTextBox" runat="server" 
-            Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" /></td>
+            Text='<%# Bind("Parawiseremarksdate") %>' Width="160px" TabIndex="6" /></td>
 			
 			<td>Judgement Detail:</td>
 			<td>
                 &nbsp;</td>
 			<td><asp:TextBox ID="JudgementDetailTextBox" runat="server" 
-            Text='<%# Bind("JudgementDetail") %>' Height="60px" Width="160px" /></td>
+            Text='<%# Bind("JudgementDetail") %>' Height="60px" Width="160px" TabIndex="13" /></td>
 		</tr>              
         
         <tr><td align="center" colspan=6>
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-            CommandName="Insert" Text="Insert" CssClass="standardButton" />
+            CommandName="Insert" Text="Insert" CssClass="standardButton" TabIndex="14" />
 		&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
             CausesValidation="False" CommandName="Reset" Text="Reset" 
-                CssClass="standardButton" onclientclick="resetTextFields();return false;" />
+                CssClass="standardButton" onclientclick="resetTextFields();return false;" 
+                TabIndex="15" />
         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
             CausesValidation="False" CommandName="Back" Text="Back" 
-                CssClass="standardButton" /></td>
+                CssClass="standardButton" TabIndex="16" /></td>
 		</tr>
     </table>
     </InsertItemTemplate>

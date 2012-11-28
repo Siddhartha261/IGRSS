@@ -15,6 +15,13 @@ public partial class LatestPages_PrimaryInvestigation_InquiryRegister : System.W
         infoDiv.Visible = false;
         Multiview_Inquiry.SetActiveView(Multiview_Inquiry.Views[1]);
         FormView_Inquiry.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = FormView_Inquiry.FindControl("FileNoTextBox") as TextBox;
+        TextBox txt2 = FormView_Inquiry.FindControl("Date_Of_ComplaintTextBox") as TextBox;
+        TextBox txt3 = FormView_Inquiry.FindControl("Details_To_Vigilance_CommissionerTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt1.Focus();
     }
     protected void FormView_Inquiry_ItemInserting(object sender, FormViewInsertEventArgs e)
     {

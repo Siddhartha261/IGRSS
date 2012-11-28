@@ -8,8 +8,7 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        RadioButtonList Radio_Tarankit = FormView_Tarankit.FindControl("Radio_tarankit") as RadioButtonList;
-        Radio_Tarankit.Focus();
+        
     }
     protected void btnSearchAppNo_Click(object sender, EventArgs e)
     {
@@ -24,6 +23,24 @@ public partial class LatestPages_VidhansabhaTarankitQuestionRegister : System.We
         infoDiv.Visible = false;
         Multiview_Tarankit.SetActiveView(Multiview_Tarankit.Views[1]);
         FormView_Tarankit.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = FormView_Tarankit.FindControl("quesnoTextBox") as TextBox;
+        TextBox txt2 = FormView_Tarankit.FindControl("mlaPlaceTextBox") as TextBox;
+        TextBox txt3 = FormView_Tarankit.FindControl("SubjectTextBox") as TextBox;
+        TextBox txt4 = FormView_Tarankit.FindControl("NumberTextBox") as TextBox;
+        TextBox txt5 = FormView_Tarankit.FindControl("Reply_SentTextBox") as TextBox;
+        TextBox txt6 = FormView_Tarankit.FindControl("DateTextBox") as TextBox;
+        TextBox txt7 = FormView_Tarankit.FindControl("FilenoTextBox") as TextBox;
+        TextBox txt8 = FormView_Tarankit.FindControl("RemarksTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        RadioButtonList Radio_Tarankit = FormView_Tarankit.FindControl("Radio_tarankit") as RadioButtonList;
+        Radio_Tarankit.Focus();
     }
     protected void FormView_Tarankit_ItemInserting(object sender, FormViewInsertEventArgs e)
     {

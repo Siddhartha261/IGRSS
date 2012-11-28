@@ -14,6 +14,25 @@ public partial class CCRALegal_AppealRegister : System.Web.UI.Page
     {
         Multiview_AppealRegister.SetActiveView(Multiview_AppealRegister.Views[1]);
         FormView_AppealRegister.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = FormView_AppealRegister.FindControl("FileNoTextBox") as TextBox;
+        TextBox txt2 = FormView_AppealRegister.FindControl("DocumentNoTextBox") as TextBox;
+        TextBox txt3 = FormView_AppealRegister.FindControl("YearTextBox") as TextBox;
+        TextBox txt4 = FormView_AppealRegister.FindControl("DeficitStampDutyTextBox") as TextBox;
+        TextBox txt5 = FormView_AppealRegister.FindControl("TotalStampDutyTextBox") as TextBox;
+        TextBox txt6 = FormView_AppealRegister.FindControl("ResultTextBox") as TextBox;
+        TextBox txt7 = FormView_AppealRegister.FindControl("OutwardNoTextBox") as TextBox;
+        TextBox txt8 = FormView_AppealRegister.FindControl("DateTextBox") as TextBox;
+        TextBox txt9 = FormView_AppealRegister.FindControl("AGYearTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        txt9.Text = "";
+        txt1.Focus();
     }
 
     protected void FormView_AppealRegister_ItemInserting(object sender, FormViewInsertEventArgs e)

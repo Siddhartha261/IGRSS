@@ -8,8 +8,7 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        TextBox TextBox_Name_Of_Applicant = FormView_RTI.FindControl("Appl_nameTextBox") as TextBox;
-        TextBox_Name_Of_Applicant.Focus();
+        
     }
     
    
@@ -18,6 +17,19 @@ public partial class LatestPages_RTIAppealRegister : System.Web.UI.Page
         infoDiv.Visible = false;
         MultiView_RTI.SetActiveView(MultiView_RTI.Views[1]);
         FormView_RTI.ChangeMode(FormViewMode.Insert);
+        TextBox txt1 = FormView_RTI.FindControl("Appl_nameTextBox") as TextBox;
+        TextBox txt2 = FormView_RTI.FindControl("Appl_surnameTextBox") as TextBox;
+        TextBox txt3 = FormView_RTI.FindControl("Appl_DateTextBox") as TextBox;
+        TextBox txt4 = FormView_RTI.FindControl("PIO_desigTextBox") as TextBox;
+        TextBox txt5 = FormView_RTI.FindControl("PIO_dateTextBox") as TextBox;
+        TextBox txt6 = FormView_RTI.FindControl("Last_DateTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt1.Focus();
     }
     protected void FormView_RTI_ItemInserting(object sender, FormViewInsertEventArgs e)
     {

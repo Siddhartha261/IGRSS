@@ -113,7 +113,7 @@
     <tr>
         <td align="right" colspan="3" style="text-align: left;">
             <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-                onclick="Button_new_Click" CssClass="standardButton" />
+                onclick="Button_new_Click" CssClass="standardButton" AccessKey="n" />
         </td>
     </tr>
 </table>
@@ -160,30 +160,46 @@
         <EditItemTemplate>
                 <table>
         <tr align="left"><td>WorkSheet No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="WorkSheet_NoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="WorkSheet_NoTextBox" runat="server" numeric="integer"
                 Text='<%# Bind("WorkSheet_No") %>' Width="160px" MaxLength="10" />
 			</td>
 		</tr>		
            
 		<tr align="left"><td>Inward No:</td>
-		    <td style="margin-left: 40px"><asp:TextBox ID="Inward_NoTextBox" MaxLength="10" runat="server" 
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="Inward_NoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
+		    <td><asp:TextBox ID="Inward_NoTextBox" runat="server" MaxLength="10"
                 Text='<%# Bind("Inward_No") %>' Width="160px" />
 			</td>
 		</tr>        
             				
         <tr align="left"><td>Name Of Person:</td>
+		    <td><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="Name_Of_PersonTextBox" ErrorMessage="*"></asp:RequiredFieldValidator></td>
 		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" 
                 Text='<%# Bind("Name_Of_Person") %>' Width="160px" MaxLength="30" />
 			</td>
 		</tr>          
             			
         <tr align="left"><td>Letter Details:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="Letter_DetailsTextBox" runat="server" Height="60px" 
                 Text='<%# Bind("Letter_Details") %>' TextMode="MultiLine" Width="160px" />
 			</td>
 		</tr>           
             				
         <tr align="left"><td>Work Disposal Date:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="Work_Disposal_DateTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="Work_Disposal_DateTextBox" runat="server" 
                 Text='<%# Bind("Work_Disposal_Date") %>' Width="160px" />
 			</td>
@@ -207,39 +223,55 @@
         <InsertItemTemplate>
                 <table>
         <tr align="left"><td>WorkSheet No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="WorkSheet_NoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="WorkSheet_NoTextBox" runat="server" numeric="integer"
                 Text='<%# Bind("WorkSheet_No") %>' Width="160px" MaxLength="10" />
 			</td>
 		</tr>		
            
 		<tr align="left"><td>Inward No:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="Inward_NoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="Inward_NoTextBox" runat="server" MaxLength="10"
                 Text='<%# Bind("Inward_No") %>' Width="160px" />
 			</td>
 		</tr>        
             				
         <tr align="left"><td>Name Of Person:</td>
+		    <td><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="Name_Of_PersonTextBox" ErrorMessage="*"></asp:RequiredFieldValidator></td>
 		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" 
                 Text='<%# Bind("Name_Of_Person") %>' Width="160px" MaxLength="30" />
 			</td>
 		</tr>          
             			
         <tr align="left"><td>Letter Details:</td>
+		    <td>
+                &nbsp;</td>
 		    <td><asp:TextBox ID="Letter_DetailsTextBox" runat="server" Height="60px" 
                 Text='<%# Bind("Letter_Details") %>' TextMode="MultiLine" Width="160px" />
 			</td>
 		</tr>           
             				
         <tr align="left"><td>Work Disposal Date:</td>
+		    <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="Work_Disposal_DateTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </td>
 		    <td><asp:TextBox ID="Work_Disposal_DateTextBox" runat="server" 
                 Text='<%# Bind("Work_Disposal_Date") %>' Width="160px" />
 			</td>
 		</tr>           
             			
-        <tr><td colspan=2 align="center">
+        <tr><td colspan=3 align="center">
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Insert" CssClass="standardButton" 
-                onclientclick="checkForEmptyFields();" />
+                 />
 			&nbsp;<asp:LinkButton ID="ResetButton"  runat="server" 
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
                 onclientclick="resetTextFields();return false;" 

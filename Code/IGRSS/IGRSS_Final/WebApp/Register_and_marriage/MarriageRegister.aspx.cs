@@ -15,37 +15,37 @@ public partial class Register_and_marriage_MarriageRegister : System.Web.UI.Page
         infoDiv.Visible = false;
         Multiview_Marriage_Certificate.SetActiveView(view2_Formview);
         FormView_Marriagecertificate.ChangeMode(FormViewMode.Insert);
-        //TextBox txt1 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt2 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt3 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt4 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt5 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt6 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt7 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt8 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt9 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt10 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt11 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt12 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt13 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt14 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //TextBox txt15= (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
-        //txt1.Text = "";
-        //txt2.Text = "";
-        //txt3.Text = "";
-        //txt4.Text = "";
-        //txt5.Text = "";
-        //txt6.Text = "";
-        //txt7.Text = "";
-        //txt8.Text = "";
-        //txt9.Text = "";
-        //txt10.Text = "";
-        //txt11.Text = "";
-        //txt12.Text = "";
-        //txt13.Text = "";
-        //txt14.Text = "";
-        //txt15.Text = "";
-        //txt1.Focus();
+        TextBox txt1 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt2 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt3 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt4 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt5 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt6 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt7 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt8 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt9 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt10 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt11 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt12 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt13 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt14 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        TextBox txt15 = (TextBox)FormView_Marriagecertificate.FindControl("Bridegroom_nameTextBox");
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        txt9.Text = "";
+        txt10.Text = "";
+        txt11.Text = "";
+        txt12.Text = "";
+        txt13.Text = "";
+        txt14.Text = "";
+        txt15.Text = "";
+        txt1.Focus();
 
     }
     protected void FormView_Marriage_certificate_ItemCommand(object sender, FormViewCommandEventArgs e)
@@ -64,7 +64,7 @@ public partial class Register_and_marriage_MarriageRegister : System.Web.UI.Page
     protected void ods_Marriage_certificate_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
        e.InputParameters["searchKeyWord"] = txtFileNo.Text.Trim();
-        ods_Marriage_certificate.SelectMethod = "GetDataBy1";
+        ods_Marriage_certificate.SelectMethod = "GetDataBy";
     }
     private void ShowMessage(string message, bool isError)
     {

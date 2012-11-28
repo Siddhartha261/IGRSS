@@ -91,7 +91,15 @@
 			  Url="~/Adjudication/AdjApplication.aspx?Mode=Readonly"
 			  Mode="Readonly" Visible="True"/>
   </Module>
-  <!--<Module Name="Valuation"
+
+  <Module Name="ADM"
+    Code="ADM">
+
+    <View Name="C.D. Register"
+			  Url="~/ADM Photo department/CDRegister.aspx"
+			  Mode="" Visible="True"/>
+  </Module>
+  <Module Name="Valuation"
 			Code="VAL">
     <View Name="Valuation Request"
 			  Url="~//Adjudication/StampDutyCalculation.aspx"
@@ -99,7 +107,7 @@
     <View Name="PV Request"
 			  Url="~/Adjudication/AdjApplication.aspx?Mode=Verify"
 			  Mode="Verify" Visible="True"/>
-  </Module>-->
+  </Module>
   <Module Name="Appeal"
 			Code="APL">
     <View Name="New"
@@ -223,6 +231,41 @@
 			  Url="~/Refund/RefundApplication.aspx?Mode=ReadOnly"
 			  Mode="ReadOnly" Visible="True"/>
   </Module>
+
+  <Module Name="Record and Marriage"
+    Code="Record">
+    
+    <View Name="Application Disposal Register"
+			  Url="~/Register_and_marriage/ApplicationDisposalRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Book Forms Register"
+			  Url="~/Register_and_marriage/BookFormsRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Dead Stock Register"
+			  Url="~/Register_and_marriage/DeadStockRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Kalpataru Purchase Stock Register"
+			  Url="~/Register_and_marriage/KalpataruPurchaseStock.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Lekhan Samagri Register"
+			  Url="~/Register_and_marriage/LekhanSamagri.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Library Register"
+			  Url="~/Register_and_marriage/LibraryRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Marriage Register"
+			  Url="~/Register_and_marriage/MarriageRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Marriage Volume Register"
+			  Url="~/Register_and_marriage/MarriageVolumeRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="No Record Certificate Register"
+			  Url="~/Register_and_marriage/NoRecordCertificateRegisteraspx.aspx"
+			  Mode="" Visible="True"/>
+    
+  </Module>
+  
+  
   
   <Module Name="Registers" Code="RGS">
     <Module Name="Branch" Code="Branch">

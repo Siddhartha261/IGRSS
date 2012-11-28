@@ -14,7 +14,7 @@ public partial class GovtDoc : System.Web.UI.Page
         TextBox TextBox_InwardNo = FvGovtDoc.FindControl("InwardNoTextBox") as TextBox;
         TextBox_InwardNo.Focus();
         mvgovtdoc.SetActiveView(viewFv);
-        FvGovtDoc.ChangeMode(FormViewMode.Insert); ;
+        FvGovtDoc.ChangeMode(FormViewMode.Insert); 
     }
 
 

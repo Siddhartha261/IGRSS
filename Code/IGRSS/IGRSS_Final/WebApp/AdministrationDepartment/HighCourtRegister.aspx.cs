@@ -14,7 +14,34 @@ public partial class LatestPages_HighCourtRegister : System.Web.UI.Page
 
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        TextBox txt1 = (TextBox)FormView_HighCourtReg.FindControl("FilenoTextBox") as TextBox;
+        TextBox txt2 = (TextBox)FormView_HighCourtReg.FindControl("SpecialCivilApplNoTextBox") as TextBox;
+        TextBox txt4 = (TextBox)FormView_HighCourtReg.FindControl("PetitionerNameTextBox") as TextBox;
+        TextBox txt5 = (TextBox)FormView_HighCourtReg.FindControl("PetitionReasonTextBox") as TextBox;
+        RadioButtonList txt6 = (RadioButtonList)FormView_HighCourtReg.FindControl("Radio_parawisermrksent") as RadioButtonList;
+        TextBox txt7 = (TextBox)FormView_HighCourtReg.FindControl("ParawiseremarksdateTextBox") as TextBox;
+        RadioButtonList txt8 = (RadioButtonList)FormView_HighCourtReg.FindControl("Radio_affidavit") as RadioButtonList;
+        TextBox txt9 = (TextBox)FormView_HighCourtReg.FindControl("AffidavitdateTextBox") as TextBox;
+        TextBox txt10 = (TextBox)FormView_HighCourtReg.FindControl("LatestStatusTextBox") as TextBox;
+        TextBox txt11 = (TextBox)FormView_HighCourtReg.FindControl("PetitionDispoasedYearTextBox") as TextBox;
+        TextBox txt12 = (TextBox)FormView_HighCourtReg.FindControl("DisposalDateTextBox") as TextBox;
+        TextBox txt13 = (TextBox)FormView_HighCourtReg.FindControl("OrderJudgementSheetTextBox") as TextBox;
+        TextBox txt14 = (TextBox)FormView_HighCourtReg.FindControl("JudgementDetailTextBox") as TextBox;
+        txt1.Focus();
+        txt1.Text = "";
+        txt2.Text = "";
         
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        txt8.Text = "";
+        txt9.Text = "";
+        txt10.Text = "";
+        txt11.Text = "";
+        txt12.Text = "";
+        txt13.Text = "";
+        txt14.Text = ""; 
         Multiview_HighCourtReg.SetActiveView(Multiview_HighCourtReg.Views[1]);
         FormView_HighCourtReg.ChangeMode(FormViewMode.Insert);
     }
