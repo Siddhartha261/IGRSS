@@ -180,7 +180,7 @@
 		</tr>        
             				
         <tr align="left"><td>Name Of Person:</td>
-		    <td><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+		    <td><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" onkeypress="return AllowAlphabet(event)"
                     ControlToValidate="Name_Of_PersonTextBox" ErrorMessage="*"></asp:RequiredFieldValidator></td>
 		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" 
                 Text='<%# Bind("Name_Of_Person") %>' Width="160px" MaxLength="30" />
@@ -205,7 +205,7 @@
 			</td>
 		</tr>           
             			
-        <tr><td colspan=2 align="center">
+        <tr><td colspan=3 align="center">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update" CssClass="standardButton" />
 			&nbsp;<asp:LinkButton ID="ResetButton"  runat="server" 
@@ -245,7 +245,7 @@
         <tr align="left"><td>Name Of Person:</td>
 		    <td><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                     ControlToValidate="Name_Of_PersonTextBox" ErrorMessage="*"></asp:RequiredFieldValidator></td>
-		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" 
+		    <td><asp:TextBox ID="Name_Of_PersonTextBox" runat="server" onkeypress="return AllowAlphabet(event)" 
                 Text='<%# Bind("Name_Of_Person") %>' Width="160px" MaxLength="30" />
 			</td>
 		</tr>          

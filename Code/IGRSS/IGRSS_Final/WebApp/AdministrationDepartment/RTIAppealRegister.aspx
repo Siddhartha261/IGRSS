@@ -118,7 +118,7 @@
               </td>
           </tr>
  </table>
- <asp:LinkButton ID="Button_new" runat="server" Text="New" 
+ <asp:LinkButton ID="Button_new" runat="server" Text="New" AccessKey="n" 
         onclick="Button_new_Click" CssClass="standardButton" />
 </asp:View>
 
@@ -144,7 +144,7 @@
             </td>
 		    <td class="gridItems">
                 <asp:TextBox ID="Appl_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                Text='<%# Bind("Appl_name") %>' Width="160px" MaxLength="20" /></td>
+                Text='<%# Bind("Appl_name") %>' Width="160px" MaxLength="30" /></td>
 		</tr>	         
             
         <tr><td class="gridItems">SurName Of Applicant:</td>
@@ -192,8 +192,10 @@
 		</tr>	
             
             
-        <tr><td class="gridItems">Decision Taken By</td>
+        <tr><td class="gridItems">Decision Taken By:</td>
 		    <td class="gridItems">
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="Radio_decisiontaken" ErrorMessage="*"></asp:RequiredFieldValidator>
                 &nbsp;</td>
 		    <td class="gridItems">
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 
@@ -235,7 +237,7 @@
             </td>
 		    <td class="gridItems">
                 <asp:TextBox ID="Appl_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                Text='<%# Bind("Appl_name") %>' Width="160px" MaxLength="20" /></td>
+                Text='<%# Bind("Appl_name") %>' Width="160px" MaxLength="30" /></td>
 		</tr>	         
             
         <tr><td class="gridItems">SurName Of Applicant:</td>
@@ -283,8 +285,10 @@
 		</tr>	
             
             
-        <tr><td class="gridItems">Decision Taken By</td>
-		    <td class="gridItems">
+        <tr><td class="gridItems">Decision Taken By:</td>
+		  <td class="gridItems">
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="Radio_decisiontaken" ErrorMessage="*"></asp:RequiredFieldValidator>
                 &nbsp;</td>
 		    <td class="gridItems">
                 <asp:RadioButtonList ID="Radio_decisiontaken" runat="server" 

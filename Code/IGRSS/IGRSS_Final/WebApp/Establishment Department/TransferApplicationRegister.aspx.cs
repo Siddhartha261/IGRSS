@@ -32,6 +32,18 @@ public partial class Establishment_Department_TransferApplicationRegister : Syst
         infoDiv.Visible = false;
         Multiview_TransferAppl.SetActiveView(Multiview_TransferAppl.Views[1]);
         FormView_TransferAppl.ChangeMode(FormViewMode.Insert);
+        ListBox listbox_details_of_designation = FormView_TransferAppl.FindControl("ListBox_Designation") as ListBox;
+        TextBox txt1 = FormView_TransferAppl.FindControl("Application_DateTextBox") as TextBox;
+        TextBox txt2 = FormView_TransferAppl.FindControl("Joining_DateTextBox") as TextBox;
+        TextBox txt3 = FormView_TransferAppl.FindControl("Reason_For_RequestTextBox") as TextBox;
+        TextBox txt4 = FormView_TransferAppl.FindControl("Disposed_OnTextBox") as TextBox;
+        TextBox txt5 = FormView_TransferAppl.FindControl("RemarksTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        listbox_details_of_designation.Focus();
     }
     protected void FormView_TransferAppl_ItemCommand(object sender, FormViewCommandEventArgs e)
     {

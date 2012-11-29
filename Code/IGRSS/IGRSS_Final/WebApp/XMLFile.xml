@@ -163,6 +163,32 @@
 			  Url="~/Complain/InvestigationResult.aspx?Mode=InvestigationResult"
 			  Mode="InvestigationResult" Visible="True"/>
   </Module>
+
+  <Module Name="EST"
+    Code="EST">
+
+    <View Name="ACB Case Register"
+			  Url="~/Establishment Department/ACB_Case_Register.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="C.L. Card"
+			  Url="~/Establishment Department/C_L_Card.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Departmental Inquiry Register"
+			  Url="~/Establishment Department/Departmental_Inquiry_Register.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Fajal Register"
+			  Url="~/Establishment Department/FajalRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Mahekam Register"
+			  Url="~/Establishment Department/MahekamRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Roster Register"
+			  Url="~/Establishment Department/RosterRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Transfer Application Register"
+			  Url="~/Establishment Department/TransferApplicationRegister.aspx"
+			  Mode="" Visible="True"/>
+  </Module>
   <Module Name="Inspection"
 			Code="IPS">
     <View Name="Sealing"

@@ -15,6 +15,16 @@ public partial class Establishment_Department_FajalRegister : System.Web.UI.Page
         infoDiv.Visible = false;
         Multiview_Fajal.SetActiveView(Multiview_Fajal.Views[1]);
         FormView_Fajal.ChangeMode(FormViewMode.Insert);
+        ListBox listbox_details_Of_designation = FormView_Fajal.FindControl("ListBox_Designation") as ListBox;
+        TextBox txt1 = FormView_Fajal.FindControl("Residence_DistrictTextBox") as TextBox;
+        TextBox txt2 = FormView_Fajal.FindControl("Current_OfficeTextBox") as TextBox;
+        TextBox txt3 = FormView_Fajal.FindControl("From_DateTextBox") as TextBox;
+        TextBox txt4 = FormView_Fajal.FindControl("To_DateTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        listbox_details_Of_designation.Focus();
     }
     protected void FormView_Fajal_ItemInserting(object sender, FormViewInsertEventArgs e)
     {

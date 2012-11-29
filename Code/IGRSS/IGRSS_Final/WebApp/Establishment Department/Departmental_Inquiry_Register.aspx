@@ -101,12 +101,11 @@
               </td>
           </tr>
  </table>
- <asp:LinkButton ID="Button_new" runat="server" Text="New" 
+ <asp:LinkButton ID="Button_new" runat="server" Text="New" AccessKey="n" 
         onclick="Button_new_Click" CssClass="standardButton" />
 </asp:View>
-
 <asp:View ID="Formview" runat="server">
-<center>
+
 <h1>Departmental Inquiry Register</h1>
 <asp:FormView ID="FormView_Departmental_Inquiry_Register" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Departmental_Inquiry_Register" EnableModelValidation="True" 
@@ -117,15 +116,23 @@
         onitemupdated="FormView_Departmental_Inquiry_Register_ItemUpdated" 
         onitemupdating="FormView_Departmental_Inquiry_Register_ItemUpdating" >
         <EditItemTemplate>
-                        <table>
+                        <table align="center">
             <tr align="left">
 			   <td>File No:</td>
+			    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 			   <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
                        Width="160px" MaxLength="10" /></td>
 			</tr>
 			
             <tr align="left">
 			    <td>Grade:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="DropDownList_Grade" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_Grade" runat="server" 
                         DataSourceID="ods_Grade" DataTextField="Grade_Name" DataValueField="Grade_Name" 
@@ -136,24 +143,40 @@
                 
             <tr align="left">
 			    <td>Subject:</td>
-				<td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="SubjectTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="SubjectTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Subject") %>' 
                         Width="160px" MaxLength="20" /></td>
 			</tr>             
                 
             <tr align="left">
 			    <td>Date Of Charge Sheet:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        ControlToValidate="Date_Of_Charge_SheetTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Date_Of_Charge_SheetTextBox" runat="server" 
                     Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="160px" /></td>
 			</tr>             
                 
             <tr align="left">
 			    <td>Name Of Employee:</td>
-				<td><asp:TextBox ID="Name_Of_EmployeeTextBox" runat="server" 
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                        ControlToValidate="Name_Of_EmployeeTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="Name_Of_EmployeeTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                     Text='<%# Bind("Name_Of_Employee") %>' Width="160px" MaxLength="30" /></td>
 			</tr>              
                 
             <tr align="left">
-			    <td>Whether Case In Pending In Government/Department:</td>
+			    <td>Whether Case Is Pending In Government/Department:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                        ControlToValidate="RadioButtonList_Govt_Dept" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td>
                     <asp:RadioButtonList ID="RadioButtonList_Govt_Dept" runat="server" 
                         RepeatDirection="Horizontal" Width="60px">
@@ -165,12 +188,18 @@
                 
             <tr align="left">
 			    <td>Date:</td>
+				<td>
+                    &nbsp;</td>
 				<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
                         Width="160px" /></td>
 			</tr>              
                 
             <tr align="left">
 			    <td>Name Of Inquiry Officer:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                        ControlToValidate="DropDownList_InquiryOfficer" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_InquiryOfficer" runat="server" 
                         DataSourceID="ods_InquiryOfficer" DataTextField="Inquiry_OfficerName" 
@@ -181,19 +210,28 @@
                 
             <tr align="left">
 			    <td>Date Of Inquiry Submission:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                        ControlToValidate="Date_Of_Inquiry_SubmissionTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Date_Of_Inquiry_SubmissionTextBox" runat="server" 
                     Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="160px" /></td>
 			</tr>              
                 
             <tr align="left">
 			    <td>Date Of Receiving Inquiry Report:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                        ControlToValidate="Date_Of_Receiving_Inquiry_ReportTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Date_Of_Receiving_Inquiry_ReportTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="160px" 
-                        ReadOnly="True" /></td>
+                    Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="160px" /></td>
 			</tr>               
                 
             <tr align="left">
 			    <td>Remarks:</td>
+				<td>
+                    &nbsp;</td>
 				<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                         Height="60px" Width="160px" /></td>
 			</tr>               
@@ -211,15 +249,23 @@
 
         </EditItemTemplate>
         <InsertItemTemplate>
-                        <table>
+                        <table align="center">
             <tr align="left">
 			   <td>File No:</td>
+			    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="FileNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 			   <td><asp:TextBox ID="FileNoTextBox" runat="server" numeric="integer" Text='<%# Bind("FileNo") %>' 
                        Width="160px" MaxLength="10" /></td>
 			</tr>
 			
             <tr align="left">
 			    <td>Grade:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="DropDownList_Grade" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_Grade" runat="server" 
                         DataSourceID="ods_Grade" DataTextField="Grade_Name" DataValueField="Grade_Name" 
@@ -230,24 +276,40 @@
                 
             <tr align="left">
 			    <td>Subject:</td>
-				<td><asp:TextBox ID="SubjectTextBox" runat="server" Text='<%# Bind("Subject") %>' 
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="SubjectTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="SubjectTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Subject") %>' 
                         Width="160px" MaxLength="20" /></td>
 			</tr>             
                 
             <tr align="left">
 			    <td>Date Of Charge Sheet:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        ControlToValidate="Date_Of_Charge_SheetTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Date_Of_Charge_SheetTextBox" runat="server" 
                     Text='<%# Bind("Date_Of_Charge_Sheet") %>' Width="160px" /></td>
 			</tr>             
                 
             <tr align="left">
 			    <td>Name Of Employee:</td>
-				<td><asp:TextBox ID="Name_Of_EmployeeTextBox" runat="server" 
-                    Text='<%# Bind("Name_Of_Employee") %>' Width="160px" MaxLength="20" /></td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                        ControlToValidate="Name_Of_EmployeeTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="Name_Of_EmployeeTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Name_Of_Employee") %>' Width="160px" MaxLength="30" /></td>
 			</tr>              
                 
             <tr align="left">
-			    <td>Whether Case In Pending In Government/Department:</td>
+			    <td>Whether Case Is Pending In Government/Department:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                        ControlToValidate="RadioButtonList_Govt_Dept" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td>
                     <asp:RadioButtonList ID="RadioButtonList_Govt_Dept" runat="server" 
                         RepeatDirection="Horizontal" Width="60px">
@@ -259,6 +321,8 @@
                 
             <tr align="left">
 			    <td>Date:</td>
+				<td>
+                    &nbsp;</td>
 				<td><asp:TextBox ID="DateTextBox" runat="server" Text='<%# Bind("Date") %>' 
                         Width="160px" /></td>
 			</tr>              
@@ -266,7 +330,11 @@
             <tr align="left">
 			    <td>Name Of Inquiry Officer:</td>
 				<td>
-                    <asp:DropDownList ID="DropDownList_InquiryOfficer" runat="server" 
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                        ControlToValidate="DropDownList_InquiryOfficer" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td>
+                    <asp:DropDownList ID="DropDownList_InquiryOfficer" runat="server"
                         DataSourceID="ods_InquiryOfficer" DataTextField="Inquiry_OfficerName" 
                         DataValueField="Inquiry_OfficerName" Width="160px">
                     </asp:DropDownList>
@@ -275,23 +343,33 @@
                 
             <tr align="left">
 			    <td>Date Of Inquiry Submission:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                        ControlToValidate="Date_Of_Inquiry_SubmissionTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Date_Of_Inquiry_SubmissionTextBox" runat="server" 
                     Text='<%# Bind("Date_Of_Inquiry_Submission") %>' Width="160px" /></td>
 			</tr>              
                 
             <tr align="left">
 			    <td>Date Of Receiving Inquiry Report:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                        ControlToValidate="Date_Of_Receiving_Inquiry_ReportTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Date_Of_Receiving_Inquiry_ReportTextBox" runat="server" 
                     Text='<%# Bind("Date_Of_Receiving_Inquiry_Report") %>' Width="160px" /></td>
 			</tr>               
                 
             <tr align="left">
 			    <td>Remarks:</td>
+				<td>
+                    &nbsp;</td>
 				<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
                         Height="60px" Width="160px" /></td>
 			</tr>               
                 
-            <tr><td align="center" colspan=5>
+            <tr><td align="center" colspan=3>
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                     CommandName="Insert" Text="Insert" CssClass="standardButton" />
 				&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
@@ -438,7 +516,8 @@
             <asp:Parameter Name="Original_Inquiry_OfficerName" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
-</asp:View>    
+</asp:View></center>
+    
 </asp:MultiView>
 </asp:Content>
 

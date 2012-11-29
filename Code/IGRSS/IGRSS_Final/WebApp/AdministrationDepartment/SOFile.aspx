@@ -11,20 +11,37 @@
                 buttonImageOnly: true
             });
         }
+
+//        function comparedate() {
+//          var txtbox = document.getElementById('<%=FormView_SOFile.FindControl("DateOfCircularsTextBox").ClientID%>');
+//          var cir_date=Date.parse(txtbox);
+//          var datenow = new Date("2012-11-29");
+//          if (cir_date <= datenow)) {
+//             alert("The dates are valid.");
+//           }
+//          }
+
+//        function comparedate() {
+//            var txtbox = document.getElementById('<%=FormView_SOFile.FindControl("DateOfCircularsTextBox").ClientID%>');
+//            var datenow = new Date();
+//            if (txtbox > datenow) {
+//                alert("Please enter valide date");
+//            }
+//        }
         //temp code
-        function comparedate() {
-            var txtbox = document.getElementById('<%=FormView_SOFile.FindControl("DateOfCircularsTextBox").ClientID%>');
-            var date1 = new Date(txtbox);
-            var datenow = new Date();
-            datenow = "2012-11-28";
-            var day = datenow.getDate();
-            var month = datenow.getMonth();
-            var year = datenow.getFullYear();
-            var year1=date1
-            if (txtbox >= datenow) {
-                alert("Please enter valide date");
-            }
-        }
+//        function comparedate() {
+//            var txtbox = document.getElementById('<%=FormView_SOFile.FindControl("DateOfCircularsTextBox").ClientID%>');
+//            var date1 = new Date(txtbox);
+//            var datenow = new Date();
+//            datenow = "2012-11-28";
+//            var day = datenow.getDate();
+//            var month = datenow.getMonth();
+//            var year = datenow.getFullYear();
+//            var year1=date1
+//            if (txtbox >= datenow) {
+//                alert("Please enter valide date");
+//            }
+//        }
         //ends temp code
         function isNumberKey(evt) {
             var charCode = (evt.which) ? evt.which : event.keyCode
@@ -88,7 +105,7 @@
                             meta:resourcekey="lblllsResource1"></asp:Label></td>
                     <td align="left" >
                         <asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1"  ></asp:TextBox></td>
+                            meta:resourcekey="txtFileNoResource1" AccessKey="t"  ></asp:TextBox></td>
                         <td align="right">
                         <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
                             meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton"/>

@@ -55,6 +55,8 @@
                               ReadOnly="True" SortExpression="SrNo" Visible="False" />
                           <asp:BoundField DataField="Tarankit_Atarnkit" HeaderText="Tarankit/Atarnkit" 
                               SortExpression="Tarankit_Atarnkit" Visible="False" />
+                          <asp:BoundField DataField="Fileno" HeaderText="File No" 
+                              SortExpression="Fileno" />
                           <asp:BoundField DataField="quesno" HeaderText="Question Number" 
                               SortExpression="quesno" />
                           <asp:BoundField DataField="mlaName" HeaderText="MLA/MP Name" 
@@ -69,8 +71,6 @@
                               SortExpression="Reply_Sent" />
                           <asp:BoundField DataField="Date" HeaderText="Date" 
                               SortExpression="Date" />
-                          <asp:BoundField DataField="Fileno" HeaderText="File No" 
-                              SortExpression="Fileno" />
                           <asp:BoundField DataField="Remarks" 
                               HeaderText="Remarks" 
                               SortExpression="Remarks" Visible="False" />
@@ -168,14 +168,14 @@
                     ControlToValidate="NumberTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
 		    <td><asp:TextBox ID="NumberTextBox" runat="server" numeric="integer" Text='<%# Bind("Number") %>' 
-                    Width="160px" MaxLength="20" /></td>
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	              
                 
         <tr align="left"><td>Reply Sent:</td>
 		    <td>
                 &nbsp;</td>
 		    <td><asp:TextBox ID="Reply_SentTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                    Text='<%# Bind("Reply_Sent") %>' Width="160px" MaxLength="30" />
+                    Text='<%# Bind("Reply_Sent") %>' Width="160px" MaxLength="20" />
 			</td>
 		</tr>	
                 
@@ -276,14 +276,14 @@
                     ControlToValidate="NumberTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
 		    <td><asp:TextBox ID="NumberTextBox" runat="server" numeric="integer" Text='<%# Bind("Number") %>' 
-                    Width="160px" MaxLength="20" /></td>
+                    Width="160px" MaxLength="10" /></td>
 		</tr>	              
                 
         <tr align="left"><td>Reply Sent:</td>
 		    <td>
                 &nbsp;</td>
 		    <td><asp:TextBox ID="Reply_SentTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                    Text='<%# Bind("Reply_Sent") %>' Width="160px" MaxLength="30" />
+                    Text='<%# Bind("Reply_Sent") %>' Width="160px" MaxLength="20" />
 			</td>
 		</tr>	
                 

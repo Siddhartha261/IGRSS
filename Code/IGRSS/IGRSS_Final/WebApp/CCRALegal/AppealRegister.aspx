@@ -60,11 +60,10 @@
                     <td  style="width:641px;" >
                         <asp:Label ID="lbllls" runat="server" Text="Enter File Number :" 
                             meta:resourcekey="lblllsResource1"></asp:Label>
-                            &nbsp
-                    <td align="left"><asp:TextBox Width="160" ID="txtFileNo" runat="server" 
-                            meta:resourcekey="txtFileNoResource1"></asp:TextBox>
+                        &nbsp<asp:TextBox Width="160" ID="txtFileNo" runat="server" 
+                            meta:resourcekey="txtFileNoResource1"></asp:TextBox>&nbsp
                     <asp:LinkButton ID="btnSearchAppNo" runat="server" Text="Search"
-                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" /></td>                      
+                            meta:resourcekey="btnSearchAppNoResource1" CssClass="standardButton" />
                     </td>
           </tr>
           <tr>
@@ -92,11 +91,12 @@
                           <asp:BoundField DataField="Versus" HeaderText="Versus" 
                               SortExpression="Versus" />
                           <asp:BoundField DataField="DeficitStampDuty" HeaderText="Deficit Stamp Duty" 
-                              SortExpression="DeficitStampDuty" />
+                              SortExpression="DeficitStampDuty" Visible="False" />
                           <asp:BoundField DataField="TotalStampDuty" HeaderText="Total Stamp Duty" 
-                              SortExpression="TotalStampDuty" />
+                              SortExpression="TotalStampDuty" Visible="False" />
                               <asp:TemplateField HeaderText="Continue/Remand" 
-                              SortExpression="Continue_remand" ItemStyle-HorizontalAlign="Center">
+                              SortExpression="Continue_remand" ItemStyle-HorizontalAlign="Center" 
+                              Visible="False">
                                 <ItemTemplate>
                                     <asp:Label ID="lblContinue_remand"  runat="server" Text="No" 
                                         Font-Names="Times New Roman" Font-Bold="false"></asp:Label>
@@ -518,7 +518,8 @@
         InsertMethod="Insert" SelectMethod="GetDataBy" 
         TypeName="IGRSS.DataAccessLayer.AppealRegisterTableAdapters.AppealRegisterTableAdapter" 
         UpdateMethod="UpdateQuery" onselecting="ods_AppealRegister_Selecting" 
-        ondeleting="ods_AppealRegister_Deleting" >
+        ondeleting="ods_AppealRegister_Deleting" 
+        OldValuesParameterFormatString="original_{0}" >
         <DeleteParameters>
             <asp:Parameter Name="SrNo" Type="Int32" />
         </DeleteParameters>

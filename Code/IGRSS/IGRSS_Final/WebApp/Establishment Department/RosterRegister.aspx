@@ -95,7 +95,7 @@
               </td>
           </tr>
  </table>
- <asp:LinkButton ID="Button_new" runat="server" Text="New" 
+ <asp:LinkButton ID="Button_new" runat="server" Text="New" AccessKey="n" 
         onclick="Button_new_Click" CssClass="standardButton" />
 </asp:View>
 
@@ -110,9 +110,13 @@
         onitemupdated="FormView_Roster_ItemUpdated" 
         onitemupdating="FormView_Roster_ItemUpdating" >
         <EditItemTemplate>
-                        <table>
+                        <table align="center">
             <tr align="left">
 			    <td>Deatils Of Designation:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td>
                     <asp:ListBox ID="ListBox_Designation" runat="server" 
                         DataSourceID="ods_Designation" DataTextField="Description" 
@@ -121,8 +125,12 @@
 				
 				<td>Reserved For Category:</td>
 				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td>
                     <asp:DropDownList ID="DropDownList_ReservedCategory" runat="server" 
-                        Width="160px">
+                        Width="160px" TabIndex="5">
                         <asp:ListItem Text="Schedule Cast" Value="Schedule Cast" ></asp:ListItem>
                         <asp:ListItem Text="Scheduled Tribe" Value="Scheduled Tribe"></asp:ListItem>
                         <asp:ListItem Text="Social and Educational Backward Tribe" Value="Social and Educational Backward Tribe"></asp:ListItem>
@@ -136,7 +144,12 @@
             <tr align="left">
 			    <td>Anamat Type:</td>
 				<td>
-                    <asp:DropDownList ID="DropDownList_AnamatType" runat="server" Width="160px">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td>
+                    <asp:DropDownList ID="DropDownList_AnamatType" runat="server" Width="160px" 
+                        TabIndex="1">
                         <asp:ListItem Text="Schedule Cast" Value="Schedule Cast"></asp:ListItem>
                         <asp:ListItem Text="Scheduled Tribe" Value="Scheduled Tribe"></asp:ListItem>
                         <asp:ListItem Text="Social and Educational Backward Tribe" Value="Social and Educational Backward Tribe"></asp:ListItem>
@@ -147,56 +160,90 @@
                 </td>
 				
 				<td>Employee Name:</td>
-				<td><asp:TextBox ID="Employee_NameTextBox" runat="server" 
-                    Text='<%# Bind("Employee_Name") %>' Width="160px" MaxLength="30" /></td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="Employee_NameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Employee_Name") %>' Width="160px" MaxLength="30" 
+                        TabIndex="6" /></td>
 			</tr>                       
                 
             <tr align="left">
 				<td>Types Of Recruitment:</td>
-				<td><asp:TextBox ID="Types_Of_RecruitmentTextBox" runat="server" 
-                    Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" MaxLength="20" /></td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="Types_Of_RecruitmentTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" MaxLength="20" 
+                        TabIndex="2" /></td>
 				
 				<td>Date Of Appointment:</td>
+				<td>
+                    &nbsp;</td>
 				<td><asp:TextBox ID="Date_Of_AppointmentTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Appointment") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Appointment") %>' Width="160px" TabIndex="7" /></td>
 			</tr>   
                                 
             <tr align="left">
 			    <td>Recruitment Year:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Recruitment_YearTextBox" runat="server" numeric="integer"
-                    Text='<%# Bind("Recruitment_Year") %>' Width="160px" MaxLength="4" /></td>
+                    Text='<%# Bind("Recruitment_Year") %>' Width="160px" MaxLength="4" 
+                        TabIndex="3" /></td>
 				
 				<td>Appointed Authority:</td>
-				<td><asp:TextBox ID="Appointed_AuthorityTextBox" runat="server" 
-                    Text='<%# Bind("Appointed_Authority") %>' Width="160px" MaxLength="20" /></td>				
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="Appointed_AuthorityTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Appointed_Authority") %>' Width="160px" MaxLength="20" 
+                        TabIndex="8" /></td>				
 			</tr> 
                                 
             <tr align="left">
 			    <td>Roster SrNo:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Roster_SrNoTextBox" runat="server" numeric="integer"
-                    Text='<%# Bind("Roster_SrNo") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("Roster_SrNo") %>' Width="160px" MaxLength="10" TabIndex="4" /></td>
 				
 				<td>Remarks:</td>
+				<td>
+                    &nbsp;</td>
 				<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
-                        Height="60px" Width="160px" /></td>
+                        Height="60px" Width="160px" TabIndex="9" /></td>
 			</tr>                      
                  
-            <tr><td align="center" colspan=4 >
+            <tr><td align="center" colspan=6 >
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                    CommandName="Update" Text="Update" CssClass="standardButton" />
+                    CommandName="Update" Text="Update" CssClass="standardButton" 
+                    TabIndex="10" />
 				&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                     CausesValidation="False" CommandName="Reset" Text="Reset" 
-                    CssClass="standardButton" onclientclick="resetTextFields();return false;" />
+                    CssClass="standardButton" onclientclick="resetTextFields();return false;" 
+                    TabIndex="11" />
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                     CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td></tr>    
+                    CssClass="standardButton" TabIndex="12" /></td></tr>    
         </table>
             
         </EditItemTemplate>
         <InsertItemTemplate>
-                       <table>
+                       <table align="center">
             <tr align="left">
 			    <td>Deatils Of Designation:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td>
                     <asp:ListBox ID="ListBox_Designation" runat="server" 
                         DataSourceID="ods_Designation" DataTextField="Description" 
@@ -205,8 +252,12 @@
 				
 				<td>Reserved For Category:</td>
 				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td>
                     <asp:DropDownList ID="DropDownList_ReservedCategory" runat="server" 
-                        Width="160px">
+                        Width="160px" TabIndex="5">
                         <asp:ListItem Text="Schedule Cast" Value="Schedule Cast" ></asp:ListItem>
                         <asp:ListItem Text="Scheduled Tribe" Value="Scheduled Tribe"></asp:ListItem>
                         <asp:ListItem Text="Social and Educational Backward Tribe" Value="Social and Educational Backward Tribe"></asp:ListItem>
@@ -220,7 +271,12 @@
             <tr align="left">
 			    <td>Anamat Type:</td>
 				<td>
-                    <asp:DropDownList ID="DropDownList_AnamatType" runat="server" Width="160px">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td>
+                    <asp:DropDownList ID="DropDownList_AnamatType" runat="server" Width="160px" 
+                        TabIndex="1">
                         <asp:ListItem Text="Schedule Cast" Value="Schedule Cast"></asp:ListItem>
                         <asp:ListItem Text="Scheduled Tribe" Value="Scheduled Tribe"></asp:ListItem>
                         <asp:ListItem Text="Social and Educational Backward Tribe" Value="Social and Educational Backward Tribe"></asp:ListItem>
@@ -231,49 +287,79 @@
                 </td>
 				
 				<td>Employee Name:</td>
-				<td><asp:TextBox ID="Employee_NameTextBox" runat="server" 
-                    Text='<%# Bind("Employee_Name") %>' Width="160px" MaxLength="30" /></td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="Employee_NameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Employee_Name") %>' Width="160px" MaxLength="30" 
+                        TabIndex="6" /></td>
 			</tr>                       
                 
             <tr align="left">
 				<td>Types Of Recruitment:</td>
-				<td><asp:TextBox ID="Types_Of_RecruitmentTextBox" runat="server" 
-                    Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" MaxLength="20" /></td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="Types_Of_RecruitmentTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" MaxLength="20" 
+                        TabIndex="2" /></td>
 				
 				<td>Date Of Appointment:</td>
+				<td>
+                    &nbsp;</td>
 				<td><asp:TextBox ID="Date_Of_AppointmentTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Appointment") %>' Width="160px" /></td>
+                    Text='<%# Bind("Date_Of_Appointment") %>' Width="160px" TabIndex="7" /></td>
 			</tr>   
                                 
             <tr align="left">
 			    <td>Recruitment Year:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Recruitment_YearTextBox" runat="server" numeric="integer"
-                    Text='<%# Bind("Recruitment_Year") %>' Width="160px" MaxLength="4" /></td>
+                    Text='<%# Bind("Recruitment_Year") %>' Width="160px" MaxLength="4" 
+                        TabIndex="3" /></td>
 				
 				<td>Appointed Authority:</td>
-				<td><asp:TextBox ID="Appointed_AuthorityTextBox" runat="server" 
-                    Text='<%# Bind("Appointed_Authority") %>' Width="160px" MaxLength="20" /></td>				
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
+				<td><asp:TextBox ID="Appointed_AuthorityTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                    Text='<%# Bind("Appointed_Authority") %>' Width="160px" MaxLength="20" 
+                        TabIndex="8" /></td>				
 			</tr> 
                                 
             <tr align="left">
 			    <td>Roster SrNo:</td>
+				<td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                </td>
 				<td><asp:TextBox ID="Roster_SrNoTextBox" runat="server" numeric="integer"
-                    Text='<%# Bind("Roster_SrNo") %>' Width="160px" MaxLength="10" /></td>
+                    Text='<%# Bind("Roster_SrNo") %>' Width="160px" MaxLength="10" TabIndex="4" /></td>
 				
 				<td>Remarks:</td>
+				<td>
+                    &nbsp;</td>
 				<td><asp:TextBox ID="RemarksTextBox" runat="server" Text='<%# Bind("Remarks") %>' 
-                        Height="60px" Width="160px" /></td>
+                        Height="60px" Width="160px" TabIndex="9" /></td>
 			</tr>                      
                  
-            <tr><td align="center" colspan=4 >
+            <tr><td align="center" colspan=6 >
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                    CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                    CommandName="Insert" Text="Insert" CssClass="standardButton" 
+                    TabIndex="10" />
 				&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                     CausesValidation="False" CommandName="Reset" Text="Reset" 
-                    CssClass="standardButton" onclientclick="resetTextFields();return false;" />
+                    CssClass="standardButton" onclientclick="resetTextFields();return false;" 
+                    TabIndex="11" />
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                     CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" /></td></tr>    
+                    CssClass="standardButton" TabIndex="12" /></td></tr>    
         </table>
             
         </InsertItemTemplate>

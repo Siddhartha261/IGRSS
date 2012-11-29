@@ -15,6 +15,18 @@ public partial class CCRALegal_SunavniRegister : System.Web.UI.Page
         infoDiv.Visible = false;
         Multiview_SunavniRegister.SetActiveView(Multiview_SunavniRegister.Views[1]);
         FormView_SunavniRegister.ChangeMode(FormViewMode.Insert);
+        DropDownList Dropdown_appealno = FormView_SunavniRegister.FindControl("DropDownList_AppealNo") as DropDownList;
+        TextBox txt1 = FormView_SunavniRegister.FindControl("FileNoTextBox") as TextBox;
+        TextBox txt2 = FormView_SunavniRegister.FindControl("NameOfPetitionerTextBox") as TextBox;
+        TextBox txt3 = FormView_SunavniRegister.FindControl("IssueDateOfLetterTextBox") as TextBox;
+        TextBox txt4 = FormView_SunavniRegister.FindControl("DateOfHearingTextBox") as TextBox;
+        TextBox txt5 = FormView_SunavniRegister.FindControl("ResultTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        Dropdown_appealno.Focus();
     }
 
     protected void FormView_SunavniRegister_ItemInserting(object sender, FormViewInsertEventArgs e)
@@ -75,7 +87,7 @@ public partial class CCRALegal_SunavniRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to add record", true);
         }
-        Multiview_SunavniRegister.SetActiveView(ViewGrid);
+        
     }
     protected void FormView_SunavniRegister_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
     {
@@ -87,6 +99,7 @@ public partial class CCRALegal_SunavniRegister : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_SunavniRegister.SetActiveView(ViewGrid);
     }
     protected void ods_SunavniRegister_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

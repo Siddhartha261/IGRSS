@@ -15,6 +15,12 @@ public partial class Establishment_Department_MahekamRegister : System.Web.UI.Pa
         infoDiv.Visible = false;
         Multiview_Mahekam.SetActiveView(Multiview_Mahekam.Views[1]);
         FormView_Mahekam.ChangeMode(FormViewMode.Insert);
+        ListBox listbox_details_of_designation = FormView_Mahekam.FindControl("ListBox_Designation") as ListBox;
+        TextBox txt1 = FormView_Mahekam.FindControl("From_DateTextBox") as TextBox;
+        TextBox txt2 = FormView_Mahekam.FindControl("To_DateTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        listbox_details_of_designation.Focus();
     }
     protected void FormView_Mahekam_ItemInserting(object sender, FormViewInsertEventArgs e)
     {

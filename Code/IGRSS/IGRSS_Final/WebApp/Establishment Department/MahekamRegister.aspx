@@ -52,22 +52,22 @@
                       onrowediting="GridView_Mahekam_RowEditing">
                       <Columns>
                           <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
-                              ReadOnly="True" SortExpression="SrNo" />
+                              ReadOnly="True" SortExpression="SrNo" Visible="False" />
                           <asp:BoundField DataField="Details_Of_Designation" HeaderText="Details_Of_Designation" 
-                              SortExpression="Details_Of_Designation" />
-                          <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" 
+                              SortExpression="Details_Of_Designation" Visible="False" />
+                          <asp:BoundField DataField="Employee_Name" HeaderText="Employee Name" 
                               SortExpression="Employee_Name" />
                           <asp:BoundField DataField="Designation" HeaderText="Designation" 
                               SortExpression="Designation" />
                           <asp:BoundField DataField="Grade" HeaderText="Grade" 
                               SortExpression="Grade" />
-                          <asp:BoundField DataField="Residence_District" HeaderText="Residence_District" 
+                          <asp:BoundField DataField="Residence_District" HeaderText="Residence District" 
                               SortExpression="Residence_District" />
-                          <asp:BoundField DataField="Current_Office" HeaderText="Current_Office" 
+                          <asp:BoundField DataField="Current_Office" HeaderText="Current Office" 
                               SortExpression="Current_Office" />
-                          <asp:BoundField DataField="From_Date" HeaderText="From_Date" 
+                          <asp:BoundField DataField="From_Date" HeaderText="From Date" 
                               SortExpression="From_Date" />
-                          <asp:BoundField DataField="To_Date" HeaderText="To_Date" 
+                          <asp:BoundField DataField="To_Date" HeaderText="To Date" 
                               SortExpression="To_Date" />
                               <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
@@ -91,7 +91,7 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        onclick="Button_new_Click" CssClass="standardButton" />
+        onclick="Button_new_Click" CssClass="standardButton" AccessKey="n" />
 </asp:View>
 
 <asp:View ID="Formview" runat="server">
@@ -105,9 +105,13 @@
         onitemupdated="FormView_Mahekam_ItemUpdated" 
         onitemupdating="FormView_Mahekam_ItemUpdating" >
         <EditItemTemplate>
-                                                               <table>
+                                                               <table align="center">
                                    <tr align="left">
 								       <td>Details Of Designation:</td>
+									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                               ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
 									   <td>
                                            <asp:ListBox ID="ListBox_Designation" runat="server" 
                                                DataSourceID="ods_Designation" DataTextField="Description" 
@@ -115,6 +119,10 @@
                                        </td>
 									   
 									   <td>Residence District:</td>
+									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                               ControlToValidate="DropDownList_ResidenceDistrict" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
 									   <td>
                                            <asp:DropDownList ID="DropDownList_ResidenceDistrict" runat="server" 
                                                DataSourceID="ods_ResidenceDistrict" DataTextField="District_Name" 
@@ -126,6 +134,10 @@
                                    <tr align="left">
 								       <td>Employee Name:</td>
 									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                               ControlToValidate="DropDownList_EmployeeName" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
+									   <td>
                                            <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
                                                DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
                                                DataValueField="FirstName" Width="160px">
@@ -133,6 +145,10 @@
                                        </td>
 									   
 									   <td>Current Office:</td>
+									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                               ControlToValidate="DropDownList_CurrentOffice" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
 									   <td>
                                            <asp:DropDownList ID="DropDownList_CurrentOffice" runat="server" 
                                                DataSourceID="ods_CurrentOffice" DataTextField="OfficeName" 
@@ -144,6 +160,10 @@
                                    <tr align="left">
 								       <td>Designation:</td>
 									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                               ControlToValidate="DropDownList_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
+									   <td>
                                            <asp:DropDownList ID="DropDownList_Designation" runat="server" 
                                                DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
                                                Width="160px">
@@ -151,12 +171,18 @@
                                        </td>
 									   
 									   <td>From Date:</td>
+									   <td>
+                                           &nbsp;</td>
 									   <td><asp:TextBox ID="From_DateTextBox" runat="server" 
                                        Text='<%# Bind("From_Date") %>' Width="160px" /></td>
 									</tr>
                                                                       
                                    <tr align="left">
 								      <td>Grade:</td>
+									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                               ControlToValidate="DropDownList_Grade" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
 									  <td>
                                           <asp:DropDownList ID="DropDownList_Grade" runat="server" 
                                               DataSourceID="ods_Grade" DataTextField="Grade_Name" DataValueField="Grade_Name" 
@@ -165,11 +191,13 @@
                                        </td>
 									  
 									  <td>To Date:</td>
+									   <td>
+                                           &nbsp;</td>
 									  <td><asp:TextBox ID="To_DateTextBox" runat="server" Text='<%# Bind("To_Date") %>' 
                                               Width="160px" /></td>
 								  </tr>                                 
                                    
-                                  <tr><td align="center" colspan=4 >
+                                  <tr><td align="center" colspan=6 >
                                       <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                                        CommandName="Update" Text="Update" CssClass="standardButton" />
 								   &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
@@ -183,9 +211,13 @@
 							</table>
         </EditItemTemplate>
         <InsertItemTemplate>
-                                                               <table>
+                                                               <table align="center">
                                    <tr align="left">
 								       <td>Details Of Designation:</td>
+									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                               ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
 									   <td>
                                            <asp:ListBox ID="ListBox_Designation" runat="server" 
                                                DataSourceID="ods_Designation" DataTextField="Description" 
@@ -193,6 +225,10 @@
                                        </td>
 									   
 									   <td>Residence District:</td>
+									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                               ControlToValidate="DropDownList_ResidenceDistrict" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
 									   <td>
                                            <asp:DropDownList ID="DropDownList_ResidenceDistrict" runat="server" 
                                                DataSourceID="ods_ResidenceDistrict" DataTextField="District_Name" 
@@ -204,6 +240,10 @@
                                    <tr align="left">
 								       <td>Employee Name:</td>
 									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                               ControlToValidate="DropDownList_EmployeeName" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
+									   <td>
                                            <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
                                                DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
                                                DataValueField="FirstName" Width="160px">
@@ -211,6 +251,10 @@
                                        </td>
 									   
 									   <td>Current Office:</td>
+									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                               ControlToValidate="DropDownList_CurrentOffice" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
 									   <td>
                                            <asp:DropDownList ID="DropDownList_CurrentOffice" runat="server" 
                                                DataSourceID="ods_CurrentOffice" DataTextField="OfficeName" 
@@ -222,6 +266,10 @@
                                    <tr align="left">
 								       <td>Designation:</td>
 									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                               ControlToValidate="DropDownList_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
+									   <td>
                                            <asp:DropDownList ID="DropDownList_Designation" runat="server" 
                                                DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
                                                Width="160px">
@@ -229,12 +277,18 @@
                                        </td>
 									   
 									   <td>From Date:</td>
+									   <td>
+                                           &nbsp;</td>
 									   <td><asp:TextBox ID="From_DateTextBox" runat="server" 
                                        Text='<%# Bind("From_Date") %>' Width="160px" /></td>
 									</tr>
                                                                       
                                    <tr align="left">
 								      <td>Grade:</td>
+									   <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                               ControlToValidate="DropDownList_Grade" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
 									  <td>
                                           <asp:DropDownList ID="DropDownList_Grade" runat="server" 
                                               DataSourceID="ods_Grade" DataTextField="Grade_Name" DataValueField="Grade_Name" 
@@ -243,11 +297,13 @@
                                        </td>
 									  
 									  <td>To Date:</td>
+									   <td>
+                                           &nbsp;</td>
 									  <td><asp:TextBox ID="To_DateTextBox" runat="server" Text='<%# Bind("To_Date") %>' 
                                               Width="160px" /></td>
 								  </tr>                                 
                                    
-                                  <tr><td align="center" colspan=4 >
+                                  <tr><td align="center" colspan=6 >
                                       <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                                        CommandName="Insert" Text="Insert" CssClass="standardButton" />
 								   &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 

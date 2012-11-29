@@ -29,7 +29,7 @@
 <asp:MultiView ID="Multiview_Inquiry" runat="server" ActiveViewIndex="0">
 <asp:View ID="ViewGrid" runat="server">
 <hr /><br />
-<h1>Primary Investigation/Inquiry Register</h1>
+<h1 align="center">Primary Investigation/Inquiry Register</h1>
 <table>
           <tr>
                     <td align="right" style="width:641px;" >
@@ -137,7 +137,7 @@
 			    <td>
                     &nbsp;</td>
 			    <td><asp:TextBox ID="Date_Of_ComplaintTextBox" runat="server" 
-                    Text='<%# Bind("Date_Of_Complaint") %>' Width="140px" TabIndex="3" /></td>
+                    Text='<%# Bind("Date_Of_Complaint") %>' Width="160px" TabIndex="3" /></td>
 			</tr>	                 
                     
             <tr align="left"><td>Details To Vigilance Commissioner:</td>
