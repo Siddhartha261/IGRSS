@@ -31,6 +31,9 @@ public partial class Establishment_Department_RosterRegister : System.Web.UI.Pag
 
         DropDownList DropDown_ReservedCategory = FormView_Roster.FindControl("DropDownList_ReservedCategory") as DropDownList;
         e.Values["Reserved_For_Category"] = DropDown_ReservedCategory.SelectedValue;
+
+        DropDownList DropDown_EmployeeName = FormView_Roster.FindControl("DropDownList_EmployeeName") as DropDownList;
+        e.Values["Employee_Name"] = DropDown_EmployeeName.SelectedValue;
     }
     protected void Button_new_Click(object sender, EventArgs e)
     {
@@ -41,14 +44,12 @@ public partial class Establishment_Department_RosterRegister : System.Web.UI.Pag
         TextBox txt1 = FormView_Roster.FindControl("Types_Of_RecruitmentTextBox") as TextBox;
         TextBox txt2 = FormView_Roster.FindControl("Recruitment_YearTextBox") as TextBox;
         TextBox txt3 = FormView_Roster.FindControl("Roster_SrNoTextBox") as TextBox;
-        TextBox txt4 = FormView_Roster.FindControl("Employee_NameTextBox") as TextBox;
         TextBox txt5 = FormView_Roster.FindControl("Date_Of_AppointmentTextBox") as TextBox;
         TextBox txt6 = FormView_Roster.FindControl("Appointed_AuthorityTextBox") as TextBox;
         TextBox txt7 = FormView_Roster.FindControl("RemarksTextBox") as TextBox;
         txt1.Text = "";
         txt2.Text = "";
         txt3.Text = "";
-        txt4.Text = "";
         txt5.Text = "";
         txt6.Text = "";
         txt7.Text = "";
@@ -118,6 +119,9 @@ public partial class Establishment_Department_RosterRegister : System.Web.UI.Pag
 
         DropDownList DropDown_ReservedCategory = FormView_Roster.FindControl("DropDownList_ReservedCategory") as DropDownList;
         e.NewValues["Reserved_For_Category"] = DropDown_ReservedCategory.SelectedValue;
+
+        DropDownList DropDown_EmployeeName = FormView_Roster.FindControl("DropDownList_EmployeeName") as DropDownList;
+        e.NewValues["Employee_Name"] = DropDown_EmployeeName.SelectedValue;
     }
   
     protected void ods_Roster_Deleting(object sender, ObjectDataSourceMethodEventArgs e)

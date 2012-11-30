@@ -126,7 +126,7 @@
 				<td>Reserved For Category:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="DropDownList_ReservedCategory" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_ReservedCategory" runat="server" 
@@ -145,35 +145,33 @@
 			    <td>Anamat Type:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="DropDownList_AnamatType" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_AnamatType" runat="server" Width="160px" 
-                        TabIndex="1">
-                        <asp:ListItem Text="Schedule Cast" Value="Schedule Cast"></asp:ListItem>
-                        <asp:ListItem Text="Scheduled Tribe" Value="Scheduled Tribe"></asp:ListItem>
-                        <asp:ListItem Text="Social and Educational Backward Tribe" Value="Social and Educational Backward Tribe"></asp:ListItem>
-                        <asp:ListItem Text="Handicapped"></asp:ListItem>
-                        <asp:ListItem Text="General" Value="General"></asp:ListItem>
-                        <asp:ListItem Text="None" Value="None"></asp:ListItem>
+                        TabIndex="1" DataSourceID="ods_anamattype" DataTextField="Anamat_Type" 
+                        DataValueField="Anamat_Type">                        
                     </asp:DropDownList>
                 </td>
 				
 				<td>Employee Name:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="DropDownList_EmployeeName" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
-				<td><asp:TextBox ID="Employee_NameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                    Text='<%# Bind("Employee_Name") %>' Width="160px" MaxLength="30" 
-                        TabIndex="6" /></td>
+				<td>
+                    <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
+                        DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
+                        DataValueField="FirstName" Width="160px">
+                    </asp:DropDownList>
+                </td>
 			</tr>                       
                 
             <tr align="left">
 				<td>Types Of Recruitment:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="Types_Of_RecruitmentTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td><asp:TextBox ID="Types_Of_RecruitmentTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                     Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" MaxLength="20" 
@@ -190,7 +188,7 @@
 			    <td>Recruitment Year:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="Recruitment_YearTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td><asp:TextBox ID="Recruitment_YearTextBox" runat="server" numeric="integer"
                     Text='<%# Bind("Recruitment_Year") %>' Width="160px" MaxLength="4" 
@@ -199,7 +197,7 @@
 				<td>Appointed Authority:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="Appointed_AuthorityTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td><asp:TextBox ID="Appointed_AuthorityTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                     Text='<%# Bind("Appointed_Authority") %>' Width="160px" MaxLength="20" 
@@ -210,7 +208,7 @@
 			    <td>Roster SrNo:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="Roster_SrNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td><asp:TextBox ID="Roster_SrNoTextBox" runat="server" numeric="integer"
                     Text='<%# Bind("Roster_SrNo") %>' Width="160px" MaxLength="10" TabIndex="4" /></td>
@@ -253,7 +251,7 @@
 				<td>Reserved For Category:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="DropDownList_ReservedCategory" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_ReservedCategory" runat="server" 
@@ -272,35 +270,33 @@
 			    <td>Anamat Type:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="DropDownList_AnamatType" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_AnamatType" runat="server" Width="160px" 
-                        TabIndex="1">
-                        <asp:ListItem Text="Schedule Cast" Value="Schedule Cast"></asp:ListItem>
-                        <asp:ListItem Text="Scheduled Tribe" Value="Scheduled Tribe"></asp:ListItem>
-                        <asp:ListItem Text="Social and Educational Backward Tribe" Value="Social and Educational Backward Tribe"></asp:ListItem>
-                        <asp:ListItem Text="Handicapped"></asp:ListItem>
-                        <asp:ListItem Text="General" Value="General"></asp:ListItem>
-                        <asp:ListItem Text="None" Value="None"></asp:ListItem>
+                        TabIndex="1" DataSourceID="ods_anamattype" DataTextField="Anamat_Type" 
+                        DataValueField="Anamat_Type">
                     </asp:DropDownList>
                 </td>
 				
 				<td>Employee Name:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="DropDownList_EmployeeName" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
-				<td><asp:TextBox ID="Employee_NameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                    Text='<%# Bind("Employee_Name") %>' Width="160px" MaxLength="30" 
-                        TabIndex="6" /></td>
+				<td>
+                    <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
+                        DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
+                        DataValueField="FirstName" Width="160px">
+                    </asp:DropDownList>
+                </td>
 			</tr>                       
                 
             <tr align="left">
 				<td>Types Of Recruitment:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="Types_Of_RecruitmentTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td><asp:TextBox ID="Types_Of_RecruitmentTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                     Text='<%# Bind("Types_Of_Recruitment") %>' Width="160px" MaxLength="20" 
@@ -317,7 +313,7 @@
 			    <td>Recruitment Year:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="Recruitment_YearTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td><asp:TextBox ID="Recruitment_YearTextBox" runat="server" numeric="integer"
                     Text='<%# Bind("Recruitment_Year") %>' Width="160px" MaxLength="4" 
@@ -326,7 +322,7 @@
 				<td>Appointed Authority:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="Appointed_AuthorityTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td><asp:TextBox ID="Appointed_AuthorityTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                     Text='<%# Bind("Appointed_Authority") %>' Width="160px" MaxLength="20" 
@@ -337,7 +333,7 @@
 			    <td>Roster SrNo:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                        ControlToValidate="ListBox_Designation" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="Roster_SrNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 				<td><asp:TextBox ID="Roster_SrNoTextBox" runat="server" numeric="integer"
                     Text='<%# Bind("Roster_SrNo") %>' Width="160px" MaxLength="10" TabIndex="4" /></td>
@@ -415,6 +411,24 @@
                 CommandName="New" Text="New"/>
         </ItemTemplate>
     </asp:FormView>
+    <asp:ObjectDataSource ID="ods_anamattype" runat="server" DeleteMethod="Delete" 
+        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.AnamattypeTableAdapters.AnamatMasterTableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Anamat_Type" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="Anamat_Type" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Anamat_Type" Type="String" />
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Anamat_Type" Type="String" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
 </center>
     
     <asp:ObjectDataSource ID="ods_Designation" runat="server" DeleteMethod="Delete" 
@@ -478,6 +492,25 @@
             <asp:Parameter Name="Appointed_Authority" Type="String" />
             <asp:Parameter Name="Remarks" Type="String" />
             <asp:Parameter Name="SrNo" Type="Int32" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ods_EmployeeName" runat="server" 
+        DeleteMethod="Delete" InsertMethod="Insert" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
+            <asp:Parameter Name="Original_FirstName" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter DbType="Guid" Name="EmployeeID" />
+            <asp:Parameter Name="FirstName" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="FirstName" Type="String" />
+            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
+            <asp:Parameter Name="Original_FirstName" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:View>    

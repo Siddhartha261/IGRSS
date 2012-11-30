@@ -16,12 +16,8 @@ public partial class Establishment_Department_FajalRegister : System.Web.UI.Page
         Multiview_Fajal.SetActiveView(Multiview_Fajal.Views[1]);
         FormView_Fajal.ChangeMode(FormViewMode.Insert);
         ListBox listbox_details_Of_designation = FormView_Fajal.FindControl("ListBox_Designation") as ListBox;
-        TextBox txt1 = FormView_Fajal.FindControl("Residence_DistrictTextBox") as TextBox;
-        TextBox txt2 = FormView_Fajal.FindControl("Current_OfficeTextBox") as TextBox;
         TextBox txt3 = FormView_Fajal.FindControl("From_DateTextBox") as TextBox;
         TextBox txt4 = FormView_Fajal.FindControl("To_DateTextBox") as TextBox;
-        txt1.Text = "";
-        txt2.Text = "";
         txt3.Text = "";
         txt4.Text = "";
         listbox_details_Of_designation.Focus();
@@ -39,6 +35,12 @@ public partial class Establishment_Department_FajalRegister : System.Web.UI.Page
 
         DropDownList DropDown_Grade = FormView_Fajal.FindControl("DropDownList_Grade") as DropDownList;
         e.Values["Grade"] = DropDown_Grade.SelectedValue;
+
+        DropDownList DropDown_ResidenceDistrict = FormView_Fajal.FindControl("DropDownList_ResidenceDistrict") as DropDownList;
+        e.Values["Residence_District"] = DropDown_ResidenceDistrict.SelectedValue;
+
+        DropDownList DropDown_CurrentOffice = FormView_Fajal.FindControl("DropDownList_CurrentOffice") as DropDownList;
+        e.Values["Current_Office"] = DropDown_CurrentOffice.SelectedValue;
     }
     protected void FormView_Fajal_ItemCommand(object sender, FormViewCommandEventArgs e)
     {
@@ -118,6 +120,12 @@ public partial class Establishment_Department_FajalRegister : System.Web.UI.Page
 
         DropDownList DropDown_Grade = FormView_Fajal.FindControl("DropDownList_Grade") as DropDownList;
         e.NewValues["Grade"] = DropDown_Grade.SelectedValue;
+
+        DropDownList DropDown_ResidenceDistrict = FormView_Fajal.FindControl("DropDownList_ResidenceDistrict") as DropDownList;
+        e.NewValues["Residence_District"] = DropDown_ResidenceDistrict.SelectedValue;
+
+        DropDownList DropDown_CurrentOffice = FormView_Fajal.FindControl("DropDownList_CurrentOffice") as DropDownList;
+        e.NewValues["Current_Office"] = DropDown_CurrentOffice.SelectedValue;
     }
     protected void ods_Fajal_Deleting(object sender, ObjectDataSourceMethodEventArgs e)
     {

@@ -91,7 +91,7 @@
           </tr>
  </table>
  <asp:LinkButton ID="Button_new" runat="server" Text="New" 
-        CssClass="standardButton" onclick="Button_new_Click" />
+        CssClass="standardButton" onclick="Button_new_Click" AccessKey="n" />
 </asp:View>
 
 <asp:View ID="Formview" runat="server">
@@ -101,14 +101,18 @@
 <asp:FormView ID="FormView_Sealing" runat="server" DataKeyNames="SrNo" 
         DataSourceID="ods_Sealing" EnableModelValidation="True" 
         DefaultMode="Insert" oniteminserting="FormView_Sealing_ItemInserting" 
-        onitemcommand="FormView_Sealing_ItemCommand" Width="70%" 
+        onitemcommand="FormView_Sealing_ItemCommand" 
         oniteminserted="FormView_Sealing_ItemInserted" 
         onitemupdated="FormView_Sealing_ItemUpdated" 
         onitemupdating="FormView_Sealing_ItemUpdating" >
         <EditItemTemplate>
-                               <table>
-	       <tr>
+                               <table align="center">
+	       <tr align="left">
 		       <td>Name Of Kacheri/Office:</td>
+			   <td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                       ControlToValidate="DropDownList_officename" ErrorMessage="*"></asp:RequiredFieldValidator>
+               </td>
 			   <td>
                    <asp:DropDownList ID="DropDownList_officename" runat="server" Width="160px" 
                        DataSourceID="ods_officesmaster" DataTextField="OfficeName" 
@@ -117,57 +121,83 @@
                </td>
 			</tr>  
        		   
-           <tr>
-		       <td colspan="2" class="gridItems">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time Span During Year:</td>
+           <tr align="left">
+		       <td class="gridItems">Time Span During Year:</td>
+     	       <td class="gridItems">
+                   &nbsp;</td>
+               <td class="gridItems">
+                   &nbsp;</td>
      	   </tr>
        	   
-                                   <tr>
+                                   <tr align="left">
                                        <td>
                                            From Date:</td>
+                                       <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                               ControlToValidate="FromDateTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
                                        <td>
                                            <asp:TextBox ID="FromDateTextBox" runat="server" Text='<%# Bind("FromDate") %>' 
                                                Width="160px" />
                                        </td>
                                    </tr>
        	   
-           <tr>
+           <tr align="left">
 		       <td>To Date:</td>
+			   <td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                       ControlToValidate="ToDateTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+               </td>
 			   <td><asp:TextBox ID="ToDateTextBox" runat="server" 
                    Text='<%# Bind("ToDate") %>' Width="160px" /></td>
 		   </tr>
         		 
-           <tr>
+           <tr align="left">
 		       <td>Photo Volume No:</td>
-			   <td><asp:TextBox ID="PhotoVolumeNoTextBox" runat="server" 
-                   Text='<%# Bind("PhotoVolumeNo") %>' Width="160px" /></td>
+			   <td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                       ControlToValidate="PhotoVolumeNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+               </td>
+			   <td><asp:TextBox ID="PhotoVolumeNoTextBox" runat="server" numeric="integer" 
+                   Text='<%# Bind("PhotoVolumeNo") %>' Width="160px" MaxLength="10" /></td>
 		   </tr>   
 		   
-           <tr>
+           <tr align="left">
 		       <td>Book No:</td>
-			   <td><asp:TextBox ID="BookNoTextBox" runat="server" 
-                   Text='<%# Bind("BookNo") %>' Width="160px" /></td>
+			   <td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                       ControlToValidate="BookNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+               </td>
+			   <td><asp:TextBox ID="BookNoTextBox" runat="server" numeric="integer" 
+                   Text='<%# Bind("BookNo") %>' Width="160px" MaxLength="10" /></td>
 		   </tr>   
 			  
-           <tr>
+           <tr align="left">
 		      <td>Sealed Photo Volumes During a Single Month:</td>
-			  <td><asp:TextBox ID="SealedVolumesTextBox" runat="server" 
-                  Text='<%# Bind("SealedVolumes") %>' Width="160px" /></td>
+			   <td>
+                   &nbsp;</td>
+			  <td><asp:TextBox ID="SealedVolumesTextBox" runat="server" numeric="integer" 
+                  Text='<%# Bind("SealedVolumes") %>' Width="160px" MaxLength="10" /></td>
 		   </tr>
             	   
-           <tr>
+           <tr align="left">
 		      <td>Remaining Volumes To Be Sealed At the end of the month:</td>
-			  <td><asp:TextBox ID="RemainingVolumesTextBox" runat="server" 
-                  Text='<%# Bind("RemainingVolumes") %>' Width="160px" /></td>
+			   <td>
+                   &nbsp;</td>
+			  <td><asp:TextBox ID="RemainingVolumesTextBox" runat="server" numeric="integer" 
+                  Text='<%# Bind("RemainingVolumes") %>' Width="160px" MaxLength="10" /></td>
 		   </tr>   
           		 
-           <tr>
+           <tr align="left">
 		      <td>Remarks:</td>
+			   <td>
+                   &nbsp;</td>
 			  <td><asp:TextBox ID="RemarksTextBox" runat="server" 
                   Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td>
 		  </tr>     
             	  
           <tr>
-		      <td align="center" colspan=2 >
+		      <td align="center" colspan=3 >
                   <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                   CommandName="Update" Text="Update" CssClass="standardButton" />
 		          &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
@@ -181,9 +211,13 @@
             
         </EditItemTemplate>
         <InsertItemTemplate>
-                               <table>
-	       <tr>
+                               <table align="center">
+	       <tr align="left">
 		       <td>Name Of Kacheri/Office:</td>
+			   <td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                       ControlToValidate="DropDownList_officename" ErrorMessage="*"></asp:RequiredFieldValidator>
+               </td>
 			   <td>
                    <asp:DropDownList ID="DropDownList_officename" runat="server" Width="160px" 
                        DataSourceID="ods_officesmaster" DataTextField="OfficeName" 
@@ -192,57 +226,83 @@
                </td>
 			</tr>  
        		   
-           <tr>
-		       <td colspan="2" class="gridItems">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time Span During Year:</td>
+           <tr align="left">
+		       <td class="gridItems">Time Span During Year:</td>
+     	       <td class="gridItems">
+                   &nbsp;</td>
+               <td class="gridItems">
+                   &nbsp;</td>
      	   </tr>
        	   
-                                   <tr>
+                                   <tr align="left">
                                        <td>
                                            From Date:</td>
+                                       <td>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                               ControlToValidate="FromDateTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                       </td>
                                        <td>
                                            <asp:TextBox ID="FromDateTextBox" runat="server" Text='<%# Bind("FromDate") %>' 
                                                Width="160px" />
                                        </td>
                                    </tr>
        	   
-           <tr>
+           <tr align="left">
 		       <td>To Date:</td>
+			   <td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                       ControlToValidate="ToDateTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+               </td>
 			   <td><asp:TextBox ID="ToDateTextBox" runat="server" 
                    Text='<%# Bind("ToDate") %>' Width="160px" /></td>
 		   </tr>
         		 
-           <tr>
+           <tr align="left">
 		       <td>Photo Volume No:</td>
-			   <td><asp:TextBox ID="PhotoVolumeNoTextBox" runat="server" 
-                   Text='<%# Bind("PhotoVolumeNo") %>' Width="160px" /></td>
+			   <td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                       ControlToValidate="PhotoVolumeNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+               </td>
+			   <td><asp:TextBox ID="PhotoVolumeNoTextBox" runat="server" numeric="integer" 
+                   Text='<%# Bind("PhotoVolumeNo") %>' Width="160px" MaxLength="10" /></td>
 		   </tr>   
 		   
-           <tr>
+           <tr align="left">
 		       <td>Book No:</td>
-			   <td><asp:TextBox ID="BookNoTextBox" runat="server" 
-                   Text='<%# Bind("BookNo") %>' Width="160px" /></td>
+			   <td>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                       ControlToValidate="BookNoTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+               </td>
+			   <td><asp:TextBox ID="BookNoTextBox" runat="server" numeric="integer" 
+                   Text='<%# Bind("BookNo") %>' Width="160px" MaxLength="10" /></td>
 		   </tr>   
 			  
-           <tr>
+           <tr align="left">
 		      <td>Sealed Photo Volumes During a Single Month:</td>
-			  <td><asp:TextBox ID="SealedVolumesTextBox" runat="server" 
-                  Text='<%# Bind("SealedVolumes") %>' Width="160px" /></td>
+			   <td>
+                   &nbsp;</td>
+			  <td><asp:TextBox ID="SealedVolumesTextBox" runat="server" numeric="integer" 
+                  Text='<%# Bind("SealedVolumes") %>' Width="160px" MaxLength="10" /></td>
 		   </tr>
             	   
-           <tr>
+           <tr align="left">
 		      <td>Remaining Volumes To Be Sealed At the end of the month:</td>
-			  <td><asp:TextBox ID="RemainingVolumesTextBox" runat="server" 
-                  Text='<%# Bind("RemainingVolumes") %>' Width="160px" /></td>
+			   <td>
+                   &nbsp;</td>
+			  <td><asp:TextBox ID="RemainingVolumesTextBox" runat="server" numeric="integer" 
+                  Text='<%# Bind("RemainingVolumes") %>' Width="160px" MaxLength="10" /></td>
 		   </tr>   
           		 
-           <tr>
+           <tr align="left">
 		      <td>Remarks:</td>
+			   <td>
+                   &nbsp;</td>
 			  <td><asp:TextBox ID="RemarksTextBox" runat="server" 
                   Text='<%# Bind("Remarks") %>' Height="60px" Width="160px" /></td>
 		  </tr>     
             	  
           <tr>
-		      <td align="center" colspan=2 >
+		      <td align="center" colspan=3 >
                   <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                   CommandName="Insert" Text="Insert" CssClass="standardButton" />
 		          &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 

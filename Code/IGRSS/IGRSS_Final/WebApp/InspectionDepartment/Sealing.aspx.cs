@@ -13,8 +13,25 @@ public partial class InspectionDepartment_Sealing : System.Web.UI.Page
 
     protected void Button_new_Click(object sender, EventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_Sealing.SetActiveView(Multiview_Sealing.Views[1]);
         FormView_Sealing.ChangeMode(FormViewMode.Insert);
+        DropDownList dropdown_office = FormView_Sealing.FindControl("DropDownList_officename") as DropDownList;
+        TextBox txt1 = FormView_Sealing.FindControl("FromDateTextBox") as TextBox;
+        TextBox txt2 = FormView_Sealing.FindControl("ToDateTextBox") as TextBox;
+        TextBox txt3 = FormView_Sealing.FindControl("PhotoVolumeNoTextBox") as TextBox;
+        TextBox txt4 = FormView_Sealing.FindControl("BookNoTextBox") as TextBox;
+        TextBox txt5 = FormView_Sealing.FindControl("SealedVolumesTextBox") as TextBox;
+        TextBox txt6 = FormView_Sealing.FindControl("RemainingVolumesTextBox") as TextBox;
+        TextBox txt7 = FormView_Sealing.FindControl("RemarksTextBox") as TextBox;
+        txt1.Text = "";
+        txt2.Text = "";
+        txt3.Text = "";
+        txt4.Text = "";
+        txt5.Text = "";
+        txt6.Text = "";
+        txt7.Text = "";
+        dropdown_office.Focus();
     }
     protected void FormView_Sealing_ItemInserting(object sender, FormViewInsertEventArgs e)
     {
@@ -58,7 +75,7 @@ public partial class InspectionDepartment_Sealing : System.Web.UI.Page
     {
         Multiview_Sealing.SetActiveView(Formview);
         FormView_Sealing.PageIndex = e.NewEditIndex;
-        FormView_Sealing.DefaultMode = FormViewMode.Edit;
+        FormView_Sealing.ChangeMode(FormViewMode.Edit);
         e.NewEditIndex = -1;
     }
     protected void FormView_Sealing_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -82,6 +99,7 @@ public partial class InspectionDepartment_Sealing : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_Sealing.SetActiveView(ViewGrid);
     }
     protected void FormView_Sealing_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {

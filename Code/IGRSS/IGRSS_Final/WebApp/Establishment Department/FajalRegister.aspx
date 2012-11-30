@@ -94,7 +94,8 @@
                 <asp:FormView ID="FormView_Fajal" runat="server" DataKeyNames="SrNo" DataSourceID="ods_Fajal"
                     EnableModelValidation="True" DefaultMode="Insert" OnItemCommand="FormView_Fajal_ItemCommand"
                     OnItemInserting="FormView_Fajal_ItemInserting" OnItemInserted="FormView_Fajal_ItemInserted"
-                    OnItemUpdated="FormView_Fajal_ItemUpdated" OnItemUpdating="FormView_Fajal_ItemUpdating">
+                    OnItemUpdated="FormView_Fajal_ItemUpdated" 
+                    OnItemUpdating="FormView_Fajal_ItemUpdating" style="margin-right: 0px">
                     <EditItemTemplate>
                         <table align="center">
                             <tr align="left">
@@ -107,7 +108,7 @@
                                 </td>
                                 <td>
                                     <asp:ListBox ID="ListBox_Designation" runat="server" DataSourceID="ods_Designation"
-                                        DataTextField="Description" DataValueField="Description"></asp:ListBox>
+                                        DataTextField="Description" DataValueField="Description" Width="160px"></asp:ListBox>
                                 </td>
                             </tr>
                             <tr align="left">
@@ -157,12 +158,14 @@
                                     Residence District:
                                 </td>
                                 <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="Residence_DistrictTextBox"
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList_ResidenceDistrict"
                                         ErrorMessage="*"></asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="Residence_DistrictTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                                        Text='<%# Bind("Residence_District") %>' Width="160px" MaxLength="20" />
+                                    <asp:DropDownList ID="DropDownList_ResidenceDistrict" runat="server" 
+                                        DataSourceID="ods_ResidenceDistrict" DataTextField="District_Name" 
+                                        DataValueField="District_Name" Width="160px">
+                                    </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr align="left">
@@ -170,12 +173,14 @@
                                     Current Office:
                                 </td>
                                 <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="Current_OfficeTextBox"
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="DropDownList_CurrentOffice"
                                         ErrorMessage="*"></asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="Current_OfficeTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                                        Text='<%# Bind("Current_Office") %>' Width="160px" MaxLength="20" />
+                                    <asp:DropDownList ID="DropDownList_CurrentOffice" runat="server" 
+                                        DataSourceID="ods_CurrentOffice" DataTextField="OfficeName" 
+                                        DataValueField="OfficeName" Width="160px">
+                                    </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr align="left">
@@ -225,7 +230,7 @@
                                 </td>
                                 <td>
                                     <asp:ListBox ID="ListBox_Designation" runat="server" DataSourceID="ods_Designation"
-                                        DataTextField="Description" DataValueField="Description"></asp:ListBox>
+                                        DataTextField="Description" DataValueField="Description" Width="160px"></asp:ListBox>
                                 </td>
                             </tr>
                             <tr align="left">
@@ -275,12 +280,14 @@
                                     Residence District:
                                 </td>
                                 <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="Residence_DistrictTextBox"
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList_ResidenceDistrict"
                                         ErrorMessage="*"></asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="Residence_DistrictTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                                        Text='<%# Bind("Residence_District") %>' Width="160px" MaxLength="20" />
+                                    <asp:DropDownList ID="DropDownList_ResidenceDistrict" runat="server" 
+                                        DataSourceID="ods_ResidenceDistrict" DataTextField="District_Name" 
+                                        DataValueField="District_Name" Width="160px">
+                                    </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr align="left">
@@ -288,12 +295,14 @@
                                     Current Office:
                                 </td>
                                 <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="Current_OfficeTextBox"
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="DropDownList_CurrentOffice"
                                         ErrorMessage="*"></asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="Current_OfficeTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                                        Text='<%# Bind("Current_Office") %>' Width="160px" MaxLength="20" />
+                                    <asp:DropDownList ID="DropDownList_CurrentOffice" runat="server" 
+                                        DataSourceID="ods_CurrentOffice" DataTextField="OfficeName" 
+                                        DataValueField="OfficeName" Width="160px">
+                                    </asp:DropDownList>
                                 </td>
                             </tr>
                             <tr align="left">
@@ -401,6 +410,25 @@
                         <asp:Parameter Name="Original_FirstName" Type="String" />
                     </UpdateParameters>
                 </asp:ObjectDataSource>
+                <br />
+                <asp:ObjectDataSource ID="ods_ResidenceDistrict" runat="server" 
+                    DeleteMethod="Delete" InsertMethod="Insert" 
+                    OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+                    TypeName="IGRSS.DataAccessLayer.ResidenceDistrictTableAdapters.DistrictMasterTableAdapter" 
+                    UpdateMethod="Update">
+                    <DeleteParameters>
+                        <asp:Parameter Name="Original_SrNo" Type="Int32" />
+                        <asp:Parameter Name="Original_District_Name" Type="String" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="District_Name" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="District_Name" Type="String" />
+                        <asp:Parameter Name="Original_SrNo" Type="Int32" />
+                        <asp:Parameter Name="Original_District_Name" Type="String" />
+                    </UpdateParameters>
+                </asp:ObjectDataSource>
             </center>
             <asp:ObjectDataSource ID="ods_Designation" runat="server" DeleteMethod="Delete" InsertMethod="Insert"
                 OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="IGRSS.DataAccessLayer.DesignationMasterTableAdapters.DesignationMasterTableAdapter"
@@ -453,6 +481,25 @@
                     <asp:Parameter Name="From_Date" Type="DateTime" />
                     <asp:Parameter Name="To_Date" Type="DateTime" />
                     <asp:Parameter Name="SrNo" Type="Int32" />
+                </UpdateParameters>
+            </asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="ods_CurrentOffice" runat="server" 
+                DeleteMethod="Delete" InsertMethod="Insert" 
+                OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+                TypeName="IGRSS.DataAccessLayer.officenameTableAdapters.OfficesTableAdapter" 
+                UpdateMethod="Update">
+                <DeleteParameters>
+                    <asp:Parameter DbType="Guid" Name="Original_OfficeId" />
+                    <asp:Parameter Name="Original_OfficeName" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter DbType="Guid" Name="OfficeId" />
+                    <asp:Parameter Name="OfficeName" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="OfficeName" Type="String" />
+                    <asp:Parameter DbType="Guid" Name="Original_OfficeId" />
+                    <asp:Parameter Name="Original_OfficeName" Type="String" />
                 </UpdateParameters>
             </asp:ObjectDataSource>
         </asp:View>

@@ -156,8 +156,8 @@
                         </td>
 					   <td>
                            <asp:DropDownList ID="DropDownList_Place_Of_Request" runat="server" 
-                               DataSourceID="ods_Place_Of_Request" DataTextField="Place_Name" 
-                               DataValueField="Place_Name" Width="160px" TabIndex="6">
+                               DataSourceID="ods_ResidenceDistrict" DataTextField="District_Name" 
+                               DataValueField="District_Name" Width="160px" TabIndex="6">
                            </asp:DropDownList>
                         </td>
 					</tr>                       
@@ -283,8 +283,8 @@
                         </td>
 					   <td>
                            <asp:DropDownList ID="DropDownList_Place_Of_Request" runat="server" 
-                               DataSourceID="ods_Place_Of_Request" DataTextField="Place_Name" 
-                               DataValueField="Place_Name" Width="160px" TabIndex="6">
+                               DataSourceID="ods_ResidenceDistrict" DataTextField="District_Name" 
+                               DataValueField="District_Name" Width="160px" TabIndex="6">
                            </asp:DropDownList>
                         </td>
 					</tr>                       
@@ -430,24 +430,6 @@
             <asp:Parameter Name="District_Name" Type="String" />
             <asp:Parameter Name="Original_SrNo" Type="Int32" />
             <asp:Parameter Name="Original_District_Name" Type="String" />
-        </UpdateParameters>
-    </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="ods_Place_Of_Request" runat="server" 
-        DeleteMethod="Delete" InsertMethod="Insert" 
-        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="IGRSS.DataAccessLayer.Place_Of_RequestTableAdapters.PlaceMasterTableAdapter" 
-        UpdateMethod="Update">
-        <DeleteParameters>
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Place_Name" Type="String" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="Place_Name" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Place_Name" Type="String" />
-            <asp:Parameter Name="Original_SrNo" Type="Int32" />
-            <asp:Parameter Name="Original_Place_Name" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_EmployeeName" runat="server" 

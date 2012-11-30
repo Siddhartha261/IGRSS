@@ -165,10 +165,14 @@
 			    <td>Name Of Employee:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                        ControlToValidate="Name_Of_EmployeeTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="DropDownList_employeename" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
-				<td><asp:TextBox ID="Name_Of_EmployeeTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                    Text='<%# Bind("Name_Of_Employee") %>' Width="160px" MaxLength="30" /></td>
+				<td>
+                    <asp:DropDownList ID="DropDownList_employeename" runat="server" 
+                        DataSourceID="ods_employeename" DataTextField="FirstName" 
+                        DataValueField="FirstName">
+                    </asp:DropDownList>
+                </td>
 			</tr>              
                 
             <tr align="left">
@@ -298,10 +302,14 @@
 			    <td>Name Of Employee:</td>
 				<td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                        ControlToValidate="Name_Of_EmployeeTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
+                        ControlToValidate="DropDownList_employeename" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
-				<td><asp:TextBox ID="Name_Of_EmployeeTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                    Text='<%# Bind("Name_Of_Employee") %>' Width="160px" MaxLength="30" /></td>
+				<td>
+                    <asp:DropDownList ID="DropDownList_employeename" runat="server" 
+                        DataSourceID="ods_employeename" DataTextField="FirstName" 
+                        DataValueField="FirstName">
+                    </asp:DropDownList>
+                </td>
 			</tr>              
                 
             <tr align="left">
@@ -479,6 +487,10 @@
             <asp:Parameter Name="Remarks" Type="String" />
             <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ods_employeename" runat="server" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter">
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_Grade" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 

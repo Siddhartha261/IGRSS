@@ -3,7 +3,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
-    <script language="javascript">
+    <script type="text/javascript" language="javascript">
         function generateDatePicker(id) {
             $('input[id*="' + id + '"]').datepicker({
                 showOn: "both",
@@ -11,6 +11,16 @@
                 buttonImageOnly: true
             });
         }
+
+      function comparedate() {
+          var txtbox = document.getElementById('<%=FormView_SOFile.FindControl("DateOfCircularsTextBox").ClientID%>');
+               var cir_date=Date.parse(txtbox.value);
+               var datenow = new  Date();
+               if (cir_date > datenow) {
+              alert("Please check for the date entered");
+              }
+      }
+
 
 //        function comparedate() {
 //          var txtbox = document.getElementById('<%=FormView_SOFile.FindControl("DateOfCircularsTextBox").ClientID%>');

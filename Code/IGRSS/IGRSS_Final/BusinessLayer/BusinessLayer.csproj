@@ -149,6 +149,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Adjudication.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\Anamattype.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Anamattype.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\AppealRegister.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -798,6 +803,17 @@
     </None>
     <None Include="DataAccessLayer\Adjudication.xss">
       <DependentUpon>Adjudication.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Anamattype.xsc">
+      <DependentUpon>Anamattype.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Anamattype.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Anamattype.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Anamattype.xss">
+      <DependentUpon>Anamattype.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Appeal.xsc">
       <DependentUpon>Appeal.xsd</DependentUpon>

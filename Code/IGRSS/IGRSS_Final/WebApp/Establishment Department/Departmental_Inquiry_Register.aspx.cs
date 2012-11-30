@@ -18,15 +18,13 @@ public partial class Establishment_Department_Departmental_Inquiry_Register : Sy
         TextBox txt1 = FormView_Departmental_Inquiry_Register.FindControl("FileNoTextBox") as TextBox;
         TextBox txt2 = FormView_Departmental_Inquiry_Register.FindControl("SubjectTextBox") as TextBox;
         TextBox txt3 = FormView_Departmental_Inquiry_Register.FindControl("Date_Of_Charge_SheetTextBox") as TextBox;
-        TextBox txt4 = FormView_Departmental_Inquiry_Register.FindControl("Name_Of_EmployeeTextBox") as TextBox;
         TextBox txt5 = FormView_Departmental_Inquiry_Register.FindControl("DateTextBox") as TextBox;
         TextBox txt6 = FormView_Departmental_Inquiry_Register.FindControl("Date_Of_Inquiry_SubmissionTextBox") as TextBox;
         TextBox txt7 = FormView_Departmental_Inquiry_Register.FindControl("Date_Of_Receiving_Inquiry_ReportTextBox") as TextBox;
         TextBox txt8 = FormView_Departmental_Inquiry_Register.FindControl("RemarksTextBox") as TextBox;
         txt1.Text = "";
         txt2.Text = "";
-        txt3.Text = "";
-        txt4.Text = "";
+        txt3.Text = "";       
         txt5.Text = "";
         txt6.Text = "";
         txt7.Text = "";
@@ -35,6 +33,9 @@ public partial class Establishment_Department_Departmental_Inquiry_Register : Sy
     }
     protected void FormView_Departmental_Inquiry_Register_ItemInserting(object sender, FormViewInsertEventArgs e)
     {
+        DropDownList dropdown_employeename = FormView_Departmental_Inquiry_Register.FindControl("DropDownList_employeename") as DropDownList;
+        e.Values["Name_Of_Employee"] = dropdown_employeename.SelectedValue;
+
         DropDownList DropDown_Grade = FormView_Departmental_Inquiry_Register.FindControl("DropDownList_Grade") as DropDownList;
         e.Values["Grade"] = DropDown_Grade.SelectedValue;
 
@@ -110,6 +111,9 @@ public partial class Establishment_Department_Departmental_Inquiry_Register : Sy
     }
     protected void FormView_Departmental_Inquiry_Register_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {
+        DropDownList dropdown_employeename = FormView_Departmental_Inquiry_Register.FindControl("DropDownList_employeename") as DropDownList;
+        e.NewValues["Name_Of_Employee"] = dropdown_employeename.SelectedValue;
+        
         DropDownList DropDown_Grade = FormView_Departmental_Inquiry_Register.FindControl("DropDownList_Grade") as DropDownList;
         e.NewValues["Grade"] = DropDown_Grade.SelectedValue;
 

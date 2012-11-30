@@ -6,7 +6,7 @@
     <View Name="Assign Permissions"
 			  Url="~/Central%20Administration%20Console/AssignUserPermissions.aspx"
 			  Mode="AssignUserPermissions" Visible="False"/>
-    <Module Name="Masters"
+    <Module Name="Masters" 
 			Code="Mas">
       <View Name="File Register"
           Url="~/AdministrationDepartment/FileRegister.aspx"

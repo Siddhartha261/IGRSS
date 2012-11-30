@@ -10,6 +10,17 @@
         });
     }
 
+    function comparedate() {
+        var txtbox1 = document.getElementById('<%=FormView_CDRegister.FindControl("YearDateTextBox").ClientID%>');
+        var txtbox2 = document.getElementById('<%=FormView_CDRegister.FindControl("SecondCopyDateTextBox").ClientID%>');
+        var year_date = Date.parse(txtbox1.value);
+        var secondcopy_date = Date.parse(txtbox2.value);
+        var datenow = new Date();
+        if (((year_date > datenow) && (secondcopy_date < datenow)) ||((year_date < datenow) && (secondcopy_date > datenow)) || ((year_date > datenow) && (secondcopy_date > datenow))){
+            alert("Please check for the date entered");
+        }
+    }
+
 
     function AllowAlphabet(e) {
         isIE = document.all ? 1 : 0
