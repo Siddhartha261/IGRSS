@@ -16,14 +16,12 @@ public partial class Register_and_marriage_BookFormsRegister : System.Web.UI.Pag
         Multiview_BookFormsRegister.SetActiveView(view2_Formview);
         FormView_BookFormRegister.ChangeMode(FormViewMode.Insert);
         TextBox txt1 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
-        TextBox txt2 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
-        TextBox txt3= (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
-        TextBox txt4 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
-        TextBox txt5 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
-        TextBox txt6 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
-        TextBox txt7 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
-        TextBox txt8 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
-        TextBox txt9 = (TextBox)FormView_BookFormRegister.FindControl("No_of_formsTextBox");
+        TextBox txt2 = (TextBox)FormView_BookFormRegister.FindControl("No_Demand_quantityTextBox");
+        TextBox txt3 = (TextBox)FormView_BookFormRegister.FindControl("No_Distributed_StockTextBox");
+        TextBox txt4 = (TextBox)FormView_BookFormRegister.FindControl("Actual_StockTextBox");
+        TextBox txt5 = (TextBox)FormView_BookFormRegister.FindControl("RemarksTextBox");
+        TextBox txt6 = (TextBox)FormView_BookFormRegister.FindControl("No_Forms_GivenTextBox");
+        TextBox txt7 = (TextBox)FormView_BookFormRegister.FindControl("Recd_DateTextBox");
         txt1.Text = "";
         txt2.Text = "";
         txt3.Text = "";
@@ -31,15 +29,14 @@ public partial class Register_and_marriage_BookFormsRegister : System.Web.UI.Pag
         txt5.Text = "";
         txt6.Text = "";
         txt7.Text = "";
-        txt8.Text = "";
-        txt9.Text = "";
         txt1.Focus();
 
     }
 
     protected void FormView_BookForm_ItemInserting(object sender, FormViewInsertEventArgs e)
     {
-
+        DropDownList DropDown_EmployeeName = FormView_BookFormRegister.FindControl("DropDownList_EmployeeName") as DropDownList;
+        e.Values["Emp_Name"] = DropDown_EmployeeName.SelectedValue;
 
         DropDownList DropDownList1 = FormView_BookFormRegister.FindControl("DropDownListDepartment") as DropDownList;
         e.Values["Dept_name"] = DropDownList1.SelectedValue;
@@ -124,5 +121,8 @@ public partial class Register_and_marriage_BookFormsRegister : System.Web.UI.Pag
     {
         DropDownList DropDownList1 = FormView_BookFormRegister.FindControl("DropDownListDepartment") as DropDownList;
         e.NewValues["Dept_name"] = DropDownList1.SelectedValue;
+
+        DropDownList DropDown_EmployeeName = FormView_BookFormRegister.FindControl("DropDownList_EmployeeName") as DropDownList;
+        e.NewValues["Emp_Name"] = DropDown_EmployeeName.SelectedValue;
     }
 }

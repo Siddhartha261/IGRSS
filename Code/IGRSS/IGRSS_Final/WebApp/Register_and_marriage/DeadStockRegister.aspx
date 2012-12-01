@@ -8,9 +8,30 @@
             $('input[id*="' + id + '"]').datepicker({
                 showOn: "both",
                 buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
-                buttonImageOnly: true
+                buttonImageOnly: true,
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1940:2025',
+                onClose: function () {
+                    var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
+                    var dateNow = new Date();
+                    if (dateSelected > dateNow) {
+                        alert("Selected Date is greater than Current date");
+                    }
+                }
             });
         }
+
+        //temp code for comparing amount realized and amount written-off
+        function Compareamt(event) {
+            var amt_realized = document.getElementById('<%=FormView_DeadStock.FindControl("AmtRealizeTextBox").ClientID%>');
+            var amt_written_off = document.getElementById('<%=FormView_DeadStock.FindControl("AmtWritten_offTextBox").ClientID%>');
+            if (amt_realized > amt_written_off) {
+                alert("Amount Realized should be greater than Amount Written-off");
+                event.preventDefault();
+            }
+        }
+        //ends temp code
 
 
         function AllowAlphabet(e) {
@@ -289,7 +310,7 @@
                                     <td>
                                         <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal"
                                             TabIndex="5" Width="160px">
-                                            <asp:ListItem Selected="True">Authority</asp:ListItem>
+                                            <asp:ListItem>Authority</asp:ListItem>
                                             <asp:ListItem>Voucher</asp:ListItem>
                                         </asp:RadioButtonList>
                                     </td>
@@ -322,7 +343,7 @@
                                 </tr>
                                 <tr>
                                     <td align="center" colspan="6">
-                                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Update"
+                                        <asp:LinkButton ID="InsertButton" runat="server" OnClientClick="Compareamt(event)" CausesValidation="True" CommandName="Update"
                                             Text="Update" CssClass="standardButton" TabIndex="14" AccessKey="I" />
                                         &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" CommandName="reset"
                                             Text="Reset" OnClientClick="resetTextFields();return false;" CssClass="standardButton"
@@ -457,7 +478,7 @@
                                     <td>
                                         <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal"
                                             TabIndex="5" Width="160px">
-                                            <asp:ListItem Selected="True">Authority</asp:ListItem>
+                                            <asp:ListItem>Authority</asp:ListItem>
                                             <asp:ListItem>Voucher</asp:ListItem>
                                         </asp:RadioButtonList>
                                     </td>
@@ -601,6 +622,7 @@
                     <asp:Parameter Name="SrNo" Type="Int32" />
                 </UpdateParameters>
             </asp:ObjectDataSource>
+            <br />
         </asp:View>
     </asp:MultiView>
 </asp:Content>

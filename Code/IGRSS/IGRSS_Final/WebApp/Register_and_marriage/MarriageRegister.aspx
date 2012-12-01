@@ -6,7 +6,17 @@
         $('input[id*="' + id + '"]').datepicker({
             showOn: "both",
             buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
-            buttonImageOnly: true
+            buttonImageOnly: true,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '1940:2025',
+            onClose: function () {
+                var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
+                var dateNow = new Date();
+                if (dateSelected > dateNow) {
+                    alert("Selected Date is greater than Current date");
+                }
+            }
         });
     }
 
@@ -161,7 +171,9 @@
         EnableModelValidation="True" 
         onitemcommand="FormView_Marriage_certificate_ItemCommand" 
         oniteminserted="FormView_Marriagecertificate_ItemInserted" 
-        onitemupdated="FormView_Marriagecertificate_ItemUpdated" >
+        onitemupdated="FormView_Marriagecertificate_ItemUpdated" 
+        oniteminserting="FormView_Marriagecertificate_ItemInserting" 
+        onitemupdating="FormView_Marriagecertificate_ItemUpdating" >
         <EditItemTemplate>
                      
 			            
@@ -169,90 +181,139 @@
 			
 			<table align="center" cellspacing="5">
 			<tr align="left"><td>Bridegroom Name :
-			</td>
+			</td><td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="Bridegroom_nameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td>
            <td> 
-               <asp:TextBox ID="Bridegroom_nameTextBox" runat="server" 
-                Text='<%# Bind("Bridegroom_name") %>' MaxLength="30" /></td>
-				<td>Place Of Marriage :</td><td> 
-                <asp:TextBox ID="MarriagePlaceTextBox" runat="server" 
-                Text='<%# Bind("MarriagePlace") %>' MaxLength="30" /></td>
+               <asp:TextBox ID="Bridegroom_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Bridegroom_name") %>' MaxLength="30" Width="160px" /></td>
+				<td>Place Of Marriage :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="MarriagePlaceTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="MarriagePlaceTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("MarriagePlace") %>' MaxLength="30" TabIndex="5" 
+                    Width="160px" /></td>
 			</tr>
-			<tr align="left"><td>Father Name Of Bridegroom:</td><td>
-                <asp:TextBox ID="Bridegroom_father_nameTextBox" runat="server" 
-                Text='<%# Bind("Bridegroom_father_name") %>' MaxLength="30" /></td>
-				<td>Village / Church Name :</td><td> 
-                <asp:TextBox ID="Village_church_nameTextBox" runat="server" 
-                Text='<%# Bind("Village_church_name") %>' MaxLength="30" /></td>
+			<tr align="left"><td>Father Name Of Bridegroom:</td><td></td><td>
+                <asp:TextBox ID="Bridegroom_father_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Bridegroom_father_name") %>' MaxLength="30" TabIndex="1" 
+                    Width="160px" /></td>
+				<td>Village / Church Name :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="Village_church_nameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="Village_church_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Village_church_name") %>' MaxLength="30" TabIndex="6" 
+                    Width="160px" /></td>
 			</tr>
 			<tr align="left">
-			<td>Bride Name :</td><td> 
-                <asp:TextBox ID="Bride_nameTextBox" runat="server" 
-                Text='<%# Bind("Bride_name") %>' MaxLength="30" /></td>
-				<td>Taluka:</td><td> <asp:TextBox ID="TalkTextBox" runat="server" 
-                    Text='<%# Bind("Talk") %>' Height="60px" TextMode="MultiLine" /></td>
+			<td>Bride Name :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="Bride_nameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
+                <asp:TextBox ID="Bride_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Bride_name") %>' MaxLength="30" TabIndex="2" Width="160px" /></td>
+				<td>Taluka:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
+                    ControlToValidate="DropDownList_Taluka" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
+                    <asp:DropDownList ID="DropDownList_Taluka" runat="server" 
+                        DataSourceID="ods_TalukaMaster" DataTextField="Taluka_Name" 
+                        DataValueField="Taluka_Name">
+                    </asp:DropDownList>
+                </td>
 			</tr>	
-			<tr align="left"><td> Father Name Of Bride:</td><td> 
-                <asp:TextBox ID="Bride_father_nameTextBox" runat="server" 
-                Text='<%# Bind("Bride_father_name") %>' MaxLength="30" /></td>
-				<td>District :</td><td> 
-                <asp:TextBox ID="DistrictTextBox" runat="server" 
-                Text='<%# Bind("District") %>' MaxLength="20" /></td>
+			<tr align="left"><td> Father Name Of Bride:</td><td></td><td> 
+                <asp:TextBox ID="Bride_father_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
+                Text='<%# Bind("Bride_father_name") %>' MaxLength="30" TabIndex="3" 
+                    Width="160px" /></td>
+				<td>District :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="DropDownList_District" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
+                    <asp:DropDownList ID="DropDownList_District" runat="server" 
+                        DataSourceID="ods_DistrictMaster" DataTextField="District_Name" 
+                        DataValueField="District_Name">
+                    </asp:DropDownList>
+                </td>
 			</tr>
 			<tr align="left">
-			<td>Date Of Marriage :</td><td> 
+			<td>Date Of Marriage :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="MarriageDateTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
                 <asp:TextBox ID="MarriageDateTextBox" runat="server" 
-                Text='<%# Bind("MarriageDate") %>' MaxLength="20" /></td>
+                Text='<%# Bind("MarriageDate") %>' MaxLength="20" TabIndex="4" Width="160px" /></td>
 				<td>
 				</td>
 				<td>
 				</td>
 				</tr>
 			<tr align="left">
-			 <td colspan="2"> <h4> For Office Use Only</h4></td>
+			 <td colspan="2"> <h4> For Office Use Only</h4></td><td></td>
 			<td>
 				</td>
 				<td>
 				</td>
-			<tr align="left"><td>Application No:</td><td> 
-                <asp:TextBox ID="ApplicationNoTextBox" numeric="integer" runat="server" 
-                Text='<%# Bind("ApplicationNo") %>' MaxLength="10" /></td>
+			<tr align="left"><td>Application No:</td><td></td><td> 
+                <asp:TextBox ID="ApplicationNoTextBox" runat="server" numeric="integer"
+                Text='<%# Bind("ApplicationNo") %>' MaxLength="10" TabIndex="9" 
+                    Width="160px" /></td>
 				
             
            
-            <td> Date Of Application:</td> <td>
+            <td> Date Of Application:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ControlToValidate="ApplicationDateTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td> <td>
                 <asp:TextBox ID="ApplicationDateTextBox" runat="server" 
-                Text='<%# Bind("ApplicationDate") %>' MaxLength="20" /></td>
+                Text='<%# Bind("ApplicationDate") %>' MaxLength="20" TabIndex="12" 
+                    Width="160px" /></td>
 			</tr>
-			<tr align="left"><td>No Of Copies :</td><td> <asp:TextBox ID="NoOfCopiesTextBox" 
-                    numeric="integer" runat="server" 
-                Text='<%# Bind("NoOfCopies") %>' MaxLength="5" /></td>
+			<tr align="left"><td>No Of Copies :</td><td></td><td> 
+                <asp:TextBox ID="NoOfCopiesTextBox" 
+                    runat="server" numeric="integer"
+                Text='<%# Bind("NoOfCopies") %>' MaxLength="5" TabIndex="10" /></td>
             
            
-            <td>Receipt No :</td><td> 
+            <td>Receipt No :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="ReceiptNoTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
                 <asp:TextBox ID="ReceiptNoTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("ReceiptNo") %>' MaxLength="10" /></td>
+                Text='<%# Bind("ReceiptNo") %>' MaxLength="10" TabIndex="13" Width="160px" /></td>
 			</tr>
-			<tr align="left"><td>Fees :</td><td>  <asp:TextBox ID="FeesTextBox" runat="server"  
-                    numeric="integer" Text='<%# Bind("Fees") %>' MaxLength="5" /></td>
+			<tr align="left"><td>Fees :</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="FeesTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td>  <asp:TextBox ID="FeesTextBox" runat="server"  
+                    numeric="integer" Text='<%# Bind("Fees") %>' MaxLength="5" TabIndex="11" 
+                    Width="160px" /></td>
             
           
-            <td>Copies Furnished:</td><td><asp:TextBox ID="CopiesFurnishedTextBox" 
+            <td>Copies Furnished:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ControlToValidate="CopiesFurnishedTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td><asp:TextBox ID="CopiesFurnishedTextBox" 
                     runat="server" numeric="integer"
-                Text='<%# Bind("CopiesFurnished") %>' MaxLength="4" /></td>
+                Text='<%# Bind("CopiesFurnished") %>' MaxLength="5" TabIndex="14" 
+                    Width="160px" /></td>
 			</tr>
-            
-            
-            <tr>
-			 <td align="center" colspan="4"> 
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="U" />
-                 &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
-                CausesValidation="False" CommandName="reset" Text="Reset" 
-                    onclientclick="resetTextFields();return false;" CssClass="standardButton" 
-                     AccessKey="R" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" AccessKey="B" /></td>
+			    <tr>
+                    <td align="center" colspan="6">
+                        <asp:LinkButton ID="UpdateButton" runat="server" AccessKey="U" 
+                            CausesValidation="True" CommandName="Update" CssClass="standardButton" 
+                            Text="Update" />
+                        &nbsp;<asp:LinkButton ID="ResetButton" runat="server" AccessKey="R" 
+                            CausesValidation="False" CommandName="reset" CssClass="standardButton" 
+                            onclientclick="resetTextFields();return false;" Text="Reset" />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" AccessKey="B" 
+                            CausesValidation="False" CommandName="Back" CssClass="standardButton" 
+                            Text="Back" />
+                    </td>
+                </tr>
 			</tr>
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -293,8 +354,15 @@
                 </td><td> 
                 <asp:TextBox ID="Bride_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("Bride_name") %>' MaxLength="30" TabIndex="2" Width="160px" /></td>
-				<td>Taluka:</td><td></td><td> <asp:TextBox ID="TalkTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                    Text='<%# Bind("Talk") %>' TabIndex="7" Width="160px" /></td>
+				<td>Taluka:</td><td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
+                    ControlToValidate="DropDownList_Taluka" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
+                    <asp:DropDownList ID="DropDownList_Taluka" runat="server" 
+                        DataSourceID="ods_TalukaMaster" DataTextField="Taluka_Name" 
+                        DataValueField="Taluka_Name">
+                    </asp:DropDownList>
+                </td>
 			</tr>	
 			<tr align="left"><td> Father Name Of Bride:</td><td></td><td> 
                 <asp:TextBox ID="Bride_father_nameTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
@@ -302,10 +370,13 @@
                     Width="160px" /></td>
 				<td>District :</td><td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                    ControlToValidate="DistrictTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                    ControlToValidate="DropDownList_District" ErrorMessage="*">*</asp:RequiredFieldValidator>
                 </td><td> 
-                <asp:TextBox ID="DistrictTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
-                Text='<%# Bind("District") %>' MaxLength="20" TabIndex="8" Width="160px" /></td>
+                    <asp:DropDownList ID="DropDownList_District" runat="server" 
+                        DataSourceID="ods_DistrictMaster" DataTextField="District_Name" 
+                        DataValueField="District_Name">
+                    </asp:DropDownList>
+                </td>
 			</tr>
 			<tr align="left">
 			<td>Date Of Marriage :</td><td>
@@ -505,6 +576,45 @@
             <asp:Parameter Name="Fees" Type="Int32" />
             <asp:Parameter Name="CopiesFurnished" Type="Int32" />
             <asp:Parameter Name="SrNo" Type="Int32" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    
+    <asp:ObjectDataSource ID="ods_DistrictMaster" runat="server" 
+        DeleteMethod="Delete" InsertMethod="Insert" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.ResidenceDistrictTableAdapters.DistrictMasterTableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_District_Name" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="District_Name" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="District_Name" Type="String" />
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_District_Name" Type="String" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    
+    <br />
+    <asp:ObjectDataSource ID="ods_TalukaMaster" runat="server" 
+        DeleteMethod="Delete" InsertMethod="Insert" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.TalukaMasterTableAdapters.TalukaMasterTableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Taluka_Name" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="Taluka_Name" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Taluka_Name" Type="String" />
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Taluka_Name" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
     

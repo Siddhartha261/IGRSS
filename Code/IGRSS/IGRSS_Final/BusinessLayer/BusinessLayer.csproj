@@ -491,6 +491,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SunavniRegister.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\TalukaMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TalukaMaster.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Tarankit.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1628,6 +1633,17 @@
     </None>
     <None Include="DataAccessLayer\SunavniRegister.xss">
       <DependentUpon>SunavniRegister.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\TalukaMaster.xsc">
+      <DependentUpon>TalukaMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\TalukaMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TalukaMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\TalukaMaster.xss">
+      <DependentUpon>TalukaMaster.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Tarankit.xsc">
       <DependentUpon>Tarankit.xsd</DependentUpon>

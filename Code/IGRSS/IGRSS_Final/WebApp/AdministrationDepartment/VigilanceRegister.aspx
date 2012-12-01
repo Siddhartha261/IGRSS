@@ -6,7 +6,17 @@
           $('input[id*="' + id + '"]').datepicker({
               showOn: "both",
               buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
-              buttonImageOnly: true
+              buttonImageOnly: true,
+              changeMonth: true,
+              changeYear: true,
+              yearRange: '1940:2025',
+              onClose: function () {
+                  var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
+                  var dateNow = new Date();
+                  if (dateSelected > dateNow) {
+                      alert("Selected Date is greater than Current date");
+                  }
+              }
           });
       }
       $(function () {
@@ -158,7 +168,7 @@
                 </td>
    <td> 
                 <asp:TextBox ID="deptdateTextBox" runat="server" 
-                Text='<%# Bind("deptdate") %>' TabIndex="1" MaxLength="20" Width="160px" /></td></tr>
+                Text='<%# Bind("deptdate") %>' MaxLength="20" Width="160px" /></td></tr>
             
            
             <tr align="left"><td>Date OF Letter Received:</td><td>
@@ -166,7 +176,7 @@
                     ErrorMessage="*" ControlToValidate="letterdateTextBox">*</asp:RequiredFieldValidator>
                 </td><td>
                 <asp:TextBox ID="letterdateTextBox" runat="server" 
-                Text='<%# Bind("letterdate") %>' TabIndex="2" Rows="20" Width="160px" /></td></tr>
+                Text='<%# Bind("letterdate") %>' Rows="20" Width="160px" /></td></tr>
             
             
             <tr align="left"><td>Name Of Applicant:</td><td>
@@ -174,26 +184,33 @@
                     ErrorMessage="*" ControlToValidate="applnameTextBox">*</asp:RequiredFieldValidator>
                 </td><td>
                 <asp:TextBox ID="applnameTextBox" runat="server"  onkeypress="return AllowAlphabet(event)" 
-                Text='<%# Bind("applname") %>' TabIndex="3" Rows="30" Width="160px" /></td></tr>
+                Text='<%# Bind("applname") %>' Rows="30" Width="160px" /></td></tr>
             
             <tr align="left"><td> Name Of Employee:</td><td>
-                &nbsp;</td><td>
-                <asp:TextBox ID="empnameTextBox" runat="server"   onkeypress="return AllowAlphabet(event)"  
-                    Text='<%# Bind("empname") %>' TabIndex="4" Rows="30" Width="160px" /></td></tr>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="DropDownList_employeename" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td>
+                    <asp:DropDownList ID="DropDownList_employeename" runat="server" 
+                        DataSourceID="ods_employeename" DataTextField="FirstName" 
+                        DataValueField="FirstName" Width="160px">
+                    </asp:DropDownList>
+                </td></tr>
            
             
             <tr align="left"><td> Designation Of Employee:</td><td>
-                &nbsp;</td><td> 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ControlToValidate="designation" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
                 <asp:DropDownList ID="designation" runat="server" 
                     DataSourceID="ObjectDataSource1" DataTextField="Name" 
-                    DataValueField="Name" TabIndex="5" Width="160px">
+                    DataValueField="Name" Width="160px">
                 </asp:DropDownList>
                 </td></tr>
            
            
             <tr align="left"><td>Application Summary:</td><td></td><td> 
                 <asp:TextBox ID="applsummaryTextBox" runat="server"   onkeypress="return AllowAlphabet(event)" 
-                Text='<%# Bind("applsummary") %>' TabIndex="6" Width="160px" /></td></tr>
+                Text='<%# Bind("applsummary") %>' Width="160px" /></td></tr>
             
            
             <tr align="left"><td>Date of Sending Report:</td><td>
@@ -201,12 +218,12 @@
                     ErrorMessage="*" ControlToValidate="reportdateTextBox">*</asp:RequiredFieldValidator>
                 </td><td> 
                 <asp:TextBox ID="reportdateTextBox" runat="server" 
-                Text='<%# Bind("reportdate") %>' TabIndex="7" MaxLength="20" Width="160px" /></td></tr>
+                Text='<%# Bind("reportdate") %>' MaxLength="20" Width="160px" /></td></tr>
             
            
             <tr align="left"><td>Latest Status:</td><td></td><td> 
                 <asp:TextBox ID="StatusTextBox" runat="server"   onkeypress="return AllowAlphabet(event)" 
-                    Text='<%# Bind("Status") %>' TabIndex="8" MaxLength="30" Width="160px" /></td></tr>
+                    Text='<%# Bind("Status") %>' MaxLength="30" Width="160px" /></td></tr>
             
            
             <tr align="left"><td>File Closing Date:</td><td>
@@ -214,27 +231,28 @@
                     ErrorMessage="*" ControlToValidate="closedateTextBox">*</asp:RequiredFieldValidator>
                 </td><td> 
                 <asp:TextBox ID="closedateTextBox" runat="server" 
-                Text='<%# Bind("closedate") %>' TabIndex="9" MaxLength="20" Width="160px" /></td></tr>
+                Text='<%# Bind("closedate") %>' MaxLength="20" Width="160px" /></td></tr>
             
            
             <tr align="left"><td>Remarks:</td><td></td><td>
                 <asp:TextBox ID="remarksTextBox" runat="server" 
-                    Text='<%# Bind("remarks") %>' TabIndex="10" Width="160px" Height="60px" 
+                    Text='<%# Bind("remarks") %>' Width="160px" Height="60px" 
                     TextMode="MultiLine" /></td></tr>
+
             
             
             <tr>
             <td align="center" colspan="3"> 
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" TabIndex="11" 
+                CommandName="Update" Text="Update" CssClass="standardButton" TabIndex="1" 
                     AccessKey="U" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
                     onclientclick="resetTextFields();return false;" CssClass="standardButton" 
-                    TabIndex="12" AccessKey="R" />
+                    TabIndex="2" AccessKey="R" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" TabIndex="13" AccessKey="B" /></td>
+                    CssClass="standardButton" TabIndex="3" AccessKey="B" /></td>
                 </tr>
            
  </table>
@@ -256,7 +274,7 @@
                 </td>
    <td> 
                 <asp:TextBox ID="deptdateTextBox" runat="server" 
-                Text='<%# Bind("deptdate") %>' TabIndex="1" MaxLength="20" Width="160px" /></td></tr>
+                Text='<%# Bind("deptdate") %>' MaxLength="20" Width="160px" /></td></tr>
             
            
             <tr align="left"><td>Date OF Letter Received:</td><td>
@@ -264,7 +282,7 @@
                     ErrorMessage="*" ControlToValidate="letterdateTextBox">*</asp:RequiredFieldValidator>
                 </td><td>
                 <asp:TextBox ID="letterdateTextBox" runat="server" 
-                Text='<%# Bind("letterdate") %>' TabIndex="2" Rows="20" Width="160px" /></td></tr>
+                Text='<%# Bind("letterdate") %>' Rows="20" Width="160px" /></td></tr>
             
             
             <tr align="left"><td>Name Of Applicant:</td><td>
@@ -272,26 +290,33 @@
                     ErrorMessage="*" ControlToValidate="applnameTextBox">*</asp:RequiredFieldValidator>
                 </td><td>
                 <asp:TextBox ID="applnameTextBox" runat="server"  onkeypress="return AllowAlphabet(event)" 
-                Text='<%# Bind("applname") %>' TabIndex="3" Rows="30" Width="160px" /></td></tr>
+                Text='<%# Bind("applname") %>' Rows="30" Width="160px" /></td></tr>
             
             <tr align="left"><td> Name Of Employee:</td><td>
-                &nbsp;</td><td>
-                <asp:TextBox ID="empnameTextBox" runat="server"   onkeypress="return AllowAlphabet(event)"  
-                    Text='<%# Bind("empname") %>' TabIndex="4" Rows="30" Width="160px" /></td></tr>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="DropDownList_employeename" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td>
+                    <asp:DropDownList ID="DropDownList_employeename" runat="server" 
+                        DataSourceID="ods_employeename" DataTextField="FirstName" 
+                        DataValueField="FirstName" Width="160px">
+                    </asp:DropDownList>
+                </td></tr>
            
             
             <tr align="left"><td> Designation Of Employee:</td><td>
-                &nbsp;</td><td> 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ControlToValidate="designation" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                </td><td> 
                 <asp:DropDownList ID="designation" runat="server" 
                     DataSourceID="ObjectDataSource1" DataTextField="Name" 
-                    DataValueField="Name" TabIndex="5" Width="160px">
+                    DataValueField="Name" Width="160px">
                 </asp:DropDownList>
                 </td></tr>
            
            
             <tr align="left"><td>Application Summary:</td><td></td><td> 
                 <asp:TextBox ID="applsummaryTextBox" runat="server"   onkeypress="return AllowAlphabet(event)" 
-                Text='<%# Bind("applsummary") %>' TabIndex="6" Width="160px" /></td></tr>
+                Text='<%# Bind("applsummary") %>' Width="160px" /></td></tr>
             
            
             <tr align="left"><td>Date of Sending Report:</td><td>
@@ -299,12 +324,12 @@
                     ErrorMessage="*" ControlToValidate="reportdateTextBox">*</asp:RequiredFieldValidator>
                 </td><td> 
                 <asp:TextBox ID="reportdateTextBox" runat="server" 
-                Text='<%# Bind("reportdate") %>' TabIndex="7" MaxLength="20" Width="160px" /></td></tr>
+                Text='<%# Bind("reportdate") %>' MaxLength="20" Width="160px" /></td></tr>
             
            
             <tr align="left"><td>Latest Status:</td><td></td><td> 
                 <asp:TextBox ID="StatusTextBox" runat="server"   onkeypress="return AllowAlphabet(event)" 
-                    Text='<%# Bind("Status") %>' TabIndex="8" MaxLength="30" Width="160px" /></td></tr>
+                    Text='<%# Bind("Status") %>' MaxLength="30" Width="160px" /></td></tr>
             
            
             <tr align="left"><td>File Closing Date:</td><td>
@@ -312,27 +337,27 @@
                     ErrorMessage="*" ControlToValidate="closedateTextBox">*</asp:RequiredFieldValidator>
                 </td><td> 
                 <asp:TextBox ID="closedateTextBox" runat="server" 
-                Text='<%# Bind("closedate") %>' TabIndex="9" MaxLength="20" Width="160px" /></td></tr>
+                Text='<%# Bind("closedate") %>' MaxLength="20" Width="160px" /></td></tr>
             
            
             <tr align="left"><td>Remarks:</td><td></td><td>
                 <asp:TextBox ID="remarksTextBox" runat="server" 
-                    Text='<%# Bind("remarks") %>' TabIndex="10" Width="160px" Height="60px" 
+                    Text='<%# Bind("remarks") %>' Width="160px" Height="60px" 
                     TextMode="MultiLine" /></td></tr>
             
             
             <tr>
             <td align="center" colspan="3"> 
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" TabIndex="11" 
+                CommandName="Insert" Text="Insert" CssClass="standardButton" 
                     AccessKey="I" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
                     onclientclick="resetTextFields();return false;" CssClass="standardButton" 
-                    TabIndex="12" AccessKey="R" />
+                    AccessKey="R" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" TabIndex="13" AccessKey="B" /></td>
+                    CssClass="standardButton" AccessKey="B" /></td>
                 </tr>
            
  </table>
@@ -479,6 +504,11 @@
             <asp:Parameter Name="remarks" Type="String" />
             <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
+    </asp:ObjectDataSource>
+    
+    <asp:ObjectDataSource ID="ods_employeename" runat="server" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter">
     </asp:ObjectDataSource>
     
 </asp:View>    

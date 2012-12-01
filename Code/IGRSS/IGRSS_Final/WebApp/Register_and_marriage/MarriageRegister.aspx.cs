@@ -127,5 +127,21 @@ public partial class Register_and_marriage_MarriageRegister : System.Web.UI.Page
             ShowMessage("Unable to add record", true);
         }
     }
-   
+
+    protected void FormView_Marriagecertificate_ItemInserting(object sender, FormViewInsertEventArgs e)
+    {
+        DropDownList DropDown_Taluka = FormView_Marriagecertificate.FindControl("DropDownList_Taluka") as DropDownList;
+        e.Values["Taluka"] = DropDown_Taluka.SelectedValue;
+
+        DropDownList DropDown_District = FormView_Marriagecertificate.FindControl("DropDownList_District") as DropDownList;
+        e.Values["District"] = DropDown_District.SelectedValue;
+    }
+    protected void FormView_Marriagecertificate_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+    {
+        DropDownList DropDown_Taluka = FormView_Marriagecertificate.FindControl("DropDownList_Taluka") as DropDownList;
+        e.NewValues["Taluka"] = DropDown_Taluka.SelectedValue;
+
+        DropDownList DropDown_District = FormView_Marriagecertificate.FindControl("DropDownList_District") as DropDownList;
+        e.NewValues["District"] = DropDown_District.SelectedValue;
+    }
 }

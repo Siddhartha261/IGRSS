@@ -6,7 +6,17 @@
         $('input[id*="' + id + '"]').datepicker({
             showOn: "both",
             buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
-            buttonImageOnly: true
+            buttonImageOnly: true,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '1940:2025',
+            onClose: function () {
+                var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
+                var dateNow = new Date();
+                if (dateSelected > dateNow) {
+                    alert("Selected Date is greater than Current date");
+                }
+            }
         });
     }
 
@@ -168,19 +178,21 @@
 		 <td> 
              <asp:DropDownList ID="DropDownListDepartment" runat="server" 
                     DataSourceID="ObjectDataSourceDepartment" DataTextField="Name" 
-                    DataValueField="Name" Width="160px">
+                    DataValueField="Name" Width="160px" TabIndex="5">
                 </asp:DropDownList></td>
 		 </tr>
 		 <tr align="left">
 		 <td>No Of Demand Quantity :</td><td></td>
 		 <td><asp:TextBox ID="No_Demand_quantityTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("No_Demand_quantity") %>' MaxLength="10" Width="160px" /></td>
+                Text='<%# Bind("No_Demand_quantity") %>' MaxLength="10" Width="160px" 
+                 TabIndex="1" /></td>
 		<td> No Of&nbsp; Forms Given:</td><td>
              <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                  ControlToValidate="No_Forms_GivenTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
              </td><td>
              <asp:TextBox ID="No_Forms_GivenTextBox" runat="server"  numeric="integer"
-                Text='<%# Bind("No_Forms_Given") %>' MaxLength="10" Width="160px" /></td>
+                Text='<%# Bind("No_Forms_Given") %>' MaxLength="10" Width="160px" 
+                     TabIndex="6" /></td>
 		 </tr>
 		 <tr align="left">
 		 <td> No Of Distributed Stock :</td><td>
@@ -188,10 +200,11 @@
                  ControlToValidate="No_Distributed_StockTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
              </td><td>
              <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("No_Distributed_Stock") %>' MaxLength="10" Width="160px" /></td>
-		<td> Date Of Employee Receiving Forms:</td><td></td><td> 
+                Text='<%# Bind("No_Distributed_Stock") %>' MaxLength="10" Width="160px" 
+                     TabIndex="2" /></td>
+		<td> Date Of Employee Receiving Forms :</td><td></td><td> 
              <asp:TextBox ID="Recd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recd_Date") %>' MaxLength="20" Width="160px" /></td>
+                Text='<%# Bind("Recd_Date") %>' MaxLength="20" Width="160px" TabIndex="7" /></td>
 		 </tr>
 		 <tr align="left">
 		<td>Actual Stock :</td><td>
@@ -199,18 +212,22 @@
                  ControlToValidate="Actual_StockTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
              </td><td> 
              <asp:TextBox ID="Actual_StockTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("Actual_Stock") %>' MaxLength="10" Width="160px" /></td>
+                Text='<%# Bind("Actual_Stock") %>' MaxLength="10" Width="160px" TabIndex="3" /></td>
 		 <td>Name Of Employee Receiving Forms:</td><td>
              <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                 ControlToValidate="Emp_NameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                 ControlToValidate="DropDownList_EmployeeName" ErrorMessage="*">*</asp:RequiredFieldValidator>
              </td><td> 
-             <asp:TextBox ID="Emp_NameTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
-                Text='<%# Bind("Emp_Name") %>' MaxLength="30" Width="160px" /></td>
+                 <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
+                     DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
+                     DataValueField="FirstName" TabIndex="8" Width="160px">
+                 </asp:DropDownList>
+             </td>
 		 </tr>
 		 <tr align="left">
-		<td>Remarks:</td><td></td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+		<td>Remarks:</td><td></td><td> 
+             <asp:TextBox ID="RemarksTextBox" runat="server" 
                  Text='<%# Bind("Remarks") %>' Height="60px" TextMode="MultiLine" 
-                 Width="160px" /></td>
+                 Width="160px" TabIndex="4" /></td>
                  <td></td>
 		 <td></td>
 		 <td></td>
@@ -218,14 +235,15 @@
 		 <tr>
 		  <td align="center" colspan="6">
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="U" />
+                CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="U" 
+                  TabIndex="9" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
                     onclientclick="resetTextFields();return false;" 
-                  CssClass="standardButton" AccessKey="R" />
+                  CssClass="standardButton" AccessKey="R" TabIndex="10" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                  CssClass="standardButton" AccessKey="B" />
+                  CssClass="standardButton" AccessKey="B" TabIndex="11" />
 				</td>
 		 </tr>
 		 </table>
@@ -249,19 +267,21 @@
 		 <td> 
              <asp:DropDownList ID="DropDownListDepartment" runat="server" 
                     DataSourceID="ObjectDataSourceDepartment" DataTextField="Name" 
-                    DataValueField="Name" Width="160px">
+                    DataValueField="Name" Width="160px" TabIndex="5">
                 </asp:DropDownList></td>
 		 </tr>
 		 <tr align="left">
 		 <td>No Of Demand Quantity :</td><td></td>
 		 <td><asp:TextBox ID="No_Demand_quantityTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("No_Demand_quantity") %>' MaxLength="10" Width="160px" /></td>
+                Text='<%# Bind("No_Demand_quantity") %>' MaxLength="10" Width="160px" 
+                 TabIndex="1" /></td>
 		<td> No Of&nbsp; Forms Given:</td><td>
              <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                  ControlToValidate="No_Forms_GivenTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
              </td><td>
              <asp:TextBox ID="No_Forms_GivenTextBox" runat="server"  numeric="integer"
-                Text='<%# Bind("No_Forms_Given") %>' MaxLength="10" Width="160px" /></td>
+                Text='<%# Bind("No_Forms_Given") %>' MaxLength="10" Width="160px" 
+                     TabIndex="6" /></td>
 		 </tr>
 		 <tr align="left">
 		 <td> No Of Distributed Stock :</td><td>
@@ -269,10 +289,11 @@
                  ControlToValidate="No_Distributed_StockTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
              </td><td>
              <asp:TextBox ID="No_Distributed_StockTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("No_Distributed_Stock") %>' MaxLength="10" Width="160px" /></td>
+                Text='<%# Bind("No_Distributed_Stock") %>' MaxLength="10" Width="160px" 
+                     TabIndex="2" /></td>
 		<td> Date Of Employee Receiving Forms :</td><td></td><td> 
              <asp:TextBox ID="Recd_DateTextBox" runat="server" 
-                Text='<%# Bind("Recd_Date") %>' MaxLength="20" Width="160px" /></td>
+                Text='<%# Bind("Recd_Date") %>' MaxLength="20" Width="160px" TabIndex="7" /></td>
 		 </tr>
 		 <tr align="left">
 		<td>Actual Stock :</td><td>
@@ -280,18 +301,22 @@
                  ControlToValidate="Actual_StockTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
              </td><td> 
              <asp:TextBox ID="Actual_StockTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("Actual_Stock") %>' MaxLength="10" Width="160px" /></td>
+                Text='<%# Bind("Actual_Stock") %>' MaxLength="10" Width="160px" TabIndex="3" /></td>
 		 <td>Name Of Employee Receiving Forms:</td><td>
              <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                 ControlToValidate="Emp_NameTextBox" ErrorMessage="*">*</asp:RequiredFieldValidator>
+                 ControlToValidate="DropDownList_EmployeeName" ErrorMessage="*">*</asp:RequiredFieldValidator>
              </td><td> 
-             <asp:TextBox ID="Emp_NameTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
-                Text='<%# Bind("Emp_Name") %>' MaxLength="30" Width="160px" /></td>
+                 <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
+                     DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
+                     DataValueField="FirstName" TabIndex="8" Width="160px">
+                 </asp:DropDownList>
+             </td>
 		 </tr>
 		 <tr align="left">
-		<td>Remarks:</td><td></td><td> <asp:TextBox ID="RemarksTextBox" runat="server" 
+		<td>Remarks:</td><td></td><td> 
+             <asp:TextBox ID="RemarksTextBox" runat="server" 
                  Text='<%# Bind("Remarks") %>' Height="60px" TextMode="MultiLine" 
-                 Width="160px" /></td>
+                 Width="160px" TabIndex="4" /></td>
                  <td></td>
 		 <td></td>
 		 <td></td>
@@ -299,14 +324,15 @@
 		 <tr>
 		  <td align="center" colspan="6">
             <asp:LinkButton ID="Button" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" AccessKey="I" />
+                CommandName="Insert" Text="Insert" CssClass="standardButton" AccessKey="I" 
+                  TabIndex="9" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
                     onclientclick="resetTextFields();return false;" 
-                  CssClass="standardButton" AccessKey="R" />
+                  CssClass="standardButton" AccessKey="R" TabIndex="10" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                  CssClass="standardButton" AccessKey="B" />
+                  CssClass="standardButton" AccessKey="B" TabIndex="11" />
 				</td>
 		 </tr>
 		 </table>
@@ -376,6 +402,26 @@
             <asp:Parameter Name="Name" Type="String" />
             <asp:Parameter DbType="Guid" Name="Original_DepartmentID" />
             <asp:Parameter Name="Original_Name" Type="String" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <br />
+    <asp:ObjectDataSource ID="ods_EmployeeName" runat="server" 
+        DeleteMethod="Delete" InsertMethod="Insert" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
+            <asp:Parameter Name="Original_FirstName" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter DbType="Guid" Name="EmployeeID" />
+            <asp:Parameter Name="FirstName" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="FirstName" Type="String" />
+            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
+            <asp:Parameter Name="Original_FirstName" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </center>

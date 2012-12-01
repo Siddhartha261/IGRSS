@@ -6,7 +6,17 @@
             $('input[id*="' + id + '"]').datepicker({
                 showOn: "both",
                 buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
-                buttonImageOnly: true
+                buttonImageOnly: true,
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1940:2025',
+                onClose: function () {
+                    var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
+                    var dateNow = new Date();
+                    if (dateSelected > dateNow) {
+                        alert("Selected Date is greater than Current date");
+                    }
+                }
             });
         }
         $(function () {

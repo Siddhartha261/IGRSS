@@ -6,9 +6,30 @@
         $('input[id*="' + id + '"]').datepicker({
             showOn: "both",
             buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
-            buttonImageOnly: true
+            buttonImageOnly: true,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '1940:2025',
+            onClose: function () {
+                var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
+                var dateNow = new Date();
+                if (dateSelected > dateNow) {
+                    alert("Selected Date is greater than Current date");
+                }
+            }
         });
     }
+
+    //temp code for comparing starting no and ending no
+    function CompareNo(event) {
+        var startNo = document.getElementById('<%=FormView_CDRegister.FindControl("StartingNoTextBox").ClientID%>');
+        var endNo = document.getElementById('<%=FormView_CDRegister.FindControl("EndingNoTextBox").ClientID%>');
+        if (startNo.value > endNo.value) {
+            alert("Ending No. should be greater than Starting No.");
+            event.preventDefault();
+        }
+    }
+    //ends temp code
 
     function comparedate() {
         var txtbox1 = document.getElementById('<%=FormView_CDRegister.FindControl("YearDateTextBox").ClientID%>');
@@ -198,7 +219,7 @@
            
             <tr>
 			<td align="center" colspan="3"> 
-                <asp:LinkButton ID="uPDATEButton" runat="server" CausesValidation="True" 
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="U" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
@@ -264,7 +285,7 @@
            
             <tr>
 			<td align="center" colspan="3"> 
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                <asp:LinkButton ID="InsertButton" runat="server" OnClientClick="CompareNo(event)" CausesValidation="True" 
                 CommandName="Insert" Text="Insert" CssClass="standardButton" AccessKey="I" />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 

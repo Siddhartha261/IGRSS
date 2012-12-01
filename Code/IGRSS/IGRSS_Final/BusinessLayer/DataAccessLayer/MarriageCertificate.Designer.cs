@@ -295,7 +295,7 @@ namespace IGRSS.DataAccessLayer {
             
             private global::System.Data.DataColumn columnVillage_church_name;
             
-            private global::System.Data.DataColumn columnTalk;
+            private global::System.Data.DataColumn columnTaluka;
             
             private global::System.Data.DataColumn columnDistrict;
             
@@ -410,9 +410,9 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TalkColumn {
+            public global::System.Data.DataColumn TalukaColumn {
                 get {
-                    return this.columnTalk;
+                    return this.columnTaluka;
                 }
             }
             
@@ -509,7 +509,7 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MarriageCertificateRow AddMarriageCertificateRow(string Bridegroom_name, string Bridegroom_father_name, string Bride_name, string Bride_father_name, System.DateTime MarriageDate, string MarriagePlace, string Village_church_name, string Talk, string District, int ApplicationNo, System.DateTime ApplicationDate, int NoOfCopies, int ReceiptNo, int Fees, int CopiesFurnished) {
+            public MarriageCertificateRow AddMarriageCertificateRow(string Bridegroom_name, string Bridegroom_father_name, string Bride_name, string Bride_father_name, System.DateTime MarriageDate, string MarriagePlace, string Village_church_name, string Taluka, string District, int ApplicationNo, System.DateTime ApplicationDate, int NoOfCopies, int ReceiptNo, int Fees, int CopiesFurnished) {
                 MarriageCertificateRow rowMarriageCertificateRow = ((MarriageCertificateRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -520,7 +520,7 @@ namespace IGRSS.DataAccessLayer {
                         MarriageDate,
                         MarriagePlace,
                         Village_church_name,
-                        Talk,
+                        Taluka,
                         District,
                         ApplicationNo,
                         ApplicationDate,
@@ -571,7 +571,7 @@ namespace IGRSS.DataAccessLayer {
                 this.columnMarriageDate = base.Columns["MarriageDate"];
                 this.columnMarriagePlace = base.Columns["MarriagePlace"];
                 this.columnVillage_church_name = base.Columns["Village_church_name"];
-                this.columnTalk = base.Columns["Talk"];
+                this.columnTaluka = base.Columns["Taluka"];
                 this.columnDistrict = base.Columns["District"];
                 this.columnApplicationNo = base.Columns["ApplicationNo"];
                 this.columnApplicationDate = base.Columns["ApplicationDate"];
@@ -600,8 +600,8 @@ namespace IGRSS.DataAccessLayer {
                 base.Columns.Add(this.columnMarriagePlace);
                 this.columnVillage_church_name = new global::System.Data.DataColumn("Village_church_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVillage_church_name);
-                this.columnTalk = new global::System.Data.DataColumn("Talk", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTalk);
+                this.columnTaluka = new global::System.Data.DataColumn("Taluka", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTaluka);
                 this.columnDistrict = new global::System.Data.DataColumn("District", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDistrict);
                 this.columnApplicationNo = new global::System.Data.DataColumn("ApplicationNo", typeof(int), null, global::System.Data.MappingType.Element);
@@ -630,7 +630,7 @@ namespace IGRSS.DataAccessLayer {
                 this.columnBride_father_name.MaxLength = 500;
                 this.columnMarriagePlace.MaxLength = 10;
                 this.columnVillage_church_name.MaxLength = 50;
-                this.columnTalk.MaxLength = 10;
+                this.columnTaluka.MaxLength = 10;
                 this.columnDistrict.MaxLength = 10;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_MarriageCertificate");
                 this.ExtendedProperties.Add("Generator_UserTableName", "MarriageCertificate");
@@ -902,17 +902,17 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Talk {
+            public string Taluka {
                 get {
                     try {
-                        return ((string)(this[this.tableMarriageCertificate.TalkColumn]));
+                        return ((string)(this[this.tableMarriageCertificate.TalukaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Talk\' in table \'MarriageCertificate\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Taluka\' in table \'MarriageCertificate\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMarriageCertificate.TalkColumn] = value;
+                    this[this.tableMarriageCertificate.TalukaColumn] = value;
                 }
             }
             
@@ -1114,14 +1114,14 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTalkNull() {
-                return this.IsNull(this.tableMarriageCertificate.TalkColumn);
+            public bool IsTalukaNull() {
+                return this.IsNull(this.tableMarriageCertificate.TalukaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTalkNull() {
-                this[this.tableMarriageCertificate.TalkColumn] = global::System.Convert.DBNull;
+            public void SetTalukaNull() {
+                this[this.tableMarriageCertificate.TalukaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1376,7 +1376,7 @@ namespace IGRSS.DataAccessLayer.MarriageCertificateTableAdapters {
             tableMapping.ColumnMappings.Add("MarriageDate", "MarriageDate");
             tableMapping.ColumnMappings.Add("MarriagePlace", "MarriagePlace");
             tableMapping.ColumnMappings.Add("Village_church_name", "Village_church_name");
-            tableMapping.ColumnMappings.Add("Talk", "Talk");
+            tableMapping.ColumnMappings.Add("Taluka", "Taluka");
             tableMapping.ColumnMappings.Add("District", "District");
             tableMapping.ColumnMappings.Add("ApplicationNo", "ApplicationNo");
             tableMapping.ColumnMappings.Add("ApplicationDate", "ApplicationDate");
@@ -1398,8 +1398,8 @@ namespace IGRSS.DataAccessLayer.MarriageCertificateTableAdapters {
                 "MarriageDate)) AND ((@IsNull_MarriagePlace = 1 AND [MarriagePlace] IS NULL) OR (" +
                 "[MarriagePlace] = @Original_MarriagePlace)) AND ((@IsNull_Village_church_name = " +
                 "1 AND [Village_church_name] IS NULL) OR ([Village_church_name] = @Original_Villa" +
-                "ge_church_name)) AND ((@IsNull_Talk = 1 AND [Talk] IS NULL) OR ([Talk] = @Origin" +
-                "al_Talk)) AND ((@IsNull_District = 1 AND [District] IS NULL) OR ([District] = @O" +
+                "ge_church_name)) AND ((@IsNull_Taluka = 1 AND [Taluka] IS NULL) OR ([Taluka] = @Origin" +
+                "al_Taluka)) AND ((@IsNull_District = 1 AND [District] IS NULL) OR ([District] = @O" +
                 "riginal_District)) AND ((@IsNull_ApplicationNo = 1 AND [ApplicationNo] IS NULL) " +
                 "OR ([ApplicationNo] = @Original_ApplicationNo)) AND ((@IsNull_ApplicationDate = " +
                 "1 AND [ApplicationDate] IS NULL) OR ([ApplicationDate] = @Original_ApplicationDa" +
@@ -1424,8 +1424,8 @@ namespace IGRSS.DataAccessLayer.MarriageCertificateTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MarriagePlace", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MarriagePlace", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Village_church_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Village_church_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Village_church_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Village_church_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Talk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Talk", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Talk", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Talk", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Taluka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Taluka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ApplicationNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1442,8 +1442,8 @@ namespace IGRSS.DataAccessLayer.MarriageCertificateTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CopiesFurnished", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CopiesFurnished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [MarriageCertificate] ([Bridegroom_name], [Bridegroom_father_name], [Bride_name], [Bride_father_name], [MarriageDate], [MarriagePlace], [Village_church_name], [Talk], [District], [ApplicationNo], [ApplicationDate], [NoOfCopies], [ReceiptNo], [Fees], [CopiesFurnished]) VALUES (@Bridegroom_name, @Bridegroom_father_name, @Bride_name, @Bride_father_name, @MarriageDate, @MarriagePlace, @Village_church_name, @Talk, @District, @ApplicationNo, @ApplicationDate, @NoOfCopies, @ReceiptNo, @Fees, @CopiesFurnished);
-SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_name, MarriageDate, MarriagePlace, Village_church_name, Talk, District, ApplicationNo, ApplicationDate, NoOfCopies, ReceiptNo, Fees, CopiesFurnished FROM MarriageCertificate WHERE (SrNo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [MarriageCertificate] ([Bridegroom_name], [Bridegroom_father_name], [Bride_name], [Bride_father_name], [MarriageDate], [MarriagePlace], [Village_church_name], [Taluka], [District], [ApplicationNo], [ApplicationDate], [NoOfCopies], [ReceiptNo], [Fees], [CopiesFurnished]) VALUES (@Bridegroom_name, @Bridegroom_father_name, @Bride_name, @Bride_father_name, @MarriageDate, @MarriagePlace, @Village_church_name, @Taluka, @District, @ApplicationNo, @ApplicationDate, @NoOfCopies, @ReceiptNo, @Fees, @CopiesFurnished);
+SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_name, MarriageDate, MarriagePlace, Village_church_name, Taluka, District, ApplicationNo, ApplicationDate, NoOfCopies, ReceiptNo, Fees, CopiesFurnished FROM MarriageCertificate WHERE (SrNo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bridegroom_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bridegroom_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bridegroom_father_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bridegroom_father_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1452,7 +1452,7 @@ SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_n
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarriageDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MarriageDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarriagePlace", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MarriagePlace", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Village_church_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Village_church_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Talk", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Talk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1465,7 +1465,7 @@ SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_n
             this._adapter.UpdateCommand.CommandText = "UPDATE [MarriageCertificate] SET [Bridegroom_name] = @Bridegroom_name, [Bridegroo" +
                 "m_father_name] = @Bridegroom_father_name, [Bride_name] = @Bride_name, [Bride_fat" +
                 "her_name] = @Bride_father_name, [MarriageDate] = @MarriageDate, [MarriagePlace] " +
-                "= @MarriagePlace, [Village_church_name] = @Village_church_name, [Talk] = @Talk, " +
+                "= @MarriagePlace, [Village_church_name] = @Village_church_name, [Taluka] = @Taluka, " +
                 "[District] = @District, [ApplicationNo] = @ApplicationNo, [ApplicationDate] = @A" +
                 "pplicationDate, [NoOfCopies] = @NoOfCopies, [ReceiptNo] = @ReceiptNo, [Fees] = @" +
                 "Fees, [CopiesFurnished] = @CopiesFurnished WHERE (([SrNo] = @Original_SrNo) AND " +
@@ -1479,8 +1479,8 @@ SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_n
                 "@Original_MarriageDate)) AND ((@IsNull_MarriagePlace = 1 AND [MarriagePlace] IS " +
                 "NULL) OR ([MarriagePlace] = @Original_MarriagePlace)) AND ((@IsNull_Village_chur" +
                 "ch_name = 1 AND [Village_church_name] IS NULL) OR ([Village_church_name] = @Orig" +
-                "inal_Village_church_name)) AND ((@IsNull_Talk = 1 AND [Talk] IS NULL) OR ([Talk]" +
-                " = @Original_Talk)) AND ((@IsNull_District = 1 AND [District] IS NULL) OR ([Dist" +
+                "inal_Village_church_name)) AND ((@IsNull_Taluka = 1 AND [Taluka] IS NULL) OR ([Taluka]" +
+                " = @Original_Taluka)) AND ((@IsNull_District = 1 AND [District] IS NULL) OR ([Dist" +
                 "rict] = @Original_District)) AND ((@IsNull_ApplicationNo = 1 AND [ApplicationNo]" +
                 " IS NULL) OR ([ApplicationNo] = @Original_ApplicationNo)) AND ((@IsNull_Applicat" +
                 "ionDate = 1 AND [ApplicationDate] IS NULL) OR ([ApplicationDate] = @Original_App" +
@@ -1490,7 +1490,7 @@ SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_n
                 "S NULL) OR ([Fees] = @Original_Fees)) AND ((@IsNull_CopiesFurnished = 1 AND [Cop" +
                 "iesFurnished] IS NULL) OR ([CopiesFurnished] = @Original_CopiesFurnished)));\r\nSE" +
                 "LECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_nam" +
-                "e, MarriageDate, MarriagePlace, Village_church_name, Talk, District, Application" +
+                "e, MarriageDate, MarriagePlace, Village_church_name, Taluka, District, Application" +
                 "No, ApplicationDate, NoOfCopies, ReceiptNo, Fees, CopiesFurnished FROM MarriageC" +
                 "ertificate WHERE (SrNo = @SrNo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
@@ -1501,7 +1501,7 @@ SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_n
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarriageDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MarriageDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarriagePlace", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MarriagePlace", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Village_church_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Village_church_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Talk", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Talk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1524,8 +1524,8 @@ SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_n
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MarriagePlace", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MarriagePlace", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Village_church_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Village_church_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Village_church_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Village_church_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Talk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Talk", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Talk", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Talk", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Taluka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Taluka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ApplicationNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1556,7 +1556,7 @@ SELECT SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_n
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_name, MarriageDate, MarriagePlace, Village_church_name, Talk, District, 
+            this._commandCollection[0].CommandText = @"SELECT        SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_name, MarriageDate, MarriagePlace, Village_church_name, Taluka, District, 
                          ApplicationNo, ApplicationDate, NoOfCopies, ReceiptNo, Fees, CopiesFurnished
 FROM            MarriageCertificate";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -1568,7 +1568,7 @@ FROM            MarriageCertificate";
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        SrNo, Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_fa" +
-                "ther_name, MarriageDate, MarriagePlace, Village_church_name, Talk, District, \r\n " +
+                "ther_name, MarriageDate, MarriagePlace, Village_church_name, Taluka, District, \r\n " +
                 "                        ApplicationNo, ApplicationDate, NoOfCopies, ReceiptNo, F" +
                 "ees, CopiesFurnished\r\nFROM            MarriageCertificate\r\nWHERE        (CAST(Sr" +
                 "No AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CA" +
@@ -1579,7 +1579,7 @@ FROM            MarriageCertificate";
                 "         (Bride_father_name LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n               " +
                 "          (MarriagePlace LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                  " +
                 "       (Village_church_name LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n               " +
-                "          (Talk LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (D" +
+                "          (Taluka LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (D" +
                 "istrict LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                         (CAST(Appl" +
                 "icationNo AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n                     " +
                 "    (CAST(ApplicationDate AS varchar) LIKE \'%\' + @searchKeyWord + \'%\') OR\r\n     " +
@@ -1595,7 +1595,7 @@ FROM            MarriageCertificate";
             this._commandCollection[3].CommandText = @"UPDATE       MarriageCertificate
 SET                Bridegroom_name = @Bridegroom_name, Bridegroom_father_name = @Bridegroom_father_name, Bride_name = @Bride_name, 
                          Bride_father_name = @Bride_father_name, MarriageDate = @MarriageDate, MarriagePlace = @MarriagePlace, Village_church_name = @Village_church_name, 
-                         Talk = @Talk, District = @District, ApplicationNo = @ApplicationNo, ApplicationDate = @ApplicationDate, NoOfCopies = @NoOfCopies, ReceiptNo = @ReceiptNo, 
+                         Taluka = @Taluka, District = @District, ApplicationNo = @ApplicationNo, ApplicationDate = @ApplicationDate, NoOfCopies = @NoOfCopies, ReceiptNo = @ReceiptNo, 
                          Fees = @Fees, CopiesFurnished = @CopiesFurnished
 WHERE        (SrNo = @SrNo)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
@@ -1606,7 +1606,7 @@ WHERE        (SrNo = @SrNo)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarriageDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "MarriageDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarriagePlace", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "MarriagePlace", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Village_church_name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Village_church_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Talk", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Talk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplicationDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ApplicationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1719,7 +1719,7 @@ WHERE        (SrNo = @SrNo)";
                     global::System.Nullable<global::System.DateTime> Original_MarriageDate, 
                     string Original_MarriagePlace, 
                     string Original_Village_church_name, 
-                    string Original_Talk, 
+                    string Original_Taluka, 
                     string Original_District, 
                     global::System.Nullable<int> Original_ApplicationNo, 
                     global::System.Nullable<global::System.DateTime> Original_ApplicationDate, 
@@ -1784,13 +1784,13 @@ WHERE        (SrNo = @SrNo)";
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Village_church_name));
             }
-            if ((Original_Talk == null)) {
+            if ((Original_Taluka == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Talk));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Taluka));
             }
             if ((Original_District == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
@@ -1868,7 +1868,7 @@ WHERE        (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Bridegroom_name, string Bridegroom_father_name, string Bride_name, string Bride_father_name, global::System.Nullable<global::System.DateTime> MarriageDate, string MarriagePlace, string Village_church_name, string Talk, string District, global::System.Nullable<int> ApplicationNo, global::System.Nullable<global::System.DateTime> ApplicationDate, global::System.Nullable<int> NoOfCopies, global::System.Nullable<int> ReceiptNo, global::System.Nullable<int> Fees, global::System.Nullable<int> CopiesFurnished) {
+        public virtual int Insert(string Bridegroom_name, string Bridegroom_father_name, string Bride_name, string Bride_father_name, global::System.Nullable<global::System.DateTime> MarriageDate, string MarriagePlace, string Village_church_name, string Taluka, string District, global::System.Nullable<int> ApplicationNo, global::System.Nullable<global::System.DateTime> ApplicationDate, global::System.Nullable<int> NoOfCopies, global::System.Nullable<int> ReceiptNo, global::System.Nullable<int> Fees, global::System.Nullable<int> CopiesFurnished) {
             if ((Bridegroom_name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1911,11 +1911,11 @@ WHERE        (SrNo = @SrNo)";
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Village_church_name));
             }
-            if ((Talk == null)) {
+            if ((Taluka == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Talk));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Taluka));
             }
             if ((District == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
@@ -1987,7 +1987,7 @@ WHERE        (SrNo = @SrNo)";
                     global::System.Nullable<global::System.DateTime> MarriageDate, 
                     string MarriagePlace, 
                     string Village_church_name, 
-                    string Talk, 
+                    string Taluka, 
                     string District, 
                     global::System.Nullable<int> ApplicationNo, 
                     global::System.Nullable<global::System.DateTime> ApplicationDate, 
@@ -2003,7 +2003,7 @@ WHERE        (SrNo = @SrNo)";
                     global::System.Nullable<global::System.DateTime> Original_MarriageDate, 
                     string Original_MarriagePlace, 
                     string Original_Village_church_name, 
-                    string Original_Talk, 
+                    string Original_Taluka, 
                     string Original_District, 
                     global::System.Nullable<int> Original_ApplicationNo, 
                     global::System.Nullable<global::System.DateTime> Original_ApplicationDate, 
@@ -2054,11 +2054,11 @@ WHERE        (SrNo = @SrNo)";
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Village_church_name));
             }
-            if ((Talk == null)) {
+            if ((Taluka == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Talk));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Taluka));
             }
             if ((District == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
@@ -2159,13 +2159,13 @@ WHERE        (SrNo = @SrNo)";
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Village_church_name));
             }
-            if ((Original_Talk == null)) {
+            if ((Original_Taluka == null)) {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Talk));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Taluka));
             }
             if ((Original_District == null)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
@@ -2252,7 +2252,7 @@ WHERE        (SrNo = @SrNo)";
                     global::System.Nullable<global::System.DateTime> MarriageDate, 
                     string MarriagePlace, 
                     string Village_church_name, 
-                    string Talk, 
+                    string Taluka, 
                     string District, 
                     global::System.Nullable<int> ApplicationNo, 
                     global::System.Nullable<global::System.DateTime> ApplicationDate, 
@@ -2268,7 +2268,7 @@ WHERE        (SrNo = @SrNo)";
                     global::System.Nullable<global::System.DateTime> Original_MarriageDate, 
                     string Original_MarriagePlace, 
                     string Original_Village_church_name, 
-                    string Original_Talk, 
+                    string Original_Taluka, 
                     string Original_District, 
                     global::System.Nullable<int> Original_ApplicationNo, 
                     global::System.Nullable<global::System.DateTime> Original_ApplicationDate, 
@@ -2276,7 +2276,7 @@ WHERE        (SrNo = @SrNo)";
                     global::System.Nullable<int> Original_ReceiptNo, 
                     global::System.Nullable<int> Original_Fees, 
                     global::System.Nullable<int> Original_CopiesFurnished) {
-            return this.Update(Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_name, MarriageDate, MarriagePlace, Village_church_name, Talk, District, ApplicationNo, ApplicationDate, NoOfCopies, ReceiptNo, Fees, CopiesFurnished, Original_SrNo, Original_Bridegroom_name, Original_Bridegroom_father_name, Original_Bride_name, Original_Bride_father_name, Original_MarriageDate, Original_MarriagePlace, Original_Village_church_name, Original_Talk, Original_District, Original_ApplicationNo, Original_ApplicationDate, Original_NoOfCopies, Original_ReceiptNo, Original_Fees, Original_CopiesFurnished, Original_SrNo);
+            return this.Update(Bridegroom_name, Bridegroom_father_name, Bride_name, Bride_father_name, MarriageDate, MarriagePlace, Village_church_name, Taluka, District, ApplicationNo, ApplicationDate, NoOfCopies, ReceiptNo, Fees, CopiesFurnished, Original_SrNo, Original_Bridegroom_name, Original_Bridegroom_father_name, Original_Bride_name, Original_Bride_father_name, Original_MarriageDate, Original_MarriagePlace, Original_Village_church_name, Original_Taluka, Original_District, Original_ApplicationNo, Original_ApplicationDate, Original_NoOfCopies, Original_ReceiptNo, Original_Fees, Original_CopiesFurnished, Original_SrNo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2315,7 +2315,7 @@ WHERE        (SrNo = @SrNo)";
                     string MarriageDate, 
                     string MarriagePlace, 
                     string Village_church_name, 
-                    string Talk, 
+                    string Taluka, 
                     string District, 
                     global::System.Nullable<int> ApplicationNo, 
                     string ApplicationDate, 
@@ -2367,11 +2367,11 @@ WHERE        (SrNo = @SrNo)";
             else {
                 command.Parameters[6].Value = ((string)(Village_church_name));
             }
-            if ((Talk == null)) {
+            if ((Taluka == null)) {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[7].Value = ((string)(Talk));
+                command.Parameters[7].Value = ((string)(Taluka));
             }
             if ((District == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;

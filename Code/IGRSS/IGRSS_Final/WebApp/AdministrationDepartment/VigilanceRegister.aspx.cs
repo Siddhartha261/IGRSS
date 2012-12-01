@@ -24,7 +24,6 @@ public partial class LatestPages_VigilanceRegister : System.Web.UI.Page
         TextBox txt2 = (TextBox)FormView_Vigilance.FindControl("deptdateTextBox");
         TextBox txt3 = (TextBox)FormView_Vigilance.FindControl("letterdateTextBox");
         TextBox txt4 = (TextBox)FormView_Vigilance.FindControl("applnameTextBox");
-        TextBox txt5 = (TextBox)FormView_Vigilance.FindControl("empnameTextBox");
         TextBox txt6 = (TextBox)FormView_Vigilance.FindControl("applsummaryTextBox");
         TextBox txt7 = (TextBox)FormView_Vigilance.FindControl("reportdateTextBox");
         TextBox txt8 = (TextBox)FormView_Vigilance.FindControl("StatusTextBox");
@@ -35,7 +34,6 @@ public partial class LatestPages_VigilanceRegister : System.Web.UI.Page
         txt2.Text = "";
         txt3.Text = "";
         txt4.Text = "";
-        txt5.Text = "";
         txt6.Text = "";
         txt7.Text = "";
         txt8.Text = "";
@@ -131,10 +129,16 @@ public partial class LatestPages_VigilanceRegister : System.Web.UI.Page
     {
         DropDownList DropDownList1 = FormView_Vigilance.FindControl("designation") as DropDownList;
         e.Values["emp_desig"] = DropDownList1.SelectedValue;
+
+        DropDownList DropDown_employeename = FormView_Vigilance.FindControl("DropDownList_employeename") as DropDownList;
+        e.Values["empname"] = DropDown_employeename.SelectedValue;
     }
     protected void FormView_Vigilance_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {
         DropDownList DropDownList1 = FormView_Vigilance.FindControl("designation") as DropDownList;
         e.NewValues["emp_desig"] = DropDownList1.SelectedValue;
+
+        DropDownList DropDown_employeename = FormView_Vigilance.FindControl("DropDownList_employeename") as DropDownList;
+        e.NewValues["empname"] = DropDown_employeename.SelectedValue;
     }
 }
