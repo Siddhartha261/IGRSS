@@ -20,6 +20,7 @@ public partial class Central_Administration_Console_DesignationMaster : IgrssPag
 	protected void Page_Load(object sender, EventArgs e)
 	{
         ((IGRSS_Default)this.Master).HideStatusMessage();
+        
 	}
 	protected void GvDesignationGrid_SelectedIndexChanged(object sender, EventArgs e)
 	{
@@ -56,7 +57,7 @@ public partial class Central_Administration_Console_DesignationMaster : IgrssPag
     }
     protected void FvDesignationMaster_ItemInserted(object sender, FormViewInsertedEventArgs e)
     {
-        MvDesignationMaster.SetActiveView(MvDesignationMaster.Views[0]);
+        MvDesignationMaster.SetActiveView(MvDesignationMaster.Views[0]);        
         GvDesignationGrid.SelectedIndex = -1;
         GvDesignationGrid.DataBind();
     }

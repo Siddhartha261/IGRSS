@@ -4,25 +4,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="server">
 &nbsp;<script language="javascript">
 
-   
 
-    function generateDatePicker(id) {
-        $('input[id*="' + id + '"]').datepicker({
-            showOn: "both",
-            buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
-            buttonImageOnly: true,
-            changeMonth: true,
-            changeYear: true,
-            yearRange: '1940:2025',
-            onClose: function () {
-                var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
-                var dateNow = new Date();
-                if (dateSelected > dateNow) {
-                    alert("Selected Date is greater than Current date");
-                }
-            }
-        });
-    }
+
+          function generateDatePicker(id) {
+              $('input[id*="' + id + '"]').datepicker({
+                  showOn: "both",
+                  buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
+                  buttonImageOnly: true,
+                  changeMonth: true,
+                  changeYear: true,
+                  yearRange: '1940:2025',
+                  dateFormat: "dd/mm/yy",
+                  onClose: function () {
+                      var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
+                      var dateNow = new Date();
+                      if (dateSelected > dateNow) {
+                          alert("Selected Date is greater than Current date");
+                          $('input[id*="' + id + '"]').val("");
+                          $('input[id*="' + id + '"]').focus();
+                      }
+                  }
+              });
+          }
     $(function () {
         $('input[id*="Inward_NoTextBox"]').keydown(function (event) {
             // Allow: backspace, delete, tab, escape, and enter

@@ -29,18 +29,22 @@
       <View Name="WorkSheet Register"
           Url="~/AdministrationDepartment/WorkSheetRegister.aspx"
           Mode="" Visible="True"/>
-      <View Name="Inspection Types"
+      <!--<View Name="Inspection Types"
           Url="~/Central%20Administration%20Console/Masters/InspectionTypeMaster.aspx"
-          Mode="" Visible="True"/>
+          Mode="" Visible="True"/>-->
       <View Name="Item Master"
           Url="~/Central%20Administration%20Console/Masters/ItemMaster.aspx"
           Mode="" Visible="True"/>
-      <View Name="Office Communications"
+      <!--<View Name="Office Communications"
           Url="~/Central%20Administration%20Console/Masters/OfficeCommunicationLKP.aspx"
-          Mode="" Visible="True"/>
+          Mode="" Visible="True"/>-->
 
-      <View Name="Office Process"
+      <!--<View Name="Office Process"
           Url="~/Central%20Administration%20Console/ManageOfficeProcess.aspx"
+          Mode="" Visible="True"/>-->
+      
+      <View Name="Departments"
+          Url="~/Central%20Administration%20Console/Masters/DepartmentMaster.aspx"
           Mode="" Visible="True"/>
 
       <View Name="Designations"
@@ -55,21 +59,21 @@
           Url="~/Central%20Administration%20Console/UserRoleManagement/UserInOfficeRoles.aspx"
           Mode="" Visible="True"/>
 
-      <View Name="Postal Delivery Types"
+      <!--<View Name="Postal Delivery Types"
           Url="~/Central%20Administration%20Console/Masters/PostalDeliveryTypeLKP.aspx"
           Mode=""
-          Visible="True"/>
+          Visible="True"/>-->
 
       <View Name="Qualification"
           Url="~/Central%20Administration%20Console/Masters/QualificationMaster.aspx"
           Mode="" Visible="True"/>
 
-      <View Name="Manage Offices"
+      <!--<View Name="Manage Offices"
           Url="~/Central%20Administration%20Console/Offices/OfficeMaster.aspx"
-          Mode="" Visible="True"/>
-      <View Name="Employee"
+          Mode="" Visible="True"/>-->
+      <!--<View Name="Employee"
           Url="~/Employee/EmployeeMaster.aspx"
-          Mode="" Visible="True"/>
+          Mode="" Visible="True"/>-->
       <View Name="Vendor Master"
           Url="~/Central%20Administration%20Console/Masters/VendorMaster.aspx"
           Mode="" Visible="True"/>

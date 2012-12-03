@@ -233,9 +233,9 @@
                             </td>
                             <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="rfvAllowancesIns" runat="server" ControlToValidate="txtAllowancesIns"
-                                    ErrorMessage="Please Enter Allowances" meta:resourcekey="rfvAllowancesInsResource1"></asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="regAllowancesIns"
+                                    ErrorMessage="Please Enter Allowances" meta:resourcekey="rfvAllowancesInsResource1"></asp:RequiredFieldValidator><%--<asp:RegularExpressionValidator ID="regAllowancesIns"
                                     runat="server" ControlToValidate="txtAllowancesIns" ErrorMessage="Enter Valid Allowances"
-                                    ValidationExpression="<%$ Resources:ValidationRegx, Allowance %>" meta:resourcekey="regAllowancesInsResource1">*</asp:RegularExpressionValidator>
+                                    ValidationExpression="<%$ Resources:ValidationRegx, Allowance %>" meta:resourcekey="regAllowancesInsResource1">*</asp:RegularExpressionValidator>--%>
                             </td>
                         </tr>
                         <tr>

@@ -8,14 +8,14 @@
                 <tr>
                     <td>
                         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            DataKeyNames="RevenueStampId" DataSourceID="OdsRevenueStampMaster" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" meta:resourcekey="GridView1Resource1">
+                            DataKeyNames="RevenueStampId" DataSourceID="OdsRevenueStampMaster" 
+                            OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" 
+                            meta:resourcekey="GridView1Resource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Name" ReadOnly="True" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" meta:resourcekey="BoundFieldResource2" />
                                 <asp:BoundField DataField="Amount" HeaderText="Amount" DataFormatString="{0:F2}"
                                     HtmlEncode="False" meta:resourcekey="BoundFieldResource3" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
-                                <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource2" />
                             </Columns>
                         </asp:GridView>
                     </td>

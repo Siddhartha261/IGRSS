@@ -9,12 +9,12 @@
                 <tr>
                     <td style="width: 749px">
                         <asp:GridView ID="GvItemMaster" runat="server" AutoGenerateColumns="False" DataKeyNames="UomID"
-                            DataSourceID="odsUOMMasterDetails" OnSelectedIndexChanged="GvItemMaster_SelectedIndexChanged" meta:resourcekey="GvItemMasterResource1">
+                            DataSourceID="odsUOMMasterDetails" 
+                            OnSelectedIndexChanged="GvItemMaster_SelectedIndexChanged" 
+                            meta:resourcekey="GvItemMasterResource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" meta:resourcekey="BoundFieldResource2" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
-                                <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource2" />
                             </Columns>
                         </asp:GridView>
                     </td>

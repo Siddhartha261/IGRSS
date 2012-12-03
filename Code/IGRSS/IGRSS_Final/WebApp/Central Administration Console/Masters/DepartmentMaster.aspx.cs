@@ -11,12 +11,13 @@ using System.Web.UI.HtmlControls;
 using IGRSS.BusinessLogicLayer;
 using IGRSS.BusinessObjects;
 using System.Collections.Generic;
-using Resources;
+
 public partial class Central_Administration_Console_DepartmentMaster : IgrssPage
 {
 	protected void Page_Load(object sender, EventArgs e)
 	{
-        ((IGRSS_Default)this.Master).HideStatusMessage();
+       
+        //((IGRSS_Default)this.Master).HideStatusMessage();
 	}
 	protected void GvDepartmentMaster_SelectedIndexChanged(object sender, EventArgs e)
 	{
@@ -50,35 +51,35 @@ public partial class Central_Administration_Console_DepartmentMaster : IgrssPage
     {
         MvDepartmentMaster.SetActiveView(MvDepartmentMaster.Views[0]);
         GvDepartmentMaster.DataBind();
-        if (e.Exception == null)
-        {
-            if (Equals(e.ReturnValue, true))
-                ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveSucess, Status_Messages.SaveSucessDescription, MessageType.Success);
-            else
-                ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveFailed, "Record already Exists!", MessageType.Error);
+        //if (e.Exception == null)
+        //{
+        //    if (Equals(e.ReturnValue, true))
+        //        ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveSucess, Status_Messages.SaveSucessDescription, MessageType.Success);
+        //    else
+        //        ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveFailed, "Record already Exists!", MessageType.Error);
 
-        }
-        else
-        {
-            ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveFailed, e.Exception.Message, MessageType.Error);
-        }
+        //}
+        //else
+        //{
+        //    ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveFailed, e.Exception.Message, MessageType.Error);
+        //}
     }
     protected void odsDepartmentMasterById_Inserted(object sender, ObjectDataSourceStatusEventArgs e)
     {
         MvDepartmentMaster.SetActiveView(MvDepartmentMaster.Views[0]);
         GvDepartmentMaster.DataBind();
-        if (e.Exception == null)
-        {
-            if (Equals(e.ReturnValue, true))
-                ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveSucess, Status_Messages.SaveSucessDescription, MessageType.Success);
-            else
-                ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveFailed, "Record already Exists!", MessageType.Error);
+        //if (e.Exception == null)
+        //{
+        //    if (Equals(e.ReturnValue, true))
+        //        ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveSucess, Status_Messages.SaveSucessDescription, MessageType.Success);
+        //    else
+        //        ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveFailed, "Record already Exists!", MessageType.Error);
 
-        }
-        else
-        {
-            ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveFailed, e.Exception.Message, MessageType.Error);
-        }
+        //}
+        //else
+        //{
+        //    ((IGRSS_Default)this.Master).ShowStatusMessage(Status_Messages.SaveFailed, e.Exception.Message, MessageType.Error);
+        //}
     }
     protected void btnCancelIns_Click(object sender, EventArgs e)
     {

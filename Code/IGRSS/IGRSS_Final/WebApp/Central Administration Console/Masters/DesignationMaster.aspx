@@ -10,12 +10,11 @@
                     <td style="width: 750px">
                         <asp:GridView ID="GvDesignationGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="DesignationId"
                             DataSourceID="OdsDesignationMaster" OnSelectedIndexChanged="GvDesignationGrid_SelectedIndexChanged"
-                            OnRowDeleted="GvDesignationGrid_RowDeleted" meta:resourcekey="GvDesignationGridResource1">
+                            OnRowDeleted="GvDesignationGrid_RowDeleted" 
+                            meta:resourcekey="GvDesignationGridResource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Designation" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" meta:resourcekey="BoundFieldResource2" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
-                                <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource2" />
                             </Columns>
                         </asp:GridView>
                     </td>

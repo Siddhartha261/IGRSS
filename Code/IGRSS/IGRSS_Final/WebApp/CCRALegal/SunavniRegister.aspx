@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="SunavniRegister.aspx.cs" Inherits="CCRALegal_SunavniRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
-<script language="javascript">
+    <script language="javascript">
 
     function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
@@ -11,17 +11,33 @@
             changeMonth: true,
             changeYear: true,
             yearRange: '1940:2025',
+            dateFormat: "dd/mm/yy",
             onClose: function () {
                 var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                 var dateNow = new Date();
                 if (dateSelected > dateNow) {
                     alert("Selected Date is greater than Current date");
+                    $('input[id*="' + id + '"]').val("");
+                    $('input[id*="' + id + '"]').focus();
                 }
             }
         });
     }
 
-    $(function () {
+
+//    function StartEndCompare(event) {
+//        var issuedatetextbox = document.getElementById('<%=FormView_SunavniRegister.FindControl("IssueDateOfLetterTextBox").ClientID%>')
+//        var hearingdatetextbox = document.getElementById('<%=FormView_SunavniRegister.FindControl("DateOfHearingTextBox").ClientID%>')
+//        var startdate = Date.parse(issuedatetextbox.value);
+//        var enddate = Date.parse(hearingdatetextbox.value);
+//        if (startdate > enddate) {
+//            alert("Issue Date Should be Less than Hearing Date");
+//            event.preventDefault();
+        }
+    }
+    //ends code     
+
+   $(function () {
         var datePickers = ["IssueDateOfLetterTextBox", "DateOfHearingTextBox"];
         for (var index = 0; index < datePickers.length; index++) {
             generateDatePicker(datePickers[index]);
@@ -287,7 +303,7 @@
             <tr>
 			    <td align="center" colspan=3>
                     <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                        CommandName="Insert" Text="Insert" CssClass="standardButton" />
+                        CommandName="Insert" Text="Insert" CssClass="standardButton" OnClientClick="StartEndCompare(event)" />
 					&nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                         CausesValidation="False" CommandName="Reset" Text="Reset" 
                         CssClass="standardButton" onclientclick="resetTextFields();return false;" />

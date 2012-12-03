@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
 <script type="text/javascript" language="javascript">
 
-    function generateDatePicker(id) {
+    f function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
             showOn: "both",
             buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",
@@ -11,11 +11,14 @@
             changeMonth: true,
             changeYear: true,
             yearRange: '1940:2025',
+            dateFormat: "dd/mm/yy",
             onClose: function () {
                 var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                 var dateNow = new Date();
                 if (dateSelected > dateNow) {
                     alert("Selected Date is greater than Current date");
+                    $('input[id*="' + id + '"]').val("");
+                    $('input[id*="' + id + '"]').focus();
                 }
             }
         });

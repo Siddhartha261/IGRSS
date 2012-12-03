@@ -9,19 +9,19 @@
                 <tr>
                     <td>
                         <asp:GridView ID="GvDepartmentMaster" runat="server" AutoGenerateColumns="False"
-                            DataKeyNames="DepartmentId" DataSourceID="OdsDepartmentMaster" OnSelectedIndexChanged="GvDepartmentMaster_SelectedIndexChanged" meta:resourcekey="GvDepartmentMasterResource1">
+                            DataKeyNames="DepartmentId" DataSourceID="OdsDepartmentMaster" 
+                            OnSelectedIndexChanged="GvDepartmentMaster_SelectedIndexChanged" 
+                            meta:resourcekey="GvDepartmentMasterResource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="DepartmentId" HeaderText="DepartmentId" Visible="False" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="Name" HeaderText="Name" meta:resourcekey="BoundFieldResource2" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" meta:resourcekey="BoundFieldResource3" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
-                                <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource2" />
                             </Columns>
                         </asp:GridView>
                     </td>
                 </tr>
                 <tr>
-                    <td align="right">
+                    <td align="right" style="text-align: left">
                         <asp:Button ID="btnNew" runat="server" Text="Add New" OnClick="btnNew_Click" meta:resourcekey="btnNewResource1" />
                     </td>
                 </tr>

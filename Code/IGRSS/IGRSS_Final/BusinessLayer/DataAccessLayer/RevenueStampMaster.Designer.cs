@@ -917,7 +917,7 @@ namespace IGRSS.DataAccessLayer.RevenueStampMasterTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [RevenueStampMaster] WHERE (([RevenueStampId] = @Original_RevenueStampId) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_CreatedAt = 1 AND [CreatedAt] IS NULL) OR ([CreatedAt] = @Original_CreatedAt)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[RevenueStampMaster] WHERE (([RevenueStampId] = @Original_RevenueStampId) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_CreatedAt = 1 AND [CreatedAt] IS NULL) OR ([CreatedAt] = @Original_CreatedAt)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RevenueStampId", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RevenueStampId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -932,8 +932,8 @@ namespace IGRSS.DataAccessLayer.RevenueStampMasterTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CreatedAt", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreatedAt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [RevenueStampMaster] ([RevenueStampId], [Name], [Description], [Amount], [CreatedBy], [CreatedAt]) VALUES (@RevenueStampId, @Name, @Description, @Amount, @CreatedBy, @CreatedAt);
-SELECT RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt FROM RevenueStampMaster WHERE (RevenueStampId = @RevenueStampId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RevenueStampMaster] ([RevenueStampId], [Name], [Description], [Amount], [CreatedBy], [CreatedAt]) VALUES (@RevenueStampId, @Name, @Description, @Amount, @CreatedBy, @CreatedAt);
+SELECT RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt FROM dbo.RevenueStampMaster WHERE (RevenueStampId = @RevenueStampId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RevenueStampId", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RevenueStampId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -943,8 +943,8 @@ SELECT RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt FROM Reve
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreatedAt", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreatedAt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [RevenueStampMaster] SET [RevenueStampId] = @RevenueStampId, [Name] = @Name, [Description] = @Description, [Amount] = @Amount, [CreatedBy] = @CreatedBy, [CreatedAt] = @CreatedAt WHERE (([RevenueStampId] = @Original_RevenueStampId) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_CreatedAt = 1 AND [CreatedAt] IS NULL) OR ([CreatedAt] = @Original_CreatedAt)));
-SELECT RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt FROM RevenueStampMaster WHERE (RevenueStampId = @RevenueStampId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[RevenueStampMaster] SET [RevenueStampId] = @RevenueStampId, [Name] = @Name, [Description] = @Description, [Amount] = @Amount, [CreatedBy] = @CreatedBy, [CreatedAt] = @CreatedAt WHERE (([RevenueStampId] = @Original_RevenueStampId) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_CreatedAt = 1 AND [CreatedAt] IS NULL) OR ([CreatedAt] = @Original_CreatedAt)));
+SELECT RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt FROM dbo.RevenueStampMaster WHERE (RevenueStampId = @RevenueStampId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RevenueStampId", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RevenueStampId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -978,8 +978,8 @@ SELECT RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt FROM Reve
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT     RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt\r\nFROM " +
-                "        RevenueStampMaster where  IsDeleted=\'False\'";
+            this._commandCollection[0].CommandText = "SELECT        RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt\r\nFR" +
+                "OM            dbo.RevenueStampMaster";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -989,8 +989,8 @@ SELECT RevenueStampId, Name, Description, Amount, CreatedBy, CreatedAt FROM Reve
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RevenueStampId", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Amount, CreatedAt, CreatedBy, Description, Name, RevenueStampId FROM Reven" +
-                "ueStampMaster WHERE (RevenueStampId = @RevenueStampId)";
+            this._commandCollection[2].CommandText = "SELECT Amount, CreatedAt, CreatedBy, Description, Name, RevenueStampId FROM dbo.R" +
+                "evenueStampMaster WHERE (RevenueStampId = @RevenueStampId)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RevenueStampId", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, "RevenueStampId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();

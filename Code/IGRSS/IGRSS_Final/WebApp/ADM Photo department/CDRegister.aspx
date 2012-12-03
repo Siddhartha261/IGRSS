@@ -10,26 +10,43 @@
             changeMonth: true,
             changeYear: true,
             yearRange: '1940:2025',
+            dateFormat: "dd/mm/yy",
             onClose: function () {
                 var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                 var dateNow = new Date();
                 if (dateSelected > dateNow) {
                     alert("Selected Date is greater than Current date");
+                    $('input[id*="' + id + '"]').val("");
+                    $('input[id*="' + id + '"]').focus();
                 }
             }
         });
     }
 
-    //temp code for comparing starting no and ending no
+   //temp code for comparing starting no and ending no
     function CompareNo(event) {
         var startNo = document.getElementById('<%=FormView_CDRegister.FindControl("StartingNoTextBox").ClientID%>');
         var endNo = document.getElementById('<%=FormView_CDRegister.FindControl("EndingNoTextBox").ClientID%>');
-        if (startNo.value > endNo.value) {
+        var a,b;
+         a = parseInt(startNo.value);
+         b = parseInt(endNo.value);
+           if(a>b) {
             alert("Ending No. should be greater than Starting No.");
             event.preventDefault();
         }
     }
     //ends temp code
+
+//    //temp code for comparing starting no and ending no
+//    function CompareNo(event) {
+//        var startNo = document.getElementById('<%=FormView_CDRegister.FindControl("StartingNoTextBox").ClientID%>');
+//        var endNo = document.getElementById('<%=FormView_CDRegister.FindControl("EndingNoTextBox").ClientID%>');
+//        if (startNo.value > endNo.value) {
+//            alert("Ending No. should be greater than Starting No.");
+//            event.preventDefault();
+//        }
+//    }
+//    //ends temp code
 
     function comparedate() {
         var txtbox1 = document.getElementById('<%=FormView_CDRegister.FindControl("YearDateTextBox").ClientID%>');

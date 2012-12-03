@@ -10,15 +10,31 @@
                 changeMonth: true,
                 changeYear: true,
                 yearRange: '1940:2025',
+                dateFormat: "dd/mm/yy",
                 onClose: function () {
                     var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                     var dateNow = new Date();
                     if (dateSelected > dateNow) {
                         alert("Selected Date is greater than Current date");
+                        $('input[id*="' + id + '"]').val("");
+                        $('input[id*="' + id + '"]').focus();
                     }
                 }
             });
         }
+
+        function StartEndCompare(event) {
+            var startdatetextbox = document.getElementById('<%=FormView_FileRegister.FindControl("StartingDateTextBox").ClientID%>')
+            var enddatetextbox = document.getElementById('<%=FormView_FileRegister.FindControl("EndingDateTextBox").ClientID%>')
+            var startdate = Date.parse(startdatetextbox.value);
+            var enddate = Date.parse(enddatetextbox.value);
+            if (startdate > enddate) {
+                alert("Start Date Should be Less than End Date");
+                event.preventDefault();
+            }
+        }
+        //ends code
+
         $(function () {
             $('input[id*="inwardnotextbox"]').keydown(function (event) {
                 // allow: backspace, delete, tab, escape, and enter
@@ -165,7 +181,7 @@
         Text='<%# Bind("FileNo") %>' Width="160px" MaxLength="10" TabIndex="2" /></td></tr>
 <tr align="left"><td>Starting Date :</td><td></td><td>
     <asp:TextBox ID="StartingDateTextBox" 
-        runat="server" Text='<%# Bind("StartingDate") %>' Width="160px" 
+        runat="server"  Text='<%# Bind("StartingDate") %>' Width="160px" 
         TabIndex="3" /></td></tr>
 <tr align="left"><td>Ending Date :</td><td></td><td>
     <asp:TextBox ID="EndingDateTextBox" runat="server" 
@@ -186,7 +202,7 @@
         TabIndex="7" /></td></tr>
 <tr>
                     <td align="center" colspan="3">
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                        <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                             CommandName="Update" Text="Update" CssClass="standardButton" 
                             TabIndex="8" />
                         &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
@@ -248,7 +264,7 @@
 <tr>
                     <td align="center" colspan="3" style="margin-left: 40px">
                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True"
-                            CommandName="Insert" Text="Insert" CssClass="standardButton" 
+                            CommandName="Insert" Text="Insert" CssClass="standardButton" OnClientClick="StartEndCompare(event)"
                             TabIndex="8" />
                         &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" 
                             CommandName="Reset" Text="Reset" 

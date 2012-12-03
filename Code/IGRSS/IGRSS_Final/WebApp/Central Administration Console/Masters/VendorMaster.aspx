@@ -56,7 +56,9 @@
                             </td>
                             <td class="textColumn">
                                        
-                          <asp:DropDownList ID="ddlVendorTypeIns" runat="server" SelectedValue='<%# Bind("VendorType") %>' meta:resourcekey="ddlVendorTypeInsResource1">
+                          <asp:DropDownList ID="ddlVendorTypeIns" runat="server" 
+                                    SelectedValue='<%# Bind("VendorType") %>' 
+                                    meta:resourcekey="ddlVendorTypeInsResource1" Width="160px">
                                <asp:ListItem meta:resourcekey="ListItemResource1" Selected="True">Supplier</asp:ListItem>
                            </asp:DropDownList> </td>
                            <td class="validationColumn">
@@ -87,30 +89,30 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="labelColumn">
+                            <td class="labelColumn" style="height: 26px">
                                 <asp:Label ID="lblPhoneIns" runat="server" meta:resourcekey="lblPhoneIns" Text="Phone"></asp:Label>
                             </td>
-                            <td class="textColumn">
+                            <td class="textColumn" style="height: 26px">
                                 <asp:TextBox ID="txtPhoneIns" runat="server" MaxLength="13" meta:resourcekey="txtPhoneIns"
                                     Text='<%# Bind("Phone") %>'></asp:TextBox>
                             </td>
-                            <td class="validationColumn">
+                          <%--  <td class="validationColumn" style="height: 26px">
                                 <asp:RequiredFieldValidator ID="ValidateText" ControlToValidate="txtPhoneIns" runat="server"
                                     ErrorMessage="Please Enter Phone No" meta:resourcekey="ValidateTextResource1">
 							*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="pssksks" runat="server" ControlToValidate="txtPhoneIns"
                                     ValidationExpression="^\d{10}$" ErrorMessage="Phone No Should be Numeric and 10 Digit"
                                     meta:resourcekey="pssksksResource1">*</asp:RegularExpressionValidator>
-                            </td>
-                            <td class="labelColumn">
+                            </td>--%>
+                            <td class="labelColumn" style="height: 26px">
                                 <asp:Label ID="lblContactPersonIns" runat="server" meta:resourcekey="lblContactPersonIns"
                                     Text="ContactPerson"></asp:Label>
                             </td>
-                            <td class="textColumn">
+                            <td class="textColumn" style="height: 26px; width: 23%;">
                                 <asp:TextBox ID="txtContactPersonIns" runat="server" MaxLength="50" meta:resourcekey="txtContactPersonIns"
                                     Text='<%# Bind("ContactPerson") %>'></asp:TextBox>
                             </td>
-                            <td class="validationColumn">
+                            <td class="validationColumn" style="height: 26px">
                             </td>
                         </tr>
                         <tr>

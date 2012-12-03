@@ -11,11 +11,14 @@
             changeMonth: true,
             changeYear: true,
             yearRange: '1940:2025',
+            dateFormat: "dd/mm/yy",
             onClose: function () {
                 var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                 var dateNow = new Date();
                 if (dateSelected > dateNow) {
                     alert("Selected Date is greater than Current date");
+                    $('input[id*="' + id + '"]').val("");
+                    $('input[id*="' + id + '"]').focus();
                 }
             }
         });

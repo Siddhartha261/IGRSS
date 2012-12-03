@@ -9,12 +9,12 @@
                 <tr>
                     <td>
                         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            DataKeyNames="InspectionTypeId" DataSourceID="odsInspectionDetails" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" meta:resourcekey="GridView1Resource1">
+                            DataKeyNames="InspectionTypeId" DataSourceID="odsInspectionDetails" 
+                            OnSelectedIndexChanged="GridView1_SelectedIndexChanged" 
+                            meta:resourcekey="GridView1Resource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" meta:resourcekey="BoundFieldResource2" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
-                                <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource2" />
                             </Columns>
                         </asp:GridView>
                     </td>
@@ -27,8 +27,11 @@
             </table>
         </asp:View>
         <asp:View ID="viewInspectionMaster" runat="server">
-            <asp:FormView ID="FvInspectionTypeMaster" runat="server" DataSourceID="OdsInspectionTypeMaster"
-                DefaultMode="Insert" OnItemInserting="FvInspectionTypeMaster_ItemInserting" OnItemUpdating="FvInspectionTypeMaster_ItemUpdating" meta:resourcekey="FvInspectionTypeMasterResource1">
+            <asp:FormView ID="FvInspectionTypeMaster" runat="server" DataSourceID="odsInspectionDetails"
+                DefaultMode="Insert" 
+                OnItemInserting="FvInspectionTypeMaster_ItemInserting" 
+                OnItemUpdating="FvInspectionTypeMaster_ItemUpdating" 
+                meta:resourcekey="FvInspectionTypeMasterResource1" EnableModelValidation="True">
                 <InsertItemTemplate>
                     <table width="100%">
                         <tr>
