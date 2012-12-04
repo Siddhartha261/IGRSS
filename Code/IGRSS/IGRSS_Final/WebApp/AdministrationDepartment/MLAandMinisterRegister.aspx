@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
     <script language="javascript">
-    f function generateDatePicker(id) {
+    function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
             showOn: "both",
             buttonImage: "/WebApp/Styles/css/sunny/images/calendar.gif",

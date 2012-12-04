@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true" CodeFile="SunavniRegister.aspx.cs" Inherits="CCRALegal_SunavniRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" Runat="Server">
-    <script language="javascript">
+    <script type="text/javascript" language="javascript">
 
     function generateDatePicker(id) {
         $('input[id*="' + id + '"]').datepicker({
@@ -11,7 +11,7 @@
             changeMonth: true,
             changeYear: true,
             yearRange: '1940:2025',
-            dateFormat: "dd/mm/yy",
+            dateFormat: "mm/dd/yy",
             onClose: function () {
                 var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                 var dateNow = new Date();
@@ -25,17 +25,17 @@
     }
 
 
-//    function StartEndCompare(event) {
-//        var issuedatetextbox = document.getElementById('<%=FormView_SunavniRegister.FindControl("IssueDateOfLetterTextBox").ClientID%>')
-//        var hearingdatetextbox = document.getElementById('<%=FormView_SunavniRegister.FindControl("DateOfHearingTextBox").ClientID%>')
-//        var startdate = Date.parse(issuedatetextbox.value);
-//        var enddate = Date.parse(hearingdatetextbox.value);
-//        if (startdate > enddate) {
-//            alert("Issue Date Should be Less than Hearing Date");
-//            event.preventDefault();
+    function StartEndCompare(event) {
+        var issuedatetextbox = document.getElementById('<%=FormView_SunavniRegister.FindControl("IssueDateOfLetterTextBox").ClientID%>')
+        var hearingdatetextbox = document.getElementById('<%=FormView_SunavniRegister.FindControl("DateOfHearingTextBox").ClientID%>')
+        var startdate = Date.parse(issuedatetextbox.value);
+        var enddate = Date.parse(hearingdatetextbox.value);
+        if (startdate > enddate) {
+            alert("Issue Date Should be Less than Hearing Date");
+            event.preventDefault();
         }
     }
-    //ends code     
+  
 
    $(function () {
         var datePickers = ["IssueDateOfLetterTextBox", "DateOfHearingTextBox"];

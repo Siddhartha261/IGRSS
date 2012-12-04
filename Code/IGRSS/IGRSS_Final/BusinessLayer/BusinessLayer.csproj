@@ -333,6 +333,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InspectionDetails.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\InspectionMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InspectionMaster.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Inward.cs">
       <DependentUpon>Inward.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -466,6 +471,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Sealing.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\SentVia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SentVia.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Service.cs">
       <DependentUpon>Service.xsd</DependentUpon>
@@ -1260,6 +1270,17 @@
     <None Include="DataAccessLayer\InspectionDetails.xss">
       <DependentUpon>InspectionDetails.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\InspectionMaster.xsc">
+      <DependentUpon>InspectionMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\InspectionMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InspectionMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\InspectionMaster.xss">
+      <DependentUpon>InspectionMaster.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Inward.xsc">
       <DependentUpon>Inward.xsd</DependentUpon>
     </None>
@@ -1600,6 +1621,17 @@
     </None>
     <None Include="DataAccessLayer\Sealing.xss">
       <DependentUpon>Sealing.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\SentVia.xsc">
+      <DependentUpon>SentVia.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\SentVia.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SentVia.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\SentVia.xss">
+      <DependentUpon>SentVia.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Service.xsc">
       <DependentUpon>Service.xsd</DependentUpon>

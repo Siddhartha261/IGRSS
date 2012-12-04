@@ -155,7 +155,9 @@
                 <tr>
 				    <td>Document From Branch:</td>
 					<td>
-                        <asp:DropDownList ID="DropDownList_documentFromBranch" runat="server">
+                        <asp:DropDownList ID="DropDownList_documentFromBranch" runat="server" 
+                            DataSourceID="OdsDepartmentMaster" DataTextField="Name" DataValueField="Name" 
+                            Width="160px">
                         </asp:DropDownList>
                     </td>
 				</tr>                    
@@ -192,7 +194,9 @@
                     
                 <tr><td>Sent To:</td>
 				    <td>
-                        <asp:DropDownList ID="DropDownList_SentTo" runat="server">
+                        <asp:DropDownList ID="DropDownList_SentTo" runat="server" 
+                            DataSourceID="ods_CopyTo" DataTextField="OfficeTypeId" 
+                            DataValueField="OfficeTypeId" Width="160px">
                         </asp:DropDownList>
                     </td>
 				</tr>                    
@@ -200,7 +204,9 @@
                 <tr>
 				    <td>Office:</td>
 					<td>
-                        <asp:DropDownList ID="DropDownList_Office" runat="server">
+                        <asp:DropDownList ID="DropDownList_Office" runat="server" 
+                            DataSourceID="ods_offices" DataTextField="OfficeName" 
+                            DataValueField="OfficeTypeId" Width="160px">
                         </asp:DropDownList>
                     </td>
 				</tr>                    
@@ -238,7 +244,9 @@
                 <tr>
 				    <td>Send Via:</td>
 					<td>
-                        <asp:DropDownList ID="DropDownList_SendVia" runat="server">
+                        <asp:DropDownList ID="DropDownList_SendVia" runat="server" 
+                            DataSourceID="ods_sentvia" DataTextField="Send_Via" DataValueField="Send_Via" 
+                            Width="160px">
                         </asp:DropDownList>
                     </td>
 				</tr>                   
@@ -283,7 +291,8 @@
                         <asp:DropDownList ID="DropDownList_CopyTo" runat="server" 
                             DataSourceID="ods_CopyTo" DataTextField="OfficeTypeName" 
                             DataValueField="OfficeTypeId" AutoPostBack="True" 
-                            onselectedindexchanged="DropDownList_CopyTo_SelectedIndexChanged">
+                            onselectedindexchanged="DropDownList_CopyTo_SelectedIndexChanged" 
+                            Width="160px">
                         </asp:DropDownList>
                     </td>
 				</tr>                   
@@ -293,7 +302,7 @@
 					<td>
                         <asp:ListBox ID="ListBox_Office_CopyTo" runat="server" 
                             DataSourceID="ods_offices" DataTextField="OfficeName" 
-                            DataValueField="OfficeTypeId"></asp:ListBox>
+                            DataValueField="OfficeTypeId" Width="160px"></asp:ListBox>
                     </td>
 				</tr>                   
                     
@@ -604,6 +613,24 @@
                     <asp:Parameter Name="OfficeTypeName" Type="String" />
                     <asp:Parameter DbType="Guid" Name="Original_OfficeTypeId" />
                     <asp:Parameter Name="Original_OfficeTypeName" Type="String" />
+                </UpdateParameters>
+            </asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="ods_sentvia" runat="server" DeleteMethod="Delete" 
+                InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+                SelectMethod="GetData" 
+                TypeName="IGRSS.DataAccessLayer.SentViaTableAdapters.OutwardRegister_LatestTableAdapter" 
+                UpdateMethod="Update">
+                <DeleteParameters>
+                    <asp:Parameter Name="Original_SrNo" Type="Int32" />
+                    <asp:Parameter Name="Original_Send_Via" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Send_Via" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Send_Via" Type="String" />
+                    <asp:Parameter Name="Original_SrNo" Type="Int32" />
+                    <asp:Parameter Name="Original_Send_Via" Type="String" />
                 </UpdateParameters>
             </asp:ObjectDataSource>
             <%--<asp:ObjectDataSource ID="odsgv" runat="server" OldValuesParameterFormatString="original_{0}"

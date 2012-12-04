@@ -9,7 +9,7 @@
                 <tr>
                     <td>
                         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                            DataKeyNames="InspectionTypeId" DataSourceID="odsInspectionDetails" 
+                            DataKeyNames="InspectionTypeId" DataSourceID="OdsInspectionTypeMaster" 
                             OnSelectedIndexChanged="GridView1_SelectedIndexChanged" 
                             meta:resourcekey="GridView1Resource1" EnableModelValidation="True">
                             <Columns>
@@ -27,125 +27,72 @@
             </table>
         </asp:View>
         <asp:View ID="viewInspectionMaster" runat="server">
-            <asp:FormView ID="FvInspectionTypeMaster" runat="server" DataSourceID="odsInspectionDetails"
+            <asp:FormView ID="FvInspectionTypeMaster" runat="server" DataSourceID="ods_InspectionMaster"
                 DefaultMode="Insert" 
                 OnItemInserting="FvInspectionTypeMaster_ItemInserting" 
                 OnItemUpdating="FvInspectionTypeMaster_ItemUpdating" 
-                meta:resourcekey="FvInspectionTypeMasterResource1" EnableModelValidation="True">
+                meta:resourcekey="FvInspectionTypeMasterResource1" 
+                EnableModelValidation="True" DataKeyNames="InspectionTypeId">
                 <InsertItemTemplate>
-                    <table width="100%">
+                   <%-- InspectionTypeId:
+                    <asp:TextBox ID="InspectionTypeIdTextBox" runat="server" 
+                        Text='<%# Bind("InspectionTypeId") %>' />
+                    <br />--%>
+                    <table>
                         <tr>
-                            <td colspan="6">
-                                <asp:Label ID="lblInspectionTypeMasterIns" runat="server" meta:resourcekey="lblInspectionTypeMasterIns"
-                                    SkinID="SubHeading" Text="Inspection Type Master"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelColumn">
-                                <asp:Label ID="lblNameIns" runat="server" meta:resourcekey="lblNameIns" Text="Name"></asp:Label>
-                            </td>
-                            <td class="textColumn">
-                                <asp:TextBox ID="txtNameIns" MaxLength="25" runat="server" meta:resourcekey="txtNameIns"
-                                    Text='<%# Bind("Name") %>'></asp:TextBox>
-                            </td>
-                            <td class="validationColumn" colspan="4">
-                                <asp:RequiredFieldValidator ID="RfvNameIns" runat="server" ControlToValidate="txtNameIns"
-                                    ErrorMessage="Please Enter Name" meta:resourcekey="RfvNameInsResource1">*</asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelColumn">
-                                <asp:Label ID="lblDescriptionIns" runat="server" meta:resourcekey="lblDescriptionIns"
-                                    Text="Description"></asp:Label>
-                            </td>
-                            <td class="textColumn" colspan="4">
-                                <asp:TextBox ID="txtDescriptionIns" TextMode="MultiLine" MaxLength="125" runat="server"
-                                    meta:resourcekey="txtDescriptionIns" Text='<%# Bind("Description") %>'></asp:TextBox>
-                            </td>
-                            <td class="validationColumn">
-                                <asp:RequiredFieldValidator ID="RfvDescriptionIns" runat="server" ControlToValidate="txtDescriptionIns"
-                                    ErrorMessage="Please Enter Description" meta:resourcekey="RfvDescriptionInsResource1">*</asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right" colspan="6">
-                                <asp:Button ID="btnInsert" runat="server" CommandName="Insert" Text="Save" meta:resourcekey="btnInsertResource1" />
-                                <asp:Button ID="btnCancel" runat="server" CausesValidation="False" CommandName="Cancel"
-                                    Text="Cancel" OnClick="btnCancel_Click" meta:resourcekey="btnCancelResource1" />
-                            </td>
-                        </tr>
+                           <td>Name:</td>
+                           <td><asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' 
+                                   Width="200px" /></td>
+                       </tr>                   
+                    
+                       <tr>
+                           <td>Description:</td>
+                           <td><asp:TextBox ID="DescriptionTextBox" runat="server" 
+                        Text='<%# Bind("Description") %>' TextMode="MultiLine" Width="300px" /></td>
+                      </tr>                   
+                    
+                    <tr><td><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                        CommandName="Insert" Text="Insert" />
+                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                        CausesValidation="False" CommandName="Cancel" Text="Cancel" /></td></tr>
                     </table>
+                    
                 </InsertItemTemplate>
                 <EditItemTemplate>
-                    <table width="100%">
-                        <tr>
-                            <td colspan="6">
-                                <asp:Label ID="lblUpdpectionTypeMasterUpd" runat="server" meta:resourcekey="lblUpdpectionTypeMasterUpd"
-                                    SkinID="SubHeading" Text="Updpection Type Master"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelColumn">
-                                <asp:Label ID="lblNameUpd" runat="server" meta:resourcekey="lblNameUpd" Text="Name"></asp:Label>
-                            </td>
-                            <td class="textColumn">
-                                <asp:TextBox ID="txtNameUpd" MaxLength="25" runat="server" meta:resourcekey="txtNameUpd"
-                                    Text='<%# Bind("Name") %>'></asp:TextBox>
-                            </td>
-                            <td class="validationColumn" colspan="4">
-                                <asp:RequiredFieldValidator ID="RfvNameUpd" runat="server" ControlToValidate="txtNameUpd"
-                                    ErrorMessage="Please Enter Name" meta:resourcekey="RfvNameUpdResource1">*</asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelColumn">
-                                <asp:Label ID="lblDescriptionUpd" runat="server" meta:resourcekey="lblDescriptionUpd"
-                                    Text="Description"></asp:Label>
-                            </td>
-                            <td class="textColumn" colspan="4">
-                                <asp:TextBox ID="txtDescriptionUpd" TextMode="MultiLine" MaxLength="25" runat="server"
-                                    meta:resourcekey="txtDescriptionUpd" Text='<%# Bind("Description") %>'></asp:TextBox>
-                            </td>
-                            <td class="validationColumn">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right" colspan="6">
-                                <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Update" meta:resourcekey="btnUpdateResource1" />
-                                <asp:Button ID="btnCancel" runat="server" CausesValidation="False" Text="Cancel" OnClick="btnCancel_Click1" meta:resourcekey="btnCancelResource2" />
-                            </td>
-                        </tr>
-                    </table>
+                    InspectionTypeId:
+                    <asp:Label ID="InspectionTypeIdLabel1" runat="server" 
+                        Text='<%# Eval("InspectionTypeId") %>' />
+                    <br />
+                    Name:
+                    <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                    <br />
+                    Description:
+                    <asp:TextBox ID="DescriptionTextBox" runat="server" 
+                        Text='<%# Bind("Description") %>' />
+                    <br />
+                    <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                        CommandName="Update" Text="Update" />
+                    &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                        CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <table width="100%">
-                        <tr>
-                            <td colspan="6">
-                                <asp:Label ID="lblItmpectionTypeMasterItm" runat="server" meta:resourcekey="lblItmpectionTypeMasterItm"
-                                    SkinID="SubHeading" Text="Itmpection Type Master"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelColumn">
-                                <asp:Label ID="lblNameItm" runat="server" meta:resourcekey="lblNameItm" Text="Name"></asp:Label>
-                            </td>
-                            <td class="textColumn">
-                                <asp:TextBox ID="txtNameItm" runat="server" meta:resourcekey="txtNameItm" Text='<%# Bind("Name") %>'></asp:TextBox>
-                            </td>
-                            <td class="validationColumn">
-                            </td>
-                            <td class="labelColumn">
-                                <asp:Label ID="lblDescriptionItm" runat="server" meta:resourcekey="lblDescriptionItm"
-                                    Text="Description"></asp:Label>
-                            </td>
-                            <td class="textColumn">
-                                <asp:TextBox ID="txtDescriptionItm" runat="server" meta:resourcekey="txtDescriptionItm"
-                                    Text='<%# Bind("Description") %>'></asp:TextBox>
-                            </td>
-                            <td class="validationColumn">
-                            </td>
-                        </tr>
-                    </table>
+                    InspectionTypeId:
+                    <asp:Label ID="InspectionTypeIdLabel" runat="server" 
+                        Text='<%# Eval("InspectionTypeId") %>' />
+                    <br />
+                    Name:
+                    <asp:Label ID="NameLabel" runat="server" Text='<%# Bind("Name") %>' />
+                    <br />
+                    Description:
+                    <asp:Label ID="DescriptionLabel" runat="server" 
+                        Text='<%# Bind("Description") %>' />
+                    <br />
+                    <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
+                        CommandName="Edit" Text="Edit" />
+                    &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
+                        CommandName="Delete" Text="Delete" />
+                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
+                        CommandName="New" Text="New" />
                 </ItemTemplate>
             </asp:FormView>
         </asp:View>
@@ -177,5 +124,28 @@
             <asp:ControlParameter ControlID="GridView1" Name="InspectionTypeId" PropertyName="SelectedValue"
                 Type="Object" />
         </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ods_InspectionMaster" runat="server" 
+        DeleteMethod="Delete" InsertMethod="Insert" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.InspectionMasterTableAdapters.InspectionTypeMasterTableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter DbType="Guid" Name="Original_InspectionTypeId" />
+            <asp:Parameter Name="Original_Name" Type="String" />
+            <asp:Parameter Name="Original_Description" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter DbType="Guid" Name="InspectionTypeId" />
+            <asp:Parameter Name="Name" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Name" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
+            <asp:Parameter DbType="Guid" Name="Original_InspectionTypeId" />
+            <asp:Parameter Name="Original_Name" Type="String" />
+            <asp:Parameter Name="Original_Description" Type="String" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:Content>
