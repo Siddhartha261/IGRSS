@@ -7,25 +7,32 @@
         <asp:View ID="viewSearch" runat="server">
             <table width="100%">
                 <tr>
-                    <td class="labelColumn">
-                        <asp:Label ID="lblUserName" runat="server" meta:resourcekey="lblUserName" Text="User Name"></asp:Label>
-                    </td>
-                    <td class="textColumn">
-                        <asp:TextBox ID="txtUserName" runat="server" meta:resourcekey="txtUserName"></asp:TextBox>
-                    </td>
-                    <td class="validationColumn" colspan="3">
+                    <td align="center">
+                        <asp:Label ID="lblUserName" runat="server" meta:resourcekey="lblUserName" Text="User Name :"></asp:Label>
+                   
+                   
+                        <asp:TextBox ID="txtUserName" runat="server" meta:resourcekey="txtUserName" 
+                            Width="200px"></asp:TextBox>
+                    
+                  
                         <asp:RequiredFieldValidator ID="ReqfldtxtUserName" runat="server" ControlToValidate="txtUserName"
-                            ErrorMessage="User Name Can't be Blank" meta:resourcekey="ReqfldtxtUserNameResource1">*</asp:RequiredFieldValidator>
-                    </td>
+                            ErrorMessage="User Name Can't be Blank" 
+                            meta:resourcekey="ReqfldtxtUserNameResource1" Text="User Name Can't be Blank"></asp:RequiredFieldValidator>
+                    
+                    
+                        <asp:LinkButton ID="btnSearch" runat="server" Text="Search" 
+                            OnClick="btnSearch_Click" meta:resourcekey="btnSearchResource1" 
+                            CssClass="standardButton" />
+                         </td>
                 </tr>
-                <tr>
-                    <td align="right" colspan="6">
-                        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" meta:resourcekey="btnSearchResource1" /></td>
-                </tr>
+                
                 <tr>
                     <td colspan="6">
                         <asp:GridView ID="gvUsersList" runat="server" AllowSorting="True" AutoGenerateColumns="False"
-                            DataKeyNames="UserName" OnSelectedIndexChanged="gvUsersList_SelectedIndexChanged" OnDataBound="gvUsersList_DataBound" meta:resourcekey="gvUsersListResource1">
+                            DataKeyNames="UserName" 
+                            OnSelectedIndexChanged="gvUsersList_SelectedIndexChanged" 
+                            OnDataBound="gvUsersList_DataBound" meta:resourcekey="gvUsersListResource1" 
+                            EnableModelValidation="True">
                             <Columns>
                                 <asp:TemplateField HeaderText="Username" ShowHeader="False" meta:resourcekey="TemplateFieldResource1">
                                     <EditItemTemplate>
@@ -55,7 +62,9 @@
             <asp:Label ID="lblUsernameDisplay" runat="server" meta:resourcekey="lblUsernameDisplay"
                 Width="100%"></asp:Label>
             <asp:FormView ID="FvUserInOfficeRoles" runat="server" DataKeyNames="UserName" DataSourceID="odsUserInOfficeRolesByUserName"
-                DefaultMode="Insert" OnItemInserting="FvUserInOfficeRoles_ItemInserting" OnItemInserted="FvUserInOfficeRoles_ItemInserted" meta:resourcekey="FvUserInOfficeRolesResource1">
+                DefaultMode="Insert" OnItemInserting="FvUserInOfficeRoles_ItemInserting" 
+                OnItemInserted="FvUserInOfficeRoles_ItemInserted" 
+                meta:resourcekey="FvUserInOfficeRolesResource1" EnableModelValidation="True">
                 <InsertItemTemplate>
                     <table width="100%">
                         <tr>
@@ -71,7 +80,8 @@
                             <td class="textColumn">
                                 <asp:DropDownList ID="ddlDesignationIdInsIns" runat="server" DataSourceID="odsDesignationMaster"
                                     DataTextField="Name" DataValueField="DesignationID" meta:resourcekey="ddlOfficeIdIns"
-                                    SelectedValue='<%# Bind("DesignationID") %>' Text='<%# Bind("DesignationID") %>'>
+                                    SelectedValue='<%# Bind("DesignationID") %>' 
+                                    Text='<%# Bind("DesignationID") %>' Width="160px">
                                 </asp:DropDownList></td>
                             <td class="validationColumn">
                             </td>
@@ -81,7 +91,8 @@
                             <td class="textColumn">
                                 <asp:DropDownList ID="dddOfficeIdInsIns" runat="server" DataSourceID="odsOfficeMaster"
                                     DataTextField="OfficeName" DataValueField="OfficeId" meta:resourcekey="dddOfficeIdIns"
-                                    SelectedValue='<%# Bind("OfficeId") %>' Text='<%# Bind("OfficeId") %>'>
+                                    SelectedValue='<%# Bind("OfficeId") %>' Text='<%# Bind("OfficeId") %>' 
+                                    Width="160px">
                                 </asp:DropDownList></td>
                             <td class="validationColumn">
                             </td>
@@ -91,9 +102,10 @@
                                 <asp:Label ID="lblCommentsInsIns" runat="server" meta:resourcekey="lblCommentsIns"
                                     Text="Comments"></asp:Label>
                             </td>
-                            <td colspan="5">
+                            <td colspan="">
                                 <asp:TextBox ID="txtCommentsInsIns" runat="server" meta:resourcekey="txtCommentsIns"
-                                    Text='<%# Bind("Comments") %>' TextMode="MultiLine"></asp:TextBox>
+                                    Text='<%# Bind("Comments") %>' TextMode="MultiLine" Height="60px" 
+                                    Width="160px"></asp:TextBox>
                             </td>
                             <td class="validationColumn">
                             </td>
@@ -103,18 +115,22 @@
                                 <asp:Label ID="lblIsActiveInsIns" runat="server" meta:resourcekey="lblIsActiveIns"
                                     Text="Is Active"></asp:Label>
                             </td>
-                            <td class="textColumn">
+                            <td>
                                 <asp:CheckBox ID="chkIsActiveInsIns" runat="server" Checked='<%# Bind("IsActive") %>'
                                     meta:resourcekey="chkIsActiveIns" />
                             </td>
                             <td class="validationColumn">
                             </td>
-                            <td colspan="2" style="text-align: right">
-                                <asp:Button ID="btnSaveIns" runat="server" CommandName="Insert" Text="Save" meta:resourcekey="btnSaveInsResource1" />
-                                <asp:Button ID="btnCancelIns" runat="server" CommandName="Cancel" Text="Cancel" meta:resourcekey="btnCancelInsResource1" /></td>
+                            
                             <td class="validationColumn">
                             </td>
                         </tr>
+                        <tr><td colspan="2" style="text-align: right">
+                                <asp:LinkButton ID="btnSaveIns" runat="server" CommandName="Insert" Text="Save" 
+                                    meta:resourcekey="btnSaveInsResource1" CssClass="standardButton" />
+                                &nbsp<asp:LinkButton ID="btnCancelIns" runat="server" CommandName="Cancel" 
+                                    Text="Cancel" meta:resourcekey="btnCancelInsResource1" 
+                                    CssClass="standardButton" /></td></tr>
                     </table>
                 </InsertItemTemplate>
                 <EditItemTemplate>
@@ -180,7 +196,12 @@
                 </EditItemTemplate>
             </asp:FormView>
             <asp:GridView ID="GvuserDetailsSearch" runat="server" AutoGenerateColumns="False"
-                DataKeyNames="Username,DesignationID" DataSourceID="odsUserInOfficeRolesByUserName" OnSelectedIndexChanged="GvuserDetailsSearch_SelectedIndexChanged" OnRowDeleting="GvuserDetailsSearch_RowDeleting" OnDataBound="GvuserDetailsSearch_DataBound" meta:resourcekey="GvuserDetailsSearchResource1">
+                DataKeyNames="Username,DesignationID" 
+                DataSourceID="odsUserInOfficeRolesByUserName" 
+                OnSelectedIndexChanged="GvuserDetailsSearch_SelectedIndexChanged" 
+                OnRowDeleting="GvuserDetailsSearch_RowDeleting" 
+                OnDataBound="GvuserDetailsSearch_DataBound" 
+                meta:resourcekey="GvuserDetailsSearchResource1" EnableModelValidation="True">
                 <Columns>
                     <asp:TemplateField HeaderText="Username" SortExpression="Username" meta:resourcekey="TemplateFieldResource2">
                         <EditItemTemplate>
@@ -198,7 +219,8 @@
                     </asp:BoundField>
                     <asp:BoundField DataField="Comments" HeaderText="Comments" ReadOnly="True" SortExpression="Comments" meta:resourcekey="BoundFieldResource8" />
                     <asp:BoundField DataField="IsActive" HeaderText="IsActive" ReadOnly="True" SortExpression="IsActive" meta:resourcekey="BoundFieldResource9" />
-                    <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource1" />
+                    <asp:CommandField ShowDeleteButton="True" 
+                        meta:resourcekey="CommandFieldResource1" Visible="False" />
                 </Columns>
             </asp:GridView>
         </asp:View>

@@ -35,14 +35,14 @@ public partial class Central_Administration_Console_VendorMaster : IgrssPage
 	}
     protected void btnNew_Click(object sender, EventArgs e)
     {
-        MvVendorMaster.SetActiveView(MvVendorMaster.Views[1]);
+        MvVendorMaster.SetActiveView(viewVendorMaster);
         FvvendorMaster.ChangeMode(FormViewMode.Insert);
-        //((TextBox)FvvendorMaster.FindControl("txtReceiptNumberIns")).Text = "";
-       ((TextBox)FvvendorMaster.FindControl("txtAdjudicationTotalFeesIns")).Text = "";
-        ((TextBox)FvvendorMaster.FindControl("txtVendorNameIns")).Text = "";
-        ((TextBox)FvvendorMaster.FindControl("txtAddressIns")).Text = "";
-        ((TextBox)FvvendorMaster.FindControl("txtPhoneIns")).Text = "";
-        ((TextBox)FvvendorMaster.FindControl("txtContactPersonIns")).Text = "";
+       // //((TextBox)FvvendorMaster.FindControl("txtReceiptNumberIns")).Text = "";
+       //((TextBox)FvvendorMaster.FindControl("txtAdjudicationTotalFeesIns")).Text = "";
+       // ((TextBox)FvvendorMaster.FindControl("txtVendorNameIns")).Text = "";
+       // ((TextBox)FvvendorMaster.FindControl("txtAddressIns")).Text = "";
+       // ((TextBox)FvvendorMaster.FindControl("txtPhoneIns")).Text = "";
+       // ((TextBox)FvvendorMaster.FindControl("txtContactPersonIns")).Text = "";
     }
     protected void GvDepartmentMaster_SelectedIndexChanged(object sender, EventArgs e)
     {

@@ -162,6 +162,7 @@
     <Compile Include="DataAccessLayer\ApplicationDisposalRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\BillRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\BookForms.Designer.cs" />
+    <Compile Include="DataAccessLayer\CastMaster.Designer.cs" />
     <Compile Include="DataAccessLayer\CDRegiater.Designer.cs" />
     <Compile Include="DataAccessLayer\ChequeRegister.Designer.cs" />
     <Compile Include="DataAccessLayer\Citizen.Designer.cs">
@@ -230,6 +231,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DiaryOfficeDetails.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\District_Master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>District_Master.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Document.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -244,6 +250,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentUpload.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\EducationalQualfn.Designer.cs" />
     <Compile Include="DataAccessLayer\Employee.cs">
       <DependentUpon>Employee.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -314,6 +321,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HighCourtReg.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\HistoryCard.Designer.cs" />
     <Compile Include="DataAccessLayer\InquiryOfficer.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -452,6 +460,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistrationDocReq.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\ReligionMaster.Designer.cs" />
     <Compile Include="DataAccessLayer\ResidenceDistrict.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -907,6 +916,17 @@
     <None Include="DataAccessLayer\BookForms.xss">
       <DependentUpon>BookForms.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\CastMaster.xsc">
+      <DependentUpon>CastMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\CastMaster.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CastMaster1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\CastMaster.xss">
+      <DependentUpon>CastMaster.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\CDRegiater.xsc">
       <DependentUpon>CDRegiater.xsd</DependentUpon>
     </None>
@@ -1083,6 +1103,17 @@
     <None Include="DataAccessLayer\DiaryOfficeDetails.xss">
       <DependentUpon>DiaryOfficeDetails.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\District_Master.xsc">
+      <DependentUpon>District_Master.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\District_Master.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>District_Master.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\District_Master.xss">
+      <DependentUpon>District_Master.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\Document.xsc">
       <DependentUpon>Document.xsd</DependentUpon>
     </None>
@@ -1093,6 +1124,17 @@
     </None>
     <None Include="DataAccessLayer\Document.xss">
       <DependentUpon>Document.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\EducationalQualfn.xsc">
+      <DependentUpon>EducationalQualfn.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\EducationalQualfn.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EducationalQualfn1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\EducationalQualfn.xss">
+      <DependentUpon>EducationalQualfn.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Employee.xsc">
       <DependentUpon>Employee.xsd</DependentUpon>
@@ -1225,6 +1267,13 @@
     </None>
     <None Include="DataAccessLayer\HighCourtReg.xss">
       <DependentUpon>HighCourtReg.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\HistoryCard.xsc">
+      <DependentUpon>HistoryCard.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\HistoryCard.xsd" />
+    <None Include="DataAccessLayer\HistoryCard.xss">
+      <DependentUpon>HistoryCard.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\InquiryOfficer.xsc">
       <DependentUpon>InquiryOfficer.xsd</DependentUpon>
@@ -1566,6 +1615,17 @@
     </None>
     <None Include="DataAccessLayer\RefundTypeMaster.xss">
       <DependentUpon>RefundTypeMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ReligionMaster.xsc">
+      <DependentUpon>ReligionMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ReligionMaster.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReligionMaster1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\ReligionMaster.xss">
+      <DependentUpon>ReligionMaster.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\ResidenceDistrict.xsc">
       <DependentUpon>ResidenceDistrict.xsd</DependentUpon>

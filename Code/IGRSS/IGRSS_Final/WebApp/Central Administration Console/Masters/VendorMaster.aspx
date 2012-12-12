@@ -1,6 +1,6 @@
 <%@ Page Language="C#" MasterPageFile="~/IGRSS_Default.master" AutoEventWireup="true"
     CodeFile="VendorMaster.aspx.cs" Inherits="Central_Administration_Console_VendorMaster"
-    Title="Vendor Maaster" Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
+    Title="Vendor Master" Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
     <asp:MultiView ID="MvVendorMaster" runat="server" ActiveViewIndex="0">
@@ -9,59 +9,55 @@
                 <tr>
                     <td>
                         <asp:GridView ID="GvDepartmentMaster" runat="server" AutoGenerateColumns="False"
-                            DataKeyNames="VendorID" DataSourceID="odsVendorMasterById" OnSelectedIndexChanged="GvDepartmentMaster_SelectedIndexChanged" meta:resourcekey="GvDepartmentMasterResource1">
+                            DataKeyNames="VendorID" DataSourceID="odsVendorMasterById" 
+                            OnSelectedIndexChanged="GvDepartmentMaster_SelectedIndexChanged" 
+                            meta:resourcekey="GvDepartmentMasterResource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="CompanyName" HeaderText="CompanyName" SortExpression="CompanyName" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="VendorName" HeaderText="VendorName" SortExpression="VendorName" meta:resourcekey="BoundFieldResource2" />
                                 <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" meta:resourcekey="BoundFieldResource3" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
-                                <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource2" />
                             </Columns>
                         </asp:GridView>
                     </td>
                 </tr>
                 <tr>
                     <td align="right">
-                        <asp:Button ID="btnNew" runat="server" Text="Add New" OnClick="btnNew_Click" meta:resourcekey="btnNewResource1" />
+                        <asp:LinkButton ID="btnNew" runat="server" Text="Add New" 
+                            OnClick="btnNew_Click" meta:resourcekey="btnNewResource1" 
+                            CssClass="standardButton" />
                     </td>
                 </tr>
             </table>
         </asp:View>
-        <asp:View ID="viewVendorMaster" runat="server">
+        <asp:View ID="viewVendorMaster" runat="server">       
             <asp:FormView ID="FvvendorMaster" runat="server" DataSourceID="OdsVendorMaster" DefaultMode="Insert"
                 OnItemInserting="FvvendorMaster_ItemInserting" meta:resourcekey="FvvendorMasterResource1">
                 <InsertItemTemplate>
                     <table width="100%">
                         <tr>
-                            <td colspan="6">
+                            <td colspan="4">
                                 <asp:Label ID="lblFileDetailsHeaderIns" runat="server" meta:resourcekey="lblFileDetailsHeaderIns"
                                     SkinID="SubHeading" Text="Vendor Master"></asp:Label>
                             </td>
                         </tr>
                         <tr>
-                            <td class="labelColumn">
-                                <asp:Label ID="Label1" runat="server" meta:resourcekey="lblReceiptNumberIns" Text="Vendor Name"></asp:Label>
-                            </td>
-                            <td class="textColumn">
-                                <asp:TextBox ID="txtVendorNameIns" runat="server" MaxLength="50" meta:resourcekey="txtVendorNameIns"
-                                    Text='<%# Bind("VendorName") %>'></asp:TextBox>
-                            </td>
+                            
+                            <td align="left">
+                                <asp:Label ID="lblReceiptNumberIns0" runat="server" 
+                                    meta:resourcekey="lblReceiptNumberIns" Text="Vendor Name"></asp:Label>
+                                </td>
                             <td class="validationColumn">
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtVendorNameIns"
-                                    ErrorMessage="VendorName can't be Blank" meta:resourcekey="RequiredFieldValidator1Resource1">*</asp:RequiredFieldValidator>
-                            </td>
-                            <td class="labelColumn">
+                                <asp:TextBox ID="TextBox1" onkeypress="return AllowAlphabet(event)" runat="server"></asp:TextBox>
+                                </td>
+                            <td class="labelColumn" colspan="2">
                                 <asp:Label ID="lblReceiptNumberIns" runat="server" meta:resourcekey="lblReceiptNumberIns"
                                     Text="Vendor Type"></asp:Label>
+                                <asp:DropDownList ID="ddlVendorTypeIns" runat="server" 
+                                    meta:resourcekey="ddlVendorTypeInsResource1" 
+                                    SelectedValue='<%# Bind("VendorType") %>' Width="160px">
+                                    <asp:ListItem meta:resourcekey="ListItemResource1" Selected="True">Supplier</asp:ListItem>
+                                </asp:DropDownList>
                             </td>
-                            <td class="textColumn">
-                                       
-                          <asp:DropDownList ID="ddlVendorTypeIns" runat="server" 
-                                    SelectedValue='<%# Bind("VendorType") %>' 
-                                    meta:resourcekey="ddlVendorTypeInsResource1" Width="160px">
-                               <asp:ListItem meta:resourcekey="ListItemResource1" Selected="True">Supplier</asp:ListItem>
-                           </asp:DropDownList> </td>
-                           <td class="validationColumn">
                                 </tr>
                         <tr>
                             <td class="labelColumn">
@@ -69,10 +65,10 @@
                                     Text="Company Name"></asp:Label>
                             </td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtAdjudicationTotalFeesIns" runat="server" MaxLength="50" meta:resourcekey="txtAdjudicationTotalFeesIns"
-                                    Text='<%# Bind("CompanyName") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtAdjudicationTotalFeesIns" runat="server" MaxLength="50" onkeypress="return AllowAlphabet(event)" meta:resourcekey="txtAdjudicationTotalFeesIns"
+                                    Text='<%# Bind("CompanyName") %>' Width="160px"></asp:TextBox>
                             </td>
-                            <td class="validationColumn" colspan="4">
+                            <td class="validationColumn" colspan="2">
                                 <asp:RequiredFieldValidator ID="Reqfld2" runat="server" ControlToValidate="txtAdjudicationTotalFeesIns"
                                     ErrorMessage="Company Name can't be Blank" meta:resourcekey="Reqfld2Resource1">*</asp:RequiredFieldValidator>
                             </td>
@@ -81,11 +77,10 @@
                             <td class="labelColumn">
                                 <asp:Label ID="lblAddressIns" runat="server" meta:resourcekey="lblAddressIns" Text="Address"></asp:Label>
                             </td>
-                            <td class="textColumn" colspan="4">
+                            <td class="textColumn" colspan="3">
                                 <asp:TextBox ID="txtAddressIns" runat="server" TextMode="MultiLine" MaxLength="100"
-                                    meta:resourcekey="txtAddressIns" Text='<%# Bind("Address") %>'></asp:TextBox>
-                            </td>
-                            <td class="validationColumn">
+                                    meta:resourcekey="txtAddressIns" Text='<%# Bind("Address") %>' 
+                                    Height="60px" Width="160px"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -93,8 +88,8 @@
                                 <asp:Label ID="lblPhoneIns" runat="server" meta:resourcekey="lblPhoneIns" Text="Phone"></asp:Label>
                             </td>
                             <td class="textColumn" style="height: 26px">
-                                <asp:TextBox ID="txtPhoneIns" runat="server" MaxLength="13" meta:resourcekey="txtPhoneIns"
-                                    Text='<%# Bind("Phone") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtPhoneIns" runat="server" MaxLength="13" numeric="integer" meta:resourcekey="txtPhoneIns"
+                                    Text='<%# Bind("Phone") %>' Width="160px"></asp:TextBox>
                             </td>
                           <%--  <td class="validationColumn" style="height: 26px">
                                 <asp:RequiredFieldValidator ID="ValidateText" ControlToValidate="txtPhoneIns" runat="server"
@@ -109,16 +104,18 @@
                                     Text="ContactPerson"></asp:Label>
                             </td>
                             <td class="textColumn" style="height: 26px; width: 23%;">
-                                <asp:TextBox ID="txtContactPersonIns" runat="server" MaxLength="50" meta:resourcekey="txtContactPersonIns"
-                                    Text='<%# Bind("ContactPerson") %>'></asp:TextBox>
-                            </td>
-                            <td class="validationColumn" style="height: 26px">
+                                <asp:TextBox ID="txtContactPersonIns" runat="server" MaxLength="50" onkeypress="return AllowAlphabet(event)" meta:resourcekey="txtContactPersonIns"
+                                    Text='<%# Bind("ContactPerson") %>' Width="160px"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="6" align="right">
-                                <asp:Button ID="btnVendorMasterIns" runat="server" CommandName="Insert" Text="Save" meta:resourcekey="btnVendorMasterInsResource1" />
-                                <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Cancel" CausesValidation="False" meta:resourcekey="btnCancelResource1" OnClick="btnCancel_Click" />
+                            <td colspan="4" align="center">
+                                <asp:LinkButton ID="btnVendorMasterIns" runat="server" CommandName="Insert" 
+                                    Text="Save" meta:resourcekey="btnVendorMasterInsResource1" 
+                                    CssClass="standardButton" />
+                                <asp:LinkButton ID="btnCancel" runat="server" CommandName="Cancel" 
+                                    Text="Cancel" CausesValidation="False" meta:resourcekey="btnCancelResource1" 
+                                    OnClick="btnCancel_Click" CssClass="standardButton" />
                             </td>
                         </tr>
                     </table>
@@ -133,23 +130,20 @@
                         </tr>
                         <tr>
                             <td class="labelColumn">
-                                <asp:Label ID="Label1" runat="server" meta:resourcekey="lblReceiptNumberUpd" Text="VendorName"></asp:Label>
-                            </td>
+                                &nbsp;</td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtVendorNameUpd" runat="server" T MaxLength="25" meta:resourcekey="txtVendorNameUpd"
-                                    Text='<%# Bind("VendorName") %>'></asp:TextBox>
-                            </td>
+                                &nbsp;</td>
                             <td class="validationColumn">
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtVendorNameUpd"
-                                    ErrorMessage="VendorName can't be Blank" meta:resourcekey="RequiredFieldValidator1Resource3">*</asp:RequiredFieldValidator>
-                            </td>
+                                &nbsp;</td>
                             <td class="labelColumn">
                                 <asp:Label ID="lblReceiptNumberUpd" runat="server" meta:resourcekey="lblReceiptNumberUpd"
                                     Text="VendorType"></asp:Label>
                             </td>
                             <td class="textColumn">
                                        
-                          <asp:DropDownList ID="ddlVendorTypeUpd" runat="server" SelectedValue='<%# Bind("VendorType") %>' meta:resourcekey="ddlVendorTypeUpdResource1">
+                          <asp:DropDownList ID="ddlVendorTypeUpd" runat="server" 
+                                    SelectedValue='<%# Bind("VendorType") %>' 
+                                    meta:resourcekey="ddlVendorTypeUpdResource1" Width="160px">
                                <asp:ListItem  Selected="True">S</asp:ListItem>
                            </asp:DropDownList> </td>
                             <td class="validationColumn">
@@ -161,8 +155,8 @@
                                     Text="CompanyName"></asp:Label>
                             </td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtAdjudicationTotalFeesUpd" runat="server" MaxLength="50" meta:resourcekey="txtAdjudicationTotalFeesUpd"
-                                    Text='<%# Bind("CompanyName") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtAdjudicationTotalFeesUpd" runat="server" MaxLength="50" onkeypress="return AllowAlphabet(event)" meta:resourcekey="txtAdjudicationTotalFeesUpd"
+                                    Text='<%# Bind("CompanyName") %>' Width="160px"></asp:TextBox>
                             </td>
                             <td class="validationColumn" colspan="4">
                                 <asp:RequiredFieldValidator ID="Reqfld2" runat="server" ControlToValidate="txtAdjudicationTotalFeesUpd"
@@ -175,7 +169,8 @@
                             </td>
                             <td class="textColumn" colspan="4">
                                 <asp:TextBox ID="txtAddressUpd" runat="server" TextMode="MultiLine" MaxLength="150"
-                                    meta:resourcekey="txtAddressUpd" Text='<%# Bind("Address") %>'></asp:TextBox>
+                                    meta:resourcekey="txtAddressUpd" Text='<%# Bind("Address") %>' 
+                                    Height="60px" Width="160px"></asp:TextBox>
                             </td>
                             <td class="validationColumn">
                             </td>
@@ -185,7 +180,7 @@
                                 <asp:Label ID="lblPhoneUpd" runat="server" meta:resourcekey="lblPhoneUpd" Text="Phone"></asp:Label>
                             </td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtPhoneUpd" runat="server" MaxLength="13" meta:resourcekey="txtPhoneUpd"
+                                <asp:TextBox ID="txtPhoneUpd" runat="server" MaxLength="13" numeric="integer" meta:resourcekey="txtPhoneUpd"
                                     Text='<%# Bind("Phone") %>'></asp:TextBox>
                             </td>
                             <td class="validationColumn">
@@ -201,7 +196,7 @@
                                     Text="ContactPerson"></asp:Label>
                             </td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtContactPersonUpd" runat="server" meta:resourcekey="txtContactPersonUpd"
+                                <asp:TextBox ID="txtContactPersonUpd" runat="server" meta:resourcekey="txtContactPersonUpd" onkeypress="return AllowAlphabet(event)"
                                     Text='<%# Bind("ContactPerson") %>'></asp:TextBox>
                             </td>
                             <td class="validationColumn">
@@ -209,8 +204,12 @@
                         </tr>
                         <tr>
                             <td colspan="6" align="right">
-                                <asp:Button ID="btnVendorMasterUpd" runat="server" CommandName="Update" Text="Update" meta:resourcekey="btnVendorMasterUpdResource1" />
-                                <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Cancel" CausesValidation="False" meta:resourcekey="btnCancelResource2" OnClick="btnCancel_Click1" />
+                                <asp:LinkButton ID="btnVendorMasterUpd" runat="server" CommandName="Update" 
+                                    Text="Update" meta:resourcekey="btnVendorMasterUpdResource1" 
+                                    CssClass="standardButton" />
+                                <asp:LinkButton ID="btnCancel" runat="server" CommandName="Cancel" 
+                                    Text="Cancel" CausesValidation="False" meta:resourcekey="btnCancelResource2" 
+                                    OnClick="btnCancel_Click1" CssClass="standardButton" />
                             </td>
                         </tr>
                     </table>

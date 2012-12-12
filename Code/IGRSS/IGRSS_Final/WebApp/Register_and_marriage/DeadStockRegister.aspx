@@ -12,7 +12,8 @@
                 changeMonth: true,
                 changeYear: true,
                 yearRange: '1940:2025',
-                dateFormat: "dd/mm/yy",
+                //                dateFormat: "dd/mm/yy",
+                dateFormat: "mm/dd/yy",
                 onClose: function () {
                     var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                     var dateNow = new Date();
@@ -29,7 +30,10 @@
         function Compareamt(event) {
             var amt_realized = document.getElementById('<%=FormView_DeadStock.FindControl("AmtRealizeTextBox").ClientID%>');
             var amt_written_off = document.getElementById('<%=FormView_DeadStock.FindControl("AmtWritten_offTextBox").ClientID%>');
-            if (amt_realized > amt_written_off) {
+            var a, b;
+            a = parseInt(amt_realized.value);
+            b = parseInt(amt_written_off.value);
+            if (a < b) {
                 alert("Amount Realized should be greater than Amount Written-off");
                 event.preventDefault();
             }
@@ -514,7 +518,7 @@
                                 </tr>
                                 <tr>
                                     <td align="center" colspan="6">
-                                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
+                                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClientClick="Compareamt(event)"
                                             Text="Insert" CssClass="standardButton" TabIndex="13" AccessKey="I" />
                                         &nbsp;<asp:LinkButton ID="ResetButton" runat="server" CausesValidation="False" CommandName="reset"
                                             Text="Reset" OnClientClick="resetTextFields();return false;" CssClass="standardButton"

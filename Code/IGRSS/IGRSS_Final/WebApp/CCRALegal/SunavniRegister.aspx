@@ -11,6 +11,7 @@
             changeMonth: true,
             changeYear: true,
             yearRange: '1940:2025',
+//            dateFormat: "dd/mm/yy",
             dateFormat: "mm/dd/yy",
             onClose: function () {
                 var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');

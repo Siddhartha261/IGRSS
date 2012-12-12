@@ -1,0 +1,38 @@
+Master pages changes:
+
+Done Changes in existing master pages:
+
+1.Item Master
+2.Department Master
+3.Designation Master
+4.Revenue Stamps
+5.User Roles Master
+6.Qualification Master
+7.Vendor Master
+8.UOM Master
+9.Village Master
+
+changes need to be made in existing Master Pages :
+
+1.Act Master
+2.Fee Master 
+3.Inspection check list master
+4.Document Master
+5.Inspection Type Master
+6.Office Communication LKP Master
+7.Postal Delivery Type LKP
+8.Postal Stamp Denom Master
+
+New Master Pages :
+
+1.Religion - new
+2.Caste - new
+3.Office Master - new
+4.District Master  -new
+5.Taluka Master - new
+6.Recruitment Master - new
+7.Anamat Type Master - new
+8.Permanent Details Master - new
+9.Reason Master - new
+10.Pay Scale Master - new
+11.Record Classification Master - new

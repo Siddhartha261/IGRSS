@@ -11,7 +11,8 @@
                 changeMonth: true,
                 changeYear: true,
                 yearRange: '1940:2025',
-                dateFormat: "dd/mm/yy",
+                //                dateFormat: "dd/mm/yy",
+                dateFormat: "mm/dd/yy",
                 onClose: function () {
                     var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                     var dateNow = new Date();
@@ -195,8 +196,8 @@
         ErrorMessage="*">*</asp:RequiredFieldValidator>
     </td><td align="left" style="width:50%">
     <asp:DropDownList ID="DropDownListNameOfDepartment" runat="server" 
-        DataSourceID="ObjectDataSource_govtdoc" DataTextField="NameOfDepartment" 
-        DataValueField="NameOfDepartment" Width="160px">
+        DataSourceID="ObjectDataSource3" DataTextField="Name" 
+        DataValueField="Name" Width="160px">
     </asp:DropDownList>
     </td></tr>
 
@@ -289,8 +290,8 @@
         ErrorMessage="*">*</asp:RequiredFieldValidator>
     </td><td align="left" style="width:50%">
     <asp:DropDownList ID="DropDownListNameOfDepartment" runat="server" 
-        DataSourceID="ObjectDataSource_govtdoc" DataTextField="NameOfDepartment" 
-        DataValueField="NameOfDepartment" Width="160px">
+        DataSourceID="ObjectDataSource3" DataTextField="Name" 
+        DataValueField="Name" Width="160px">
     </asp:DropDownList>
     </td></tr>
 

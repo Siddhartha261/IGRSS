@@ -9,15 +9,15 @@
                 <tr>
                     <td>
                         <asp:GridView ID="GvFeeMaster" runat="server" DataKeyNames="FeeId" DataSourceID="odsFeeMaster"
-                            AutoGenerateColumns="False" OnSelectedIndexChanged="GvFeeMaster_SelectedIndexChanged" meta:resourcekey="GvFeeMasterResource1">
+                            AutoGenerateColumns="False" 
+                            OnSelectedIndexChanged="GvFeeMaster_SelectedIndexChanged" 
+                            meta:resourcekey="GvFeeMasterResource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Name" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="FeeId" HeaderText="FeeId" Visible="False" meta:resourcekey="BoundFieldResource2" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" meta:resourcekey="BoundFieldResource3" />
                                 <asp:BoundField DataField="Amount" HeaderText="Amount" DataFormatString="{0:F2}"
                                     HtmlEncode="False" meta:resourcekey="BoundFieldResource4" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
-                                <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource2" />
                             </Columns>
                         </asp:GridView>
                     </td>

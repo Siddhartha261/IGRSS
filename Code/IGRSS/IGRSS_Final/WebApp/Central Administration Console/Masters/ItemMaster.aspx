@@ -9,19 +9,25 @@
                 <tr>
                     <td style="width: 751px">
                         <asp:GridView ID="GvItemMaster" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemID"
-                            DataSourceID="odsItemMasterDetails" OnSelectedIndexChanged="GvItemMaster_SelectedIndexChanged" meta:resourcekey="GvItemMasterResource1">
+                            DataSourceID="odsItemMasterDetails" 
+                            OnSelectedIndexChanged="GvItemMaster_SelectedIndexChanged" 
+                            meta:resourcekey="GvItemMasterResource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" meta:resourcekey="BoundFieldResource2" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
-                                <asp:CommandField ShowDeleteButton="True" meta:resourcekey="CommandFieldResource2" />
+                                <asp:CommandField ShowSelectButton="True" 
+                                    meta:resourcekey="CommandFieldResource1" Visible="False" />
+                                <asp:CommandField ShowDeleteButton="True" 
+                                    meta:resourcekey="CommandFieldResource2" Visible="False" />
                             </Columns>
                         </asp:GridView>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="height: 26px">
-                        <asp:Button ID="btnNew" runat="server" Text="Add New" OnClick="btnNew_Click" meta:resourcekey="btnNewResource1" />
+                        <asp:LinkButton ID="btnNew" runat="server" Text="Add New" 
+                            OnClick="btnNew_Click" meta:resourcekey="btnNewResource1" 
+                            CssClass="standardButton" />
                     </td>
                 </tr>
             </table>
@@ -42,8 +48,8 @@
                                 <asp:Label ID="lblNameIns" runat="server" meta:resourcekey="lblNameIns" Text="Name"></asp:Label>
                             </td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtNameIns" runat="server" MaxLength="25" meta:resourcekey="txtNameIns"
-                                    Text='<%# Bind("Name") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtNameIns" runat="server" MaxLength="25" onkeypress="return AllowAlphabet(event)" meta:resourcekey="txtNameIns"
+                                    Text='<%# Bind("Name") %>' Width="160px"></asp:TextBox>
                             </td>
                             <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="rfvNameIns" runat="server" ControlToValidate="txtNameIns"
@@ -67,7 +73,8 @@
                             </td>
                             <td class="textColumn" colspan="4">
                                 <asp:TextBox ID="txtDescriptionIns" TextMode="MultiLine" MaxLength="50" runat="server"
-                                    meta:resourcekey="txtDescriptionIns" Text='<%# Bind("Description") %>'></asp:TextBox>
+                                    meta:resourcekey="txtDescriptionIns" Text='<%# Bind("Description") %>' 
+                                    Height="60px"></asp:TextBox>
                             </td>
                             <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="rfvDescriptionIns" runat="server" ControlToValidate="txtDescriptionIns"
@@ -76,9 +83,12 @@
                         </tr>
                         <tr>
                             <td align="right" colspan="6">
-                                <asp:Button ID="btnItemMasterIns" runat="server" CommandName="Insert" Text="Save" meta:resourcekey="btnItemMasterInsResource1" />
-                                <asp:Button ID="btnCancel" runat="server" CausesValidation="False" CommandName="Cancel"
-                                    Text="Cancel" OnClick="btnCancel_Click" meta:resourcekey="btnCancelResource1" />
+                                <asp:LinkButton ID="btnItemMasterIns" runat="server" CommandName="Insert" 
+                                    Text="Save" meta:resourcekey="btnItemMasterInsResource1" 
+                                    CssClass="standardButton" />
+                                <asp:LinkButton ID="btnCancel" runat="server" CausesValidation="False" CommandName="Cancel"
+                                    Text="Cancel" OnClick="btnCancel_Click" 
+                                    meta:resourcekey="btnCancelResource1" CssClass="standardButton" />
                             </td>
                         </tr>
                     </table>
@@ -96,7 +106,7 @@
                                 <asp:Label ID="lblNameUpd" runat="server" meta:resourcekey="lblNameUpd" Text="Name"></asp:Label>
                             </td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtNameUpd" runat="server" MaxLength="25" meta:resourcekey="txtNameUpd"
+                                <asp:TextBox ID="txtNameUpd" runat="server" MaxLength="25" onkeypress="return AllowAlphabet(event)" meta:resourcekey="txtNameUpd"
                                     Text='<%# Bind("Name") %>'></asp:TextBox>
                             </td>
                             <td class="validationColumn">

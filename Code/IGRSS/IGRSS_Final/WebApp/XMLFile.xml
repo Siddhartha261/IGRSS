@@ -17,6 +17,12 @@
       <View Name="MLA and Minister Register"
           Url="~/AdministrationDepartment/MLAandMinisterRegister.aspx"
           Mode="" Visible="True" />
+      <View Name="Priamry Investigation/Inquiry Register"
+          Url="~/AdministrationDepartment/PrimaryInvestigation-InquiryRegister.aspx"
+          Mode="" Visible="True" />
+      <View Name="RTI Appeal Register"
+          Url="~/AdministrationDepartment/RTIAppealRegister.aspx"
+          Mode="" Visible="True" />
       <View Name="SO File"
           Url="~/AdministrationDepartment/SOFile.aspx"
           Mode="" Visible="True" />
@@ -80,6 +86,9 @@
       <View Name="UOM Master"
           Url="~/Central%20Administration%20Console/Masters/UnitOfManagementMaster.aspx"
           Mode="" Visible="True"/>
+      <View Name="Village Master"
+         Url="~/Central%20Administration%20Console/Masters/VillageMaster.aspx"
+         Mode="" Visible="True"/>
     </Module>
   </Module>
   
@@ -182,6 +191,9 @@
 			  Mode="" Visible="True"/>
     <View Name="Fajal Register"
 			  Url="~/Establishment Department/FajalRegister.aspx"
+			  Mode="" Visible="True"/>
+    <View Name="Hisory Card Register"
+			  Url="~/Establishment Department/History.aspx"
 			  Mode="" Visible="True"/>
     <View Name="Mahekam Register"
 			  Url="~/Establishment Department/MahekamRegister.aspx"

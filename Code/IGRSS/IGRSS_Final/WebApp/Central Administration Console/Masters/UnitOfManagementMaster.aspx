@@ -21,7 +21,8 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 749px">
-                        <asp:Button ID="btnNew" runat="server" Text="Add New" OnClick="btnNew_Click" meta:resourcekey="btnNewResource1" />
+                        <asp:LinkButton ID="btnNew" runat="server" Text="Add New" OnClick="btnNew_Click" 
+                            meta:resourcekey="btnNewResource1" CssClass="standardButton" />
                     </td>
                 </tr>
             </table>
@@ -32,7 +33,7 @@
                 <InsertItemTemplate>
                     <table width="100%">
                         <tr>
-                            <td colspan="6">
+                            <td colspan="4">
                                 <asp:Label ID="lblFileDetailsHeaderIns" runat="server" meta:resourcekey="lblFileDetailsHeaderIns"
                                     SkinID="SubHeading" Text="UOM Master"></asp:Label>
                             </td>
@@ -45,7 +46,7 @@
                                 <asp:TextBox ID="txtNameIns" runat="server" MaxLength="25" meta:resourcekey="txtReceiptNumberIns"
                                     Text='<%# Bind("Name") %>'></asp:TextBox>
                             </td>
-                            <td class="validationColumn" colspan="4">
+                            <td class="validationColumn" colspan="2">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNameIns"
                                     ErrorMessage="Please Enter UOM Name">*</asp:RequiredFieldValidator></td>
                         </tr>
@@ -54,7 +55,7 @@
                                 <asp:Label ID="lblUOMDescriptionIns" runat="server" meta:resourcekey="lblUOMDescriptionIns"
                                     Text="UOM Description"></asp:Label>
                             </td>
-                            <td class="textColumn" colspan="4">
+                            <td class="textColumn" colspan="2">
                                 <asp:TextBox ID="txtUOMDescriptionIns" runat="server" TextMode="MultiLine" MaxLength="125"
                                     meta:resourcekey="txtUOMDescriptionIns" Text='<%# Bind("Description") %>'></asp:TextBox>
                             </td>
@@ -63,10 +64,13 @@
                                     ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator></td>
                         </tr>
                         <tr>
-                        <td align="right" colspan="6">
-                            <asp:Button ID="BtnUOMMasterSaveIns" runat="server" CommandName="Insert" Text="Save" meta:resourcekey="BtnUOMMasterSaveInsResource1" />
-                            <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" CausesValidation="False"
-                                Text="Cancel" OnClick="btnCancel_Click" meta:resourcekey="btnCancelResource1" />
+                        <td align="right" colspan="4">
+                            <asp:LinkButton ID="BtnUOMMasterSaveIns" runat="server" CommandName="Insert" 
+                                Text="Save" meta:resourcekey="BtnUOMMasterSaveInsResource1" 
+                                CssClass="standardButton" />
+                            <asp:LinkButton ID="btnCancel" runat="server" CommandName="Cancel" CausesValidation="False"
+                                Text="Cancel" OnClick="btnCancel_Click" 
+                                meta:resourcekey="btnCancelResource1" CssClass="standardButton" />
                         </td>
                         </tr>
                     </table>
@@ -74,7 +78,7 @@
                 <EditItemTemplate>
                     <table width="100%">
                         <tr>
-                            <td colspan="6">
+                            <td colspan="4">
                                 <asp:Label ID="lblFileDetailsHeaderUpd" runat="server" meta:resourcekey="lblFileDetailsHeaderUpd"
                                     SkinID="SubHeading" Text="UOM Master"></asp:Label>
                             </td>
@@ -87,7 +91,7 @@
                                 <asp:TextBox ID="txtNameUpd" runat="server" MaxLength="25" meta:resourcekey="txtReceiptNumberUpd"
                                     Text='<%# Bind("Name") %>'></asp:TextBox>
                             </td>
-                            <td class="validationColumn" colspan="4">
+                            <td class="validationColumn" colspan="2">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtNameUpd"
                                     ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator></td>
                         </tr>
@@ -96,7 +100,7 @@
                                 <asp:Label ID="lblUOMDescriptionUpd" runat="server" meta:resourcekey="lblUOMDescriptionUpd"
                                     Text="UOM Description"></asp:Label>
                             </td>
-                            <td class="textColumn" colspan="4">
+                            <td class="textColumn" colspan="2">
                                 <asp:TextBox ID="txtUOMDescriptionUpd" runat="server" TextMode="MultiLine" MaxLength="50"
                                     meta:resourcekey="txtUOMDescriptionUpd" Text='<%# Bind("Description") %>'></asp:TextBox>
                             </td>
@@ -105,10 +109,13 @@
                                     ErrorMessage="Please Enter UOM name">*</asp:RequiredFieldValidator></td>
                         </tr>
                         <tr>
-                            <td align="right" colspan="6">
-                                <asp:Button ID="BtnUOMMasterUpd" runat="server" CommandName="Update" Text="Update" meta:resourcekey="BtnUOMMasterUpdResource1" />
-                                <asp:Button ID="BtnCancel" runat="server" CommandName="Cancel" CausesValidation="False"
-                                    Text="Cancel" OnClick="BtnCancel_Click" meta:resourcekey="BtnCancelResource2" />
+                            <td align="right" colspan="4">
+                                <asp:LinkButton ID="BtnUOMMasterUpd" runat="server" CommandName="Update" 
+                                    Text="Update" meta:resourcekey="BtnUOMMasterUpdResource1" 
+                                    CssClass="standardButton" />
+                                <asp:LinkButton ID="BtnCancel" runat="server" CommandName="Cancel" CausesValidation="False"
+                                    Text="Cancel" OnClick="BtnCancel_Click" 
+                                    meta:resourcekey="BtnCancelResource2" CssClass="standardButton" />
                             </td>
                         </tr>
                     </table>

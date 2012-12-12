@@ -22,7 +22,8 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add New " meta:resourcekey="Button1Resource1" />
+                        <asp:LinkButton ID="Button1" runat="server" OnClick="Button1_Click" 
+                            Text="Add New " meta:resourcekey="Button1Resource1" CssClass="standardButton" />
                     </td>
                 </tr>
             </table>
@@ -42,18 +43,21 @@
                             <td class="labelColumn">
                                 <asp:Label ID="lblNameIns" runat="server" Text="Name" meta:resourcekey="lblNameInsResource1"></asp:Label></td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtNameIns" runat="server" MaxLength="25" Text='<%# Bind("Name") %>' meta:resourcekey="txtNameInsResource1"></asp:TextBox></td>
+                                <asp:TextBox ID="txtNameIns" runat="server" MaxLength="25" onkeypress="return AllowAlphabet(event)"
+                                    Text='<%# Bind("Name") %>' meta:resourcekey="txtNameInsResource1" Width="160px"></asp:TextBox></td>
                             <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="RfvNameIns" runat="server" ControlToValidate="txtNameIns"
-                                    ErrorMessage="Please Enter Name" meta:resourcekey="RfvNameInsResource1">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="*" meta:resourcekey="RfvNameInsResource1"></asp:RequiredFieldValidator>
                             </td>
                             <td class="labelColumn">
                                 <asp:Label ID="lblAmount" runat="server" Text="Amount" meta:resourcekey="lblAmountResource1"></asp:Label></td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtAmount" runat="server" MaxLength="12" Text='<%# Bind("Amount") %>' meta:resourcekey="txtAmountResource1"></asp:TextBox></td>
+                                <asp:TextBox ID="txtAmount" runat="server" MaxLength="12" numeric="integer"
+                                    Text='<%# Bind("Amount") %>' meta:resourcekey="txtAmountResource1" 
+                                    Width="160px"></asp:TextBox></td>
                             <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="ReqfldtxtAmountIns" runat="server" ControlToValidate="txtAmount"
-                                    ErrorMessage="Amount Can't be Blank" meta:resourcekey="ReqfldtxtAmountInsResource1">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="*" meta:resourcekey="ReqfldtxtAmountInsResource1"></asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="regexptxtAmountIns" runat="server" ControlToValidate="txtAmount"
                                     ErrorMessage="Enter Valid Amount" ValidationExpression="<%$ Resources:ValidationRegx, Currency %>" meta:resourcekey="regexptxtAmountInsResource1">*</asp:RegularExpressionValidator>
                             </td>
@@ -61,17 +65,21 @@
                         <tr>
                             <td class="labelColumn">
                                 <asp:Label ID="lblDescriptionIns" runat="server" Text="Description" meta:resourcekey="lblDescriptionInsResource1"></asp:Label></td>
-                            <td class="textColumn" colspan="4">
+                            <td class="textColumn">
                                 <asp:TextBox ID="txtDescriptionIns" runat="server" TextMode="MultiLine" MaxLength="125"
-                                    Text='<%# Bind("Description") %>' meta:resourcekey="txtDescriptionInsResource1"></asp:TextBox></td>
-                            <td class="validationColumn" colspan="4">
+                                    Text='<%# Bind("Description") %>' 
+                                    meta:resourcekey="txtDescriptionInsResource1" Height="60px" Width="160px"></asp:TextBox></td>
+                            <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="RfvDescriptionIns" runat="server" ControlToValidate="txtDescriptionIns"
-                                    ErrorMessage="Please Enter Description" meta:resourcekey="RfvDescriptionInsResource1">*</asp:RequiredFieldValidator></td>
+                                    ErrorMessage="*" meta:resourcekey="RfvDescriptionInsResource1"></asp:RequiredFieldValidator></td>
                         </tr>
                         <tr>
-                            <td align="right" colspan="6">
-                                <asp:Button ID="btnSaveIns" runat="server" CommandName="Insert" Text="Save" meta:resourcekey="btnSaveInsResource1" />
-                                <asp:Button ID="btnCancelIns" runat="server" Text="Cancel" CausesValidation="False" OnClick="btnCancelIns_Click" meta:resourcekey="btnCancelInsResource1" />
+                            <td align="right" colspan="3">
+                                <asp:LinkButton ID="btnSaveIns" runat="server" CommandName="Insert" Text="Save" 
+                                    meta:resourcekey="btnSaveInsResource1" CssClass="standardButton" />
+                                <asp:LinkButton ID="btnCancelIns" runat="server" Text="Cancel" 
+                                    CausesValidation="False" OnClick="btnCancelIns_Click" 
+                                    meta:resourcekey="btnCancelInsResource1" CssClass="standardButton" />
                             </td>
                         </tr>
                     </table>
@@ -88,7 +96,7 @@
                             <td class="labelColumn">
                                 <asp:Label ID="lblNameUpd" runat="server" Text="Name" meta:resourcekey="lblNameUpdResource1"></asp:Label></td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtNameUpd" runat="server" MaxLength="25" Text='<%# Bind("Name") %>' meta:resourcekey="txtNameUpdResource1"></asp:TextBox></td>
+                                <asp:TextBox ID="txtNameUpd" runat="server" MaxLength="25" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Name") %>' meta:resourcekey="txtNameUpdResource1"></asp:TextBox></td>
                             <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="RfvNameIns" runat="server" ControlToValidate="txtNameUpd"
                                     ErrorMessage="Please Enter Name" meta:resourcekey="RfvNameInsResource2">*</asp:RequiredFieldValidator>
@@ -96,7 +104,7 @@
                             <td class="labelColumn">
                                 <asp:Label ID="lblAmount" runat="server" Text="Amount" meta:resourcekey="lblAmountResource2"></asp:Label></td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtAmount" runat="server" MaxLength="12" Text='<%# Bind("Amount", "{0:F}") %>' meta:resourcekey="txtAmountResource2"></asp:TextBox></td>
+                                <asp:TextBox ID="txtAmount" runat="server" MaxLength="12" numeric="integer" Text='<%# Bind("Amount", "{0:F}") %>' meta:resourcekey="txtAmountResource2"></asp:TextBox></td>
                             <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="RfvAmountIns" runat="server" ControlToValidate="txtAmount"
                                     ErrorMessage="Please Enter Amount" meta:resourcekey="RfvAmountInsResource1">*</asp:RequiredFieldValidator></td>

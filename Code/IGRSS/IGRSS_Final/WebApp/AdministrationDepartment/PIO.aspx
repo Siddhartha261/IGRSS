@@ -11,7 +11,8 @@
                 changeMonth: true,
                 changeYear: true,
                 yearRange: '1940:2025',
-                dateFormat: "dd/mm/yy",
+                //dateFormat: "dd/mm/yy",
+                dateFormat: "mm/dd/yy",
                 onClose: function () {
                     var dateSelected = $('input[id*="' + id + '"]').datepicker('getDate');
                     var dateNow = new Date();
@@ -552,7 +553,7 @@
 
         </EditItemTemplate>
         <InsertItemTemplate>
-                <table cellpadding="5" cellspacing="5" width="100%">
+                <table cellpadding="5" cellspacing="5" width="1000px">
         <tr align="left">
 		    <td>File No:</td>
 			<td>
@@ -666,7 +667,7 @@
 			<td>
                 &nbsp;</td>
 			<td><asp:TextBox ID="Info_PagesTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("Info_Pages") %>' Width="160px" TabIndex="14" /></td>
+                Text='<%# Bind("Info_Pages") %>' Width="160px" TabIndex="14" MaxLength="5" /></td>
 		</tr> 	            
             				
         <tr align="left">
@@ -683,7 +684,7 @@
                     ControlToValidate="Page_AmtTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
 			<td><asp:TextBox ID="Page_AmtTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("Page_Amt") %>' Width="160px" TabIndex="15" /></td>
+                Text='<%# Bind("Page_Amt") %>' Width="160px" TabIndex="15" MaxLength="10" /></td>
 		</tr> 	           
             				
         <tr align="left">
@@ -702,7 +703,7 @@
                     ControlToValidate="Total_AmtTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
 			<td><asp:TextBox ID="Total_AmtTextBox" runat="server" numeric="integer" 
-                Text='<%# Bind("Total_Amt") %>' Width="160px" TabIndex="16" /></td>
+                Text='<%# Bind("Total_Amt") %>' Width="160px" TabIndex="16" MaxLength="10" /></td>
 		</tr> 	            
             				
         <tr align="left">
@@ -730,8 +731,9 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
                     ControlToValidate="SectionTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
-			<td><asp:TextBox ID="SectionTextBox" runat="server" onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Section") %>' 
-                    Width="160px" TabIndex="18" /></td>			
+			<td><asp:TextBox ID="SectionTextBox" runat="server" 
+                    onkeypress="return AllowAlphabet(event)" Text='<%# Bind("Section") %>' 
+                    Width="160px" TabIndex="18" MaxLength="30" /></td>			
 		</tr> 	          
             				
         <tr align="left">
@@ -773,8 +775,9 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
                     ControlToValidate="AuthorityTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
-			<td style="width: 170px"><asp:TextBox ID="AuthorityTextBox" runat="server" 
-                Text='<%# Bind("Authority") %>' Width="160px" TabIndex="21" /></td>
+			<td style="width: 170px">
+                <asp:TextBox ID="AuthorityTextBox" runat="server" 
+                Text='<%# Bind("Authority") %>' Width="160px" TabIndex="21" MaxLength="30" /></td>
 			
 			<td>Letter Received Date from Commissioner:</td>
 			<td>
@@ -790,8 +793,10 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
                     ControlToValidate="AppealNoFirstAppealTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
-		   <td style="width: 170px"><asp:TextBox ID="AppealNoFirstAppealTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("AppealNoFirstAppeal") %>' Width="160px" TabIndex="22" /></td>
+		   <td style="width: 170px"><asp:TextBox ID="AppealNoFirstAppealTextBox" 
+                   runat="server" numeric="integer"
+                Text='<%# Bind("AppealNoFirstAppeal") %>' Width="160px" TabIndex="22" 
+                   MaxLength="10" /></td>
 		   
 		   <td>Appeal No:</td>
 		    <td>
@@ -799,7 +804,8 @@
                     ControlToValidate="AppealNoSecondAppealTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
 		   <td><asp:TextBox ID="AppealNoSecondAppealTextBox" runat="server" numeric="integer" 
-                Text='<%# Bind("AppealNoSecondAppeal") %>' Width="160px" TabIndex="27" /></td>
+                Text='<%# Bind("AppealNoSecondAppeal") %>' Width="160px" TabIndex="27" 
+                   MaxLength="10" /></td>
 		</tr>          
             				
         <tr align="left">
@@ -816,7 +822,7 @@
             </td>
 			<td><asp:TextBox ID="ApplicationNameSecondAppealTextBox" runat="server" onkeypress="return AllowAlphabet(event)"
                 Text='<%# Bind("ApplicationNameSecondAppeal") %>' Width="160px" 
-                    TabIndex="28" /></td>			
+                    TabIndex="28" MaxLength="30" /></td>			
 		</tr>         
             				
         <tr align="left">
@@ -826,7 +832,8 @@
                     ControlToValidate="Order_AuthorityTextBox" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
 		    <td style="width: 170px"><asp:TextBox ID="Order_AuthorityTextBox" runat="server" numeric="integer"
-                Text='<%# Bind("Order_Authority") %>' Width="160px" TabIndex="24" /></td>
+                Text='<%# Bind("Order_Authority") %>' Width="160px" TabIndex="24" 
+                    MaxLength="10" /></td>
 			
 			<td>Address:</td>
 			<td>
@@ -899,9 +906,9 @@
                 CausesValidation="False" CommandName="Reset" Text="Reset" 
                     CssClass="standardButton" 
                     onclientclick="resetTextFields();return false;" TabIndex="35" />	
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
-                CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" TabIndex="36" /></td>			
+             &nbsp;<asp:LinkButton ID="CancelButton" runat="server" 
+                CausesValidation="False" CommandName="Back" Text="Back"  CssClass="standardButton" 
+                        AccessKey="B"/></td>			
 		</tr>           
 	</table>
 

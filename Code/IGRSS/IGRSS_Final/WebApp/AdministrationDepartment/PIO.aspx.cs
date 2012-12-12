@@ -14,8 +14,11 @@ public partial class LatestPages_PIO : System.Web.UI.Page
    
     protected void Button_new_Click(object sender, EventArgs e)
     {
-        Multiview_PIO.SetActiveView(Multiview_PIO.Views[1]);
+        infoDiv.Visible = false;
+        Multiview_PIO.SetActiveView(Formview);
         FormView_PIO.ChangeMode(FormViewMode.Insert);
+        TextBox TextBox_FileNo = FormView_PIO.FindControl("FileNoTextBox") as TextBox;
+        TextBox_FileNo.Focus();
     }
     protected void FormView_PIO_ItemInserting(object sender, FormViewInsertEventArgs e)
     {
@@ -37,7 +40,7 @@ public partial class LatestPages_PIO : System.Web.UI.Page
         {
             case "Back":
                 Multiview_PIO.SetActiveView(ViewGrid);
-                GridView_PIO.DataBind();
+                   GridView_PIO.DataBind();
                 break;            
         }
     }
@@ -65,6 +68,7 @@ public partial class LatestPages_PIO : System.Web.UI.Page
     }
     protected void GridView_PIO_RowEditing(object sender, GridViewEditEventArgs e)
     {
+        infoDiv.Visible = false;
         Multiview_PIO.SetActiveView(Formview);
         FormView_PIO.PageIndex = e.NewEditIndex;
         FormView_PIO.DefaultMode = FormViewMode.Edit;
@@ -91,6 +95,7 @@ public partial class LatestPages_PIO : System.Web.UI.Page
         {
             ShowMessage("Unable to update record", true);
         }
+        Multiview_PIO.SetActiveView(ViewGrid);
     }
     protected void FormView_PIO_ItemUpdating(object sender, FormViewUpdateEventArgs e)
     {
@@ -123,7 +128,7 @@ public partial class LatestPages_PIO : System.Web.UI.Page
             Label lblAppl_BPL = e.Row.FindControl("lblAppl_BPL") as Label;
             lblAppl_BPL.Text = Convert.ToBoolean(GridView_PIO.DataKeys[e.Row.RowIndex].Values[1]) ? "Yes" : "No";
 
-            
+
         }
     }
     protected void FormView_PIO_DataBound(object sender, EventArgs e)
@@ -134,7 +139,7 @@ public partial class LatestPages_PIO : System.Web.UI.Page
             Radio_BPL.SelectedIndex = Convert.ToBoolean(FormView_PIO.DataKey[1]) ? 0 : 1;
 
             RadioButtonList Radio_InfoSend = FormView_PIO.FindControl("Radio_informationsend") as RadioButtonList;
-            Radio_InfoSend.SelectedIndex = Convert.ToBoolean(FormView_PIO.DataKey[1]) ? 0 : 1;            
+            Radio_InfoSend.SelectedIndex = Convert.ToBoolean(FormView_PIO.DataKey[1]) ? 0 : 1;
         }
     }
 }

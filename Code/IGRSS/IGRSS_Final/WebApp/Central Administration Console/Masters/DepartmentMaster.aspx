@@ -21,8 +21,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="right" style="text-align: left">
-                        <asp:Button ID="btnNew" runat="server" Text="Add New" OnClick="btnNew_Click" meta:resourcekey="btnNewResource1" />
+                    <td align="right" style="text-align: right">
+                        <asp:LinkButton ID="btnNew" runat="server" Text="Add New" 
+                            OnClick="btnNew_Click" meta:resourcekey="btnNewResource1" 
+                            CssClass="standardButton" />
                     </td>
                 </tr>
             </table>
@@ -33,7 +35,7 @@
                 <InsertItemTemplate>
                     <table width="100%">
                         <tr>
-                            <td colspan="6">
+                            <td colspan="5">
                                 <asp:Label ID="lblQualificationMasterIns" runat="server" meta:resourcekey="lblQualificationMasterIns"
                                     SkinID="SubHeading" Text="Department Master"></asp:Label>
                             </td>
@@ -43,10 +45,10 @@
                                 <asp:Label ID="lblNameIns" runat="server" meta:resourcekey="lblNameIns" Text="Name"></asp:Label>
                             </td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtNameIns" MaxLength="25" runat="server" meta:resourcekey="txtNameIns"
-                                    Text='<%# Bind("Name") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtNameIns" MaxLength="25" runat="server" onkeypress="return AllowAlphabet(event)" meta:resourcekey="txtNameIns"
+                                    Text='<%# Bind("Name") %>' Width="160px"></asp:TextBox>
                             </td>
-                            <td class="validationColumn" colspan="4">
+                            <td class="validationColumn" colspan="3">
                                 <asp:RequiredFieldValidator ID="RfvNameIns" runat="server" ControlToValidate="txtNameIns"
                                     ErrorMessage="Please Enter Name" meta:resourcekey="RfvNameInsResource1">*</asp:RequiredFieldValidator>
                             </td>
@@ -56,9 +58,10 @@
                                 <asp:Label ID="lblDescriptionIns" runat="server" meta:resourcekey="lblDescriptionIns"
                                     Text="Description"></asp:Label>
                             </td>
-                            <td class="textColumn" colspan="4">
+                            <td class="textColumn">
                                 <asp:TextBox ID="txtDescriptionIns" MaxLength="50" TextMode="MultiLine" runat="server"
-                                    meta:resourcekey="txtDescriptionIns" Text='<%# Bind("Description") %>'></asp:TextBox>
+                                    meta:resourcekey="txtDescriptionIns" Text='<%# Bind("Description") %>' 
+                                    Height="60px" Width="160px"></asp:TextBox>
                             </td>
                             <td class="validationColumn">
                                 <asp:RequiredFieldValidator ID="RfvDescriptionIns" runat="server" ControlToValidate="txtDescriptionIns"
@@ -66,12 +69,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="4">
-                            </td>
-                            <td align="right">
-                                <asp:Button ID="btnInsert" runat="server" CommandName="Insert" Text="Save" meta:resourcekey="btnInsertResource1" />
-                                <asp:Button ID="btnCancelIns" CommandName="Cancel" CausesValidation="False" runat="server"
-                                    Text="Cancel" OnClick="btnCancelIns_Click" meta:resourcekey="btnCancelInsResource1" />
+                            
+                            <td align="center" colspan="3">
+                                <asp:LinkButton ID="btnInsert" runat="server" CommandName="Insert" Text="Save" 
+                                    meta:resourcekey="btnInsertResource1" CssClass="standardButton" />
+                                <asp:LinkButton ID="btnCancelIns" CommandName="Cancel" CausesValidation="False" runat="server"
+                                    Text="Cancel" OnClick="btnCancelIns_Click" 
+                                    meta:resourcekey="btnCancelInsResource1" CssClass="standardButton" />
                             </td>
                         </tr>
                     </table>
@@ -89,7 +93,7 @@
                                 <asp:Label ID="lblNameUpd" runat="server" meta:resourcekey="lblNameUpd" Text="Name"></asp:Label>
                             </td>
                             <td class="textColumn">
-                                <asp:TextBox ID="txtNameUpd" MaxLength="25" runat="server" meta:resourcekey="txtNameUpd"
+                                <asp:TextBox ID="txtNameUpd" MaxLength="25" runat="server" onkeypress="return AllowAlphabet(event)" meta:resourcekey="txtNameUpd"
                                     Text='<%# Bind("Name") %>'></asp:TextBox>
                             </td>
                             <td class="validationColumn" colspan="4">
