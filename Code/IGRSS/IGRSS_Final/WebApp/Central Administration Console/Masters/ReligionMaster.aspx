@@ -10,7 +10,8 @@
           <tr>
                     <td >
                         <asp:GridView ID="GridView_ReligionMaster" runat="server" AllowPaging="True" 
-                            AutoGenerateColumns="False" DataKeyNames="SrNo" >
+                            AutoGenerateColumns="False" DataKeyNames="SrNo" 
+                            DataSourceID="ods_ReligionMaster" EnableModelValidation="True" >
                             <Columns>
                                 <asp:BoundField DataField="SrNo" HeaderText="SrNo" InsertVisible="False" 
                                     ReadOnly="True" SortExpression="SrNo" Visible="False" />
@@ -63,12 +64,12 @@
             <InsertItemTemplate>
             <table>
                      <tr><td>Religion Name:</td>
-                         <td><asp:TextBox ID="Religion_NameTextBox" runat="server" 
+                         <td style="text-align: left"><asp:TextBox ID="Religion_NameTextBox" runat="server" 
                          Text='<%# Bind("Religion_Name") %>' Width="160px" /></td>
                     </tr>                     
                      
                     <tr><td>Religion No:</td>
-                        <td><asp:TextBox ID="Religion_NoTextBox" runat="server" 
+                        <td align="left"><asp:TextBox ID="Religion_NoTextBox" runat="server" 
                          Text='<%# Bind("Religion_No") %>' /></td>
                    </tr>                    
                      
@@ -115,7 +116,7 @@
         
         
         TypeName="IGRSS.DataAccessLayer.ReligionMasterTableAdapters.Religion_MasterTableAdapter" 
-        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update"   
+        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update" OldValuesParameterFormatString="original_{0}"   
         >
         <DeleteParameters>
             <asp:Parameter Name="Original_SrNo" Type="Int32" />
