@@ -281,7 +281,13 @@ namespace IGRSS.DataAccessLayer {
             
             private global::System.Data.DataColumn columnSrNo;
             
+            private global::System.Data.DataColumn columnDistrict_ID;
+            
             private global::System.Data.DataColumn columnDistrict_Name;
+            
+            private global::System.Data.DataColumn columnDistrict_Location;
+            
+            private global::System.Data.DataColumn columnDistrict_Details;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -326,9 +332,33 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn District_IDColumn {
+                get {
+                    return this.columnDistrict_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn District_NameColumn {
                 get {
                     return this.columnDistrict_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn District_LocationColumn {
+                get {
+                    return this.columnDistrict_Location;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn District_DetailsColumn {
+                get {
+                    return this.columnDistrict_Details;
                 }
             }
             
@@ -369,11 +399,14 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public District_MasterRow AddDistrict_MasterRow(string District_Name) {
+            public District_MasterRow AddDistrict_MasterRow(int District_ID, string District_Name, string District_Location, string District_Details) {
                 District_MasterRow rowDistrict_MasterRow = ((District_MasterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        District_Name};
+                        District_ID,
+                        District_Name,
+                        District_Location,
+                        District_Details};
                 rowDistrict_MasterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDistrict_MasterRow);
                 return rowDistrict_MasterRow;
@@ -410,7 +443,10 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnSrNo = base.Columns["SrNo"];
+                this.columnDistrict_ID = base.Columns["District_ID"];
                 this.columnDistrict_Name = base.Columns["District_Name"];
+                this.columnDistrict_Location = base.Columns["District_Location"];
+                this.columnDistrict_Details = base.Columns["District_Details"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -418,8 +454,14 @@ namespace IGRSS.DataAccessLayer {
             private void InitClass() {
                 this.columnSrNo = new global::System.Data.DataColumn("SrNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSrNo);
+                this.columnDistrict_ID = new global::System.Data.DataColumn("District_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistrict_ID);
                 this.columnDistrict_Name = new global::System.Data.DataColumn("District_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDistrict_Name);
+                this.columnDistrict_Location = new global::System.Data.DataColumn("District_Location", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistrict_Location);
+                this.columnDistrict_Details = new global::System.Data.DataColumn("District_Details", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistrict_Details);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSrNo}, true));
                 this.columnSrNo.AutoIncrement = true;
@@ -429,6 +471,8 @@ namespace IGRSS.DataAccessLayer {
                 this.columnSrNo.ReadOnly = true;
                 this.columnSrNo.Unique = true;
                 this.columnDistrict_Name.MaxLength = 200;
+                this.columnDistrict_Location.MaxLength = 200;
+                this.columnDistrict_Details.MaxLength = 2147483647;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_District_Master");
                 this.ExtendedProperties.Add("Generator_UserTableName", "District_Master");
             }
@@ -584,6 +628,22 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int District_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tableDistrict_Master.District_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'District_ID\' in table \'District_Master\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDistrict_Master.District_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string District_Name {
                 get {
                     try {
@@ -600,6 +660,50 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string District_Location {
+                get {
+                    try {
+                        return ((string)(this[this.tableDistrict_Master.District_LocationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'District_Location\' in table \'District_Master\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDistrict_Master.District_LocationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string District_Details {
+                get {
+                    try {
+                        return ((string)(this[this.tableDistrict_Master.District_DetailsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'District_Details\' in table \'District_Master\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDistrict_Master.District_DetailsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDistrict_IDNull() {
+                return this.IsNull(this.tableDistrict_Master.District_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDistrict_IDNull() {
+                this[this.tableDistrict_Master.District_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDistrict_NameNull() {
                 return this.IsNull(this.tableDistrict_Master.District_NameColumn);
             }
@@ -608,6 +712,30 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDistrict_NameNull() {
                 this[this.tableDistrict_Master.District_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDistrict_LocationNull() {
+                return this.IsNull(this.tableDistrict_Master.District_LocationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDistrict_LocationNull() {
+                this[this.tableDistrict_Master.District_LocationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDistrict_DetailsNull() {
+                return this.IsNull(this.tableDistrict_Master.District_DetailsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDistrict_DetailsNull() {
+                this[this.tableDistrict_Master.District_DetailsColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -771,33 +899,47 @@ namespace IGRSS.DataAccessLayer.District_MasterTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "District_Master";
             tableMapping.ColumnMappings.Add("SrNo", "SrNo");
+            tableMapping.ColumnMappings.Add("District_ID", "District_ID");
             tableMapping.ColumnMappings.Add("District_Name", "District_Name");
+            tableMapping.ColumnMappings.Add("District_Location", "District_Location");
+            tableMapping.ColumnMappings.Add("District_Details", "District_Details");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[District_Master] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNul" +
-                "l_District_Name = 1 AND [District_Name] IS NULL) OR ([District_Name] = @Original" +
-                "_District_Name)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[District_Master] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_District_ID = 1 AND [District_ID] IS NULL) OR ([District_ID] = @Original_District_ID)) AND ((@IsNull_District_Name = 1 AND [District_Name] IS NULL) OR ([District_Name] = @Original_District_Name)) AND ((@IsNull_District_Location = 1 AND [District_Location] IS NULL) OR ([District_Location] = @Original_District_Location)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District_Location", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Location", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District_Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[District_Master] ([District_Name]) VALUES (@District_Name);\r\nS" +
-                "ELECT SrNo, District_Name FROM dbo.District_Master WHERE (SrNo = SCOPE_IDENTITY(" +
-                "))";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[District_Master] ([District_ID], [District_Name], [District_Location], [District_Details]) VALUES (@District_ID, @District_Name, @District_Location, @District_Details);
+SELECT SrNo, District_ID, District_Name, District_Location, District_Details FROM dbo.District_Master WHERE (SrNo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District_Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[District_Master] SET [District_Name] = @District_Name WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_District_Name = 1 AND [District_Name] IS NULL) OR ([District_Name] = @Original_District_Name)));
-SELECT SrNo, District_Name FROM dbo.District_Master WHERE (SrNo = @SrNo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[District_Master] SET [District_ID] = @District_ID, [District_Name] = @District_Name, [District_Location] = @District_Location, [District_Details] = @District_Details WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_District_ID = 1 AND [District_ID] IS NULL) OR ([District_ID] = @Original_District_ID)) AND ((@IsNull_District_Name = 1 AND [District_Name] IS NULL) OR ([District_Name] = @Original_District_Name)) AND ((@IsNull_District_Location = 1 AND [District_Location] IS NULL) OR ([District_Location] = @Original_District_Location)));
+SELECT SrNo, District_ID, District_Name, District_Location, District_Details FROM dbo.District_Master WHERE (SrNo = @SrNo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District_Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@District_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_District_Location", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Location", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_District_Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "District_Location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -814,7 +956,8 @@ SELECT SrNo, District_Name FROM dbo.District_Master WHERE (SrNo = @SrNo)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        SrNo, District_Name\r\nFROM            dbo.District_Master";
+            this._commandCollection[0].CommandText = "SELECT        SrNo, District_ID, District_Name, District_Location, District_Detai" +
+                "ls\r\nFROM            dbo.District_Master";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -875,15 +1018,31 @@ SELECT SrNo, District_Name FROM dbo.District_Master WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_SrNo, string Original_District_Name) {
+        public virtual int Delete(int Original_SrNo, global::System.Nullable<int> Original_District_ID, string Original_District_Name, string Original_District_Location) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SrNo));
-            if ((Original_District_Name == null)) {
+            if ((Original_District_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_District_ID.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
+            if ((Original_District_Name == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_District_Name));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_District_Name));
+            }
+            if ((Original_District_Location == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_District_Location));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -905,12 +1064,30 @@ SELECT SrNo, District_Name FROM dbo.District_Master WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string District_Name) {
-            if ((District_Name == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(global::System.Nullable<int> District_ID, string District_Name, string District_Location, string District_Details) {
+            if ((District_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(District_ID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(District_Name));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((District_Name == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(District_Name));
+            }
+            if ((District_Location == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(District_Location));
+            }
+            if ((District_Details == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(District_Details));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -932,23 +1109,57 @@ SELECT SrNo, District_Name FROM dbo.District_Master WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string District_Name, int Original_SrNo, string Original_District_Name, int SrNo) {
-            if ((District_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Update(global::System.Nullable<int> District_ID, string District_Name, string District_Location, string District_Details, int Original_SrNo, global::System.Nullable<int> Original_District_ID, string Original_District_Name, string Original_District_Location, int SrNo) {
+            if ((District_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(District_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(District_Name));
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_SrNo));
-            if ((Original_District_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
+            if ((District_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(District_Name));
+            }
+            if ((District_Location == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(District_Location));
+            }
+            if ((District_Details == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_District_Name));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(District_Details));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(SrNo));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_SrNo));
+            if ((Original_District_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_District_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_District_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_District_Name));
+            }
+            if ((Original_District_Location == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_District_Location));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(SrNo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -969,8 +1180,8 @@ SELECT SrNo, District_Name FROM dbo.District_Master WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string District_Name, int Original_SrNo, string Original_District_Name) {
-            return this.Update(District_Name, Original_SrNo, Original_District_Name, Original_SrNo);
+        public virtual int Update(global::System.Nullable<int> District_ID, string District_Name, string District_Location, string District_Details, int Original_SrNo, global::System.Nullable<int> Original_District_ID, string Original_District_Name, string Original_District_Location) {
+            return this.Update(District_ID, District_Name, District_Location, District_Details, Original_SrNo, Original_District_ID, Original_District_Name, Original_District_Location, Original_SrNo);
         }
     }
     

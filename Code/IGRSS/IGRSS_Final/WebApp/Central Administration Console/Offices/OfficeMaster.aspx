@@ -8,11 +8,12 @@
                 <tr>
                     <td>
                         <asp:GridView ID="GvOfficeMaster" runat="server" AutoGenerateColumns="False" DataSourceID="odsOfficeMasterInGrid"
-                            DataKeyNames="OfficeId" OnSelectedIndexChanged="GvOfficeMaster_SelectedIndexChanged" meta:resourcekey="GvOfficeMasterResource1">
+                            DataKeyNames="OfficeId" 
+                            OnSelectedIndexChanged="GvOfficeMaster_SelectedIndexChanged" 
+                            meta:resourcekey="GvOfficeMasterResource1" EnableModelValidation="True">
                             <Columns>
                                 <asp:BoundField DataField="OfficeName" HeaderText="Office Name" meta:resourcekey="BoundFieldResource1" />
                                 <asp:BoundField DataField="Description" HeaderText="Description" meta:resourcekey="BoundFieldResource2" />
-                                <asp:CommandField ShowSelectButton="True" meta:resourcekey="CommandFieldResource1" />
                             </Columns>
                         </asp:GridView>
                     </td>

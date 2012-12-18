@@ -281,7 +281,11 @@ namespace IGRSS.DataAccessLayer {
             
             private global::System.Data.DataColumn columnSrNo;
             
+            private global::System.Data.DataColumn columnTaluka_No;
+            
             private global::System.Data.DataColumn columnTaluka_Name;
+            
+            private global::System.Data.DataColumn columnTaluka_Details;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -326,9 +330,25 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Taluka_NoColumn {
+                get {
+                    return this.columnTaluka_No;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Taluka_NameColumn {
                 get {
                     return this.columnTaluka_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Taluka_DetailsColumn {
+                get {
+                    return this.columnTaluka_Details;
                 }
             }
             
@@ -369,11 +389,13 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TalukaMasterRow AddTalukaMasterRow(string Taluka_Name) {
+            public TalukaMasterRow AddTalukaMasterRow(int Taluka_No, string Taluka_Name, string Taluka_Details) {
                 TalukaMasterRow rowTalukaMasterRow = ((TalukaMasterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Taluka_Name};
+                        Taluka_No,
+                        Taluka_Name,
+                        Taluka_Details};
                 rowTalukaMasterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTalukaMasterRow);
                 return rowTalukaMasterRow;
@@ -410,7 +432,9 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnSrNo = base.Columns["SrNo"];
+                this.columnTaluka_No = base.Columns["Taluka_No"];
                 this.columnTaluka_Name = base.Columns["Taluka_Name"];
+                this.columnTaluka_Details = base.Columns["Taluka_Details"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -418,8 +442,12 @@ namespace IGRSS.DataAccessLayer {
             private void InitClass() {
                 this.columnSrNo = new global::System.Data.DataColumn("SrNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSrNo);
+                this.columnTaluka_No = new global::System.Data.DataColumn("Taluka_No", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTaluka_No);
                 this.columnTaluka_Name = new global::System.Data.DataColumn("Taluka_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTaluka_Name);
+                this.columnTaluka_Details = new global::System.Data.DataColumn("Taluka_Details", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTaluka_Details);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSrNo}, true));
                 this.columnSrNo.AutoIncrement = true;
@@ -429,6 +457,7 @@ namespace IGRSS.DataAccessLayer {
                 this.columnSrNo.ReadOnly = true;
                 this.columnSrNo.Unique = true;
                 this.columnTaluka_Name.MaxLength = 200;
+                this.columnTaluka_Details.MaxLength = 2147483647;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_TalukaMaster");
                 this.ExtendedProperties.Add("Generator_UserTableName", "TalukaMaster");
             }
@@ -584,6 +613,22 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Taluka_No {
+                get {
+                    try {
+                        return ((int)(this[this.tableTalukaMaster.Taluka_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Taluka_No\' in table \'TalukaMaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTalukaMaster.Taluka_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Taluka_Name {
                 get {
                     try {
@@ -600,6 +645,34 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Taluka_Details {
+                get {
+                    try {
+                        return ((string)(this[this.tableTalukaMaster.Taluka_DetailsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Taluka_Details\' in table \'TalukaMaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTalukaMaster.Taluka_DetailsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTaluka_NoNull() {
+                return this.IsNull(this.tableTalukaMaster.Taluka_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTaluka_NoNull() {
+                this[this.tableTalukaMaster.Taluka_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTaluka_NameNull() {
                 return this.IsNull(this.tableTalukaMaster.Taluka_NameColumn);
             }
@@ -608,6 +681,18 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTaluka_NameNull() {
                 this[this.tableTalukaMaster.Taluka_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTaluka_DetailsNull() {
+                return this.IsNull(this.tableTalukaMaster.Taluka_DetailsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTaluka_DetailsNull() {
+                this[this.tableTalukaMaster.Taluka_DetailsColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -771,30 +856,39 @@ namespace IGRSS.DataAccessLayer.TalukaMasterTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "TalukaMaster";
             tableMapping.ColumnMappings.Add("SrNo", "SrNo");
+            tableMapping.ColumnMappings.Add("Taluka_No", "Taluka_No");
             tableMapping.ColumnMappings.Add("Taluka_Name", "Taluka_Name");
+            tableMapping.ColumnMappings.Add("Taluka_Details", "Taluka_Details");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TalukaMaster] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_T" +
-                "aluka_Name = 1 AND [Taluka_Name] IS NULL) OR ([Taluka_Name] = @Original_Taluka_N" +
-                "ame)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TalukaMaster] WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Taluka_No = 1 AND [Taluka_No] IS NULL) OR ([Taluka_No] = @Original_Taluka_No)) AND ((@IsNull_Taluka_Name = 1 AND [Taluka_Name] IS NULL) OR ([Taluka_Name] = @Original_Taluka_Name)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Taluka_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_No", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Taluka_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Taluka_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Taluka_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TalukaMaster] ([Taluka_Name]) VALUES (@Taluka_Name);\r\nSELECT S" +
-                "rNo, Taluka_Name FROM dbo.TalukaMaster WHERE (SrNo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TalukaMaster] ([Taluka_No], [Taluka_Name], [Taluka_Details]) V" +
+                "ALUES (@Taluka_No, @Taluka_Name, @Taluka_Details);\r\nSELECT SrNo, Taluka_No, Talu" +
+                "ka_Name, Taluka_Details FROM dbo.TalukaMaster WHERE (SrNo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TalukaMaster] SET [Taluka_Name] = @Taluka_Name WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Taluka_Name = 1 AND [Taluka_Name] IS NULL) OR ([Taluka_Name] = @Original_Taluka_Name)));
-SELECT SrNo, Taluka_Name FROM dbo.TalukaMaster WHERE (SrNo = @SrNo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TalukaMaster] SET [Taluka_No] = @Taluka_No, [Taluka_Name] = @Taluka_Name, [Taluka_Details] = @Taluka_Details WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Taluka_No = 1 AND [Taluka_No] IS NULL) OR ([Taluka_No] = @Original_Taluka_No)) AND ((@IsNull_Taluka_Name = 1 AND [Taluka_Name] IS NULL) OR ([Taluka_Name] = @Original_Taluka_Name)));
+SELECT SrNo, Taluka_No, Taluka_Name, Taluka_Details FROM dbo.TalukaMaster WHERE (SrNo = @SrNo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_No", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Taluka_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Taluka_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_No", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Taluka_No", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_No", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Taluka_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Taluka_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Taluka_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SrNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -813,7 +907,8 @@ SELECT SrNo, Taluka_Name FROM dbo.TalukaMaster WHERE (SrNo = @SrNo)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        SrNo, Taluka_Name\r\nFROM            dbo.TalukaMaster";
+            this._commandCollection[0].CommandText = "SELECT        SrNo, Taluka_No, Taluka_Name, Taluka_Details\r\nFROM            dbo.T" +
+                "alukaMaster";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -874,15 +969,23 @@ SELECT SrNo, Taluka_Name FROM dbo.TalukaMaster WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_SrNo, string Original_Taluka_Name) {
+        public virtual int Delete(int Original_SrNo, global::System.Nullable<int> Original_Taluka_No, string Original_Taluka_Name) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SrNo));
-            if ((Original_Taluka_Name == null)) {
+            if ((Original_Taluka_No.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Taluka_No.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
+            if ((Original_Taluka_Name == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Taluka_Name));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Taluka_Name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -904,12 +1007,24 @@ SELECT SrNo, Taluka_Name FROM dbo.TalukaMaster WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Taluka_Name) {
-            if ((Taluka_Name == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(global::System.Nullable<int> Taluka_No, string Taluka_Name, string Taluka_Details) {
+            if ((Taluka_No.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Taluka_No.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Taluka_Name));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Taluka_Name == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Taluka_Name));
+            }
+            if ((Taluka_Details == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Taluka_Details));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -931,23 +1046,43 @@ SELECT SrNo, Taluka_Name FROM dbo.TalukaMaster WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Taluka_Name, int Original_SrNo, string Original_Taluka_Name, int SrNo) {
-            if ((Taluka_Name == null)) {
+        public virtual int Update(global::System.Nullable<int> Taluka_No, string Taluka_Name, string Taluka_Details, int Original_SrNo, global::System.Nullable<int> Original_Taluka_No, string Original_Taluka_Name, int SrNo) {
+            if ((Taluka_No.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Taluka_No.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Taluka_Name));
+            if ((Taluka_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_SrNo));
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Taluka_Name));
+            }
+            if ((Taluka_Details == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Taluka_Details));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_SrNo));
+            if ((Original_Taluka_No.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Taluka_No.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             if ((Original_Taluka_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Taluka_Name));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Taluka_Name));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(SrNo));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(SrNo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -968,8 +1103,8 @@ SELECT SrNo, Taluka_Name FROM dbo.TalukaMaster WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Taluka_Name, int Original_SrNo, string Original_Taluka_Name) {
-            return this.Update(Taluka_Name, Original_SrNo, Original_Taluka_Name, Original_SrNo);
+        public virtual int Update(global::System.Nullable<int> Taluka_No, string Taluka_Name, string Taluka_Details, int Original_SrNo, global::System.Nullable<int> Original_Taluka_No, string Original_Taluka_Name) {
+            return this.Update(Taluka_No, Taluka_Name, Taluka_Details, Original_SrNo, Original_Taluka_No, Original_Taluka_Name, Original_SrNo);
         }
     }
     

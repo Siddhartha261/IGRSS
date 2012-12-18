@@ -446,6 +446,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Purchase.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\RecordClassificationMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecordClassificationMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Recruitment_Master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruitment_Master.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Registration.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1593,6 +1603,28 @@
     </None>
     <None Include="DataAccessLayer\Purchase.xss">
       <DependentUpon>Purchase.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RecordClassificationMaster.xsc">
+      <DependentUpon>RecordClassificationMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\RecordClassificationMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecordClassificationMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\RecordClassificationMaster.xss">
+      <DependentUpon>RecordClassificationMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Recruitment_Master.xsc">
+      <DependentUpon>Recruitment_Master.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Recruitment_Master.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Recruitment_Master.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Recruitment_Master.xss">
+      <DependentUpon>Recruitment_Master.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\Refund.xsc">
       <DependentUpon>Refund.xsd</DependentUpon>

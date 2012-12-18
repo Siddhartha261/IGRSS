@@ -15,5 +15,17 @@ public partial class Central_Administration_Console_Masters_ReligionMaster : Sys
         Multiview_ReligionMaster.SetActiveView(Multiview_ReligionMaster.Views[1]);
         FormView_ReligionMaster.ChangeMode(FormViewMode.Insert);
     }
-   
+
+    protected void FormView_ReligionMaster_ItemCommand(object sender, FormViewCommandEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "Cancel":
+
+                Multiview_ReligionMaster.SetActiveView(ViewGrid);
+                GridView_ReligionMaster.DataBind();
+                infoDiv.Visible = false;
+                break;
+        }
+    }
 }

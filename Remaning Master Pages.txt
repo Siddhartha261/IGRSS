@@ -25,13 +25,13 @@ changes need to be made in existing Master Pages :
 
 New Master Pages :
 
-1.Religion - new
-2.Caste - new
+1.Religion - new                        [Insert Done]
+2.Caste - new                           [Insert Done] 
 3.Office Master - new
-4.District Master  -new
-5.Taluka Master - new
-6.Recruitment Master - new
-7.Anamat Type Master - new
+4.District Master  -new                 [Insert Done]
+5.Taluka Master - new                   [Insert Done]
+6.Recruitment Master - new              [Insert Done]
+7.Anamat Type Master - new              [Insert Done] 
 8.Permanent Details Master - new
 9.Reason Master - new
 10.Pay Scale Master - new

@@ -283,6 +283,8 @@ namespace IGRSS.DataAccessLayer {
             
             private global::System.Data.DataColumn columnAnamat_Type;
             
+            private global::System.Data.DataColumn columnAnamat_Details;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AnamatMasterDataTable() {
@@ -334,6 +336,14 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Anamat_DetailsColumn {
+                get {
+                    return this.columnAnamat_Details;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -369,11 +379,12 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AnamatMasterRow AddAnamatMasterRow(string Anamat_Type) {
+            public AnamatMasterRow AddAnamatMasterRow(string Anamat_Type, string Anamat_Details) {
                 AnamatMasterRow rowAnamatMasterRow = ((AnamatMasterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Anamat_Type};
+                        Anamat_Type,
+                        Anamat_Details};
                 rowAnamatMasterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAnamatMasterRow);
                 return rowAnamatMasterRow;
@@ -411,6 +422,7 @@ namespace IGRSS.DataAccessLayer {
             internal void InitVars() {
                 this.columnSrNo = base.Columns["SrNo"];
                 this.columnAnamat_Type = base.Columns["Anamat_Type"];
+                this.columnAnamat_Details = base.Columns["Anamat_Details"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -420,6 +432,8 @@ namespace IGRSS.DataAccessLayer {
                 base.Columns.Add(this.columnSrNo);
                 this.columnAnamat_Type = new global::System.Data.DataColumn("Anamat_Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnamat_Type);
+                this.columnAnamat_Details = new global::System.Data.DataColumn("Anamat_Details", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnamat_Details);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSrNo}, true));
                 this.columnSrNo.AutoIncrement = true;
@@ -429,6 +443,7 @@ namespace IGRSS.DataAccessLayer {
                 this.columnSrNo.ReadOnly = true;
                 this.columnSrNo.Unique = true;
                 this.columnAnamat_Type.MaxLength = 200;
+                this.columnAnamat_Details.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -598,6 +613,22 @@ namespace IGRSS.DataAccessLayer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Anamat_Details {
+                get {
+                    try {
+                        return ((string)(this[this.tableAnamatMaster.Anamat_DetailsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Anamat_Details\' in table \'AnamatMaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAnamatMaster.Anamat_DetailsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAnamat_TypeNull() {
                 return this.IsNull(this.tableAnamatMaster.Anamat_TypeColumn);
             }
@@ -606,6 +637,18 @@ namespace IGRSS.DataAccessLayer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAnamat_TypeNull() {
                 this[this.tableAnamatMaster.Anamat_TypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAnamat_DetailsNull() {
+                return this.IsNull(this.tableAnamatMaster.Anamat_DetailsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAnamat_DetailsNull() {
+                this[this.tableAnamatMaster.Anamat_DetailsColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -770,6 +813,7 @@ namespace IGRSS.DataAccessLayer.AnamattypeTableAdapters {
             tableMapping.DataSetTable = "AnamatMaster";
             tableMapping.ColumnMappings.Add("SrNo", "SrNo");
             tableMapping.ColumnMappings.Add("Anamat_Type", "Anamat_Type");
+            tableMapping.ColumnMappings.Add("Anamat_Details", "Anamat_Details");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -782,16 +826,19 @@ namespace IGRSS.DataAccessLayer.AnamattypeTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Anamat_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anamat_Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AnamatMaster] ([Anamat_Type]) VALUES (@Anamat_Type);\r\nSELECT S" +
-                "rNo, Anamat_Type FROM dbo.AnamatMaster WHERE (SrNo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AnamatMaster] ([Anamat_Type], [Anamat_Details]) VALUES (@Anama" +
+                "t_Type, @Anamat_Details);\r\nSELECT SrNo, Anamat_Type, Anamat_Details FROM dbo.Ana" +
+                "matMaster WHERE (SrNo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anamat_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anamat_Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anamat_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anamat_Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AnamatMaster] SET [Anamat_Type] = @Anamat_Type WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Anamat_Type = 1 AND [Anamat_Type] IS NULL) OR ([Anamat_Type] = @Original_Anamat_Type)));
-SELECT SrNo, Anamat_Type FROM dbo.AnamatMaster WHERE (SrNo = @SrNo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AnamatMaster] SET [Anamat_Type] = @Anamat_Type, [Anamat_Details] = @Anamat_Details WHERE (([SrNo] = @Original_SrNo) AND ((@IsNull_Anamat_Type = 1 AND [Anamat_Type] IS NULL) OR ([Anamat_Type] = @Original_Anamat_Type)));
+SELECT SrNo, Anamat_Type, Anamat_Details FROM dbo.AnamatMaster WHERE (SrNo = @SrNo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anamat_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anamat_Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anamat_Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anamat_Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SrNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SrNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Anamat_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anamat_Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Anamat_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anamat_Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -811,7 +858,8 @@ SELECT SrNo, Anamat_Type FROM dbo.AnamatMaster WHERE (SrNo = @SrNo)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        SrNo, Anamat_Type\r\nFROM            dbo.AnamatMaster";
+            this._commandCollection[0].CommandText = "SELECT        SrNo, Anamat_Type, Anamat_Details\r\nFROM            dbo.AnamatMaster" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -902,12 +950,18 @@ SELECT SrNo, Anamat_Type FROM dbo.AnamatMaster WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Anamat_Type) {
+        public virtual int Insert(string Anamat_Type, string Anamat_Details) {
             if ((Anamat_Type == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Anamat_Type));
+            }
+            if ((Anamat_Details == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Anamat_Details));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -929,23 +983,29 @@ SELECT SrNo, Anamat_Type FROM dbo.AnamatMaster WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Anamat_Type, int Original_SrNo, string Original_Anamat_Type, int SrNo) {
+        public virtual int Update(string Anamat_Type, string Anamat_Details, int Original_SrNo, string Original_Anamat_Type, int SrNo) {
             if ((Anamat_Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Anamat_Type));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_SrNo));
-            if ((Original_Anamat_Type == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((Anamat_Details == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Anamat_Type));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Anamat_Details));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(SrNo));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_SrNo));
+            if ((Original_Anamat_Type == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Anamat_Type));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(SrNo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -966,8 +1026,8 @@ SELECT SrNo, Anamat_Type FROM dbo.AnamatMaster WHERE (SrNo = @SrNo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Anamat_Type, int Original_SrNo, string Original_Anamat_Type) {
-            return this.Update(Anamat_Type, Original_SrNo, Original_Anamat_Type, Original_SrNo);
+        public virtual int Update(string Anamat_Type, string Anamat_Details, int Original_SrNo, string Original_Anamat_Type) {
+            return this.Update(Anamat_Type, Anamat_Details, Original_SrNo, Original_Anamat_Type, Original_SrNo);
         }
     }
     
