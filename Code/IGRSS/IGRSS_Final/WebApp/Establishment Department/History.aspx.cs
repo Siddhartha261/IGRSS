@@ -81,8 +81,7 @@ public partial class LatestPages_Default : System.Web.UI.Page
         e.Values["Caste"] = DropDownList1.SelectedValue;
         DropDownList DropDownList2 = Formview_History_Card.FindControl("DropDownListDesignation1") as DropDownList;
         e.Values["Join_as_Design"] = DropDownList2.SelectedValue;
-        DropDownList DropDownList3 = Formview_History_Card.FindControl("DropDownListDistrict") as DropDownList;
-        e.Values["Prmnt_Addr"] = DropDownList3.SelectedValue;
+       
         DropDownList DropDownList4 = Formview_History_Card.FindControl("DropDownListEduQualfn") as DropDownList;
         e.Values["Educn_Qualfn"] = DropDownList4.SelectedValue;
         DropDownList DropDownList5 = Formview_History_Card.FindControl("DropDownListCurrDesigwithOffice") as DropDownList;
@@ -159,8 +158,7 @@ public partial class LatestPages_Default : System.Web.UI.Page
         e.NewValues["Caste"] = DropDownList1.SelectedValue;
         DropDownList DropDownList2 = Formview_History_Card.FindControl("DropDownListDesignation1") as DropDownList;
         e.NewValues["Join_as_Design"] = DropDownList2.SelectedValue;
-        DropDownList DropDownList3 = Formview_History_Card.FindControl("DropDownListDistrict") as DropDownList;
-        e.NewValues["Prmnt_Addr"] = DropDownList3.SelectedValue;
+       
         DropDownList DropDownList4 = Formview_History_Card.FindControl("DropDownListEduQualfn") as DropDownList;
         e.NewValues["Educn_Qualfn"] = DropDownList4.SelectedValue;
         DropDownList DropDownList5 = Formview_History_Card.FindControl("DropDownListCurrDesigwithOffice") as DropDownList;

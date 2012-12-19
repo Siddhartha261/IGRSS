@@ -34,6 +34,9 @@ public partial class Establishment_Department_C_L_Card : System.Web.UI.Page
 
         RadioButtonList RadioList_LeaveApproved = FormView_C_L_Card.FindControl("RadioButtonList_LeaveApproved") as RadioButtonList;
         e.Values["Leave_Approved_Or_Not"] = Convert.ToBoolean(RadioList_LeaveApproved.SelectedValue);
+
+        DropDownList DropDown_ReasonLeave = FormView_C_L_Card.FindControl("DropDownList_Reason_Leave") as DropDownList;
+        e.Values["Reason_Name"] = DropDown_EmployeeName.SelectedValue;
     }
     protected void FormView_C_L_Card_ItemCommand(object sender, FormViewCommandEventArgs e)
     {
@@ -126,6 +129,9 @@ public partial class Establishment_Department_C_L_Card : System.Web.UI.Page
 
         RadioButtonList RadioList_LeaveApproved = FormView_C_L_Card.FindControl("RadioButtonList_LeaveApproved") as RadioButtonList;
         e.NewValues["Leave_Approved_Or_Not"] = Convert.ToBoolean(RadioList_LeaveApproved.SelectedValue);
+
+        DropDownList DropDown_ReasonLeave = FormView_C_L_Card.FindControl("DropDownList_Reason_Leave") as DropDownList;
+        e.NewValues["Reason_Name"] = DropDown_EmployeeName.SelectedValue;
     }
     protected void GridView_C_L_Card_RowDataBound(object sender, GridViewRowEventArgs e)
     {

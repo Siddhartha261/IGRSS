@@ -257,8 +257,12 @@
     
 	<tr align="left">
 	    <td>Reasons Of Leave:</td>
-		<td><asp:TextBox ID="Reasons_Of_LeaveTextBox" runat="server" 
-            Text='<%# Bind("Reasons_Of_Leave") %>' Height="60px" Width="160px" /></td>
+		<td>
+            <asp:DropDownList ID="DropDownList_Reason_Leave" runat="server" 
+                DataSourceID="ods_Reason_of_Leave" DataTextField="Reason_Name" 
+                DataValueField="Reason_Name" Width="160px">
+            </asp:DropDownList>
+        </td>
 		
 		<td>Leave Approved By:</td>
 		<td><asp:TextBox ID="Leave_Approved_ByTextBox" runat="server" 
@@ -401,8 +405,12 @@
     
 	<tr align="left">
 	    <td>Reasons Of Leave:</td>
-		<td><asp:TextBox ID="Reasons_Of_LeaveTextBox" runat="server" 
-            Text='<%# Bind("Reasons_Of_Leave") %>' Height="60px" Width="160px" /></td>
+		<td>
+            <asp:DropDownList ID="DropDownList_Reason_Leave" runat="server" 
+                DataSourceID="ods_Reason_of_Leave" DataTextField="Reason_Name" 
+                DataValueField="Reason_Name" Width="160px">
+            </asp:DropDownList>
+        </td>
 		
 		<td>Leave Approved By:</td>
 		<td><asp:TextBox ID="Leave_Approved_ByTextBox" runat="server" 
@@ -538,6 +546,26 @@
             <asp:Parameter Name="OfficeName" Type="String" />
             <asp:Parameter DbType="Guid" Name="Original_OfficeId" />
             <asp:Parameter Name="Original_OfficeName" Type="String" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ods_Reason_of_Leave" runat="server" 
+        DeleteMethod="Delete" InsertMethod="Insert" 
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.ReasonMasterTableAdapters.ReasonMasterTableAdapter" 
+        UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Reason_Name" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="Reason_Name" Type="String" />
+            <asp:Parameter Name="Remarks" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Reason_Name" Type="String" />
+            <asp:Parameter Name="Remarks" Type="String" />
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Reason_Name" Type="String" />
         </UpdateParameters>
     </asp:ObjectDataSource>
 </center>

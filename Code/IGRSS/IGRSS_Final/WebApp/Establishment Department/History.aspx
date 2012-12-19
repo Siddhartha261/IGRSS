@@ -218,12 +218,10 @@
                             Text='<%# Bind("Birth_Date") %>' Width="160px" /></td></tr>
                         <tr align="left"><td>Permanent Address :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                                ErrorMessage="*" ControlToValidate="DropDownListDistrict"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ControlToValidate="TextBox_Perm_Aaddress"></asp:RequiredFieldValidator>
                             </td><td>
-                            <asp:DropDownList ID="DropDownListDistrict" runat="server" 
-                                DataSourceID="ods_District" DataTextField="District_Name" 
-                                DataValueField="District_Name" Width="160px">
-                            </asp:DropDownList>
+                                <asp:TextBox ID="TextBox_Perm_Aaddress" runat="server" Height="60px"   Text='<%# Bind("Prmnt_Addr") %>'
+                                    TextMode="MultiLine" Width="160px"></asp:TextBox>
                             </td><td>Educational Qualification :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" 
                                 ErrorMessage="*" ControlToValidate="DropDownListEduQualfn"></asp:RequiredFieldValidator>
@@ -386,12 +384,10 @@
                             Text='<%# Bind("Birth_Date") %>' Width="160px" /></td></tr>
                         <tr align="left"><td>Permanent Address :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                                ErrorMessage="*" ControlToValidate="DropDownListDistrict"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ControlToValidate="TextBox_Perm_Aaddress"></asp:RequiredFieldValidator>
                             </td><td>
-                            <asp:DropDownList ID="DropDownListDistrict" runat="server" 
-                                DataSourceID="ods_District" DataTextField="District_Name" 
-                                DataValueField="District_Name" Width="160px">
-                            </asp:DropDownList>
+                                <asp:TextBox ID="TextBox_Perm_Aaddress" runat="server" Height="60px"  Text='<%# Bind("Prmnt_Addr") %>'
+                                    TextMode="MultiLine" Width="160px"></asp:TextBox>
                             </td><td>Educational Qualification :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" 
                                 ErrorMessage="*" ControlToValidate="DropDownListEduQualfn"></asp:RequiredFieldValidator>
@@ -493,7 +489,7 @@
                             </td></tr>
                         <tr align="left"><td> Date Of Transfer:</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-                                ErrorMessage="*" ControlToValidate="Date_To_DateTextBox"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ControlToValidate="Transfer_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:TextBox ID="Transfer_DateTextBox" runat="server" 
                             Text='<%# Bind("Transfer_Date") %>' Width="160px" /></td><td>Service Break Leave :</td><td>

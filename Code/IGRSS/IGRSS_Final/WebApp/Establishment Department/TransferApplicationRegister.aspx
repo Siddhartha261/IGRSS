@@ -550,6 +550,8 @@
             <asp:Parameter Name="SrNo" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ods_VillageMaster" runat="server">
+    </asp:ObjectDataSource>
 </asp:View>    
 </asp:MultiView>
 </asp:Content>

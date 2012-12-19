@@ -144,10 +144,12 @@
                 </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_ReservedCategory" runat="server" 
-                        Width="160px" TabIndex="5">
-                        <asp:ListItem Text="Schedule Cast" Value="Schedule Cast" ></asp:ListItem>
+                        DataSourceID="ods_anamattype" DataTextField="Anamat_Type" 
+                        DataValueField="Anamat_Type" TabIndex="5" Width="160px">
+                        <asp:ListItem Text="Schedule Cast" Value="Schedule Cast"></asp:ListItem>
                         <asp:ListItem Text="Scheduled Tribe" Value="Scheduled Tribe"></asp:ListItem>
-                        <asp:ListItem Text="Social and Educational Backward Tribe" Value="Social and Educational Backward Tribe"></asp:ListItem>
+                        <asp:ListItem Text="Social and Educational Backward Tribe" 
+                            Value="Social and Educational Backward Tribe"></asp:ListItem>
                         <asp:ListItem Text="Handicapped" Value="Handicapped"></asp:ListItem>
                         <asp:ListItem Text="General" Value="General"></asp:ListItem>
                         <asp:ListItem Text="None" Value="None"></asp:ListItem>
@@ -269,7 +271,8 @@
                 </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_ReservedCategory" runat="server" 
-                        Width="160px" TabIndex="5">
+                        Width="160px" TabIndex="5" DataSourceID="ods_anamattype" 
+                        DataTextField="Anamat_Type" DataValueField="Anamat_Type">
                         <asp:ListItem Text="Schedule Cast" Value="Schedule Cast" ></asp:ListItem>
                         <asp:ListItem Text="Scheduled Tribe" Value="Scheduled Tribe"></asp:ListItem>
                         <asp:ListItem Text="Social and Educational Backward Tribe" Value="Social and Educational Backward Tribe"></asp:ListItem>

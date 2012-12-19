@@ -56,6 +56,34 @@
       <View Name="Designations"
           Url="~/Central%20Administration%20Console/Masters/DesignationMaster.aspx"
           Mode="" Visible="True"/>
+      
+      <View Name="Reason Master"
+         Url="~/Central%20Administration%20Console/Masters/ReasonMaster.aspx"
+         Mode="" Visible="True"/>
+
+      <View Name="District Master"
+        Url="~/Central%20Administration%20Console/Masters/DistrictMaster.aspx"
+        Mode="" Visible="True"/>
+
+      <View Name="Caste Master"
+        Url="~/Central%20Administration%20Console/Masters/CasteMaster.aspx"
+        Mode="" Visible="True"/>
+
+      <View Name="Qualification Master"
+      Url="~/Central%20Administration%20Console/Masters/QualificationMaster.aspx"
+      Mode="" Visible="True"/>
+
+      <View Name="Religion Master"
+     Url="~/Central%20Administration%20Console/Masters/ReligionMaster.aspx"
+     Mode="" Visible="True"/>
+
+      <View Name="Anamat Type Master"
+    Url="~/Central%20Administration%20Console/Masters/AnamatTypeMaster.aspx"
+    Mode="" Visible="True"/>
+
+      <View Name="Recruitment Master"
+   Url="~/Central%20Administration%20Console/Masters/RecruitmentMaster.aspx"
+   Mode="" Visible="True"/>
 
       <View Name="Revenue Stamps"
           Url="~/Central%20Administration%20Console/Masters/RevenueStampMaster.aspx"

@@ -412,6 +412,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>officename.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\OfficeNameMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OfficeNameMaster.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\OfficesType.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -445,6 +450,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Purchase.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\ReasonMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReasonMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Reason_Leave.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reason_Leave.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\RecordClassificationMaster.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1527,6 +1542,17 @@
     <None Include="DataAccessLayer\officename.xss">
       <DependentUpon>officename.xsd</DependentUpon>
     </None>
+    <None Include="DataAccessLayer\OfficeNameMaster.xsc">
+      <DependentUpon>OfficeNameMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\OfficeNameMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OfficeNameMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\OfficeNameMaster.xss">
+      <DependentUpon>OfficeNameMaster.xsd</DependentUpon>
+    </None>
     <None Include="DataAccessLayer\OfficesMaster.xsc">
       <DependentUpon>OfficesMaster.xsd</DependentUpon>
     </None>
@@ -1603,6 +1629,28 @@
     </None>
     <None Include="DataAccessLayer\Purchase.xss">
       <DependentUpon>Purchase.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ReasonMaster.xsc">
+      <DependentUpon>ReasonMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\ReasonMaster.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReasonMaster.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\ReasonMaster.xss">
+      <DependentUpon>ReasonMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Reason_Leave.xsc">
+      <DependentUpon>Reason_Leave.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccessLayer\Reason_Leave.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reason_Leave.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccessLayer\Reason_Leave.xss">
+      <DependentUpon>Reason_Leave.xsd</DependentUpon>
     </None>
     <None Include="DataAccessLayer\RecordClassificationMaster.xsc">
       <DependentUpon>RecordClassificationMaster.xsd</DependentUpon>

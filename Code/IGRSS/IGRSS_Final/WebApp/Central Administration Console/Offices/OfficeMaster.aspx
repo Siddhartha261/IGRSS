@@ -56,7 +56,7 @@
                             </td>
                             <td class="textColumn">
                                 <asp:DropDownList ID="ddlDistrictCodeIns" runat="server" DataSourceID="odsDistrictMaster"
-                                    DataTextField="distname" DataValueField="distcd" SelectedValue='<%# Bind("DistrictCode") %>'
+                                    DataTextField="District_Name" DataValueField="District_Name" SelectedValue='<%# Bind("DistrictCode") %>'
                                     Width="180px" meta:resourcekey="ddlDistrictCodeInsResource1">
                                 </asp:DropDownList>
                             </td>
@@ -70,7 +70,7 @@
                             </td>
                             <td class="textColumn" style="height: 24px">
                                 <asp:DropDownList ID="ddltalukanameIns" runat="server" DataSourceID="odsTalukaMaster"
-                                    DataTextField="talukaname" DataValueField="talcd" SelectedValue='<%# Bind("TalukaCode") %>'
+                                    DataTextField="Taluka_Name" DataValueField="Taluka_Name" SelectedValue='<%# Bind("TalukaCode") %>'
                                     Width="180px" meta:resourcekey="ddltalukanameInsResource1">
                                 </asp:DropDownList>
                             </td>
@@ -97,10 +97,7 @@
                                 <asp:TextBox ID="txtEmailIdIns" runat="server" meta:resourcekey="txtEmailIdIns" Text='<%# Bind("EmailID") %>'></asp:TextBox>
                             </td>
                             <td class="validationColumn">
-                                <asp:RegularExpressionValidator ID="RegEmail" runat="server" ControlToValidate="txtEmailIdIns"
-                                    ValidationExpression="<%$ Resources:ValidationRegx, Email %>" meta:resourcekey="RegComplainNoResource1"
-                                    ErrorMessage="Please Enter Valid Email">*</asp:RegularExpressionValidator>
-                            </td>
+                                &nbsp;</td>
                             <td class="labelColumn">
                                 <asp:Label ID="lblPhoneNoIns" runat="server" meta:resourcekey="lblPhoneNoIns" Text="PhoneNo"></asp:Label>
                             </td>
@@ -108,10 +105,7 @@
                                 <asp:TextBox ID="txtPhoneNoIns" runat="server" MaxLength="13" meta:resourcekey="txtPhoneNoIns" Text='<%# Bind("PhoneNo") %>'></asp:TextBox>
                             </td>
                             <td class="validationColumn">
-                                <asp:RegularExpressionValidator ID="regPhoneNoIns" runat="server" ControlToValidate="txtPhoneNoIns"
-                                    ValidationExpression="<%$ Resources:ValidationRegx, Numeric %>" meta:resourcekey="regPhoneNoIns"
-                                    ErrorMessage="Phone No should'nt be more than 13 digit">*</asp:RegularExpressionValidator>
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="labelColumn">
@@ -120,7 +114,7 @@
                             <td class="textColumn" colspan="4">
                                 <asp:TextBox ID="txtDescriptionIns" TextMode="MultiLine" runat="server" meta:resourcekey="txtDescriptionIns"
                                     Text='<%# Bind("Description") %>'></asp:TextBox></td>
-                            <td class="validationColumn" colspan="4">
+                            <td class="validationColumn">
                             </td>
                         </tr>
                         <tr>
@@ -289,12 +283,56 @@
     <br />
     <br />
     <asp:ObjectDataSource ID="odsDistrictMaster" runat="server" OldValuesParameterFormatString="original_{0}"
-        SelectMethod="GetDistirctMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri">
+        SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.District_MasterTableAdapters.District_MasterTableAdapter" 
+        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_District_ID" Type="Int32" />
+            <asp:Parameter Name="Original_District_Name" Type="String" />
+            <asp:Parameter Name="Original_District_Location" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="District_ID" Type="Int32" />
+            <asp:Parameter Name="District_Name" Type="String" />
+            <asp:Parameter Name="District_Location" Type="String" />
+            <asp:Parameter Name="District_Details" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="District_ID" Type="Int32" />
+            <asp:Parameter Name="District_Name" Type="String" />
+            <asp:Parameter Name="District_Location" Type="String" />
+            <asp:Parameter Name="District_Details" Type="String" />
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_District_ID" Type="Int32" />
+            <asp:Parameter Name="Original_District_Name" Type="String" />
+            <asp:Parameter Name="Original_District_Location" Type="String" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
     <br />
     <br />
     <asp:ObjectDataSource ID="odsTalukaMaster" runat="server" OldValuesParameterFormatString="original_{0}"
-        SelectMethod="GetTalukaMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri">
+        SelectMethod="GetData" 
+        TypeName="IGRSS.DataAccessLayer.TalukaMasterTableAdapters.TalukaMasterTableAdapter" 
+        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Taluka_No" Type="Int32" />
+            <asp:Parameter Name="Original_Taluka_Name" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="Taluka_No" Type="Int32" />
+            <asp:Parameter Name="Taluka_Name" Type="String" />
+            <asp:Parameter Name="Taluka_Details" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Taluka_No" Type="Int32" />
+            <asp:Parameter Name="Taluka_Name" Type="String" />
+            <asp:Parameter Name="Taluka_Details" Type="String" />
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Taluka_No" Type="Int32" />
+            <asp:Parameter Name="Original_Taluka_Name" Type="String" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="odsVillageMaster" runat="server" OldValuesParameterFormatString="original_{0}"
         SelectMethod="GetVillageMasterDetails" TypeName="IGRSS.BusinessLogicLayer.Jantri">

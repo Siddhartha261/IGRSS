@@ -33,6 +33,17 @@ New Master Pages :
 6.Recruitment Master - new              [Insert Done]
 7.Anamat Type Master - new              [Insert Done] 
 8.Permanent Details Master - new
-9.Reason Master - new
+9.Reason Master - new                   [Insert Done]
 10.Pay Scale Master - new
-11.Record Classification Master - new
+11.Record Classification Master - new   [Insert Done]
+
+
+
+
+
+
+
+
+
+
+
