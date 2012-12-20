@@ -183,8 +183,8 @@
                 </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_employeename" runat="server" 
-                        DataSourceID="ods_employeename" DataTextField="FirstName" 
-                        DataValueField="FirstName">
+                        DataSourceID="ods_employeename" DataTextField="Employee_Name" 
+                        DataValueField="Employee_Name">
                     </asp:DropDownList>
                 </td>
 			</tr>              
@@ -320,8 +320,8 @@
                 </td>
 				<td>
                     <asp:DropDownList ID="DropDownList_employeename" runat="server" 
-                        DataSourceID="ods_employeename" DataTextField="FirstName" 
-                        DataValueField="FirstName">
+                        DataSourceID="ods_employeename" DataTextField="Employee_Name" 
+                        DataValueField="Employee_Name">
                     </asp:DropDownList>
                 </td>
 			</tr>              
@@ -504,7 +504,117 @@
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_employeename" runat="server" 
         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter">
+        
+        TypeName="IGRSS.DataAccessLayer.HistoryCardTableAdapters.HistroryCardTableAdapter" 
+        DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Employee_Name" Type="String" />
+            <asp:Parameter Name="Original_Birth_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Joining_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Join_as_Design" Type="String" />
+            <asp:Parameter Name="Original_Promtion_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Promotion_Design" Type="String" />
+            <asp:Parameter Name="Original_Actual_Date_of_Joining_Dept" Type="DateTime" />
+            <asp:Parameter Name="Original_Religion" Type="String" />
+            <asp:Parameter Name="Original_Caste" Type="String" />
+            <asp:Parameter Name="Original_Current_desig" Type="String" />
+            <asp:Parameter Name="Original_Preservice_training_Passing_Date" 
+                Type="DateTime" />
+            <asp:Parameter Name="Original_Clerk_Dept_Exam_Pass_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Sub_Register_Exam_Pass_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Upgrade_Promotion_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_First_Hier_Grade_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Sec_Hier_Grade_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Extra_Qualities" Type="String" />
+            <asp:Parameter Name="Original_Retire_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Other_Details" Type="String" />
+            <asp:Parameter Name="Original_Curr_Desig_with_office" Type="String" />
+            <asp:Parameter Name="Original_Date_To_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Transfer_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Servc_Break_Leave" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="Employee_Name" Type="String" />
+            <asp:Parameter Name="Birth_Date" Type="DateTime" />
+            <asp:Parameter Name="Prmnt_Addr" Type="String" />
+            <asp:Parameter Name="Educn_Qualfn" Type="String" />
+            <asp:Parameter Name="Joining_Date" Type="DateTime" />
+            <asp:Parameter Name="Join_as_Design" Type="String" />
+            <asp:Parameter Name="Promtion_Date" Type="DateTime" />
+            <asp:Parameter Name="Promotion_Design" Type="String" />
+            <asp:Parameter Name="Actual_Date_of_Joining_Dept" Type="DateTime" />
+            <asp:Parameter Name="Religion" Type="String" />
+            <asp:Parameter Name="Caste" Type="String" />
+            <asp:Parameter Name="Current_desig" Type="String" />
+            <asp:Parameter Name="Preservice_training_Passing_Date" Type="DateTime" />
+            <asp:Parameter Name="Clerk_Dept_Exam_Pass_Date" Type="DateTime" />
+            <asp:Parameter Name="Sub_Register_Exam_Pass_Date" Type="DateTime" />
+            <asp:Parameter Name="Upgrade_Promotion_Date" Type="DateTime" />
+            <asp:Parameter Name="First_Hier_Grade_Date" Type="DateTime" />
+            <asp:Parameter Name="Sec_Hier_Grade_Date" Type="DateTime" />
+            <asp:Parameter Name="Extra_Currclar_Activities" Type="String" />
+            <asp:Parameter Name="Extra_Qualities" Type="String" />
+            <asp:Parameter Name="Retire_Date" Type="DateTime" />
+            <asp:Parameter Name="Other_Details" Type="String" />
+            <asp:Parameter Name="Curr_Desig_with_office" Type="String" />
+            <asp:Parameter Name="Date_To_Date" Type="DateTime" />
+            <asp:Parameter Name="Transfer_Date" Type="DateTime" />
+            <asp:Parameter Name="Servc_Break_Leave" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Employee_Name" Type="String" />
+            <asp:Parameter Name="Birth_Date" Type="DateTime" />
+            <asp:Parameter Name="Prmnt_Addr" Type="String" />
+            <asp:Parameter Name="Educn_Qualfn" Type="String" />
+            <asp:Parameter Name="Joining_Date" Type="DateTime" />
+            <asp:Parameter Name="Join_as_Design" Type="String" />
+            <asp:Parameter Name="Promtion_Date" Type="DateTime" />
+            <asp:Parameter Name="Promotion_Design" Type="String" />
+            <asp:Parameter Name="Actual_Date_of_Joining_Dept" Type="DateTime" />
+            <asp:Parameter Name="Religion" Type="String" />
+            <asp:Parameter Name="Caste" Type="String" />
+            <asp:Parameter Name="Current_desig" Type="String" />
+            <asp:Parameter Name="Preservice_training_Passing_Date" Type="DateTime" />
+            <asp:Parameter Name="Clerk_Dept_Exam_Pass_Date" Type="DateTime" />
+            <asp:Parameter Name="Sub_Register_Exam_Pass_Date" Type="DateTime" />
+            <asp:Parameter Name="Upgrade_Promotion_Date" Type="DateTime" />
+            <asp:Parameter Name="First_Hier_Grade_Date" Type="DateTime" />
+            <asp:Parameter Name="Sec_Hier_Grade_Date" Type="DateTime" />
+            <asp:Parameter Name="Extra_Currclar_Activities" Type="String" />
+            <asp:Parameter Name="Extra_Qualities" Type="String" />
+            <asp:Parameter Name="Retire_Date" Type="DateTime" />
+            <asp:Parameter Name="Other_Details" Type="String" />
+            <asp:Parameter Name="Curr_Desig_with_office" Type="String" />
+            <asp:Parameter Name="Date_To_Date" Type="DateTime" />
+            <asp:Parameter Name="Transfer_Date" Type="DateTime" />
+            <asp:Parameter Name="Servc_Break_Leave" Type="String" />
+            <asp:Parameter Name="Original_SrNo" Type="Int32" />
+            <asp:Parameter Name="Original_Employee_Name" Type="String" />
+            <asp:Parameter Name="Original_Birth_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Joining_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Join_as_Design" Type="String" />
+            <asp:Parameter Name="Original_Promtion_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Promotion_Design" Type="String" />
+            <asp:Parameter Name="Original_Actual_Date_of_Joining_Dept" Type="DateTime" />
+            <asp:Parameter Name="Original_Religion" Type="String" />
+            <asp:Parameter Name="Original_Caste" Type="String" />
+            <asp:Parameter Name="Original_Current_desig" Type="String" />
+            <asp:Parameter Name="Original_Preservice_training_Passing_Date" 
+                Type="DateTime" />
+            <asp:Parameter Name="Original_Clerk_Dept_Exam_Pass_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Sub_Register_Exam_Pass_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Upgrade_Promotion_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_First_Hier_Grade_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Sec_Hier_Grade_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Extra_Qualities" Type="String" />
+            <asp:Parameter Name="Original_Retire_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Other_Details" Type="String" />
+            <asp:Parameter Name="Original_Curr_Desig_with_office" Type="String" />
+            <asp:Parameter Name="Original_Date_To_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Transfer_Date" Type="DateTime" />
+            <asp:Parameter Name="Original_Servc_Break_Leave" Type="String" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_Grade" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 

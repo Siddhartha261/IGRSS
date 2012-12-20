@@ -8,32 +8,9 @@
 			  Mode="AssignUserPermissions" Visible="False"/>
     <Module Name="Masters" 
 			Code="Mas">
-      <View Name="File Register"
-          Url="~/AdministrationDepartment/FileRegister.aspx"
-          Mode="" Visible="True" />
-      <View Name="Government Documents"
-          Url="~/AdministrationDepartment/GovtDoc.aspx"
-          Mode="" Visible="True" />
-      <View Name="MLA and Minister Register"
-          Url="~/AdministrationDepartment/MLAandMinisterRegister.aspx"
-          Mode="" Visible="True" />
-      <View Name="Priamry Investigation/Inquiry Register"
-          Url="~/AdministrationDepartment/PrimaryInvestigation-InquiryRegister.aspx"
-          Mode="" Visible="True" />
-      <View Name="RTI Appeal Register"
-          Url="~/AdministrationDepartment/RTIAppealRegister.aspx"
-          Mode="" Visible="True" />
-      <View Name="SO File"
-          Url="~/AdministrationDepartment/SOFile.aspx"
-          Mode="" Visible="True" />
-      <View Name="VidhanSabha Tarankit Question Register"
-          Url="~/AdministrationDepartment/VidhanSabhaTarankitQuestionRegister.aspx"
-          Mode="" Visible="True" />
-      <View Name="Vigilance Register"
-          Url="~/AdministrationDepartment/VigilanceRegister.aspx"
-          Mode="" Visible="True" />
-      <View Name="WorkSheet Register"
-          Url="~/AdministrationDepartment/WorkSheetRegister.aspx"
+      
+      <View Name="Employee Master"
+          Url="~/Central%20Administration%20Console/Masters/EmployeeMaster.aspx"
           Mode="" Visible="True"/>
       <!--<View Name="Inspection Types"
           Url="~/Central%20Administration%20Console/Masters/InspectionTypeMaster.aspx"
@@ -69,9 +46,7 @@
         Url="~/Central%20Administration%20Console/Masters/CasteMaster.aspx"
         Mode="" Visible="True"/>
 
-      <View Name="Qualification Master"
-      Url="~/Central%20Administration%20Console/Masters/QualificationMaster.aspx"
-      Mode="" Visible="True"/>
+     
 
       <View Name="Religion Master"
      Url="~/Central%20Administration%20Console/Masters/ReligionMaster.aspx"
@@ -89,9 +64,9 @@
           Url="~/Central%20Administration%20Console/Masters/RevenueStampMaster.aspx"
           Mode="" Visible="True"/>
 
-      <View Name="User Roles"
+      <!--<View Name="User Roles"
           Url="~/Central%20Administration%20Console/UserRoleManagement/UserInOfficeRoles.aspx"
-          Mode="" Visible="True"/>
+          Mode="" Visible="True"/>-->
 
       <!--<View Name="Postal Delivery Types"
           Url="~/Central%20Administration%20Console/Masters/PostalDeliveryTypeLKP.aspx"
@@ -118,6 +93,36 @@
          Url="~/Central%20Administration%20Console/Masters/VillageMaster.aspx"
          Mode="" Visible="True"/>
     </Module>
+  </Module>
+
+  <Module Name="Administration" Code="Admin">
+    <View Name="File Register"
+          Url="~/AdministrationDepartment/FileRegister.aspx"
+          Mode="" Visible="True" />
+    <View Name="Government Documents"
+        Url="~/AdministrationDepartment/GovtDoc.aspx"
+        Mode="" Visible="True" />
+    <View Name="MLA and Minister Register"
+        Url="~/AdministrationDepartment/MLAandMinisterRegister.aspx"
+        Mode="" Visible="True" />
+    <View Name="Primary Investigation/Inquiry Register"
+        Url="~/AdministrationDepartment/PrimaryInvestigation-InquiryRegister.aspx"
+        Mode="" Visible="True" />
+    <View Name="RTI Appeal Register"
+        Url="~/AdministrationDepartment/RTIAppealRegister.aspx"
+        Mode="" Visible="True" />
+    <View Name="SO File"
+        Url="~/AdministrationDepartment/SOFile.aspx"
+        Mode="" Visible="True" />
+    <View Name="VidhanSabha Tarankit Question Register"
+        Url="~/AdministrationDepartment/VidhanSabhaTarankitQuestionRegister.aspx"
+        Mode="" Visible="True" />
+    <View Name="Vigilance Register"
+        Url="~/AdministrationDepartment/VigilanceRegister.aspx"
+        Mode="" Visible="True" />
+    <View Name="WorkSheet Register"
+        Url="~/AdministrationDepartment/WorkSheetRegister.aspx"
+        Mode="" Visible="True"/>
   </Module>
   
   <Module Name="Adjudication"

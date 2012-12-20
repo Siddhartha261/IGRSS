@@ -157,9 +157,9 @@
       
       <tr><td>Office/Department Name:</td>
 		<td align="left">
-            <asp:DropDownList ID="DropDownList_Office" runat="server" Width="160px" 
-                DataSourceID="ods_office" DataTextField="OfficeName" 
-                DataValueField="OfficeName">
+            <asp:DropDownList ID="DropDownList_EmployeeName0" runat="server" 
+                DataSourceID="ods_EmployeeName" DataTextField="Employee_Name" 
+                DataValueField="Employee_Name" Width="160px">
             </asp:DropDownList>
                                                                                                                                                                           </td>
 																																									    <td></td>
@@ -315,11 +315,11 @@
 		<td></td>
 	</tr>                                                                                                                                                      
                                                                                                                                                                      <tr>
-		<td>Employee Name:</td>
+		<td align="left">Employee Name:</td>
 		<td align="left">
             <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
-                DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
-                DataValueField="FirstName" Width="160px">
+                DataSourceID="ods_EmployeeName" DataTextField="Employee_Name" 
+                DataValueField="Employee_Name" Width="160px">
             </asp:DropDownList>
                                                                                                                                                                          </td>
 																																										<td></td>
@@ -511,23 +511,9 @@
         </ItemTemplate>
     </asp:FormView>
     <asp:ObjectDataSource ID="ods_EmployeeName" runat="server" 
-        DeleteMethod="Delete" InsertMethod="Insert" 
         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter" 
-        UpdateMethod="Update">
-        <DeleteParameters>
-            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
-            <asp:Parameter Name="Original_FirstName" Type="String" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter DbType="Guid" Name="EmployeeID" />
-            <asp:Parameter Name="FirstName" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="FirstName" Type="String" />
-            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
-            <asp:Parameter Name="Original_FirstName" Type="String" />
-        </UpdateParameters>
+        
+        TypeName="IGRSS.DataAccessLayer.HistoryCardTableAdapters.HistroryCardTableAdapter">
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_office" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 

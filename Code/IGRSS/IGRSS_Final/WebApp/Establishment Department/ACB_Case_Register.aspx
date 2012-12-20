@@ -181,8 +181,8 @@
 		    <td>Employee Name:</td>
 			<td>
                 <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
-                    DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
-                    DataValueField="FirstName" Width="160px">
+                    DataSourceID="ods_EmployeeName" DataTextField="Employee_Name" 
+                    DataValueField="Employee_Name" Width="160px">
                 </asp:DropDownList>
             </td>
 			
@@ -316,8 +316,8 @@
 		    <td>Employee Name:</td>
 			<td>
                 <asp:DropDownList ID="DropDownList_EmployeeName" runat="server" 
-                    DataSourceID="ods_EmployeeName" DataTextField="FirstName" 
-                    DataValueField="FirstName" Width="160px">
+                    DataSourceID="ods_EmployeeName" DataTextField="Employee_Name" 
+                    DataValueField="Employee_Name" Width="160px">
                 </asp:DropDownList>
             </td>
 			
@@ -526,23 +526,9 @@
         </ItemTemplate>
     </asp:FormView>
     <asp:ObjectDataSource ID="ods_EmployeeName" runat="server" 
-        DeleteMethod="Delete" InsertMethod="Insert" 
         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter" 
-        UpdateMethod="Update">
-        <DeleteParameters>
-            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
-            <asp:Parameter Name="Original_FirstName" Type="String" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter DbType="Guid" Name="EmployeeID" />
-            <asp:Parameter Name="FirstName" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="FirstName" Type="String" />
-            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
-            <asp:Parameter Name="Original_FirstName" Type="String" />
-        </UpdateParameters>
+        
+        TypeName="IGRSS.DataAccessLayer.HistoryCardTableAdapters.HistroryCardTableAdapter">
     </asp:ObjectDataSource>
 </center>
     

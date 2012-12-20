@@ -129,8 +129,8 @@
                         ControlToValidate="Name_Of_EmployeeDropDown" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 			    <td><asp:DropDownList ID="Name_Of_EmployeeDropDown" runat="server" 
-                        DataSourceID="ObjectDataSourceEmployee" DataTextField="FirstName" 
-                        DataValueField="FirstName" TabIndex="1"></asp:DropDownList>
+                        DataSourceID="ObjectDataSourceEmployee" DataTextField="Employee_Name" 
+                        DataValueField="Employee_Name" TabIndex="1"></asp:DropDownList>
                 </td>
 			</tr>	                 
                     
@@ -195,8 +195,8 @@
                         ControlToValidate="Name_Of_EmployeeDropDown" ErrorMessage="*"></asp:RequiredFieldValidator>
                 </td>
 			    <td><asp:DropDownList ID="Name_Of_EmployeeDropDown" runat="server" 
-                        DataSourceID="ObjectDataSourceEmployee" DataTextField="FirstName" 
-                        DataValueField="FirstName" TabIndex="1"></asp:DropDownList>
+                        DataSourceID="ObjectDataSourceEmployee" DataTextField="Employee_Name" 
+                        DataValueField="Employee_Name" TabIndex="1"></asp:DropDownList>
                 </td>
 			</tr>	                 
                     
@@ -308,24 +308,9 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ObjectDataSourceEmployee" runat="server" 
-        DeleteMethod="Delete" InsertMethod="Insert" 
         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="IGRSS.DataAccessLayer.EmployeeNameTableAdapters.EmployeeMasterTableAdapter" 
-        UpdateMethod="Update">
-        <DeleteParameters>
-            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
-            <asp:Parameter Name="Original_FirstName" Type="String" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter DbType="Guid" Name="EmployeeID" />
-            <asp:Parameter Name="FirstName" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="EmployeeID" DbType="Guid" />
-            <asp:Parameter Name="FirstName" Type="String" />
-            <asp:Parameter DbType="Guid" Name="Original_EmployeeID" />
-            <asp:Parameter Name="Original_FirstName" Type="String" />
-        </UpdateParameters>
+        
+        TypeName="IGRSS.DataAccessLayer.HistoryCardTableAdapters.HistroryCardTableAdapter">
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ods_Designation" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
