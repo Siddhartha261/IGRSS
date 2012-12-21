@@ -92,14 +92,14 @@ public partial class IGRSS_Default : System.Web.UI.MasterPage
 
     public void ShowStatusMessage(string shortMessage, string msgDetails, MessageType Mode)
     {
-        StatusInformation1.Message = shortMessage;
-        StatusInformation1.MessageDetails = msgDetails;
-        StatusInformation1.Mode = Mode;
-        StatusInformation1.ShowMessge();
+        //StatusInformation1.Message = shortMessage;
+        //StatusInformation1.MessageDetails = msgDetails;
+        //StatusInformation1.Mode = Mode;
+        //StatusInformation1.ShowMessge();
     }
 
     public void HideStatusMessage()
     {
-        StatusInformation1.HideMessge();
+//        StatusInformation1.HideMessge();
     }
 }

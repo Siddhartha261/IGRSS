@@ -2098,10 +2098,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:50970/IgrssWebservices/StampDutyCalculator.asmx">
+    <WebReferenceUrl Include="http://localhost:62154/IgrssWebservices/StampDutyCalculator.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SdcService\</RelPath>
-      <UpdateFromURL>http://localhost:50970/IgrssWebservices/StampDutyCalculator.asmx</UpdateFromURL>
+      <UpdateFromURL>http://localhost:62154/IgrssWebservices/StampDutyCalculator.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

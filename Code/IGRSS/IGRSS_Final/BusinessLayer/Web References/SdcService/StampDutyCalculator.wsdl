@@ -127,10 +127,10 @@
   </wsdl:binding>
   <wsdl:service name="StampDutyCalculator">
     <wsdl:port name="StampDutyCalculatorSoap" binding="tns:StampDutyCalculatorSoap">
-      <soap:address location="http://localhost:50970/IgrssWebservices/StampDutyCalculator.asmx" />
+      <soap:address location="http://localhost:62154/IgrssWebservices/StampDutyCalculator.asmx" />
     </wsdl:port>
     <wsdl:port name="StampDutyCalculatorSoap12" binding="tns:StampDutyCalculatorSoap12">
-      <soap12:address location="http://localhost:50970/IgrssWebservices/StampDutyCalculator.asmx" />
+      <soap12:address location="http://localhost:62154/IgrssWebservices/StampDutyCalculator.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

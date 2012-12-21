@@ -26,7 +26,7 @@ namespace IGRSS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50970/IgrssWebservices/StampDutyCalculator.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:62154/IgrssWebservices/StampDutyCalculator.asmx")]
         public string BusinessLayer_SdcService_StampDutyCalculator {
             get {
                 return ((string)(this["BusinessLayer_SdcService_StampDutyCalculator"]));

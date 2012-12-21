@@ -213,12 +213,12 @@
   <Module Name="EST"
     Code="EST">
 
-    <View Name="ACB Case Register"
+    <!--<View Name="ACB Case Register"
 			  Url="~/Establishment Department/ACB_Case_Register.aspx"
-			  Mode="" Visible="True"/>
-    <View Name="C.L. Card"
+			  Mode="" Visible="True"/>-->
+    <!--<View Name="C.L. Card"
 			  Url="~/Establishment Department/C_L_Card.aspx"
-			  Mode="" Visible="True"/>
+			  Mode="" Visible="True"/>-->
     <View Name="Departmental Inquiry Register"
 			  Url="~/Establishment Department/Departmental_Inquiry_Register.aspx"
 			  Mode="" Visible="True"/>

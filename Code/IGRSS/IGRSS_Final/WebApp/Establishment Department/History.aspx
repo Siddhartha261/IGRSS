@@ -204,7 +204,7 @@
                 onitemupdated="Formview_History_Card_ItemUpdated" 
                 onitemupdating="Formview_History_Card_ItemUpdating">
                     <EditItemTemplate>
-                        <table align="center" cellspacing="5" width="1200px">
+                        <table align="center" cellspacing="5" width="1000px">
 						<tr align="left"><td>Name Of Employee :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                 ErrorMessage="*" ControlToValidate="Employee_NameTextBox"></asp:RequiredFieldValidator>
@@ -215,20 +215,20 @@
                                 ErrorMessage="*" ControlToValidate="Birth_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td>
                             <asp:TextBox ID="Birth_DateTextBox" runat="server"  
-                            Text='<%# Bind("Birth_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Birth_Date") %>' Width="160px" TabIndex="13" /></td></tr>
                         <tr align="left"><td>Permanent Address :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                 ErrorMessage="*" ControlToValidate="TextBox_Perm_Aaddress"></asp:RequiredFieldValidator>
                             </td><td>
-                                <asp:TextBox ID="TextBox_Perm_Aaddress" runat="server" Height="60px"   Text='<%# Bind("Prmnt_Addr") %>'
-                                    TextMode="MultiLine" Width="160px"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_Perm_Aaddress" runat="server" Height="60px"  Text='<%# Bind("Prmnt_Addr") %>'
+                                    TextMode="MultiLine" Width="160px" TabIndex="1"></asp:TextBox>
                             </td><td>Educational Qualification :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" 
                                 ErrorMessage="*" ControlToValidate="DropDownListEduQualfn"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:DropDownList ID="DropDownListEduQualfn" runat="server" 
                                 DataSourceID="ods_EducationalQualfn" DataTextField="Details" 
-                                DataValueField="Details" Width="160px">
+                                DataValueField="Details" Width="160px" TabIndex="14">
                             </asp:DropDownList>
                             </td></tr>
                             <tr align="left"><td>Joined As :</td><td>
@@ -237,37 +237,37 @@
                                 </td><td>
                             <asp:DropDownList ID="DropDownListDesignation1" runat="server" 
                                 DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
-                                    Width="160px">
+                                    Width="160px" TabIndex="2">
                             </asp:DropDownList>
                             </td><td>Date Of Joining:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" 
                                     ErrorMessage="*" ControlToValidate="Joining_DateTextBox"></asp:RequiredFieldValidator>
                                 </td><td>
                                 <asp:TextBox ID="Joining_DateTextBox" runat="server" 
-                            Text='<%# Bind("Joining_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Joining_Date") %>' Width="160px" TabIndex="15" /></td></tr>
                             <tr align="left"><td>Date Of Promotion:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                     ErrorMessage="*" ControlToValidate="Promtion_DateTextBox"></asp:RequiredFieldValidator>
                                 </td><td>  
                                 <asp:TextBox ID="Promtion_DateTextBox" runat="server" 
-                            Text='<%# Bind("Promtion_Date") %>' Width="160px" /></td><td>Designation Of Promotion:</td><td>
+                            Text='<%# Bind("Promtion_Date") %>' Width="160px" TabIndex="3" /></td><td>Designation Of Promotion:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" 
                                     ErrorMessage="*" ControlToValidate="Promotion_DesignTextBox"></asp:RequiredFieldValidator>
                                 </td><td>
                                 <asp:TextBox ID="Promotion_DesignTextBox" runat="server" 
-                            Text='<%# Bind("Promotion_Design") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Promotion_Design") %>' Width="160px" TabIndex="16" /></td></tr>
                             <tr align="left"><td>  Actual Date Of Joining Department:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                                     ErrorMessage="*" ControlToValidate="Actual_Date_of_Joining_DeptTextBox"></asp:RequiredFieldValidator>
                                 </td><td>
                                 <asp:TextBox ID="Actual_Date_of_Joining_DeptTextBox" runat="server" 
-                            Text='<%# Bind("Actual_Date_of_Joining_Dept") %>' Width="160px" /></td><td>Religion :</td><td>
+                            Text='<%# Bind("Actual_Date_of_Joining_Dept") %>' Width="160px" TabIndex="4" /></td><td>Religion :</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" 
                                     ErrorMessage="*" ControlToValidate="DropDownListReligionMaster"></asp:RequiredFieldValidator>
                                 </td><td>
                                 <asp:DropDownList ID="DropDownListReligionMaster" runat="server" 
                                     DataSourceID="ods_Religion1" DataTextField="Religion_Name" 
-                                    DataValueField="Religion_Name" Width="160px">
+                                    DataValueField="Religion_Name" Width="160px" TabIndex="17">
                                 </asp:DropDownList>
                                 </td></tr>
                             <tr align="left"><td>Caste:</td><td>
@@ -275,7 +275,8 @@
                                     ErrorMessage="*" Enabled="False" ControlToValidate="DropDownListCaste"></asp:RequiredFieldValidator>
                                 </td><td> 
                             <asp:DropDownList ID="DropDownListCaste" runat="server" Width="160px"
-                                DataSourceID="ods_Caste" DataTextField="Cast_Name" DataValueField="Cast_Name">
+                                DataSourceID="ods_Caste" DataTextField="Cast_Name" DataValueField="Cast_Name" 
+                                        TabIndex="5">
                             </asp:DropDownList>
                             </td><td> Current Designation:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" 
@@ -283,90 +284,88 @@
                                 </td><td>
                             <asp:DropDownList ID="DropDownListCurrentDesign" runat="server" 
                                 DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
-                                    Width="160px">
+                                    Width="160px" TabIndex="18">
                             </asp:DropDownList>
                             </td></tr>
-
-                        
-                        
-                       
-                        <tr align="left"><td>Preservice Training Passing Date :</td><td>
-                            &nbsp;</td> <td>
+                            <tr align="left"><td>Preservice Training Passing Date :</td><td>
+                            </td> <td>
                             <asp:TextBox ID="Preservice_training_Passing_DateTextBox" runat="server" 
-                            Text='<%# Bind("Preservice_training_Passing_Date") %>' Width="160px" /></td><td>Clerk Department Passing Date </td><td></td><td> 
+                            Text='<%# Bind("Preservice_training_Passing_Date") %>' Width="160px" TabIndex="6" /></td><td>Clerk Department Passing Date </td><td></td><td> 
                             <asp:TextBox ID="Clerk_Dept_Exam_Pass_DateTextBox" runat="server" 
-                            Text='<%# Bind("Clerk_Dept_Exam_Pass_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Clerk_Dept_Exam_Pass_Date") %>' Width="160px" TabIndex="19" /></td></tr>
                        
                         <tr align="left"><td> Sub Register Exam Pass Date:</td><td></td><td>
                             <asp:TextBox ID="Sub_Register_Exam_Pass_DateTextBox" runat="server" 
-                            Text='<%# Bind("Sub_Register_Exam_Pass_Date") %>' Width="160px" /></td><td> Upgradation Of Designation Promotion Date:</td><td>
+                            Text='<%# Bind("Sub_Register_Exam_Pass_Date") %>' Width="160px" TabIndex="7" /></td><td> Upgradation Of Designation Promotion Date:</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" 
                                 ErrorMessage="*" ControlToValidate="Upgrade_Promotion_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td>   
                             <asp:TextBox ID="Upgrade_Promotion_DateTextBox" runat="server" 
-                            Text='<%# Bind("Upgrade_Promotion_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Upgrade_Promotion_Date") %>' Width="160px" TabIndex="20" /></td></tr>
                         <tr align="left"><td>First Hier Grade Date :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" 
                                 ErrorMessage="*" ControlToValidate="First_Hier_Grade_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td>
                             <asp:TextBox ID="First_Hier_Grade_DateTextBox" runat="server" 
-                            Text='<%# Bind("First_Hier_Grade_Date") %>' Width="160px" /></td><td>Second Hier Grade Date :</td><td></td><td>
+                            Text='<%# Bind("First_Hier_Grade_Date") %>' Width="160px" TabIndex="8" /></td><td>Second Hier Grade Date :</td><td></td><td>
                             <asp:TextBox ID="Sec_Hier_Grade_DateTextBox" runat="server" 
-                            Text='<%# Bind("Sec_Hier_Grade_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Sec_Hier_Grade_Date") %>' Width="160px" TabIndex="21" /></td></tr>
                         
                         <tr align="left"><td> Date To Date:</td><td></td><td> 
                             <asp:TextBox ID="Date_To_DateTextBox" runat="server" 
-                            Text='<%# Bind("Date_To_Date") %>' Width="160px" /></td><td>Current Designation With Office :</td><td>
+                            Text='<%# Bind("Date_To_Date") %>' Width="160px" TabIndex="9" /></td><td>Current Designation With Office :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
                                 ErrorMessage="*" ControlToValidate="DropDownListCurrDesigwithOffice"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:DropDownList ID="DropDownListCurrDesigwithOffice" runat="server" 
                                 DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
-                                Width="160px">
+                                Width="160px" TabIndex="22">
                             </asp:DropDownList>
                             </td></tr>
                         <tr align="left"><td> Date Of Transfer:</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-                                ErrorMessage="*" ControlToValidate="Date_To_DateTextBox"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ControlToValidate="Transfer_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:TextBox ID="Transfer_DateTextBox" runat="server" 
-                            Text='<%# Bind("Transfer_Date") %>' Width="160px" /></td><td>Service Break Leave :</td><td>
+                            Text='<%# Bind("Transfer_Date") %>' Width="160px" TabIndex="10" /></td><td>Service Break Leave :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
                                 ErrorMessage="*" ControlToValidate="Servc_Break_LeaveTextBox"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:TextBox ID="Servc_Break_LeaveTextBox" runat="server" 
-                            Text='<%# Bind("Servc_Break_Leave") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Servc_Break_Leave") %>' Width="160px" TabIndex="23" /></td></tr>
                             <tr align="left"><td>Extra Curricular Activities :</td><td></td><td>
                             <asp:TextBox ID="Extra_Currclar_ActivitiesTextBox" runat="server" 
                             Text='<%# Bind("Extra_Currclar_Activities") %>' Width="160px" Height="60px" 
-                                TextMode="MultiLine" /></td><td> Extra Qualities:</td><td></td><td>
+                                TextMode="MultiLine" TabIndex="11" /></td><td> Extra Qualities:</td><td></td><td>
                             <asp:TextBox ID="Extra_QualitiesTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
                             Text='<%# Bind("Extra_Qualities") %>' Width="160px" Height="60px" 
-                                TextMode="MultiLine" /></td></tr>
+                                TextMode="MultiLine" TabIndex="24" /></td></tr>
                         <tr align="left"><td>Date Of Retirement:</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
                                 ErrorMessage="*" ControlToValidate="Retire_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:TextBox ID="Retire_DateTextBox" runat="server" 
-                            Text='<%# Bind("Retire_Date") %>' Width="160px" /></td><td> Other Details :</td><td></td><td> 
+                            Text='<%# Bind("Retire_Date") %>' Width="160px" TabIndex="12" /></td><td> Other Details :</td><td></td><td> 
                             <asp:TextBox ID="Other_DetailsTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
                             Text='<%# Bind("Other_Details") %>' Width="160px" Height="60px" 
-                                TextMode="MultiLine" /></td></tr>
+                                TextMode="MultiLine" TabIndex="25" /></td></tr>
                        
                         <tr>
-                      
+                         
 			 <td align="center" colspan="6"> 
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
-                CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="U" />
+                CommandName="Update" Text="Update" CssClass="standardButton" AccessKey="I" 
+                     TabIndex="26"  />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
                     onclientclick="resetTextFields();return false;" CssClass="standardButton" 
-                     AccessKey="R" />
+                     AccessKey="R" TabIndex="27" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" AccessKey="B" /></td>
+                    CssClass="standardButton" AccessKey="B" TabIndex="28" /></td>
                    
-                 
+                     
+                      
 			</tr></table>
                     </EditItemTemplate>
                     <InsertItemTemplate>
@@ -381,20 +380,20 @@
                                 ErrorMessage="*" ControlToValidate="Birth_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td>
                             <asp:TextBox ID="Birth_DateTextBox" runat="server"  
-                            Text='<%# Bind("Birth_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Birth_Date") %>' Width="160px" TabIndex="13" /></td></tr>
                         <tr align="left"><td>Permanent Address :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                 ErrorMessage="*" ControlToValidate="TextBox_Perm_Aaddress"></asp:RequiredFieldValidator>
                             </td><td>
                                 <asp:TextBox ID="TextBox_Perm_Aaddress" runat="server" Height="60px"  Text='<%# Bind("Prmnt_Addr") %>'
-                                    TextMode="MultiLine" Width="160px"></asp:TextBox>
+                                    TextMode="MultiLine" Width="160px" TabIndex="1"></asp:TextBox>
                             </td><td>Educational Qualification :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" 
                                 ErrorMessage="*" ControlToValidate="DropDownListEduQualfn"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:DropDownList ID="DropDownListEduQualfn" runat="server" 
                                 DataSourceID="ods_EducationalQualfn" DataTextField="Details" 
-                                DataValueField="Details" Width="160px">
+                                DataValueField="Details" Width="160px" TabIndex="14">
                             </asp:DropDownList>
                             </td></tr>
                             <tr align="left"><td>Joined As :</td><td>
@@ -403,37 +402,37 @@
                                 </td><td>
                             <asp:DropDownList ID="DropDownListDesignation1" runat="server" 
                                 DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
-                                    Width="160px">
+                                    Width="160px" TabIndex="2">
                             </asp:DropDownList>
                             </td><td>Date Of Joining:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" 
                                     ErrorMessage="*" ControlToValidate="Joining_DateTextBox"></asp:RequiredFieldValidator>
                                 </td><td>
                                 <asp:TextBox ID="Joining_DateTextBox" runat="server" 
-                            Text='<%# Bind("Joining_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Joining_Date") %>' Width="160px" TabIndex="15" /></td></tr>
                             <tr align="left"><td>Date Of Promotion:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                     ErrorMessage="*" ControlToValidate="Promtion_DateTextBox"></asp:RequiredFieldValidator>
                                 </td><td>  
                                 <asp:TextBox ID="Promtion_DateTextBox" runat="server" 
-                            Text='<%# Bind("Promtion_Date") %>' Width="160px" /></td><td>Designation Of Promotion:</td><td>
+                            Text='<%# Bind("Promtion_Date") %>' Width="160px" TabIndex="3" /></td><td>Designation Of Promotion:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" 
                                     ErrorMessage="*" ControlToValidate="Promotion_DesignTextBox"></asp:RequiredFieldValidator>
                                 </td><td>
                                 <asp:TextBox ID="Promotion_DesignTextBox" runat="server" 
-                            Text='<%# Bind("Promotion_Design") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Promotion_Design") %>' Width="160px" TabIndex="16" /></td></tr>
                             <tr align="left"><td>  Actual Date Of Joining Department:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                                     ErrorMessage="*" ControlToValidate="Actual_Date_of_Joining_DeptTextBox"></asp:RequiredFieldValidator>
                                 </td><td>
                                 <asp:TextBox ID="Actual_Date_of_Joining_DeptTextBox" runat="server" 
-                            Text='<%# Bind("Actual_Date_of_Joining_Dept") %>' Width="160px" /></td><td>Religion :</td><td>
+                            Text='<%# Bind("Actual_Date_of_Joining_Dept") %>' Width="160px" TabIndex="4" /></td><td>Religion :</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" 
                                     ErrorMessage="*" ControlToValidate="DropDownListReligionMaster"></asp:RequiredFieldValidator>
                                 </td><td>
                                 <asp:DropDownList ID="DropDownListReligionMaster" runat="server" 
                                     DataSourceID="ods_Religion1" DataTextField="Religion_Name" 
-                                    DataValueField="Religion_Name" Width="160px">
+                                    DataValueField="Religion_Name" Width="160px" TabIndex="17">
                                 </asp:DropDownList>
                                 </td></tr>
                             <tr align="left"><td>Caste:</td><td>
@@ -441,7 +440,8 @@
                                     ErrorMessage="*" Enabled="False" ControlToValidate="DropDownListCaste"></asp:RequiredFieldValidator>
                                 </td><td> 
                             <asp:DropDownList ID="DropDownListCaste" runat="server" Width="160px"
-                                DataSourceID="ods_Caste" DataTextField="Cast_Name" DataValueField="Cast_Name">
+                                DataSourceID="ods_Caste" DataTextField="Cast_Name" DataValueField="Cast_Name" 
+                                        TabIndex="5">
                             </asp:DropDownList>
                             </td><td> Current Designation:</td><td>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" 
@@ -449,42 +449,42 @@
                                 </td><td>
                             <asp:DropDownList ID="DropDownListCurrentDesign" runat="server" 
                                 DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
-                                    Width="160px">
+                                    Width="160px" TabIndex="18">
                             </asp:DropDownList>
                             </td></tr>
                             <tr align="left"><td>Preservice Training Passing Date :</td><td>
                             </td> <td>
                             <asp:TextBox ID="Preservice_training_Passing_DateTextBox" runat="server" 
-                            Text='<%# Bind("Preservice_training_Passing_Date") %>' Width="160px" /></td><td>Clerk Department Passing Date </td><td></td><td> 
+                            Text='<%# Bind("Preservice_training_Passing_Date") %>' Width="160px" TabIndex="6" /></td><td>Clerk Department Passing Date </td><td></td><td> 
                             <asp:TextBox ID="Clerk_Dept_Exam_Pass_DateTextBox" runat="server" 
-                            Text='<%# Bind("Clerk_Dept_Exam_Pass_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Clerk_Dept_Exam_Pass_Date") %>' Width="160px" TabIndex="19" /></td></tr>
                        
                         <tr align="left"><td> Sub Register Exam Pass Date:</td><td></td><td>
                             <asp:TextBox ID="Sub_Register_Exam_Pass_DateTextBox" runat="server" 
-                            Text='<%# Bind("Sub_Register_Exam_Pass_Date") %>' Width="160px" /></td><td> Upgradation Of Designation Promotion Date:</td><td>
+                            Text='<%# Bind("Sub_Register_Exam_Pass_Date") %>' Width="160px" TabIndex="7" /></td><td> Upgradation Of Designation Promotion Date:</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" 
                                 ErrorMessage="*" ControlToValidate="Upgrade_Promotion_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td>   
                             <asp:TextBox ID="Upgrade_Promotion_DateTextBox" runat="server" 
-                            Text='<%# Bind("Upgrade_Promotion_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Upgrade_Promotion_Date") %>' Width="160px" TabIndex="20" /></td></tr>
                         <tr align="left"><td>First Hier Grade Date :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" 
                                 ErrorMessage="*" ControlToValidate="First_Hier_Grade_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td>
                             <asp:TextBox ID="First_Hier_Grade_DateTextBox" runat="server" 
-                            Text='<%# Bind("First_Hier_Grade_Date") %>' Width="160px" /></td><td>Second Hier Grade Date :</td><td></td><td>
+                            Text='<%# Bind("First_Hier_Grade_Date") %>' Width="160px" TabIndex="8" /></td><td>Second Hier Grade Date :</td><td></td><td>
                             <asp:TextBox ID="Sec_Hier_Grade_DateTextBox" runat="server" 
-                            Text='<%# Bind("Sec_Hier_Grade_Date") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Sec_Hier_Grade_Date") %>' Width="160px" TabIndex="21" /></td></tr>
                         
                         <tr align="left"><td> Date To Date:</td><td></td><td> 
                             <asp:TextBox ID="Date_To_DateTextBox" runat="server" 
-                            Text='<%# Bind("Date_To_Date") %>' Width="160px" /></td><td>Current Designation With Office :</td><td>
+                            Text='<%# Bind("Date_To_Date") %>' Width="160px" TabIndex="9" /></td><td>Current Designation With Office :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
                                 ErrorMessage="*" ControlToValidate="DropDownListCurrDesigwithOffice"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:DropDownList ID="DropDownListCurrDesigwithOffice" runat="server" 
                                 DataSourceID="ods_Designation" DataTextField="Name" DataValueField="Name" 
-                                Width="160px">
+                                Width="160px" TabIndex="22">
                             </asp:DropDownList>
                             </td></tr>
                         <tr align="left"><td> Date Of Transfer:</td><td>
@@ -492,41 +492,42 @@
                                 ErrorMessage="*" ControlToValidate="Transfer_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:TextBox ID="Transfer_DateTextBox" runat="server" 
-                            Text='<%# Bind("Transfer_Date") %>' Width="160px" /></td><td>Service Break Leave :</td><td>
+                            Text='<%# Bind("Transfer_Date") %>' Width="160px" TabIndex="10" /></td><td>Service Break Leave :</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
                                 ErrorMessage="*" ControlToValidate="Servc_Break_LeaveTextBox"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:TextBox ID="Servc_Break_LeaveTextBox" runat="server" 
-                            Text='<%# Bind("Servc_Break_Leave") %>' Width="160px" /></td></tr>
+                            Text='<%# Bind("Servc_Break_Leave") %>' Width="160px" TabIndex="23" /></td></tr>
                             <tr align="left"><td>Extra Curricular Activities :</td><td></td><td>
                             <asp:TextBox ID="Extra_Currclar_ActivitiesTextBox" runat="server" 
                             Text='<%# Bind("Extra_Currclar_Activities") %>' Width="160px" Height="60px" 
-                                TextMode="MultiLine" /></td><td> Extra Qualities:</td><td></td><td>
+                                TextMode="MultiLine" TabIndex="11" /></td><td> Extra Qualities:</td><td></td><td>
                             <asp:TextBox ID="Extra_QualitiesTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
                             Text='<%# Bind("Extra_Qualities") %>' Width="160px" Height="60px" 
-                                TextMode="MultiLine" /></td></tr>
+                                TextMode="MultiLine" TabIndex="24" /></td></tr>
                         <tr align="left"><td>Date Of Retirement:</td><td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
                                 ErrorMessage="*" ControlToValidate="Retire_DateTextBox"></asp:RequiredFieldValidator>
                             </td><td> 
                             <asp:TextBox ID="Retire_DateTextBox" runat="server" 
-                            Text='<%# Bind("Retire_Date") %>' Width="160px" /></td><td> Other Details :</td><td></td><td> 
+                            Text='<%# Bind("Retire_Date") %>' Width="160px" TabIndex="12" /></td><td> Other Details :</td><td></td><td> 
                             <asp:TextBox ID="Other_DetailsTextBox" runat="server"  onkeypress="return AllowAlphabet(event)"
                             Text='<%# Bind("Other_Details") %>' Width="160px" Height="60px" 
-                                TextMode="MultiLine" /></td></tr>
+                                TextMode="MultiLine" TabIndex="25" /></td></tr>
                        
                         <tr>
                          
 			 <td align="center" colspan="6"> 
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Insert" CssClass="standardButton" AccessKey="I"  />
+                CommandName="Insert" Text="Insert" CssClass="standardButton" AccessKey="I" 
+                     TabIndex="26"  />
                  &nbsp;<asp:LinkButton ID="ResetButton" runat="server" 
                 CausesValidation="False" CommandName="reset" Text="Reset" 
                     onclientclick="resetTextFields();return false;" CssClass="standardButton" 
-                     AccessKey="R" />
+                     AccessKey="R" TabIndex="27" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Back" Text="Back" 
-                    CssClass="standardButton" AccessKey="B" /></td>
+                    CssClass="standardButton" AccessKey="B" TabIndex="28" /></td>
                    
                      
                       

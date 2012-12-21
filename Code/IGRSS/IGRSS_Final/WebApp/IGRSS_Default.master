@@ -1,11 +1,12 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="IGRSS_Default.master.cs"
     Inherits="IGRSS_Default" %>
 
-<%@ Register Src="~/UserControls/StatusInformation.ascx" TagName="StatusInformation"
-    TagPrefix="uc2" %>
-<%@ Register Src="FormCommands.ascx" TagName="FormCommands" TagPrefix="uc1" %>
+<%--<%@ Register Src="~/UserControls/StatusInformation.ascx" TagName="StatusInformation"
+    TagPrefix="uc2" %>--%>
+<%@ Register Src="~/FormCommands.ascx" TagName="FormCommands" TagPrefix="uc1" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
     <script type="text/javascript" language="Javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     <meta content="Tue, 23 Jul 1982 21:29:02 GMT" http-equiv="Expires" />
@@ -106,6 +107,7 @@
             //            }
         }
     </script>
+    <title></title>
 </head>
 <body id="masterBody" runat="server" style="height: 100%">
     <form id="form1" runat="server">
@@ -165,7 +167,7 @@
                     border-width: thick; border-color: Black;">
                     <asp:XmlDataSource ID="MenuSource" runat="server" XPath="IgrssSite/Module" EnableCaching="False"
                         DataFile="~/XMLFile.xml" />
-                    <uc2:StatusInformation ID="StatusInformation1" runat="server" />
+<%--                    <uc2:StatusInformation ID="StatusInformation1" runat="server" />--%>
                     <div>
                         <div id="errorDiv">
                         
